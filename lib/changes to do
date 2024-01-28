@@ -1,0 +1,9 @@
+each little tab has its own unique list of doubles ( totalhours totalmaterialcost.... ) , 
+that list gets updated on each call and sent to another list of doubles named for example
+innerDoorSums, and in the constants it gets summed up
+
+
+he suggested me the travel planning idea we had from group project
+
+
+
