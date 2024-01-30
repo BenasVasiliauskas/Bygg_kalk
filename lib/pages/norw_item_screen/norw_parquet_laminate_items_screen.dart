@@ -726,7 +726,7 @@ class _NorwParquetLaminatetemsScreenState
               child: Align(
                 child: FloatingActionButton(
                   onPressed: () {
-                    generateExcelDocument(
+                    generateNorwParquetAndLaminateExcelDocument(
                       "Parkett og laminat",
                       columns,
                       widget.description,

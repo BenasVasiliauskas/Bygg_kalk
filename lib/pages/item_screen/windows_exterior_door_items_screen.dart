@@ -728,7 +728,7 @@ class _WindowsExteriorDoorItemsScreen
               child: Align(
                 child: FloatingActionButton(
                   onPressed: () {
-                    generateExcelDocument(
+                    generateWindowsOuterDoorExcelDocument(
                       "WindowsExteriorDoor",
                       columns,
                       widget.description,

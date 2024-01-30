@@ -772,7 +772,7 @@ class _NorwExteriorWallItemsScreenState
               child: Align(
                 child: FloatingActionButton(
                   onPressed: () {
-                    generateExcelDocument(
+                    generateNorwExteriorWallExcelDocument(
                       "Yttervegger",
                       columns,
                       widget.description,

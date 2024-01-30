@@ -727,7 +727,7 @@ class _InnerDoorItemScreenState extends State<InnerDoorItemScreen> {
               child: Align(
                 child: FloatingActionButton(
                   onPressed: () {
-                    generateExcelDocument(
+                    generateInnerDoorExcelDocument(
                       "InnerDoorItemScreen",
                       columns,
                       widget.description,

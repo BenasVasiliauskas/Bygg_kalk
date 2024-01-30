@@ -770,7 +770,7 @@ class _NorwInteriorWallItemsScreenState
               child: Align(
                 child: FloatingActionButton(
                   onPressed: () {
-                    generateExcelDocument(
+                    generateNorwInnerWallExcelDocument(
                       "Innvendige vegger",
                       columns,
                       widget.description,

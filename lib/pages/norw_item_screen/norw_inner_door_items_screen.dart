@@ -726,7 +726,7 @@ class _NorwInnerDoorItemScreenScreenState
               child: Align(
                 child: FloatingActionButton(
                   onPressed: () {
-                    generateExcelDocument(
+                    generateNorwInnerDoorExcelDocument(
                       "Innerdører",
                       columns,
                       widget.description,

@@ -724,7 +724,7 @@ class _NorwKitchentemsScreenState extends State<NorwKitchentemsScreen> {
               child: Align(
                 child: FloatingActionButton(
                   onPressed: () {
-                    generateExcelDocument(
+                    generateNorwKitchenExcelDocument(
                       "Kjøkken",
                       columns,
                       widget.description,

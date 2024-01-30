@@ -6,10 +6,22 @@ import 'package:path_provider/path_provider.dart';
 
 import '../constants/innerwall_constants.dart';
 
-void createTextFile() {
-  final Directory directory = Directory.current;
-  final File file = File('${directory.path}/my_file.txt');
-  file.writeAsString('Hello Folks');
+Future<String?> getDownloadPath() async {
+  Directory? directory;
+  try {
+    if (Platform.isIOS) {
+      directory = await getApplicationDocumentsDirectory();
+    } else {
+      directory = Directory('/storage/emulated/0/Download');
+      // Put file in global download folder, if for an unknown reason it didn't exist, we fallback
+      // ignore: avoid_slow_async_io
+      if (!await directory.exists())
+        directory = await getExternalStorageDirectory();
+    }
+  } catch (err) {
+    print("Cannot get download folder path");
+  }
+  return directory?.path;
 }
 
 void addData(
@@ -25,6 +37,7 @@ void addData(
   List<TextEditingController> material1List,
   List<TextEditingController> material2List,
   List<TextEditingController> totalPriceList,
+  Workbook workbook,
 ) {
   double sumOfHours1 = 0;
   double sumOfCustomHours = 0;
@@ -91,10 +104,10 @@ void addData(
   range1.cellStyle.wrapText = false;
   range1.autoFit();
 
-  innerWallWorkbook.worksheets.addWithSheet(worksheet);
+  workbook.worksheets.addWithSheet(worksheet);
 }
 
-Future<void> generateExcelDocument(
+Future<void> generateInnerWallExcelDocument(
   String excelName,
   List<DataColumn> columns,
   List<String> descriptionList,
@@ -116,12 +129,6 @@ Future<void> generateExcelDocument(
   final Worksheet worksheet4 = new Worksheet(innerWallWorkbook);
   final Worksheet worksheet5 = new Worksheet(innerWallWorkbook);
   final Worksheet worksheet6 = new Worksheet(innerWallWorkbook);
-  final Worksheet worksheet7 = new Worksheet(innerWallWorkbook);
-  final Worksheet worksheet8 = new Worksheet(innerWallWorkbook);
-  final Worksheet worksheet9 = new Worksheet(innerWallWorkbook);
-  final Worksheet worksheet10 = new Worksheet(innerWallWorkbook);
-  final Worksheet worksheet11 = new Worksheet(innerWallWorkbook);
-  final Worksheet worksheet12 = new Worksheet(innerWallWorkbook);
   addData(
       switch (tabletName) {
         "Wooden truss 48x98, double sound wall, double plaster" => worksheet,
@@ -130,15 +137,6 @@ Future<void> generateExcelDocument(
         "Steel trusses 2x75mm, double, insulated, plaster" => worksheet4,
         "Steel trusses 2x100mm, double, insulated, plaster" => worksheet5,
         "Steel trusses 2x75mm, double, insulated, double plaster" => worksheet6,
-        "Interior design in housing, kitchen cabinets" => worksheet7,
-        "Interior door, pine 9x21" => worksheet8,
-        "Surface covering parquet" =>
-          worksheet9, // repeats twice maybe do smth?
-        "Window, wooden wall top swing 12x10" => worksheet10,
-        "Exterior door of wood, in timber frame wall, white, 10x21" =>
-          worksheet11,
-        "Timber truss 48x198, 50mm liner, standing double seam, plaster" =>
-          worksheet12,
         _ => worksheet,
       },
       descriptionList,
@@ -151,11 +149,517 @@ Future<void> generateExcelDocument(
       laborCostList,
       material1List,
       material2List,
-      totalPriceList);
+      totalPriceList,
+      innerWallWorkbook);
 
   final List<int> bytes = innerWallWorkbook.saveAsStream();
-  File(excelName + ".xlsx").writeAsBytes(bytes);
-  innerWallWorkbook.dispose();
+
+  String? downloadPath = await getDownloadPath();
+  String filePath = '$downloadPath/' + excelName + '.xlsx';
+  File(filePath).writeAsBytes(bytes);
+
+  innerWallWorkbook.dispose(); // change
+}
+
+Future<void> generateExteriorWallExcelDocument(
+  String excelName,
+  List<DataColumn> columns,
+  List<String> descriptionList,
+  List<String> unitList,
+  List<TextEditingController> quantityLists,
+  List<TextEditingController> materialQuantityList,
+  List<TextEditingController> laborHours1List,
+  List<TextEditingController> customColumnList,
+  List<TextEditingController> laborHours2List,
+  List<TextEditingController> laborCostList,
+  List<TextEditingController> material1List,
+  List<TextEditingController> material2List,
+  List<TextEditingController> totalPriceList,
+  String tabletName,
+) async {
+  final Worksheet worksheet = exteriorWallWorkbook.worksheets[0];
+
+  addData(
+      switch (tabletName) {
+        "Timber truss 48x198, 50mm liner, standing double seam, plaster" =>
+          worksheet,
+        _ => worksheet,
+      },
+      descriptionList,
+      unitList,
+      quantityLists,
+      materialQuantityList,
+      laborHours1List,
+      customColumnList,
+      laborHours2List,
+      laborCostList,
+      material1List,
+      material2List,
+      totalPriceList,
+      exteriorWallWorkbook);
+
+  final List<int> bytes = exteriorWallWorkbook.saveAsStream();
+
+  String? downloadPath = await getDownloadPath();
+  String filePath = '$downloadPath/' + excelName + '.xlsx';
+  File(filePath).writeAsBytes(bytes);
+
+  exteriorWallWorkbook.dispose(); // change
+}
+
+Future<void> generateNorwKitchenExcelDocument(
+  String excelName,
+  List<DataColumn> columns,
+  List<String> descriptionList,
+  List<String> unitList,
+  List<TextEditingController> quantityLists,
+  List<TextEditingController> materialQuantityList,
+  List<TextEditingController> laborHours1List,
+  List<TextEditingController> customColumnList,
+  List<TextEditingController> laborHours2List,
+  List<TextEditingController> laborCostList,
+  List<TextEditingController> material1List,
+  List<TextEditingController> material2List,
+  List<TextEditingController> totalPriceList,
+  String tabletName,
+) async {
+  final Worksheet worksheet = norwKitchenWorkbook.worksheets[0];
+
+  addData(
+      switch (tabletName) {
+        "Innredning i bolig, kjøkken overskap" => worksheet,
+        _ => worksheet,
+      },
+      descriptionList,
+      unitList,
+      quantityLists,
+      materialQuantityList,
+      laborHours1List,
+      customColumnList,
+      laborHours2List,
+      laborCostList,
+      material1List,
+      material2List,
+      totalPriceList,
+      norwKitchenWorkbook);
+
+  final List<int> bytes = norwKitchenWorkbook.saveAsStream();
+
+  String? downloadPath = await getDownloadPath();
+  String filePath = '$downloadPath/' + excelName + '.xlsx';
+  File(filePath).writeAsBytes(bytes);
+
+  norwKitchenWorkbook.dispose(); // change}
+}
+
+Future<void> generateNorwParquetAndLaminateExcelDocument(
+  String excelName,
+  List<DataColumn> columns,
+  List<String> descriptionList,
+  List<String> unitList,
+  List<TextEditingController> quantityLists,
+  List<TextEditingController> materialQuantityList,
+  List<TextEditingController> laborHours1List,
+  List<TextEditingController> customColumnList,
+  List<TextEditingController> laborHours2List,
+  List<TextEditingController> laborCostList,
+  List<TextEditingController> material1List,
+  List<TextEditingController> material2List,
+  List<TextEditingController> totalPriceList,
+  String tabletName,
+) async {
+  final Worksheet worksheet = norwParquetAndLaminateWorkbook.worksheets[0];
+
+  addData(
+      switch (tabletName) {
+        "Overflate dekker parkett" => worksheet,
+        _ => worksheet,
+      },
+      descriptionList,
+      unitList,
+      quantityLists,
+      materialQuantityList,
+      laborHours1List,
+      customColumnList,
+      laborHours2List,
+      laborCostList,
+      material1List,
+      material2List,
+      totalPriceList,
+      norwParquetAndLaminateWorkbook);
+
+  final List<int> bytes = norwParquetAndLaminateWorkbook.saveAsStream();
+
+  String? downloadPath = await getDownloadPath();
+  String filePath = '$downloadPath/' + excelName + '.xlsx';
+  File(filePath).writeAsBytes(bytes);
+
+  norwParquetAndLaminateWorkbook.dispose(); // change}
+}
+
+Future<void> generateNorwWindowsExteriorDoorExcelDocument(
+  String excelName,
+  List<DataColumn> columns,
+  List<String> descriptionList,
+  List<String> unitList,
+  List<TextEditingController> quantityLists,
+  List<TextEditingController> materialQuantityList,
+  List<TextEditingController> laborHours1List,
+  List<TextEditingController> customColumnList,
+  List<TextEditingController> laborHours2List,
+  List<TextEditingController> laborCostList,
+  List<TextEditingController> material1List,
+  List<TextEditingController> material2List,
+  List<TextEditingController> totalPriceList,
+  String tabletName,
+) async {
+  final Worksheet worksheet = norwWindowsExteriorDoorsWorkbook.worksheets[0];
+  final Worksheet worksheet2 = new Worksheet(norwWindowsExteriorDoorsWorkbook);
+  addData(
+      switch (tabletName) {
+        "Vindu, trevegg toppsving 12x10" => worksheet,
+        "Ytterdør av tre, i bindingsverksvegg, hvit, 10x21" => worksheet2,
+        _ => worksheet,
+      },
+      descriptionList,
+      unitList,
+      quantityLists,
+      materialQuantityList,
+      laborHours1List,
+      customColumnList,
+      laborHours2List,
+      laborCostList,
+      material1List,
+      material2List,
+      totalPriceList,
+      norwWindowsExteriorDoorsWorkbook);
+
+  final List<int> bytes = exteriorWallWorkbook.saveAsStream();
+
+  String? downloadPath = await getDownloadPath();
+  String filePath = '$downloadPath/' + excelName + '.xlsx';
+  File(filePath).writeAsBytes(bytes);
+
+  norwWindowsExteriorDoorsWorkbook.dispose(); // change
+}
+
+Future<void> generateNorwExteriorWallExcelDocument(
+  String excelName,
+  List<DataColumn> columns,
+  List<String> descriptionList,
+  List<String> unitList,
+  List<TextEditingController> quantityLists,
+  List<TextEditingController> materialQuantityList,
+  List<TextEditingController> laborHours1List,
+  List<TextEditingController> customColumnList,
+  List<TextEditingController> laborHours2List,
+  List<TextEditingController> laborCostList,
+  List<TextEditingController> material1List,
+  List<TextEditingController> material2List,
+  List<TextEditingController> totalPriceList,
+  String tabletName,
+) async {
+  final Worksheet worksheet = exteriorWallWorkbook.worksheets[0];
+
+  addData(
+      switch (tabletName) {
+        "Bindingsverk av tre 48x198, 50mm påforing, stående dobbelfals, gips" =>
+          worksheet,
+        _ => worksheet,
+      },
+      descriptionList,
+      unitList,
+      quantityLists,
+      materialQuantityList,
+      laborHours1List,
+      customColumnList,
+      laborHours2List,
+      laborCostList,
+      material1List,
+      material2List,
+      totalPriceList,
+      exteriorWallWorkbook);
+
+  final List<int> bytes = exteriorWallWorkbook.saveAsStream();
+
+  String? downloadPath = await getDownloadPath();
+  String filePath = '$downloadPath/' + excelName + '.xlsx';
+  File(filePath).writeAsBytes(bytes);
+
+  exteriorWallWorkbook.dispose(); // change
+}
+
+Future<void> generateNorwInnerDoorExcelDocument(
+  String excelName,
+  List<DataColumn> columns,
+  List<String> descriptionList,
+  List<String> unitList,
+  List<TextEditingController> quantityLists,
+  List<TextEditingController> materialQuantityList,
+  List<TextEditingController> laborHours1List,
+  List<TextEditingController> customColumnList,
+  List<TextEditingController> laborHours2List,
+  List<TextEditingController> laborCostList,
+  List<TextEditingController> material1List,
+  List<TextEditingController> material2List,
+  List<TextEditingController> totalPriceList,
+  String tabletName,
+) async {
+  final Worksheet worksheet = norwInnerDoorWorkbook.worksheets[0];
+
+  addData(
+      switch (tabletName) {
+        "Innerdør, furu 9x21" => worksheet,
+        _ => worksheet,
+      },
+      descriptionList,
+      unitList,
+      quantityLists,
+      materialQuantityList,
+      laborHours1List,
+      customColumnList,
+      laborHours2List,
+      laborCostList,
+      material1List,
+      material2List,
+      totalPriceList,
+      norwInnerDoorWorkbook);
+
+  final List<int> bytes = norwInnerDoorWorkbook.saveAsStream();
+
+  String? downloadPath = await getDownloadPath();
+  String filePath = '$downloadPath/' + excelName + '.xlsx';
+  File(filePath).writeAsBytes(bytes);
+
+  norwInnerDoorWorkbook.dispose(); // change
+}
+
+Future<void> generateInnerDoorExcelDocument(
+  String excelName,
+  List<DataColumn> columns,
+  List<String> descriptionList,
+  List<String> unitList,
+  List<TextEditingController> quantityLists,
+  List<TextEditingController> materialQuantityList,
+  List<TextEditingController> laborHours1List,
+  List<TextEditingController> customColumnList,
+  List<TextEditingController> laborHours2List,
+  List<TextEditingController> laborCostList,
+  List<TextEditingController> material1List,
+  List<TextEditingController> material2List,
+  List<TextEditingController> totalPriceList,
+  String tabletName,
+) async {
+  final Worksheet worksheet = innerDoorWorkbook.worksheets[0];
+
+  addData(
+      switch (tabletName) {
+        "Interior door, pine 9x21" => worksheet,
+        _ => worksheet,
+      },
+      descriptionList,
+      unitList,
+      quantityLists,
+      materialQuantityList,
+      laborHours1List,
+      customColumnList,
+      laborHours2List,
+      laborCostList,
+      material1List,
+      material2List,
+      totalPriceList,
+      innerDoorWorkbook);
+
+  final List<int> bytes = innerDoorWorkbook.saveAsStream();
+
+  String? downloadPath = await getDownloadPath();
+  String filePath = '$downloadPath/' + excelName + '.xlsx';
+  File(filePath).writeAsBytes(bytes);
+
+  innerDoorWorkbook.dispose(); // change
+}
+
+Future<void> generateKitchenExcelDocument(
+  String excelName,
+  List<DataColumn> columns,
+  List<String> descriptionList,
+  List<String> unitList,
+  List<TextEditingController> quantityLists,
+  List<TextEditingController> materialQuantityList,
+  List<TextEditingController> laborHours1List,
+  List<TextEditingController> customColumnList,
+  List<TextEditingController> laborHours2List,
+  List<TextEditingController> laborCostList,
+  List<TextEditingController> material1List,
+  List<TextEditingController> material2List,
+  List<TextEditingController> totalPriceList,
+  String tabletName,
+) async {
+  final Worksheet worksheet = kitchenWorkbook.worksheets[0];
+
+  addData(
+      switch (tabletName) {
+        "Interior design in housing, kitchen cabinets" => worksheet,
+        _ => worksheet,
+      },
+      descriptionList,
+      unitList,
+      quantityLists,
+      materialQuantityList,
+      laborHours1List,
+      customColumnList,
+      laborHours2List,
+      laborCostList,
+      material1List,
+      material2List,
+      totalPriceList,
+      kitchenWorkbook);
+
+  final List<int> bytes = kitchenWorkbook.saveAsStream();
+
+  String? downloadPath = await getDownloadPath();
+  String filePath = '$downloadPath/' + excelName + '.xlsx';
+  File(filePath).writeAsBytes(bytes);
+
+  kitchenWorkbook.dispose(); // change
+}
+
+Future<void> generateOuterWallExcelDocument(
+  String excelName,
+  List<DataColumn> columns,
+  List<String> descriptionList,
+  List<String> unitList,
+  List<TextEditingController> quantityLists,
+  List<TextEditingController> materialQuantityList,
+  List<TextEditingController> laborHours1List,
+  List<TextEditingController> customColumnList,
+  List<TextEditingController> laborHours2List,
+  List<TextEditingController> laborCostList,
+  List<TextEditingController> material1List,
+  List<TextEditingController> material2List,
+  List<TextEditingController> totalPriceList,
+  String tabletName,
+) async {
+  final Worksheet worksheet = outerWallWorkbook.worksheets[0];
+
+  addData(
+      switch (tabletName) {
+        "Timber truss 48x198, 50mm liner, standing double seam, plaster" =>
+          worksheet,
+        _ => worksheet,
+      },
+      descriptionList,
+      unitList,
+      quantityLists,
+      materialQuantityList,
+      laborHours1List,
+      customColumnList,
+      laborHours2List,
+      laborCostList,
+      material1List,
+      material2List,
+      totalPriceList,
+      outerWallWorkbook);
+
+  final List<int> bytes = outerWallWorkbook.saveAsStream();
+
+  String? downloadPath = await getDownloadPath();
+  String filePath = '$downloadPath/' + excelName + '.xlsx';
+  File(filePath).writeAsBytes(bytes);
+
+  outerWallWorkbook.dispose(); // change
+}
+
+Future<void> generateParquetLaminateExcelDocument(
+  String excelName,
+  List<DataColumn> columns,
+  List<String> descriptionList,
+  List<String> unitList,
+  List<TextEditingController> quantityLists,
+  List<TextEditingController> materialQuantityList,
+  List<TextEditingController> laborHours1List,
+  List<TextEditingController> customColumnList,
+  List<TextEditingController> laborHours2List,
+  List<TextEditingController> laborCostList,
+  List<TextEditingController> material1List,
+  List<TextEditingController> material2List,
+  List<TextEditingController> totalPriceList,
+  String tabletName,
+) async {
+  final Worksheet worksheet = parquetAndLaminateWorkbook.worksheets[0];
+
+  addData(
+      switch (tabletName) {
+        "Surface covering parquet" => worksheet,
+        _ => worksheet,
+      },
+      descriptionList,
+      unitList,
+      quantityLists,
+      materialQuantityList,
+      laborHours1List,
+      customColumnList,
+      laborHours2List,
+      laborCostList,
+      material1List,
+      material2List,
+      totalPriceList,
+      parquetAndLaminateWorkbook);
+
+  final List<int> bytes = parquetAndLaminateWorkbook.saveAsStream();
+
+  String? downloadPath = await getDownloadPath();
+  String filePath = '$downloadPath/' + excelName + '.xlsx';
+  File(filePath).writeAsBytes(bytes);
+
+  parquetAndLaminateWorkbook.dispose(); // change
+}
+
+Future<void> generateWindowsOuterDoorExcelDocument(
+  String excelName,
+  List<DataColumn> columns,
+  List<String> descriptionList,
+  List<String> unitList,
+  List<TextEditingController> quantityLists,
+  List<TextEditingController> materialQuantityList,
+  List<TextEditingController> laborHours1List,
+  List<TextEditingController> customColumnList,
+  List<TextEditingController> laborHours2List,
+  List<TextEditingController> laborCostList,
+  List<TextEditingController> material1List,
+  List<TextEditingController> material2List,
+  List<TextEditingController> totalPriceList,
+  String tabletName,
+) async {
+  final Worksheet worksheet = windowsExteriorDoorsWorkbook.worksheets[0];
+  final Worksheet worksheet2 = new Worksheet(windowsExteriorDoorsWorkbook);
+  addData(
+      switch (tabletName) {
+        "Window, wooden wall top swing 12x10" => worksheet,
+        "Exterior door of wood, in timber frame wall, white, 10x21" =>
+          worksheet2,
+        _ => worksheet,
+      },
+      descriptionList,
+      unitList,
+      quantityLists,
+      materialQuantityList,
+      laborHours1List,
+      customColumnList,
+      laborHours2List,
+      laborCostList,
+      material1List,
+      material2List,
+      totalPriceList,
+      windowsExteriorDoorsWorkbook);
+
+  final List<int> bytes = windowsExteriorDoorsWorkbook.saveAsStream();
+
+  String? downloadPath = await getDownloadPath();
+  String filePath = '$downloadPath/' + excelName + '.xlsx';
+  File(filePath).writeAsBytes(bytes);
+
+  windowsExteriorDoorsWorkbook.dispose(); // change
 }
 
 void addNorwData(
@@ -171,6 +675,7 @@ void addNorwData(
   List<TextEditingController> material1List,
   List<TextEditingController> material2List,
   List<TextEditingController> totalPriceList,
+  Workbook workbook,
 ) {
   double sumOfHours1 = 0;
   double sumOfCustomHours = 0;
@@ -236,11 +741,10 @@ void addNorwData(
   range1.cellStyle.wrapText = false;
   range1.autoFit();
 
-  norwInnerWallWorkbook.worksheets.addWithSheet(worksheet);
+  workbook.worksheets.addWithSheet(worksheet);
 }
 
-///
-Future<void> generateNorwExcelDocument(
+Future<void> generateNorwInnerWallExcelDocument(
   String excelName,
   List<DataColumn> columns,
   List<String> descriptionList,
@@ -256,18 +760,13 @@ Future<void> generateNorwExcelDocument(
   List<TextEditingController> totalPriceList,
   String tabletName,
 ) async {
-  final Worksheet worksheet = innerWallWorkbook.worksheets[0];
-  final Worksheet worksheet2 = new Worksheet(innerWallWorkbook);
-  final Worksheet worksheet3 = new Worksheet(innerWallWorkbook);
-  final Worksheet worksheet4 = new Worksheet(innerWallWorkbook);
-  final Worksheet worksheet5 = new Worksheet(innerWallWorkbook);
-  final Worksheet worksheet6 = new Worksheet(innerWallWorkbook);
-  final Worksheet worksheet7 = new Worksheet(innerWallWorkbook);
-  final Worksheet worksheet8 = new Worksheet(innerWallWorkbook);
-  final Worksheet worksheet9 = new Worksheet(innerWallWorkbook);
-  final Worksheet worksheet10 = new Worksheet(innerWallWorkbook);
-  final Worksheet worksheet11 = new Worksheet(innerWallWorkbook);
-  final Worksheet worksheet12 = new Worksheet(innerWallWorkbook);
+  final Worksheet worksheet = norwInnerWallWorkbook.worksheets[0];
+  final Worksheet worksheet2 = new Worksheet(norwInnerWallWorkbook);
+  final Worksheet worksheet3 = new Worksheet(norwInnerWallWorkbook);
+  final Worksheet worksheet4 = new Worksheet(norwInnerWallWorkbook);
+  final Worksheet worksheet5 = new Worksheet(norwInnerWallWorkbook);
+  final Worksheet worksheet6 = new Worksheet(norwInnerWallWorkbook);
+
   addNorwData(
       switch (tabletName) {
         "Bindingsverk av tre 48x98, dobbel lydvegg, dobbel gips" => worksheet,
@@ -277,14 +776,6 @@ Future<void> generateNorwExcelDocument(
         "Bindingsverk av stål 2x100mm, dobbelt, isolert, gips" => worksheet5,
         "Bindingsverk av stål 2x75mm, dobbelt, isolert, dobbel gips" =>
           worksheet6,
-        "Innredning i bolig, kjøkken overskap" => worksheet7,
-        "Innerdør, furu 9x21" => worksheet8,
-        "Overflate dekker parkett" =>
-          worksheet9, // repeats twice maybe do smth?
-        "Vindu, trevegg toppsving 12x10" => worksheet10,
-        "Ytterdør av tre, i bindingsverksvegg, hvit, 10x21" => worksheet11,
-        "Bindingsverk av tre 48x198, 50mm påforing, stående dobbelfals, gips" =>
-          worksheet12,
         _ => worksheet,
       },
       descriptionList,
@@ -297,7 +788,8 @@ Future<void> generateNorwExcelDocument(
       laborCostList,
       material1List,
       material2List,
-      totalPriceList);
+      totalPriceList,
+      norwInnerWallWorkbook);
 
   final List<int> bytes = norwInnerWallWorkbook.saveAsStream();
   File("norw" + excelName + ".xlsx").writeAsBytes(bytes);

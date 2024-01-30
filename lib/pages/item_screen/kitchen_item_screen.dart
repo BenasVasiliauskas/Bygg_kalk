@@ -724,7 +724,7 @@ class _KitchenItemScreenState extends State<KitchenItemScreen> {
               child: Align(
                 child: FloatingActionButton(
                   onPressed: () {
-                    generateExcelDocument(
+                    generateKitchenExcelDocument(
                       "Kitchen",
                       columns,
                       widget.description,

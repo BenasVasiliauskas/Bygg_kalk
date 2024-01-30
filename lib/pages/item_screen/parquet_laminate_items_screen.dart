@@ -728,7 +728,7 @@ class _ParquetLaminateItemsScreenState
               child: Align(
                 child: FloatingActionButton(
                   onPressed: () {
-                    generateExcelDocument(
+                    generateParquetLaminateExcelDocument(
                       "ParquetLaminate",
                       columns,
                       widget.description,

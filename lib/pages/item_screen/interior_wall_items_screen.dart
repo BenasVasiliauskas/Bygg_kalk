@@ -777,7 +777,7 @@ class _InteriorWallItemsScreenState extends State<InteriorWallItemsScreen> {
               child: Align(
                 child: FloatingActionButton(
                   onPressed: () {
-                    generateExcelDocument(
+                    generateInnerWallExcelDocument(
                       "InnerWallItems",
                       columns,
                       widget.description,

@@ -17,3 +17,21 @@ bool customColumn = false;
 
 Workbook innerWallWorkbook = new Workbook();
 Workbook norwInnerWallWorkbook = new Workbook();
+
+Workbook exteriorWallWorkbook = new Workbook();
+Workbook norwExteriorWallWorkbook = new Workbook();
+
+Workbook innerDoorWorkbook = new Workbook();
+Workbook norwInnerDoorWorkbook = new Workbook();
+
+Workbook kitchenWorkbook = new Workbook();
+Workbook norwKitchenWorkbook = new Workbook();
+
+Workbook outerWallWorkbook = new Workbook();
+Workbook norwOuterWallWorkbook = new Workbook();
+
+Workbook parquetAndLaminateWorkbook = new Workbook();
+Workbook norwParquetAndLaminateWorkbook = new Workbook();
+
+Workbook windowsExteriorDoorsWorkbook = new Workbook();
+Workbook norwWindowsExteriorDoorsWorkbook = new Workbook();

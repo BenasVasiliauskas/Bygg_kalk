@@ -778,7 +778,7 @@ class _ExteriorWallItemsScreenState extends State<ExteriorWallItemsScreen> {
               child: Align(
                 child: FloatingActionButton(
                   onPressed: () {
-                    generateExcelDocument(
+                    generateExteriorWallExcelDocument(
                       "ExteriorWallItems",
                       columns,
                       widget.description,

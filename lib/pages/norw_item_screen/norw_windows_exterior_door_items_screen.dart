@@ -726,7 +726,7 @@ class _NorwWindowsExteriorDoorItemsScreenState
               child: Align(
                 child: FloatingActionButton(
                   onPressed: () {
-                    generateExcelDocument(
+                    generateNorwWindowsExteriorDoorExcelDocument(
                       "Vinduer og ytterdører",
                       columns,
                       widget.description,
