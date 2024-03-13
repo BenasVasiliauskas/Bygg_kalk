@@ -95,15 +95,19 @@ Map<String, double> kitchenBudgetSum = {
 /////////////////////////////////////////////////////////////////////////////////////
 Map<String, double> parquetAndLaminateHours = {
   "Overflate dekker parkett": 0,
+  "Laminat gulv, eik": 0,
 };
 Map<String, double> parquetAndLaminateLaborCosts = {
   "Overflate dekker parkett": 0,
+  "Laminat gulv, eik": 0,
 };
 Map<String, double> parquetAndLaminateMaterialCosts = {
   "Overflate dekker parkett": 0,
+  "Laminat gulv, eik": 0,
 };
 Map<String, double> parquetAndLaminateBudgetSum = {
   "Overflate dekker parkett": 0,
+  "Laminat gulv, eik": 0,
 };
 /////////////////////////////////////////////////////////////////////////////////////
 

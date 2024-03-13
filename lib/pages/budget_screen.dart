@@ -28,10 +28,13 @@ class _BudgetScreenState extends State<BudgetScreen> {
       ),
       body: SingleChildScrollView(
         controller: _scrollController,
-        scrollDirection: Axis.horizontal,
+        scrollDirection: Axis.vertical, // Changed to vertical
         child: SingleChildScrollView(
-          child: Row(
+          scrollDirection: Axis.horizontal, // Changed to horizontal
+          child: Column(
+            // Changed to Column
             children: [
+              // Changed to a list of Widgets
               DataTable(
                 columns: [
                   DataColumn(label: Text('Name')),

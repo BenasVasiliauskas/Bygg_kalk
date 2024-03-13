@@ -1,10 +1,5 @@
 import 'package:syncfusion_flutter_xlsio/xlsio.dart';
 
-double calculationQuantity = 1;
-double hourlyRateConstructionRemodeling = 550;
-double hourlyRateDemolition = 550;
-double hourlyRatePainting = 500;
-
 List<double> createList(int size) {
   List<double> customList = [];
   for (int i = 0; i < size; i++) {
@@ -15,8 +10,17 @@ List<double> createList(int size) {
 
 bool customColumn = false;
 
-Workbook innerWallWorkbook = new Workbook();
+bool innerWallCalled = false;
+
 Workbook norwInnerWallWorkbook = new Workbook();
+
+Workbook innerWallWorkbook = Workbook();
+Worksheet innerWallWorksheet1 = innerWallWorkbook.worksheets[0];
+Worksheet innerWallWorksheet2 = Worksheet(innerWallWorkbook);
+Worksheet innerWallWorksheet3 = Worksheet(innerWallWorkbook);
+Worksheet innerWallWorksheet4 = Worksheet(innerWallWorkbook);
+Worksheet innerWallWorksheet5 = Worksheet(innerWallWorkbook);
+Worksheet innerWallWorksheet6 = Worksheet(innerWallWorkbook);
 
 Workbook exteriorWallWorkbook = new Workbook();
 Workbook norwExteriorWallWorkbook = new Workbook();

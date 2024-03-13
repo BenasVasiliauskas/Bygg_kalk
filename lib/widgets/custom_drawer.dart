@@ -104,18 +104,20 @@ class CustomDrawer extends StatelessWidget {
               );
             },
           ),
-          ListTile(
-            title: languageEnglish == true ? Text('Kitchen') : Text('Kjøkken'),
-            onTap: () {
-              Navigator.of(context).pushReplacement(
-                MaterialPageRoute(
-                  builder: (context) {
-                    return KitchenScreen();
-                  },
-                ),
-              );
-            },
-          ),
+
+          // removed kitchen from the drawer
+          // ListTile(
+          //   title: languageEnglish == true ? Text('Kitchen') : Text('Kjøkken'),
+          //   onTap: () {
+          //     Navigator.of(context).pushReplacement(
+          //       MaterialPageRoute(
+          //         builder: (context) {
+          //           return KitchenScreen();
+          //         },
+          //       ),
+          //     );
+          //   },
+          // ),
           ListTile(
             title: languageEnglish == true ? Text('Budget') : Text('Budsjett'),
             onTap: () {

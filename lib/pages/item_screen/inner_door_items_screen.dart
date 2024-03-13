@@ -57,6 +57,11 @@ class _InnerDoorItemScreenState extends State<InnerDoorItemScreen> {
   //
   List<TextEditingController> customColumnControllers = [];
 
+  double calculationQuantity = 1;
+  double hourlyRateConstructionRemodeling = 550;
+  double hourlyRateDemolition = 550;
+  double hourlyRatePainting = 500;
+
   void initialiseEmptyList() {
     emptyCustomList = createList(widget.description.length);
   }
@@ -128,17 +133,11 @@ class _InnerDoorItemScreenState extends State<InnerDoorItemScreen> {
       totalTotalPrice += widget.totalPrice[i];
     }
 
-    if (customColumn) {
-      addHours(widget.name, totalLaborHours1);
-      addLaborCosts(widget.name, emptyCustomList.sum);
-      addMaterialCosts(widget.name, totalMaterial2);
-      addBudgetSum(widget.name, totalTotalPrice);
-    } else {
-      addHours(widget.name, totalLaborHours1);
-      addLaborCosts(widget.name, totalLaborCost);
-      addMaterialCosts(widget.name, totalMaterial2);
-      addBudgetSum(widget.name, totalTotalPrice);
-    }
+    addHours(widget.name, totalLaborHours2);
+    addLaborCosts(widget.name, emptyCustomList.sum);
+    addMaterialCosts(widget.name, totalMaterial2);
+    addBudgetSum(widget.name, totalTotalPrice);
+
     // Create the "Total Sum" row
     DataRow totalSumRow = DataRow(
       cells: [
@@ -293,6 +292,9 @@ class _InnerDoorItemScreenState extends State<InnerDoorItemScreen> {
           DataCell(
             TextField(
               controller: quantityCalculationControllers,
+              decoration: InputDecoration(
+                  fillColor: const Color.fromARGB(255, 218, 128, 122),
+                  filled: true),
               onChanged: (value) {
                 // Handle changes to the quantity
                 calculationQuantity = double.parse(value);
@@ -742,6 +744,12 @@ class _InnerDoorItemScreenState extends State<InnerDoorItemScreen> {
                       material2Controllers,
                       totalPriceControllers,
                       widget.name,
+                    );
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      SnackBar(
+                        content: Text(
+                            'Excel file has been created in your Downloads folder'),
+                      ),
                     );
                   },
                   child: Text("Save"),

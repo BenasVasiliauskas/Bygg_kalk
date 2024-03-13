@@ -1,3 +1,7 @@
+import 'dart:convert';
+import 'dart:io';
+
+import 'package:cost_calculator/models/outer_wall_data_model.dart';
 import 'package:flutter/material.dart';
 import '../../constants/budget_constants.dart';
 import '../../constants/innerwall_constants.dart';
@@ -37,6 +41,8 @@ class ExteriorWallItemsScreen extends StatefulWidget {
 }
 
 List<double> emptyCustomList = [];
+bool isCalculationQuantityInitialized = false;
+bool areHourlyRatesInitialized = false;
 
 class _ExteriorWallItemsScreenState extends State<ExteriorWallItemsScreen> {
   List<DataRow> rows = [];
@@ -59,15 +65,10 @@ class _ExteriorWallItemsScreenState extends State<ExteriorWallItemsScreen> {
   //
   List<TextEditingController> customColumnControllers = [];
 
+  double calculationQuantity = 1;
+  double hourlyRateConstructionRemodeling = 550;
   void initialiseEmptyList() {
     emptyCustomList = createList(widget.description.length);
-  }
-
-  //used in Sparkling strimmel, flekksp.1, skjøtsp. 2, helsp.1, grunning. 2 strøk maling / Sparkling strip, stain p.1, joint p.2, full p.1, primer. 2 coats of paint
-  //also used in 2 strøk beis, utvendig	/ 2 coats of stain, exterior
-  double calculateCostPainting(int index) {
-    double laborCost = widget.laborHours2[index];
-    return laborCost * hourlyRatePainting;
   }
 
   double calculateMaterialQuantity(int index) {
@@ -165,9 +166,10 @@ class _ExteriorWallItemsScreenState extends State<ExteriorWallItemsScreen> {
           ),
         ),
         DataCell(
-          Container(
-            width: 100,
-            child: Text(totalCustomColumn.toStringAsFixed(2)),
+          TextField(
+            readOnly: true,
+            controller: TextEditingController(
+                text: totalCustomColumn.toStringAsFixed(2)),
           ),
         ),
         DataCell(
@@ -265,6 +267,7 @@ class _ExteriorWallItemsScreenState extends State<ExteriorWallItemsScreen> {
 
     // Set the initial values from widget data to controllers
     setInitialValues();
+    // Initialize variables only once
   }
 
   @override
@@ -276,10 +279,6 @@ class _ExteriorWallItemsScreenState extends State<ExteriorWallItemsScreen> {
 
       DataColumn(label: Text('Hourly Rate - Construction/Remodeling')),
       //DataColumn(label: Text('Time pris. Ny bygg og ombygging.')),
-      DataColumn(label: Text('Hourly Rate - Demolition')),
-      //DataColumn(label: Text('Time pris.Riving.')),
-      DataColumn(label: Text('Hourly Rate - Painting')),
-      // DataColumn(label: Text('Time pris.Maling. ')),
       DataColumn(label: Text('Unit')),
       //DataColumn(label: Text('Enhet')),
     ];
@@ -289,6 +288,9 @@ class _ExteriorWallItemsScreenState extends State<ExteriorWallItemsScreen> {
         cells: [
           DataCell(
             TextField(
+              decoration: InputDecoration(
+                  fillColor: const Color.fromARGB(255, 218, 128, 122),
+                  filled: true),
               controller: quantityCalculationControllers,
               onChanged: (value) {
                 // Handle changes to the quantity
@@ -308,18 +310,9 @@ class _ExteriorWallItemsScreenState extends State<ExteriorWallItemsScreen> {
                   laborCostControllers[i].text =
                       calculateJobCost(i).toStringAsFixed(2);
 
-                  // Recalculate and update the labor cost when quantity changes
-                  if (widget.description[i] ==
-                          "Sparkling strip, stain sp.1, joint sp. 2, full sp.1, primer. 2 coats of paint" ||
-                      widget.description[i] == "2 coats stain, exterior") {
-                    widget.laborCost[i] = calculateCostPainting(i);
-                    laborCostControllers[i].text =
-                        calculateCostPainting(i).toStringAsFixed(2);
-                  } else {
-                    widget.laborCost[i] = calculateJobCost(i);
-                    laborCostControllers[i].text =
-                        calculateJobCost(i).toStringAsFixed(2);
-                  }
+                  widget.laborCost[i] = calculateJobCost(i);
+                  laborCostControllers[i].text =
+                      calculateJobCost(i).toStringAsFixed(2);
 
                   // Recalculate and update the material 2 when quantity changes
                   widget.material2[i] = calculateMaterialCost(i);
@@ -340,6 +333,9 @@ class _ExteriorWallItemsScreenState extends State<ExteriorWallItemsScreen> {
             ),
           ),
           DataCell(TextField(
+            decoration: InputDecoration(
+                fillColor: const Color.fromARGB(255, 218, 128, 122),
+                filled: true),
             controller: hourlyRateConstructionRemodelingController,
             onChanged: (value) {
               hourlyRateConstructionRemodeling = double.parse(value);
@@ -367,22 +363,6 @@ class _ExteriorWallItemsScreenState extends State<ExteriorWallItemsScreen> {
             },
             keyboardType: TextInputType.numberWithOptions(decimal: true),
           )),
-          DataCell(
-            Container(
-              width: 200, // Set a fixed width or use flexible width
-              child: Text(
-                hourlyRateDemolition.toStringAsFixed(2),
-              ),
-            ),
-          ),
-          DataCell(
-            Container(
-              width: 200, // Set a fixed width or use flexible width
-              child: Text(
-                hourlyRatePainting.toStringAsFixed(2),
-              ),
-            ),
-          ),
           DataCell(
             Container(
               width: 200, // Set a fixed width or use flexible width
@@ -533,6 +513,9 @@ class _ExteriorWallItemsScreenState extends State<ExteriorWallItemsScreen> {
             ), // custom column cell
             DataCell(
               TextField(
+                decoration: InputDecoration(
+                    fillColor: Color.fromARGB(255, 131, 138, 235),
+                    filled: true),
                 style:
                     TextStyle(color: customColumn ? Colors.black : Colors.grey),
                 readOnly: !customColumn,
@@ -593,6 +576,9 @@ class _ExteriorWallItemsScreenState extends State<ExteriorWallItemsScreen> {
             ),
             DataCell(
               TextField(
+                decoration: InputDecoration(
+                    fillColor: const Color.fromARGB(255, 218, 128, 122),
+                    filled: true),
                 controller: material1Controllers[i],
                 onChanged: (value) {
                   // Handle changes to material 1
@@ -633,6 +619,9 @@ class _ExteriorWallItemsScreenState extends State<ExteriorWallItemsScreen> {
             ),
             DataCell(
               TextField(
+                decoration: InputDecoration(
+                    fillColor: Color.fromARGB(255, 153, 240, 131),
+                    filled: true),
                 controller: totalPriceControllers[i],
                 onChanged: (value) {
                   // Handle changes to the total price
@@ -666,17 +655,16 @@ class _ExteriorWallItemsScreenState extends State<ExteriorWallItemsScreen> {
       totalTotalPrice += widget.totalPrice[i];
     }
 
+    addHours(widget.name, totalLaborHours2);
     if (customColumn) {
-      addHours(widget.name, totalLaborHours1);
       addLaborCosts(widget.name, emptyCustomList.sum);
-      addMaterialCosts(widget.name, totalMaterial2);
-      addBudgetSum(widget.name, totalTotalPrice);
     } else {
-      addHours(widget.name, totalLaborHours1);
-      addLaborCosts(widget.name, totalLaborCost);
-      addMaterialCosts(widget.name, totalMaterial2);
-      addBudgetSum(widget.name, totalTotalPrice);
+      addLaborCosts(widget.name, totalLaborHours2);
     }
+
+    addMaterialCosts(widget.name, totalMaterial2);
+    addBudgetSum(widget.name, totalTotalPrice);
+    // look at budget and figure wtf im doing here
 
 // Create the "Total Sum" row
     DataRow totalSumRow = DataRow(
@@ -712,14 +700,25 @@ class _ExteriorWallItemsScreenState extends State<ExteriorWallItemsScreen> {
                 Text(customColumn ? '' : totalLaborHours1.toStringAsFixed(2)),
           ),
         ),
-        DataCell(Container(
-          width: 100,
-          child: Text(
-            // calc custom hours
-            customColumn ? emptyCustomList.sum.toStringAsFixed(2) : '',
-            //need to recalc labor cost and use that in total sum if enabled
+        DataCell(
+          Container(
+            width: 100,
+            child: TextField(
+              readOnly: true,
+              decoration: customColumn
+                  ? InputDecoration(
+                      fillColor: Color.fromARGB(255, 131, 138, 235),
+                      filled: true)
+                  : InputDecoration(),
+              // calc custom hours
+              controller: TextEditingController(
+                  text: customColumn
+                      ? emptyCustomList.sum.toStringAsFixed(2)
+                      : ''),
+              //need to recalc labor cost and use that in total sum if enabled
+            ),
           ),
-        )),
+        ),
         DataCell(
           Container(
             width: 100,
@@ -733,9 +732,13 @@ class _ExteriorWallItemsScreenState extends State<ExteriorWallItemsScreen> {
           ),
         ),
         DataCell(
-          Container(
-            width: 100,
-            child: Text(totalMaterial1.toStringAsFixed(2)),
+          TextField(
+            decoration: InputDecoration(
+                fillColor: const Color.fromARGB(255, 218, 128, 122),
+                filled: true),
+            controller:
+                TextEditingController(text: totalMaterial1.toStringAsFixed(2)),
+            readOnly: true,
           ),
         ),
         DataCell(
@@ -745,9 +748,12 @@ class _ExteriorWallItemsScreenState extends State<ExteriorWallItemsScreen> {
           ),
         ),
         DataCell(
-          Container(
-            width: 100,
-            child: Text(totalTotalPrice.toStringAsFixed(2)),
+          TextField(
+            decoration: InputDecoration(
+                fillColor: Color.fromARGB(255, 153, 240, 131), filled: true),
+            controller:
+                TextEditingController(text: totalTotalPrice.toStringAsFixed(2)),
+            readOnly: true,
           ),
         ),
       ],
@@ -778,21 +784,52 @@ class _ExteriorWallItemsScreenState extends State<ExteriorWallItemsScreen> {
               child: Align(
                 child: FloatingActionButton(
                   onPressed: () {
-                    generateExteriorWallExcelDocument(
-                      "ExteriorWallItems",
-                      columns,
-                      widget.description,
-                      widget.unit,
-                      quantityControllers,
-                      materialQuantityControllers,
-                      laborHours1Controllers,
-                      customColumnControllers,
-                      laborHours2Controllers,
-                      laborCostControllers,
-                      material1Controllers,
-                      material2Controllers,
-                      totalPriceControllers,
-                      widget.name,
+                    Map<String, dynamic> jsonData = OuterWallModel(
+                      name: widget.name,
+                      description: widget.description,
+                      unit: widget.unit,
+                      quantity: widget.quantity,
+                      materialQuantity: widget.materialQuantity,
+                      laborHours1: widget.laborHours1,
+                      laborHours2: widget.laborHours2,
+                      laborCost: widget.laborCost,
+                      material: widget.material1,
+                      materials: widget.material2,
+                      totalPrice: widget.totalPrice,
+                    ).toJson();
+
+                    // Convert the JSON data to a string
+                    String jsonString = json.encode(jsonData);
+
+                    // Save the JSON data to a file or perform any other action
+                    // For example, you can save it to a file using the path_provider package
+                    // Make sure to import the necessary packages for file operations
+                    // Write the jsonString to a file here
+                    // For example:
+                    File file = File('result.json');
+                    file.writeAsStringSync(jsonString);
+
+                    // generateExteriorWallExcelDocument(
+                    //   "ExteriorWallItems",
+                    //   columns,
+                    //   widget.description,
+                    //   widget.unit,
+                    //   quantityControllers,
+                    //   materialQuantityControllers,
+                    //   laborHours1Controllers,
+                    //   customColumnControllers,
+                    //   laborHours2Controllers,
+                    //   laborCostControllers,
+                    //   material1Controllers,
+                    //   material2Controllers,
+                    //   totalPriceControllers,
+                    //   widget.name,
+                    // );
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      SnackBar(
+                        content: Text(
+                            'Excel file has been created in your Downloads folder'),
+                      ),
                     );
                   },
                   child: Text("Save"),

@@ -1054,7 +1054,7 @@ final parquetAndLaminate = [
       totalPrice: [0.00]),
   ParquetAndLaminateModel(
       name: "Surface covering parquet",
-      description: ["Parquet on subfloor, oak"],
+      description: ["Laminate flooring, oak"],
       unit: ["m²"],
       quantity: [1.00],
       laborHours1: [0.25],

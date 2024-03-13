@@ -1049,7 +1049,7 @@ final norwParquetAndLaminate = [
       totalPrice: [0.00]),
   ParquetAndLaminateModel(
       name: "Overflate dekker parkett",
-      description: ["Parkett på undergulv, eik"],
+      description: ["Laminat gulv på undergulv, eik"],
       unit: ["m²"],
       quantity: [1.00],
       laborHours1: [0.25],

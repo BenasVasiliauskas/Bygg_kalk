@@ -1,9 +1,19 @@
-each little tab has its own unique list of doubles ( totalhours totalmaterialcost.... ) , 
-that list gets updated on each call and sent to another list of doubles named for example
-innerDoorSums, and in the constants it gets summed up
+kitchen nereikia
+
+malling, hulltaking
+
+vjentilashion isimti
+
+mengde istrinti, matterial
+
+raudonai kur galima ivesti
+zaliai resultatas
+
+save data to json for reading
+
+calculation lentele tik 1 lauka naudoja istrinti, dazyma
+
+customhours to blue
 
 
-he suggested me the travel planning idea we had from group project
-
-
-
+darbo kaina budget

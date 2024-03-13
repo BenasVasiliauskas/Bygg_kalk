@@ -55,7 +55,10 @@ class _NorwKitchentemsScreenState extends State<NorwKitchentemsScreen> {
       TextEditingController();
   //
   List<TextEditingController> customColumnControllers = [];
-
+  double calculationQuantity = 1;
+  double hourlyRateConstructionRemodeling = 550;
+  double hourlyRateDemolition = 550;
+  double hourlyRatePainting = 500;
   void initialiseEmptyList() {
     emptyCustomList = createList(widget.description.length);
   }
@@ -276,6 +279,9 @@ class _NorwKitchentemsScreenState extends State<NorwKitchentemsScreen> {
           DataCell(
             TextField(
               controller: quantityCalculationControllers,
+              decoration: InputDecoration(
+                  fillColor: const Color.fromARGB(255, 218, 128, 122),
+                  filled: true),
               onChanged: (value) {
                 // Handle changes to the quantity
                 calculationQuantity = double.parse(value);
@@ -322,6 +328,9 @@ class _NorwKitchentemsScreenState extends State<NorwKitchentemsScreen> {
             ),
           ),
           DataCell(TextField(
+            decoration: InputDecoration(
+                fillColor: const Color.fromARGB(255, 218, 128, 122),
+                filled: true),
             controller: hourlyRateConstructionRemodelingController,
             onChanged: (value) {
               hourlyRateConstructionRemodeling = double.parse(value);
@@ -485,6 +494,9 @@ class _NorwKitchentemsScreenState extends State<NorwKitchentemsScreen> {
             ), // custom column cell
             DataCell(
               TextField(
+                decoration: InputDecoration(
+                    fillColor: Color.fromARGB(255, 131, 138, 235),
+                    filled: true),
                 style:
                     TextStyle(color: customColumn ? Colors.black : Colors.grey),
                 readOnly: !customColumn,
@@ -545,6 +557,9 @@ class _NorwKitchentemsScreenState extends State<NorwKitchentemsScreen> {
             ),
             DataCell(
               TextField(
+                decoration: InputDecoration(
+                    fillColor: const Color.fromARGB(255, 218, 128, 122),
+                    filled: true),
                 controller: material1Controllers[i],
                 onChanged: (value) {
                   // Handle changes to material 1
@@ -585,6 +600,9 @@ class _NorwKitchentemsScreenState extends State<NorwKitchentemsScreen> {
             ),
             DataCell(
               TextField(
+                decoration: InputDecoration(
+                    fillColor: Color.fromARGB(255, 153, 240, 131),
+                    filled: true),
                 controller: totalPriceControllers[i],
                 onChanged: (value) {
                   // Handle changes to the total price
@@ -617,18 +635,10 @@ class _NorwKitchentemsScreenState extends State<NorwKitchentemsScreen> {
       totalMaterial2 += widget.material2[i];
       totalTotalPrice += widget.totalPrice[i];
     }
-
-    if (customColumn) {
-      addHours(widget.name, totalLaborHours1);
-      addLaborCosts(widget.name, emptyCustomList.sum);
-      addMaterialCosts(widget.name, totalMaterial2);
-      addBudgetSum(widget.name, totalTotalPrice);
-    } else {
-      addHours(widget.name, totalLaborHours1);
-      addLaborCosts(widget.name, totalLaborCost);
-      addMaterialCosts(widget.name, totalMaterial2);
-      addBudgetSum(widget.name, totalTotalPrice);
-    }
+    addHours(widget.name, totalLaborHours2);
+    addLaborCosts(widget.name, emptyCustomList.sum);
+    addMaterialCosts(widget.name, totalMaterial2);
+    addBudgetSum(widget.name, totalTotalPrice);
 
 // Create the "Total Sum" row
     DataRow totalSumRow = DataRow(
@@ -658,14 +668,25 @@ class _NorwKitchentemsScreenState extends State<NorwKitchentemsScreen> {
                 Text(customColumn ? '' : totalLaborHours1.toStringAsFixed(2)),
           ),
         ),
-        DataCell(Container(
-          width: 100,
-          child: Text(
-            // calc custom hours
-            customColumn ? emptyCustomList.sum.toStringAsFixed(2) : '',
-            //need to recalc labor cost and use that in total sum if enabled
+        DataCell(
+          Container(
+            width: 100,
+            child: TextField(
+              readOnly: !customColumn,
+              decoration: customColumn
+                  ? InputDecoration(
+                      fillColor: Color.fromARGB(255, 131, 138, 235),
+                      filled: true)
+                  : InputDecoration(),
+              // calc custom hours
+              controller: TextEditingController(
+                  text: customColumn
+                      ? emptyCustomList.sum.toStringAsFixed(2)
+                      : ''),
+              //need to recalc labor cost and use that in total sum if enabled
+            ),
           ),
-        )),
+        ),
         DataCell(
           Container(
             width: 100,
@@ -679,9 +700,13 @@ class _NorwKitchentemsScreenState extends State<NorwKitchentemsScreen> {
           ),
         ),
         DataCell(
-          Container(
-            width: 100,
-            child: Text(totalMaterial1.toStringAsFixed(2)),
+          TextField(
+            decoration: InputDecoration(
+                fillColor: const Color.fromARGB(255, 218, 128, 122),
+                filled: true),
+            controller:
+                TextEditingController(text: totalMaterial1.toStringAsFixed(2)),
+            readOnly: true,
           ),
         ),
         DataCell(
@@ -691,9 +716,12 @@ class _NorwKitchentemsScreenState extends State<NorwKitchentemsScreen> {
           ),
         ),
         DataCell(
-          Container(
-            width: 100,
-            child: Text(totalTotalPrice.toStringAsFixed(2)),
+          TextField(
+            decoration: InputDecoration(
+                fillColor: Color.fromARGB(255, 153, 240, 131), filled: true),
+            controller:
+                TextEditingController(text: totalTotalPrice.toStringAsFixed(2)),
+            readOnly: true,
           ),
         ),
       ],
@@ -739,6 +767,12 @@ class _NorwKitchentemsScreenState extends State<NorwKitchentemsScreen> {
                       material2Controllers,
                       totalPriceControllers,
                       widget.name,
+                    );
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      SnackBar(
+                        content: Text(
+                            'Excel-filen er opprettet i mappen Nedlastinger'),
+                      ),
                     );
                   },
                   child: Text("Save"),
