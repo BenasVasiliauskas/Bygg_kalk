@@ -15,7 +15,7 @@ class _NorwBudgetScreenState extends State<NorwBudgetScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Budget Screen'),
+        title: Text('Budsjettskjermen'),
       ),
       drawer: CustomDrawer(
         languageEnglish: languageEnglish,
@@ -30,39 +30,94 @@ class _NorwBudgetScreenState extends State<NorwBudgetScreen> {
         scrollDirection: Axis.horizontal,
         child: SingleChildScrollView(
           child: DataTable(
+            columnSpacing: 10,
             columns: [
-              DataColumn(label: Text('Name')),
-              DataColumn(label: Text('Totalt antall timer')),
-              DataColumn(label: Text('Arbeidskostnader')),
-              DataColumn(label: Text('Materialkostnade')),
-              DataColumn(label: Text('Budsjettsum')),
+              DataColumn(
+                label: SizedBox(
+                  width: 70,
+                  child: Text(
+                    'Name',
+                  ),
+                ),
+              ),
+              DataColumn(
+                label: SizedBox(
+                  width: 80,
+                  child: Text(
+                    'Totalt antall timer',
+                    softWrap: true,
+                  ),
+                ),
+              ),
+              DataColumn(
+                label: SizedBox(
+                  width: 80,
+                  child: Text(
+                    'Arbeidskostnader',
+                    softWrap: true,
+                  ),
+                ),
+              ),
+              DataColumn(
+                label: SizedBox(
+                  width: 80,
+                  child: Text(
+                    'Materialkostnade',
+                    softWrap: true,
+                  ),
+                ),
+              ),
+              DataColumn(
+                label: SizedBox(
+                  width: 85,
+                  child: Text(
+                    'Budsjettsum',
+                    softWrap: true,
+                  ),
+                ),
+              ),
             ],
             rows: List.generate(calculatedNamesOrder.length, (index) {
               return DataRow(
                 cells: [
                   DataCell(
-                    Center(
-                      child: Text(calculatedNamesOrder[index]),
+                    SizedBox(
+                      width: 100,
+                      child: Text(
+                        calculatedNamesOrder[index],
+                      ),
                     ),
                   ),
                   DataCell(
-                    Text(
-                      totalHours[index].toStringAsFixed(2),
+                    SizedBox(
+                      width: 70,
+                      child: Text(
+                        totalHours[index].toStringAsFixed(2),
+                      ),
                     ),
                   ),
                   DataCell(
-                    Text(
-                      totalLaborCosts[index].toStringAsFixed(2),
+                    SizedBox(
+                      width: 70,
+                      child: Text(
+                        totalLaborCosts[index].toStringAsFixed(2),
+                      ),
                     ),
                   ),
                   DataCell(
-                    Text(
-                      totalMaterialCosts[index].toStringAsFixed(2),
+                    SizedBox(
+                      width: 70,
+                      child: Text(
+                        totalMaterialCosts[index].toStringAsFixed(2),
+                      ),
                     ),
                   ),
                   DataCell(
-                    Text(
-                      budgetSums[index].toStringAsFixed(2),
+                    SizedBox(
+                      width: 100,
+                      child: Text(
+                        budgetSums[index].toStringAsFixed(2),
+                      ),
                     ),
                   ),
                 ],
@@ -74,3 +129,13 @@ class _NorwBudgetScreenState extends State<NorwBudgetScreen> {
     );
   }
 }
+
+
+
+/*
+DataColumn(label: Text('')),
+              DataColumn(label: Text('')),
+              DataColumn(label: Text('')),
+              DataColumn(label: Text('')),
+           
+              */

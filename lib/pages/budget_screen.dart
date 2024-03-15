@@ -28,54 +28,102 @@ class _BudgetScreenState extends State<BudgetScreen> {
       ),
       body: SingleChildScrollView(
         controller: _scrollController,
-        scrollDirection: Axis.vertical, // Changed to vertical
+        scrollDirection: Axis.horizontal,
         child: SingleChildScrollView(
-          scrollDirection: Axis.horizontal, // Changed to horizontal
-          child: Column(
-            // Changed to Column
-            children: [
-              // Changed to a list of Widgets
-              DataTable(
-                columns: [
-                  DataColumn(label: Text('Name')),
-                  DataColumn(label: Text('Total Hours')),
-                  DataColumn(label: Text('Labor Costs')),
-                  DataColumn(label: Text('Material Costs')),
-                  DataColumn(label: Text('Budget Sum')),
-                ],
-                rows: List.generate(calculatedNamesOrder.length, (index) {
-                  return DataRow(
-                    cells: [
-                      DataCell(
-                        Center(
-                          child: Text(calculatedNamesOrder[index]),
-                        ),
-                      ),
-                      DataCell(
-                        Text(
-                          totalHours[index].toStringAsFixed(2),
-                        ),
-                      ),
-                      DataCell(
-                        Text(
-                          totalLaborCosts[index].toStringAsFixed(2),
-                        ),
-                      ),
-                      DataCell(
-                        Text(
-                          totalMaterialCosts[index].toStringAsFixed(2),
-                        ),
-                      ),
-                      DataCell(
-                        Text(
-                          budgetSums[index].toStringAsFixed(2),
-                        ),
-                      ),
-                    ],
-                  );
-                }),
+          child: DataTable(
+            columnSpacing: 10,
+            columns: [
+              DataColumn(
+                label: SizedBox(
+                  width: 70,
+                  child: Text(
+                    'Name',
+                  ),
+                ),
+              ),
+              DataColumn(
+                label: SizedBox(
+                  width: 50,
+                  child: Text(
+                    'Total Hours',
+                    softWrap: true,
+                  ),
+                ),
+              ),
+              DataColumn(
+                label: SizedBox(
+                  width: 50,
+                  child: Text(
+                    'Labor Costs',
+                    softWrap: true,
+                  ),
+                ),
+              ),
+              DataColumn(
+                label: SizedBox(
+                  width: 55,
+                  child: Text(
+                    'Material Costs',
+                    softWrap: true,
+                  ),
+                ),
+              ),
+              DataColumn(
+                label: SizedBox(
+                  width: 50,
+                  child: Text(
+                    'Budget Sum',
+                    softWrap: true,
+                  ),
+                ),
               ),
             ],
+            rows: List.generate(calculatedNamesOrder.length, (index) {
+              return DataRow(
+                cells: [
+                  DataCell(
+                    SizedBox(
+                      width: 100,
+                      child: Text(
+                        calculatedNamesOrder[index],
+                      ),
+                    ),
+                  ),
+                  DataCell(
+                    SizedBox(
+                      width: 70,
+                      child: Text(
+                        totalHours[index].toStringAsFixed(2),
+                      ),
+                    ),
+                  ),
+                  DataCell(
+                    SizedBox(
+                      width: 70,
+                      child: Text(
+                        totalLaborCosts[index].toStringAsFixed(2),
+                      ),
+                    ),
+                  ),
+                  DataCell(
+                    SizedBox(
+                      width: 70,
+                      child: Text(
+                        totalMaterialCosts[index].toStringAsFixed(2),
+                      ),
+                    ),
+                  ),
+                  DataCell(
+                    SizedBox(
+                      width: 100,
+                      child: Text(
+                        budgetSums[index].toStringAsFixed(2),
+                      ),
+                    ),
+                  ),
+                ],
+              );
+            }),
           ),
         ),
       ),
