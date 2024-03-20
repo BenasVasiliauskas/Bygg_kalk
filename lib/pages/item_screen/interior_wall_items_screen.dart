@@ -279,15 +279,12 @@ class _InteriorWallItemsScreenState extends State<InteriorWallItemsScreen> {
   Widget build(BuildContext context) {
     List<DataColumn> calculationColumns = [
       DataColumn(
-          label: Text(
-              'Calculation Quantity')), //DataColumn(label: Text('Mengde')),
+        label: Text('Calculation Quantity'),
+      ), //DataColumn(label: Text('Mengde')),
 
       DataColumn(label: Text('Hourly Rate - Construction/Remodeling')),
       //DataColumn(label: Text('Time pris. Ny bygg og ombygging.')),
-      DataColumn(label: Text('Hourly Rate - Demolition')),
-      //DataColumn(label: Text('Time pris.Riving.')),
-      DataColumn(label: Text('Hourly Rate - Painting')),
-      // DataColumn(label: Text('Time pris.Maling. ')),
+
       DataColumn(label: Text('Unit')),
       //DataColumn(label: Text('Enhet')),
     ];
@@ -350,6 +347,9 @@ class _InteriorWallItemsScreenState extends State<InteriorWallItemsScreen> {
             ),
           ),
           DataCell(TextField(
+            decoration: InputDecoration(
+                fillColor: const Color.fromARGB(255, 218, 128, 122),
+                filled: true),
             controller: hourlyRateConstructionRemodelingController,
             onChanged: (value) {
               hourlyRateConstructionRemodeling = double.parse(value);
@@ -377,22 +377,6 @@ class _InteriorWallItemsScreenState extends State<InteriorWallItemsScreen> {
             },
             keyboardType: TextInputType.numberWithOptions(decimal: true),
           )),
-          DataCell(
-            Container(
-              width: 200, // Set a fixed width or use flexible width
-              child: Text(
-                hourlyRateDemolition.toStringAsFixed(2),
-              ),
-            ),
-          ),
-          DataCell(
-            Container(
-              width: 200, // Set a fixed width or use flexible width
-              child: Text(
-                hourlyRatePainting.toStringAsFixed(2),
-              ),
-            ),
-          ),
           DataCell(
             Container(
               width: 200, // Set a fixed width or use flexible width
@@ -543,6 +527,9 @@ class _InteriorWallItemsScreenState extends State<InteriorWallItemsScreen> {
             ), // custom column cell
             DataCell(
               TextField(
+                decoration: InputDecoration(
+                    fillColor: Color.fromARGB(255, 131, 138, 235),
+                    filled: true),
                 style:
                     TextStyle(color: customColumn ? Colors.black : Colors.grey),
                 readOnly: !customColumn,
@@ -603,6 +590,9 @@ class _InteriorWallItemsScreenState extends State<InteriorWallItemsScreen> {
             ),
             DataCell(
               TextField(
+                decoration: InputDecoration(
+                    fillColor: const Color.fromARGB(255, 218, 128, 122),
+                    filled: true),
                 controller: material1Controllers[i],
                 onChanged: (value) {
                   // Handle changes to material 1
@@ -643,6 +633,9 @@ class _InteriorWallItemsScreenState extends State<InteriorWallItemsScreen> {
             ),
             DataCell(
               TextField(
+                decoration: InputDecoration(
+                    fillColor: Color.fromARGB(255, 153, 240, 131),
+                    filled: true),
                 controller: totalPriceControllers[i],
                 onChanged: (value) {
                   // Handle changes to the total price
@@ -710,14 +703,25 @@ class _InteriorWallItemsScreenState extends State<InteriorWallItemsScreen> {
                 Text(customColumn ? '' : totalLaborHours1.toStringAsFixed(2)),
           ),
         ),
-        DataCell(Container(
-          width: 100,
-          child: Text(
-            // calc custom hours
-            customColumn ? emptyCustomList.sum.toStringAsFixed(2) : '',
-            //need to recalc labor cost and use that in total sum if enabled
+        DataCell(
+          Container(
+            width: 100,
+            child: TextField(
+              readOnly: true,
+              decoration: customColumn
+                  ? InputDecoration(
+                      fillColor: Color.fromARGB(255, 131, 138, 235),
+                      filled: true)
+                  : InputDecoration(),
+              // calc custom hours
+              controller: TextEditingController(
+                  text: customColumn
+                      ? emptyCustomList.sum.toStringAsFixed(2)
+                      : ''),
+              //need to recalc labor cost and use that in total sum if enabled
+            ),
           ),
-        )),
+        ),
         DataCell(
           Container(
             width: 100,
@@ -731,9 +735,13 @@ class _InteriorWallItemsScreenState extends State<InteriorWallItemsScreen> {
           ),
         ),
         DataCell(
-          Container(
-            width: 100,
-            child: Text(totalMaterial1.toStringAsFixed(2)),
+          TextField(
+            decoration: InputDecoration(
+                fillColor: const Color.fromARGB(255, 218, 128, 122),
+                filled: true),
+            controller:
+                TextEditingController(text: totalMaterial1.toStringAsFixed(2)),
+            readOnly: true,
           ),
         ),
         DataCell(
@@ -743,9 +751,12 @@ class _InteriorWallItemsScreenState extends State<InteriorWallItemsScreen> {
           ),
         ),
         DataCell(
-          Container(
-            width: 100,
-            child: Text(totalTotalPrice.toStringAsFixed(2)),
+          TextField(
+            decoration: InputDecoration(
+                fillColor: Color.fromARGB(255, 153, 240, 131), filled: true),
+            controller:
+                TextEditingController(text: totalTotalPrice.toStringAsFixed(2)),
+            readOnly: true,
           ),
         ),
       ],
