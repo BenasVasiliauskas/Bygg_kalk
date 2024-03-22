@@ -1,5 +1,6 @@
 import 'package:cost_calculator/functions/create_worksheet.dart';
 import 'package:cost_calculator/functions/save_to_json.dart';
+import 'package:cost_calculator/models/inner_wall_data_model.dart';
 import 'package:flutter/material.dart';
 import 'package:collection/collection.dart';
 
@@ -64,6 +65,7 @@ class _InteriorWallItemsScreenState extends State<InteriorWallItemsScreen> {
   double hourlyRateConstructionRemodeling = 550;
   double hourlyRateDemolition = 550;
   double hourlyRatePainting = 500;
+
   void initialiseEmptyList() {
     emptyCustomList = createList(widget.description.length);
   }
@@ -782,6 +784,33 @@ class _InteriorWallItemsScreenState extends State<InteriorWallItemsScreen> {
                 columns: columns, // Define your columns here
                 rows: rows,
               ),
+            ),
+            FloatingActionButton(
+              onPressed: () {
+                InnerWallModel innerWallModel = InnerWallModel(
+                  name: widget.name,
+                  description: widget.description,
+                  unit: widget.unit,
+                  quantity: widget.quantity,
+                  materialQuantity: widget.materialQuantity,
+                  laborHours1: widget.laborHours1,
+                  laborHours2: widget.laborHours2,
+                  laborCost: widget.laborCost,
+                  material1: widget.material1,
+                  material2: widget.material2,
+                  totalPrice: widget.totalPrice,
+                );
+                writeJson(innerWallModel);
+                ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                    content: Text('Data has been saved to JSON file')));
+              },
+              child: Text("Save to JSON"),
+              heroTag: "btn1",
+            ),
+            FloatingActionButton(
+              onPressed: () {},
+              child: Text("Load data"),
+              heroTag: "btn2",
             ),
             Padding(
               padding: EdgeInsets.fromLTRB(25, 0, 0, 0),
