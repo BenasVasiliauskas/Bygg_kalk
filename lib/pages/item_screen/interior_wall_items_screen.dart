@@ -8,17 +8,17 @@ import '../../constants/budget_constants.dart';
 import '../../constants/innerwall_constants.dart';
 
 class InteriorWallItemsScreen extends StatefulWidget {
-  final String name;
-  final List<String> description;
-  final List<String> unit;
-  final List<double> quantity;
-  final List<double> materialQuantity;
-  final List<double> laborHours1;
-  final List<double> laborHours2;
-  final List<double> laborCost;
-  final List<double> material1;
-  final List<double> material2;
-  final List<double> totalPrice;
+  String name;
+  List<String> description;
+  List<String> unit;
+  List<double> quantity;
+  List<double> materialQuantity;
+  List<double> laborHours1;
+  List<double> laborHours2;
+  List<double> laborCost;
+  List<double> material1;
+  List<double> material2;
+  List<double> totalPrice;
 
   InteriorWallItemsScreen(
     this.name,
@@ -808,10 +808,32 @@ class _InteriorWallItemsScreenState extends State<InteriorWallItemsScreen> {
               heroTag: "btn1",
             ),
             FloatingActionButton(
-              onPressed: () {},
-              child: Text("Load data"),
-              heroTag: "btn2",
-            ),
+                child: Text("Load data"),
+                heroTag: "btn2",
+                onPressed: () {
+                  readJsonFile().then(
+                    (value) {
+                      InnerWallModel innerWallModel =
+                          InnerWallModel.fromJson(value);
+                      print(innerWallModel);
+                      setState(() {
+                        widget.description = innerWallModel.description;
+                        widget.unit = innerWallModel.unit;
+                        widget.quantity = innerWallModel.quantity;
+                        widget.materialQuantity =
+                            innerWallModel.materialQuantity;
+                        widget.laborHours1 = innerWallModel.laborHours1;
+                        widget.laborHours2 = innerWallModel.laborHours2;
+                        widget.laborCost = innerWallModel.laborCost;
+                        widget.material1 = innerWallModel.material1;
+                        widget.material2 = innerWallModel.material2;
+                        widget.totalPrice = innerWallModel.totalPrice;
+                        setInitialValues();
+                        updateTotalSum();
+                      });
+                    },
+                  );
+                }),
             Padding(
               padding: EdgeInsets.fromLTRB(25, 0, 0, 0),
               child: Align(

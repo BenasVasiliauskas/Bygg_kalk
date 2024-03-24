@@ -26,8 +26,10 @@ class InnerWallModel {
     required this.material1,
     required this.material2,
     required this.totalPrice,
-    this.color = Colors.orange,
-  });
+    Color? color, // Change to nullable Color
+  }) : color = color ??
+            Colors.orange; // Initialize color with Colors.orange if null
+
   Map<String, dynamic> toJson() {
     return {
       'name': name,
@@ -43,4 +45,38 @@ class InnerWallModel {
       'totalPrice': totalPrice,
     };
   }
+
+  InnerWallModel.fromJson(Map<String, dynamic> json)
+      : name = json['name'],
+        description = (json['description'] as List<dynamic>)
+            .map((item) => item.toString())
+            .toList(),
+        unit = (json['unit'] as List<dynamic>)
+            .map((item) => item.toString())
+            .toList(),
+        quantity = json['quantity'] is List
+            ? json['quantity'].cast<double>().toList()
+            : [],
+        materialQuantity = json['materialQuantity'] is List
+            ? json['materialQuantity'].cast<double>().toList()
+            : [],
+        laborHours1 = json['laborHours1'] is List
+            ? json['laborHours1'].cast<double>().toList()
+            : [],
+        laborHours2 = json['laborHours2'] is List
+            ? json['laborHours2'].cast<double>().toList()
+            : [],
+        laborCost = json['laborCost'] is List
+            ? json['laborCost'].cast<double>().toList()
+            : [],
+        material1 = json['material1'] is List
+            ? json['material1'].cast<double>().toList()
+            : [],
+        material2 = json['material2'] is List
+            ? json['material2'].cast<double>().toList()
+            : [],
+        totalPrice = json['totalPrice'] is List
+            ? json['totalPrice'].cast<double>().toList()
+            : [],
+        color = Colors.orange; // Initialize color with Colors.orange
 }

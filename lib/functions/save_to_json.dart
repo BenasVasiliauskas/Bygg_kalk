@@ -2,6 +2,7 @@
 // make a pop up for user to input name then save the file to default download location?
 
 import 'dart:convert';
+
 import 'dart:io';
 
 import 'package:cost_calculator/models/inner_wall_data_model.dart';
@@ -37,4 +38,22 @@ Future<File> writeJson(InnerWallModel wallModel) async {
   await file.writeAsString(jsonEncode(jsonData));
 
   return file;
+}
+
+Future<File> get _jsonFile async {
+  final path = await localPath;
+
+  return File('$path/InnerWalls.json');
+}
+
+Future readJsonFile() async {
+  String jsonContent = "";
+  File file = await _jsonFile;
+  try {
+    jsonContent = await file.readAsString();
+    return json.decode(jsonContent);
+  } catch (e) {
+    print("Error reading from file: $e");
+  }
+  return null;
 }
