@@ -22,14 +22,14 @@ Future<String> get localPath async {
   return directory.path;
 }
 
-Future<File> get localFile async {
+Future<File> localFile(String name) async {
   final path = await localPath;
 
-  return File('$path/InnerWalls.json');
+  return File('$path/${name}.json');
 }
 
 Future<File> writeJson(InnerWallModel wallModel) async {
-  final file = await localFile;
+  final file = await localFile(wallModel.name);
 
   // Convert list of InnerWallModel objects to a list of maps
   Map<String, dynamic> jsonData = wallModel.toJson();
@@ -40,15 +40,15 @@ Future<File> writeJson(InnerWallModel wallModel) async {
   return file;
 }
 
-Future<File> get _jsonFile async {
+Future<File> _jsonFile(String fileName) async {
   final path = await localPath;
 
-  return File('$path/InnerWalls.json');
+  return File('$path/${fileName}.json');
 }
 
-Future readJsonFile() async {
+Future readJsonFile(String fileName) async {
   String jsonContent = "";
-  File file = await _jsonFile;
+  File file = await _jsonFile(fileName);
   try {
     jsonContent = await file.readAsString();
     return json.decode(jsonContent);

@@ -53,7 +53,8 @@ class _InteriorWallItemsScreenState extends State<InteriorWallItemsScreen> {
   List<TextEditingController> material1Controllers = [];
   List<TextEditingController> material2Controllers = [];
   List<TextEditingController> totalPriceControllers = [];
-
+  late TextEditingController savingController;
+  late TextEditingController loadingController;
   //
   TextEditingController quantityCalculationControllers =
       TextEditingController();
@@ -65,6 +66,8 @@ class _InteriorWallItemsScreenState extends State<InteriorWallItemsScreen> {
   double hourlyRateConstructionRemodeling = 550;
   double hourlyRateDemolition = 550;
   double hourlyRatePainting = 500;
+
+  String name = '';
 
   void initialiseEmptyList() {
     emptyCustomList = createList(widget.description.length);
@@ -243,6 +246,8 @@ class _InteriorWallItemsScreenState extends State<InteriorWallItemsScreen> {
       customColumnControllers.add(TextEditingController());
     }
     initialiseEmptyList();
+    savingController = TextEditingController();
+    loadingController = TextEditingController();
   }
 
   void setInitialValues() {
@@ -276,6 +281,13 @@ class _InteriorWallItemsScreenState extends State<InteriorWallItemsScreen> {
 
     // Set the initial values from widget data to controllers
     setInitialValues();
+  }
+
+  @override
+  void dispose() {
+    savingController.dispose();
+    loadingController.dispose();
+    super.dispose();
   }
 
   @override
@@ -786,9 +798,14 @@ class _InteriorWallItemsScreenState extends State<InteriorWallItemsScreen> {
               ),
             ),
             FloatingActionButton(
-              onPressed: () {
+              onPressed: () async {
+                final name = await openDialog();
+                if (name == null || name.isEmpty) return;
+                setState(() {
+                  this.name = name;
+                });
                 InnerWallModel innerWallModel = InnerWallModel(
-                  name: widget.name,
+                  name: name,
                   description: widget.description,
                   unit: widget.unit,
                   quantity: widget.quantity,
@@ -802,7 +819,7 @@ class _InteriorWallItemsScreenState extends State<InteriorWallItemsScreen> {
                 );
                 writeJson(innerWallModel);
                 ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                    content: Text('Data has been saved to JSON file')));
+                    content: Text('Data has been saved as $name.json')));
               },
               child: Text("Save to JSON"),
               heroTag: "btn1",
@@ -811,11 +828,16 @@ class _InteriorWallItemsScreenState extends State<InteriorWallItemsScreen> {
                 child: Text("Load data"),
                 heroTag: "btn2",
                 onPressed: () {
-                  readJsonFile().then(
+                  openLoadingDialog().then((value) {
+                    if (value == null || value.isEmpty) return;
+                    setState(() {
+                      this.name = value;
+                    });
+                  });
+                  readJsonFile(name).then(
                     (value) {
                       InnerWallModel innerWallModel =
                           InnerWallModel.fromJson(value);
-                      print(innerWallModel);
                       setState(() {
                         widget.description = innerWallModel.description;
                         widget.unit = innerWallModel.unit;
@@ -863,7 +885,7 @@ class _InteriorWallItemsScreenState extends State<InteriorWallItemsScreen> {
                       ),
                     );
                   },
-                  child: Text("Save"),
+                  child: Text("Save to excel"),
                 ),
                 alignment: Alignment.centerLeft,
               ),
@@ -881,5 +903,58 @@ class _InteriorWallItemsScreenState extends State<InteriorWallItemsScreen> {
         ),
       ),
     );
+  }
+
+  Future<String?> openLoadingDialog() => showDialog<String>(
+        context: context,
+        builder: (context) => AlertDialog(
+          title: Text("Name of the file you want to load"),
+          content: TextField(
+            controller: loadingController,
+            autofocus: true,
+            decoration: InputDecoration(
+              hintText: "Enter the name of the file",
+            ),
+          ),
+          actions: [
+            TextButton(
+                onPressed: () {
+                  submitLoading();
+                },
+                child: Text("Load")),
+          ],
+        ),
+      );
+
+  void submitLoading() {
+    Navigator.of(context).pop(loadingController.text);
+    loadingController.clear();
+  }
+
+  Future<String?> openDialog() => showDialog<String>(
+        context: context,
+        builder: (context) => AlertDialog(
+          title: Text("Name the file"),
+          content: TextField(
+            controller: savingController,
+            autofocus: true,
+            decoration: InputDecoration(
+              hintText: "Enter the name of the file",
+            ),
+          ),
+          actions: [
+            TextButton(
+                onPressed: () {
+                  submit();
+                },
+                child: Text("Save")),
+          ],
+        ),
+      );
+
+  void submit() {
+    Navigator.of(context).pop(savingController.text);
+
+    savingController.clear();
   }
 }
