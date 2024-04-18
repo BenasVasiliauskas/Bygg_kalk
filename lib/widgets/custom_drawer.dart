@@ -1,5 +1,4 @@
 import 'package:cost_calculator/pages/inner_door_screen.dart';
-import 'package:cost_calculator/pages/kitchen_screen.dart';
 import 'package:cost_calculator/pages/parquet_laminate_screen.dart';
 
 import '../pages/budget_screen.dart';
