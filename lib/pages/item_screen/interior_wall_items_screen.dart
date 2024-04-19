@@ -350,42 +350,17 @@ class _InteriorWallItemsScreenState extends State<InteriorWallItemsScreen> {
       rows.add(
         DataRow(
           cells: [
-            DataCell(
-              Container(
-                width: 200, // Set the width as needed
-                child: Text(
-                  widget.description[i],
-                  maxLines: 3, // Set the maximum number of lines
-                  overflow:
-                      TextOverflow.ellipsis, // Allow text to overflow and wrap
-                ),
-              ),
-            ),
-            DataCell(
-              Container(
-                width: 100,
-                child: Text(
-                  widget.unit[i],
-                  maxLines: 3,
-                  overflow: TextOverflow.ellipsis,
-                ),
-              ),
-            ),
-            DataCell(
-              TextField(
-                readOnly: true,
-                controller: quantityControllers[i],
-              ),
-            ),
-            DataCell(
-              TextField(
-                readOnly: true,
-                controller: materialQuantityControllers[i],
-                onChanged: (value) {
-                  // Handle changes to the material quantity
-                  widget.materialQuantity[i] = double.parse(value);
-                },
-              ),
+            dataCellDisplay(widget.description, i),
+            dataCellDisplay(widget.unit, i),
+            dataCellDisplayController(quantityControllers, i),
+            dataCellDo(
+              materialQuantityControllers,
+              i,
+              (value) {
+                widget.materialQuantity[i] = double.parse(value);
+              },
+              Color.fromARGB(255, 255, 255, 255),
+              false,
             ),
             DataCell(
               TextField(
@@ -444,93 +419,82 @@ class _InteriorWallItemsScreenState extends State<InteriorWallItemsScreen> {
                     decimal: true), // Allow decimal numbers
               ),
             ),
-            DataCell(
-              TextField(
-                readOnly: true,
-                controller: laborHours2Controllers[i],
-                onChanged: (value) {
-                  // Handle changes to labor hours 2
-                  double parsedValue = double.parse(value);
-                  widget.laborHours2[i] = double.parse(parsedValue
-                      .toStringAsFixed(2)); // Format to 2 decimal places
-
-                  // Recalculate the labor cost when labor hours 2 changes
-                  double updatedLaborCost = calculateJobCost(i, widget,
-                      hourlyRateConstructionRemodeling); // Calculate the labor cost
-                  widget.laborCost[i] = double.parse(updatedLaborCost
-                      .toStringAsFixed(2)); // Format to 2 decimal places
-                },
-              ),
+            dataCellDo(
+              laborHours2Controllers,
+              i,
+              (value) {
+                // Handle changes to labor hours 2
+                double parsedValue = double.parse(value);
+                widget.laborHours2[i] =
+                    double.parse(parsedValue.toStringAsFixed(2));
+                // Recalculate the labor cost when labor hours 2 changes
+                double updatedLaborCost = calculateJobCost(i, widget,
+                    hourlyRateConstructionRemodeling); // Calculate the labor cost
+                widget.laborCost[i] =
+                    double.parse(updatedLaborCost.toStringAsFixed(2));
+              },
+              Color.fromARGB(255, 255, 255, 255),
+              true,
             ),
-            DataCell(
-              TextField(
-                controller: laborCostControllers[i],
-                readOnly: true,
-                onChanged: (value) {
-                  // Handle changes to labor cost
-                  widget.laborCost[i] = double.parse(value);
-                },
-              ),
+            dataCellDo(
+              laborCostControllers,
+              i,
+              (value) {
+                widget.laborCost[i] = double.parse(value);
+              },
+              Color.fromARGB(255, 255, 255, 255),
+              true,
             ),
-            DataCell(
-              TextField(
-                decoration: InputDecoration(
-                    fillColor: const Color.fromARGB(255, 218, 128, 122),
-                    filled: true),
-                controller: material1Controllers[i],
-                onChanged: (value) {
-                  // Handle changes to material 1
-                  double parsedValue = double.parse(value);
-                  widget.material1[i] = double.parse(parsedValue
-                      .toStringAsFixed(2)); // Format to 2 decimal places
+            dataCellDo(
+              material1Controllers,
+              i,
+              (value) {
+                // Handle changes to material 1
+                double parsedValue = double.parse(value);
+                widget.material1[i] = double.parse(parsedValue
+                    .toStringAsFixed(2)); // Format to 2 decimal places
 
-                  // Recalculate and update the material 2 when material 1 changes
-                  double updatedMaterial2 = calculateMaterialCost(i, widget,
-                      calculationQuantity, customColumn, emptyCustomList);
-                  widget.material2[i] = updatedMaterial2;
-                  material2Controllers[i].text =
-                      updatedMaterial2.toStringAsFixed(2);
+                // Recalculate and update the material 2 when material 1 changes
+                double updatedMaterial2 = calculateMaterialCost(i, widget,
+                    calculationQuantity, customColumn, emptyCustomList);
+                widget.material2[i] = updatedMaterial2;
+                material2Controllers[i].text =
+                    updatedMaterial2.toStringAsFixed(2);
 
-                  // Recalculate total price
-                  double updatedTotalPrice = calculateTotalPrice(i, widget,
-                      calculationQuantity, customColumn, emptyCustomList);
-                  widget.totalPrice[i] = updatedTotalPrice;
-                  totalPriceControllers[i].text =
-                      updatedTotalPrice.toStringAsFixed(2);
-                  // Format to 2 decimal places
+                // Recalculate total price
+                double updatedTotalPrice = calculateTotalPrice(i, widget,
+                    calculationQuantity, customColumn, emptyCustomList);
+                widget.totalPrice[i] = updatedTotalPrice;
+                totalPriceControllers[i].text =
+                    updatedTotalPrice.toStringAsFixed(2);
+                // Format to 2 decimal places
 
-                  rebuildDataTable();
-                },
-                keyboardType: TextInputType.numberWithOptions(
-                    decimal: true), // Allow decimal numbers
-              ),
+                rebuildDataTable();
+              },
+              Color.fromARGB(255, 218, 128, 122),
+              false,
             ),
-            DataCell(
-              TextField(
-                readOnly: true,
-                controller: material2Controllers[i],
-                onChanged: (value) {
-                  // Handle changes to material 2
-                  widget.material2[i] = double.parse(value);
-                  material2Controllers[i].text =
-                      widget.material2[i].toStringAsFixed(2);
-                },
-              ),
+            dataCellDo(
+              material2Controllers,
+              i,
+              (value) {
+                widget.material2[i] = double.parse(value);
+                material2Controllers[i].text =
+                    widget.material2[i].toStringAsFixed(2);
+              },
+              Color.fromARGB(255, 255, 255, 255),
+              true,
             ),
-            DataCell(
-              TextField(
-                decoration: InputDecoration(
-                    fillColor: Color.fromARGB(255, 153, 240, 131),
-                    filled: true),
-                controller: totalPriceControllers[i],
-                onChanged: (value) {
-                  // Handle changes to the total price
-                  widget.totalPrice[i] = double.parse(value);
-                  totalPriceControllers[i].text =
-                      widget.totalPrice[i].toStringAsFixed(2);
-                },
-                readOnly: true,
-              ),
+            dataCellDo(
+              totalPriceControllers,
+              i,
+              (value) {
+                widget.totalPrice[i] = double.parse(value);
+                totalPriceControllers[i].text =
+                    widget.totalPrice[i].toStringAsFixed(2);
+              },
+              Color.fromARGB(255, 153, 240, 131),
+              true,
             ),
           ],
         ),

@@ -92,6 +92,41 @@ Widget buildCustomColumnLabel(
   }
 }
 
+DataCell dataCellDisplay(List<String> text, int i) {
+  return DataCell(
+    Container(
+      width: 200, // Set the width as needed
+      child: Text(
+        text[i],
+        maxLines: 3, // Set the maximum number of lines
+        overflow: TextOverflow.ellipsis, // Allow text to overflow and wrap
+      ),
+    ),
+  );
+}
+
+DataCell dataCellDisplayController(
+    List<TextEditingController> controller, int i) {
+  return DataCell(
+    TextField(
+      readOnly: true,
+      controller: controller[i],
+    ),
+  );
+}
+
+DataCell dataCellDo(List<TextEditingController> controller, int i, Function f,
+    Color color, bool readOnly) {
+  return DataCell(
+    TextField(
+      readOnly: readOnly,
+      controller: controller[i],
+      onChanged: (value) => f(value),
+      decoration: InputDecoration(fillColor: color, filled: true),
+    ),
+  );
+}
+
 DataColumn createDataColumn(
     String label, double width, bool customColumn, VoidCallback onPressed) {
   return DataColumn(
