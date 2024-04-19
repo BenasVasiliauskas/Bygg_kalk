@@ -1,3 +1,5 @@
+// ignore_for_file: must_be_immutable
+
 import 'package:cost_calculator/functions/create_worksheet.dart';
 import 'package:cost_calculator/functions/initialise_functions.dart';
 import 'package:cost_calculator/functions/save_to_json.dart';
@@ -323,85 +325,23 @@ class _InteriorWallItemsScreenState extends State<InteriorWallItemsScreen> {
     ];
 
     List<DataColumn> columns = [
-      DataColumn(
-        label: SizedBox(
-          width: 200, // Set the width as needed
-          child: Text('Description'), //Text('Beskrivelse'),
-        ),
-      ),
-      DataColumn(
-        label: SizedBox(
-          width: 100, // Set the width as needed
-          child: Text('Unit'), //child: Text('Enhet'),
-        ),
-      ),
-      DataColumn(
-        label: SizedBox(
-          width: 100, // Set the width as needed
-          child: Text('Quantity'), //child: Text('Mengde'),
-        ),
-      ),
-      DataColumn(
-        label: SizedBox(
-          width: 150, // Set the width as needed
-          child: Text('Material quantity'), //child: Text('Mengde av material'),
-        ),
-      ),
-      DataColumn(
-        label: SizedBox(
-          width: 100, // Set the width as needed
-          child: Text('Hours', //child: Text('Enh. tid.'),
-              style:
-                  TextStyle(color: customColumn ? Colors.grey : Colors.black)),
-        ),
-      ),
-      DataColumn(
-          label: SizedBox(
-        width: customColumn ? 100 : 35, // Set the width as needed
-        child: TextButton(
-          style: TextButton.styleFrom(
-            foregroundColor: Colors.black,
-            backgroundColor: Colors.white,
-          ),
-          onPressed: () {
-            setState(() {
-              customColumn = !customColumn;
-              updateTotalSum();
-            });
-          },
-          child: customColumn ? Text("Custom hours") : Text("+"),
-        ),
-      )),
-      DataColumn(
-        label: SizedBox(
-          width: 100, // Set the width as needed
-          child: Text('Hours2'), //child: Text('Sum. tid.'),
-        ),
-      ),
-      DataColumn(
-        label: SizedBox(
-          width: 100, // Set the width as needed
-          child: Text('Job cost'), // child: Text('Arb.pris'),
-        ),
-      ),
-      DataColumn(
-        label: SizedBox(
-          width: 100, // Set the width as needed
-          child: Text('Material'), //Text('Enh. mater.'),
-        ),
-      ),
-      DataColumn(
-        label: SizedBox(
-          width: 100, // Set the width as needed
-          child: Text('Material cost'), // Text('Sum. material'),
-        ),
-      ),
-      DataColumn(
-        label: SizedBox(
-          width: 100, // Set the width as needed
-          child: Text('Total price'), //Text('Total pris'),
-        ),
-      ),
+      createDataColumn("Description", 200, customColumn, () {}),
+      createDataColumn("Unit", 100, customColumn, () {}),
+      createDataColumn("Quantity", 100, customColumn, () {}),
+      createDataColumn("Material quantity", 150, customColumn, () {}),
+      createDataColumn("Hours", 100, customColumn, () {
+        customColumn = !customColumn;
+        updateTotalSum();
+      }),
+      createDataColumn("+", 100, customColumn, () {
+        customColumn = !customColumn;
+        updateTotalSum();
+      }),
+      createDataColumn("Hours2", 100, customColumn, () {}),
+      createDataColumn("Job Cost", 100, customColumn, () {}),
+      createDataColumn("Materials", 100, customColumn, () {}),
+      createDataColumn("Material cost", 100, customColumn, () {}),
+      createDataColumn("Total price", 100, customColumn, () {}),
     ];
 
     List<DataRow> rows = [];

@@ -63,6 +63,42 @@ void calcTotals(InteriorWallItemsScreen widget, emptyCustomList) {
   }
 }
 
+Widget buildCustomColumnLabel(
+    String label, double width, bool customColumn, VoidCallback onPressed) {
+  if (!customColumn) {
+    return SizedBox(
+      width: width,
+      child: TextButton(
+        style: TextButton.styleFrom(
+          foregroundColor: Colors.black,
+          backgroundColor: Colors.white,
+        ),
+        onPressed: onPressed,
+        child: Text("$label"),
+      ),
+    );
+  } else {
+    return SizedBox(
+      width: width,
+      child: TextButton(
+        style: TextButton.styleFrom(
+          foregroundColor: Colors.black,
+          backgroundColor: Colors.white,
+        ),
+        onPressed: onPressed,
+        child: Text("$label"),
+      ),
+    );
+  }
+}
+
+DataColumn createDataColumn(
+    String label, double width, bool customColumn, VoidCallback onPressed) {
+  return DataColumn(
+    label: buildCustomColumnLabel(label, width, customColumn, onPressed),
+  );
+}
+
 List<DataColumn> calculationColumnsEng = [
   DataColumn(
     label: Text('Calculation Quantity'),
