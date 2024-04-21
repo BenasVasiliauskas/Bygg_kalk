@@ -88,7 +88,6 @@ class _InteriorWallItemsScreenState extends State<InteriorWallItemsScreen> {
       }
       return false;
     });
-
     // Calculate the total sum values
     double totalLaborHours1 = 0.0;
     double totalCustomColumn = 0.0;
@@ -97,16 +96,28 @@ class _InteriorWallItemsScreenState extends State<InteriorWallItemsScreen> {
     double totalMaterial1 = 0.0;
     double totalMaterial2 = 0.0;
     double totalTotalPrice = 0.0;
-
-    calcTotals(widget, emptyCustomList);
-
+    for (int i = 0; i < widget.description.length; i++) {
+      totalLaborHours1 += widget.laborHours1[i];
+      totalCustomColumn += emptyCustomList[i];
+      totalLaborHours2 += widget.laborHours2[i];
+      totalLaborCost += widget.laborCost[i];
+      totalMaterial1 += widget.material1[i];
+      totalMaterial2 += widget.material2[i];
+      totalTotalPrice += widget.totalPrice[i];
+    }
     addHours(widget.name, totalLaborHours2);
     addLaborCosts(widget.name, emptyCustomList.sum);
     addMaterialCosts(widget.name, totalMaterial2);
     addBudgetSum(widget.name, totalTotalPrice);
-
     // Create the "Total Sum" row
-    DataRow totalSumRow = totalSumRowEng;
+    DataRow totalSumRow = totalSumRowEng(
+        totalTotalPrice,
+        totalLaborHours1,
+        totalCustomColumn,
+        totalLaborHours2,
+        totalLaborCost,
+        totalMaterial1,
+        totalMaterial2);
 
     // Add the "Total Sum" row to the updated rows
     updatedRows.add(totalSumRow);
@@ -196,130 +207,97 @@ class _InteriorWallItemsScreenState extends State<InteriorWallItemsScreen> {
   @override
   Widget build(BuildContext context) {
     List<DataColumn> calculationColumns = calculationColumnsEng;
-
     List<DataRow> calculationRows = [
       DataRow(
         cells: [
-          DataCell(
-            TextField(
-              controller: quantityCalculationControllers,
-              decoration: InputDecoration(
-                  fillColor: const Color.fromARGB(255, 218, 128, 122),
-                  filled: true),
-              onChanged: (value) {
-                // Handle changes to the quantity
-                calculationQuantity = double.parse(value);
-                //recalculate all fields where calculationQuantity is used e.x materialQuantity ...
-                for (int i = 0; i < widget.description.length; i++) {
-                  // Recalculate and update the material quantity when quantity changes
-                  widget.materialQuantity[i] =
-                      calculateMaterialQuantity(i, widget, calculationQuantity);
+          dataCellDoSingle(quantityCalculationControllers, (value) {
+            calculationQuantity = double.parse(value);
+            for (int i = 0; i < widget.description.length; i++) {
+              // Recalculate and update the material quantity when quantity changes
+              widget.materialQuantity[i] =
+                  calculateMaterialQuantity(i, widget, calculationQuantity);
 
-                  materialQuantityControllers[i].text =
-                      calculateMaterialQuantity(i, widget, calculationQuantity)
-                          .toStringAsFixed(2);
-
-                  widget.laborHours2[i] = calculateWorkHours2(i, customColumn,
-                      emptyCustomList, widget, calculationQuantity);
-                  laborHours2Controllers[i].text = calculateWorkHours2(
-                          i,
-                          customColumn,
-                          emptyCustomList,
-                          widget,
-                          calculationQuantity)
+              materialQuantityControllers[i].text =
+                  calculateMaterialQuantity(i, widget, calculationQuantity)
                       .toStringAsFixed(2);
 
-                  widget.laborCost[i] = calculateJobCost(
-                      i, widget, hourlyRateConstructionRemodeling);
-                  laborCostControllers[i].text = calculateJobCost(
-                          i, widget, hourlyRateConstructionRemodeling)
+              widget.laborHours2[i] = calculateWorkHours2(i, customColumn,
+                  emptyCustomList, widget, calculationQuantity);
+              laborHours2Controllers[i].text = calculateWorkHours2(
+                      i,
+                      customColumn,
+                      emptyCustomList,
+                      widget,
+                      calculationQuantity)
+                  .toStringAsFixed(2);
+
+              widget.laborCost[i] =
+                  calculateJobCost(i, widget, hourlyRateConstructionRemodeling);
+              laborCostControllers[i].text =
+                  calculateJobCost(i, widget, hourlyRateConstructionRemodeling)
                       .toStringAsFixed(2);
 
-                  // Recalculate and update the labor cost when quantity changes
-                  if (widget.description[i] ==
-                      "Sparkling strimmel, flekksp.1, skjøtsp. 2, helsp.1, grunning. 2 strøk maling") {
-                    widget.laborCost[i] =
-                        calculateCostPainting(i, widget, hourlyRatePainting);
-                    laborCostControllers[i].text =
-                        calculateCostPainting(i, widget, hourlyRatePainting)
-                            .toStringAsFixed(2);
-                  } else {
-                    widget.laborCost[i] = calculateJobCost(
-                        i, widget, hourlyRateConstructionRemodeling);
-                    laborCostControllers[i].text = calculateJobCost(
-                            i, widget, hourlyRateConstructionRemodeling)
+              // Recalculate and update the labor cost when quantity changes
+              if (widget.description[i] ==
+                  "Sparkling strimmel, flekksp.1, skjøtsp. 2, helsp.1, grunning. 2 strøk maling") {
+                widget.laborCost[i] =
+                    calculateCostPainting(i, widget, hourlyRatePainting);
+                laborCostControllers[i].text =
+                    calculateCostPainting(i, widget, hourlyRatePainting)
                         .toStringAsFixed(2);
-                  }
-
-                  // Recalculate and update the material 2 when quantity changes
-                  widget.material2[i] = calculateMaterialCost(i, widget,
-                      calculationQuantity, customColumn, emptyCustomList);
-                  material2Controllers[i].text = calculateMaterialCost(
-                          i,
-                          widget,
-                          calculationQuantity,
-                          customColumn,
-                          emptyCustomList)
-                      .toStringAsFixed(2);
-
-                  // Recalculate and update the total price when quantity changes
-                  widget.totalPrice[i] = calculateTotalPrice(i, widget,
-                      calculationQuantity, customColumn, emptyCustomList);
-                  totalPriceControllers[i].text = calculateTotalPrice(i, widget,
-                          calculationQuantity, customColumn, emptyCustomList)
-                      .toStringAsFixed(2);
-
-                  //Rebuild the data table
-                  rebuildDataTable();
-                }
-              },
-              keyboardType: TextInputType.numberWithOptions(
-                  decimal: true), // Allow decimal numbers
-            ),
-          ),
-          DataCell(TextField(
-            decoration: InputDecoration(
-                fillColor: const Color.fromARGB(255, 218, 128, 122),
-                filled: true),
-            controller: hourlyRateConstructionRemodelingController,
-            onChanged: (value) {
-              hourlyRateConstructionRemodeling = double.parse(value);
-              for (int i = 0; i < widget.description.length; i++) {
-                //
-                emptyCustomList[i] =
-                    double.parse(customColumnControllers[i].text);
-                customColumnControllers[i].text =
-                    emptyCustomList[i].toStringAsFixed(2);
-                //
-
-                // Recalculate and update the labor cost when hourlyRateConstructionRemodeling changes
+              } else {
                 widget.laborCost[i] = calculateJobCost(
                     i, widget, hourlyRateConstructionRemodeling);
                 laborCostControllers[i].text = calculateJobCost(
                         i, widget, hourlyRateConstructionRemodeling)
                     .toStringAsFixed(2);
-
-                // Recalculate and update the total price when hourlyRateConstructionRemodeling changes
-                widget.totalPrice[i] = calculateTotalPrice(i, widget,
-                    calculationQuantity, customColumn, emptyCustomList);
-                totalPriceControllers[i].text = calculateTotalPrice(i, widget,
-                        calculationQuantity, customColumn, emptyCustomList)
-                    .toStringAsFixed(2);
-
-                //Rebuild the data table
-                rebuildDataTable();
               }
-            },
-            keyboardType: TextInputType.numberWithOptions(decimal: true),
-          )),
-          DataCell(
-            Container(
-              width: 200, // Set a fixed width or use flexible width
-              child: Text(
-                "kr. ",
-              ),
-            ),
-          ),
+
+              // Recalculate and update the material 2 when quantity changes
+              widget.material2[i] = calculateMaterialCost(i, widget,
+                  calculationQuantity, customColumn, emptyCustomList);
+              material2Controllers[i].text = calculateMaterialCost(i, widget,
+                      calculationQuantity, customColumn, emptyCustomList)
+                  .toStringAsFixed(2);
+
+              // Recalculate and update the total price when quantity changes
+              widget.totalPrice[i] = calculateTotalPrice(i, widget,
+                  calculationQuantity, customColumn, emptyCustomList);
+              totalPriceControllers[i].text = calculateTotalPrice(i, widget,
+                      calculationQuantity, customColumn, emptyCustomList)
+                  .toStringAsFixed(2);
+
+              //Rebuild the data table
+              rebuildDataTable();
+            }
+          }, Color.fromARGB(255, 218, 128, 122), false),
+          dataCellDoSingle(hourlyRateConstructionRemodelingController, (value) {
+            hourlyRateConstructionRemodeling = double.parse(value);
+            for (int i = 0; i < widget.description.length; i++) {
+              //
+              emptyCustomList[i] =
+                  double.parse(customColumnControllers[i].text);
+              customColumnControllers[i].text =
+                  emptyCustomList[i].toStringAsFixed(2);
+              // Recalculate and update the labor cost when hourlyRateConstructionRemodeling changes
+              widget.laborCost[i] =
+                  calculateJobCost(i, widget, hourlyRateConstructionRemodeling);
+              laborCostControllers[i].text =
+                  calculateJobCost(i, widget, hourlyRateConstructionRemodeling)
+                      .toStringAsFixed(2);
+
+              // Recalculate and update the total price when hourlyRateConstructionRemodeling changes
+              widget.totalPrice[i] = calculateTotalPrice(i, widget,
+                  calculationQuantity, customColumn, emptyCustomList);
+              totalPriceControllers[i].text = calculateTotalPrice(i, widget,
+                      calculationQuantity, customColumn, emptyCustomList)
+                  .toStringAsFixed(2);
+
+              //Rebuild the data table
+              rebuildDataTable();
+            }
+          }, Color.fromARGB(255, 218, 128, 122), false),
+          dataCellDisplay(<String>['kr .'], 0)
         ],
       ),
     ];
@@ -359,7 +337,7 @@ class _InteriorWallItemsScreenState extends State<InteriorWallItemsScreen> {
               (value) {
                 widget.materialQuantity[i] = double.parse(value);
               },
-              Color.fromARGB(255, 255, 255, 255),
+              Color.fromARGB(255, 255, 255, 255), //
               false,
             ),
             DataCell(
@@ -500,16 +478,13 @@ class _InteriorWallItemsScreenState extends State<InteriorWallItemsScreen> {
         ),
       );
     }
-
     // Calculate the total sum values for each column
-
     double totalLaborHours1 = 0.0;
     double totalLaborHours2 = 0.0;
     double totalLaborCost = 0.0;
     double totalMaterial1 = 0.0;
     double totalMaterial2 = 0.0;
     double totalTotalPrice = 0.0;
-
     for (int i = 0; i < widget.description.length; i++) {
       totalLaborHours1 += widget.laborHours1[i];
       totalLaborHours2 += widget.laborHours2[i];
@@ -518,41 +493,18 @@ class _InteriorWallItemsScreenState extends State<InteriorWallItemsScreen> {
       totalMaterial2 += widget.material2[i];
       totalTotalPrice += widget.totalPrice[i];
     }
-
 // Create the "Total Sum" row
     DataRow totalSumRow = DataRow(
       cells: [
-        DataCell(
-          Container(
-            width: 200,
-            child: Text('Total Sum'),
-          ),
-        ),
-        DataCell(
-          Container(
-            width: 100,
-            child: Text(''),
-          ),
-        ),
-        DataCell(
-          Container(
-            width: 100,
-            child: Text(""),
-          ),
-        ),
-        DataCell(
-          Container(
-            width: 150,
-            child: Text(""),
-          ),
-        ),
-        DataCell(
-          Container(
-            width: 100,
-            child:
-                Text(customColumn ? '' : totalLaborHours1.toStringAsFixed(2)),
-          ),
-        ),
+        dataCellDisplaySingle(
+            "Total sum", 200, Color.fromARGB(255, 255, 255, 255)),
+        dataCellDisplaySingle("", 100, Color.fromARGB(255, 255, 255, 255)),
+        dataCellDisplaySingle("", 100, Color.fromARGB(255, 255, 255, 255)),
+        dataCellDisplaySingle("", 150, Color.fromARGB(255, 255, 255, 255)),
+        dataCellDisplaySingle(
+            customColumn ? '' : totalLaborHours1.toStringAsFixed(2),
+            100,
+            Color.fromARGB(255, 255, 255, 255)),
         DataCell(
           Container(
             width: 100,
@@ -572,18 +524,10 @@ class _InteriorWallItemsScreenState extends State<InteriorWallItemsScreen> {
             ),
           ),
         ),
-        DataCell(
-          Container(
-            width: 100,
-            child: Text(totalLaborHours2.toStringAsFixed(2)),
-          ),
-        ),
-        DataCell(
-          Container(
-            width: 100,
-            child: Text(totalLaborCost.toStringAsFixed(2)),
-          ),
-        ),
+        dataCellDisplaySingle(totalLaborHours2.toStringAsFixed(2), 100,
+            Color.fromARGB(255, 255, 255, 255)),
+        dataCellDisplaySingle(totalLaborCost.toStringAsFixed(2), 100,
+            Color.fromARGB(255, 255, 255, 255)),
         DataCell(
           TextField(
             decoration: InputDecoration(
@@ -594,27 +538,18 @@ class _InteriorWallItemsScreenState extends State<InteriorWallItemsScreen> {
             readOnly: true,
           ),
         ),
-        DataCell(
-          Container(
-            width: 100,
-            child: Text(totalMaterial2.toStringAsFixed(2)),
-          ),
-        ),
-        DataCell(
-          TextField(
-            decoration: InputDecoration(
-                fillColor: Color.fromARGB(255, 153, 240, 131), filled: true),
-            controller:
-                TextEditingController(text: totalTotalPrice.toStringAsFixed(2)),
-            readOnly: true,
-          ),
-        ),
+        dataCellDisplaySingle(totalMaterial2.toStringAsFixed(2), 100,
+            Color.fromARGB(255, 255, 255, 255)),
+        dataCellDoSingle(
+            TextEditingController(text: totalTotalPrice.toStringAsFixed(2)),
+            (value) {},
+            Color.fromARGB(255, 153, 240, 131),
+            true),
       ],
     );
 
 // Add the "Total Sum" row to the rows list
     rows.add(totalSumRow);
-
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.name),

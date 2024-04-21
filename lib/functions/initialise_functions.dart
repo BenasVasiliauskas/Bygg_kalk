@@ -43,26 +43,6 @@ double calculateTotalPrice(int index, InteriorWallItemsScreen widget,
   return jobCost + widget.material1[index] * calculationQuantity;
 }
 
-double totalLaborHours1 = 0.0;
-double totalCustomColumn = 0.0;
-double totalLaborHours2 = 0.0;
-double totalLaborCost = 0.0;
-double totalMaterial1 = 0.0;
-double totalMaterial2 = 0.0;
-double totalTotalPrice = 0.0;
-
-void calcTotals(InteriorWallItemsScreen widget, emptyCustomList) {
-  for (int i = 0; i < widget.description.length; i++) {
-    totalLaborHours1 += widget.laborHours1[i];
-    totalCustomColumn += emptyCustomList[i];
-    totalLaborHours2 += widget.laborHours2[i];
-    totalLaborCost += widget.laborCost[i];
-    totalMaterial1 += widget.material1[i];
-    totalMaterial2 += widget.material2[i];
-    totalTotalPrice += widget.totalPrice[i];
-  }
-}
-
 Widget buildCustomColumnLabel(
     String label, double width, bool customColumn, VoidCallback onPressed) {
   if (!customColumn) {
@@ -105,12 +85,40 @@ DataCell dataCellDisplay(List<String> text, int i) {
   );
 }
 
+DataCell dataCellDisplaySingle(String text, double width, Color color) {
+  return DataCell(
+    Container(
+      width: width, // Set the width as needed
+      child: Text(
+        text,
+      ),
+      decoration: BoxDecoration(
+        color: color,
+      ),
+    ),
+  );
+}
+
 DataCell dataCellDisplayController(
     List<TextEditingController> controller, int i) {
   return DataCell(
     TextField(
       readOnly: true,
       controller: controller[i],
+    ),
+  );
+}
+
+DataCell dataCellDoSingle(
+    TextEditingController controller, Function f, Color color, bool readOnly) {
+  return DataCell(
+    TextField(
+      readOnly: readOnly,
+      controller: controller,
+      onChanged: (value) => f(value),
+      decoration: InputDecoration(fillColor: color, filled: true),
+      keyboardType:
+          readOnly ? null : TextInputType.numberWithOptions(decimal: true),
     ),
   );
 }
@@ -123,6 +131,8 @@ DataCell dataCellDo(List<TextEditingController> controller, int i, Function f,
       controller: controller[i],
       onChanged: (value) => f(value),
       decoration: InputDecoration(fillColor: color, filled: true),
+      keyboardType:
+          readOnly ? null : TextInputType.numberWithOptions(decimal: true),
     ),
   );
 }
@@ -158,73 +168,85 @@ List<DataColumn> calculationColumnsNorw = [
   ),
 ];
 
-DataRow totalSumRowEng = DataRow(
-  cells: [
-    DataCell(
-      Container(
-        width: 200,
-        child: Text('Total Sum'), // child: Text('Sum (eks. mva):'),
+
+
+
+DataRow totalSumRowEng(
+    double totalLaborHours1,
+    double totalCustomColumn,
+    double totalLaborHours2,
+    double totalLaborCost,
+    double totalMaterial1,
+    double totalMaterial2,
+    totalTotalPrice) {
+  return DataRow(
+    cells: [
+      DataCell(
+        Container(
+          width: 200,
+          child: Text('Total Sum'), // child: Text('Sum (eks. mva):'),
+        ),
       ),
-    ),
-    DataCell(
-      Container(
-        width: 100,
-        child: Text(''),
+      DataCell(
+        Container(
+          width: 100,
+          child: Text(''),
+        ),
       ),
-    ),
-    DataCell(
-      Container(
-        width: 100,
-        child: Text(''),
+      DataCell(
+        Container(
+          width: 100,
+          child: Text(''),
+        ),
       ),
-    ),
-    DataCell(
-      Container(
-        width: 150,
-        child: Text(''),
+      DataCell(
+        Container(
+          width: 150,
+          child: Text(''),
+        ),
       ),
-    ),
-    DataCell(
-      Container(
-        width: 100,
-        child: Text(totalLaborHours1.toStringAsFixed(2)),
+      DataCell(
+        Container(
+          width: 100,
+          child: Text(totalLaborHours1.toStringAsFixed(2)),
+        ),
       ),
-    ),
-    DataCell(
-      Container(
-        width: 100,
-        child: Text(totalCustomColumn.toStringAsFixed(2)),
+      DataCell(
+        Container(
+          width: 100,
+          child: Text(totalCustomColumn.toStringAsFixed(2)),
+        ),
       ),
-    ),
-    DataCell(
-      Container(
-        width: 100,
-        child: Text(totalLaborHours2.toStringAsFixed(2)),
+      DataCell(
+        Container(
+          width: 100,
+          child: Text(totalLaborHours2.toStringAsFixed(2)),
+        ),
       ),
-    ),
-    DataCell(
-      Container(
-        width: 100,
-        child: Text(totalLaborCost.toStringAsFixed(2)),
+      DataCell(
+        Container(
+          width: 100,
+          child: Text(totalLaborCost.toStringAsFixed(2)),
+        ),
       ),
-    ),
-    DataCell(
-      Container(
-        width: 100,
-        child: Text(totalMaterial1.toStringAsFixed(2)),
+      DataCell(
+        Container(
+          width: 100,
+          child: Text(totalMaterial1.toStringAsFixed(2)),
+        ),
       ),
-    ),
-    DataCell(
-      Container(
-        width: 100,
-        child: Text(totalMaterial2.toStringAsFixed(2)),
+      DataCell(
+        Container(
+          width: 100,
+          child: Text(totalMaterial2.toStringAsFixed(2)),
+        ),
       ),
-    ),
-    DataCell(
-      Container(
-        width: 100,
-        child: Text(totalTotalPrice.toStringAsFixed(2)),
+      DataCell(
+        Container(
+          width: 100,
+          child: Text(totalTotalPrice.toStringAsFixed(2)),
+        ),
       ),
-    ),
-  ],
-);
+    ],
+  );
+}
