@@ -220,53 +220,46 @@ class _InteriorWallItemsScreenState extends State<InteriorWallItemsScreen> {
               materialQuantityControllers[i].text =
                   calculateMaterialQuantity(i, widget, calculationQuantity)
                       .toStringAsFixed(2);
-
+//check here if custom column calc correctly
               widget.laborHours2[i] = calculateWorkHours2(i, customColumn,
-                  emptyCustomList, widget, calculationQuantity);
+                  emptyCustomList, widget.laborHours1, calculationQuantity);
               laborHours2Controllers[i].text = calculateWorkHours2(
                       i,
                       customColumn,
                       emptyCustomList,
-                      widget,
+                      widget.laborHours1,
                       calculationQuantity)
                   .toStringAsFixed(2);
 
-              widget.laborCost[i] =
-                  calculateJobCost(i, widget, hourlyRateConstructionRemodeling);
-              laborCostControllers[i].text =
-                  calculateJobCost(i, widget, hourlyRateConstructionRemodeling)
-                      .toStringAsFixed(2);
+              widget.laborCost[i] = calculateJobCost(
+                  i, widget.laborHours1, hourlyRateConstructionRemodeling);
+              laborCostControllers[i].text = calculateJobCost(
+                      i, widget.laborHours1, hourlyRateConstructionRemodeling)
+                  .toStringAsFixed(2);
 
-              // Recalculate and update the labor cost when quantity changes
-              if (widget.description[i] ==
-                  "Sparkling strimmel, flekksp.1, skjøtsp. 2, helsp.1, grunning. 2 strøk maling") {
-                widget.laborCost[i] =
-                    calculateCostPainting(i, widget, hourlyRatePainting);
-                laborCostControllers[i].text =
-                    calculateCostPainting(i, widget, hourlyRatePainting)
-                        .toStringAsFixed(2);
-              } else {
-                widget.laborCost[i] = calculateJobCost(
-                    i, widget, hourlyRateConstructionRemodeling);
-                laborCostControllers[i].text = calculateJobCost(
-                        i, widget, hourlyRateConstructionRemodeling)
-                    .toStringAsFixed(2);
-              }
+              widget.laborCost[i] = calculateJobCost(
+                  i, widget.laborHours2, hourlyRateConstructionRemodeling);
+              laborCostControllers[i].text = calculateJobCost(
+                      i, widget.laborHours2, hourlyRateConstructionRemodeling)
+                  .toStringAsFixed(2);
 
               // Recalculate and update the material 2 when quantity changes
-              widget.material2[i] = calculateMaterialCost(i, widget,
+              widget.material2[i] = calculateMaterialCost(i, widget.material1,
                   calculationQuantity, customColumn, emptyCustomList);
-              material2Controllers[i].text = calculateMaterialCost(i, widget,
-                      calculationQuantity, customColumn, emptyCustomList)
+              material2Controllers[i].text = calculateMaterialCost(
+                      i,
+                      widget.material1,
+                      calculationQuantity,
+                      customColumn,
+                      emptyCustomList)
                   .toStringAsFixed(2);
 
               // Recalculate and update the total price when quantity changes
-              widget.totalPrice[i] = calculateTotalPrice(i, widget,
-                  calculationQuantity, customColumn, emptyCustomList);
-              totalPriceControllers[i].text = calculateTotalPrice(i, widget,
-                      calculationQuantity, customColumn, emptyCustomList)
+              widget.totalPrice[i] = calculateTotalPrice(
+                  i, widget.laborCost, widget.material1, calculationQuantity);
+              totalPriceControllers[i].text = calculateTotalPrice(i,
+                      widget.laborCost, widget.material1, calculationQuantity)
                   .toStringAsFixed(2);
-
               //Rebuild the data table
               rebuildDataTable();
             }
@@ -280,17 +273,17 @@ class _InteriorWallItemsScreenState extends State<InteriorWallItemsScreen> {
               customColumnControllers[i].text =
                   emptyCustomList[i].toStringAsFixed(2);
               // Recalculate and update the labor cost when hourlyRateConstructionRemodeling changes
-              widget.laborCost[i] =
-                  calculateJobCost(i, widget, hourlyRateConstructionRemodeling);
-              laborCostControllers[i].text =
-                  calculateJobCost(i, widget, hourlyRateConstructionRemodeling)
-                      .toStringAsFixed(2);
+              widget.laborCost[i] = calculateJobCost(
+                  i, widget.laborHours2, hourlyRateConstructionRemodeling);
+              laborCostControllers[i].text = calculateJobCost(
+                      i, widget.laborHours2, hourlyRateConstructionRemodeling)
+                  .toStringAsFixed(2);
 
               // Recalculate and update the total price when hourlyRateConstructionRemodeling changes
-              widget.totalPrice[i] = calculateTotalPrice(i, widget,
-                  calculationQuantity, customColumn, emptyCustomList);
-              totalPriceControllers[i].text = calculateTotalPrice(i, widget,
-                      calculationQuantity, customColumn, emptyCustomList)
+              widget.totalPrice[i] = calculateTotalPrice(
+                  i, widget.laborCost, widget.material1, calculationQuantity);
+              totalPriceControllers[i].text = calculateTotalPrice(i,
+                      widget.laborCost, widget.material1, calculationQuantity)
                   .toStringAsFixed(2);
 
               //Rebuild the data table
@@ -310,10 +303,12 @@ class _InteriorWallItemsScreenState extends State<InteriorWallItemsScreen> {
       createDataColumn("Hours", 100, customColumn, () {
         customColumn = !customColumn;
         updateTotalSum();
+        rebuildDataTable();
       }),
       createDataColumn("+", 100, customColumn, () {
         customColumn = !customColumn;
         updateTotalSum();
+        rebuildDataTable();
       }),
       createDataColumn("Hours2", 100, customColumn, () {}),
       createDataColumn("Job Cost", 100, customColumn, () {}),
@@ -367,27 +362,30 @@ class _InteriorWallItemsScreenState extends State<InteriorWallItemsScreen> {
                   // Recalculate and update the labor hours 2 when labor hours 1 changes need changes
 
                   widget.laborHours2[i] = calculateWorkHours2(i, customColumn,
-                      emptyCustomList, widget, calculationQuantity);
+                      emptyCustomList, widget.laborHours2, calculationQuantity);
                   laborHours2Controllers[i].text = calculateWorkHours2(
                           i,
                           customColumn,
                           emptyCustomList,
-                          widget,
+                          widget.laborHours1,
                           calculationQuantity)
                       .toStringAsFixed(2);
 
                   // Recalculate and update the labor cost when labor hours 2 changes
                   widget.laborCost[i] = calculateJobCost(
-                      i, widget, hourlyRateConstructionRemodeling);
-                  laborCostControllers[i].text = calculateJobCost(
-                          i, widget, hourlyRateConstructionRemodeling)
+                      i, widget.laborHours2, hourlyRateConstructionRemodeling);
+                  laborCostControllers[i].text = calculateJobCost(i,
+                          widget.laborHours2, hourlyRateConstructionRemodeling)
                       .toStringAsFixed(2);
 
                   // Recalculate and update the total price when labor hours 2 changes
-                  widget.totalPrice[i] = calculateTotalPrice(i, widget,
-                      calculationQuantity, customColumn, emptyCustomList);
-                  totalPriceControllers[i].text = calculateTotalPrice(i, widget,
-                          calculationQuantity, customColumn, emptyCustomList)
+                  widget.totalPrice[i] = calculateTotalPrice(i,
+                      widget.laborCost, widget.material1, calculationQuantity);
+                  totalPriceControllers[i].text = calculateTotalPrice(
+                          i,
+                          widget.laborCost,
+                          widget.material1,
+                          calculationQuantity)
                       .toStringAsFixed(2);
 
                   //total sum doesnt get updated
@@ -406,7 +404,9 @@ class _InteriorWallItemsScreenState extends State<InteriorWallItemsScreen> {
                 widget.laborHours2[i] =
                     double.parse(parsedValue.toStringAsFixed(2));
                 // Recalculate the labor cost when labor hours 2 changes
-                double updatedLaborCost = calculateJobCost(i, widget,
+                double updatedLaborCost = calculateJobCost(
+                    i,
+                    widget.laborHours2,
                     hourlyRateConstructionRemodeling); // Calculate the labor cost
                 widget.laborCost[i] =
                     double.parse(updatedLaborCost.toStringAsFixed(2));
@@ -433,15 +433,19 @@ class _InteriorWallItemsScreenState extends State<InteriorWallItemsScreen> {
                     .toStringAsFixed(2)); // Format to 2 decimal places
 
                 // Recalculate and update the material 2 when material 1 changes
-                double updatedMaterial2 = calculateMaterialCost(i, widget,
-                    calculationQuantity, customColumn, emptyCustomList);
+                double updatedMaterial2 = calculateMaterialCost(
+                    i,
+                    widget.material1,
+                    calculationQuantity,
+                    customColumn,
+                    emptyCustomList);
                 widget.material2[i] = updatedMaterial2;
                 material2Controllers[i].text =
                     updatedMaterial2.toStringAsFixed(2);
 
                 // Recalculate total price
-                double updatedTotalPrice = calculateTotalPrice(i, widget,
-                    calculationQuantity, customColumn, emptyCustomList);
+                double updatedTotalPrice = calculateTotalPrice(
+                    i, widget.laborCost, widget.material1, calculationQuantity);
                 widget.totalPrice[i] = updatedTotalPrice;
                 totalPriceControllers[i].text =
                     updatedTotalPrice.toStringAsFixed(2);

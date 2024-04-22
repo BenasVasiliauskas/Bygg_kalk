@@ -15,32 +15,32 @@ double calculateMaterialQuantity(
 }
 
 double calculateWorkHours2(int index, customColumn, emptyCustomList,
-    InteriorWallItemsScreen widget, calculationQuantity) {
+    List<double> widgetLaborHours1, calculationQuantity) {
   if (customColumn) {
     double laborHours1 = emptyCustomList[index];
     return laborHours1 * calculationQuantity;
   } else {
-    double laborHours1 = widget.laborHours1[index];
+    double laborHours1 = widgetLaborHours1[index];
     return laborHours1 * calculationQuantity;
   }
 }
 
-double calculateJobCost(int index, InteriorWallItemsScreen widget,
+double calculateJobCost(int index, List<double> widgetLaborHours2,
     hourlyRateConstructionRemodeling) {
-  double laborHours2 = widget.laborHours2[index];
+  double laborHours2 = widgetLaborHours2[index];
   return laborHours2 * hourlyRateConstructionRemodeling;
 }
 
-double calculateMaterialCost(int index, InteriorWallItemsScreen widget,
+double calculateMaterialCost(int index, List<double> widgetMaterial1,
     calculationQuantity, customColumn, emptyCustomList) {
-  double material1 = widget.material1[index];
+  double material1 = widgetMaterial1[index];
   return material1 * calculationQuantity;
 }
 
-double calculateTotalPrice(int index, InteriorWallItemsScreen widget,
-    calculationQuantity, customColumn, emptyCustomList) {
-  double jobCost = widget.laborCost[index];
-  return jobCost + widget.material1[index] * calculationQuantity;
+double calculateTotalPrice(int index, List<double> widgetLaborCost,
+    List<double> widgetMaterial1, calculationQuantity) {
+  double jobCost = widgetLaborCost[index];
+  return jobCost + widgetMaterial1[index] * calculationQuantity;
 }
 
 Widget buildCustomColumnLabel(
@@ -168,9 +168,6 @@ List<DataColumn> calculationColumnsNorw = [
   ),
 ];
 
-
-
-
 DataRow totalSumRowEng(
     double totalLaborHours1,
     double totalCustomColumn,
@@ -178,7 +175,7 @@ DataRow totalSumRowEng(
     double totalLaborCost,
     double totalMaterial1,
     double totalMaterial2,
-    totalTotalPrice) {
+    double totalTotalPrice) {
   return DataRow(
     cells: [
       DataCell(
