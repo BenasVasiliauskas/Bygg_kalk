@@ -9,8 +9,8 @@ double calculateCostPainting(
 }
 
 double calculateMaterialQuantity(
-    int index, InteriorWallItemsScreen widget, calculationQuantity) {
-  double quantity = widget.quantity[index];
+    int index, List<double> widgetQuantity, calculationQuantity) {
+  double quantity = widgetQuantity[index];
   return quantity * calculationQuantity;
 }
 

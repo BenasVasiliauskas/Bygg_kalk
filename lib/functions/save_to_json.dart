@@ -2,10 +2,7 @@
 // make a pop up for user to input name then save the file to default download location?
 
 import 'dart:convert';
-
 import 'dart:io';
-
-import 'package:cost_calculator/models/inner_wall_data_model.dart';
 import 'package:path_provider/path_provider.dart';
 
 Future<String> get localPath async {
@@ -28,7 +25,7 @@ Future<File> localFile(String name) async {
   return File('$path/${name}.json');
 }
 
-Future<File> writeJson(InnerWallModel wallModel) async {
+Future<File> writeJson(var wallModel) async {
   final file = await localFile(wallModel.name);
 
   // Convert list of InnerWallModel objects to a list of maps

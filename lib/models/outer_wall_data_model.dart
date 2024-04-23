@@ -1,19 +1,18 @@
-
 import 'package:flutter/material.dart';
 
 class OuterWallModel {
-  final String name;
-  final List<String> description;
-  final List<String> unit;
-  final List<double> quantity;
-  final List<double> materialQuantity;
-  final List<double> laborHours1;
-  final List<double> laborHours2;
-  final List<double> laborCost;
-  final List<double> material;
-  final List<double> materials;
-  final List<double> totalPrice;
-  final Color color = Color.fromARGB(255, 174, 228, 75);
+  String name;
+  List<String> description;
+  List<String> unit;
+  List<double> quantity;
+  List<double> materialQuantity;
+  List<double> laborHours1;
+  List<double> laborHours2;
+  List<double> laborCost;
+  List<double> material;
+  List<double> materials;
+  List<double> totalPrice;
+  final Color color;
 
   OuterWallModel({
     required this.name,
@@ -27,28 +26,57 @@ class OuterWallModel {
     required this.material,
     required this.materials,
     required this.totalPrice,
-  });
+    Color? color, // Change to nullable Color
+  }) : color = color ?? Color.fromARGB(255, 174, 228, 75); // Initialize color
 
   Map<String, dynamic> toJson() {
-    List<Map<String, dynamic>> exteriorWallDataJson = [];
-
-    for (int i = 0; i < description.length; i++) {
-      Map<String, dynamic> item = {
-        'description': description[i],
-        'unit': unit[i],
-        'quantity': quantity[i],
-        'materialQuantity': materialQuantity[i],
-        'laborHours1': laborHours1[i],
-        'laborHours2': laborHours2[i],
-        'laborCost': laborCost[i],
-        'material': material[i],
-        'materials': materials[i],
-        'totalPrice': totalPrice[i],
-      };
-
-      exteriorWallDataJson.add(item);
-    }
-
-    return {'name': name, 'data': exteriorWallDataJson};
+    return {
+      'name': name,
+      'description': description,
+      'unit': unit,
+      'quantity': quantity,
+      'materialQuantity': materialQuantity,
+      'laborHours1': laborHours1,
+      'laborHours2': laborHours2,
+      'laborCost': laborCost,
+      'material': material,
+      'materials': materials,
+      'totalPrice': totalPrice,
+    };
   }
+
+  OuterWallModel.fromJson(Map<String, dynamic> json)
+      : name = json['name'],
+        description = (json['description'] as List<dynamic>)
+            .map((item) => item.toString())
+            .toList(),
+        unit = (json['unit'] as List<dynamic>)
+            .map((item) => item.toString())
+            .toList(),
+        quantity = json['quantity'] is List
+            ? json['quantity'].cast<double>().toList()
+            : [],
+        materialQuantity = json['materialQuantity'] is List
+            ? json['materialQuantity'].cast<double>().toList()
+            : [],
+        laborHours1 = json['laborHours1'] is List
+            ? json['laborHours1'].cast<double>().toList()
+            : [],
+        laborHours2 = json['laborHours2'] is List
+            ? json['laborHours2'].cast<double>().toList()
+            : [],
+        laborCost = json['laborCost'] is List
+            ? json['laborCost'].cast<double>().toList()
+            : [],
+        material = json['material'] is List
+            ? json['material'].cast<double>().toList()
+            : [],
+        materials = json['materials'] is List
+            ? json['materials'].cast<double>().toList()
+            : [],
+        totalPrice = json['totalPrice'] is List
+            ? json['totalPrice'].cast<double>().toList()
+            : [],
+        color = Color.fromARGB(
+            255, 174, 228, 75); // Initialize color with Colors.orange
 }

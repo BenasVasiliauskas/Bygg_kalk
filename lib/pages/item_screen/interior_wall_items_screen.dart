@@ -68,8 +68,6 @@ class _InteriorWallItemsScreenState extends State<InteriorWallItemsScreen> {
 
   double calculationQuantity = 1;
   double hourlyRateConstructionRemodeling = 550;
-  double hourlyRateDemolition = 550;
-  double hourlyRatePainting = 500;
 
   String name = '';
 
@@ -215,13 +213,13 @@ class _InteriorWallItemsScreenState extends State<InteriorWallItemsScreen> {
             calculationQuantity = double.parse(value);
             for (int i = 0; i < widget.description.length; i++) {
               // Recalculate and update the material quantity when quantity changes
-              widget.materialQuantity[i] =
-                  calculateMaterialQuantity(i, widget, calculationQuantity);
+              widget.materialQuantity[i] = calculateMaterialQuantity(
+                  i, widget.quantity, calculationQuantity);
 
-              materialQuantityControllers[i].text =
-                  calculateMaterialQuantity(i, widget, calculationQuantity)
-                      .toStringAsFixed(2);
-//check here if custom column calc correctly
+              materialQuantityControllers[i].text = calculateMaterialQuantity(
+                      i, widget.quantity, calculationQuantity)
+                  .toStringAsFixed(2);
+
               widget.laborHours2[i] = calculateWorkHours2(i, customColumn,
                   emptyCustomList, widget.laborHours1, calculationQuantity);
               laborHours2Controllers[i].text = calculateWorkHours2(
