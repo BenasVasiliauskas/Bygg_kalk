@@ -106,18 +106,18 @@ class _InteriorWallItemsScreenState extends State<InteriorWallItemsScreen> {
       totalTotalPrice += widget.totalPrice[i];
     }
     addHours(widget.name, totalLaborHours2);
-    addLaborCosts(widget.name, emptyCustomList.sum);
+    addLaborCosts(widget.name, emptyCustomList.sum); // check err? wrong var?
     addMaterialCosts(widget.name, totalMaterial2);
     addBudgetSum(widget.name, totalTotalPrice);
     // Create the "Total Sum" row
     DataRow totalSumRow = totalSumRowEng(
-        totalTotalPrice,
         totalLaborHours1,
         totalCustomColumn,
         totalLaborHours2,
         totalLaborCost,
         totalMaterial1,
-        totalMaterial2);
+        totalMaterial2,
+        totalTotalPrice);
 
     // Add the "Total Sum" row to the updated rows
     updatedRows.add(totalSumRow);
@@ -178,7 +178,8 @@ class _InteriorWallItemsScreenState extends State<InteriorWallItemsScreen> {
       material2Controllers[i].text = widget.material2[i].toStringAsFixed(2);
       totalPriceControllers[i].text = widget.totalPrice[i].toStringAsFixed(2);
       customColumnControllers[i].text =
-          widget.laborHours2[i].toStringAsFixed(2);
+          (widget.laborHours2[i] / calculationQuantity).toStringAsFixed(2);
+      emptyCustomList[i] = double.parse(customColumnControllers[i].text);
     }
     quantityCalculationControllers.text =
         calculationQuantity.toStringAsFixed(2);
@@ -607,28 +608,29 @@ class _InteriorWallItemsScreenState extends State<InteriorWallItemsScreen> {
                     setState(() {
                       this.name = value;
                     });
+                    readJsonFile(name).then(
+                      (value) {
+                        InnerWallModel innerWallModel =
+                            InnerWallModel.fromJson(value);
+                        setState(() {
+                          widget.description = innerWallModel.description;
+                          widget.unit = innerWallModel.unit;
+                          widget.quantity = innerWallModel.quantity;
+                          widget.materialQuantity =
+                              innerWallModel.materialQuantity;
+                          widget.laborHours1 = innerWallModel.laborHours1;
+                          widget.laborHours2 = innerWallModel.laborHours2;
+                          widget.laborCost = innerWallModel.laborCost;
+                          widget.material1 = innerWallModel.material1;
+                          widget.material2 = innerWallModel.material2;
+                          widget.totalPrice = innerWallModel.totalPrice;
+                          calculateCalculationQuantity();
+                          setInitialValues();
+                          updateTotalSum();
+                        });
+                      },
+                    );
                   });
-                  readJsonFile(name).then(
-                    (value) {
-                      InnerWallModel innerWallModel =
-                          InnerWallModel.fromJson(value);
-                      setState(() {
-                        widget.description = innerWallModel.description;
-                        widget.unit = innerWallModel.unit;
-                        widget.quantity = innerWallModel.quantity;
-                        widget.materialQuantity =
-                            innerWallModel.materialQuantity;
-                        widget.laborHours1 = innerWallModel.laborHours1;
-                        widget.laborHours2 = innerWallModel.laborHours2;
-                        widget.laborCost = innerWallModel.laborCost;
-                        widget.material1 = innerWallModel.material1;
-                        widget.material2 = innerWallModel.material2;
-                        widget.totalPrice = innerWallModel.totalPrice;
-                        setInitialValues();
-                        updateTotalSum();
-                      });
-                    },
-                  );
                 }),
             Padding(
               padding: EdgeInsets.fromLTRB(25, 0, 0, 0),
@@ -702,7 +704,6 @@ class _InteriorWallItemsScreenState extends State<InteriorWallItemsScreen> {
 
   void submitLoading() {
     Navigator.of(context).pop(loadingController.text);
-    calculateCalculationQuantity();
     loadingController.clear();
   }
 
@@ -726,10 +727,8 @@ class _InteriorWallItemsScreenState extends State<InteriorWallItemsScreen> {
           ],
         ),
       );
-
   void submit() {
     Navigator.of(context).pop(savingController.text);
-
     savingController.clear();
   }
 }
