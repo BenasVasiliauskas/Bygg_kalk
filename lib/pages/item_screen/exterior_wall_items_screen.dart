@@ -1,5 +1,6 @@
 // ignore_for_file: must_be_immutable
 
+import 'package:cost_calculator/functions/create_worksheet.dart';
 import 'package:cost_calculator/functions/initialise_functions.dart';
 import 'package:cost_calculator/functions/save_to_json.dart';
 import 'package:cost_calculator/models/outer_wall_data_model.dart';
@@ -41,8 +42,6 @@ class ExteriorWallItemsScreen extends StatefulWidget {
 }
 
 List<double> emptyCustomList = [];
-bool isCalculationQuantityInitialized = false;
-bool areHourlyRatesInitialized = false;
 
 class _ExteriorWallItemsScreenState extends State<ExteriorWallItemsScreen> {
   List<DataRow> rows = [];
@@ -68,11 +67,11 @@ class _ExteriorWallItemsScreenState extends State<ExteriorWallItemsScreen> {
 
   double calculationQuantity = 1;
   double hourlyRateConstructionRemodeling = 550;
+  String name = '';
   void initialiseEmptyList() {
     emptyCustomList = createList(widget.description.length);
   }
 
-  String name = '';
   void rebuildDataTable() {
     List<DataRow> updatedRows =
         List.from(rows); // Create a copy of the existing rows
@@ -108,7 +107,6 @@ class _ExteriorWallItemsScreenState extends State<ExteriorWallItemsScreen> {
     addLaborCosts(widget.name, emptyCustomList.sum); // check err? wrong var?
     addMaterialCosts(widget.name, totalMaterial2);
     addBudgetSum(widget.name, totalTotalPrice);
-    // Create the "Total Sum" row
     DataRow totalSumRow = totalSumRowEng(
         totalLaborHours1,
         totalCustomColumn,
@@ -575,6 +573,39 @@ class _ExteriorWallItemsScreenState extends State<ExteriorWallItemsScreen> {
                 dataRowMinHeight: 60,
                 columns: columns, // Define your columns here
                 rows: rows,
+              ),
+            ),
+            Padding(
+              padding: EdgeInsets.fromLTRB(25, 0, 0, 0),
+              child: Align(
+                child: FloatingActionButton(
+                  onPressed: () {
+                    generateInnerDoorExcelDocument(
+                      "ExterioirWallItems",
+                      columns,
+                      widget.description,
+                      widget.unit,
+                      quantityControllers,
+                      materialQuantityControllers,
+                      laborHours1Controllers,
+                      customColumnControllers,
+                      laborHours2Controllers,
+                      laborCostControllers,
+                      material1Controllers,
+                      material2Controllers,
+                      totalPriceControllers,
+                      widget.name,
+                    );
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      SnackBar(
+                        content: Text(
+                            'Excel file has been created in your Downloads folder'),
+                      ),
+                    );
+                  },
+                  child: Text("Save"),
+                ),
+                alignment: Alignment.centerLeft,
               ),
             ),
             FloatingActionButton(

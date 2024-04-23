@@ -1,4 +1,7 @@
+// ignore_for_file: must_be_immutable
 import 'package:cost_calculator/functions/initialise_functions.dart';
+import 'package:cost_calculator/functions/save_to_json.dart';
+import 'package:cost_calculator/models/inner_door_data_model.dart';
 import 'package:flutter/material.dart';
 import 'package:collection/collection.dart';
 import '../../constants/budget_constants.dart';
@@ -7,16 +10,16 @@ import '../../constants/innerwall_constants.dart';
 import 'package:cost_calculator/functions/create_worksheet.dart';
 
 class InnerDoorItemScreen extends StatefulWidget {
-  final String name;
-  final List<String> description;
-  final List<String> unit;
-  final List<double> quantity;
-  final List<double> laborHours1;
-  final List<double> laborHours2;
-  final List<double> laborCost;
-  final List<double> material1;
-  final List<double> material2;
-  final List<double> totalPrice;
+  String name;
+  List<String> description;
+  List<String> unit;
+  List<double> quantity;
+  List<double> laborHours1;
+  List<double> laborHours2;
+  List<double> laborCost;
+  List<double> material1;
+  List<double> material2;
+  List<double> totalPrice;
 
   InnerDoorItemScreen(
     this.name,
@@ -61,8 +64,7 @@ class _InnerDoorItemScreenState extends State<InnerDoorItemScreen> {
 
   double calculationQuantity = 1;
   double hourlyRateConstructionRemodeling = 550;
-  double hourlyRateDemolition = 550;
-  double hourlyRatePainting = 500;
+  String name = '';
 
   void initialiseEmptyList() {
     emptyCustomList = createList(widget.description.length);
@@ -171,7 +173,8 @@ class _InnerDoorItemScreenState extends State<InnerDoorItemScreen> {
       material2Controllers[i].text = widget.material2[i].toStringAsFixed(2);
       totalPriceControllers[i].text = widget.totalPrice[i].toStringAsFixed(2);
       customColumnControllers[i].text =
-          widget.laborHours2[i].toStringAsFixed(2);
+          (widget.laborHours2[i] / calculationQuantity).toStringAsFixed(2);
+      emptyCustomList[i] = double.parse(customColumnControllers[i].text);
     }
     quantityCalculationControllers.text =
         calculationQuantity.toStringAsFixed(2);
@@ -310,7 +313,6 @@ class _InnerDoorItemScreenState extends State<InnerDoorItemScreen> {
             dataCellDisplay(widget.description, i),
             dataCellDisplay(widget.unit, i),
             dataCellDisplayController(quantityControllers, i),
-
             DataCell(
               TextField(
                 style:
@@ -584,6 +586,63 @@ class _InnerDoorItemScreenState extends State<InnerDoorItemScreen> {
                 alignment: Alignment.centerLeft,
               ),
             ),
+            FloatingActionButton(
+              onPressed: () async {
+                final name = await openDialog();
+                if (name == null || name.isEmpty) return;
+                setState(() {
+                  this.name = name;
+                });
+                InnerDoorModel innerDoorModel = InnerDoorModel(
+                  name: name,
+                  description: widget.description,
+                  unit: widget.unit,
+                  quantity: widget.quantity,
+                  laborHours1: widget.laborHours1,
+                  laborHours2: widget.laborHours2,
+                  laborCost: widget.laborCost,
+                  material: widget.material1,
+                  materials: widget.material2,
+                  totalPrice: widget.totalPrice,
+                );
+                writeJson(innerDoorModel);
+                ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                    content: Text('Data has been saved as $name.json')));
+              },
+              child: Text("Save to JSON"),
+              heroTag: "btn1",
+            ),
+            FloatingActionButton(
+                child: Text("Load data"),
+                heroTag: "btn2",
+                onPressed: () {
+                  openLoadingDialog().then((value) {
+                    if (value == null || value.isEmpty) return;
+                    setState(() {
+                      this.name = value;
+                    });
+                    readJsonFile(name).then(
+                      (value) {
+                        InnerDoorModel innerDoorModel =
+                            InnerDoorModel.fromJson(value);
+                        setState(() {
+                          widget.description = innerDoorModel.description;
+                          widget.unit = innerDoorModel.unit;
+                          widget.quantity = innerDoorModel.quantity;
+                          widget.laborHours1 = innerDoorModel.laborHours1;
+                          widget.laborHours2 = innerDoorModel.laborHours2;
+                          widget.laborCost = innerDoorModel.laborCost;
+                          widget.material1 = innerDoorModel.material;
+                          widget.material2 = innerDoorModel.materials;
+                          widget.totalPrice = innerDoorModel.totalPrice;
+                          calculateCalculationQuantity();
+                          setInitialValues();
+                          updateTotalSum();
+                        });
+                      },
+                    );
+                  });
+                }),
             SingleChildScrollView(
               scrollDirection: Axis.horizontal,
               child: DataTable(
@@ -597,5 +656,56 @@ class _InnerDoorItemScreenState extends State<InnerDoorItemScreen> {
         ),
       ),
     );
+  }
+
+  Future<String?> openLoadingDialog() => showDialog<String>(
+        context: context,
+        builder: (context) => AlertDialog(
+          title: Text("Name of the file you want to load"),
+          content: TextField(
+            controller: loadingController,
+            autofocus: true,
+            decoration: InputDecoration(
+              hintText: "Enter the name of the file",
+            ),
+          ),
+          actions: [
+            TextButton(
+                onPressed: () {
+                  submitLoading();
+                },
+                child: Text("Load")),
+          ],
+        ),
+      );
+
+  void submitLoading() {
+    Navigator.of(context).pop(loadingController.text);
+    loadingController.clear();
+  }
+
+  Future<String?> openDialog() => showDialog<String>(
+        context: context,
+        builder: (context) => AlertDialog(
+          title: Text("Name the file"),
+          content: TextField(
+            controller: savingController,
+            autofocus: true,
+            decoration: InputDecoration(
+              hintText: "Enter the name of the file",
+            ),
+          ),
+          actions: [
+            TextButton(
+                onPressed: () {
+                  submit();
+                },
+                child: Text("Save")),
+          ],
+        ),
+      );
+  void submit() {
+    Navigator.of(context).pop(savingController.text);
+    savingController.clear();
   }
 }
