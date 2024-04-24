@@ -486,7 +486,6 @@ class _WindowsExteriorDoorItemsScreen
         dataCellDisplaySingle(
             "Total sum", 200, Color.fromARGB(255, 255, 255, 255)),
         dataCellDisplaySingle("", 100, Color.fromARGB(255, 255, 255, 255)),
-        dataCellDisplaySingle("", 100, Color.fromARGB(255, 255, 255, 255)),
         dataCellDisplaySingle("", 150, Color.fromARGB(255, 255, 255, 255)),
         dataCellDisplaySingle(
             customColumn ? '' : totalLaborHours1.toStringAsFixed(2),

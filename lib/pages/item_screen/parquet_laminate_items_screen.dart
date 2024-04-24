@@ -286,14 +286,6 @@ class _ParquetLaminateItemsScreenState
       createDataColumn("Description", 200, customColumn, () {}),
       createDataColumn("Unit", 100, customColumn, () {}),
       createDataColumn("Quantity", 100, customColumn, () {}),
-      DataColumn(
-        label: SizedBox(
-          width: 100, // Set the width as needed
-          child: Text('Hours', //child: Text('Enh. tid.'),
-              style:
-                  TextStyle(color: customColumn ? Colors.grey : Colors.black)),
-        ),
-      ),
       createDataColumn("Hours", 100, customColumn, () {
         customColumn = !customColumn;
         updateTotalSum();
@@ -320,7 +312,6 @@ class _ParquetLaminateItemsScreenState
             dataCellDisplay(widget.description, i),
             dataCellDisplay(widget.unit, i),
             dataCellDisplayController(quantityControllers, i),
-
             DataCell(
               TextField(
                 style:
@@ -491,7 +482,6 @@ class _ParquetLaminateItemsScreenState
       cells: [
         dataCellDisplaySingle(
             "Total sum", 200, Color.fromARGB(255, 255, 255, 255)),
-        dataCellDisplaySingle("", 100, Color.fromARGB(255, 255, 255, 255)),
         dataCellDisplaySingle("", 100, Color.fromARGB(255, 255, 255, 255)),
         dataCellDisplaySingle("", 150, Color.fromARGB(255, 255, 255, 255)),
         dataCellDisplaySingle(
