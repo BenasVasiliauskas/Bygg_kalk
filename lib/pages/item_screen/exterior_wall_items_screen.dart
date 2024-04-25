@@ -309,7 +309,7 @@ class _ExteriorWallItemsScreenState extends State<ExteriorWallItemsScreen> {
         updateTotalSum();
         rebuildDataTable();
       }),
-      createDataColumn("Hours2", 100, customColumn, () {}),
+      createDataColumn("Total hours", 100, customColumn, () {}),
       createDataColumn("Job Cost", 100, customColumn, () {}),
       createDataColumn("Materials", 100, customColumn, () {}),
       createDataColumn("Material cost", 100, customColumn, () {}),

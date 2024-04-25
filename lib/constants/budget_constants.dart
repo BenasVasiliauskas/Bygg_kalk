@@ -1,10 +1,9 @@
 List<String> calculatedNamesOrder = [
-  'Inner door',
-  'Exterior walls',
   'Interior walls',
-  'Kitchen',
-  'Parquet and laminate',
+  'Exterior walls',
   'Windows and exterior doors',
+  'Interior door',
+  'Parquet and laminate',
 ];
 
 List<double> totalHours = [0, 0, 0, 0, 0, 0];
@@ -80,18 +79,7 @@ Map<String, double> innerDoorBudgetSum = {
   "Interior door, pine 9x21": 0,
 };
 /////////////////////////////////////////////////////////////////////////////////////
-Map<String, double> kitchenHours = {
-  "Interior design in housing, kitchen cabinets": 0
-};
-Map<String, double> kitchenLaborCosts = {
-  "Interior design in housing, kitchen cabinets": 0
-};
-Map<String, double> kitchenMaterialCosts = {
-  "Interior design in housing, kitchen cabinets": 0
-};
-Map<String, double> kitchenBudgetSum = {
-  "Interior design in housing, kitchen cabinets": 0
-};
+
 /////////////////////////////////////////////////////////////////////////////////////
 Map<String, double> parquetAndLaminateHours = {
   "Surface covering parquet": 0,
@@ -145,11 +133,7 @@ void reCalculate() {
   totalMaterialCosts[2] = innerWallMaterialCosts.values.reduce((s, e) => s + e);
   budgetSums[2] = innerWallBudgetSum.values.reduce((s, e) => s + e);
   //
-  totalHours[3] = kitchenHours.values.reduce((s, e) => s + e);
-  totalLaborCosts[3] = kitchenLaborCosts.values.reduce((s, e) => s + e);
-  totalMaterialCosts[3] = kitchenMaterialCosts.values.reduce((s, e) => s + e);
-  budgetSums[3] = kitchenBudgetSum.values.reduce((s, e) => s + e);
-  //
+
   totalHours[4] = parquetAndLaminateHours.values.reduce((s, e) => s + e);
   totalLaborCosts[4] =
       parquetAndLaminateLaborCosts.values.reduce((s, e) => s + e);
@@ -174,8 +158,6 @@ void addHours(String name, double hours) {
     outerWallHours[name] = hours;
   } else if (innerDoorHours.containsKey(name)) {
     innerDoorHours[name] = hours;
-  } else if (kitchenHours.containsKey(name)) {
-    kitchenHours[name] = hours;
   } else if (parquetAndLaminateHours.containsKey(name)) {
     parquetAndLaminateHours[name] = hours;
   } else if (windowsAndExteriorDoorHours.containsKey(name)) {
@@ -191,8 +173,6 @@ void addLaborCosts(String name, double laborCosts) {
     outerWallLaborCosts[name] = laborCosts;
   } else if (innerDoorLaborCosts.containsKey(name)) {
     innerDoorLaborCosts[name] = laborCosts;
-  } else if (kitchenLaborCosts.containsKey(name)) {
-    kitchenLaborCosts[name] = laborCosts;
   } else if (parquetAndLaminateLaborCosts.containsKey(name)) {
     parquetAndLaminateLaborCosts[name] = laborCosts;
   } else if (windowsAndExteriorDoorLaborCosts.containsKey(name)) {
@@ -208,8 +188,6 @@ void addMaterialCosts(String name, double materialCosts) {
     outerWallMaterialCosts[name] = materialCosts;
   } else if (innerDoorMaterialCosts.containsKey(name)) {
     innerDoorMaterialCosts[name] = materialCosts;
-  } else if (kitchenMaterialCosts.containsKey(name)) {
-    kitchenMaterialCosts[name] = materialCosts;
   } else if (parquetAndLaminateMaterialCosts.containsKey(name)) {
     parquetAndLaminateMaterialCosts[name] = materialCosts;
   } else if (windowsAndExteriorDoorMaterialCosts.containsKey(name)) {
@@ -225,8 +203,6 @@ void addBudgetSum(String name, double budgetSum) {
     outerWallBudgetSum[name] = budgetSum;
   } else if (innerDoorBudgetSum.containsKey(name)) {
     innerDoorBudgetSum[name] = budgetSum;
-  } else if (kitchenBudgetSum.containsKey(name)) {
-    kitchenBudgetSum[name] = budgetSum;
   } else if (parquetAndLaminateBudgetSum.containsKey(name)) {
     parquetAndLaminateBudgetSum[name] = budgetSum;
   } else if (windowsAndExteriorDoorBudgetSum.containsKey(name)) {
