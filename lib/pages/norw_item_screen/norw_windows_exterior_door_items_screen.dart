@@ -1,3 +1,8 @@
+// ignore_for_file: must_be_immutable
+
+import 'package:cost_calculator/functions/initialise_functions.dart';
+import 'package:cost_calculator/functions/save_to_json.dart';
+import 'package:cost_calculator/models/windows_exterior_doors_model.dart';
 import 'package:cost_calculator/widgets/main_data_table.dart';
 import 'package:flutter/material.dart';
 import 'package:collection/collection.dart';
@@ -6,16 +11,16 @@ import '../../constants/norw_budget_constants.dart';
 import '../../functions/create_worksheet.dart';
 
 class NorwWindowsExteriorDoorItemsScreen extends StatefulWidget {
-  final String name;
-  final List<String> description;
-  final List<String> unit;
-  final List<double> quantity;
-  final List<double> laborHours1;
-  final List<double> laborHours2;
-  final List<double> laborCost;
-  final List<double> material1;
-  final List<double> material2;
-  final List<double> totalPrice;
+  String name;
+  List<String> description;
+  List<String> unit;
+  List<double> quantity;
+  List<double> laborHours1;
+  List<double> laborHours2;
+  List<double> laborCost;
+  List<double> material1;
+  List<double> material2;
+  List<double> totalPrice;
 
   NorwWindowsExteriorDoorItemsScreen(
     this.name,
@@ -50,7 +55,8 @@ class _NorwWindowsExteriorDoorItemsScreenState
   List<TextEditingController> material1Controllers = [];
   List<TextEditingController> material2Controllers = [];
   List<TextEditingController> totalPriceControllers = [];
-
+  late TextEditingController savingController;
+  late TextEditingController loadingController;
   //
   TextEditingController quantityCalculationControllers =
       TextEditingController();
@@ -60,46 +66,9 @@ class _NorwWindowsExteriorDoorItemsScreenState
   List<TextEditingController> customColumnControllers = [];
   double calculationQuantity = 1;
   double hourlyRateConstructionRemodeling = 550;
-  double hourlyRateDemolition = 550;
-  double hourlyRatePainting = 500;
+  String name = '';
   void initialiseEmptyList() {
     emptyCustomList = createList(widget.description.length);
-  }
-
-  //used in Sparkling strimmel, flekksp.1, skjøtsp. 2, helsp.1, grunning. 2 strøk maling
-  double calculateCostPainting(int index) {
-    double laborCost = widget.laborHours2[index];
-    return laborCost * hourlyRatePainting;
-  }
-
-  double calculateMaterialQuantity(int index) {
-    double quantity = widget.quantity[index];
-    return quantity * calculationQuantity;
-  }
-
-  double calculateWorkHours2(int index) {
-    if (customColumn) {
-      double laborHours1 = emptyCustomList[index];
-      return laborHours1 * calculationQuantity;
-    } else {
-      double laborHours1 = widget.laborHours1[index];
-      return laborHours1 * calculationQuantity;
-    }
-  }
-
-  double calculateJobCost(int index) {
-    double laborHours2 = widget.laborHours2[index];
-    return laborHours2 * hourlyRateConstructionRemodeling;
-  }
-
-  double calculateMaterialCost(int index) {
-    double material1 = widget.material1[index];
-    return material1 * calculationQuantity;
-  }
-
-  double calculateTotalPrice(int index) {
-    double jobCost = widget.laborCost[index];
-    return jobCost + widget.material1[index] * calculationQuantity;
   }
 
   void rebuildDataTable() {
@@ -132,78 +101,20 @@ class _NorwWindowsExteriorDoorItemsScreenState
       totalMaterial2 += widget.material2[i];
       totalTotalPrice += widget.totalPrice[i];
     }
+    addHours(widget.name, totalLaborHours2);
+    addLaborCosts(widget.name, emptyCustomList.sum);
+    addMaterialCosts(widget.name, totalMaterial2);
+    addBudgetSum(widget.name, totalTotalPrice);
 
     // Create the "Total Sum" row
-    DataRow totalSumRow = DataRow(
-      cells: [
-        DataCell(
-          Container(
-            width: 200,
-            child: Text('Sum (eks. mva):'),
-          ),
-        ),
-        DataCell(
-          Container(
-            width: 100,
-            child: Text(''),
-          ),
-        ),
-        DataCell(
-          Container(
-            width: 100,
-            child: Text(''),
-          ),
-        ),
-        DataCell(
-          Container(
-            width: 150,
-            child: Text(''),
-          ),
-        ),
-        DataCell(
-          Container(
-            width: 100,
-            child: Text(totalLaborHours1.toStringAsFixed(2)),
-          ),
-        ),
-        DataCell(
-          Container(
-            width: 100,
-            child: Text(totalCustomColumn.toStringAsFixed(2)),
-          ),
-        ),
-        DataCell(
-          Container(
-            width: 100,
-            child: Text(totalLaborHours2.toStringAsFixed(2)),
-          ),
-        ),
-        DataCell(
-          Container(
-            width: 100,
-            child: Text(totalLaborCost.toStringAsFixed(2)),
-          ),
-        ),
-        DataCell(
-          Container(
-            width: 100,
-            child: Text(totalMaterial1.toStringAsFixed(2)),
-          ),
-        ),
-        DataCell(
-          Container(
-            width: 100,
-            child: Text(totalMaterial2.toStringAsFixed(2)),
-          ),
-        ),
-        DataCell(
-          Container(
-            width: 100,
-            child: Text(totalTotalPrice.toStringAsFixed(2)),
-          ),
-        ),
-      ],
-    );
+    DataRow totalSumRow = totalSumRowNorw(
+        totalLaborHours1,
+        totalCustomColumn,
+        totalLaborHours2,
+        totalLaborCost,
+        totalMaterial1,
+        totalMaterial2,
+        totalTotalPrice);
 
     // Add the "Total Sum" row to the updated rows
     updatedRows.add(totalSumRow);
@@ -234,6 +145,20 @@ class _NorwWindowsExteriorDoorItemsScreenState
       customColumnControllers.add(TextEditingController());
     }
     initialiseEmptyList();
+    savingController = TextEditingController();
+    loadingController = TextEditingController();
+  }
+
+  void calculateCalculationQuantity() {
+    double mat2Total = widget.material2
+        .fold(0, (previousValue, element) => previousValue + element);
+    double mat1Total = widget.material1
+        .fold(0, (previousValue, element) => previousValue + element);
+
+    calculationQuantity = mat2Total / mat1Total;
+
+    quantityCalculationControllers.text =
+        calculationQuantity.toStringAsFixed(2);
   }
 
   void setInitialValues() {
@@ -249,7 +174,8 @@ class _NorwWindowsExteriorDoorItemsScreenState
       material2Controllers[i].text = widget.material2[i].toStringAsFixed(2);
       totalPriceControllers[i].text = widget.totalPrice[i].toStringAsFixed(2);
       customColumnControllers[i].text =
-          widget.laborHours2[i].toStringAsFixed(2);
+          (widget.laborHours2[i] / calculationQuantity).toStringAsFixed(2);
+      emptyCustomList[i] = double.parse(customColumnControllers[i].text);
     }
     quantityCalculationControllers.text =
         calculationQuantity.toStringAsFixed(2);
@@ -269,90 +195,116 @@ class _NorwWindowsExteriorDoorItemsScreenState
   }
 
   @override
+  void dispose() {
+    savingController.dispose();
+    loadingController.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
-    List<DataColumn> calculationColumns = [
-      DataColumn(label: Text('Mengde')),
-      DataColumn(label: Text('Time pris. Ny bygg og ombygging.')),
-      DataColumn(label: Text('Enhet')),
+    List<DataColumn> calculationColumns = calculationColumnsNorw;
+    List<DataRow> calculationRows = [
+      DataRow(
+        cells: [
+          dataCellDoSingle(quantityCalculationControllers, (value) {
+            calculationQuantity = double.parse(value);
+            for (int i = 0; i < widget.description.length; i++) {
+              // Recalculate and update the material quantity when quantity changes
+
+              widget.laborHours2[i] = calculateWorkHours2(i, customColumn,
+                  emptyCustomList, widget.laborHours1, calculationQuantity);
+              laborHours2Controllers[i].text = calculateWorkHours2(
+                      i,
+                      customColumn,
+                      emptyCustomList,
+                      widget.laborHours1,
+                      calculationQuantity)
+                  .toStringAsFixed(2);
+
+              widget.laborCost[i] = calculateJobCost(
+                  i, widget.laborHours1, hourlyRateConstructionRemodeling);
+              laborCostControllers[i].text = calculateJobCost(
+                      i, widget.laborHours1, hourlyRateConstructionRemodeling)
+                  .toStringAsFixed(2);
+
+              widget.laborCost[i] = calculateJobCost(
+                  i, widget.laborHours2, hourlyRateConstructionRemodeling);
+              laborCostControllers[i].text = calculateJobCost(
+                      i, widget.laborHours2, hourlyRateConstructionRemodeling)
+                  .toStringAsFixed(2);
+
+              // Recalculate and update the material 2 when quantity changes
+              widget.material2[i] = calculateMaterialCost(i, widget.material1,
+                  calculationQuantity, customColumn, emptyCustomList);
+              material2Controllers[i].text = calculateMaterialCost(
+                      i,
+                      widget.material1,
+                      calculationQuantity,
+                      customColumn,
+                      emptyCustomList)
+                  .toStringAsFixed(2);
+
+              // Recalculate and update the total price when quantity changes
+              widget.totalPrice[i] = calculateTotalPrice(
+                  i, widget.laborCost, widget.material1, calculationQuantity);
+              totalPriceControllers[i].text = calculateTotalPrice(i,
+                      widget.laborCost, widget.material1, calculationQuantity)
+                  .toStringAsFixed(2);
+              //Rebuild the data table
+              rebuildDataTable();
+            }
+          }, Color.fromARGB(255, 218, 128, 122), false),
+          dataCellDoSingle(hourlyRateConstructionRemodelingController, (value) {
+            hourlyRateConstructionRemodeling = double.parse(value);
+            for (int i = 0; i < widget.description.length; i++) {
+              //
+              emptyCustomList[i] =
+                  double.parse(customColumnControllers[i].text);
+              customColumnControllers[i].text =
+                  emptyCustomList[i].toStringAsFixed(2);
+              // Recalculate and update the labor cost when hourlyRateConstructionRemodeling changes
+              widget.laborCost[i] = calculateJobCost(
+                  i, widget.laborHours2, hourlyRateConstructionRemodeling);
+              laborCostControllers[i].text = calculateJobCost(
+                      i, widget.laborHours2, hourlyRateConstructionRemodeling)
+                  .toStringAsFixed(2);
+
+              // Recalculate and update the total price when hourlyRateConstructionRemodeling changes
+              widget.totalPrice[i] = calculateTotalPrice(
+                  i, widget.laborCost, widget.material1, calculationQuantity);
+              totalPriceControllers[i].text = calculateTotalPrice(i,
+                      widget.laborCost, widget.material1, calculationQuantity)
+                  .toStringAsFixed(2);
+
+              //Rebuild the data table
+              rebuildDataTable();
+            }
+          }, Color.fromARGB(255, 218, 128, 122), false),
+          dataCellDisplay(<String>['kr .'], 0)
+        ],
+      ),
     ];
 
-    List<DataRow> calculationRows = [];
-
     List<DataColumn> columns = [
-      DataColumn(
-        label: SizedBox(
-          width: 200, // Set the width as needed
-          child: Text('Beskrivelse'),
-        ),
-      ),
-      DataColumn(
-        label: SizedBox(
-          width: 100, // Set the width as needed
-          child: Text('Enhet'),
-        ),
-      ),
-      DataColumn(
-        label: SizedBox(
-          width: 100, // Set the width as needed
-          child: Text('Mengde'),
-        ),
-      ),
-      DataColumn(
-        label: SizedBox(
-          width: 100, // Set the width as needed
-          child: Text(
-            'Enh. tid.',
-            style: TextStyle(color: customColumn ? Colors.grey : Colors.black),
-          ),
-        ),
-      ),
-      DataColumn(
-          label: SizedBox(
-        width: customColumn ? 100 : 35, // Set the width as needed
-        child: TextButton(
-          style: TextButton.styleFrom(
-            foregroundColor: Colors.black,
-            backgroundColor: Colors.white,
-          ),
-          onPressed: () {
-            setState(() {
-              customColumn = !customColumn;
-              updateTotalSum();
-            });
-          },
-          child: customColumn ? Text("Tilpassede timer") : Text("+"),
-        ),
-      )),
-      DataColumn(
-        label: SizedBox(
-          width: 100, // Set the width as needed
-          child: Text('Sum. tid.'),
-        ),
-      ),
-      DataColumn(
-        label: SizedBox(
-          width: 100, // Set the width as needed
-          child: Text('Arb.pris'),
-        ),
-      ),
-      DataColumn(
-        label: SizedBox(
-          width: 100, // Set the width as needed
-          child: Text('Enh. mater.'),
-        ),
-      ),
-      DataColumn(
-        label: SizedBox(
-          width: 100, // Set the width as needed
-          child: Text('Sum. material'),
-        ),
-      ),
-      DataColumn(
-        label: SizedBox(
-          width: 100, // Set the width as needed
-          child: Text('Total pris'),
-        ),
-      ),
+      createDataColumn("Beskrivelse", 200, customColumn, () {}),
+      createDataColumn("Enhet", 100, customColumn, () {}),
+      createDataColumn("Mengde", 100, customColumn, () {}),
+      createDataColumn("Enh. tid.", 100, customColumn, () {
+        customColumn = !customColumn;
+        updateTotalSum();
+        rebuildDataTable();
+      }),
+      createDataColumn("Tilpassede timer", 100, customColumn, () {
+        customColumn = !customColumn;
+        updateTotalSum();
+        rebuildDataTable();
+      }),
+      createDataColumn("Sum. tid.", 100, customColumn, () {}),
+      createDataColumn("Arb.pris ", 100, customColumn, () {}),
+      createDataColumn("Enh. mater.", 100, customColumn, () {}),
+      createDataColumn("Sum. material", 100, customColumn, () {}),
+      createDataColumn("Total pris'", 100, customColumn, () {}),
     ];
 
     List<DataRow> rows = [];
@@ -361,33 +313,9 @@ class _NorwWindowsExteriorDoorItemsScreenState
       rows.add(
         DataRow(
           cells: [
-            DataCell(
-              Container(
-                width: 200, // Set the width as needed
-                child: Text(
-                  widget.description[i],
-                  maxLines: 3, // Set the maximum number of lines
-                  overflow:
-                      TextOverflow.ellipsis, // Allow text to overflow and wrap
-                ),
-              ),
-            ),
-            DataCell(
-              Container(
-                width: 100,
-                child: Text(
-                  widget.unit[i],
-                  maxLines: 3,
-                  overflow: TextOverflow.ellipsis,
-                ),
-              ),
-            ),
-            DataCell(
-              TextField(
-                readOnly: true,
-                controller: quantityControllers[i],
-              ),
-            ),
+            dataCellDisplay(widget.description, i),
+            dataCellDisplay(widget.unit, i),
+            dataCellDisplayController(quantityControllers, i),
 
             DataCell(
               TextField(
@@ -415,19 +343,32 @@ class _NorwWindowsExteriorDoorItemsScreenState
                       .toStringAsFixed(2)); // Format to 2 decimal places
                   // Recalculate and update the labor hours 2 when labor hours 1 changes need changes
 
-                  widget.laborHours2[i] = calculateWorkHours2(i);
-                  laborHours2Controllers[i].text =
-                      calculateWorkHours2(i).toStringAsFixed(2);
+                  widget.laborHours2[i] = calculateWorkHours2(i, customColumn,
+                      emptyCustomList, widget.laborHours2, calculationQuantity);
+                  laborHours2Controllers[i].text = calculateWorkHours2(
+                          i,
+                          customColumn,
+                          emptyCustomList,
+                          widget.laborHours1,
+                          calculationQuantity)
+                      .toStringAsFixed(2);
 
                   // Recalculate and update the labor cost when labor hours 2 changes
-                  widget.laborCost[i] = calculateJobCost(i);
-                  laborCostControllers[i].text =
-                      calculateJobCost(i).toStringAsFixed(2);
+                  widget.laborCost[i] = calculateJobCost(
+                      i, widget.laborHours2, hourlyRateConstructionRemodeling);
+                  laborCostControllers[i].text = calculateJobCost(i,
+                          widget.laborHours2, hourlyRateConstructionRemodeling)
+                      .toStringAsFixed(2);
 
                   // Recalculate and update the total price when labor hours 2 changes
-                  widget.totalPrice[i] = calculateTotalPrice(i);
-                  totalPriceControllers[i].text =
-                      calculateTotalPrice(i).toStringAsFixed(2);
+                  widget.totalPrice[i] = calculateTotalPrice(i,
+                      widget.laborCost, widget.material1, calculationQuantity);
+                  totalPriceControllers[i].text = calculateTotalPrice(
+                          i,
+                          widget.laborCost,
+                          widget.material1,
+                          calculationQuantity)
+                      .toStringAsFixed(2);
 
                   //total sum doesnt get updated
                   updateTotalSum();
@@ -436,90 +377,88 @@ class _NorwWindowsExteriorDoorItemsScreenState
                     decimal: true), // Allow decimal numbers
               ),
             ),
-            DataCell(
-              TextField(
-                readOnly: true,
-                controller: laborHours2Controllers[i],
-                onChanged: (value) {
-                  // Handle changes to labor hours 2
-                  double parsedValue = double.parse(value);
-                  widget.laborHours2[i] = double.parse(parsedValue
-                      .toStringAsFixed(2)); // Format to 2 decimal places
-
-                  // Recalculate the labor cost when labor hours 2 changes
-                  double updatedLaborCost = calculateJobCost(i);
-                  widget.laborCost[i] = double.parse(updatedLaborCost
-                      .toStringAsFixed(2)); // Format to 2 decimal places
-                },
-              ),
+            dataCellDo(
+              laborHours2Controllers,
+              i,
+              (value) {
+                // Handle changes to labor hours 2
+                double parsedValue = double.parse(value);
+                widget.laborHours2[i] =
+                    double.parse(parsedValue.toStringAsFixed(2));
+                // Recalculate the labor cost when labor hours 2 changes
+                double updatedLaborCost = calculateJobCost(
+                    i,
+                    widget.laborHours2,
+                    hourlyRateConstructionRemodeling); // Calculate the labor cost
+                widget.laborCost[i] =
+                    double.parse(updatedLaborCost.toStringAsFixed(2));
+              },
+              Color.fromARGB(255, 255, 255, 255),
+              true,
             ),
-            DataCell(
-              TextField(
-                controller: laborCostControllers[i],
-                readOnly: true,
-                onChanged: (value) {
-                  // Handle changes to labor cost
-                  widget.laborCost[i] = double.parse(value);
-                },
-              ),
+            dataCellDo(
+              laborCostControllers,
+              i,
+              (value) {
+                widget.laborCost[i] = double.parse(value);
+              },
+              Color.fromARGB(255, 255, 255, 255),
+              true,
             ),
-            DataCell(
-              TextField(
-                decoration: InputDecoration(
-                    fillColor: const Color.fromARGB(255, 218, 128, 122),
-                    filled: true),
-                controller: material1Controllers[i],
-                onChanged: (value) {
-                  // Handle changes to material 1
-                  double parsedValue = double.parse(value);
-                  widget.material1[i] = double.parse(parsedValue
-                      .toStringAsFixed(2)); // Format to 2 decimal places
+            dataCellDo(
+              material1Controllers,
+              i,
+              (value) {
+                // Handle changes to material 1
+                double parsedValue = double.parse(value);
+                widget.material1[i] = double.parse(parsedValue
+                    .toStringAsFixed(2)); // Format to 2 decimal places
 
-                  // Recalculate and update the material 2 when material 1 changes
-                  double updatedMaterial2 = calculateMaterialCost(i);
-                  widget.material2[i] = updatedMaterial2;
-                  material2Controllers[i].text =
-                      updatedMaterial2.toStringAsFixed(2);
+                // Recalculate and update the material 2 when material 1 changes
+                double updatedMaterial2 = calculateMaterialCost(
+                    i,
+                    widget.material1,
+                    calculationQuantity,
+                    customColumn,
+                    emptyCustomList);
+                widget.material2[i] = updatedMaterial2;
+                material2Controllers[i].text =
+                    updatedMaterial2.toStringAsFixed(2);
 
-                  // Recalculate total price
-                  double updatedTotalPrice = calculateTotalPrice(i);
-                  widget.totalPrice[i] = updatedTotalPrice;
-                  totalPriceControllers[i].text =
-                      updatedTotalPrice.toStringAsFixed(2);
-                  // Format to 2 decimal places
+                // Recalculate total price
+                double updatedTotalPrice = calculateTotalPrice(
+                    i, widget.laborCost, widget.material1, calculationQuantity);
+                widget.totalPrice[i] = updatedTotalPrice;
+                totalPriceControllers[i].text =
+                    updatedTotalPrice.toStringAsFixed(2);
+                // Format to 2 decimal places
 
-                  rebuildDataTable();
-                },
-                keyboardType: TextInputType.numberWithOptions(
-                    decimal: true), // Allow decimal numbers
-              ),
+                rebuildDataTable();
+              },
+              Color.fromARGB(255, 218, 128, 122),
+              false,
             ),
-            DataCell(
-              TextField(
-                readOnly: true,
-                controller: material2Controllers[i],
-                onChanged: (value) {
-                  // Handle changes to material 2
-                  widget.material2[i] = double.parse(value);
-                  material2Controllers[i].text =
-                      widget.material2[i].toStringAsFixed(2);
-                },
-              ),
+            dataCellDo(
+              material2Controllers,
+              i,
+              (value) {
+                widget.material2[i] = double.parse(value);
+                material2Controllers[i].text =
+                    widget.material2[i].toStringAsFixed(2);
+              },
+              Color.fromARGB(255, 255, 255, 255),
+              true,
             ),
-            DataCell(
-              TextField(
-                decoration: InputDecoration(
-                    fillColor: Color.fromARGB(255, 153, 240, 131),
-                    filled: true),
-                controller: totalPriceControllers[i],
-                onChanged: (value) {
-                  // Handle changes to the total price
-                  widget.totalPrice[i] = double.parse(value);
-                  totalPriceControllers[i].text =
-                      widget.totalPrice[i].toStringAsFixed(2);
-                },
-                readOnly: true,
-              ),
+            dataCellDo(
+              totalPriceControllers,
+              i,
+              (value) {
+                widget.totalPrice[i] = double.parse(value);
+                totalPriceControllers[i].text =
+                    widget.totalPrice[i].toStringAsFixed(2);
+              },
+              Color.fromARGB(255, 153, 240, 131),
+              true,
             ),
           ],
         ),
@@ -543,39 +482,18 @@ class _NorwWindowsExteriorDoorItemsScreenState
       totalMaterial2 += widget.material2[i];
       totalTotalPrice += widget.totalPrice[i];
     }
-    addHours(widget.name, totalLaborHours2);
-    addLaborCosts(widget.name, emptyCustomList.sum);
-    addMaterialCosts(widget.name, totalMaterial2);
-    addBudgetSum(widget.name, totalTotalPrice);
 
 // Create the "Total Sum" row
     DataRow totalSumRow = DataRow(
       cells: [
-        DataCell(
-          Container(
-            width: 200,
-            child: Text('Total (eks. mva)'),
-          ),
-        ),
-        DataCell(
-          Container(
-            width: 100,
-            child: Text(""),
-          ),
-        ),
-        DataCell(
-          Container(
-            width: 150,
-            child: Text(""),
-          ),
-        ),
-        DataCell(
-          Container(
-            width: 100,
-            child:
-                Text(customColumn ? '' : totalLaborHours1.toStringAsFixed(2)),
-          ),
-        ),
+        dataCellDisplaySingle(
+            "Total (eks. mva)", 200, Color.fromARGB(255, 255, 255, 255)),
+        dataCellDisplaySingle("", 100, Color.fromARGB(255, 255, 255, 255)),
+        dataCellDisplaySingle("", 150, Color.fromARGB(255, 255, 255, 255)),
+        dataCellDisplaySingle(
+            customColumn ? '' : totalLaborHours1.toStringAsFixed(2),
+            100,
+            Color.fromARGB(255, 255, 255, 255)),
         DataCell(
           Container(
             width: 100,
@@ -595,18 +513,10 @@ class _NorwWindowsExteriorDoorItemsScreenState
             ),
           ),
         ),
-        DataCell(
-          Container(
-            width: 100,
-            child: Text(totalLaborHours2.toStringAsFixed(2)),
-          ),
-        ),
-        DataCell(
-          Container(
-            width: 100,
-            child: Text(totalLaborCost.toStringAsFixed(2)),
-          ),
-        ),
+        dataCellDisplaySingle(totalLaborHours2.toStringAsFixed(2), 100,
+            Color.fromARGB(255, 255, 255, 255)),
+        dataCellDisplaySingle(totalLaborCost.toStringAsFixed(2), 100,
+            Color.fromARGB(255, 255, 255, 255)),
         DataCell(
           TextField(
             decoration: InputDecoration(
@@ -617,21 +527,13 @@ class _NorwWindowsExteriorDoorItemsScreenState
             readOnly: true,
           ),
         ),
-        DataCell(
-          Container(
-            width: 100,
-            child: Text(totalMaterial2.toStringAsFixed(2)),
-          ),
-        ),
-        DataCell(
-          TextField(
-            decoration: InputDecoration(
-                fillColor: Color.fromARGB(255, 153, 240, 131), filled: true),
-            controller:
-                TextEditingController(text: totalTotalPrice.toStringAsFixed(2)),
-            readOnly: true,
-          ),
-        ),
+        dataCellDisplaySingle(totalMaterial2.toStringAsFixed(2), 100,
+            Color.fromARGB(255, 255, 255, 255)),
+        dataCellDoSingle(
+            TextEditingController(text: totalTotalPrice.toStringAsFixed(2)),
+            (value) {},
+            Color.fromARGB(255, 153, 240, 131),
+            true),
       ],
     );
 
@@ -648,13 +550,12 @@ class _NorwWindowsExteriorDoorItemsScreenState
           children: [
             SingleChildScrollView(
               scrollDirection: Axis.horizontal,
-              // child: DataTable(
-              //   dataRowMaxHeight: double.infinity,
-              //   dataRowMinHeight: 60,
-              //   columns: columns, // Define your columns here
-              //   rows: rows,
-              // ),
-              child: MainDataTable(widget),
+              child: DataTable(
+                dataRowMaxHeight: double.infinity,
+                dataRowMinHeight: 60,
+                columns: columns, // Define your columns here
+                rows: rows,
+              ),
             ),
             Padding(
               padding: EdgeInsets.fromLTRB(25, 0, 0, 0),
@@ -689,6 +590,73 @@ class _NorwWindowsExteriorDoorItemsScreenState
                 alignment: Alignment.centerLeft,
               ),
             ),
+            FloatingActionButton(
+              onPressed: () async {
+                final name = await openDialog();
+                if (name == null || name.isEmpty) return;
+                setState(() {
+                  this.name = name;
+                });
+                WindowsAndExteriorDoorsModel windowsAndExteriorDoorsModel =
+                    WindowsAndExteriorDoorsModel(
+                  name: name,
+                  description: widget.description,
+                  unit: widget.unit,
+                  quantity: widget.quantity,
+                  laborHours1: widget.laborHours1,
+                  laborHours2: widget.laborHours2,
+                  laborCost: widget.laborCost,
+                  material: widget.material1,
+                  materials: widget.material2,
+                  totalPrice: widget.totalPrice,
+                );
+                writeJson(windowsAndExteriorDoorsModel);
+                ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                    content: Text('Dataene er lagret som $name.json')));
+              },
+              child: Text("Lagre til JSON"),
+              heroTag: "btn1",
+            ),
+            FloatingActionButton(
+                child: Text("Last inn data"),
+                heroTag: "btn2",
+                onPressed: () {
+                  openLoadingDialog().then((value) {
+                    if (value == null || value.isEmpty) return;
+                    setState(() {
+                      this.name = value;
+                    });
+                    readJsonFile(name).then(
+                      (value) {
+                        WindowsAndExteriorDoorsModel
+                            windowsAndExteriorDoorsModel =
+                            WindowsAndExteriorDoorsModel.fromJson(value);
+                        setState(() {
+                          widget.description =
+                              windowsAndExteriorDoorsModel.description;
+                          widget.unit = windowsAndExteriorDoorsModel.unit;
+                          widget.quantity =
+                              windowsAndExteriorDoorsModel.quantity;
+                          widget.laborHours1 =
+                              windowsAndExteriorDoorsModel.laborHours1;
+                          widget.laborHours2 =
+                              windowsAndExteriorDoorsModel.laborHours2;
+                          widget.laborCost =
+                              windowsAndExteriorDoorsModel.laborCost;
+                          widget.material1 =
+                              windowsAndExteriorDoorsModel.material;
+                          widget.material2 =
+                              windowsAndExteriorDoorsModel.materials;
+                          widget.totalPrice =
+                              windowsAndExteriorDoorsModel.totalPrice;
+                          calculateCalculationQuantity();
+                          setInitialValues();
+                          updateTotalSum();
+                        });
+                      },
+                    );
+                  });
+                }),
             SingleChildScrollView(
               scrollDirection: Axis.horizontal,
               child: DataTable(
@@ -697,10 +665,61 @@ class _NorwWindowsExteriorDoorItemsScreenState
                 columns: calculationColumns, // Define your columns here
                 rows: calculationRows,
               ),
-            ),
+            )
           ],
         ),
       ),
     );
+  }
+
+  Future<String?> openLoadingDialog() => showDialog<String>(
+        context: context,
+        builder: (context) => AlertDialog(
+          title: Text("Navnet på filen du vil laste inn"),
+          content: TextField(
+            controller: loadingController,
+            autofocus: true,
+            decoration: InputDecoration(
+              hintText: "Skriv inn navnet på filen",
+            ),
+          ),
+          actions: [
+            TextButton(
+                onPressed: () {
+                  submitLoading();
+                },
+                child: Text("Last")),
+          ],
+        ),
+      );
+
+  void submitLoading() {
+    Navigator.of(context).pop(loadingController.text);
+    loadingController.clear();
+  }
+
+  Future<String?> openDialog() => showDialog<String>(
+        context: context,
+        builder: (context) => AlertDialog(
+          title: Text("Gi filen et navn"),
+          content: TextField(
+            controller: savingController,
+            autofocus: true,
+            decoration: InputDecoration(
+              hintText: "Skriv inn navnet på filen",
+            ),
+          ),
+          actions: [
+            TextButton(
+                onPressed: () {
+                  submit();
+                },
+                child: Text("Spar")),
+          ],
+        ),
+      );
+  void submit() {
+    Navigator.of(context).pop(savingController.text);
+    savingController.clear();
   }
 }
