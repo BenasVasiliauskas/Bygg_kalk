@@ -124,7 +124,7 @@ class _NorwExteriorWallItemsScreenState
     addBudgetSum(widget.name, totalTotalPrice);
 
     // Create the "Total Sum" row
-    DataRow totalSumRow = totalSumRowEng(
+    DataRow totalSumRow = totalSumRowNorw(
         totalLaborHours1,
         totalCustomColumn,
         totalLaborHours2,

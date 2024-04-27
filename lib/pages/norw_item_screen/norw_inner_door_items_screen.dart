@@ -107,7 +107,7 @@ class _NorwInnerDoorItemScreenScreenState
     addMaterialCosts(widget.name, totalMaterial2);
     addBudgetSum(widget.name, totalTotalPrice);
     // Create the "Total Sum" row
-    DataRow totalSumRow = totalSumRowEng(
+    DataRow totalSumRow = totalSumRowNorw(
         totalLaborHours1,
         totalCustomColumn,
         totalLaborHours2,
@@ -174,7 +174,8 @@ class _NorwInnerDoorItemScreenScreenState
       material2Controllers[i].text = widget.material2[i].toStringAsFixed(2);
       totalPriceControllers[i].text = widget.totalPrice[i].toStringAsFixed(2);
       customColumnControllers[i].text =
-          widget.laborHours2[i].toStringAsFixed(2);
+          (widget.laborHours2[i] / calculationQuantity).toStringAsFixed(2);
+      emptyCustomList[i] = double.parse(customColumnControllers[i].text);
     }
     quantityCalculationControllers.text =
         calculationQuantity.toStringAsFixed(2);
@@ -711,4 +712,3 @@ class _NorwInnerDoorItemScreenScreenState
     savingController.clear();
   }
 }
-  
