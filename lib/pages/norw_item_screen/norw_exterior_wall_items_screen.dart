@@ -209,7 +209,7 @@ class _NorwExteriorWallItemsScreenState
 
   @override
   Widget build(BuildContext context) {
-    List<DataColumn> calculationColumns = calculationColumnsEng;
+    List<DataColumn> calculationColumns = calculationColumnsNorw;
 
     List<DataRow> calculationRows = [
       DataRow(
