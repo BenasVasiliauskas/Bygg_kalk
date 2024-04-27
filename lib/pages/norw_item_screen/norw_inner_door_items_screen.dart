@@ -315,7 +315,6 @@ class _NorwInnerDoorItemScreenScreenState
             dataCellDisplay(widget.description, i),
             dataCellDisplay(widget.unit, i),
             dataCellDisplayController(quantityControllers, i),
-
             DataCell(
               TextField(
                 style:
