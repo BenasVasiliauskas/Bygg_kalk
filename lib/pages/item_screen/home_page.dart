@@ -1,8 +1,6 @@
 import 'package:cost_calculator/constants/language.dart';
 import 'package:cost_calculator/widgets/custom_drawer.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class homePage extends StatefulWidget {
@@ -25,6 +23,7 @@ class _homePageState extends State<homePage> {
           },
         ),
         appBar: AppBar(
+          centerTitle: true,
           title: const Text('Bygg Kalk'),
         ),
         body: Column(
@@ -42,11 +41,12 @@ class _homePageState extends State<homePage> {
                       height: 120.0,
                       width: 120.0,
                       child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           IconButton(
                               color: Colors.white,
                               onPressed: () {},
-                              icon: FaIcon(FontAwesomeIcons.boxOpen)),
+                              icon: FaIcon(FontAwesomeIcons.houseChimney)),
                           Text(
                             "Items",
                             style: TextStyle(color: Colors.white),
@@ -62,6 +62,7 @@ class _homePageState extends State<homePage> {
                       height: 120.0,
                       width: 120.0,
                       child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           IconButton(
                               color: Colors.white,
@@ -90,6 +91,7 @@ class _homePageState extends State<homePage> {
                       height: 120.0,
                       width: 120.0,
                       child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           IconButton(
                               color: Colors.white,
@@ -110,6 +112,7 @@ class _homePageState extends State<homePage> {
                       height: 120.0,
                       width: 120.0,
                       child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           IconButton(
                               color: Colors.white,
