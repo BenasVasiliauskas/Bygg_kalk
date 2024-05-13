@@ -1,6 +1,7 @@
+import 'package:cost_calculator/pages/shared/splash.dart';
 import 'package:flutter/material.dart';
 
-import 'pages/interior_wall_screen.dart';
+import 'pages/shared/interior_wall_screen.dart';
 
 void main() => runApp(MyApp());
 
@@ -29,11 +30,11 @@ class MyApp extends StatelessWidget {
               fontWeight: FontWeight.bold,
             )),
       ),
-      home: InnerWallScreen(),
+      home: splashScreen(),
       initialRoute: '/',
       onUnknownRoute: (settings) {
         return MaterialPageRoute(
-          builder: (ctx) => InnerWallScreen(),
+          builder: (ctx) => splashScreen(),
         );
       },
     );

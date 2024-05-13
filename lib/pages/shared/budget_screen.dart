@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:cost_calculator/constants/budget_constants.dart';
 import 'package:cost_calculator/widgets/custom_drawer.dart';
 
-import '../constants/language.dart';
+import '../../constants/language.dart';
 
 class BudgetScreen extends StatefulWidget {
   @override

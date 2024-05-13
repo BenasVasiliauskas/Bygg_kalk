@@ -1,13 +1,13 @@
-import 'package:cost_calculator/pages/inner_door_screen.dart';
-import 'package:cost_calculator/pages/parquet_laminate_screen.dart';
+import 'package:cost_calculator/pages/shared/inner_door_screen.dart';
+import 'package:cost_calculator/pages/shared/parquet_laminate_screen.dart';
 
-import '../pages/budget_screen.dart';
-import '../pages/exterior_wall_screen.dart';
-import '../pages/interior_wall_screen.dart';
+import '../pages/shared/budget_screen.dart';
+import '../pages/shared/exterior_wall_screen.dart';
+import '../pages/shared/interior_wall_screen.dart';
 import 'package:flutter/material.dart';
 
-import '../pages/norw_budget_screen.dart';
-import '../pages/windows_exterior_door_screen.dart';
+import '../pages/shared/norw_budget_screen.dart';
+import '../pages/shared/windows_exterior_door_screen.dart';
 
 class CustomDrawer extends StatelessWidget {
   final bool languageEnglish;

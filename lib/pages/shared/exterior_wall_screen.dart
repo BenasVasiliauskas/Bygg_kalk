@@ -3,8 +3,8 @@ import 'package:cost_calculator/data/norw_data.dart';
 import 'package:cost_calculator/items/outer_wall_item.dart';
 
 import 'package:flutter/material.dart';
-import '../constants/language.dart';
-import '../widgets/custom_drawer.dart';
+import '../../constants/language.dart';
+import '../../widgets/custom_drawer.dart';
 
 class ExteriorWallScreen extends StatefulWidget {
   @override

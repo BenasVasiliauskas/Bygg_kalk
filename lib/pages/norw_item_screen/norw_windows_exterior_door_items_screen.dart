@@ -3,7 +3,6 @@
 import 'package:cost_calculator/functions/initialise_functions.dart';
 import 'package:cost_calculator/functions/save_to_json.dart';
 import 'package:cost_calculator/models/windows_exterior_doors_model.dart';
-import 'package:cost_calculator/widgets/main_data_table.dart';
 import 'package:flutter/material.dart';
 import 'package:collection/collection.dart';
 import '../../constants/innerwall_constants.dart';

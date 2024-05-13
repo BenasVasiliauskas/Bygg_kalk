@@ -1,17 +1,17 @@
 import 'package:cost_calculator/data/data.dart';
 import 'package:cost_calculator/data/norw_data.dart';
-import 'package:cost_calculator/items/kitchen_item.dart';
+import 'package:cost_calculator/items/parquet_laminate_item.dart';
 
 import 'package:flutter/material.dart';
-import '../constants/language.dart';
-import '../widgets/custom_drawer.dart';
+import '../../constants/language.dart';
+import '../../widgets/custom_drawer.dart';
 
-class KitchenScreen extends StatefulWidget {
+class ParquetLaminateScreen extends StatefulWidget {
   @override
-  State<KitchenScreen> createState() => _KitchenScreenState();
+  State<ParquetLaminateScreen> createState() => _ParquetLaminateScreenState();
 }
 
-class _KitchenScreenState extends State<KitchenScreen> {
+class _ParquetLaminateScreenState extends State<ParquetLaminateScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,9 +29,9 @@ class _KitchenScreenState extends State<KitchenScreen> {
       body: languageEnglish == true
           ? GridView.count(
               padding: const EdgeInsets.all(25),
-              children: kitchenData
+              children: parquetAndLaminate
                   .map(
-                    (catData) => KitchenItem(
+                    (catData) => ParquetLaminateItem(
                       catData.name,
                       catData.description,
                       catData.unit,
@@ -52,9 +52,9 @@ class _KitchenScreenState extends State<KitchenScreen> {
             )
           : GridView.count(
               padding: const EdgeInsets.all(25),
-              children: norwKitchen
+              children: norwParquetAndLaminate
                   .map(
-                    (catData) => KitchenItem(
+                    (catData) => ParquetLaminateItem(
                       catData.name,
                       catData.description,
                       catData.unit,

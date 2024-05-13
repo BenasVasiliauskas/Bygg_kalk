@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:cost_calculator/constants/norw_budget_constants.dart';
 import 'package:cost_calculator/widgets/custom_drawer.dart';
 
-import '../constants/language.dart';
+import '../../constants/language.dart';
 
 class NorwBudgetScreen extends StatefulWidget {
   @override
@@ -129,8 +129,6 @@ class _NorwBudgetScreenState extends State<NorwBudgetScreen> {
     );
   }
 }
-
-
 
 /*
 DataColumn(label: Text('')),

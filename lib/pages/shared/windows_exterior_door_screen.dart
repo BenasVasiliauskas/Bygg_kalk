@@ -2,9 +2,9 @@ import 'package:cost_calculator/data/data.dart';
 import 'package:cost_calculator/data/norw_data.dart';
 
 import 'package:flutter/material.dart';
-import '../constants/language.dart';
-import '../items/windows_exterior_doors_item.dart';
-import '../widgets/custom_drawer.dart';
+import '../../constants/language.dart';
+import '../../items/windows_exterior_doors_item.dart';
+import '../../widgets/custom_drawer.dart';
 
 class WindowsExteriorDoorScreen extends StatefulWidget {
   @override
