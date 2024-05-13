@@ -1,3 +1,4 @@
+import 'package:cost_calculator/pages/item_screen/home_page.dart';
 import 'package:cost_calculator/pages/shared/inner_door_screen.dart';
 import 'package:cost_calculator/pages/shared/parquet_laminate_screen.dart';
 
@@ -33,6 +34,20 @@ class CustomDrawer extends StatelessWidget {
                   : Text('Kategori navigering'),
             ),
           ),
+          ListTile(
+            title:
+                languageEnglish == true ? Text('Home page') : Text('Huvedmeny'),
+            onTap: () {
+              Navigator.of(context).pushReplacement(
+                MaterialPageRoute(
+                  builder: (context) {
+                    return homePage();
+                  },
+                ),
+              );
+            },
+          ),
+
           ListTile(
             title: languageEnglish == true
                 ? Text('Interior walls')
@@ -103,7 +118,6 @@ class CustomDrawer extends StatelessWidget {
               );
             },
           ),
-
           // removed kitchen from the drawer
           // ListTile(
           //   title: languageEnglish == true ? Text('Kitchen') : Text('Kjøkken'),
