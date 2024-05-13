@@ -12,10 +12,10 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       theme: theme.copyWith(
         colorScheme: theme.colorScheme.copyWith(
-          primary: Colors.pink,
+          primary: Colors.blue,
           secondary: Colors.amber,
         ),
-        appBarTheme: AppBarTheme(backgroundColor: Colors.red),
+        appBarTheme: AppBarTheme(backgroundColor: Colors.blue),
         canvasColor: Color.fromRGBO(255, 254, 229, 1),
         textTheme: ThemeData.light().textTheme.copyWith(
             bodyLarge: TextStyle(
