@@ -1,4 +1,5 @@
 import 'package:cost_calculator/constants/language.dart';
+import 'package:cost_calculator/pages/shared/budget_screen.dart';
 import 'package:cost_calculator/widgets/custom_drawer.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -116,7 +117,13 @@ class _homePageState extends State<homePage> {
                         children: [
                           IconButton(
                               color: Colors.white,
-                              onPressed: () {},
+                              onPressed: () {
+                                Navigator.pushReplacement(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: ((context) =>
+                                            BudgetScreen())));
+                              },
                               icon: FaIcon(FontAwesomeIcons.dollarSign)),
                           Text(
                             "Budget",
