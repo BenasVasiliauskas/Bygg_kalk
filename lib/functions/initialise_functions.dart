@@ -51,7 +51,7 @@ Widget buildCustomColumnLabel(
       child: TextButton(
         style: TextButton.styleFrom(
           foregroundColor: Colors.black,
-          backgroundColor: Colors.white,
+          backgroundColor: Color.fromARGB(255, 0, 217, 255),
         ),
         onPressed: onPressed,
         child: Text("$label"),
@@ -72,10 +72,10 @@ Widget buildCustomColumnLabel(
   }
 }
 
-DataCell dataCellDisplay(List<String> text, int i) {
+DataCell dataCellDisplay(List<String> text, int i, double width) {
   return DataCell(
     Container(
-      width: 200, // Set the width as needed
+      width: width, // Set the width as needed
       child: Text(
         text[i],
         maxLines: 3, // Set the maximum number of lines
@@ -102,23 +102,29 @@ DataCell dataCellDisplaySingle(String text, double width, Color color) {
 DataCell dataCellDisplayController(
     List<TextEditingController> controller, int i) {
   return DataCell(
-    TextField(
-      readOnly: true,
-      controller: controller[i],
+    Container(
+      width: 35,
+      child: TextField(
+        readOnly: true,
+        controller: controller[i],
+      ),
     ),
   );
 }
 
-DataCell dataCellDoSingle(
-    TextEditingController controller, Function f, Color color, bool readOnly) {
+DataCell dataCellDoSingle(TextEditingController controller, Function f,
+    Color color, bool readOnly, double width) {
   return DataCell(
-    TextField(
-      readOnly: readOnly,
-      controller: controller,
-      onChanged: (value) => f(value),
-      decoration: InputDecoration(fillColor: color, filled: true),
-      keyboardType:
-          readOnly ? null : TextInputType.numberWithOptions(decimal: true),
+    SizedBox(
+      width: width,
+      child: TextField(
+        readOnly: readOnly,
+        controller: controller,
+        onChanged: (value) => f(value),
+        decoration: InputDecoration(fillColor: color, filled: true),
+        keyboardType:
+            readOnly ? null : TextInputType.numberWithOptions(decimal: true),
+      ),
     ),
   );
 }
@@ -126,13 +132,20 @@ DataCell dataCellDoSingle(
 DataCell dataCellDo(List<TextEditingController> controller, int i, Function f,
     Color color, bool readOnly) {
   return DataCell(
-    TextField(
-      readOnly: readOnly,
-      controller: controller[i],
-      onChanged: (value) => f(value),
-      decoration: InputDecoration(fillColor: color, filled: true),
-      keyboardType:
-          readOnly ? null : TextInputType.numberWithOptions(decimal: true),
+    SizedBox(
+      width: 65,
+      child: TextField(
+        readOnly: readOnly,
+        controller: controller[i],
+        onChanged: (value) => f(value),
+        decoration: InputDecoration(
+          contentPadding: EdgeInsets.zero,
+          fillColor: color,
+          filled: true,
+        ),
+        keyboardType:
+            readOnly ? null : TextInputType.numberWithOptions(decimal: true),
+      ),
     ),
   );
 }

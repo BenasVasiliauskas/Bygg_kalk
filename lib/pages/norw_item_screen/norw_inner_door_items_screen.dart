@@ -253,7 +253,7 @@ class _NorwInnerDoorItemScreenScreenState
               //Rebuild the data table
               rebuildDataTable();
             }
-          }, Color.fromARGB(255, 218, 128, 122), false),
+          }, Color.fromARGB(255, 218, 128, 122), false, 100),
           dataCellDoSingle(hourlyRateConstructionRemodelingController, (value) {
             hourlyRateConstructionRemodeling = double.parse(value);
             for (int i = 0; i < widget.description.length; i++) {
@@ -279,8 +279,8 @@ class _NorwInnerDoorItemScreenScreenState
               //Rebuild the data table
               rebuildDataTable();
             }
-          }, Color.fromARGB(255, 218, 128, 122), false),
-          dataCellDisplay(<String>['kr .'], 0)
+          }, Color.fromARGB(255, 218, 128, 122), false, 100),
+          dataCellDisplay(<String>['kr .'], 0, 100)
         ],
       ),
     ];
@@ -312,8 +312,8 @@ class _NorwInnerDoorItemScreenScreenState
       rows.add(
         DataRow(
           cells: [
-            dataCellDisplay(widget.description, i),
-            dataCellDisplay(widget.unit, i),
+            dataCellDisplay(widget.description, i, 150),
+            dataCellDisplay(widget.unit, i, 50),
             dataCellDisplayController(quantityControllers, i),
             DataCell(
               TextField(
@@ -531,7 +531,8 @@ class _NorwInnerDoorItemScreenScreenState
             TextEditingController(text: totalTotalPrice.toStringAsFixed(2)),
             (value) {},
             Color.fromARGB(255, 153, 240, 131),
-            true),
+            true,
+            55),
       ],
     );
 
