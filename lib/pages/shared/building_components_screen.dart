@@ -44,221 +44,218 @@ class _buildingComponentsScreenState extends State<buildingComponentsScreen> {
           ),
         ],
       ),
-      body: Padding(
-        padding: const EdgeInsets.fromLTRB(8.0, 0, 0, 0),
-        child: SingleChildScrollView(
-          child: Column(
-            children: [
-              Row(
-                children: [
-                  TextButton(
-                    onPressed: () {},
-                    child: Row(
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.fromLTRB(0, 0, 8, 0),
-                          child: Icon(FontAwesomeIcons.folder),
-                        ),
-                        Text("Bæresystemet"),
-                      ],
-                    ),
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            Row(
+              children: [
+                TextButton(
+                  onPressed: () {},
+                  child: Row(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.fromLTRB(0, 0, 8, 0),
+                        child: Icon(FontAwesomeIcons.folder),
+                      ),
+                      Text("Bæresystemet"),
+                    ],
                   ),
-                ],
-              ),
-              Row(
-                children: [
-                  TextButton(
-                    onPressed: () {},
-                    child: Row(
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.fromLTRB(0, 0, 8, 0),
-                          child: Icon(FontAwesomeIcons.folder),
-                        ),
-                        Text("Yttervegger"),
-                      ],
-                    ),
+                ),
+              ],
+            ),
+            Row(
+              children: [
+                TextButton(
+                  onPressed: () {},
+                  child: Row(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.fromLTRB(0, 0, 8, 0),
+                        child: Icon(FontAwesomeIcons.folder),
+                      ),
+                      Text("Yttervegger"),
+                    ],
                   ),
-                ],
-              ),
-              Row(
-                children: [
-                  TextButton(
-                    onPressed: () {},
-                    child: Row(
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.fromLTRB(0, 0, 8, 0),
-                          child: Icon(FontAwesomeIcons.folder),
-                        ),
-                        Text("Vindu/ytterdør"),
-                      ],
-                    ),
+                ),
+              ],
+            ),
+            Row(
+              children: [
+                TextButton(
+                  onPressed: () {},
+                  child: Row(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.fromLTRB(0, 0, 8, 0),
+                        child: Icon(FontAwesomeIcons.folder),
+                      ),
+                      Text("Vindu/ytterdør"),
+                    ],
                   ),
-                ],
-              ),
-              Row(
-                children: [
-                  TextButton(
-                    onPressed: () {},
-                    child: Row(
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.fromLTRB(0, 0, 8, 0),
-                          child: Icon(FontAwesomeIcons.folder),
-                        ),
-                        Text("Innevegger"),
-                      ],
-                    ),
+                ),
+              ],
+            ),
+            Row(
+              children: [
+                TextButton(
+                  onPressed: () {},
+                  child: Row(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.fromLTRB(0, 0, 8, 0),
+                        child: Icon(FontAwesomeIcons.folder),
+                      ),
+                      Text("Innevegger"),
+                    ],
                   ),
-                ],
-              ),
-              Row(
-                children: [
-                  TextButton(
-                    onPressed: () {},
-                    child: Row(
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.fromLTRB(0, 0, 8, 0),
-                          child: Icon(FontAwesomeIcons.folder),
-                        ),
-                        Text("Innedør"),
-                      ],
-                    ),
+                ),
+              ],
+            ),
+            Row(
+              children: [
+                TextButton(
+                  onPressed: () {},
+                  child: Row(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.fromLTRB(0, 0, 8, 0),
+                        child: Icon(FontAwesomeIcons.folder),
+                      ),
+                      Text("Innedør"),
+                    ],
                   ),
-                ],
-              ),
-              Row(
-                children: [
-                  TextButton(
-                    onPressed: () {},
-                    child: Row(
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.fromLTRB(0, 0, 8, 0),
-                          child: Icon(FontAwesomeIcons.folder),
-                        ),
-                        Text("Dekke"),
-                      ],
-                    ),
+                ),
+              ],
+            ),
+            Row(
+              children: [
+                TextButton(
+                  onPressed: () {},
+                  child: Row(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.fromLTRB(0, 0, 8, 0),
+                        child: Icon(FontAwesomeIcons.folder),
+                      ),
+                      Text("Dekke"),
+                    ],
                   ),
-                ],
-              ),
-              Row(
-                children: [
-                  TextButton(
-                    onPressed: () {},
-                    child: Row(
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.fromLTRB(0, 0, 8, 0),
-                          child: Icon(FontAwesomeIcons.folder),
-                        ),
-                        Text("Gulvbelegg"),
-                      ],
-                    ),
+                ),
+              ],
+            ),
+            Row(
+              children: [
+                TextButton(
+                  onPressed: () {},
+                  child: Row(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.fromLTRB(0, 0, 8, 0),
+                        child: Icon(FontAwesomeIcons.folder),
+                      ),
+                      Text("Gulvbelegg"),
+                    ],
                   ),
-                ],
-              ),
-              Row(
-                children: [
-                  TextButton(
-                    onPressed: () {},
-                    child: Row(
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.fromLTRB(0, 0, 8, 0),
-                          child: Icon(FontAwesomeIcons.folder),
-                        ),
-                        Text("Yttertak"),
-                      ],
-                    ),
+                ),
+              ],
+            ),
+            Row(
+              children: [
+                TextButton(
+                  onPressed: () {},
+                  child: Row(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.fromLTRB(0, 0, 8, 0),
+                        child: Icon(FontAwesomeIcons.folder),
+                      ),
+                      Text("Yttertak"),
+                    ],
                   ),
-                ],
-              ),
-              Row(
-                children: [
-                  TextButton(
-                    onPressed: () {},
-                    child: Row(
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.fromLTRB(0, 0, 8, 0),
-                          child: Icon(FontAwesomeIcons.folder),
-                        ),
-                        Text("Terrasse/rekkverk"),
-                      ],
-                    ),
+                ),
+              ],
+            ),
+            Row(
+              children: [
+                TextButton(
+                  onPressed: () {},
+                  child: Row(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.fromLTRB(0, 0, 8, 0),
+                        child: Icon(FontAwesomeIcons.folder),
+                      ),
+                      Text("Terrasse/rekkverk"),
+                    ],
                   ),
-                ],
-              ),
-              Row(
-                children: [
-                  TextButton(
-                    onPressed: () {},
-                    child: Row(
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.fromLTRB(0, 0, 8, 0),
-                          child: Icon(FontAwesomeIcons.folder),
-                        ),
-                        Text("Trapper"),
-                      ],
-                    ),
+                ),
+              ],
+            ),
+            Row(
+              children: [
+                TextButton(
+                  onPressed: () {},
+                  child: Row(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.fromLTRB(0, 0, 8, 0),
+                        child: Icon(FontAwesomeIcons.folder),
+                      ),
+                      Text("Trapper"),
+                    ],
                   ),
-                ],
-              ),
-              Row(
-                children: [
-                  TextButton(
-                    onPressed: () {},
-                    child: Row(
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.fromLTRB(0, 0, 8, 0),
-                          child: Icon(FontAwesomeIcons.folder),
-                        ),
-                        Text("Hulltaking"),
-                      ],
-                    ),
+                ),
+              ],
+            ),
+            Row(
+              children: [
+                TextButton(
+                  onPressed: () {},
+                  child: Row(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.fromLTRB(0, 0, 8, 0),
+                        child: Icon(FontAwesomeIcons.folder),
+                      ),
+                      Text("Hulltaking"),
+                    ],
                   ),
-                ],
-              ),
-              Row(
-                children: [
-                  TextButton(
-                    onPressed: () {},
-                    child: Row(
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.fromLTRB(0, 0, 8, 0),
-                          child: Icon(FontAwesomeIcons.folder),
-                        ),
-                        Text("Stillas"),
-                      ],
-                    ),
+                ),
+              ],
+            ),
+            Row(
+              children: [
+                TextButton(
+                  onPressed: () {},
+                  child: Row(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.fromLTRB(0, 0, 8, 0),
+                        child: Icon(FontAwesomeIcons.folder),
+                      ),
+                      Text("Stillas"),
+                    ],
                   ),
-                ],
-              ),
-              Row(
-                children: [
-                  TextButton(
-                    onPressed: () {},
-                    child: Row(
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.fromLTRB(0, 0, 8, 0),
-                          child: Icon(FontAwesomeIcons.folder),
-                        ),
-                        Text("Avfall"),
-                      ],
-                    ),
+                ),
+              ],
+            ),
+            Row(
+              children: [
+                TextButton(
+                  onPressed: () {},
+                  child: Row(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.fromLTRB(0, 0, 8, 0),
+                        child: Icon(FontAwesomeIcons.folder),
+                      ),
+                      Text("Avfall"),
+                    ],
                   ),
-                ],
-              ),
-            ],
-          ),
+                ),
+              ],
+            ),
+          ],
         ),
       ),
     );

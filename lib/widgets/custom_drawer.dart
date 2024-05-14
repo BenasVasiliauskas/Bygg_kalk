@@ -1,7 +1,8 @@
 import 'package:cost_calculator/pages/item_screen/home_page.dart';
-import 'package:cost_calculator/pages/shared/building_components_screen.dart';
 import 'package:cost_calculator/pages/shared/inner_door_screen.dart';
+import 'package:cost_calculator/pages/shared/options.dart';
 import 'package:cost_calculator/pages/shared/parquet_laminate_screen.dart';
+import 'package:cost_calculator/pages/shared/privacy_policy.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import '../pages/shared/budget_screen.dart';
@@ -89,15 +90,7 @@ class CustomDrawer extends StatelessWidget {
             title: languageEnglish == true
                 ? Text('Documents')
                 : Text('Bygningsdeler'),
-            onTap: () {
-              Navigator.of(context).pushReplacement(
-                MaterialPageRoute(
-                  builder: (context) {
-                    return buildingComponentsScreen();
-                  },
-                ),
-              );
-            },
+            onTap: () {},
           ),
           ListTile(
             leading: FaIcon(
@@ -108,13 +101,13 @@ class CustomDrawer extends StatelessWidget {
                 ? Text('Options')
                 : Text('Innstillinger'),
             onTap: () {
-              //   Navigator.of(context).pushReplacement(
-              //     MaterialPageRoute(
-              //       builder: (context) {
-              //         return homePage();
-              //       },
-              //     ),
-              //   );
+              Navigator.of(context).pushReplacement(
+                MaterialPageRoute(
+                  builder: (context) {
+                    return optionsScreen();
+                  },
+                ),
+              );
             },
           ),
           ListTile(
@@ -144,13 +137,13 @@ class CustomDrawer extends StatelessWidget {
                 ? Text('Privacy policy')
                 : Text('Personvernerklæring'),
             onTap: () {
-              // Navigator.of(context).pushReplacement(
-              //   MaterialPageRoute(
-              //     builder: (context) {
-              //       return homePage();
-              //     },
-              //   ),
-              // );
+              Navigator.of(context).pushReplacement(
+                MaterialPageRoute(
+                  builder: (context) {
+                    return privacyPolicy();
+                  },
+                ),
+              );
             },
           ),
 //////// old
