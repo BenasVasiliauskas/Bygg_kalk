@@ -1,6 +1,5 @@
 import 'package:cost_calculator/pages/item_screen/home_page.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 class splashScreen extends StatefulWidget {
   const splashScreen({super.key});

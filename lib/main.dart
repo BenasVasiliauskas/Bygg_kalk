@@ -1,8 +1,6 @@
 import 'package:cost_calculator/pages/shared/splash.dart';
 import 'package:flutter/material.dart';
 
-import 'pages/shared/interior_wall_screen.dart';
-
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {

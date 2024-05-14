@@ -1,4 +1,5 @@
 import 'package:cost_calculator/pages/item_screen/home_page.dart';
+import 'package:cost_calculator/pages/shared/building_components_screen.dart';
 import 'package:cost_calculator/pages/shared/inner_door_screen.dart';
 import 'package:cost_calculator/pages/shared/parquet_laminate_screen.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -89,13 +90,13 @@ class CustomDrawer extends StatelessWidget {
                 ? Text('Documents')
                 : Text('Bygningsdeler'),
             onTap: () {
-              // Navigator.of(context).pushReplacement(
-              //   MaterialPageRoute(
-              //     builder: (context) {
-              //       return homePage();
-              //     },
-              //   ),
-              // );
+              Navigator.of(context).pushReplacement(
+                MaterialPageRoute(
+                  builder: (context) {
+                    return buildingComponentsScreen();
+                  },
+                ),
+              );
             },
           ),
           ListTile(

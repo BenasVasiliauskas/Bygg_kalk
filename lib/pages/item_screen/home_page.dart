@@ -1,5 +1,6 @@
 import 'package:cost_calculator/constants/language.dart';
 import 'package:cost_calculator/pages/shared/budget_screen.dart';
+import 'package:cost_calculator/pages/shared/building_components_screen.dart';
 import 'package:cost_calculator/widgets/custom_drawer.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -67,7 +68,15 @@ class _homePageState extends State<homePage> {
                         children: [
                           IconButton(
                               color: Colors.white,
-                              onPressed: () {},
+                              onPressed: () {
+                                Navigator.of(context).pushReplacement(
+                                  MaterialPageRoute(
+                                    builder: (context) {
+                                      return buildingComponentsScreen();
+                                    },
+                                  ),
+                                );
+                              },
                               icon: FaIcon(FontAwesomeIcons.book)),
                           Text(
                             "Documents",
