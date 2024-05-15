@@ -1,3 +1,4 @@
+import 'package:cost_calculator/constants/language.dart';
 import 'package:cost_calculator/pages/item_screen/home_page.dart';
 import 'package:cost_calculator/pages/shared/inner_door_screen.dart';
 import 'package:cost_calculator/pages/shared/options.dart';
@@ -14,12 +15,6 @@ import '../pages/shared/norw_budget_screen.dart';
 import '../pages/shared/windows_exterior_door_screen.dart';
 
 class CustomDrawer extends StatelessWidget {
-  final bool languageEnglish;
-  final Function(bool) onLanguageChanged;
-
-  CustomDrawer(
-      {required this.languageEnglish, required this.onLanguageChanged});
-
   @override
   Widget build(BuildContext context) {
     return Drawer(
@@ -244,37 +239,6 @@ class CustomDrawer extends StatelessWidget {
                 ),
               );
             },
-          ),
-          ListTile(
-            title: languageEnglish == true
-                ? Text('Language options')
-                : Text('Språkvalg'),
-            subtitle: Column(
-              children: [
-                Row(
-                  children: [
-                    Padding(
-                      padding:
-                          EdgeInsets.symmetric(horizontal: 10, vertical: 25),
-                      child: languageEnglish == false
-                          ? Text('Norsk')
-                          : Text('Norwegian'),
-                    ),
-                    Switch(
-                      value: languageEnglish,
-                      onChanged: onLanguageChanged,
-                    ),
-                    Padding(
-                      padding:
-                          EdgeInsets.symmetric(horizontal: 10, vertical: 25),
-                      child: languageEnglish == false
-                          ? Text('Engelsk')
-                          : Text('English'),
-                    ),
-                  ],
-                ),
-              ],
-            ),
           ),
         ],
       ),

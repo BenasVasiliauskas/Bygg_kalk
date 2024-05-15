@@ -1,4 +1,3 @@
-import 'package:cost_calculator/constants/language.dart';
 import 'package:cost_calculator/pages/item_screen/home_page.dart';
 import 'package:cost_calculator/widgets/custom_drawer.dart';
 import 'package:flutter/material.dart';
@@ -16,14 +15,7 @@ class _buildingComponentsScreenState extends State<buildingComponentsScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: CustomDrawer(
-        languageEnglish: languageEnglish,
-        onLanguageChanged: (value) {
-          setState(() {
-            languageEnglish = value;
-          });
-        },
-      ),
+      drawer: CustomDrawer(),
       appBar: AppBar(
         title: const Text('Building components'),
         actions: [

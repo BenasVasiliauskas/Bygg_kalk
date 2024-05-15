@@ -15,14 +15,7 @@ class _InnerDoorScreenState extends State<InnerDoorScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: CustomDrawer(
-        languageEnglish: languageEnglish,
-        onLanguageChanged: (value) {
-          setState(() {
-            languageEnglish = value;
-          });
-        },
-      ),
+      drawer: CustomDrawer(),
       appBar: AppBar(
         title: const Text('Bygg Kalk'),
       ),

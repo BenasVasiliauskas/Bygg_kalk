@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:cost_calculator/constants/norw_budget_constants.dart';
 import 'package:cost_calculator/widgets/custom_drawer.dart';
 
-import '../../constants/language.dart';
-
 class NorwBudgetScreen extends StatefulWidget {
   @override
   State<NorwBudgetScreen> createState() => _NorwBudgetScreenState();
@@ -17,14 +15,7 @@ class _NorwBudgetScreenState extends State<NorwBudgetScreen> {
       appBar: AppBar(
         title: Text('Budsjettskjermen'),
       ),
-      drawer: CustomDrawer(
-        languageEnglish: languageEnglish,
-        onLanguageChanged: (value) {
-          setState(() {
-            languageEnglish = value;
-          });
-        },
-      ),
+      drawer: CustomDrawer(),
       body: SingleChildScrollView(
         controller: _scrollController,
         scrollDirection: Axis.horizontal,

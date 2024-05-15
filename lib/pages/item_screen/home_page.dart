@@ -1,4 +1,3 @@
-import 'package:cost_calculator/constants/language.dart';
 import 'package:cost_calculator/pages/shared/budget_screen.dart';
 import 'package:cost_calculator/pages/shared/building_components_screen.dart';
 import 'package:cost_calculator/pages/shared/options.dart';
@@ -17,14 +16,7 @@ class _homePageState extends State<homePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        drawer: CustomDrawer(
-          languageEnglish: languageEnglish,
-          onLanguageChanged: (value) {
-            setState(() {
-              languageEnglish = value;
-            });
-          },
-        ),
+        drawer: CustomDrawer(),
         appBar: AppBar(
           centerTitle: true,
           title: const Text('Bygg Kalk'),
