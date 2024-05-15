@@ -423,7 +423,7 @@ class _InteriorWallItemsScreenState extends State<InteriorWallItemsScreen> {
             }, Color.fromARGB(255, 255, 255, 255), true, optionalWidth: 45),
             dataCellDo(laborCostControllers, i, (value) {
               widget.laborCost[i] = double.parse(value);
-            }, Color.fromARGB(255, 255, 255, 255), true, optionalWidth: 45),
+            }, Color.fromARGB(255, 255, 255, 255), true, optionalWidth: 65),
             dataCellDo(material1Controllers, i, (value) {
               // Handle changes to material 1
               double parsedValue = double.parse(value);
@@ -455,7 +455,7 @@ class _InteriorWallItemsScreenState extends State<InteriorWallItemsScreen> {
               widget.material2[i] = double.parse(value);
               material2Controllers[i].text =
                   widget.material2[i].toStringAsFixed(2);
-            }, Color.fromARGB(255, 255, 255, 255), true, optionalWidth: 45),
+            }, Color.fromARGB(255, 255, 255, 255), true, optionalWidth: 75),
             dataCellDo(totalPriceControllers, i, (value) {
               widget.totalPrice[i] = double.parse(value);
               totalPriceControllers[i].text =

@@ -5,7 +5,6 @@ import 'package:cost_calculator/functions/initialise_functions.dart';
 import 'package:cost_calculator/functions/save_to_json.dart';
 import 'package:cost_calculator/models/outer_wall_data_model.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import '../../constants/budget_constants.dart';
 import '../../constants/innerwall_constants.dart';
 import 'package:collection/collection.dart';
@@ -426,7 +425,7 @@ class _ExteriorWallItemsScreenState extends State<ExteriorWallItemsScreen> {
             }, Color.fromARGB(255, 255, 255, 255), true, optionalWidth: 45),
             dataCellDo(laborCostControllers, i, (value) {
               widget.laborCost[i] = double.parse(value);
-            }, Color.fromARGB(255, 255, 255, 255), true, optionalWidth: 45),
+            }, Color.fromARGB(255, 255, 255, 255), true, optionalWidth: 65),
             dataCellDo(material1Controllers, i, (value) {
               // Handle changes to material 1
               double parsedValue = double.parse(value);
@@ -458,7 +457,7 @@ class _ExteriorWallItemsScreenState extends State<ExteriorWallItemsScreen> {
               widget.material2[i] = double.parse(value);
               material2Controllers[i].text =
                   widget.material2[i].toStringAsFixed(2);
-            }, Color.fromARGB(255, 255, 255, 255), true, optionalWidth: 45),
+            }, Color.fromARGB(255, 255, 255, 255), true, optionalWidth: 75),
             dataCellDo(totalPriceControllers, i, (value) {
               widget.totalPrice[i] = double.parse(value);
               totalPriceControllers[i].text =
