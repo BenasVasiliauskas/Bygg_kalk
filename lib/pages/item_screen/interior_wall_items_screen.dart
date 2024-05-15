@@ -499,6 +499,7 @@ class _InteriorWallItemsScreenState extends State<InteriorWallItemsScreen> {
               readOnly: true,
               decoration: customColumn
                   ? InputDecoration(
+                      contentPadding: EdgeInsets.zero,
                       fillColor: Color.fromARGB(255, 131, 138, 235),
                       filled: true)
                   : InputDecoration(),
@@ -520,6 +521,7 @@ class _InteriorWallItemsScreenState extends State<InteriorWallItemsScreen> {
             width: 75,
             child: TextField(
               decoration: InputDecoration(
+                  contentPadding: EdgeInsets.zero,
                   fillColor: const Color.fromARGB(255, 218, 128, 122),
                   filled: true),
               controller: TextEditingController(

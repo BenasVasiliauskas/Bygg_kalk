@@ -121,7 +121,11 @@ DataCell dataCellDoSingle(TextEditingController controller, Function f,
         readOnly: readOnly,
         controller: controller,
         onChanged: (value) => f(value),
-        decoration: InputDecoration(fillColor: color, filled: true),
+        decoration: InputDecoration(
+          fillColor: color,
+          filled: true,
+          contentPadding: EdgeInsets.zero,
+        ),
         keyboardType:
             readOnly ? null : TextInputType.numberWithOptions(decimal: true),
       ),
