@@ -104,7 +104,7 @@ class _ExteriorWallItemsScreenState extends State<ExteriorWallItemsScreen> {
     }
 
     addHours(widget.name, totalLaborHours2);
-    addLaborCosts(widget.name, emptyCustomList.sum); // check err? wrong var?
+    addLaborCosts(widget.name, totalLaborCost); // check err? wrong var?
     addMaterialCosts(widget.name, totalMaterial2);
     addBudgetSum(widget.name, totalTotalPrice);
     DataRow totalSumRow = totalSumRowEng(

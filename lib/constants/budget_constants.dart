@@ -1,7 +1,7 @@
 List<String> calculatedNamesOrder = [
-  'Interior walls',
-  'Exterior walls',
   'Windows and exterior doors',
+  'Exterior walls',
+  'Interior walls',
   'Interior door',
   'Parquet and laminate',
 ];
@@ -117,11 +117,13 @@ Map<String, double> windowsAndExteriorDoorBudgetSum = {
 };
 
 void reCalculate() {
-  totalHours[0] = innerDoorHours.values.reduce((s, e) => s + e);
-  totalLaborCosts[0] = innerDoorLaborCosts.values.reduce((s, e) => s + e);
-  totalMaterialCosts[0] = innerDoorMaterialCosts.values.reduce((s, e) => s + e);
-  budgetSums[0] = innerDoorBudgetSum.values.reduce((s, e) => s + e);
-
+  totalHours[0] = windowsAndExteriorDoorHours.values.reduce((s, e) => s + e);
+  totalLaborCosts[0] =
+      windowsAndExteriorDoorLaborCosts.values.reduce((s, e) => s + e);
+  totalMaterialCosts[0] =
+      windowsAndExteriorDoorMaterialCosts.values.reduce((s, e) => s + e);
+  budgetSums[0] =
+      windowsAndExteriorDoorBudgetSum.values.reduce((s, e) => s + e);
   //
   totalHours[1] = outerWallHours.values.reduce((s, e) => s + e);
   totalLaborCosts[1] = outerWallLaborCosts.values.reduce((s, e) => s + e);
@@ -134,21 +136,17 @@ void reCalculate() {
   budgetSums[2] = innerWallBudgetSum.values.reduce((s, e) => s + e);
   //
 
+  totalHours[3] = innerDoorHours.values.reduce((s, e) => s + e);
+  totalLaborCosts[3] = innerDoorLaborCosts.values.reduce((s, e) => s + e);
+  totalMaterialCosts[3] = innerDoorMaterialCosts.values.reduce((s, e) => s + e);
+  budgetSums[3] = innerDoorBudgetSum.values.reduce((s, e) => s + e);
+  //
   totalHours[4] = parquetAndLaminateHours.values.reduce((s, e) => s + e);
   totalLaborCosts[4] =
       parquetAndLaminateLaborCosts.values.reduce((s, e) => s + e);
   totalMaterialCosts[4] =
       parquetAndLaminateMaterialCosts.values.reduce((s, e) => s + e);
   budgetSums[4] = parquetAndLaminateBudgetSum.values.reduce((s, e) => s + e);
-
-  //
-  totalHours[5] = windowsAndExteriorDoorHours.values.reduce((s, e) => s + e);
-  totalLaborCosts[5] =
-      windowsAndExteriorDoorLaborCosts.values.reduce((s, e) => s + e);
-  totalMaterialCosts[5] =
-      windowsAndExteriorDoorMaterialCosts.values.reduce((s, e) => s + e);
-  budgetSums[5] =
-      windowsAndExteriorDoorBudgetSum.values.reduce((s, e) => s + e);
 }
 
 void addHours(String name, double hours) {

@@ -102,7 +102,7 @@ class _InnerDoorItemScreenState extends State<InnerDoorItemScreen> {
     }
 
     addHours(widget.name, totalLaborHours2);
-    addLaborCosts(widget.name, emptyCustomList.sum);
+    addLaborCosts(widget.name, totalLaborCost);
     addMaterialCosts(widget.name, totalMaterial2);
     addBudgetSum(widget.name, totalTotalPrice);
 

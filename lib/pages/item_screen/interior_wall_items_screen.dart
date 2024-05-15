@@ -104,7 +104,7 @@ class _InteriorWallItemsScreenState extends State<InteriorWallItemsScreen> {
       totalTotalPrice += widget.totalPrice[i];
     }
     addHours(widget.name, totalLaborHours2);
-    addLaborCosts(widget.name, emptyCustomList.sum); // check err? wrong var?
+    addLaborCosts(widget.name, totalLaborCost); // check err? wrong var?
     addMaterialCosts(widget.name, totalMaterial2);
     addBudgetSum(widget.name, totalTotalPrice);
     // Create the "Total Sum" row
