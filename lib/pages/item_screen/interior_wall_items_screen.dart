@@ -295,22 +295,22 @@ class _InteriorWallItemsScreenState extends State<InteriorWallItemsScreen> {
     ];
 
     List<DataColumn> columns = [
-      createDataColumn("Description", 100, customColumn, () {}),
-      createDataColumn("Unit", 65, customColumn, () {}),
-      createDataColumn("Quantity", 85, customColumn, () {}),
+      createDataColumn("Description", 98, customColumn, () {}),
+      createDataColumn("Unit", 55, customColumn, () {}),
+      createDataColumn("Quantity", 80, customColumn, () {}),
       createDataColumn("Material quantity", 85, customColumn, () {}),
-      createDataColumn("Hours", 75, customColumn, () {
+      createDataColumn("Hours", 65, customColumn, () {
         customColumn = !customColumn;
         updateTotalSum();
         rebuildDataTable();
       }),
-      createDataColumn("+", 65, customColumn, () {
+      createDataColumn("+", 55, customColumn, () {
         customColumn = !customColumn;
         updateTotalSum();
         rebuildDataTable();
       }),
       createDataColumn("Hours2", 75, customColumn, () {}),
-      createDataColumn("Job Cost", 75, customColumn, () {}),
+      createDataColumn("Job Cost", 55, customColumn, () {}),
       createDataColumn("Materials", 85, customColumn, () {}),
       createDataColumn("Material cost", 85, customColumn, () {}),
       createDataColumn("Total price", 75, customColumn, () {}),
@@ -322,22 +322,22 @@ class _InteriorWallItemsScreenState extends State<InteriorWallItemsScreen> {
       rows.add(
         DataRow(
           cells: [
-            dataCellDisplay(widget.description, i, 150),
+            dataCellDisplay(widget.description, i, 100),
             dataCellDisplay(widget.unit, i, 30),
             dataCellDisplayController(quantityControllers, i),
-            dataCellDo(
-              materialQuantityControllers,
-              i,
-              (value) {
-                widget.materialQuantity[i] = double.parse(value);
-              },
-              Color.fromARGB(255, 255, 255, 255), //
-              true,
-            ),
+            dataCellDo(materialQuantityControllers, i, (value) {
+              widget.materialQuantity[i] = double.parse(value);
+            },
+                Color.fromARGB(255, 255, 255, 255), //
+                true,
+                optionalWidth: 45),
             DataCell(
               SizedBox(
-                width: 45,
+                width: 35,
                 child: TextField(
+                  decoration: InputDecoration(
+                    contentPadding: EdgeInsets.zero,
+                  ),
                   style: TextStyle(
                       color: customColumn ? Colors.grey : Colors.black),
                   readOnly: true,
@@ -350,9 +350,10 @@ class _InteriorWallItemsScreenState extends State<InteriorWallItemsScreen> {
             ), // custom column cell
             DataCell(
               SizedBox(
-                width: 75,
+                width: 60,
                 child: TextField(
                   decoration: InputDecoration(
+                      contentPadding: EdgeInsets.zero,
                       fillColor: Color.fromARGB(255, 131, 138, 235),
                       filled: true),
                   style: TextStyle(
@@ -409,89 +410,57 @@ class _InteriorWallItemsScreenState extends State<InteriorWallItemsScreen> {
                 ),
               ),
             ),
-            dataCellDo(
-              laborHours2Controllers,
-              i,
-              (value) {
-                // Handle changes to labor hours 2
-                double parsedValue = double.parse(value);
-                widget.laborHours2[i] =
-                    double.parse(parsedValue.toStringAsFixed(2));
-                // Recalculate the labor cost when labor hours 2 changes
-                double updatedLaborCost = calculateJobCost(
-                    i,
-                    widget.laborHours2,
-                    hourlyRateConstructionRemodeling); // Calculate the labor cost
-                widget.laborCost[i] =
-                    double.parse(updatedLaborCost.toStringAsFixed(2));
-              },
-              Color.fromARGB(255, 255, 255, 255),
-              true,
-            ),
-            dataCellDo(
-              laborCostControllers,
-              i,
-              (value) {
-                widget.laborCost[i] = double.parse(value);
-              },
-              Color.fromARGB(255, 255, 255, 255),
-              true,
-            ),
-            dataCellDo(
-              material1Controllers,
-              i,
-              (value) {
-                // Handle changes to material 1
-                double parsedValue = double.parse(value);
-                widget.material1[i] = double.parse(parsedValue
-                    .toStringAsFixed(2)); // Format to 2 decimal places
+            dataCellDo(laborHours2Controllers, i, (value) {
+              // Handle changes to labor hours 2
+              double parsedValue = double.parse(value);
+              widget.laborHours2[i] =
+                  double.parse(parsedValue.toStringAsFixed(2));
+              // Recalculate the labor cost when labor hours 2 changes
+              double updatedLaborCost = calculateJobCost(i, widget.laborHours2,
+                  hourlyRateConstructionRemodeling); // Calculate the labor cost
+              widget.laborCost[i] =
+                  double.parse(updatedLaborCost.toStringAsFixed(2));
+            }, Color.fromARGB(255, 255, 255, 255), true, optionalWidth: 45),
+            dataCellDo(laborCostControllers, i, (value) {
+              widget.laborCost[i] = double.parse(value);
+            }, Color.fromARGB(255, 255, 255, 255), true, optionalWidth: 45),
+            dataCellDo(material1Controllers, i, (value) {
+              // Handle changes to material 1
+              double parsedValue = double.parse(value);
+              widget.material1[i] = double.parse(
+                  parsedValue.toStringAsFixed(2)); // Format to 2 decimal places
 
-                // Recalculate and update the material 2 when material 1 changes
-                double updatedMaterial2 = calculateMaterialCost(
-                    i,
-                    widget.material1,
-                    calculationQuantity,
-                    customColumn,
-                    emptyCustomList);
-                widget.material2[i] = updatedMaterial2;
-                material2Controllers[i].text =
-                    updatedMaterial2.toStringAsFixed(2);
+              // Recalculate and update the material 2 when material 1 changes
+              double updatedMaterial2 = calculateMaterialCost(
+                  i,
+                  widget.material1,
+                  calculationQuantity,
+                  customColumn,
+                  emptyCustomList);
+              widget.material2[i] = updatedMaterial2;
+              material2Controllers[i].text =
+                  updatedMaterial2.toStringAsFixed(2);
 
-                // Recalculate total price
-                double updatedTotalPrice = calculateTotalPrice(
-                    i, widget.laborCost, widget.material1, calculationQuantity);
-                widget.totalPrice[i] = updatedTotalPrice;
-                totalPriceControllers[i].text =
-                    updatedTotalPrice.toStringAsFixed(2);
-                // Format to 2 decimal places
+              // Recalculate total price
+              double updatedTotalPrice = calculateTotalPrice(
+                  i, widget.laborCost, widget.material1, calculationQuantity);
+              widget.totalPrice[i] = updatedTotalPrice;
+              totalPriceControllers[i].text =
+                  updatedTotalPrice.toStringAsFixed(2);
+              // Format to 2 decimal places
 
-                rebuildDataTable();
-              },
-              Color.fromARGB(255, 218, 128, 122),
-              false,
-            ),
-            dataCellDo(
-              material2Controllers,
-              i,
-              (value) {
-                widget.material2[i] = double.parse(value);
-                material2Controllers[i].text =
-                    widget.material2[i].toStringAsFixed(2);
-              },
-              Color.fromARGB(255, 255, 255, 255),
-              true,
-            ),
-            dataCellDo(
-              totalPriceControllers,
-              i,
-              (value) {
-                widget.totalPrice[i] = double.parse(value);
-                totalPriceControllers[i].text =
-                    widget.totalPrice[i].toStringAsFixed(2);
-              },
-              Color.fromARGB(255, 153, 240, 131),
-              true,
-            ),
+              rebuildDataTable();
+            }, Color.fromARGB(255, 218, 128, 122), false, optionalWidth: 75),
+            dataCellDo(material2Controllers, i, (value) {
+              widget.material2[i] = double.parse(value);
+              material2Controllers[i].text =
+                  widget.material2[i].toStringAsFixed(2);
+            }, Color.fromARGB(255, 255, 255, 255), true, optionalWidth: 45),
+            dataCellDo(totalPriceControllers, i, (value) {
+              widget.totalPrice[i] = double.parse(value);
+              totalPriceControllers[i].text =
+                  widget.totalPrice[i].toStringAsFixed(2);
+            }, Color.fromARGB(255, 153, 240, 131), true, optionalWidth: 75),
           ],
         ),
       );
@@ -515,7 +484,7 @@ class _InteriorWallItemsScreenState extends State<InteriorWallItemsScreen> {
     DataRow totalSumRow = DataRow(
       cells: [
         dataCellDisplaySingle(
-            "Total sum", 160, Color.fromARGB(255, 255, 255, 255)),
+            "Total sum", 70, Color.fromARGB(255, 255, 255, 255)),
         dataCellDisplaySingle("", 0, Color.fromARGB(255, 255, 255, 255)),
         dataCellDisplaySingle("", 0, Color.fromARGB(255, 255, 255, 255)),
         dataCellDisplaySingle("", 0, Color.fromARGB(255, 255, 255, 255)),
@@ -525,7 +494,7 @@ class _InteriorWallItemsScreenState extends State<InteriorWallItemsScreen> {
             Color.fromARGB(255, 255, 255, 255)),
         DataCell(
           Container(
-            width: 75,
+            width: 60,
             child: TextField(
               readOnly: true,
               decoration: customColumn
@@ -542,13 +511,13 @@ class _InteriorWallItemsScreenState extends State<InteriorWallItemsScreen> {
             ),
           ),
         ),
-        dataCellDisplaySingle(totalLaborHours2.toStringAsFixed(2), 100,
+        dataCellDisplaySingle(totalLaborHours2.toStringAsFixed(2), 70,
             Color.fromARGB(255, 255, 255, 255)),
-        dataCellDisplaySingle(totalLaborCost.toStringAsFixed(2), 100,
+        dataCellDisplaySingle(totalLaborCost.toStringAsFixed(2), 60,
             Color.fromARGB(255, 255, 255, 255)),
         DataCell(
           SizedBox(
-            width: 85,
+            width: 75,
             child: TextField(
               decoration: InputDecoration(
                   fillColor: const Color.fromARGB(255, 218, 128, 122),
@@ -559,14 +528,14 @@ class _InteriorWallItemsScreenState extends State<InteriorWallItemsScreen> {
             ),
           ),
         ),
-        dataCellDisplaySingle(totalMaterial2.toStringAsFixed(2), 100,
+        dataCellDisplaySingle(totalMaterial2.toStringAsFixed(2), 70,
             Color.fromARGB(255, 255, 255, 255)),
         dataCellDoSingle(
             TextEditingController(text: totalTotalPrice.toStringAsFixed(2)),
             (value) {},
             Color.fromARGB(255, 153, 240, 131),
             true,
-            85),
+            75),
       ],
     );
 

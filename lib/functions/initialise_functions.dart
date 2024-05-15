@@ -51,7 +51,7 @@ Widget buildCustomColumnLabel(
       child: TextButton(
         style: TextButton.styleFrom(
           foregroundColor: Colors.black,
-          backgroundColor: Color.fromARGB(255, 0, 217, 255),
+          backgroundColor: Color.fromARGB(255, 255, 255, 255),
         ),
         onPressed: onPressed,
         child: Text("$label"),
@@ -78,7 +78,7 @@ DataCell dataCellDisplay(List<String> text, int i, double width) {
       width: width, // Set the width as needed
       child: Text(
         text[i],
-        maxLines: 3, // Set the maximum number of lines
+        maxLines: 5, // Set the maximum number of lines
         overflow: TextOverflow.ellipsis, // Allow text to overflow and wrap
       ),
     ),
@@ -130,10 +130,11 @@ DataCell dataCellDoSingle(TextEditingController controller, Function f,
 }
 
 DataCell dataCellDo(List<TextEditingController> controller, int i, Function f,
-    Color color, bool readOnly) {
+    Color color, bool readOnly,
+    {double? optionalWidth}) {
   return DataCell(
     SizedBox(
-      width: 65,
+      width: optionalWidth != null ? optionalWidth : 60,
       child: TextField(
         readOnly: readOnly,
         controller: controller[i],
