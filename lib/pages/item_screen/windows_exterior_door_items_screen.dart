@@ -180,6 +180,51 @@ class _WindowsExteriorDoorItemsScreen
 
     hourlyRateConstructionRemodelingController.text =
         hourlyRateConstructionRemodeling.toStringAsFixed(2);
+    recalculateValues();
+  }
+
+  void recalculateValues() {
+    for (int i = 0; i < widget.description.length; i++) {
+      // Recalculate labor hours 2
+      widget.laborHours2[i] = calculateWorkHours2(
+        i,
+        customColumn,
+        emptyCustomList,
+        widget.laborHours1,
+        calculationQuantity,
+      );
+      laborHours2Controllers[i].text = widget.laborHours2[i].toStringAsFixed(2);
+
+      // Recalculate labor cost
+      widget.laborCost[i] = calculateJobCost(
+        i,
+        widget.laborHours2,
+        hourlyRateConstructionRemodeling,
+      );
+      laborCostControllers[i].text = widget.laborCost[i].toStringAsFixed(2);
+
+      // Recalculate material 2
+      widget.material2[i] = calculateMaterialCost(
+        i,
+        widget.material1,
+        calculationQuantity,
+        customColumn,
+        emptyCustomList,
+      );
+      material2Controllers[i].text = widget.material2[i].toStringAsFixed(2);
+
+      // Recalculate total price
+      widget.totalPrice[i] = calculateTotalPrice(
+        i,
+        widget.laborCost,
+        widget.material1,
+        calculationQuantity,
+      );
+      totalPriceControllers[i].text = widget.totalPrice[i].toStringAsFixed(2);
+    }
+
+    // Update the total sum row
+    updateTotalSum();
   }
 
   @override
@@ -285,7 +330,7 @@ class _WindowsExteriorDoorItemsScreen
     ];
 
     List<DataColumn> columns = [
-      createDataColumn("Description", 98, customColumn, () {}),
+      createDataColumn("Description ", 98, customColumn, () {}),
       createDataColumn("Unit", 55, customColumn, () {}),
       createDataColumn("Quantity", 80, customColumn, () {}),
       createDataColumn("Hours", 65, customColumn, () {
