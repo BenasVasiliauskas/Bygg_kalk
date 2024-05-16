@@ -1,4 +1,5 @@
 import 'package:cost_calculator/constants/language.dart';
+import 'package:cost_calculator/pages/shared/theme/theme.dart';
 import 'package:cost_calculator/widgets/custom_drawer.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -17,9 +18,22 @@ class _optionsScreenState extends State<optionsScreen> {
     });
   }
 
-  String _selectedOption = 'Option 1';
+  void onThemeChanged() {
+    if (currentTheme == lightMode) {
+      setState(() {
+        currentTheme = darkMode;
+      });
+    } else {
+      setState(() {
+        currentTheme = lightMode;
+      });
+    }
+  }
 
-  void showBendriDialog(BuildContext context) {
+  String _selectedOption = 'English';
+  String _selectedThemeOption = "lightMode";
+
+  void showGeneralDialog(BuildContext context) {
     showDialog(
       context: context,
       builder: (BuildContext context) {
@@ -38,7 +52,7 @@ class _optionsScreenState extends State<optionsScreen> {
                     _selectedOption = value!;
                   });
                   Navigator.of(context).pop(); // Close the dialog
-                  showBendriDialog(
+                  showGeneralDialog(
                       context); // Reopen the dialog to reflect the change
                 },
               ),
@@ -51,7 +65,7 @@ class _optionsScreenState extends State<optionsScreen> {
                     _selectedOption = value!;
                   });
                   Navigator.of(context).pop(); // Close the dialog
-                  showBendriDialog(
+                  showGeneralDialog(
                       context); // Reopen the dialog to reflect the change
                 },
               ),
@@ -64,7 +78,7 @@ class _optionsScreenState extends State<optionsScreen> {
                     _selectedOption = value!;
                   });
                   Navigator.of(context).pop(); // Close the dialog
-                  showBendriDialog(
+                  showGeneralDialog(
                       context); // Reopen the dialog to reflect the change
                 },
               ),
@@ -77,7 +91,7 @@ class _optionsScreenState extends State<optionsScreen> {
                     _selectedOption = value!;
                   });
                   Navigator.of(context).pop(); // Close the dialog
-                  showBendriDialog(
+                  showGeneralDialog(
                       context); // Reopen the dialog to reflect the change
                 },
               ),
@@ -91,6 +105,49 @@ class _optionsScreenState extends State<optionsScreen> {
               },
             ),
           ],
+        );
+      },
+    );
+  }
+
+  void showDisplayDialog(BuildContext context) {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: Text("Display"),
+          content: Column(
+            children: [
+              RadioListTile<String>(
+                title: Text('Light Theme'),
+                value: 'lightMode',
+                groupValue: _selectedThemeOption,
+                onChanged: (String? value) {
+                  onThemeChanged();
+                  setState(() {
+                    _selectedThemeOption = value!;
+                  });
+                  Navigator.of(context).pop(); // Close the dialog
+                  showDisplayDialog(
+                      context); // Reopen the dialog to reflect the change
+                },
+              ),
+              RadioListTile<String>(
+                title: Text('Dark Theme'),
+                value: 'darkMode',
+                groupValue: _selectedThemeOption,
+                onChanged: (String? value) {
+                  onThemeChanged();
+                  setState(() {
+                    _selectedThemeOption = value!;
+                  });
+                  Navigator.of(context).pop(); // Close the dialog
+                  showDisplayDialog(
+                      context); // Reopen the dialog to reflect the change
+                },
+              )
+            ],
+          ),
         );
       },
     );
@@ -114,7 +171,7 @@ class _optionsScreenState extends State<optionsScreen> {
               TextButton(
                 child: Text("Bendri"),
                 onPressed: () {
-                  showBendriDialog(context);
+                  showGeneralDialog(context);
                 },
               )
             ],
@@ -124,7 +181,9 @@ class _optionsScreenState extends State<optionsScreen> {
               Icon(FontAwesomeIcons.folderPlus),
               TextButton(
                 child: Text("Rodymas"),
-                onPressed: () {},
+                onPressed: () {
+                  showDisplayDialog(context);
+                },
               )
             ],
           ),

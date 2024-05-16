@@ -354,7 +354,7 @@ class _InteriorWallItemsScreenState extends State<InteriorWallItemsScreen> {
         updateTotalSum();
         rebuildDataTable();
       }),
-      createDataColumn("Hours2", 75, customColumn, () {}),
+      createDataColumn("Total Hours", 75, customColumn, () {}),
       createDataColumn("Job Cost", 55, customColumn, () {}),
       createDataColumn("Materials", 85, customColumn, () {}),
       createDataColumn("Material cost", 85, customColumn, () {}),
@@ -367,8 +367,8 @@ class _InteriorWallItemsScreenState extends State<InteriorWallItemsScreen> {
       rows.add(
         DataRow(
           cells: [
-            dataCellDisplay(widget.description, i, 100),
-            dataCellDisplay(widget.unit, i, 30),
+            dataCellDisplay(widget.description, i, 120),
+            dataCellDisplay(widget.unit, i, 30, optionalPadding: 12),
             dataCellDisplayController(quantityControllers, i),
             dataCellDo(materialQuantityControllers, i, (value) {
               widget.materialQuantity[i] = double.parse(value);
@@ -381,6 +381,7 @@ class _InteriorWallItemsScreenState extends State<InteriorWallItemsScreen> {
                 width: 35,
                 child: TextField(
                   decoration: InputDecoration(
+                    border: InputBorder.none,
                     contentPadding: EdgeInsets.zero,
                   ),
                   style: TextStyle(
@@ -398,6 +399,7 @@ class _InteriorWallItemsScreenState extends State<InteriorWallItemsScreen> {
                 width: 60,
                 child: TextField(
                   decoration: InputDecoration(
+                      border: InputBorder.none,
                       contentPadding: EdgeInsets.zero,
                       fillColor: Color.fromARGB(255, 131, 138, 235),
                       filled: true),
@@ -544,10 +546,13 @@ class _InteriorWallItemsScreenState extends State<InteriorWallItemsScreen> {
               readOnly: true,
               decoration: customColumn
                   ? InputDecoration(
+                      border: InputBorder.none,
                       contentPadding: EdgeInsets.zero,
                       fillColor: Color.fromARGB(255, 131, 138, 235),
                       filled: true)
-                  : InputDecoration(),
+                  : InputDecoration(
+                      border: InputBorder.none,
+                    ),
               // calc custom hours
               controller: TextEditingController(
                   text: customColumn
@@ -558,15 +563,18 @@ class _InteriorWallItemsScreenState extends State<InteriorWallItemsScreen> {
           ),
         ),
         dataCellDisplaySingle(totalLaborHours2.toStringAsFixed(2), 70,
-            Color.fromARGB(255, 255, 255, 255)),
+            Color.fromARGB(255, 255, 255, 255),
+            optionalPadding: 8),
         dataCellDisplaySingle(totalLaborCost.toStringAsFixed(2), 60,
-            Color.fromARGB(255, 255, 255, 255)),
+            Color.fromARGB(255, 255, 255, 255),
+            optionalPadding: 8),
         DataCell(
           SizedBox(
             width: 75,
             child: TextField(
               decoration: InputDecoration(
-                  contentPadding: EdgeInsets.zero,
+                  border: InputBorder.none,
+                  contentPadding: EdgeInsets.only(left: 8),
                   fillColor: const Color.fromARGB(255, 218, 128, 122),
                   filled: true),
               controller: TextEditingController(
@@ -576,7 +584,8 @@ class _InteriorWallItemsScreenState extends State<InteriorWallItemsScreen> {
           ),
         ),
         dataCellDisplaySingle(totalMaterial2.toStringAsFixed(2), 70,
-            Color.fromARGB(255, 255, 255, 255)),
+            Color.fromARGB(255, 255, 255, 255),
+            optionalPadding: 8),
         dataCellDoSingle(
             TextEditingController(text: totalTotalPrice.toStringAsFixed(2)),
             (value) {},
@@ -666,39 +675,33 @@ class _InteriorWallItemsScreenState extends State<InteriorWallItemsScreen> {
                     );
                   });
                 }),
-            Padding(
-              padding: EdgeInsets.fromLTRB(25, 0, 0, 0),
-              child: Align(
-                child: FloatingActionButton(
-                  heroTag: "btn3",
-                  onPressed: () {
-                    generateInnerWallExcelDocument(
-                      "InnerWallItems",
-                      columns,
-                      widget.description,
-                      widget.unit,
-                      quantityControllers,
-                      materialQuantityControllers,
-                      laborHours1Controllers,
-                      customColumnControllers,
-                      laborHours2Controllers,
-                      laborCostControllers,
-                      material1Controllers,
-                      material2Controllers,
-                      totalPriceControllers,
-                      widget.name,
-                    );
-                    ScaffoldMessenger.of(context).showSnackBar(
-                      SnackBar(
-                        content: Text(
-                            'Excel file has been created in your Downloads folder'),
-                      ),
-                    );
-                  },
-                  child: Text("Save to excel"),
-                ),
-                alignment: Alignment.centerLeft,
-              ),
+            FloatingActionButton(
+              heroTag: "btn3",
+              onPressed: () {
+                generateInnerWallExcelDocument(
+                  "InnerWallItems",
+                  columns,
+                  widget.description,
+                  widget.unit,
+                  quantityControllers,
+                  materialQuantityControllers,
+                  laborHours1Controllers,
+                  customColumnControllers,
+                  laborHours2Controllers,
+                  laborCostControllers,
+                  material1Controllers,
+                  material2Controllers,
+                  totalPriceControllers,
+                  widget.name,
+                );
+                ScaffoldMessenger.of(context).showSnackBar(
+                  SnackBar(
+                    content: Text(
+                        'Excel file has been created in your Downloads folder'),
+                  ),
+                );
+              },
+              child: Text("Save to excel"),
             ),
             SingleChildScrollView(
               scrollDirection: Axis.horizontal,

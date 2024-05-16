@@ -266,9 +266,9 @@ class _InnerDoorItemScreenState extends State<InnerDoorItemScreen> {
                   .toStringAsFixed(2);
 
               widget.laborCost[i] = calculateJobCost(
-                  i, widget.laborHours2, hourlyRateConstructionRemodeling);
+                  i, widget.laborHours1, hourlyRateConstructionRemodeling);
               laborCostControllers[i].text = calculateJobCost(
-                      i, widget.laborHours2, hourlyRateConstructionRemodeling)
+                      i, widget.laborHours1, hourlyRateConstructionRemodeling)
                   .toStringAsFixed(2);
 
               widget.laborCost[i] = calculateJobCost(
@@ -357,20 +357,27 @@ class _InnerDoorItemScreenState extends State<InnerDoorItemScreen> {
       rows.add(
         DataRow(
           cells: [
-            dataCellDisplay(widget.description, i, 100),
-            dataCellDisplay(widget.unit, i, 30),
+            dataCellDisplay(widget.description, i, 120),
+            dataCellDisplay(widget.unit, i, 35, optionalPadding: 12),
             dataCellDisplayController(quantityControllers, i),
             DataCell(
               SizedBox(
-                width: 35,
-                child: TextField(
-                  style: TextStyle(
-                      color: customColumn ? Colors.grey : Colors.black),
-                  readOnly: true,
-                  controller: laborHours1Controllers[i],
-                  onChanged: (value) {},
-                  keyboardType: TextInputType.numberWithOptions(
-                      decimal: true), // Allow decimal numbers
+                width: 45,
+                child: Padding(
+                  padding: const EdgeInsets.only(left: 8.0),
+                  child: TextField(
+                    decoration: InputDecoration(
+                      border: InputBorder.none,
+                      contentPadding: EdgeInsets.zero,
+                    ),
+                    style: TextStyle(
+                        color: customColumn ? Colors.grey : Colors.black),
+                    readOnly: true,
+                    controller: laborHours1Controllers[i],
+                    onChanged: (value) {},
+                    keyboardType: TextInputType.numberWithOptions(
+                        decimal: true), // Allow decimal numbers
+                  ),
                 ),
               ),
             ), // custom column cell
@@ -379,6 +386,8 @@ class _InnerDoorItemScreenState extends State<InnerDoorItemScreen> {
                 width: 60,
                 child: TextField(
                   decoration: InputDecoration(
+                      border: InputBorder.none,
+                      contentPadding: EdgeInsets.zero,
                       fillColor: Color.fromARGB(255, 131, 138, 235),
                       filled: true),
                   style: TextStyle(
@@ -395,7 +404,7 @@ class _InnerDoorItemScreenState extends State<InnerDoorItemScreen> {
                         i,
                         customColumn,
                         emptyCustomList,
-                        widget.laborHours1,
+                        widget.laborHours2,
                         calculationQuantity);
                     laborHours2Controllers[i].text = calculateWorkHours2(
                             i,
@@ -519,7 +528,8 @@ class _InnerDoorItemScreenState extends State<InnerDoorItemScreen> {
         dataCellDisplaySingle(
             customColumn ? '' : totalLaborHours1.toStringAsFixed(2),
             65,
-            Color.fromARGB(255, 255, 255, 255)),
+            Color.fromARGB(255, 255, 255, 255),
+            optionalPadding: 12),
         DataCell(
           Container(
             width: 60,
@@ -527,9 +537,13 @@ class _InnerDoorItemScreenState extends State<InnerDoorItemScreen> {
               readOnly: true,
               decoration: customColumn
                   ? InputDecoration(
+                      border: InputBorder.none,
+                      contentPadding: EdgeInsets.zero,
                       fillColor: Color.fromARGB(255, 131, 138, 235),
                       filled: true)
-                  : InputDecoration(),
+                  : InputDecoration(
+                      border: InputBorder.none,
+                    ),
               // calc custom hours
               controller: TextEditingController(
                   text: customColumn
@@ -540,14 +554,18 @@ class _InnerDoorItemScreenState extends State<InnerDoorItemScreen> {
           ),
         ),
         dataCellDisplaySingle(totalLaborHours2.toStringAsFixed(2), 70,
-            Color.fromARGB(255, 255, 255, 255)),
+            Color.fromARGB(255, 255, 255, 255),
+            optionalPadding: 8),
         dataCellDisplaySingle(totalLaborCost.toStringAsFixed(2), 60,
-            Color.fromARGB(255, 255, 255, 255)),
+            Color.fromARGB(255, 255, 255, 255),
+            optionalPadding: 8),
         DataCell(
           SizedBox(
             width: 75,
             child: TextField(
               decoration: InputDecoration(
+                  border: InputBorder.none,
+                  contentPadding: EdgeInsets.only(left: 8),
                   fillColor: const Color.fromARGB(255, 218, 128, 122),
                   filled: true),
               controller: TextEditingController(
@@ -557,7 +575,8 @@ class _InnerDoorItemScreenState extends State<InnerDoorItemScreen> {
           ),
         ),
         dataCellDisplaySingle(totalMaterial2.toStringAsFixed(2), 70,
-            Color.fromARGB(255, 255, 255, 255)),
+            Color.fromARGB(255, 255, 255, 255),
+            optionalPadding: 8),
         dataCellDoSingle(
             TextEditingController(text: totalTotalPrice.toStringAsFixed(2)),
             (value) {},
@@ -586,39 +605,6 @@ class _InnerDoorItemScreenState extends State<InnerDoorItemScreen> {
                 dataRowMinHeight: 60,
                 columns: columns, // Define your columns here
                 rows: rows,
-              ),
-            ),
-            Padding(
-              padding: EdgeInsets.fromLTRB(25, 0, 0, 0),
-              child: Align(
-                child: FloatingActionButton(
-                  onPressed: () {
-                    generateInnerDoorExcelDocument(
-                      "InnerDoorItemScreen",
-                      columns,
-                      widget.description,
-                      widget.unit,
-                      quantityControllers,
-                      materialQuantityControllers,
-                      laborHours1Controllers,
-                      customColumnControllers,
-                      laborHours2Controllers,
-                      laborCostControllers,
-                      material1Controllers,
-                      material2Controllers,
-                      totalPriceControllers,
-                      widget.name,
-                    );
-                    ScaffoldMessenger.of(context).showSnackBar(
-                      SnackBar(
-                        content: Text(
-                            'Excel file has been created in your Downloads folder'),
-                      ),
-                    );
-                  },
-                  child: Text("Save"),
-                ),
-                alignment: Alignment.centerLeft,
               ),
             ),
             FloatingActionButton(
@@ -678,6 +664,33 @@ class _InnerDoorItemScreenState extends State<InnerDoorItemScreen> {
                     );
                   });
                 }),
+            FloatingActionButton(
+              onPressed: () {
+                generateInnerDoorExcelDocument(
+                  "InnerDoorItemScreen",
+                  columns,
+                  widget.description,
+                  widget.unit,
+                  quantityControllers,
+                  materialQuantityControllers,
+                  laborHours1Controllers,
+                  customColumnControllers,
+                  laborHours2Controllers,
+                  laborCostControllers,
+                  material1Controllers,
+                  material2Controllers,
+                  totalPriceControllers,
+                  widget.name,
+                );
+                ScaffoldMessenger.of(context).showSnackBar(
+                  SnackBar(
+                    content: Text(
+                        'Excel file has been created in your Downloads folder'),
+                  ),
+                );
+              },
+              child: Text("Save to excel"),
+            ),
             SingleChildScrollView(
               scrollDirection: Axis.horizontal,
               child: DataTable(

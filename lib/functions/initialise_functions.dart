@@ -49,45 +49,53 @@ Widget buildCustomColumnLabel(
     return SizedBox(
       width: width,
       child: TextButton(
-        style: TextButton.styleFrom(
-          foregroundColor: Colors.black,
-          backgroundColor: Color.fromARGB(255, 255, 255, 255),
-        ),
         onPressed: onPressed,
         child: Text("$label"),
+        style: TextButton.styleFrom(
+          foregroundColor: Colors.black,
+        ),
       ),
     );
   } else {
     return SizedBox(
       width: width,
       child: TextButton(
-        style: TextButton.styleFrom(
-          foregroundColor: Colors.black,
-          backgroundColor: Colors.white,
-        ),
         onPressed: onPressed,
         child: Text("$label"),
+        style: TextButton.styleFrom(
+          foregroundColor: Colors.black,
+        ),
       ),
     );
   }
 }
 
-DataCell dataCellDisplay(List<String> text, int i, double width) {
+DataCell dataCellDisplay(List<String> text, int i, double width,
+    {double? optionalPadding}) {
   return DataCell(
     Container(
       width: width, // Set the width as needed
-      child: Text(
-        text[i],
-        maxLines: 5, // Set the maximum number of lines
-        overflow: TextOverflow.ellipsis, // Allow text to overflow and wrap
+      child: Padding(
+        padding: optionalPadding != null
+            ? EdgeInsets.only(left: optionalPadding)
+            : EdgeInsets.zero,
+        child: Text(
+          text[i],
+          maxLines: 5, // Set the maximum number of lines
+          overflow: TextOverflow.ellipsis, // Allow text to overflow and wrap
+        ),
       ),
     ),
   );
 }
 
-DataCell dataCellDisplaySingle(String text, double width, Color color) {
+DataCell dataCellDisplaySingle(String text, double width, Color color,
+    {double? optionalPadding}) {
   return DataCell(
     Container(
+      padding: optionalPadding != null
+          ? EdgeInsets.only(left: optionalPadding)
+          : EdgeInsets.zero,
       width: width, // Set the width as needed
       child: Text(
         text,
@@ -103,8 +111,12 @@ DataCell dataCellDisplayController(
     List<TextEditingController> controller, int i) {
   return DataCell(
     Container(
-      width: 35,
+      width: 55,
       child: TextField(
+        decoration: InputDecoration(
+          border: InputBorder.none,
+          contentPadding: EdgeInsets.only(left: 12),
+        ),
         readOnly: true,
         controller: controller[i],
       ),
@@ -122,10 +134,10 @@ DataCell dataCellDoSingle(TextEditingController controller, Function f,
         controller: controller,
         onChanged: (value) => f(value),
         decoration: InputDecoration(
-          fillColor: color,
-          filled: true,
-          contentPadding: EdgeInsets.zero,
-        ),
+            border: InputBorder.none,
+            fillColor: color,
+            filled: true,
+            contentPadding: EdgeInsets.only(left: 8)),
         keyboardType:
             readOnly ? null : TextInputType.numberWithOptions(decimal: true),
       ),
@@ -144,7 +156,8 @@ DataCell dataCellDo(List<TextEditingController> controller, int i, Function f,
         controller: controller[i],
         onChanged: (value) => f(value),
         decoration: InputDecoration(
-          contentPadding: EdgeInsets.zero,
+          border: InputBorder.none,
+          contentPadding: EdgeInsets.only(left: 8),
           fillColor: color,
           filled: true,
         ),

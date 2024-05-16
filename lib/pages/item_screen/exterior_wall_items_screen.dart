@@ -367,23 +367,21 @@ class _ExteriorWallItemsScreenState extends State<ExteriorWallItemsScreen> {
       rows.add(
         DataRow(
           cells: [
-            dataCellDisplay(widget.description, i, 100),
-            dataCellDisplay(widget.unit, i, 30),
+            dataCellDisplay(widget.description, i, 120),
+            dataCellDisplay(widget.unit, i, 30, optionalPadding: 12),
             dataCellDisplayController(quantityControllers, i),
-            dataCellDo(
-              materialQuantityControllers,
-              i,
-              (value) {
-                widget.materialQuantity[i] = double.parse(value);
-              },
-              Color.fromARGB(255, 255, 255, 255), //
-              false,
-            ),
+            dataCellDo(materialQuantityControllers, i, (value) {
+              widget.materialQuantity[i] = double.parse(value);
+            },
+                Color.fromARGB(255, 255, 255, 255), //
+                true,
+                optionalWidth: 45),
             DataCell(
               SizedBox(
                 width: 35,
                 child: TextField(
                   decoration: InputDecoration(
+                    border: InputBorder.none,
                     contentPadding: EdgeInsets.zero,
                   ),
                   style: TextStyle(
@@ -401,6 +399,8 @@ class _ExteriorWallItemsScreenState extends State<ExteriorWallItemsScreen> {
                 width: 60,
                 child: TextField(
                   decoration: InputDecoration(
+                      border: InputBorder.none,
+                      contentPadding: EdgeInsets.zero,
                       fillColor: Color.fromARGB(255, 131, 138, 235),
                       filled: true),
                   style: TextStyle(
@@ -550,9 +550,13 @@ class _ExteriorWallItemsScreenState extends State<ExteriorWallItemsScreen> {
               readOnly: true,
               decoration: customColumn
                   ? InputDecoration(
+                      border: InputBorder.none,
+                      contentPadding: EdgeInsets.zero,
                       fillColor: Color.fromARGB(255, 131, 138, 235),
                       filled: true)
-                  : InputDecoration(),
+                  : InputDecoration(
+                      border: InputBorder.none,
+                    ),
               // calc custom hours
               controller: TextEditingController(
                   text: customColumn
@@ -562,15 +566,25 @@ class _ExteriorWallItemsScreenState extends State<ExteriorWallItemsScreen> {
             ),
           ),
         ),
-        dataCellDisplaySingle(totalLaborHours2.toStringAsFixed(2), 70,
-            Color.fromARGB(255, 255, 255, 255)),
-        dataCellDisplaySingle(totalLaborCost.toStringAsFixed(2), 60,
-            Color.fromARGB(255, 255, 255, 255)),
+        dataCellDisplaySingle(
+          totalLaborHours2.toStringAsFixed(2),
+          70,
+          Color.fromARGB(255, 255, 255, 255),
+          optionalPadding: 8,
+        ),
+        dataCellDisplaySingle(
+          totalLaborCost.toStringAsFixed(2),
+          60,
+          Color.fromARGB(255, 255, 255, 255),
+          optionalPadding: 8,
+        ),
         DataCell(
           SizedBox(
             width: 75,
             child: TextField(
               decoration: InputDecoration(
+                  border: InputBorder.none,
+                  contentPadding: EdgeInsets.only(left: 8),
                   fillColor: const Color.fromARGB(255, 218, 128, 122),
                   filled: true),
               controller: TextEditingController(
@@ -580,7 +594,8 @@ class _ExteriorWallItemsScreenState extends State<ExteriorWallItemsScreen> {
           ),
         ),
         dataCellDisplaySingle(totalMaterial2.toStringAsFixed(2), 70,
-            Color.fromARGB(255, 255, 255, 255)),
+            Color.fromARGB(255, 255, 255, 255),
+            optionalPadding: 8),
         dataCellDoSingle(
             TextEditingController(text: totalTotalPrice.toStringAsFixed(2)),
             (value) {},
@@ -609,39 +624,6 @@ class _ExteriorWallItemsScreenState extends State<ExteriorWallItemsScreen> {
                 dataRowMinHeight: 60,
                 columns: columns, // Define your columns here
                 rows: rows,
-              ),
-            ),
-            Padding(
-              padding: EdgeInsets.fromLTRB(25, 0, 0, 0),
-              child: Align(
-                child: FloatingActionButton(
-                  onPressed: () {
-                    generateInnerDoorExcelDocument(
-                      "ExterioirWallItems",
-                      columns,
-                      widget.description,
-                      widget.unit,
-                      quantityControllers,
-                      materialQuantityControllers,
-                      laborHours1Controllers,
-                      customColumnControllers,
-                      laborHours2Controllers,
-                      laborCostControllers,
-                      material1Controllers,
-                      material2Controllers,
-                      totalPriceControllers,
-                      widget.name,
-                    );
-                    ScaffoldMessenger.of(context).showSnackBar(
-                      SnackBar(
-                        content: Text(
-                            'Excel file has been created in your Downloads folder'),
-                      ),
-                    );
-                  },
-                  child: Text("Save"),
-                ),
-                alignment: Alignment.centerLeft,
               ),
             ),
             FloatingActionButton(
@@ -704,6 +686,33 @@ class _ExteriorWallItemsScreenState extends State<ExteriorWallItemsScreen> {
                     );
                   });
                 }),
+            FloatingActionButton(
+              onPressed: () {
+                generateInnerDoorExcelDocument(
+                  "ExterioirWallItems",
+                  columns,
+                  widget.description,
+                  widget.unit,
+                  quantityControllers,
+                  materialQuantityControllers,
+                  laborHours1Controllers,
+                  customColumnControllers,
+                  laborHours2Controllers,
+                  laborCostControllers,
+                  material1Controllers,
+                  material2Controllers,
+                  totalPriceControllers,
+                  widget.name,
+                );
+                ScaffoldMessenger.of(context).showSnackBar(
+                  SnackBar(
+                    content: Text(
+                        'Excel file has been created in your Downloads folder'),
+                  ),
+                );
+              },
+              child: Text("Save to Excel"),
+            ),
             SingleChildScrollView(
               scrollDirection: Axis.horizontal,
               child: DataTable(
@@ -712,7 +721,7 @@ class _ExteriorWallItemsScreenState extends State<ExteriorWallItemsScreen> {
                 columns: calculationColumns, // Define your columns here
                 rows: calculationRows,
               ),
-            )
+            ),
           ],
         ),
       ),
