@@ -368,10 +368,12 @@ class _InnerDoorItemScreenState extends State<InnerDoorItemScreen> {
                   child: TextField(
                     decoration: InputDecoration(
                       border: InputBorder.none,
-                      contentPadding: EdgeInsets.zero,
+                      contentPadding: EdgeInsets.only(left: 2),
                     ),
                     style: TextStyle(
-                        color: customColumn ? Colors.grey : Colors.black),
+                        color: customColumn
+                            ? Colors.grey
+                            : Theme.of(context).colorScheme.primary),
                     readOnly: true,
                     controller: laborHours1Controllers[i],
                     onChanged: (value) {},
@@ -387,11 +389,13 @@ class _InnerDoorItemScreenState extends State<InnerDoorItemScreen> {
                 child: TextField(
                   decoration: InputDecoration(
                       border: InputBorder.none,
-                      contentPadding: EdgeInsets.zero,
+                      contentPadding: EdgeInsets.only(left: 2),
                       fillColor: Color.fromARGB(255, 131, 138, 235),
                       filled: true),
                   style: TextStyle(
-                      color: customColumn ? Colors.black : Colors.grey),
+                      color: customColumn
+                          ? Theme.of(context).colorScheme.primary
+                          : Colors.grey),
                   readOnly: !customColumn,
                   controller: customColumnControllers[i],
                   onChanged: (value) {
@@ -454,10 +458,12 @@ class _InnerDoorItemScreenState extends State<InnerDoorItemScreen> {
                   hourlyRateConstructionRemodeling); // Calculate the labor cost
               widget.laborCost[i] =
                   double.parse(updatedLaborCost.toStringAsFixed(2));
-            }, Color.fromARGB(255, 255, 255, 255), true, optionalWidth: 45),
+            }, Theme.of(context).colorScheme.background, true,
+                optionalWidth: 45),
             dataCellDo(laborCostControllers, i, (value) {
               widget.laborCost[i] = double.parse(value);
-            }, Color.fromARGB(255, 255, 255, 255), true, optionalWidth: 65),
+            }, Theme.of(context).colorScheme.background, true,
+                optionalWidth: 65),
             dataCellDo(material1Controllers, i, (value) {
               // Handle changes to material 1
               double parsedValue = double.parse(value);
@@ -489,7 +495,8 @@ class _InnerDoorItemScreenState extends State<InnerDoorItemScreen> {
               widget.material2[i] = double.parse(value);
               material2Controllers[i].text =
                   widget.material2[i].toStringAsFixed(2);
-            }, Color.fromARGB(255, 255, 255, 255), true, optionalWidth: 75),
+            }, Theme.of(context).colorScheme.background, true,
+                optionalWidth: 75),
             dataCellDo(totalPriceControllers, i, (value) {
               widget.totalPrice[i] = double.parse(value);
               totalPriceControllers[i].text =
@@ -522,13 +529,24 @@ class _InnerDoorItemScreenState extends State<InnerDoorItemScreen> {
     DataRow totalSumRow = DataRow(
       cells: [
         dataCellDisplaySingle(
-            "Total sum", 70, Color.fromARGB(255, 255, 255, 255)),
-        dataCellDisplaySingle("", 0, Color.fromARGB(255, 255, 255, 255)),
-        dataCellDisplaySingle("", 0, Color.fromARGB(255, 255, 255, 255)),
+          "Total sum",
+          70,
+          Theme.of(context).colorScheme.background,
+        ),
+        dataCellDisplaySingle(
+          "",
+          0,
+          Theme.of(context).colorScheme.background,
+        ),
+        dataCellDisplaySingle(
+          "",
+          0,
+          Theme.of(context).colorScheme.background,
+        ),
         dataCellDisplaySingle(
             customColumn ? '' : totalLaborHours1.toStringAsFixed(2),
             65,
-            Color.fromARGB(255, 255, 255, 255),
+            Theme.of(context).colorScheme.background,
             optionalPadding: 12),
         DataCell(
           Container(
@@ -538,7 +556,7 @@ class _InnerDoorItemScreenState extends State<InnerDoorItemScreen> {
               decoration: customColumn
                   ? InputDecoration(
                       border: InputBorder.none,
-                      contentPadding: EdgeInsets.zero,
+                      contentPadding: EdgeInsets.only(left: 2),
                       fillColor: Color.fromARGB(255, 131, 138, 235),
                       filled: true)
                   : InputDecoration(
@@ -554,10 +572,10 @@ class _InnerDoorItemScreenState extends State<InnerDoorItemScreen> {
           ),
         ),
         dataCellDisplaySingle(totalLaborHours2.toStringAsFixed(2), 70,
-            Color.fromARGB(255, 255, 255, 255),
+            Theme.of(context).colorScheme.background,
             optionalPadding: 8),
         dataCellDisplaySingle(totalLaborCost.toStringAsFixed(2), 60,
-            Color.fromARGB(255, 255, 255, 255),
+            Theme.of(context).colorScheme.background,
             optionalPadding: 8),
         DataCell(
           SizedBox(
@@ -575,7 +593,7 @@ class _InnerDoorItemScreenState extends State<InnerDoorItemScreen> {
           ),
         ),
         dataCellDisplaySingle(totalMaterial2.toStringAsFixed(2), 70,
-            Color.fromARGB(255, 255, 255, 255),
+            Theme.of(context).colorScheme.background,
             optionalPadding: 8),
         dataCellDoSingle(
             TextEditingController(text: totalTotalPrice.toStringAsFixed(2)),
