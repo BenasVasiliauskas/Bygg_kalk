@@ -51,9 +51,6 @@ Widget buildCustomColumnLabel(
       child: TextButton(
         onPressed: onPressed,
         child: Text("$label"),
-        style: TextButton.styleFrom(
-          foregroundColor: Colors.black,
-        ),
       ),
     );
   } else {
@@ -62,9 +59,6 @@ Widget buildCustomColumnLabel(
       child: TextButton(
         onPressed: onPressed,
         child: Text("$label"),
-        style: TextButton.styleFrom(
-          foregroundColor: Colors.black,
-        ),
       ),
     );
   }

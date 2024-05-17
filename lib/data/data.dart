@@ -1043,26 +1043,15 @@ final innerDoor = [
 final parquetAndLaminate = [
   ParquetAndLaminateModel(
       name: "Surface covering parquet",
-      description: ["Parquet on subfloor, oak"],
-      unit: ["m²"],
-      quantity: [1.00],
-      laborHours1: [0.36],
-      laborHours2: [0.00],
-      laborCost: [0.00],
-      material: [528.30],
-      materials: [0.00],
-      totalPrice: [0.00]),
-  ParquetAndLaminateModel(
-      name: "Surface covering parquet",
-      description: ["Laminate flooring, oak"],
-      unit: ["m²"],
-      quantity: [1.00],
-      laborHours1: [0.25],
-      laborHours2: [0.00],
-      laborCost: [0.00],
-      material: [0.00],
-      materials: [0.00],
-      totalPrice: [0.00]),
+      description: ["Parquet on subfloor, oak", "Laminate flooring, oak"],
+      unit: ["m²", "m²"],
+      quantity: [1.00, 1.00],
+      laborHours1: [0.36, 0.25],
+      laborHours2: [0.00, 0.00],
+      laborCost: [0.00, 0.00],
+      material: [528.30, 0.00],
+      materials: [0.00, 0.00],
+      totalPrice: [0.00, 0.00]),
 ];
 
 final windowsExteriorDoors = [

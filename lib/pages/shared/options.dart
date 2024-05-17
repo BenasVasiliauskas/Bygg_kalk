@@ -1,8 +1,9 @@
 import 'package:cost_calculator/constants/language.dart';
-import 'package:cost_calculator/pages/shared/theme/theme.dart';
+import 'package:cost_calculator/pages/shared/theme/theme_provider.dart';
 import 'package:cost_calculator/widgets/custom_drawer.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:provider/provider.dart';
 
 class optionsScreen extends StatefulWidget {
   const optionsScreen({super.key});
@@ -18,20 +19,9 @@ class _optionsScreenState extends State<optionsScreen> {
     });
   }
 
-  void onThemeChanged() {
-    if (currentTheme == lightMode) {
-      setState(() {
-        currentTheme = darkMode;
-      });
-    } else {
-      setState(() {
-        currentTheme = lightMode;
-      });
-    }
-  }
+  //Provider.of<ThemeProvider>(context, listen: false).toggleTheme();
 
   String _selectedOption = 'English';
-  String _selectedThemeOption = "lightMode";
 
   void showGeneralDialog(BuildContext context) {
     showDialog(
@@ -118,34 +108,12 @@ class _optionsScreenState extends State<optionsScreen> {
           title: Text("Display"),
           content: Column(
             children: [
-              RadioListTile<String>(
-                title: Text('Light Theme'),
-                value: 'lightMode',
-                groupValue: _selectedThemeOption,
-                onChanged: (String? value) {
-                  onThemeChanged();
-                  setState(() {
-                    _selectedThemeOption = value!;
-                  });
-                  Navigator.of(context).pop(); // Close the dialog
-                  showDisplayDialog(
-                      context); // Reopen the dialog to reflect the change
-                },
-              ),
-              RadioListTile<String>(
-                title: Text('Dark Theme'),
-                value: 'darkMode',
-                groupValue: _selectedThemeOption,
-                onChanged: (String? value) {
-                  onThemeChanged();
-                  setState(() {
-                    _selectedThemeOption = value!;
-                  });
-                  Navigator.of(context).pop(); // Close the dialog
-                  showDisplayDialog(
-                      context); // Reopen the dialog to reflect the change
-                },
-              )
+              TextButton(
+                  onPressed: () {
+                    Provider.of<ThemeProvider>(context, listen: false)
+                        .toggleTheme();
+                  },
+                  child: Text("Change theme"))
             ],
           ),
         );

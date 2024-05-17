@@ -4,8 +4,8 @@ ThemeData lightMode = ThemeData(
   brightness: Brightness.light,
   colorScheme: ColorScheme.light(
     background: Colors.white,
-    primary: Colors.white,
-    secondary: Colors.white,
+    primary: Colors.black,
+    secondary: Colors.black,
   ),
   appBarTheme: AppBarTheme(
     backgroundColor: Colors.blue,
@@ -32,11 +32,9 @@ ThemeData lightMode = ThemeData(
 ThemeData darkMode = ThemeData(
   brightness: Brightness.dark,
   colorScheme: ColorScheme.dark(
-    background: Colors.grey,
-    primary: Colors.grey,
-    secondary: Colors.grey,
+    background: Color.fromARGB(255, 41, 39, 39),
+    primary: Colors.white,
+    secondary: Colors.white,
   ),
   appBarTheme: AppBarTheme(backgroundColor: Colors.blue),
 );
-
-ThemeData currentTheme = lightMode;
