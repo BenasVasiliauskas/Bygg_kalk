@@ -618,8 +618,11 @@ class _InnerDoorItemScreenState extends State<InnerDoorItemScreen> {
             SingleChildScrollView(
               scrollDirection: Axis.horizontal,
               child: DataTable(
+                border: TableBorder.all(
+                    width: 2, color: Theme.of(context).colorScheme.background),
+                horizontalMargin: 15,
                 columnSpacing: 0,
-                dataRowMaxHeight: 60,
+                dataRowMaxHeight: double.infinity,
                 dataRowMinHeight: 60,
                 columns: columns, // Define your columns here
                 rows: rows,
