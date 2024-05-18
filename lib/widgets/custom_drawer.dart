@@ -1,4 +1,5 @@
 import 'package:cost_calculator/constants/language.dart';
+import 'package:cost_calculator/pages/item_screen/file_picker.dart';
 import 'package:cost_calculator/pages/item_screen/home_page.dart';
 import 'package:cost_calculator/pages/shared/inner_door_screen.dart';
 import 'package:cost_calculator/pages/shared/options.dart';
@@ -85,7 +86,15 @@ class CustomDrawer extends StatelessWidget {
             title: languageEnglish == true
                 ? Text('Documents')
                 : Text('Bygningsdeler'),
-            onTap: () {},
+            onTap: () {
+              Navigator.of(context).pushReplacement(
+                MaterialPageRoute(
+                  builder: (context) {
+                    return FilePickerScreen();
+                  },
+                ),
+              );
+            },
           ),
           ListTile(
             leading: FaIcon(

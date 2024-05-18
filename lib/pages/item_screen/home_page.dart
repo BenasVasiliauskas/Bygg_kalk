@@ -1,3 +1,4 @@
+import 'package:cost_calculator/pages/item_screen/file_picker.dart';
 import 'package:cost_calculator/pages/shared/budget_screen.dart';
 import 'package:cost_calculator/pages/shared/building_components_screen.dart';
 import 'package:cost_calculator/pages/shared/options.dart';
@@ -70,7 +71,15 @@ class _homePageState extends State<homePage> {
                         children: [
                           IconButton(
                               color: Colors.white,
-                              onPressed: () {},
+                              onPressed: () {
+                                Navigator.of(context).pushReplacement(
+                                  MaterialPageRoute(
+                                    builder: (context) {
+                                      return FilePickerScreen();
+                                    },
+                                  ),
+                                );
+                              },
                               icon: FaIcon(FontAwesomeIcons.book)),
                           Text(
                             "Documents",
