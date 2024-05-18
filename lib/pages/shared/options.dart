@@ -1,4 +1,5 @@
 import 'package:cost_calculator/constants/language.dart';
+import 'package:cost_calculator/pages/shared/globals/calculation_variables.dart';
 import 'package:cost_calculator/pages/shared/theme/theme_provider.dart';
 import 'package:cost_calculator/widgets/custom_drawer.dart';
 import 'package:flutter/material.dart';
@@ -107,6 +108,7 @@ class _optionsScreenState extends State<optionsScreen> {
         return AlertDialog(
           title: Text("Display"),
           content: Column(
+            mainAxisSize: MainAxisSize.min,
             children: [
               TextButton(
                   onPressed: () {
@@ -116,6 +118,130 @@ class _optionsScreenState extends State<optionsScreen> {
                   child: Text("Change theme"))
             ],
           ),
+          actions: <Widget>[
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+              child: Text('Close'),
+            )
+          ],
+        );
+      },
+    );
+  }
+
+  void showHourlyRateDialog(BuildContext context) {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: Text("Hourly Rate"),
+          content: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              TextField(
+                onChanged: (value) {},
+                controller: hourlyRateTextEditingController, //change
+                keyboardType: TextInputType.numberWithOptions(decimal: true),
+              )
+            ],
+          ),
+          actions: <Widget>[
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+              child: Text('Close'),
+            )
+          ],
+        );
+      },
+    );
+  }
+
+  void showTimeCoefficientDialog(BuildContext context) {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: Text("Time coefficient"),
+          content: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              TextField(
+                onChanged: (value) {},
+                controller: timeCoefficientTextEditingController,
+                keyboardType: TextInputType.numberWithOptions(decimal: true),
+              )
+            ],
+          ),
+          actions: <Widget>[
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+              child: Text('Close'),
+            )
+          ],
+        );
+      },
+    );
+  }
+
+  void showMarkupDialog(BuildContext context) {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: Text("Markup"),
+          content: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              TextField(
+                onChanged: (value) {},
+                controller: markupTexteditingController,
+                keyboardType: TextInputType.numberWithOptions(decimal: true),
+              )
+            ],
+          ),
+          actions: <Widget>[
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+              child: Text('Close'),
+            )
+          ],
+        );
+      },
+    );
+  }
+
+  void showCostsDialog(BuildContext context) {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: Text("Costs"),
+          content: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              TextField(
+                onChanged: (value) {},
+                controller: costsTextEditingController,
+                keyboardType: TextInputType.numberWithOptions(decimal: true),
+              )
+            ],
+          ),
+          actions: <Widget>[
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+              child: Text('Close'),
+            )
+          ],
         );
       },
     );
@@ -128,90 +254,101 @@ class _optionsScreenState extends State<optionsScreen> {
       appBar: AppBar(
         title: Text("Options"),
       ),
-      body: Column(
-        children: [
-          Row(
-            children: [Text("Pirminiai")],
-          ),
-          Row(
-            children: [
-              Icon(FontAwesomeIcons.gear),
-              TextButton(
-                child: Text("Bendri"),
-                onPressed: () {
-                  showGeneralDialog(context);
-                },
-              )
-            ],
-          ),
-          Row(
-            children: [
-              Icon(FontAwesomeIcons.folderPlus),
-              TextButton(
-                child: Text("Rodymas"),
-                onPressed: () {
-                  showDisplayDialog(context);
-                },
-              )
-            ],
-          ),
-          Row(
-            children: [
-              Icon(FontAwesomeIcons.boxArchive),
-              TextButton(
-                child: Text("Val. įkainis"),
-                onPressed: () {},
-              )
-            ],
-          ),
-          Row(
-            children: [
-              Icon(FontAwesomeIcons.tag),
-              TextButton(
-                child: Text("Laiko koeficientas"),
-                onPressed: () {},
-              )
-            ],
-          ),
-          Row(
-            children: [
-              Icon(FontAwesomeIcons.barcode),
-              TextButton(
-                child: Text("Antkainis"),
-                onPressed: () {},
-              )
-            ],
-          ),
-          Row(
-            children: [
-              Icon(FontAwesomeIcons.fileExcel),
-              TextButton(
-                child: Text("Statybvietės išlaidos"),
-                onPressed: () {},
-              )
-            ],
-          ),
-          Row(
-            children: [
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: 10, vertical: 25),
-                child: languageEnglish == false
-                    ? Text('Norsk')
-                    : Text('Norwegian'),
-              ),
-              Switch(
-                value: languageEnglish,
-                onChanged: onLanguageChanged,
-              ),
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: 10, vertical: 25),
-                child: languageEnglish == false
-                    ? Text('Engelsk')
-                    : Text('English'),
-              ),
-            ],
-          ),
-        ],
+      body: SingleChildScrollView(
+        scrollDirection: Axis.vertical,
+        child: Column(
+          children: [
+            Row(
+              children: [Text("Pirminiai")],
+            ),
+            Row(
+              children: [
+                Icon(FontAwesomeIcons.gear),
+                TextButton(
+                  child: Text("Bendri"),
+                  onPressed: () {
+                    showGeneralDialog(context);
+                  },
+                )
+              ],
+            ),
+            Row(
+              children: [
+                Icon(FontAwesomeIcons.folderPlus),
+                TextButton(
+                  child: Text("Rodymas"),
+                  onPressed: () {
+                    showDisplayDialog(context);
+                  },
+                )
+              ],
+            ),
+            Row(
+              children: [
+                Icon(FontAwesomeIcons.boxArchive),
+                TextButton(
+                  child: Text("Val. įkainis"),
+                  onPressed: () {
+                    showHourlyRateDialog(context);
+                  },
+                )
+              ],
+            ),
+            Row(
+              children: [
+                Icon(FontAwesomeIcons.tag),
+                TextButton(
+                  child: Text("Laiko koeficientas"),
+                  onPressed: () {
+                    showTimeCoefficientDialog(context);
+                  },
+                )
+              ],
+            ),
+            Row(
+              children: [
+                Icon(FontAwesomeIcons.barcode),
+                TextButton(
+                  child: Text("Antkainis"),
+                  onPressed: () {
+                    showMarkupDialog(context);
+                  },
+                )
+              ],
+            ),
+            Row(
+              children: [
+                Icon(FontAwesomeIcons.fileExcel),
+                TextButton(
+                  child: Text("Statybvietės išlaidos"),
+                  onPressed: () {
+                    showCostsDialog(context);
+                  },
+                )
+              ],
+            ),
+            Row(
+              children: [
+                Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 10, vertical: 25),
+                  child: languageEnglish == false
+                      ? Text('Norsk')
+                      : Text('Norwegian'),
+                ),
+                Switch(
+                  value: languageEnglish,
+                  onChanged: onLanguageChanged,
+                ),
+                Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 10, vertical: 25),
+                  child: languageEnglish == false
+                      ? Text('Engelsk')
+                      : Text('English'),
+                ),
+              ],
+            ),
+          ],
+        ),
       ),
     );
   }
