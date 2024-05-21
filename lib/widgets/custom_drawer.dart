@@ -1,19 +1,14 @@
 import 'package:cost_calculator/constants/language.dart';
 import 'package:cost_calculator/pages/item_screen/file_picker.dart';
 import 'package:cost_calculator/pages/item_screen/home_page.dart';
-import 'package:cost_calculator/pages/shared/inner_door_screen.dart';
 import 'package:cost_calculator/pages/shared/options.dart';
-import 'package:cost_calculator/pages/shared/parquet_laminate_screen.dart';
 import 'package:cost_calculator/pages/shared/privacy_policy.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import '../pages/shared/budget_screen.dart';
-import '../pages/shared/exterior_wall_screen.dart';
-import '../pages/shared/interior_wall_screen.dart';
 import 'package:flutter/material.dart';
 
 import '../pages/shared/norw_budget_screen.dart';
-import '../pages/shared/windows_exterior_door_screen.dart';
 
 class CustomDrawer extends StatelessWidget {
   @override
