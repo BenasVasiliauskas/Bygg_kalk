@@ -41,6 +41,7 @@ class _optionsScreenState extends State<optionsScreen> {
                 onChanged: (String? value) {
                   setState(() {
                     _selectedOption = value!;
+                    languageChangedToEnglish();
                   });
                   Navigator.of(context).pop(); // Close the dialog
                   showGeneralDialog(
@@ -54,6 +55,7 @@ class _optionsScreenState extends State<optionsScreen> {
                 onChanged: (String? value) {
                   setState(() {
                     _selectedOption = value!;
+                    languageChangedToNorwegian();
                   });
                   Navigator.of(context).pop(); // Close the dialog
                   showGeneralDialog(
@@ -67,6 +69,7 @@ class _optionsScreenState extends State<optionsScreen> {
                 onChanged: (String? value) {
                   setState(() {
                     _selectedOption = value!;
+                    languageChangedToLithuanian();
                   });
                   Navigator.of(context).pop(); // Close the dialog
                   showGeneralDialog(
@@ -80,6 +83,7 @@ class _optionsScreenState extends State<optionsScreen> {
                 onChanged: (String? value) {
                   setState(() {
                     _selectedOption = value!;
+                    languageChangedToPolish();
                   });
                   Navigator.of(context).pop(); // Close the dialog
                   showGeneralDialog(
@@ -137,13 +141,20 @@ class _optionsScreenState extends State<optionsScreen> {
       builder: (BuildContext context) {
         return AlertDialog(
           title: Text("Hourly Rate"),
-          content: Column(
+          content: Row(
             mainAxisSize: MainAxisSize.min,
             children: [
-              TextField(
-                onChanged: (value) {},
-                controller: hourlyRateTextEditingController, //change
-                keyboardType: TextInputType.numberWithOptions(decimal: true),
+              SizedBox(
+                width: 150,
+                child: TextField(
+                  onChanged: (value) {},
+                  controller: hourlyRateTextEditingController, //change
+                  keyboardType: TextInputType.numberWithOptions(decimal: true),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Text("nok"),
               )
             ],
           ),
@@ -166,13 +177,20 @@ class _optionsScreenState extends State<optionsScreen> {
       builder: (BuildContext context) {
         return AlertDialog(
           title: Text("Time coefficient"),
-          content: Column(
+          content: Row(
             mainAxisSize: MainAxisSize.min,
             children: [
-              TextField(
-                onChanged: (value) {},
-                controller: timeCoefficientTextEditingController,
-                keyboardType: TextInputType.numberWithOptions(decimal: true),
+              SizedBox(
+                width: 150,
+                child: TextField(
+                  onChanged: (value) {},
+                  controller: timeCoefficientTextEditingController,
+                  keyboardType: TextInputType.numberWithOptions(decimal: true),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Text("%"),
               )
             ],
           ),
@@ -195,13 +213,20 @@ class _optionsScreenState extends State<optionsScreen> {
       builder: (BuildContext context) {
         return AlertDialog(
           title: Text("Markup"),
-          content: Column(
+          content: Row(
             mainAxisSize: MainAxisSize.min,
             children: [
-              TextField(
-                onChanged: (value) {},
-                controller: markupTexteditingController,
-                keyboardType: TextInputType.numberWithOptions(decimal: true),
+              SizedBox(
+                width: 150,
+                child: TextField(
+                  onChanged: (value) {},
+                  controller: markupTexteditingController,
+                  keyboardType: TextInputType.numberWithOptions(decimal: true),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Text("%"),
               )
             ],
           ),
@@ -224,14 +249,21 @@ class _optionsScreenState extends State<optionsScreen> {
       builder: (BuildContext context) {
         return AlertDialog(
           title: Text("Costs"),
-          content: Column(
+          content: Row(
             mainAxisSize: MainAxisSize.min,
             children: [
-              TextField(
-                onChanged: (value) {},
-                controller: costsTextEditingController,
-                keyboardType: TextInputType.numberWithOptions(decimal: true),
-              )
+              SizedBox(
+                width: 150,
+                child: TextField(
+                  onChanged: (value) {},
+                  controller: costsTextEditingController,
+                  keyboardType: TextInputType.numberWithOptions(decimal: true),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Text("%"),
+              ),
             ],
           ),
           actions: <Widget>[
@@ -296,17 +328,6 @@ class _optionsScreenState extends State<optionsScreen> {
             ),
             Row(
               children: [
-                Icon(FontAwesomeIcons.tag),
-                TextButton(
-                  child: Text("Laiko koeficientas"),
-                  onPressed: () {
-                    showTimeCoefficientDialog(context);
-                  },
-                )
-              ],
-            ),
-            Row(
-              children: [
                 Icon(FontAwesomeIcons.barcode),
                 TextButton(
                   child: Text("Antkainis"),
@@ -323,6 +344,17 @@ class _optionsScreenState extends State<optionsScreen> {
                   child: Text("Statybvietės išlaidos"),
                   onPressed: () {
                     showCostsDialog(context);
+                  },
+                )
+              ],
+            ),
+            Row(
+              children: [
+                Icon(FontAwesomeIcons.tag),
+                TextButton(
+                  child: Text("Laiko koeficientas"),
+                  onPressed: () {
+                    showTimeCoefficientDialog(context);
                   },
                 )
               ],
@@ -351,5 +383,41 @@ class _optionsScreenState extends State<optionsScreen> {
         ),
       ),
     );
+  }
+
+  void languageChangedToEnglish() {
+    setState(() {
+      languageEnglish = true;
+      languageNorwegian = false;
+      languagePolish = false;
+      languageLithuanian = false;
+    });
+  }
+
+  void languageChangedToNorwegian() {
+    setState(() {
+      languageEnglish = false;
+      languageNorwegian = true;
+      languagePolish = false;
+      languageLithuanian = false;
+    });
+  }
+
+  void languageChangedToPolish() {
+    setState(() {
+      languageEnglish = false;
+      languageNorwegian = false;
+      languagePolish = true;
+      languageLithuanian = false;
+    });
+  }
+
+  void languageChangedToLithuanian() {
+    setState(() {
+      languageEnglish = false;
+      languageNorwegian = false;
+      languagePolish = false;
+      languageLithuanian = true;
+    });
   }
 }
