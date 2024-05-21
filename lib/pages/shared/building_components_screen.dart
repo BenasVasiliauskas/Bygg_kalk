@@ -1,4 +1,10 @@
+import 'package:cost_calculator/constants/language.dart';
 import 'package:cost_calculator/pages/item_screen/home_page.dart';
+import 'package:cost_calculator/pages/item_sections/inner_door_sections.dart';
+import 'package:cost_calculator/pages/item_sections/inner_wall_sections.dart';
+import 'package:cost_calculator/pages/item_sections/outer_wall_sections.dart';
+import 'package:cost_calculator/pages/item_sections/parquet_laminate_sections.dart';
+import 'package:cost_calculator/pages/item_sections/windows_exterior_door_sections.dart';
 import 'package:cost_calculator/widgets/custom_drawer.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -49,7 +55,103 @@ class _buildingComponentsScreenState extends State<buildingComponentsScreen> {
                         padding: const EdgeInsets.fromLTRB(0, 0, 8, 0),
                         child: Icon(FontAwesomeIcons.folder),
                       ),
-                      Text("Bæresystemet"),
+                      Text(languageEnglish ? "Carrier system" : "Bæresystemet"),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+            Row(
+              children: [
+                TextButton(
+                  onPressed: () {
+                    Navigator.of(context).pushReplacement(
+                      MaterialPageRoute(builder: (context) {
+                        return OuterWallSections();
+                      }),
+                    );
+                  },
+                  child: Row(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.fromLTRB(0, 0, 8, 0),
+                        child: Icon(FontAwesomeIcons.folder),
+                      ),
+                      Text(languageEnglish ? "Exterior walls" : "Yttervegger"),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+            Row(
+              children: [
+                TextButton(
+                  onPressed: () {
+                    Navigator.of(context).pushReplacement(
+                      MaterialPageRoute(
+                        builder: (context) {
+                          return WindowsExteriorDoorSections();
+                        },
+                      ),
+                    );
+                  },
+                  child: Row(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.fromLTRB(0, 0, 8, 0),
+                        child: Icon(FontAwesomeIcons.folder),
+                      ),
+                      Text(languageEnglish
+                          ? "Window/exterior door"
+                          : "Vindu/ytterdør"),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+            Row(
+              children: [
+                TextButton(
+                  onPressed: () {
+                    Navigator.of(context).pushReplacement(
+                      MaterialPageRoute(
+                        builder: (context) {
+                          return InnerWallSections();
+                        },
+                      ),
+                    );
+                  },
+                  child: Row(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.fromLTRB(0, 0, 8, 0),
+                        child: Icon(FontAwesomeIcons.folder),
+                      ),
+                      Text(languageEnglish ? "Interior walls" : "Innevegger"),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+            Row(
+              children: [
+                TextButton(
+                  onPressed: () {
+                    Navigator.of(context).pushReplacement(
+                      MaterialPageRoute(
+                        builder: (context) {
+                          return InnerDoorSections();
+                        },
+                      ),
+                    );
+                  },
+                  child: Row(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.fromLTRB(0, 0, 8, 0),
+                        child: Icon(FontAwesomeIcons.folder),
+                      ),
+                      Text(languageEnglish ? "Interior door" : "Innedør"),
                     ],
                   ),
                 ),
@@ -65,7 +167,7 @@ class _buildingComponentsScreenState extends State<buildingComponentsScreen> {
                         padding: const EdgeInsets.fromLTRB(0, 0, 8, 0),
                         child: Icon(FontAwesomeIcons.folder),
                       ),
-                      Text("Yttervegger"),
+                      Text(languageEnglish ? "Deck" : "Dekke"),
                     ],
                   ),
                 ),
@@ -81,7 +183,7 @@ class _buildingComponentsScreenState extends State<buildingComponentsScreen> {
                         padding: const EdgeInsets.fromLTRB(0, 0, 8, 0),
                         child: Icon(FontAwesomeIcons.folder),
                       ),
-                      Text("Vindu/ytterdør"),
+                      Text(languageEnglish ? "Flooring" : "Gulvbelegg"),
                     ],
                   ),
                 ),
@@ -97,7 +199,7 @@ class _buildingComponentsScreenState extends State<buildingComponentsScreen> {
                         padding: const EdgeInsets.fromLTRB(0, 0, 8, 0),
                         child: Icon(FontAwesomeIcons.folder),
                       ),
-                      Text("Innevegger"),
+                      Text(languageEnglish ? "Exterior roof" : "Yttertak"),
                     ],
                   ),
                 ),
@@ -113,7 +215,9 @@ class _buildingComponentsScreenState extends State<buildingComponentsScreen> {
                         padding: const EdgeInsets.fromLTRB(0, 0, 8, 0),
                         child: Icon(FontAwesomeIcons.folder),
                       ),
-                      Text("Innedør"),
+                      Text(languageEnglish
+                          ? "Terrace/railings"
+                          : "Terrasse/rekkverk"),
                     ],
                   ),
                 ),
@@ -129,7 +233,7 @@ class _buildingComponentsScreenState extends State<buildingComponentsScreen> {
                         padding: const EdgeInsets.fromLTRB(0, 0, 8, 0),
                         child: Icon(FontAwesomeIcons.folder),
                       ),
-                      Text("Dekke"),
+                      Text(languageEnglish ? "Trapper" : "Trapper"),
                     ],
                   ),
                 ),
@@ -145,7 +249,7 @@ class _buildingComponentsScreenState extends State<buildingComponentsScreen> {
                         padding: const EdgeInsets.fromLTRB(0, 0, 8, 0),
                         child: Icon(FontAwesomeIcons.folder),
                       ),
-                      Text("Gulvbelegg"),
+                      Text(languageEnglish ? "Hull roofing" : "Hulltaking"),
                     ],
                   ),
                 ),
@@ -161,7 +265,7 @@ class _buildingComponentsScreenState extends State<buildingComponentsScreen> {
                         padding: const EdgeInsets.fromLTRB(0, 0, 8, 0),
                         child: Icon(FontAwesomeIcons.folder),
                       ),
-                      Text("Yttertak"),
+                      Text(languageEnglish ? "Scaffolding" : "Stillas"),
                     ],
                   ),
                 ),
@@ -177,7 +281,7 @@ class _buildingComponentsScreenState extends State<buildingComponentsScreen> {
                         padding: const EdgeInsets.fromLTRB(0, 0, 8, 0),
                         child: Icon(FontAwesomeIcons.folder),
                       ),
-                      Text("Terrasse/rekkverk"),
+                      Text(languageEnglish ? "Waste management" : "Avfall"),
                     ],
                   ),
                 ),
@@ -186,62 +290,24 @@ class _buildingComponentsScreenState extends State<buildingComponentsScreen> {
             Row(
               children: [
                 TextButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.of(context).pushReplacement(
+                      MaterialPageRoute(
+                        builder: (context) {
+                          return ParquetLaminateSections();
+                        },
+                      ),
+                    );
+                  },
                   child: Row(
                     children: [
                       Padding(
                         padding: const EdgeInsets.fromLTRB(0, 0, 8, 0),
                         child: Icon(FontAwesomeIcons.folder),
                       ),
-                      Text("Trapper"),
-                    ],
-                  ),
-                ),
-              ],
-            ),
-            Row(
-              children: [
-                TextButton(
-                  onPressed: () {},
-                  child: Row(
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.fromLTRB(0, 0, 8, 0),
-                        child: Icon(FontAwesomeIcons.folder),
-                      ),
-                      Text("Hulltaking"),
-                    ],
-                  ),
-                ),
-              ],
-            ),
-            Row(
-              children: [
-                TextButton(
-                  onPressed: () {},
-                  child: Row(
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.fromLTRB(0, 0, 8, 0),
-                        child: Icon(FontAwesomeIcons.folder),
-                      ),
-                      Text("Stillas"),
-                    ],
-                  ),
-                ),
-              ],
-            ),
-            Row(
-              children: [
-                TextButton(
-                  onPressed: () {},
-                  child: Row(
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.fromLTRB(0, 0, 8, 0),
-                        child: Icon(FontAwesomeIcons.folder),
-                      ),
-                      Text("Avfall"),
+                      Text(languageEnglish
+                          ? "Parquet and laminate"
+                          : "Parquet og laminat"),
                     ],
                   ),
                 ),

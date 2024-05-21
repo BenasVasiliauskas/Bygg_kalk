@@ -367,7 +367,7 @@ class _InteriorWallItemsScreenState extends State<InteriorWallItemsScreen> {
       rows.add(
         DataRow(
           cells: [
-            dataCellDisplay(widget.description, i, 120),
+            dataCellDisplay(widget.description, i, 150),
             dataCellDisplay(widget.unit, i, 30, optionalPadding: 12),
             dataCellDisplayController(quantityControllers, i),
             dataCellDo(materialQuantityControllers, i, (value) {

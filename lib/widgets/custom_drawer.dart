@@ -151,76 +151,7 @@ class CustomDrawer extends StatelessWidget {
             },
           ),
 //////// old
-          ListTile(
-            title: languageEnglish == true
-                ? Text('Interior walls')
-                : Text('Innvendige vegger'),
-            onTap: () {
-              Navigator.of(context).pushReplacement(
-                MaterialPageRoute(
-                  builder: (context) {
-                    return InnerWallScreen();
-                  },
-                ),
-              );
-            },
-          ),
-          ListTile(
-            title: languageEnglish == true
-                ? Text('Exterior walls')
-                : Text('Yttervegger'),
-            onTap: () {
-              Navigator.of(context).pushReplacement(
-                MaterialPageRoute(
-                  builder: (context) {
-                    return ExteriorWallScreen();
-                  },
-                ),
-              );
-            },
-          ),
-          ListTile(
-            title: languageEnglish == true
-                ? Text('Windows and exterior doors')
-                : Text('Vinduer og ytterdører'),
-            onTap: () {
-              Navigator.of(context).pushReplacement(
-                MaterialPageRoute(
-                  builder: (context) {
-                    return WindowsExteriorDoorScreen();
-                  },
-                ),
-              );
-            },
-          ),
-          ListTile(
-            title: languageEnglish == true
-                ? Text('Interior doors')
-                : Text('Innerdører'),
-            onTap: () {
-              Navigator.of(context).pushReplacement(
-                MaterialPageRoute(
-                  builder: (context) {
-                    return InnerDoorScreen();
-                  },
-                ),
-              );
-            },
-          ),
-          ListTile(
-            title: languageEnglish == true
-                ? Text('Parquet and laminate')
-                : Text('Parkett og laminat'),
-            onTap: () {
-              Navigator.of(context).pushReplacement(
-                MaterialPageRoute(
-                  builder: (context) {
-                    return ParquetLaminateScreen();
-                  },
-                ),
-              );
-            },
-          ),
+
           // removed kitchen from the drawer
           // ListTile(
           //   title: languageEnglish == true ? Text('Kitchen') : Text('Kjøkken'),
@@ -234,21 +165,6 @@ class CustomDrawer extends StatelessWidget {
           //     );
           //   },
           // ),
-          ListTile(
-            title: languageEnglish == true ? Text('Budget') : Text('Budsjett'),
-            onTap: () {
-              Navigator.of(context).pushReplacement(
-                MaterialPageRoute(
-                  builder: (context) {
-                    if (languageEnglish == false)
-                      return NorwBudgetScreen();
-                    else
-                      return BudgetScreen();
-                  },
-                ),
-              );
-            },
-          ),
         ],
       ),
     );
