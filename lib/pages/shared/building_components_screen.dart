@@ -59,6 +59,7 @@ class _buildingComponentsScreenState extends State<buildingComponentsScreen> {
                     ],
                   ),
                 ),
+                Text("0"),
               ],
             ),
             Row(
@@ -81,6 +82,7 @@ class _buildingComponentsScreenState extends State<buildingComponentsScreen> {
                     ],
                   ),
                 ),
+                Text("1"),
               ],
             ),
             Row(
@@ -107,6 +109,7 @@ class _buildingComponentsScreenState extends State<buildingComponentsScreen> {
                     ],
                   ),
                 ),
+                Text("2"),
               ],
             ),
             Row(
@@ -131,6 +134,7 @@ class _buildingComponentsScreenState extends State<buildingComponentsScreen> {
                     ],
                   ),
                 ),
+                Text("6"),
               ],
             ),
             Row(
@@ -155,6 +159,7 @@ class _buildingComponentsScreenState extends State<buildingComponentsScreen> {
                     ],
                   ),
                 ),
+                Text("1"),
               ],
             ),
             Row(
@@ -171,6 +176,7 @@ class _buildingComponentsScreenState extends State<buildingComponentsScreen> {
                     ],
                   ),
                 ),
+                Text("0"),
               ],
             ),
             Row(
@@ -187,6 +193,7 @@ class _buildingComponentsScreenState extends State<buildingComponentsScreen> {
                     ],
                   ),
                 ),
+                Text("0"),
               ],
             ),
             Row(
@@ -203,6 +210,7 @@ class _buildingComponentsScreenState extends State<buildingComponentsScreen> {
                     ],
                   ),
                 ),
+                Text("0"),
               ],
             ),
             Row(
@@ -221,6 +229,7 @@ class _buildingComponentsScreenState extends State<buildingComponentsScreen> {
                     ],
                   ),
                 ),
+                Text("0"),
               ],
             ),
             Row(
@@ -237,6 +246,7 @@ class _buildingComponentsScreenState extends State<buildingComponentsScreen> {
                     ],
                   ),
                 ),
+                Text("0"),
               ],
             ),
             Row(
@@ -253,6 +263,7 @@ class _buildingComponentsScreenState extends State<buildingComponentsScreen> {
                     ],
                   ),
                 ),
+                Text("0"),
               ],
             ),
             Row(
@@ -269,6 +280,7 @@ class _buildingComponentsScreenState extends State<buildingComponentsScreen> {
                     ],
                   ),
                 ),
+                Text("0"),
               ],
             ),
             Row(
@@ -285,6 +297,7 @@ class _buildingComponentsScreenState extends State<buildingComponentsScreen> {
                     ],
                   ),
                 ),
+                Text("0"),
               ],
             ),
             Row(
@@ -311,6 +324,7 @@ class _buildingComponentsScreenState extends State<buildingComponentsScreen> {
                     ],
                   ),
                 ),
+                Text("1"),
               ],
             ),
           ],
