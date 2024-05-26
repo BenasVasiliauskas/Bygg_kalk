@@ -34,7 +34,7 @@ class _homePageState extends State<homePage> {
                   ClipRRect(
                     borderRadius: BorderRadius.all(Radius.circular(15)),
                     child: Container(
-                      color: Colors.lightBlue,
+                      color: Theme.of(context).appBarTheme.backgroundColor,
                       height: 120.0,
                       width: 120.0,
                       child: Column(
@@ -63,7 +63,7 @@ class _homePageState extends State<homePage> {
                   ClipRRect(
                     borderRadius: BorderRadius.all(Radius.circular(15)),
                     child: Container(
-                      color: Colors.lightBlue,
+                      color: Theme.of(context).appBarTheme.backgroundColor,
                       height: 120.0,
                       width: 120.0,
                       child: Column(
@@ -100,7 +100,7 @@ class _homePageState extends State<homePage> {
                   ClipRRect(
                     borderRadius: BorderRadius.all(Radius.circular(15)),
                     child: Container(
-                      color: Colors.lightBlue,
+                      color: Theme.of(context).appBarTheme.backgroundColor,
                       height: 120.0,
                       width: 120.0,
                       child: Column(
@@ -129,7 +129,7 @@ class _homePageState extends State<homePage> {
                   ClipRRect(
                     borderRadius: BorderRadius.all(Radius.circular(15)),
                     child: Container(
-                      color: Colors.lightBlue,
+                      color: Theme.of(context).appBarTheme.backgroundColor,
                       height: 120.0,
                       width: 120.0,
                       child: Column(

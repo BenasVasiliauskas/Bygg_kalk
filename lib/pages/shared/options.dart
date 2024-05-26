@@ -1,5 +1,6 @@
 import 'package:cost_calculator/constants/language.dart';
 import 'package:cost_calculator/pages/shared/globals/calculation_variables.dart';
+import 'package:cost_calculator/pages/shared/globals/selected_language.dart';
 import 'package:cost_calculator/pages/shared/theme/theme_provider.dart';
 import 'package:cost_calculator/widgets/custom_drawer.dart';
 import 'package:flutter/material.dart';
@@ -16,31 +17,44 @@ class optionsScreen extends StatefulWidget {
 class _optionsScreenState extends State<optionsScreen> {
   void onLanguageChanged(bool newValue) {
     setState(() {
-      languageEnglish = newValue;
+      if (languageEnglish) {
+        languageChangedToNorwegian();
+      } else
+        languageChangedToEnglish();
     });
   }
 
   //Provider.of<ThemeProvider>(context, listen: false).toggleTheme();
-
-  String _selectedOption = 'English';
 
   void showGeneralDialog(BuildContext context) {
     showDialog(
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
-          title: Text('Bendri'),
+          title: languageEnglish
+              ? Text("General")
+              : languageNorwegian
+                  ? Text("Generell")
+                  : languageLithuanian
+                      ? Text("Bendri")
+                      : Text("Ogólny"),
           content: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              Text(_selectedOption),
+              Text(selectedOption),
               RadioListTile<String>(
-                title: Text('Anglu'),
+                title: languageEnglish
+                    ? Text("English")
+                    : languageNorwegian
+                        ? Text("Engelsk")
+                        : languageLithuanian
+                            ? Text("Anglų")
+                            : Text("Angielski"),
                 value: 'English',
-                groupValue: _selectedOption,
+                groupValue: selectedOption,
                 onChanged: (String? value) {
                   setState(() {
-                    _selectedOption = value!;
+                    selectedOption = value!;
                     languageChangedToEnglish();
                   });
                   Navigator.of(context).pop(); // Close the dialog
@@ -49,12 +63,18 @@ class _optionsScreenState extends State<optionsScreen> {
                 },
               ),
               RadioListTile<String>(
-                title: Text('Norvegu'),
+                title: languageEnglish
+                    ? Text("Norwegian")
+                    : languageNorwegian
+                        ? Text("Norsk")
+                        : languageLithuanian
+                            ? Text("Norwegų")
+                            : Text("Norweski"),
                 value: 'Norwegian',
-                groupValue: _selectedOption,
+                groupValue: selectedOption,
                 onChanged: (String? value) {
                   setState(() {
-                    _selectedOption = value!;
+                    selectedOption = value!;
                     languageChangedToNorwegian();
                   });
                   Navigator.of(context).pop(); // Close the dialog
@@ -63,12 +83,18 @@ class _optionsScreenState extends State<optionsScreen> {
                 },
               ),
               RadioListTile<String>(
-                title: Text('Lietuviu'),
+                title: languageEnglish
+                    ? Text("Lithuanian")
+                    : languageNorwegian
+                        ? Text("Litauisk")
+                        : languageLithuanian
+                            ? Text("Lietuvių")
+                            : Text("Litewski"),
                 value: 'Lithuanian',
-                groupValue: _selectedOption,
+                groupValue: selectedOption,
                 onChanged: (String? value) {
                   setState(() {
-                    _selectedOption = value!;
+                    selectedOption = value!;
                     languageChangedToLithuanian();
                   });
                   Navigator.of(context).pop(); // Close the dialog
@@ -77,12 +103,18 @@ class _optionsScreenState extends State<optionsScreen> {
                 },
               ),
               RadioListTile<String>(
-                title: Text('Lenku'),
+                title: languageEnglish
+                    ? Text("Polish")
+                    : languageNorwegian
+                        ? Text("Polsk")
+                        : languageLithuanian
+                            ? Text("Lenkų")
+                            : Text("Polski"),
                 value: 'Polish',
-                groupValue: _selectedOption,
+                groupValue: selectedOption,
                 onChanged: (String? value) {
                   setState(() {
-                    _selectedOption = value!;
+                    selectedOption = value!;
                     languageChangedToPolish();
                   });
                   Navigator.of(context).pop(); // Close the dialog
@@ -94,7 +126,13 @@ class _optionsScreenState extends State<optionsScreen> {
           ),
           actions: <Widget>[
             TextButton(
-              child: Text('Close'),
+              child: languageEnglish
+                  ? Text("Close")
+                  : languageNorwegian
+                      ? Text('Lukk')
+                      : languageLithuanian
+                          ? Text("Uždaryti")
+                          : Text("Zamknij"),
               onPressed: () {
                 Navigator.of(context).pop();
               },
@@ -110,16 +148,29 @@ class _optionsScreenState extends State<optionsScreen> {
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
-          title: Text("Display"),
+          title: languageEnglish
+              ? Text("Display settings")
+              : languageNorwegian
+                  ? Text('Skjerminnstillinger')
+                  : languageLithuanian
+                      ? Text("Ekrano nustatymai")
+                      : Text("Ustawienia wyświetlacza"),
           content: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
               TextButton(
-                  onPressed: () {
-                    Provider.of<ThemeProvider>(context, listen: false)
-                        .toggleTheme();
-                  },
-                  child: Text("Change theme"))
+                onPressed: () {
+                  Provider.of<ThemeProvider>(context, listen: false)
+                      .toggleTheme();
+                },
+                child: languageEnglish
+                    ? Text("Toggle theme")
+                    : languageNorwegian
+                        ? Text('Bytt tema')
+                        : languageLithuanian
+                            ? Text("Perjungti temą")
+                            : Text("Przełączanie motywu"),
+              )
             ],
           ),
           actions: <Widget>[
@@ -127,7 +178,13 @@ class _optionsScreenState extends State<optionsScreen> {
               onPressed: () {
                 Navigator.of(context).pop();
               },
-              child: Text('Close'),
+              child: languageEnglish
+                  ? Text("Close")
+                  : languageNorwegian
+                      ? Text('Lukk')
+                      : languageLithuanian
+                          ? Text("Uždaryti")
+                          : Text("Zamknij"),
             )
           ],
         );
@@ -140,7 +197,13 @@ class _optionsScreenState extends State<optionsScreen> {
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
-          title: Text("Hourly Rate"),
+          title: languageEnglish
+              ? Text("Hourly Rate")
+              : languageNorwegian
+                  ? Text('Timepris')
+                  : languageLithuanian
+                      ? Text("Valandinis įkainis")
+                      : Text("Stawka godzinowa"),
           content: Row(
             mainAxisSize: MainAxisSize.min,
             children: [
@@ -163,7 +226,13 @@ class _optionsScreenState extends State<optionsScreen> {
               onPressed: () {
                 Navigator.of(context).pop();
               },
-              child: Text('Close'),
+              child: languageEnglish
+                  ? Text("Close")
+                  : languageNorwegian
+                      ? Text('Lukk')
+                      : languageLithuanian
+                          ? Text("Uždaryti")
+                          : Text("Zamknij"),
             )
           ],
         );
@@ -176,7 +245,13 @@ class _optionsScreenState extends State<optionsScreen> {
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
-          title: Text("Time coefficient"),
+          title: languageEnglish
+              ? Text("Time coefficient")
+              : languageNorwegian
+                  ? Text('Tidskoeffisient')
+                  : languageLithuanian
+                      ? Text("Laiko koeficientas")
+                      : Text("Współczynnik czasu"),
           content: Row(
             mainAxisSize: MainAxisSize.min,
             children: [
@@ -199,7 +274,13 @@ class _optionsScreenState extends State<optionsScreen> {
               onPressed: () {
                 Navigator.of(context).pop();
               },
-              child: Text('Close'),
+              child: languageEnglish
+                  ? Text("Close")
+                  : languageNorwegian
+                      ? Text('Lukk')
+                      : languageLithuanian
+                          ? Text("Uždaryti")
+                          : Text("Zamknij"),
             )
           ],
         );
@@ -212,7 +293,13 @@ class _optionsScreenState extends State<optionsScreen> {
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
-          title: Text("Markup"),
+          title: languageEnglish
+              ? Text("Surcharge")
+              : languageNorwegian
+                  ? Text('Påslag')
+                  : languageLithuanian
+                      ? Text("Priemoka")
+                      : Text("Dopłata"),
           content: Row(
             mainAxisSize: MainAxisSize.min,
             children: [
@@ -235,7 +322,13 @@ class _optionsScreenState extends State<optionsScreen> {
               onPressed: () {
                 Navigator.of(context).pop();
               },
-              child: Text('Close'),
+              child: languageEnglish
+                  ? Text("Close")
+                  : languageNorwegian
+                      ? Text('Lukk')
+                      : languageLithuanian
+                          ? Text("Uždaryti")
+                          : Text("Zamknij"),
             )
           ],
         );
@@ -248,7 +341,13 @@ class _optionsScreenState extends State<optionsScreen> {
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
-          title: Text("Costs"),
+          title: languageEnglish
+              ? Text("Costs")
+              : languageNorwegian
+                  ? Text('Kostnader')
+                  : languageLithuanian
+                      ? Text("Išlaidos")
+                      : Text("Koszty"),
           content: Row(
             mainAxisSize: MainAxisSize.min,
             children: [
@@ -271,7 +370,13 @@ class _optionsScreenState extends State<optionsScreen> {
               onPressed: () {
                 Navigator.of(context).pop();
               },
-              child: Text('Close'),
+              child: languageEnglish
+                  ? Text("Close")
+                  : languageNorwegian
+                      ? Text('Lukk')
+                      : languageLithuanian
+                          ? Text("Uždaryti")
+                          : Text("Zamknij"),
             )
           ],
         );
@@ -284,20 +389,40 @@ class _optionsScreenState extends State<optionsScreen> {
     return Scaffold(
       drawer: CustomDrawer(),
       appBar: AppBar(
-        title: Text("Options"),
+        title: languageEnglish
+            ? Text("Settings")
+            : languageNorwegian
+                ? Text('Innstillinger')
+                : languageLithuanian
+                    ? Text("Nustatymai")
+                    : Text("Ustawienia"),
       ),
       body: SingleChildScrollView(
         scrollDirection: Axis.vertical,
         child: Column(
           children: [
             Row(
-              children: [Text("Pirminiai")],
+              children: [
+                languageEnglish
+                    ? Text("Primary")
+                    : languageNorwegian
+                        ? Text('Primær')
+                        : languageLithuanian
+                            ? Text("Pirminiai")
+                            : Text("Podstawowy"),
+              ],
             ),
             Row(
               children: [
                 Icon(FontAwesomeIcons.gear),
                 TextButton(
-                  child: Text("Bendri"),
+                  child: languageEnglish
+                      ? Text("General")
+                      : languageNorwegian
+                          ? Text('Generelt')
+                          : languageLithuanian
+                              ? Text("Bendri")
+                              : Text("Ogólne"),
                   onPressed: () {
                     showGeneralDialog(context);
                   },
@@ -308,7 +433,13 @@ class _optionsScreenState extends State<optionsScreen> {
               children: [
                 Icon(FontAwesomeIcons.folderPlus),
                 TextButton(
-                  child: Text("Rodymas"),
+                  child: languageEnglish
+                      ? Text("Display")
+                      : languageNorwegian
+                          ? Text('Visning')
+                          : languageLithuanian
+                              ? Text("Ekrano")
+                              : Text("Wyświetlacz"),
                   onPressed: () {
                     showDisplayDialog(context);
                   },
@@ -319,7 +450,13 @@ class _optionsScreenState extends State<optionsScreen> {
               children: [
                 Icon(FontAwesomeIcons.boxArchive),
                 TextButton(
-                  child: Text("Val. įkainis"),
+                  child: languageEnglish
+                      ? Text("Hourly rate")
+                      : languageNorwegian
+                          ? Text('Time pris')
+                          : languageLithuanian
+                              ? Text("Val. įkainis")
+                              : Text("Stawka godzinowa"),
                   onPressed: () {
                     showHourlyRateDialog(context);
                   },
@@ -330,7 +467,13 @@ class _optionsScreenState extends State<optionsScreen> {
               children: [
                 Icon(FontAwesomeIcons.barcode),
                 TextButton(
-                  child: Text("Antkainis"),
+                  child: languageEnglish
+                      ? Text("Surcharge")
+                      : languageNorwegian
+                          ? Text('Påslag')
+                          : languageLithuanian
+                              ? Text("Antkainis")
+                              : Text("Dopłata"),
                   onPressed: () {
                     showMarkupDialog(context);
                   },
@@ -341,7 +484,13 @@ class _optionsScreenState extends State<optionsScreen> {
               children: [
                 Icon(FontAwesomeIcons.fileExcel),
                 TextButton(
-                  child: Text("Statybvietės išlaidos"),
+                  child: languageEnglish
+                      ? Text("Site costs")
+                      : languageNorwegian
+                          ? Text('Rigg og Drift')
+                          : languageLithuanian
+                              ? Text("Statybvietes išlaidos")
+                              : Text("Koszty witryny"),
                   onPressed: () {
                     showCostsDialog(context);
                   },
@@ -352,7 +501,13 @@ class _optionsScreenState extends State<optionsScreen> {
               children: [
                 Icon(FontAwesomeIcons.tag),
                 TextButton(
-                  child: Text("Laiko koeficientas"),
+                  child: languageEnglish
+                      ? Text("Time coefficient")
+                      : languageNorwegian
+                          ? Text('Tidskoeffisient')
+                          : languageLithuanian
+                              ? Text("Laiko koeficientas")
+                              : Text("Współczynnik czasu"),
                   onPressed: () {
                     showTimeCoefficientDialog(context);
                   },
@@ -373,9 +528,9 @@ class _optionsScreenState extends State<optionsScreen> {
                 ),
                 Padding(
                   padding: EdgeInsets.symmetric(horizontal: 10, vertical: 25),
-                  child: languageEnglish == false
-                      ? Text('Engelsk')
-                      : Text('English'),
+                  child: languageEnglish == true
+                      ? Text('English')
+                      : Text('Engelsk'),
                 ),
               ],
             ),

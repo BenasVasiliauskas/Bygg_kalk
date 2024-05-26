@@ -21,7 +21,7 @@ class CustomDrawer extends StatelessWidget {
             height: 96,
             child: DrawerHeader(
               decoration: BoxDecoration(
-                color: Colors.blue,
+                color: Theme.of(context).appBarTheme.backgroundColor,
               ),
               child: languageEnglish == true
                   ? Container(
