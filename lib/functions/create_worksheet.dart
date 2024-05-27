@@ -272,7 +272,6 @@ void addDataInnerDoor(
   List<TextEditingController> quantityLists,
   List<TextEditingController> materialQuantityList,
   List<TextEditingController> laborHours1List,
-  List<TextEditingController> customColumnList,
   List<TextEditingController> laborHours2List,
   List<TextEditingController> laborCostList,
   List<TextEditingController> material1List,
@@ -323,8 +322,6 @@ void addDataInnerDoor(
       worksheet.getRangeByIndex(i + 2, 4).setText(materialQuantityList[i].text);
       worksheet.getRangeByIndex(i + 2, 5).setText(laborHours1List[i].text);
       sumOfHours1 += double.parse(laborHours1List[i].text);
-      worksheet.getRangeByIndex(i + 2, 6).setText(customColumnList[i].text);
-      sumOfCustomHours += double.parse(customColumnList[i].text);
       worksheet.getRangeByIndex(i + 2, 7).setText(laborHours2List[i].text);
       sumOfHours2 += double.parse(laborHours2List[i].text);
       worksheet.getRangeByIndex(i + 2, 8).setText(laborCostList[i].text);
@@ -1232,7 +1229,6 @@ Future<void> generateInnerDoorExcelDocument(
   List<TextEditingController> quantityLists,
   List<TextEditingController> materialQuantityList,
   List<TextEditingController> laborHours1List,
-  List<TextEditingController> customColumnList,
   List<TextEditingController> laborHours2List,
   List<TextEditingController> laborCostList,
   List<TextEditingController> material1List,
@@ -1252,7 +1248,6 @@ Future<void> generateInnerDoorExcelDocument(
     quantityLists,
     materialQuantityList,
     laborHours1List,
-    customColumnList,
     laborHours2List,
     laborCostList,
     material1List,

@@ -8,8 +8,6 @@ List<double> createList(int size) {
   return customList;
 }
 
-bool customColumn = false;
-
 bool innerWallCalled = false;
 
 Workbook norwInnerWallWorkbook = new Workbook();

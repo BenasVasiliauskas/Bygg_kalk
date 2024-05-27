@@ -84,7 +84,6 @@ class _NorwWindowsExteriorDoorItemsScreenState
 
     // Calculate the total sum values
     double totalLaborHours1 = 0.0;
-    double totalCustomColumn = 0.0;
     double totalLaborHours2 = 0.0;
     double totalLaborCost = 0.0;
     double totalMaterial1 = 0.0;
@@ -93,7 +92,6 @@ class _NorwWindowsExteriorDoorItemsScreenState
 
     for (int i = 0; i < widget.description.length; i++) {
       totalLaborHours1 += widget.laborHours1[i];
-      totalCustomColumn += emptyCustomList[i];
       totalLaborHours2 += widget.laborHours2[i];
       totalLaborCost += widget.laborCost[i];
       totalMaterial1 += widget.material1[i];
@@ -106,14 +104,8 @@ class _NorwWindowsExteriorDoorItemsScreenState
     addBudgetSum(widget.name, totalTotalPrice);
 
     // Create the "Total Sum" row
-    DataRow totalSumRow = totalSumRowNorw(
-        totalLaborHours1,
-        totalCustomColumn,
-        totalLaborHours2,
-        totalLaborCost,
-        totalMaterial1,
-        totalMaterial2,
-        totalTotalPrice);
+    DataRow totalSumRow = totalSumRowNorw(totalLaborHours1, totalLaborHours2,
+        totalLaborCost, totalMaterial1, totalMaterial2, totalTotalPrice);
 
     // Add the "Total Sum" row to the updated rows
     updatedRows.add(totalSumRow);
@@ -211,14 +203,10 @@ class _NorwWindowsExteriorDoorItemsScreenState
             for (int i = 0; i < widget.description.length; i++) {
               // Recalculate and update the material quantity when quantity changes
 
-              widget.laborHours2[i] = calculateWorkHours2(i, customColumn,
-                  emptyCustomList, widget.laborHours1, calculationQuantity);
-              laborHours2Controllers[i].text = calculateWorkHours2(
-                      i,
-                      customColumn,
-                      emptyCustomList,
-                      widget.laborHours1,
-                      calculationQuantity)
+              widget.laborHours2[i] = calculateWorkHours2(
+                  i, emptyCustomList, widget.laborHours1, calculationQuantity);
+              laborHours2Controllers[i].text = calculateWorkHours2(i,
+                      emptyCustomList, widget.laborHours1, calculationQuantity)
                   .toStringAsFixed(2);
 
               widget.laborCost[i] = calculateJobCost(
@@ -234,14 +222,10 @@ class _NorwWindowsExteriorDoorItemsScreenState
                   .toStringAsFixed(2);
 
               // Recalculate and update the material 2 when quantity changes
-              widget.material2[i] = calculateMaterialCost(i, widget.material1,
-                  calculationQuantity, customColumn, emptyCustomList);
+              widget.material2[i] = calculateMaterialCost(
+                  i, widget.material1, calculationQuantity, emptyCustomList);
               material2Controllers[i].text = calculateMaterialCost(
-                      i,
-                      widget.material1,
-                      calculationQuantity,
-                      customColumn,
-                      emptyCustomList)
+                      i, widget.material1, calculationQuantity, emptyCustomList)
                   .toStringAsFixed(2);
 
               // Recalculate and update the total price when quantity changes
@@ -286,24 +270,18 @@ class _NorwWindowsExteriorDoorItemsScreenState
     ];
 
     List<DataColumn> columns = [
-      createDataColumn("Beskrivelse", 200, customColumn, () {}),
-      createDataColumn("Enhet", 100, customColumn, () {}),
-      createDataColumn("Mengde", 100, customColumn, () {}),
-      createDataColumn("Enh. tid.", 100, customColumn, () {
-        customColumn = !customColumn;
+      createDataColumn("Beskrivelse", 200, () {}),
+      createDataColumn("Enhet", 100, () {}),
+      createDataColumn("Mengde", 100, () {}),
+      createDataColumn("Enh. tid.", 100, () {
         updateTotalSum();
         rebuildDataTable();
       }),
-      createDataColumn("Tilpassede timer", 100, customColumn, () {
-        customColumn = !customColumn;
-        updateTotalSum();
-        rebuildDataTable();
-      }),
-      createDataColumn("Sum. tid.", 100, customColumn, () {}),
-      createDataColumn("Arb.pris ", 100, customColumn, () {}),
-      createDataColumn("Enh. mater.", 100, customColumn, () {}),
-      createDataColumn("Sum. material", 100, customColumn, () {}),
-      createDataColumn("Total pris'", 100, customColumn, () {}),
+      createDataColumn("Sum. tid.", 100, () {}),
+      createDataColumn("Arb.pris ", 100, () {}),
+      createDataColumn("Enh. mater.", 100, () {}),
+      createDataColumn("Sum. material", 100, () {}),
+      createDataColumn("Total pris'", 100, () {}),
     ];
 
     List<DataRow> rows = [];
@@ -318,8 +296,7 @@ class _NorwWindowsExteriorDoorItemsScreenState
 
             DataCell(
               TextField(
-                style:
-                    TextStyle(color: customColumn ? Colors.grey : Colors.black),
+                style: TextStyle(color: Theme.of(context).colorScheme.primary),
                 readOnly: true,
                 controller: laborHours1Controllers[i],
                 onChanged: (value) {},
@@ -327,55 +304,7 @@ class _NorwWindowsExteriorDoorItemsScreenState
                     decimal: true), // Allow decimal numbers
               ),
             ), // custom column cell
-            DataCell(
-              TextField(
-                decoration: InputDecoration(
-                    fillColor: Color.fromARGB(255, 131, 138, 235),
-                    filled: true),
-                style:
-                    TextStyle(color: customColumn ? Colors.black : Colors.grey),
-                readOnly: !customColumn,
-                controller: customColumnControllers[i],
-                onChanged: (value) {
-                  double parsedValue = double.parse(value);
-                  emptyCustomList[i] = double.parse(parsedValue
-                      .toStringAsFixed(2)); // Format to 2 decimal places
-                  // Recalculate and update the labor hours 2 when labor hours 1 changes need changes
 
-                  widget.laborHours2[i] = calculateWorkHours2(i, customColumn,
-                      emptyCustomList, widget.laborHours2, calculationQuantity);
-                  laborHours2Controllers[i].text = calculateWorkHours2(
-                          i,
-                          customColumn,
-                          emptyCustomList,
-                          widget.laborHours1,
-                          calculationQuantity)
-                      .toStringAsFixed(2);
-
-                  // Recalculate and update the labor cost when labor hours 2 changes
-                  widget.laborCost[i] = calculateJobCost(
-                      i, widget.laborHours2, hourlyRateConstructionRemodeling);
-                  laborCostControllers[i].text = calculateJobCost(i,
-                          widget.laborHours2, hourlyRateConstructionRemodeling)
-                      .toStringAsFixed(2);
-
-                  // Recalculate and update the total price when labor hours 2 changes
-                  widget.totalPrice[i] = calculateTotalPrice(i,
-                      widget.laborCost, widget.material1, calculationQuantity);
-                  totalPriceControllers[i].text = calculateTotalPrice(
-                          i,
-                          widget.laborCost,
-                          widget.material1,
-                          calculationQuantity)
-                      .toStringAsFixed(2);
-
-                  //total sum doesnt get updated
-                  updateTotalSum();
-                },
-                keyboardType: TextInputType.numberWithOptions(
-                    decimal: true), // Allow decimal numbers
-              ),
-            ),
             dataCellDo(
               laborHours2Controllers,
               i,
@@ -415,11 +344,7 @@ class _NorwWindowsExteriorDoorItemsScreenState
 
                 // Recalculate and update the material 2 when material 1 changes
                 double updatedMaterial2 = calculateMaterialCost(
-                    i,
-                    widget.material1,
-                    calculationQuantity,
-                    customColumn,
-                    emptyCustomList);
+                    i, widget.material1, calculationQuantity, emptyCustomList);
                 widget.material2[i] = updatedMaterial2;
                 material2Controllers[i].text =
                     updatedMaterial2.toStringAsFixed(2);
@@ -489,29 +414,8 @@ class _NorwWindowsExteriorDoorItemsScreenState
             "Total (eks. mva)", 200, Color.fromARGB(255, 255, 255, 255)),
         dataCellDisplaySingle("", 100, Color.fromARGB(255, 255, 255, 255)),
         dataCellDisplaySingle("", 150, Color.fromARGB(255, 255, 255, 255)),
-        dataCellDisplaySingle(
-            customColumn ? '' : totalLaborHours1.toStringAsFixed(2),
-            100,
+        dataCellDisplaySingle(totalLaborHours1.toStringAsFixed(2), 100,
             Color.fromARGB(255, 255, 255, 255)),
-        DataCell(
-          Container(
-            width: 100,
-            child: TextField(
-              readOnly: !customColumn,
-              decoration: customColumn
-                  ? InputDecoration(
-                      fillColor: Color.fromARGB(255, 131, 138, 235),
-                      filled: true)
-                  : InputDecoration(),
-              // calc custom hours
-              controller: TextEditingController(
-                  text: customColumn
-                      ? emptyCustomList.sum.toStringAsFixed(2)
-                      : ''),
-              //need to recalc labor cost and use that in total sum if enabled
-            ),
-          ),
-        ),
         dataCellDisplaySingle(totalLaborHours2.toStringAsFixed(2), 100,
             Color.fromARGB(255, 255, 255, 255)),
         dataCellDisplaySingle(totalLaborCost.toStringAsFixed(2), 100,

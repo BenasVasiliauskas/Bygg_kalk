@@ -14,15 +14,10 @@ double calculateMaterialQuantity(
   return quantity * calculationQuantity;
 }
 
-double calculateWorkHours2(int index, customColumn, emptyCustomList,
+double calculateWorkHours2(int index, emptyCustomList,
     List<double> widgetLaborHours1, calculationQuantity) {
-  if (customColumn) {
-    double laborHours1 = emptyCustomList[index];
-    return laborHours1 * calculationQuantity;
-  } else {
-    double laborHours1 = widgetLaborHours1[index];
-    return laborHours1 * calculationQuantity;
-  }
+  double laborHours1 = widgetLaborHours1[index];
+  return laborHours1 * calculationQuantity;
 }
 
 double calculateJobCost(int index, List<double> widgetLaborHours2,
@@ -32,7 +27,7 @@ double calculateJobCost(int index, List<double> widgetLaborHours2,
 }
 
 double calculateMaterialCost(int index, List<double> widgetMaterial1,
-    calculationQuantity, customColumn, emptyCustomList) {
+    calculationQuantity, emptyCustomList) {
   double material1 = widgetMaterial1[index];
   return material1 * calculationQuantity;
 }
@@ -44,24 +39,14 @@ double calculateTotalPrice(int index, List<double> widgetLaborCost,
 }
 
 Widget buildCustomColumnLabel(
-    String label, double width, bool customColumn, VoidCallback onPressed) {
-  if (!customColumn) {
-    return SizedBox(
-      width: width,
-      child: TextButton(
-        onPressed: onPressed,
-        child: Text("$label"),
-      ),
-    );
-  } else {
-    return SizedBox(
-      width: width,
-      child: TextButton(
-        onPressed: onPressed,
-        child: Text("$label"),
-      ),
-    );
-  }
+    String label, double width, VoidCallback onPressed) {
+  return SizedBox(
+    width: width,
+    child: TextButton(
+      onPressed: onPressed,
+      child: Text("$label"),
+    ),
+  );
 }
 
 DataCell dataCellDisplay(List<String> text, int i, double width,
@@ -163,9 +148,9 @@ DataCell dataCellDo(List<TextEditingController> controller, int i, Function f,
 }
 
 DataColumn createDataColumn(
-    String label, double width, bool customColumn, VoidCallback onPressed) {
+    String label, double width, VoidCallback onPressed) {
   return DataColumn(
-    label: buildCustomColumnLabel(label, width, customColumn, onPressed),
+    label: buildCustomColumnLabel(label, width, onPressed),
   );
 }
 
@@ -195,7 +180,6 @@ List<DataColumn> calculationColumnsNorw = [
 
 DataRow totalSumRowNorw(
     double totalLaborHours1,
-    double totalCustomColumn,
     double totalLaborHours2,
     double totalLaborCost,
     double totalMaterial1,
@@ -236,12 +220,6 @@ DataRow totalSumRowNorw(
       DataCell(
         Container(
           width: 100,
-          child: Text(totalCustomColumn.toStringAsFixed(2)),
-        ),
-      ),
-      DataCell(
-        Container(
-          width: 100,
           child: Text(totalLaborHours2.toStringAsFixed(2)),
         ),
       ),
@@ -275,7 +253,6 @@ DataRow totalSumRowNorw(
 
 DataRow totalSumRowEng(
     double totalLaborHours1,
-    double totalCustomColumn,
     double totalLaborHours2,
     double totalLaborCost,
     double totalMaterial1,
@@ -311,12 +288,6 @@ DataRow totalSumRowEng(
         Container(
           width: 100,
           child: Text(totalLaborHours1.toStringAsFixed(2)),
-        ),
-      ),
-      DataCell(
-        Container(
-          width: 100,
-          child: Text(totalCustomColumn.toStringAsFixed(2)),
         ),
       ),
       DataCell(
