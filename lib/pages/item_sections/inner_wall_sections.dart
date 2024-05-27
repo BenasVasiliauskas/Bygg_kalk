@@ -1,3 +1,4 @@
+import 'package:cost_calculator/constants/language.dart';
 import 'package:cost_calculator/pages/shared/interior_wall_screen.dart';
 import 'package:cost_calculator/widgets/custom_drawer.dart';
 import 'package:flutter/material.dart';
@@ -15,7 +16,15 @@ class _InnerWallSectionsState extends State<InnerWallSections> {
     return Scaffold(
       drawer: CustomDrawer(),
       appBar: AppBar(
-        title: Text("Inner wall"),
+        title: Text(
+          languageEnglish
+              ? "Inner walls"
+              : languageLithuanian
+                  ? "Vidinės sienos"
+                  : languageNorwegian
+                      ? "Innvendige vegger"
+                      : "Ściany wewnętrzne",
+        ),
       ),
       body: Column(
         children: [
@@ -29,7 +38,15 @@ class _InnerWallSectionsState extends State<InnerWallSections> {
                 ),
               );
             },
-            child: Text("New building"),
+            child: Text(
+              languageEnglish
+                  ? "New building"
+                  : languageLithuanian
+                      ? "Naujas pastatas"
+                      : languageNorwegian
+                          ? "Ny bygning"
+                          : "ŚNowy budynek",
+            ),
           ),
           TextButton(
             onPressed: () {
@@ -41,7 +58,15 @@ class _InnerWallSectionsState extends State<InnerWallSections> {
                 ),
               );
             },
-            child: Text("Reconstruction"),
+            child: Text(
+              languageEnglish
+                  ? "Reconstruction"
+                  : languageLithuanian
+                      ? "Rekonstrukcija"
+                      : languageNorwegian
+                          ? "Rekonstruksjon"
+                          : "Rekonstrukcja",
+            ),
           ),
           TextButton(
             onPressed: () {
@@ -53,7 +78,15 @@ class _InnerWallSectionsState extends State<InnerWallSections> {
                 ),
               );
             },
-            child: Text("Demolition"),
+            child: Text(
+              languageEnglish
+                  ? "Demolition"
+                  : languageLithuanian
+                      ? "Griovimas"
+                      : languageNorwegian
+                          ? "Riving"
+                          : "Rozbiórka",
+            ),
           ),
         ],
       ),

@@ -1,3 +1,4 @@
+import 'package:cost_calculator/constants/language.dart';
 import 'package:cost_calculator/pages/shared/inner_door_screen.dart';
 import 'package:cost_calculator/widgets/custom_drawer.dart';
 import 'package:flutter/material.dart';
@@ -15,21 +16,38 @@ class _InnerDoorSectionsState extends State<InnerDoorSections> {
     return Scaffold(
       drawer: CustomDrawer(),
       appBar: AppBar(
-        title: Text("Inner doors"),
+        title: Text(
+          languageEnglish
+              ? "Inner doors"
+              : languageLithuanian
+                  ? "Vidinės durys"
+                  : languageNorwegian
+                      ? "Innvendige dører"
+                      : "Drzwi wewnętrzne",
+        ),
       ),
       body: Column(
         children: [
           TextButton(
-              onPressed: () {
-                Navigator.of(context).pushReplacement(
-                  MaterialPageRoute(
-                    builder: (context) {
-                      return InnerDoorScreen();
-                    },
-                  ),
-                );
-              },
-              child: Text("Inner doors"))
+            onPressed: () {
+              Navigator.of(context).pushReplacement(
+                MaterialPageRoute(
+                  builder: (context) {
+                    return InnerDoorScreen();
+                  },
+                ),
+              );
+            },
+            child: Text(
+              languageEnglish
+                  ? "Inner doors"
+                  : languageLithuanian
+                      ? "Vidinės durys"
+                      : languageNorwegian
+                          ? "Innvendige dører"
+                          : "Drzwi wewnętrzne",
+            ),
+          ),
         ],
       ),
     );

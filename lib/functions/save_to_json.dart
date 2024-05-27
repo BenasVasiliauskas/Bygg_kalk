@@ -28,7 +28,7 @@ Future<File> localFile(String name) async {
 Future<File> writeJson(var wallModel) async {
   final file = await localFile(wallModel.name);
 
-  // Convert list of InnerWallModel objects to a list of maps
+  // Convert list of objects to a list of maps
   Map<String, dynamic> jsonData = wallModel.toJson();
 
   // Write the JSON string to the file
