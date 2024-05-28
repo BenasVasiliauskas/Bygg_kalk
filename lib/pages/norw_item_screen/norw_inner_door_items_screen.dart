@@ -62,7 +62,6 @@ class _NorwInnerDoorItemScreenScreenState
   TextEditingController hourlyRateConstructionRemodelingController =
       TextEditingController();
   //
-  List<TextEditingController> customColumnControllers = [];
   double calculationQuantity = 1;
   double hourlyRateConstructionRemodeling = 550;
   String name = '';
@@ -133,11 +132,49 @@ class _NorwInnerDoorItemScreenScreenState
       material1Controllers.add(TextEditingController());
       material2Controllers.add(TextEditingController());
       totalPriceControllers.add(TextEditingController());
-      customColumnControllers.add(TextEditingController());
     }
     initialiseEmptyList();
     savingController = TextEditingController();
     loadingController = TextEditingController();
+    recalculateValues();
+  }
+
+  void recalculateValues() {
+    for (int i = 0; i < widget.description.length; i++) {
+      // Recalculate labor hours 2
+      widget.laborHours2[i] = calculateWorkHours2(
+        i,
+        emptyCustomList,
+        widget.laborHours1,
+        calculationQuantity,
+      );
+      laborHours2Controllers[i].text = widget.laborHours2[i].toStringAsFixed(2);
+      // Recalculate labor cost
+      widget.laborCost[i] = calculateJobCost(
+        i,
+        widget.laborHours2,
+        hourlyRateConstructionRemodeling,
+      );
+      laborCostControllers[i].text = widget.laborCost[i].toStringAsFixed(2);
+      // Recalculate material 2
+      widget.material2[i] = calculateMaterialCost(
+        i,
+        widget.material1,
+        calculationQuantity,
+        emptyCustomList,
+      );
+      material2Controllers[i].text = widget.material2[i].toStringAsFixed(2);
+      // Recalculate total price
+      widget.totalPrice[i] = calculateTotalPrice(
+        i,
+        widget.laborCost,
+        widget.material1,
+        calculationQuantity,
+      );
+      totalPriceControllers[i].text = widget.totalPrice[i].toStringAsFixed(2);
+    }
+    // Update the total sum row
+    updateTotalSum();
   }
 
   void calculateCalculationQuantity() {
@@ -157,16 +194,12 @@ class _NorwInnerDoorItemScreenScreenState
       descriptionControllers[i].text = widget.description[i];
       unitControllers[i].text = widget.unit[i];
       quantityControllers[i].text = widget.quantity[i].toStringAsFixed(2);
-
       laborHours1Controllers[i].text = widget.laborHours1[i].toStringAsFixed(2);
       laborHours2Controllers[i].text = widget.laborHours2[i].toStringAsFixed(2);
       laborCostControllers[i].text = widget.laborCost[i].toStringAsFixed(2);
       material1Controllers[i].text = widget.material1[i].toStringAsFixed(2);
       material2Controllers[i].text = widget.material2[i].toStringAsFixed(2);
       totalPriceControllers[i].text = widget.totalPrice[i].toStringAsFixed(2);
-      customColumnControllers[i].text =
-          (widget.laborHours2[i] / calculationQuantity).toStringAsFixed(2);
-      emptyCustomList[i] = double.parse(customColumnControllers[i].text);
     }
     quantityCalculationControllers.text =
         calculationQuantity.toStringAsFixed(2);
@@ -241,10 +274,7 @@ class _NorwInnerDoorItemScreenScreenState
             hourlyRateConstructionRemodeling = double.parse(value);
             for (int i = 0; i < widget.description.length; i++) {
               //
-              emptyCustomList[i] =
-                  double.parse(customColumnControllers[i].text);
-              customColumnControllers[i].text =
-                  emptyCustomList[i].toStringAsFixed(2);
+
               // Recalculate and update the labor cost when hourlyRateConstructionRemodeling changes
               widget.laborCost[i] = calculateJobCost(
                   i, widget.laborHours2, hourlyRateConstructionRemodeling);
@@ -301,15 +331,71 @@ class _NorwInnerDoorItemScreenScreenState
                       contentPadding: EdgeInsets.zero),
                   style:
                       TextStyle(color: Theme.of(context).colorScheme.secondary),
-                  readOnly: true,
                   controller: laborHours1Controllers[i],
-                  onChanged: (value) {},
+                  onChanged: (value) {
+                    //
+                    double parsedValue = double.parse(value);
+                    widget.laborHours1[i] = double.parse(
+                      parsedValue.toStringAsFixed(2),
+                    );
+                    //
+                    widget.laborHours2[i] = calculateWorkHours2(
+                        i,
+                        emptyCustomList,
+                        widget.laborHours1,
+                        calculationQuantity);
+                    laborHours2Controllers[i].text = calculateWorkHours2(
+                            i,
+                            emptyCustomList,
+                            widget.laborHours1,
+                            calculationQuantity)
+                        .toStringAsFixed(2);
+                    //
+                    widget.laborCost[i] = calculateJobCost(i,
+                        widget.laborHours1, hourlyRateConstructionRemodeling);
+                    laborCostControllers[i].text = calculateJobCost(
+                            i,
+                            widget.laborHours1,
+                            hourlyRateConstructionRemodeling)
+                        .toStringAsFixed(2);
+                    //
+                    widget.laborCost[i] = calculateJobCost(i,
+                        widget.laborHours2, hourlyRateConstructionRemodeling);
+                    laborCostControllers[i].text = calculateJobCost(
+                            i,
+                            widget.laborHours2,
+                            hourlyRateConstructionRemodeling)
+                        .toStringAsFixed(2);
+
+                    // Recalculate and update the material 2 when quantity changes
+                    widget.material2[i] = calculateMaterialCost(i,
+                        widget.material1, calculationQuantity, emptyCustomList);
+                    material2Controllers[i].text = calculateMaterialCost(
+                            i,
+                            widget.material1,
+                            calculationQuantity,
+                            emptyCustomList)
+                        .toStringAsFixed(2);
+
+                    // Recalculate and update the total price when quantity changes
+                    widget.totalPrice[i] = calculateTotalPrice(
+                        i,
+                        widget.laborCost,
+                        widget.material1,
+                        calculationQuantity);
+                    totalPriceControllers[i].text = calculateTotalPrice(
+                            i,
+                            widget.laborCost,
+                            widget.material1,
+                            calculationQuantity)
+                        .toStringAsFixed(2);
+                    rebuildDataTable();
+                  },
                   keyboardType: TextInputType.numberWithOptions(
                       decimal: true), // Allow decimal numbers
                 ),
               ),
-            ), // custom column cell
-
+            ),
             dataCellDo(laborHours2Controllers, i, (value) {
               // Handle changes to labor hours 2
               double parsedValue = double.parse(value);
@@ -325,7 +411,7 @@ class _NorwInnerDoorItemScreenScreenState
             dataCellDo(laborCostControllers, i, (value) {
               widget.laborCost[i] = double.parse(value);
             }, Theme.of(context).colorScheme.background, true,
-                optionalWidth: 45),
+                optionalWidth: 55),
             dataCellDo(
               material1Controllers,
               i,
@@ -407,11 +493,25 @@ class _NorwInnerDoorItemScreenScreenState
     DataRow totalSumRow = DataRow(
       cells: [
         dataCellDisplaySingle(
-            "Total (eks. mva)", 70, Color.fromARGB(255, 255, 255, 255)),
-        dataCellDisplaySingle("", 0, Color.fromARGB(255, 255, 255, 255)),
-        dataCellDisplaySingle("", 0, Color.fromARGB(255, 255, 255, 255)),
-        dataCellDisplaySingle(totalLaborHours1.toStringAsFixed(2), 65,
-            Color.fromARGB(255, 255, 255, 255)),
+          "Total (eks. mva)",
+          70,
+          Theme.of(context).colorScheme.background,
+        ),
+        dataCellDisplaySingle(
+          "",
+          0,
+          Theme.of(context).colorScheme.background,
+        ),
+        dataCellDisplaySingle(
+          "",
+          0,
+          Theme.of(context).colorScheme.background,
+        ),
+        dataCellDisplaySingle(
+          totalLaborHours1.toStringAsFixed(2),
+          65,
+          Theme.of(context).colorScheme.background,
+        ),
         dataCellDisplaySingle(
           totalLaborHours2.toStringAsFixed(2),
           70,
@@ -485,7 +585,6 @@ class _NorwInnerDoorItemScreenScreenState
                   quantityControllers,
                   materialQuantityControllers,
                   laborHours1Controllers,
-                  customColumnControllers,
                   laborHours2Controllers,
                   laborCostControllers,
                   material1Controllers,

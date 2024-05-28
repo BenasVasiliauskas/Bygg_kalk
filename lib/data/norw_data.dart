@@ -1056,7 +1056,7 @@ final norwParquetAndLaminate = [
     0.00
   ], material: [
     528.30,
-    0.00
+    528.30,
   ], materials: [
     0.00,
     0.00

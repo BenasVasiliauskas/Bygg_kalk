@@ -188,7 +188,6 @@ void addDataNorwExteriorWall(
   List<TextEditingController> quantityLists,
   List<TextEditingController> materialQuantityList,
   List<TextEditingController> laborHours1List,
-  List<TextEditingController> customColumnList,
   List<TextEditingController> laborHours2List,
   List<TextEditingController> laborCostList,
   List<TextEditingController> material1List,
@@ -239,8 +238,7 @@ void addDataNorwExteriorWall(
       worksheet.getRangeByIndex(i + 2, 4).setText(materialQuantityList[i].text);
       worksheet.getRangeByIndex(i + 2, 5).setText(laborHours1List[i].text);
       sumOfHours1 += double.parse(laborHours1List[i].text);
-      worksheet.getRangeByIndex(i + 2, 6).setText(customColumnList[i].text);
-      sumOfCustomHours += double.parse(customColumnList[i].text);
+
       worksheet.getRangeByIndex(i + 2, 7).setText(laborHours2List[i].text);
       sumOfHours2 += double.parse(laborHours2List[i].text);
       worksheet.getRangeByIndex(i + 2, 8).setText(laborCostList[i].text);
@@ -804,7 +802,6 @@ Future<void> generateNorwParquetAndLaminateExcelDocument(
   List<TextEditingController> quantityLists,
   List<TextEditingController> materialQuantityList,
   List<TextEditingController> laborHours1List,
-  List<TextEditingController> customColumnList,
   List<TextEditingController> laborHours2List,
   List<TextEditingController> laborCostList,
   List<TextEditingController> material1List,
@@ -824,7 +821,6 @@ Future<void> generateNorwParquetAndLaminateExcelDocument(
     quantityLists,
     materialQuantityList,
     laborHours1List,
-    customColumnList,
     laborHours2List,
     laborCostList,
     material1List,
@@ -846,7 +842,6 @@ void addDataNorwParquetAndLaminate(
   List<TextEditingController> quantityLists,
   List<TextEditingController> materialQuantityList,
   List<TextEditingController> laborHours1List,
-  List<TextEditingController> customColumnList,
   List<TextEditingController> laborHours2List,
   List<TextEditingController> laborCostList,
   List<TextEditingController> material1List,
@@ -897,8 +892,6 @@ void addDataNorwParquetAndLaminate(
       worksheet.getRangeByIndex(i + 2, 4).setText(materialQuantityList[i].text);
       worksheet.getRangeByIndex(i + 2, 5).setText(laborHours1List[i].text);
       sumOfHours1 += double.parse(laborHours1List[i].text);
-      worksheet.getRangeByIndex(i + 2, 6).setText(customColumnList[i].text);
-      sumOfCustomHours += double.parse(customColumnList[i].text);
       worksheet.getRangeByIndex(i + 2, 7).setText(laborHours2List[i].text);
       sumOfHours2 += double.parse(laborHours2List[i].text);
       worksheet.getRangeByIndex(i + 2, 8).setText(laborCostList[i].text);
@@ -927,7 +920,6 @@ void addDataNorwWindowsExteriorDoor(
   List<TextEditingController> quantityLists,
   List<TextEditingController> materialQuantityList,
   List<TextEditingController> laborHours1List,
-  List<TextEditingController> customColumnList,
   List<TextEditingController> laborHours2List,
   List<TextEditingController> laborCostList,
   List<TextEditingController> material1List,
@@ -978,8 +970,6 @@ void addDataNorwWindowsExteriorDoor(
       worksheet.getRangeByIndex(i + 2, 4).setText(materialQuantityList[i].text);
       worksheet.getRangeByIndex(i + 2, 5).setText(laborHours1List[i].text);
       sumOfHours1 += double.parse(laborHours1List[i].text);
-      worksheet.getRangeByIndex(i + 2, 6).setText(customColumnList[i].text);
-      sumOfCustomHours += double.parse(customColumnList[i].text);
       worksheet.getRangeByIndex(i + 2, 7).setText(laborHours2List[i].text);
       sumOfHours2 += double.parse(laborHours2List[i].text);
       worksheet.getRangeByIndex(i + 2, 8).setText(laborCostList[i].text);
@@ -1009,7 +999,6 @@ Future<void> generateNorwWindowsExteriorDoorExcelDocument(
   List<TextEditingController> quantityLists,
   List<TextEditingController> materialQuantityList,
   List<TextEditingController> laborHours1List,
-  List<TextEditingController> customColumnList,
   List<TextEditingController> laborHours2List,
   List<TextEditingController> laborCostList,
   List<TextEditingController> material1List,
@@ -1030,7 +1019,6 @@ Future<void> generateNorwWindowsExteriorDoorExcelDocument(
     quantityLists,
     materialQuantityList,
     laborHours1List,
-    customColumnList,
     laborHours2List,
     laborCostList,
     material1List,
@@ -1053,7 +1041,6 @@ Future<void> generateNorwExteriorWallExcelDocument(
   List<TextEditingController> quantityLists,
   List<TextEditingController> materialQuantityList,
   List<TextEditingController> laborHours1List,
-  List<TextEditingController> customColumnList,
   List<TextEditingController> laborHours2List,
   List<TextEditingController> laborCostList,
   List<TextEditingController> material1List,
@@ -1074,7 +1061,6 @@ Future<void> generateNorwExteriorWallExcelDocument(
     quantityLists,
     materialQuantityList,
     laborHours1List,
-    customColumnList,
     laborHours2List,
     laborCostList,
     material1List,
@@ -1096,7 +1082,6 @@ void addDataNorwInnerDoor(
   List<TextEditingController> quantityLists,
   List<TextEditingController> materialQuantityList,
   List<TextEditingController> laborHours1List,
-  List<TextEditingController> customColumnList,
   List<TextEditingController> laborHours2List,
   List<TextEditingController> laborCostList,
   List<TextEditingController> material1List,
@@ -1147,8 +1132,6 @@ void addDataNorwInnerDoor(
       worksheet.getRangeByIndex(i + 2, 4).setText(materialQuantityList[i].text);
       worksheet.getRangeByIndex(i + 2, 5).setText(laborHours1List[i].text);
       sumOfHours1 += double.parse(laborHours1List[i].text);
-      worksheet.getRangeByIndex(i + 2, 6).setText(customColumnList[i].text);
-      sumOfCustomHours += double.parse(customColumnList[i].text);
       worksheet.getRangeByIndex(i + 2, 7).setText(laborHours2List[i].text);
       sumOfHours2 += double.parse(laborHours2List[i].text);
       worksheet.getRangeByIndex(i + 2, 8).setText(laborCostList[i].text);
@@ -1178,7 +1161,6 @@ Future<void> generateNorwInnerDoorExcelDocument(
   List<TextEditingController> quantityLists,
   List<TextEditingController> materialQuantityList,
   List<TextEditingController> laborHours1List,
-  List<TextEditingController> customColumnList,
   List<TextEditingController> laborHours2List,
   List<TextEditingController> laborCostList,
   List<TextEditingController> material1List,
@@ -1198,7 +1180,6 @@ Future<void> generateNorwInnerDoorExcelDocument(
     quantityLists,
     materialQuantityList,
     laborHours1List,
-    customColumnList,
     laborHours2List,
     laborCostList,
     material1List,
@@ -1433,7 +1414,6 @@ void addNorwData(
   List<TextEditingController> quantityLists,
   List<TextEditingController> materialQuantityList,
   List<TextEditingController> laborHours1List,
-  List<TextEditingController> customColumnList,
   List<TextEditingController> laborHours2List,
   List<TextEditingController> laborCostList,
   List<TextEditingController> material1List,
@@ -1485,8 +1465,6 @@ void addNorwData(
       worksheet.getRangeByIndex(i + 2, 4).setText(materialQuantityList[i].text);
       worksheet.getRangeByIndex(i + 2, 5).setText(laborHours1List[i].text);
       sumOfHours1 += double.parse(laborHours1List[i].text);
-      worksheet.getRangeByIndex(i + 2, 6).setText(customColumnList[i].text);
-      sumOfCustomHours += double.parse(customColumnList[i].text);
       worksheet.getRangeByIndex(i + 2, 7).setText(laborHours2List[i].text);
       sumOfHours2 += double.parse(laborHours2List[i].text);
       worksheet.getRangeByIndex(i + 2, 8).setText(laborCostList[i].text);
@@ -1516,7 +1494,6 @@ Future<void> generateNorwInnerWallExcelDocument(
   List<TextEditingController> quantityLists,
   List<TextEditingController> materialQuantityList,
   List<TextEditingController> laborHours1List,
-  List<TextEditingController> customColumnList,
   List<TextEditingController> laborHours2List,
   List<TextEditingController> laborCostList,
   List<TextEditingController> material1List,
@@ -1547,7 +1524,6 @@ Future<void> generateNorwInnerWallExcelDocument(
       quantityLists,
       materialQuantityList,
       laborHours1List,
-      customColumnList,
       laborHours2List,
       laborCostList,
       material1List,
