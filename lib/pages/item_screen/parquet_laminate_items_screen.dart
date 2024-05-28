@@ -340,9 +340,66 @@ class _ParquetLaminateItemsScreenState
                   ),
                   style:
                       TextStyle(color: Theme.of(context).colorScheme.primary),
-                  readOnly: true,
                   controller: laborHours1Controllers[i],
-                  onChanged: (value) {},
+                  onChanged: (value) {
+                    //
+                    double parsedValue = double.parse(value);
+                    widget.laborHours1[i] = double.parse(
+                      parsedValue.toStringAsFixed(2),
+                    );
+                    //
+                    widget.laborHours2[i] = calculateWorkHours2(
+                        i,
+                        emptyCustomList,
+                        widget.laborHours1,
+                        calculationQuantity);
+                    laborHours2Controllers[i].text = calculateWorkHours2(
+                            i,
+                            emptyCustomList,
+                            widget.laborHours1,
+                            calculationQuantity)
+                        .toStringAsFixed(2);
+                    //
+                    widget.laborCost[i] = calculateJobCost(i,
+                        widget.laborHours1, hourlyRateConstructionRemodeling);
+                    laborCostControllers[i].text = calculateJobCost(
+                            i,
+                            widget.laborHours1,
+                            hourlyRateConstructionRemodeling)
+                        .toStringAsFixed(2);
+                    //
+                    widget.laborCost[i] = calculateJobCost(i,
+                        widget.laborHours2, hourlyRateConstructionRemodeling);
+                    laborCostControllers[i].text = calculateJobCost(
+                            i,
+                            widget.laborHours2,
+                            hourlyRateConstructionRemodeling)
+                        .toStringAsFixed(2);
+
+                    // Recalculate and update the material 2 when quantity changes
+                    widget.material2[i] = calculateMaterialCost(i,
+                        widget.material1, calculationQuantity, emptyCustomList);
+                    material2Controllers[i].text = calculateMaterialCost(
+                            i,
+                            widget.material1,
+                            calculationQuantity,
+                            emptyCustomList)
+                        .toStringAsFixed(2);
+
+                    // Recalculate and update the total price when quantity changes
+                    widget.totalPrice[i] = calculateTotalPrice(
+                        i,
+                        widget.laborCost,
+                        widget.material1,
+                        calculationQuantity);
+                    totalPriceControllers[i].text = calculateTotalPrice(
+                            i,
+                            widget.laborCost,
+                            widget.material1,
+                            calculationQuantity)
+                        .toStringAsFixed(2);
+                    rebuildDataTable();
+                  },
                   keyboardType: TextInputType.numberWithOptions(
                       decimal: true), // Allow decimal numbers
                 ),
