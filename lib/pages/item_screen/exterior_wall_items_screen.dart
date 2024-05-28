@@ -174,6 +174,11 @@ class _ExteriorWallItemsScreenState extends State<ExteriorWallItemsScreen> {
 
   void recalculateValues() {
     for (int i = 0; i < widget.description.length; i++) {
+      widget.materialQuantity[i] =
+          calculateMaterialQuantity(i, widget.quantity, calculationQuantity);
+      materialQuantityControllers[i].text =
+          widget.materialQuantity[i].toStringAsFixed(2);
+
       // Recalculate labor hours 2
       widget.laborHours2[i] = calculateWorkHours2(
         i,
@@ -336,12 +341,16 @@ class _ExteriorWallItemsScreenState extends State<ExteriorWallItemsScreen> {
             dataCellDisplay(widget.description, i, 120),
             dataCellDisplay(widget.unit, i, 30, optionalPadding: 12),
             dataCellDisplayController(quantityControllers, i),
-            dataCellDo(materialQuantityControllers, i, (value) {
-              widget.materialQuantity[i] = double.parse(value);
-            },
-                Theme.of(context).colorScheme.background, //
-                true,
-                optionalWidth: 45),
+            dataCellDo(
+              materialQuantityControllers,
+              i,
+              (value) {
+                widget.materialQuantity[i] = double.parse(value);
+              },
+              Theme.of(context).colorScheme.background,
+              true,
+              optionalWidth: 45,
+            ),
             DataCell(
               SizedBox(
                 width: 35,
@@ -352,9 +361,66 @@ class _ExteriorWallItemsScreenState extends State<ExteriorWallItemsScreen> {
                   ),
                   style:
                       TextStyle(color: Theme.of(context).colorScheme.secondary),
-                  readOnly: false,
                   controller: laborHours1Controllers[i],
-                  onChanged: (value) {},
+                  onChanged: (value) {
+                    //
+                    double parsedValue = double.parse(value);
+                    widget.laborHours1[i] = double.parse(
+                      parsedValue.toStringAsFixed(2),
+                    );
+                    //
+                    widget.laborHours2[i] = calculateWorkHours2(
+                        i,
+                        emptyCustomList,
+                        widget.laborHours1,
+                        calculationQuantity);
+                    laborHours2Controllers[i].text = calculateWorkHours2(
+                            i,
+                            emptyCustomList,
+                            widget.laborHours1,
+                            calculationQuantity)
+                        .toStringAsFixed(2);
+                    //
+                    widget.laborCost[i] = calculateJobCost(i,
+                        widget.laborHours1, hourlyRateConstructionRemodeling);
+                    laborCostControllers[i].text = calculateJobCost(
+                            i,
+                            widget.laborHours1,
+                            hourlyRateConstructionRemodeling)
+                        .toStringAsFixed(2);
+                    //
+                    widget.laborCost[i] = calculateJobCost(i,
+                        widget.laborHours2, hourlyRateConstructionRemodeling);
+                    laborCostControllers[i].text = calculateJobCost(
+                            i,
+                            widget.laborHours2,
+                            hourlyRateConstructionRemodeling)
+                        .toStringAsFixed(2);
+
+                    // Recalculate and update the material 2 when quantity changes
+                    widget.material2[i] = calculateMaterialCost(i,
+                        widget.material1, calculationQuantity, emptyCustomList);
+                    material2Controllers[i].text = calculateMaterialCost(
+                            i,
+                            widget.material1,
+                            calculationQuantity,
+                            emptyCustomList)
+                        .toStringAsFixed(2);
+
+                    // Recalculate and update the total price when quantity changes
+                    widget.totalPrice[i] = calculateTotalPrice(
+                        i,
+                        widget.laborCost,
+                        widget.material1,
+                        calculationQuantity);
+                    totalPriceControllers[i].text = calculateTotalPrice(
+                            i,
+                            widget.laborCost,
+                            widget.material1,
+                            calculationQuantity)
+                        .toStringAsFixed(2);
+                    rebuildDataTable();
+                  },
                   keyboardType: TextInputType.numberWithOptions(
                       decimal: true), // Allow decimal numbers
                 ),
