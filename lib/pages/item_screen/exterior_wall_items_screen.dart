@@ -6,6 +6,7 @@ import 'package:cost_calculator/functions/save_to_json.dart';
 import 'package:cost_calculator/models/outer_wall_data_model.dart';
 import 'package:cost_calculator/pages/shared/globals/calculation_variables.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import '../../constants/budget_constants.dart';
 import '../../constants/innerwall_constants.dart';
 
@@ -44,6 +45,9 @@ class ExteriorWallItemsScreen extends StatefulWidget {
 List<double> emptyCustomList = [];
 
 class _ExteriorWallItemsScreenState extends State<ExteriorWallItemsScreen> {
+  bool _isDirty = false;
+  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+
   List<DataRow> rows = [];
   List<TextEditingController> descriptionControllers = [];
   List<TextEditingController> unitControllers = [];
@@ -128,10 +132,59 @@ class _ExteriorWallItemsScreenState extends State<ExteriorWallItemsScreen> {
       material1Controllers.add(TextEditingController());
       material2Controllers.add(TextEditingController());
       totalPriceControllers.add(TextEditingController());
+
+      // Add listeners to mark form as dirty
+      descriptionControllers[i].addListener(() => _markAsDirty());
+      unitControllers[i].addListener(() => _markAsDirty());
+      quantityControllers[i].addListener(() => _markAsDirty());
+      materialQuantityControllers[i].addListener(() => _markAsDirty());
+      laborHours1Controllers[i].addListener(() => _markAsDirty());
+      laborHours2Controllers[i].addListener(() => _markAsDirty());
+      laborCostControllers[i].addListener(() => _markAsDirty());
+      material1Controllers[i].addListener(() => _markAsDirty());
+      material2Controllers[i].addListener(() => _markAsDirty());
+      totalPriceControllers[i].addListener(() => _markAsDirty());
     }
     initialiseEmptyList();
     savingController = TextEditingController();
     loadingController = TextEditingController();
+  }
+
+  void _markAsDirty() {
+    if (!_isDirty) {
+      setState(() {
+        _isDirty = true;
+      });
+    }
+  }
+
+  Future<void> _onWillPop(bool isDirty) async {
+    if (isDirty) {
+      final shouldSave = await Future.delayed(Duration.zero);
+      showDialog<bool>(
+        context: context,
+        builder: (context) => AlertDialog(
+          title: Text('Unsaved Changes'),
+          content: Text(
+              'You have unsaved changes. Do you want to save them before leaving?'),
+          actions: [
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).pop(false);
+              },
+              child: Text('No'),
+            ),
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).pop(true);
+              },
+              child: Text('Yes'),
+            ),
+          ],
+        ),
+      );
+      if (shouldSave == true) {}
+    }
   }
 
   void calculateCalculationQuantity() {
@@ -349,6 +402,7 @@ class _ExteriorWallItemsScreenState extends State<ExteriorWallItemsScreen> {
                     widget.laborHours1[i] = double.parse(
                       parsedValue.toStringAsFixed(2),
                     );
+
                     //
                     widget.laborHours2[i] = calculateWorkHours2(
                         i,
@@ -560,123 +614,127 @@ class _ExteriorWallItemsScreenState extends State<ExteriorWallItemsScreen> {
 // Add the "Total Sum" row to the rows list
     rows.add(totalSumRow);
 
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.name),
-      ),
-      body: SingleChildScrollView(
-        scrollDirection: Axis.vertical,
-        child: Column(
-          children: [
-            SingleChildScrollView(
-              scrollDirection: Axis.horizontal,
-              child: DataTable(
-                border: TableBorder.all(
-                    width: 2, color: Theme.of(context).colorScheme.background),
-                horizontalMargin: 15,
-                columnSpacing: 0,
-                dataRowMaxHeight: double.infinity,
-                dataRowMinHeight: 60,
-                columns: columns, // Define your columns here
-                rows: rows,
+    return PopScope(
+      onPopInvoked: _onWillPop,
+      child: Scaffold(
+        appBar: AppBar(
+          title: Text(widget.name),
+        ),
+        body: SingleChildScrollView(
+          scrollDirection: Axis.vertical,
+          child: Column(
+            children: [
+              SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: DataTable(
+                  border: TableBorder.all(
+                      width: 2,
+                      color: Theme.of(context).colorScheme.background),
+                  horizontalMargin: 15,
+                  columnSpacing: 0,
+                  dataRowMaxHeight: double.infinity,
+                  dataRowMinHeight: 60,
+                  columns: columns, // Define your columns here
+                  rows: rows,
+                ),
               ),
-            ),
-            FloatingActionButton(
-              onPressed: () async {
-                final name = await openDialog();
-                if (name == null || name.isEmpty) return;
-                setState(() {
-                  this.name = name;
-                });
-                OuterWallModel outerwallModel = OuterWallModel(
-                  name: name,
-                  description: widget.description,
-                  unit: widget.unit,
-                  quantity: widget.quantity,
-                  materialQuantity: widget.materialQuantity,
-                  laborHours1: widget.laborHours1,
-                  laborHours2: widget.laborHours2,
-                  laborCost: widget.laborCost,
-                  material: widget.material1,
-                  materials: widget.material2,
-                  totalPrice: widget.totalPrice,
-                );
-                writeJson(outerwallModel);
-                ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                    content: Text('Data has been saved as $name.json')));
-              },
-              child: Text("Save to JSON"),
-              heroTag: "btn1",
-            ),
-            FloatingActionButton(
-                child: Text("Load data"),
-                heroTag: "btn2",
-                onPressed: () {
-                  openLoadingDialog().then((value) {
-                    if (value == null || value.isEmpty) return;
-                    setState(() {
-                      this.name = value;
-                    });
-                    readJsonFile(name).then(
-                      (value) {
-                        OuterWallModel outerwallModel =
-                            OuterWallModel.fromJson(value);
-                        setState(() {
-                          widget.description = outerwallModel.description;
-                          widget.unit = outerwallModel.unit;
-                          widget.quantity = outerwallModel.quantity;
-                          widget.materialQuantity =
-                              outerwallModel.materialQuantity;
-                          widget.laborHours1 = outerwallModel.laborHours1;
-                          widget.laborHours2 = outerwallModel.laborHours2;
-                          widget.laborCost = outerwallModel.laborCost;
-                          widget.material1 = outerwallModel.material;
-                          widget.material2 = outerwallModel.materials;
-                          widget.totalPrice = outerwallModel.totalPrice;
-                          calculateCalculationQuantity();
-                          setInitialValues();
-                          updateTotalSum();
-                        });
-                      },
-                    );
+              FloatingActionButton(
+                onPressed: () async {
+                  final name = await openDialog();
+                  if (name == null || name.isEmpty) return;
+                  setState(() {
+                    this.name = name;
                   });
-                }),
-            FloatingActionButton(
-              onPressed: () {
-                generateInnerDoorExcelDocument(
-                  "ExterioirWallItems",
-                  columns,
-                  widget.description,
-                  widget.unit,
-                  quantityControllers,
-                  materialQuantityControllers,
-                  laborHours1Controllers,
-                  laborHours2Controllers,
-                  laborCostControllers,
-                  material1Controllers,
-                  material2Controllers,
-                  totalPriceControllers,
-                  widget.name,
-                );
-                ScaffoldMessenger.of(context).showSnackBar(
-                  SnackBar(
-                    content: Text(
-                        'Excel file has been created in your Downloads folder'),
-                  ),
-                );
-              },
-              child: Text("Save to Excel"),
-            ),
-            SingleChildScrollView(
-              scrollDirection: Axis.horizontal,
-              child: DataTable(
-                dataRowMaxHeight: double.infinity,
-                dataRowMinHeight: 60,
-                columns: calculationColumns, // Define your columns here
-                rows: calculationRows,
+                  OuterWallModel outerwallModel = OuterWallModel(
+                    name: name,
+                    description: widget.description,
+                    unit: widget.unit,
+                    quantity: widget.quantity,
+                    materialQuantity: widget.materialQuantity,
+                    laborHours1: widget.laborHours1,
+                    laborHours2: widget.laborHours2,
+                    laborCost: widget.laborCost,
+                    material: widget.material1,
+                    materials: widget.material2,
+                    totalPrice: widget.totalPrice,
+                  );
+                  writeJson(outerwallModel);
+                  ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                      content: Text('Data has been saved as $name.json')));
+                },
+                child: Text("Save to JSON"),
+                heroTag: "btn1",
               ),
-            ),
-          ],
+              FloatingActionButton(
+                  child: Text("Load data"),
+                  heroTag: "btn2",
+                  onPressed: () {
+                    openLoadingDialog().then((value) {
+                      if (value == null || value.isEmpty) return;
+                      setState(() {
+                        this.name = value;
+                      });
+                      readJsonFile(name).then(
+                        (value) {
+                          OuterWallModel outerwallModel =
+                              OuterWallModel.fromJson(value);
+                          setState(() {
+                            widget.description = outerwallModel.description;
+                            widget.unit = outerwallModel.unit;
+                            widget.quantity = outerwallModel.quantity;
+                            widget.materialQuantity =
+                                outerwallModel.materialQuantity;
+                            widget.laborHours1 = outerwallModel.laborHours1;
+                            widget.laborHours2 = outerwallModel.laborHours2;
+                            widget.laborCost = outerwallModel.laborCost;
+                            widget.material1 = outerwallModel.material;
+                            widget.material2 = outerwallModel.materials;
+                            widget.totalPrice = outerwallModel.totalPrice;
+                            calculateCalculationQuantity();
+                            setInitialValues();
+                            updateTotalSum();
+                          });
+                        },
+                      );
+                    });
+                  }),
+              FloatingActionButton(
+                onPressed: () {
+                  generateInnerDoorExcelDocument(
+                    "ExterioirWallItems",
+                    columns,
+                    widget.description,
+                    widget.unit,
+                    quantityControllers,
+                    materialQuantityControllers,
+                    laborHours1Controllers,
+                    laborHours2Controllers,
+                    laborCostControllers,
+                    material1Controllers,
+                    material2Controllers,
+                    totalPriceControllers,
+                    widget.name,
+                  );
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(
+                      content: Text(
+                          'Excel file has been created in your Downloads folder'),
+                    ),
+                  );
+                },
+                child: Text("Save to Excel"),
+              ),
+              SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: DataTable(
+                  dataRowMaxHeight: double.infinity,
+                  dataRowMinHeight: 60,
+                  columns: calculationColumns, // Define your columns here
+                  rows: calculationRows,
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );
