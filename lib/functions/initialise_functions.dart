@@ -158,12 +158,6 @@ List<DataColumn> calculationColumnsEng = [
   DataColumn(
     label: Text('Calculation Quantity'),
   ),
-  DataColumn(
-    label: Text('Hourly Rate - Construction/Remodeling'),
-  ),
-  DataColumn(
-    label: Text('Unit'),
-  ),
 ];
 
 List<DataColumn> calculationColumnsNorw = [

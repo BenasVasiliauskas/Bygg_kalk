@@ -210,7 +210,9 @@ class _optionsScreenState extends State<optionsScreen> {
               SizedBox(
                 width: 150,
                 child: TextField(
-                  onChanged: (value) {},
+                  onChanged: (value) {
+                    hourlyRate = double.parse(value);
+                  },
                   controller: hourlyRateTextEditingController, //change
                   keyboardType: TextInputType.numberWithOptions(decimal: true),
                 ),
@@ -258,7 +260,9 @@ class _optionsScreenState extends State<optionsScreen> {
               SizedBox(
                 width: 150,
                 child: TextField(
-                  onChanged: (value) {},
+                  onChanged: (value) {
+                    timeCoefficient = double.parse(value);
+                  },
                   controller: timeCoefficientTextEditingController,
                   keyboardType: TextInputType.numberWithOptions(decimal: true),
                 ),
@@ -306,7 +310,9 @@ class _optionsScreenState extends State<optionsScreen> {
               SizedBox(
                 width: 150,
                 child: TextField(
-                  onChanged: (value) {},
+                  onChanged: (value) {
+                    markup = double.parse(value);
+                  },
                   controller: markupTexteditingController,
                   keyboardType: TextInputType.numberWithOptions(decimal: true),
                 ),
@@ -354,7 +360,9 @@ class _optionsScreenState extends State<optionsScreen> {
               SizedBox(
                 width: 150,
                 child: TextField(
-                  onChanged: (value) {},
+                  onChanged: (value) {
+                    costs = double.parse(value);
+                  },
                   controller: costsTextEditingController,
                   keyboardType: TextInputType.numberWithOptions(decimal: true),
                 ),

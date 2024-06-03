@@ -1,3 +1,4 @@
+import 'package:cost_calculator/constants/language.dart';
 import 'package:cost_calculator/widgets/custom_drawer.dart';
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
@@ -36,7 +37,15 @@ class _FilePickerScreenState extends State<FilePickerScreen> {
         title: const Text('Bygg Kalk'),
       ),
       body: TextButton(
-        child: Text("Load"),
+        child: Text(
+          languageEnglish
+              ? "Load"
+              : languageLithuanian
+                  ? "Užkrauti"
+                  : languageNorwegian
+                      ? "Load in norwegian"
+                      : "Load in polish",
+        ),
         onPressed: () {
           choose();
         },

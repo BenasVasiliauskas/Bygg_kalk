@@ -4,6 +4,7 @@ import 'package:cost_calculator/functions/create_worksheet.dart';
 import 'package:cost_calculator/functions/initialise_functions.dart';
 import 'package:cost_calculator/functions/save_to_json.dart';
 import 'package:cost_calculator/models/parquet_laminate_data_model.dart';
+import 'package:cost_calculator/pages/shared/globals/calculation_variables.dart';
 import 'package:flutter/material.dart';
 import '../../constants/budget_constants.dart';
 import '../../constants/innerwall_constants.dart';
@@ -58,12 +59,9 @@ class _ParquetLaminateItemsScreenState
   //
   TextEditingController quantityCalculationControllers =
       TextEditingController();
-  TextEditingController hourlyRateConstructionRemodelingController =
-      TextEditingController();
   //
   List<TextEditingController> Controllers = [];
   double calculationQuantity = 1;
-  double hourlyRateConstructionRemodeling = 550;
   String name = '';
   void initialiseEmptyList() {
     emptyCustomList = createList(widget.description.length);
@@ -168,8 +166,6 @@ class _ParquetLaminateItemsScreenState
     quantityCalculationControllers.text =
         calculationQuantity.toStringAsFixed(2);
 
-    hourlyRateConstructionRemodelingController.text =
-        hourlyRateConstructionRemodeling.toStringAsFixed(2);
     recalculateValues();
   }
 
@@ -188,7 +184,7 @@ class _ParquetLaminateItemsScreenState
       widget.laborCost[i] = calculateJobCost(
         i,
         widget.laborHours2,
-        hourlyRateConstructionRemodeling,
+        hourlyRate,
       );
       laborCostControllers[i].text = widget.laborCost[i].toStringAsFixed(2);
 
@@ -210,8 +206,7 @@ class _ParquetLaminateItemsScreenState
       );
       totalPriceControllers[i].text = widget.totalPrice[i].toStringAsFixed(2);
     }
-
-    // Update the total sum row
+    // Update the total sum row lllwood ppolp they talk bout my gence (intelect) yuh
     updateTotalSum();
   }
 
@@ -248,17 +243,17 @@ class _ParquetLaminateItemsScreenState
                       emptyCustomList, widget.laborHours1, calculationQuantity)
                   .toStringAsFixed(2);
 
-              widget.laborCost[i] = calculateJobCost(
-                  i, widget.laborHours1, hourlyRateConstructionRemodeling);
-              laborCostControllers[i].text = calculateJobCost(
-                      i, widget.laborHours1, hourlyRateConstructionRemodeling)
-                  .toStringAsFixed(2);
+              widget.laborCost[i] =
+                  calculateJobCost(i, widget.laborHours1, hourlyRate);
+              laborCostControllers[i].text =
+                  calculateJobCost(i, widget.laborHours1, hourlyRate)
+                      .toStringAsFixed(2);
 
-              widget.laborCost[i] = calculateJobCost(
-                  i, widget.laborHours2, hourlyRateConstructionRemodeling);
-              laborCostControllers[i].text = calculateJobCost(
-                      i, widget.laborHours2, hourlyRateConstructionRemodeling)
-                  .toStringAsFixed(2);
+              widget.laborCost[i] =
+                  calculateJobCost(i, widget.laborHours2, hourlyRate);
+              laborCostControllers[i].text =
+                  calculateJobCost(i, widget.laborHours2, hourlyRate)
+                      .toStringAsFixed(2);
 
               // Recalculate and update the material 2 when quantity changes
               widget.material2[i] = calculateMaterialCost(
@@ -277,31 +272,6 @@ class _ParquetLaminateItemsScreenState
               rebuildDataTable();
             }
           }, Color.fromARGB(255, 218, 128, 122), false, 100),
-          dataCellDoSingle(hourlyRateConstructionRemodelingController, (value) {
-            hourlyRateConstructionRemodeling = double.parse(value);
-            for (int i = 0; i < widget.description.length; i++) {
-              //
-              emptyCustomList[i] = double.parse(Controllers[i].text);
-              Controllers[i].text = emptyCustomList[i].toStringAsFixed(2);
-              // Recalculate and update the labor cost when hourlyRateConstructionRemodeling changes
-              widget.laborCost[i] = calculateJobCost(
-                  i, widget.laborHours2, hourlyRateConstructionRemodeling);
-              laborCostControllers[i].text = calculateJobCost(
-                      i, widget.laborHours2, hourlyRateConstructionRemodeling)
-                  .toStringAsFixed(2);
-
-              // Recalculate and update the total price when hourlyRateConstructionRemodeling changes
-              widget.totalPrice[i] = calculateTotalPrice(
-                  i, widget.laborCost, widget.material1, calculationQuantity);
-              totalPriceControllers[i].text = calculateTotalPrice(i,
-                      widget.laborCost, widget.material1, calculationQuantity)
-                  .toStringAsFixed(2);
-
-              //Rebuild the data table
-              rebuildDataTable();
-            }
-          }, Color.fromARGB(255, 218, 128, 122), false, 100),
-          dataCellDisplay(<String>['kr .'], 0, 100)
         ],
       ),
     ];
@@ -360,21 +330,17 @@ class _ParquetLaminateItemsScreenState
                             calculationQuantity)
                         .toStringAsFixed(2);
                     //
-                    widget.laborCost[i] = calculateJobCost(i,
-                        widget.laborHours1, hourlyRateConstructionRemodeling);
-                    laborCostControllers[i].text = calculateJobCost(
-                            i,
-                            widget.laborHours1,
-                            hourlyRateConstructionRemodeling)
-                        .toStringAsFixed(2);
+                    widget.laborCost[i] =
+                        calculateJobCost(i, widget.laborHours1, hourlyRate);
+                    laborCostControllers[i].text =
+                        calculateJobCost(i, widget.laborHours1, hourlyRate)
+                            .toStringAsFixed(2);
                     //
-                    widget.laborCost[i] = calculateJobCost(i,
-                        widget.laborHours2, hourlyRateConstructionRemodeling);
-                    laborCostControllers[i].text = calculateJobCost(
-                            i,
-                            widget.laborHours2,
-                            hourlyRateConstructionRemodeling)
-                        .toStringAsFixed(2);
+                    widget.laborCost[i] =
+                        calculateJobCost(i, widget.laborHours2, hourlyRate);
+                    laborCostControllers[i].text =
+                        calculateJobCost(i, widget.laborHours2, hourlyRate)
+                            .toStringAsFixed(2);
 
                     // Recalculate and update the material 2 when quantity changes
                     widget.material2[i] = calculateMaterialCost(i,
@@ -413,7 +379,7 @@ class _ParquetLaminateItemsScreenState
                   double.parse(parsedValue.toStringAsFixed(2));
               // Recalculate the labor cost when labor hours 2 changes
               double updatedLaborCost = calculateJobCost(i, widget.laborHours2,
-                  hourlyRateConstructionRemodeling); // Calculate the labor cost
+                  hourlyRate); // Calculate the labor cost
               widget.laborCost[i] =
                   double.parse(updatedLaborCost.toStringAsFixed(2));
             }, Theme.of(context).colorScheme.background, true,
@@ -427,7 +393,6 @@ class _ParquetLaminateItemsScreenState
               double parsedValue = double.parse(value);
               widget.material1[i] = double.parse(
                   parsedValue.toStringAsFixed(2)); // Format to 2 decimal places
-
               // Recalculate and update the material 2 when material 1 changes
               double updatedMaterial2 = calculateMaterialCost(
                   i, widget.material1, calculationQuantity, emptyCustomList);
