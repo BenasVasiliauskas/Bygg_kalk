@@ -62,8 +62,6 @@ class _InteriorWallItemsScreenState extends State<InteriorWallItemsScreen> {
   TextEditingController quantityCalculationControllers =
       TextEditingController();
 
-  double calculationQuantity = 1;
-
   String name = '';
 
   void initialiseEmptyList() {

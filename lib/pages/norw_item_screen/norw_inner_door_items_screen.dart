@@ -61,7 +61,6 @@ class _NorwInnerDoorItemScreenScreenState
   TextEditingController quantityCalculationControllers =
       TextEditingController();
   //
-  double calculationQuantity = 1;
 
   String name = '';
   void initialiseEmptyList() {

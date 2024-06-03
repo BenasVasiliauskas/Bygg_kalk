@@ -15,3 +15,5 @@ TextEditingController markupTexteditingController =
 double costs = 1;
 TextEditingController costsTextEditingController =
     TextEditingController(text: costs.toStringAsFixed(2));
+
+double calculationQuantity = 1;

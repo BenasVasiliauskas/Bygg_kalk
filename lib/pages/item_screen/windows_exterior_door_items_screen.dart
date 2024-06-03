@@ -61,7 +61,6 @@ class _WindowsExteriorDoorItemsScreen
       TextEditingController();
 
   //
-  double calculationQuantity = 1;
   String name = '';
   void initialiseEmptyList() {
     emptyCustomList = createList(widget.description.length);

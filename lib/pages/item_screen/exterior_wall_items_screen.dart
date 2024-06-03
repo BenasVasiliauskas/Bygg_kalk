@@ -61,8 +61,6 @@ class _ExteriorWallItemsScreenState extends State<ExteriorWallItemsScreen> {
   TextEditingController quantityCalculationControllers =
       TextEditingController();
 
-  double calculationQuantity = 1;
-
   String name = '';
   void initialiseEmptyList() {
     emptyCustomList = createList(widget.description.length);

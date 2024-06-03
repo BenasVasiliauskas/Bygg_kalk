@@ -60,7 +60,6 @@ class _InnerDoorItemScreenState extends State<InnerDoorItemScreen> {
 
   //
 
-  double calculationQuantity = 1;
   String name = '';
 
   void initialiseEmptyList() {
