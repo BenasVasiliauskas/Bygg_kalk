@@ -1,12 +1,13 @@
 // ignore_for_file: must_be_immutable
 
+import 'package:cost_calculator/data/original_data.dart';
 import 'package:cost_calculator/functions/create_worksheet.dart';
 import 'package:cost_calculator/functions/initialise_functions.dart';
 import 'package:cost_calculator/functions/save_to_json.dart';
+import 'package:cost_calculator/items/outer_wall_item.dart';
 import 'package:cost_calculator/models/outer_wall_data_model.dart';
 import 'package:cost_calculator/pages/shared/globals/calculation_variables.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
 import '../../constants/budget_constants.dart';
 import '../../constants/innerwall_constants.dart';
 
@@ -46,7 +47,6 @@ List<double> emptyCustomList = [];
 
 class _ExteriorWallItemsScreenState extends State<ExteriorWallItemsScreen> {
   bool _isDirty = false;
-  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
   List<DataRow> rows = [];
   List<TextEditingController> descriptionControllers = [];
@@ -170,20 +170,43 @@ class _ExteriorWallItemsScreenState extends State<ExteriorWallItemsScreen> {
           actions: [
             TextButton(
               onPressed: () {
-                Navigator.of(context).pop(false);
+                exteriorWallData
+                    .map(
+                      (wallItem) => OuterWallItem(
+                        wallItem.name,
+                        wallItem.description,
+                        wallItem.unit,
+                        wallItem.quantity,
+                        wallItem.materialQuantity,
+                        wallItem.laborHours1,
+                        wallItem.laborHours2,
+                        wallItem.laborCost,
+                        wallItem.material,
+                        wallItem.materials,
+                        wallItem.totalPrice,
+                        wallItem.color,
+                      ),
+                    )
+                    .toList();
+                //slow and janky but works, now figure out how to make it pop up only on change
+                for (int i = 0; i < exteriorWallData.length; i++) {
+                  for (int j = 0; j < widget.description.length; j++) {
+                    widget.laborHours1[j] = exteriorWallData[i].laborHours1[j];
+                  }
+                }
+                Navigator.of(context).pop();
               },
               child: Text('No'),
             ),
             TextButton(
               onPressed: () {
-                Navigator.of(context).pop(true);
+                Navigator.of(context).pop();
               },
               child: Text('Yes'),
             ),
           ],
         ),
       );
-      if (shouldSave == true) {}
     }
   }
 
