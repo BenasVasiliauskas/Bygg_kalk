@@ -17,3 +17,9 @@ TextEditingController costsTextEditingController =
     TextEditingController(text: costs.toStringAsFixed(2));
 
 double calculationQuantity = 1;
+
+bool isDirty = false;
+
+void markAsClean() {
+  isDirty = !isDirty;
+}

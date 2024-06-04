@@ -46,8 +46,6 @@ class ExteriorWallItemsScreen extends StatefulWidget {
 List<double> emptyCustomList = [];
 
 class _ExteriorWallItemsScreenState extends State<ExteriorWallItemsScreen> {
-  bool _isDirty = false;
-
   List<DataRow> rows = [];
   List<TextEditingController> descriptionControllers = [];
   List<TextEditingController> unitControllers = [];
@@ -122,44 +120,65 @@ class _ExteriorWallItemsScreenState extends State<ExteriorWallItemsScreen> {
 
   void initialiseStates() {
     for (int i = 0; i < widget.description.length; i++) {
-      descriptionControllers.add(TextEditingController());
-      unitControllers.add(TextEditingController());
-      quantityControllers.add(TextEditingController());
-      materialQuantityControllers.add(TextEditingController());
-      laborHours1Controllers.add(TextEditingController());
-      laborHours2Controllers.add(TextEditingController());
-      laborCostControllers.add(TextEditingController());
-      material1Controllers.add(TextEditingController());
-      material2Controllers.add(TextEditingController());
-      totalPriceControllers.add(TextEditingController());
-
-      // Add listeners to mark form as dirty
-      descriptionControllers[i].addListener(() => _markAsDirty());
-      unitControllers[i].addListener(() => _markAsDirty());
-      quantityControllers[i].addListener(() => _markAsDirty());
-      materialQuantityControllers[i].addListener(() => _markAsDirty());
-      laborHours1Controllers[i].addListener(() => _markAsDirty());
-      laborHours2Controllers[i].addListener(() => _markAsDirty());
-      laborCostControllers[i].addListener(() => _markAsDirty());
-      material1Controllers[i].addListener(() => _markAsDirty());
-      material2Controllers[i].addListener(() => _markAsDirty());
-      totalPriceControllers[i].addListener(() => _markAsDirty());
+      descriptionControllers.add(
+        TextEditingController(
+          text: widget.description[i],
+        ),
+      );
+      unitControllers.add(
+        TextEditingController(
+          text: widget.unit[i],
+        ),
+      );
+      quantityControllers.add(
+        TextEditingController(
+          text: widget.quantity[i].toStringAsFixed(2),
+        ),
+      );
+      materialQuantityControllers.add(
+        TextEditingController(
+          text: widget.materialQuantity[i].toStringAsFixed(2),
+        ),
+      );
+      laborHours1Controllers.add(
+        TextEditingController(
+          text: widget.laborHours1[i].toStringAsFixed(2),
+        ),
+      );
+      laborHours2Controllers.add(
+        TextEditingController(
+          text: widget.laborHours2[i].toStringAsFixed(2),
+        ),
+      );
+      laborCostControllers.add(
+        TextEditingController(
+          text: widget.laborCost[i].toStringAsFixed(2),
+        ),
+      );
+      material1Controllers.add(
+        TextEditingController(
+          text: widget.material1[i].toStringAsFixed(2),
+        ),
+      );
+      material2Controllers.add(
+        TextEditingController(
+          text: widget.material2[i].toStringAsFixed(2),
+        ),
+      );
+      totalPriceControllers.add(
+        TextEditingController(
+          text: widget.totalPrice[i].toStringAsFixed(2),
+        ),
+      );
     }
     initialiseEmptyList();
     savingController = TextEditingController();
     loadingController = TextEditingController();
   }
 
-  void _markAsDirty() {
-    if (!_isDirty) {
-      setState(() {
-        _isDirty = true;
-      });
-    }
-  }
-
   Future<void> _onWillPop(bool isDirty) async {
     if (isDirty) {
+      // ignore: unused_local_variable
       final shouldSave = await Future.delayed(Duration.zero);
       showDialog<bool>(
         context: context,
@@ -194,12 +213,14 @@ class _ExteriorWallItemsScreenState extends State<ExteriorWallItemsScreen> {
                     widget.laborHours1[j] = exteriorWallData[i].laborHours1[j];
                   }
                 }
+                markAsClean();
                 Navigator.of(context).pop();
               },
               child: Text('No'),
             ),
             TextButton(
               onPressed: () {
+                markAsClean();
                 Navigator.of(context).pop();
               },
               child: Text('Yes'),
@@ -420,6 +441,7 @@ class _ExteriorWallItemsScreenState extends State<ExteriorWallItemsScreen> {
                       TextStyle(color: Theme.of(context).colorScheme.secondary),
                   controller: laborHours1Controllers[i],
                   onChanged: (value) {
+                    isDirty = true;
                     //
                     double parsedValue = double.parse(value);
                     widget.laborHours1[i] = double.parse(
@@ -638,7 +660,7 @@ class _ExteriorWallItemsScreenState extends State<ExteriorWallItemsScreen> {
     rows.add(totalSumRow);
 
     return PopScope(
-      onPopInvoked: _onWillPop,
+      onPopInvoked: isDirty ? _onWillPop : (didPop) {},
       child: Scaffold(
         appBar: AppBar(
           title: Text(widget.name),
