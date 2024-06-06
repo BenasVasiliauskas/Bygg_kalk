@@ -265,7 +265,6 @@ void addDataInnerDoor(
   List<String> descriptionList,
   List<String> unitList,
   List<TextEditingController> quantityLists,
-  List<TextEditingController> materialQuantityList,
   List<TextEditingController> laborHours1List,
   List<TextEditingController> laborHours2List,
   List<TextEditingController> laborCostList,
@@ -314,7 +313,6 @@ void addDataInnerDoor(
       worksheet.getRangeByIndex(i + 2, 1).setText(descriptionList[i]);
       worksheet.getRangeByIndex(i + 2, 2).setText(unitList[i]);
       worksheet.getRangeByIndex(i + 2, 3).setText(quantityLists[i].text);
-      worksheet.getRangeByIndex(i + 2, 4).setText(materialQuantityList[i].text);
       worksheet.getRangeByIndex(i + 2, 5).setText(laborHours1List[i].text);
       sumOfHours1 += double.parse(laborHours1List[i].text);
       worksheet.getRangeByIndex(i + 2, 7).setText(laborHours2List[i].text);
@@ -343,7 +341,6 @@ void addDataWindowsExteriorDoors(
   List<String> descriptionList,
   List<String> unitList,
   List<TextEditingController> quantityLists,
-  List<TextEditingController> materialQuantityList,
   List<TextEditingController> laborHours1List,
   List<TextEditingController> laborHours2List,
   List<TextEditingController> laborCostList,
@@ -392,7 +389,6 @@ void addDataWindowsExteriorDoors(
       worksheet.getRangeByIndex(i + 2, 1).setText(descriptionList[i]);
       worksheet.getRangeByIndex(i + 2, 2).setText(unitList[i]);
       worksheet.getRangeByIndex(i + 2, 3).setText(quantityLists[i].text);
-      worksheet.getRangeByIndex(i + 2, 4).setText(materialQuantityList[i].text);
       worksheet.getRangeByIndex(i + 2, 5).setText(laborHours1List[i].text);
       sumOfHours1 += double.parse(laborHours1List[i].text);
       worksheet.getRangeByIndex(i + 2, 7).setText(laborHours2List[i].text);
@@ -1200,7 +1196,6 @@ Future<void> generateInnerDoorExcelDocument(
   List<String> descriptionList,
   List<String> unitList,
   List<TextEditingController> quantityLists,
-  List<TextEditingController> materialQuantityList,
   List<TextEditingController> laborHours1List,
   List<TextEditingController> laborHours2List,
   List<TextEditingController> laborCostList,
@@ -1219,7 +1214,6 @@ Future<void> generateInnerDoorExcelDocument(
     descriptionList,
     unitList,
     quantityLists,
-    materialQuantityList,
     laborHours1List,
     laborHours2List,
     laborCostList,
@@ -1371,7 +1365,6 @@ Future<void> generateWindowsOuterDoorExcelDocument(
   List<String> descriptionList,
   List<String> unitList,
   List<TextEditingController> quantityLists,
-  List<TextEditingController> materialQuantityList,
   List<TextEditingController> laborHours1List,
   List<TextEditingController> laborHours2List,
   List<TextEditingController> laborCostList,
@@ -1391,7 +1384,6 @@ Future<void> generateWindowsOuterDoorExcelDocument(
     descriptionList,
     unitList,
     quantityLists,
-    materialQuantityList,
     laborHours1List,
     laborHours2List,
     laborCostList,

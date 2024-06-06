@@ -1,8 +1,10 @@
 // ignore_for_file: must_be_immutable
 
+import 'package:cost_calculator/data/data.dart';
 import 'package:cost_calculator/functions/create_worksheet.dart';
 import 'package:cost_calculator/functions/initialise_functions.dart';
 import 'package:cost_calculator/functions/save_to_json.dart';
+import 'package:cost_calculator/items/parquet_laminate_item.dart';
 import 'package:cost_calculator/models/parquet_laminate_data_model.dart';
 import 'package:cost_calculator/pages/shared/globals/calculation_variables.dart';
 import 'package:flutter/material.dart';
@@ -47,7 +49,6 @@ class _ParquetLaminateItemsScreenState
   List<TextEditingController> descriptionControllers = [];
   List<TextEditingController> unitControllers = [];
   List<TextEditingController> quantityControllers = [];
-  List<TextEditingController> materialQuantityControllers = [];
   List<TextEditingController> laborHours1Controllers = [];
   List<TextEditingController> laborHours2Controllers = [];
   List<TextEditingController> laborCostControllers = [];
@@ -118,21 +119,110 @@ class _ParquetLaminateItemsScreenState
 
   void initialiseStates() {
     for (int i = 0; i < widget.description.length; i++) {
-      descriptionControllers.add(TextEditingController());
-      unitControllers.add(TextEditingController());
-      quantityControllers.add(TextEditingController());
-      materialQuantityControllers.add(TextEditingController());
-      laborHours1Controllers.add(TextEditingController());
-      laborHours2Controllers.add(TextEditingController());
-      laborCostControllers.add(TextEditingController());
-      material1Controllers.add(TextEditingController());
-      material2Controllers.add(TextEditingController());
-      totalPriceControllers.add(TextEditingController());
-      Controllers.add(TextEditingController());
+      descriptionControllers.add(
+        TextEditingController(
+          text: widget.description[i],
+        ),
+      );
+      unitControllers.add(
+        TextEditingController(
+          text: widget.unit[i],
+        ),
+      );
+      quantityControllers.add(
+        TextEditingController(
+          text: widget.quantity[i].toStringAsFixed(2),
+        ),
+      );
+      laborHours1Controllers.add(
+        TextEditingController(
+          text: widget.laborHours1[i].toStringAsFixed(2),
+        ),
+      );
+      laborHours2Controllers.add(
+        TextEditingController(
+          text: widget.laborHours2[i].toStringAsFixed(2),
+        ),
+      );
+      laborCostControllers.add(
+        TextEditingController(
+          text: widget.laborCost[i].toStringAsFixed(2),
+        ),
+      );
+      material1Controllers.add(
+        TextEditingController(
+          text: widget.material1[i].toStringAsFixed(2),
+        ),
+      );
+      material2Controllers.add(
+        TextEditingController(
+          text: widget.material2[i].toStringAsFixed(2),
+        ),
+      );
+      totalPriceControllers.add(
+        TextEditingController(
+          text: widget.totalPrice[i].toStringAsFixed(2),
+        ),
+      );
     }
     initialiseEmptyList();
     savingController = TextEditingController();
     loadingController = TextEditingController();
+  }
+
+  Future<void> _onWillPop(bool isDirty) async {
+    if (isDirty) {
+      // ignore: unused_local_variable
+      final shouldSave = await Future.delayed(Duration.zero);
+      showDialog<bool>(
+        context: context,
+        builder: (context) => AlertDialog(
+          title: Text('Unsaved Changes'),
+          content: Text(
+              'You have unsaved changes. Do you want to save them before leaving?'),
+          actions: [
+            TextButton(
+              onPressed: () {
+                parquetAndLaminate
+                    .map(
+                      (parquetLaminateItem) => ParquetLaminateItem(
+                        parquetLaminateItem.name,
+                        parquetLaminateItem.description,
+                        parquetLaminateItem.unit,
+                        parquetLaminateItem.quantity,
+                        parquetLaminateItem.laborHours1,
+                        parquetLaminateItem.laborHours2,
+                        parquetLaminateItem.laborCost,
+                        parquetLaminateItem.material,
+                        parquetLaminateItem.materials,
+                        parquetLaminateItem.totalPrice,
+                        parquetLaminateItem.color,
+                      ),
+                    )
+                    .toList();
+                //slow and janky but works, now figure out how to make it pop up only on change
+                for (int i = 0; i < parquetAndLaminate.length; i++) {
+                  for (int j = 0; j < widget.description.length; j++) {
+                    widget.laborHours1[j] =
+                        parquetAndLaminate[i].laborHours1[j];
+                  }
+                }
+                markAsClean();
+                Navigator.of(context).pop();
+              },
+              child: Text('No'),
+            ),
+            TextButton(
+              onPressed: () {
+                markAsClean();
+                Navigator.of(context).pop();
+              },
+              child: Text('Yes'),
+            ),
+          ],
+        ),
+      );
+    }
   }
 
   void calculateCalculationQuantity() {
@@ -158,9 +248,6 @@ class _ParquetLaminateItemsScreenState
       material1Controllers[i].text = widget.material1[i].toStringAsFixed(2);
       material2Controllers[i].text = widget.material2[i].toStringAsFixed(2);
       totalPriceControllers[i].text = widget.totalPrice[i].toStringAsFixed(2);
-      Controllers[i].text =
-          (widget.laborHours2[i] / calculationQuantity).toStringAsFixed(2);
-      emptyCustomList[i] = double.parse(Controllers[i].text);
     }
     quantityCalculationControllers.text =
         calculationQuantity.toStringAsFixed(2);
@@ -311,6 +398,7 @@ class _ParquetLaminateItemsScreenState
                       TextStyle(color: Theme.of(context).colorScheme.primary),
                   controller: laborHours1Controllers[i],
                   onChanged: (value) {
+                    isDirty = true;
                     //
                     double parsedValue = double.parse(value);
                     widget.laborHours1[i] = double.parse(
@@ -497,125 +585,130 @@ class _ParquetLaminateItemsScreenState
     );
 // Add the "Total Sum" row to the rows list
     rows.add(totalSumRow);
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.name),
-      ),
-      body: SingleChildScrollView(
-        scrollDirection: Axis.vertical,
-        child: Column(
-          children: [
-            SingleChildScrollView(
-              scrollDirection: Axis.horizontal,
-              child: DataTable(
-                border: TableBorder.all(
-                    width: 2, color: Theme.of(context).colorScheme.background),
-                horizontalMargin: 15,
-                columnSpacing: 0,
-                dataRowMaxHeight: double.infinity,
-                dataRowMinHeight: 60,
-                columns: columns, // Define your columns here
-                rows: rows,
+    return PopScope(
+      onPopInvoked: isDirty ? _onWillPop : (didPop) {},
+      child: Scaffold(
+        appBar: AppBar(
+          title: Text(widget.name),
+        ),
+        body: SingleChildScrollView(
+          scrollDirection: Axis.vertical,
+          child: Column(
+            children: [
+              SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: DataTable(
+                  border: TableBorder.all(
+                      width: 2,
+                      color: Theme.of(context).colorScheme.background),
+                  horizontalMargin: 15,
+                  columnSpacing: 0,
+                  dataRowMaxHeight: double.infinity,
+                  dataRowMinHeight: 60,
+                  columns: columns, // Define your columns here
+                  rows: rows,
+                ),
               ),
-            ),
-            FloatingActionButton(
-              onPressed: () async {
-                final name = await openDialog();
-                if (name == null || name.isEmpty) return;
-                setState(() {
-                  this.name = name;
-                });
-                ParquetAndLaminateModel parquetAndLaminateModel =
-                    ParquetAndLaminateModel(
-                  name: name,
-                  description: widget.description,
-                  unit: widget.unit,
-                  quantity: widget.quantity,
-                  laborHours1: widget.laborHours1,
-                  laborHours2: widget.laborHours2,
-                  laborCost: widget.laborCost,
-                  material: widget.material1,
-                  materials: widget.material2,
-                  totalPrice: widget.totalPrice,
-                );
-                writeJson(parquetAndLaminateModel);
-                ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                    content: Text('Data has been saved as $name.json')));
-              },
-              child: Text("Save to JSON"),
-              heroTag: "btn1",
-            ),
-            FloatingActionButton(
-                child: Text("Load data"),
-                heroTag: "btn2",
-                onPressed: () {
-                  openLoadingDialog().then((value) {
-                    if (value == null || value.isEmpty) return;
-                    setState(() {
-                      this.name = value;
-                    });
-                    readJsonFile(name).then(
-                      (value) {
-                        ParquetAndLaminateModel parquetAndLaminateModel =
-                            ParquetAndLaminateModel.fromJson(value);
-                        setState(() {
-                          widget.description =
-                              parquetAndLaminateModel.description;
-                          widget.unit = parquetAndLaminateModel.unit;
-                          widget.quantity = parquetAndLaminateModel.quantity;
-                          widget.laborHours1 =
-                              parquetAndLaminateModel.laborHours1;
-                          widget.laborHours2 =
-                              parquetAndLaminateModel.laborHours2;
-                          widget.laborCost = parquetAndLaminateModel.laborCost;
-                          widget.material1 = parquetAndLaminateModel.material;
-                          widget.material2 = parquetAndLaminateModel.materials;
-                          widget.totalPrice =
-                              parquetAndLaminateModel.totalPrice;
-                          calculateCalculationQuantity();
-                          setInitialValues();
-                          updateTotalSum();
-                        });
-                      },
-                    );
+              FloatingActionButton(
+                onPressed: () async {
+                  final name = await openDialog();
+                  if (name == null || name.isEmpty) return;
+                  setState(() {
+                    this.name = name;
                   });
-                }),
-            FloatingActionButton(
-              onPressed: () {
-                generateInnerDoorExcelDocument(
-                  "ParquetAndLaminateItems",
-                  columns,
-                  widget.description,
-                  widget.unit,
-                  quantityControllers,
-                  materialQuantityControllers,
-                  laborHours1Controllers,
-                  laborHours2Controllers,
-                  laborCostControllers,
-                  material1Controllers,
-                  material2Controllers,
-                  totalPriceControllers,
-                  widget.name,
-                );
-                ScaffoldMessenger.of(context).showSnackBar(
-                  SnackBar(
-                    content: Text(
-                        'Excel file has been created in your Downloads folder'),
-                  ),
-                );
-              },
-              child: Text("Save to excel"),
-            ),
-            SingleChildScrollView(
-              scrollDirection: Axis.horizontal,
-              child: DataTable(
-                dataRowMaxHeight: double.infinity,
-                dataRowMinHeight: 60,
-                columns: calculationColumns, // Define your columns here
-                rows: calculationRows,
+                  ParquetAndLaminateModel parquetAndLaminateModel =
+                      ParquetAndLaminateModel(
+                    name: name,
+                    description: widget.description,
+                    unit: widget.unit,
+                    quantity: widget.quantity,
+                    laborHours1: widget.laborHours1,
+                    laborHours2: widget.laborHours2,
+                    laborCost: widget.laborCost,
+                    material: widget.material1,
+                    materials: widget.material2,
+                    totalPrice: widget.totalPrice,
+                  );
+                  writeJson(parquetAndLaminateModel);
+                  ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                      content: Text('Data has been saved as $name.json')));
+                },
+                child: Text("Save to JSON"),
+                heroTag: "btn1",
               ),
-            )
-          ],
+              FloatingActionButton(
+                  child: Text("Load data"),
+                  heroTag: "btn2",
+                  onPressed: () {
+                    openLoadingDialog().then((value) {
+                      if (value == null || value.isEmpty) return;
+                      setState(() {
+                        this.name = value;
+                      });
+                      readJsonFile(name).then(
+                        (value) {
+                          ParquetAndLaminateModel parquetAndLaminateModel =
+                              ParquetAndLaminateModel.fromJson(value);
+                          setState(() {
+                            widget.description =
+                                parquetAndLaminateModel.description;
+                            widget.unit = parquetAndLaminateModel.unit;
+                            widget.quantity = parquetAndLaminateModel.quantity;
+                            widget.laborHours1 =
+                                parquetAndLaminateModel.laborHours1;
+                            widget.laborHours2 =
+                                parquetAndLaminateModel.laborHours2;
+                            widget.laborCost =
+                                parquetAndLaminateModel.laborCost;
+                            widget.material1 = parquetAndLaminateModel.material;
+                            widget.material2 =
+                                parquetAndLaminateModel.materials;
+                            widget.totalPrice =
+                                parquetAndLaminateModel.totalPrice;
+                            calculateCalculationQuantity();
+                            setInitialValues();
+                            updateTotalSum();
+                          });
+                        },
+                      );
+                    });
+                  }),
+              FloatingActionButton(
+                onPressed: () {
+                  generateInnerDoorExcelDocument(
+                    "ParquetAndLaminateItems",
+                    columns,
+                    widget.description,
+                    widget.unit,
+                    quantityControllers,
+                    laborHours1Controllers,
+                    laborHours2Controllers,
+                    laborCostControllers,
+                    material1Controllers,
+                    material2Controllers,
+                    totalPriceControllers,
+                    widget.name,
+                  );
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(
+                      content: Text(
+                          'Excel file has been created in your Downloads folder'),
+                    ),
+                  );
+                },
+                child: Text("Save to excel"),
+              ),
+              SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: DataTable(
+                  dataRowMaxHeight: double.infinity,
+                  dataRowMinHeight: 60,
+                  columns: calculationColumns, // Define your columns here
+                  rows: calculationRows,
+                ),
+              )
+            ],
+          ),
         ),
       ),
     );

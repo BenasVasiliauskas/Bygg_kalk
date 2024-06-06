@@ -266,7 +266,7 @@ class _ExteriorWallItemsScreenState extends State<ExteriorWallItemsScreen> {
   void recalculateValues() {
     for (int i = 0; i < widget.description.length; i++) {
       widget.materialQuantity[i] =
-          calculateMaterialQuantity(i, widget.quantity, calculationQuantity);
+          calculateMaterialQuantity(i, widget.quantity, hourlyRate);
       materialQuantityControllers[i].text =
           widget.materialQuantity[i].toStringAsFixed(2);
 
@@ -275,7 +275,7 @@ class _ExteriorWallItemsScreenState extends State<ExteriorWallItemsScreen> {
         i,
         emptyCustomList,
         widget.laborHours1,
-        calculationQuantity,
+        hourlyRate,
       );
       laborHours2Controllers[i].text = widget.laborHours2[i].toStringAsFixed(2);
 
@@ -450,15 +450,9 @@ class _ExteriorWallItemsScreenState extends State<ExteriorWallItemsScreen> {
 
                     //
                     widget.laborHours2[i] = calculateWorkHours2(
-                        i,
-                        emptyCustomList,
-                        widget.laborHours1,
-                        calculationQuantity);
+                        i, emptyCustomList, widget.laborHours1, hourlyRate);
                     laborHours2Controllers[i].text = calculateWorkHours2(
-                            i,
-                            emptyCustomList,
-                            widget.laborHours1,
-                            calculationQuantity)
+                            i, emptyCustomList, widget.laborHours1, hourlyRate)
                         .toStringAsFixed(2);
                     //
                     widget.laborCost[i] = calculateJobCost(
@@ -484,21 +478,15 @@ class _ExteriorWallItemsScreenState extends State<ExteriorWallItemsScreen> {
                     ).toStringAsFixed(2);
 
                     // Recalculate and update the material 2 when quantity changes
-                    widget.material2[i] = calculateMaterialCost(i,
-                        widget.material1, calculationQuantity, emptyCustomList);
+                    widget.material2[i] = calculateMaterialCost(
+                        i, widget.material1, hourlyRate, emptyCustomList);
                     material2Controllers[i].text = calculateMaterialCost(
-                            i,
-                            widget.material1,
-                            calculationQuantity,
-                            emptyCustomList)
+                            i, widget.material1, hourlyRate, emptyCustomList)
                         .toStringAsFixed(2);
 
                     // Recalculate and update the total price when quantity changes
                     widget.totalPrice[i] = calculateTotalPrice(
-                        i,
-                        widget.laborCost,
-                        widget.material1,
-                        calculationQuantity);
+                        i, widget.laborCost, widget.material1, hourlyRate);
                     totalPriceControllers[i].text = calculateTotalPrice(
                             i,
                             widget.laborCost,
@@ -540,14 +528,14 @@ class _ExteriorWallItemsScreenState extends State<ExteriorWallItemsScreen> {
 
               // Recalculate and update the material 2 when material 1 changes
               double updatedMaterial2 = calculateMaterialCost(
-                  i, widget.material1, calculationQuantity, emptyCustomList);
+                  i, widget.material1, hourlyRate, emptyCustomList);
               widget.material2[i] = updatedMaterial2;
               material2Controllers[i].text =
                   updatedMaterial2.toStringAsFixed(2);
 
               // Recalculate total price
               double updatedTotalPrice = calculateTotalPrice(
-                  i, widget.laborCost, widget.material1, calculationQuantity);
+                  i, widget.laborCost, widget.material1, hourlyRate);
               widget.totalPrice[i] = updatedTotalPrice;
               totalPriceControllers[i].text =
                   updatedTotalPrice.toStringAsFixed(2);
@@ -570,7 +558,6 @@ class _ExteriorWallItemsScreenState extends State<ExteriorWallItemsScreen> {
         ),
       );
     }
-
     // Calculate the total sum values for each column
 
     double totalLaborHours1 = 0.0;
@@ -751,7 +738,6 @@ class _ExteriorWallItemsScreenState extends State<ExteriorWallItemsScreen> {
                     widget.description,
                     widget.unit,
                     quantityControllers,
-                    materialQuantityControllers,
                     laborHours1Controllers,
                     laborHours2Controllers,
                     laborCostControllers,

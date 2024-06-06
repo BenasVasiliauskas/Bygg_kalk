@@ -1049,7 +1049,7 @@ final parquetAndLaminate = [
       laborHours1: [0.36, 0.25],
       laborHours2: [0.00, 0.00],
       laborCost: [0.00, 0.00],
-      material: [528.30, 0.00],
+      material: [528.30, 528.30],
       materials: [0.00, 0.00],
       totalPrice: [0.00, 0.00]),
 ];

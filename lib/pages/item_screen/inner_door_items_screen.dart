@@ -1,6 +1,8 @@
 // ignore_for_file: must_be_immutable
+import 'package:cost_calculator/data/data.dart';
 import 'package:cost_calculator/functions/initialise_functions.dart';
 import 'package:cost_calculator/functions/save_to_json.dart';
+import 'package:cost_calculator/items/inner_door_item.dart';
 import 'package:cost_calculator/models/inner_door_data_model.dart';
 import 'package:cost_calculator/pages/shared/globals/calculation_variables.dart';
 import 'package:flutter/material.dart';
@@ -45,7 +47,6 @@ class _InnerDoorItemScreenState extends State<InnerDoorItemScreen> {
   List<TextEditingController> descriptionControllers = [];
   List<TextEditingController> unitControllers = [];
   List<TextEditingController> quantityControllers = [];
-  List<TextEditingController> materialQuantityControllers = [];
   List<TextEditingController> laborHours1Controllers = [];
   List<TextEditingController> laborHours2Controllers = [];
   List<TextEditingController> laborCostControllers = [];
@@ -120,16 +121,51 @@ class _InnerDoorItemScreenState extends State<InnerDoorItemScreen> {
 
   void initialiseStates() {
     for (int i = 0; i < widget.description.length; i++) {
-      descriptionControllers.add(TextEditingController());
-      unitControllers.add(TextEditingController());
-      quantityControllers.add(TextEditingController());
-      materialQuantityControllers.add(TextEditingController());
-      laborHours1Controllers.add(TextEditingController());
-      laborHours2Controllers.add(TextEditingController());
-      laborCostControllers.add(TextEditingController());
-      material1Controllers.add(TextEditingController());
-      material2Controllers.add(TextEditingController());
-      totalPriceControllers.add(TextEditingController());
+      descriptionControllers.add(
+        TextEditingController(
+          text: widget.description[i],
+        ),
+      );
+      unitControllers.add(
+        TextEditingController(
+          text: widget.unit[i],
+        ),
+      );
+      quantityControllers.add(
+        TextEditingController(
+          text: widget.quantity[i].toStringAsFixed(2),
+        ),
+      );
+      laborHours1Controllers.add(
+        TextEditingController(
+          text: widget.laborHours1[i].toStringAsFixed(2),
+        ),
+      );
+      laborHours2Controllers.add(
+        TextEditingController(
+          text: widget.laborHours2[i].toStringAsFixed(2),
+        ),
+      );
+      laborCostControllers.add(
+        TextEditingController(
+          text: widget.laborCost[i].toStringAsFixed(2),
+        ),
+      );
+      material1Controllers.add(
+        TextEditingController(
+          text: widget.material1[i].toStringAsFixed(2),
+        ),
+      );
+      material2Controllers.add(
+        TextEditingController(
+          text: widget.material2[i].toStringAsFixed(2),
+        ),
+      );
+      totalPriceControllers.add(
+        TextEditingController(
+          text: widget.totalPrice[i].toStringAsFixed(2),
+        ),
+      );
     }
     initialiseEmptyList();
     savingController = TextEditingController();
@@ -146,6 +182,60 @@ class _InnerDoorItemScreenState extends State<InnerDoorItemScreen> {
 
     quantityCalculationControllers.text =
         calculationQuantity.toStringAsFixed(2);
+  }
+
+  Future<void> _onWillPop(bool isDirty) async {
+    if (isDirty) {
+      // ignore: unused_local_variable
+      final shouldSave = await Future.delayed(Duration.zero);
+      showDialog<bool>(
+        context: context,
+        builder: (context) => AlertDialog(
+          title: Text('Unsaved Changes'),
+          content: Text(
+              'You have unsaved changes. Do you want to save them before leaving?'),
+          actions: [
+            TextButton(
+              onPressed: () {
+                innerDoor
+                    .map(
+                      (doorItem) => InnerDoorItem(
+                        doorItem.name,
+                        doorItem.description,
+                        doorItem.unit,
+                        doorItem.quantity,
+                        doorItem.laborHours1,
+                        doorItem.laborHours2,
+                        doorItem.laborCost,
+                        doorItem.material,
+                        doorItem.materials,
+                        doorItem.totalPrice,
+                        doorItem.color,
+                      ),
+                    )
+                    .toList();
+                //slow and janky but works, now figure out how to make it pop up only on change
+                for (int i = 0; i < innerDoor.length; i++) {
+                  for (int j = 0; j < widget.description.length; j++) {
+                    widget.laborHours1[j] = innerDoor[i].laborHours1[j];
+                  }
+                }
+                markAsClean();
+                Navigator.of(context).pop();
+              },
+              child: Text('No'),
+            ),
+            TextButton(
+              onPressed: () {
+                markAsClean();
+                Navigator.of(context).pop();
+              },
+              child: Text('Yes'),
+            ),
+          ],
+        ),
+      );
+    }
   }
 
   void setInitialValues() {
@@ -302,7 +392,7 @@ class _InnerDoorItemScreenState extends State<InnerDoorItemScreen> {
         DataRow(
           cells: [
             dataCellDisplay(widget.description, i, 120),
-            dataCellDisplay(widget.unit, i, 35, optionalPadding: 12),
+            dataCellDisplay(widget.unit, i, 45, optionalPadding: 12),
             dataCellDisplayController(quantityControllers, i),
             DataCell(
               SizedBox(
@@ -312,12 +402,13 @@ class _InnerDoorItemScreenState extends State<InnerDoorItemScreen> {
                   child: TextField(
                     decoration: InputDecoration(
                       border: InputBorder.none,
-                      contentPadding: EdgeInsets.only(left: 2),
+                      contentPadding: EdgeInsets.zero,
                     ),
                     style:
                         TextStyle(color: Theme.of(context).colorScheme.primary),
                     controller: laborHours1Controllers[i],
                     onChanged: (value) {
+                      isDirty = true;
                       //
                       double parsedValue = double.parse(value);
                       widget.laborHours1[i] = double.parse(
@@ -524,120 +615,123 @@ class _InnerDoorItemScreenState extends State<InnerDoorItemScreen> {
 // Add the "Total Sum" row to the rows list
     rows.add(totalSumRow);
 
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.name),
-      ),
-      body: SingleChildScrollView(
-        scrollDirection: Axis.vertical,
-        child: Column(
-          children: [
-            SingleChildScrollView(
-              scrollDirection: Axis.horizontal,
-              child: DataTable(
-                border: TableBorder.all(
-                    width: 2, color: Theme.of(context).colorScheme.background),
-                horizontalMargin: 15,
-                columnSpacing: 0,
-                dataRowMaxHeight: double.infinity,
-                dataRowMinHeight: 60,
-                columns: columns, // Define your columns here
-                rows: rows,
+    return PopScope(
+      onPopInvoked: isDirty ? _onWillPop : (didPop) {},
+      child: Scaffold(
+        appBar: AppBar(
+          title: Text(widget.name),
+        ),
+        body: SingleChildScrollView(
+          scrollDirection: Axis.vertical,
+          child: Column(
+            children: [
+              SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: DataTable(
+                  border: TableBorder.all(
+                      width: 2,
+                      color: Theme.of(context).colorScheme.background),
+                  horizontalMargin: 15,
+                  columnSpacing: 0,
+                  dataRowMaxHeight: double.infinity,
+                  dataRowMinHeight: 60,
+                  columns: columns, // Define your columns here
+                  rows: rows,
+                ),
               ),
-            ),
-            FloatingActionButton(
-              onPressed: () async {
-                final name = await openDialog();
-                if (name == null || name.isEmpty) return;
-                setState(() {
-                  this.name = name;
-                });
-                InnerDoorModel innerDoorModel = InnerDoorModel(
-                  name: name,
-                  description: widget.description,
-                  unit: widget.unit,
-                  quantity: widget.quantity,
-                  laborHours1: widget.laborHours1,
-                  laborHours2: widget.laborHours2,
-                  laborCost: widget.laborCost,
-                  material: widget.material1,
-                  materials: widget.material2,
-                  totalPrice: widget.totalPrice,
-                );
-                writeJson(innerDoorModel);
-                ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                    content: Text('Data has been saved as $name.json')));
-              },
-              child: Text("Save to JSON"),
-              heroTag: "btn1",
-            ),
-            FloatingActionButton(
-                child: Text("Load data"),
-                heroTag: "btn2",
-                onPressed: () {
-                  openLoadingDialog().then((value) {
-                    if (value == null || value.isEmpty) return;
-                    setState(() {
-                      this.name = value;
-                    });
-                    readJsonFile(name).then(
-                      (value) {
-                        InnerDoorModel innerDoorModel =
-                            InnerDoorModel.fromJson(value);
-                        setState(() {
-                          widget.description = innerDoorModel.description;
-                          widget.unit = innerDoorModel.unit;
-                          widget.quantity = innerDoorModel.quantity;
-                          widget.laborHours1 = innerDoorModel.laborHours1;
-                          widget.laborHours2 = innerDoorModel.laborHours2;
-                          widget.laborCost = innerDoorModel.laborCost;
-                          widget.material1 = innerDoorModel.material;
-                          widget.material2 = innerDoorModel.materials;
-                          widget.totalPrice = innerDoorModel.totalPrice;
-                          calculateCalculationQuantity();
-                          setInitialValues();
-                          updateTotalSum();
-                        });
-                      },
-                    );
+              FloatingActionButton(
+                onPressed: () async {
+                  final name = await openDialog();
+                  if (name == null || name.isEmpty) return;
+                  setState(() {
+                    this.name = name;
                   });
-                }),
-            FloatingActionButton(
-              onPressed: () {
-                generateInnerDoorExcelDocument(
-                  "InnerDoorItemScreen",
-                  columns,
-                  widget.description,
-                  widget.unit,
-                  quantityControllers,
-                  materialQuantityControllers,
-                  laborHours1Controllers,
-                  laborHours2Controllers,
-                  laborCostControllers,
-                  material1Controllers,
-                  material2Controllers,
-                  totalPriceControllers,
-                  widget.name,
-                );
-                ScaffoldMessenger.of(context).showSnackBar(
-                  SnackBar(
-                    content: Text(
-                        'Excel file has been created in your Downloads folder'),
-                  ),
-                );
-              },
-              child: Text("Save to excel"),
-            ),
-            SingleChildScrollView(
-              scrollDirection: Axis.horizontal,
-              child: DataTable(
-                dataRowMaxHeight: double.infinity,
-                dataRowMinHeight: 60,
-                columns: calculationColumns, // Define your columns here
-                rows: calculationRows,
+                  InnerDoorModel innerDoorModel = InnerDoorModel(
+                    name: name,
+                    description: widget.description,
+                    unit: widget.unit,
+                    quantity: widget.quantity,
+                    laborHours1: widget.laborHours1,
+                    laborHours2: widget.laborHours2,
+                    laborCost: widget.laborCost,
+                    material: widget.material1,
+                    materials: widget.material2,
+                    totalPrice: widget.totalPrice,
+                  );
+                  writeJson(innerDoorModel);
+                  ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                      content: Text('Data has been saved as $name.json')));
+                },
+                child: Text("Save to JSON"),
+                heroTag: "btn1",
               ),
-            )
-          ],
+              FloatingActionButton(
+                  child: Text("Load data"),
+                  heroTag: "btn2",
+                  onPressed: () {
+                    openLoadingDialog().then((value) {
+                      if (value == null || value.isEmpty) return;
+                      setState(() {
+                        this.name = value;
+                      });
+                      readJsonFile(name).then(
+                        (value) {
+                          InnerDoorModel innerDoorModel =
+                              InnerDoorModel.fromJson(value);
+                          setState(() {
+                            widget.description = innerDoorModel.description;
+                            widget.unit = innerDoorModel.unit;
+                            widget.quantity = innerDoorModel.quantity;
+                            widget.laborHours1 = innerDoorModel.laborHours1;
+                            widget.laborHours2 = innerDoorModel.laborHours2;
+                            widget.laborCost = innerDoorModel.laborCost;
+                            widget.material1 = innerDoorModel.material;
+                            widget.material2 = innerDoorModel.materials;
+                            widget.totalPrice = innerDoorModel.totalPrice;
+                            calculateCalculationQuantity();
+                            setInitialValues();
+                            updateTotalSum();
+                          });
+                        },
+                      );
+                    });
+                  }),
+              FloatingActionButton(
+                onPressed: () {
+                  generateInnerDoorExcelDocument(
+                    "InnerDoorItemScreen",
+                    columns,
+                    widget.description,
+                    widget.unit,
+                    quantityControllers,
+                    laborHours1Controllers,
+                    laborHours2Controllers,
+                    laborCostControllers,
+                    material1Controllers,
+                    material2Controllers,
+                    totalPriceControllers,
+                    widget.name,
+                  );
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(
+                      content: Text(
+                          'Excel file has been created in your Downloads folder'),
+                    ),
+                  );
+                },
+                child: Text("Save to excel"),
+              ),
+              SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: DataTable(
+                  dataRowMaxHeight: double.infinity,
+                  dataRowMinHeight: 60,
+                  columns: calculationColumns, // Define your columns here
+                  rows: calculationRows,
+                ),
+              )
+            ],
+          ),
         ),
       ),
     );

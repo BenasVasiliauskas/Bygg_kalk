@@ -1,8 +1,10 @@
 // ignore_for_file: must_be_immutable
 
+import 'package:cost_calculator/data/data.dart';
 import 'package:cost_calculator/functions/create_worksheet.dart';
 import 'package:cost_calculator/functions/initialise_functions.dart';
 import 'package:cost_calculator/functions/save_to_json.dart';
+import 'package:cost_calculator/items/inner_wall_item.dart';
 import 'package:cost_calculator/models/inner_wall_data_model.dart';
 import 'package:cost_calculator/pages/shared/globals/calculation_variables.dart';
 import 'package:flutter/material.dart';
@@ -95,7 +97,7 @@ class _InteriorWallItemsScreenState extends State<InteriorWallItemsScreen> {
       totalTotalPrice += widget.totalPrice[i];
     }
     addHours(widget.name, totalLaborHours2);
-    addLaborCosts(widget.name, totalLaborCost); // check err? wrong var?
+    addLaborCosts(widget.name, totalLaborCost);
     addMaterialCosts(widget.name, totalMaterial2);
     addBudgetSum(widget.name, totalTotalPrice);
     // Create the "Total Sum" row
@@ -118,20 +120,115 @@ class _InteriorWallItemsScreenState extends State<InteriorWallItemsScreen> {
 
   void initialiseStates() {
     for (int i = 0; i < widget.description.length; i++) {
-      descriptionControllers.add(TextEditingController());
-      unitControllers.add(TextEditingController());
-      quantityControllers.add(TextEditingController());
-      materialQuantityControllers.add(TextEditingController());
-      laborHours1Controllers.add(TextEditingController());
-      laborHours2Controllers.add(TextEditingController());
-      laborCostControllers.add(TextEditingController());
-      material1Controllers.add(TextEditingController());
-      material2Controllers.add(TextEditingController());
-      totalPriceControllers.add(TextEditingController());
+      descriptionControllers.add(
+        TextEditingController(
+          text: widget.description[i],
+        ),
+      );
+      unitControllers.add(
+        TextEditingController(
+          text: widget.unit[i],
+        ),
+      );
+      quantityControllers.add(
+        TextEditingController(
+          text: widget.quantity[i].toStringAsFixed(2),
+        ),
+      );
+      materialQuantityControllers.add(
+        TextEditingController(
+          text: widget.materialQuantity[i].toStringAsFixed(2),
+        ),
+      );
+      laborHours1Controllers.add(
+        TextEditingController(
+          text: widget.laborHours1[i].toStringAsFixed(2),
+        ),
+      );
+      laborHours2Controllers.add(
+        TextEditingController(
+          text: widget.laborHours2[i].toStringAsFixed(2),
+        ),
+      );
+      laborCostControllers.add(
+        TextEditingController(
+          text: widget.laborCost[i].toStringAsFixed(2),
+        ),
+      );
+      material1Controllers.add(
+        TextEditingController(
+          text: widget.material1[i].toStringAsFixed(2),
+        ),
+      );
+      material2Controllers.add(
+        TextEditingController(
+          text: widget.material2[i].toStringAsFixed(2),
+        ),
+      );
+      totalPriceControllers.add(
+        TextEditingController(
+          text: widget.totalPrice[i].toStringAsFixed(2),
+        ),
+      );
     }
     initialiseEmptyList();
     savingController = TextEditingController();
     loadingController = TextEditingController();
+  }
+
+  Future<void> _onWillPop(bool isDirty) async {
+    if (isDirty) {
+      // ignore: unused_local_variable
+      final shouldSave = await Future.delayed(Duration.zero);
+      showDialog<bool>(
+        context: context,
+        builder: (context) => AlertDialog(
+          title: Text('Unsaved Changes'),
+          content: Text(
+              'You have unsaved changes. Do you want to save them before leaving?'),
+          actions: [
+            TextButton(
+              onPressed: () {
+                dataInnerWallData
+                    .map(
+                      (wallItem) => InnerWallItem(
+                        wallItem.name,
+                        wallItem.description,
+                        wallItem.unit,
+                        wallItem.quantity,
+                        wallItem.materialQuantity,
+                        wallItem.laborHours1,
+                        wallItem.laborHours2,
+                        wallItem.laborCost,
+                        wallItem.material1,
+                        wallItem.material2,
+                        wallItem.totalPrice,
+                        wallItem.color,
+                      ),
+                    )
+                    .toList();
+                //slow and janky but works, now figure out how to make it pop up only on change
+                for (int i = 0; i < dataInnerWallData.length; i++) {
+                  for (int j = 0; j < widget.description.length; j++) {
+                    widget.laborHours1[j] = dataInnerWallData[i].laborHours1[j];
+                  }
+                }
+                markAsClean();
+                Navigator.of(context).pop();
+              },
+              child: Text('No'),
+            ),
+            TextButton(
+              onPressed: () {
+                markAsClean();
+                Navigator.of(context).pop();
+              },
+              child: Text('Yes'),
+            ),
+          ],
+        ),
+      );
+    }
   }
 
   void calculateCalculationQuantity() {
@@ -168,7 +265,7 @@ class _InteriorWallItemsScreenState extends State<InteriorWallItemsScreen> {
   void recalculateValues() {
     for (int i = 0; i < widget.description.length; i++) {
       widget.materialQuantity[i] =
-          calculateMaterialQuantity(i, widget.quantity, calculationQuantity);
+          calculateMaterialQuantity(i, widget.quantity, hourlyRate);
       materialQuantityControllers[i].text =
           widget.materialQuantity[i].toStringAsFixed(2);
 
@@ -177,7 +274,7 @@ class _InteriorWallItemsScreenState extends State<InteriorWallItemsScreen> {
         i,
         emptyCustomList,
         widget.laborHours1,
-        calculationQuantity,
+        hourlyRate,
       );
       laborHours2Controllers[i].text = widget.laborHours2[i].toStringAsFixed(2);
 
@@ -239,17 +336,17 @@ class _InteriorWallItemsScreenState extends State<InteriorWallItemsScreen> {
             calculationQuantity = double.parse(value);
             for (int i = 0; i < widget.description.length; i++) {
               // Recalculate and update the material quantity when quantity changes
-              widget.materialQuantity[i] = calculateMaterialQuantity(
-                  i, widget.quantity, calculationQuantity);
+              widget.materialQuantity[i] =
+                  calculateMaterialQuantity(i, widget.quantity, hourlyRate);
 
-              materialQuantityControllers[i].text = calculateMaterialQuantity(
-                      i, widget.quantity, calculationQuantity)
-                  .toStringAsFixed(2);
+              materialQuantityControllers[i].text =
+                  calculateMaterialQuantity(i, widget.quantity, hourlyRate)
+                      .toStringAsFixed(2);
 
               widget.laborHours2[i] = calculateWorkHours2(
-                  i, emptyCustomList, widget.laborHours1, calculationQuantity);
-              laborHours2Controllers[i].text = calculateWorkHours2(i,
-                      emptyCustomList, widget.laborHours1, calculationQuantity)
+                  i, emptyCustomList, widget.laborHours1, hourlyRate);
+              laborHours2Controllers[i].text = calculateWorkHours2(
+                      i, emptyCustomList, widget.laborHours1, hourlyRate)
                   .toStringAsFixed(2);
 
               widget.laborCost[i] =
@@ -309,12 +406,16 @@ class _InteriorWallItemsScreenState extends State<InteriorWallItemsScreen> {
             dataCellDisplay(widget.description, i, 150),
             dataCellDisplay(widget.unit, i, 30, optionalPadding: 12),
             dataCellDisplayController(quantityControllers, i),
-            dataCellDo(materialQuantityControllers, i, (value) {
-              widget.materialQuantity[i] = double.parse(value);
-            },
-                Theme.of(context).colorScheme.background, //
-                true,
-                optionalWidth: 45),
+            dataCellDo(
+              materialQuantityControllers,
+              i,
+              (value) {
+                widget.materialQuantity[i] = double.parse(value);
+              },
+              Theme.of(context).colorScheme.background,
+              true,
+              optionalWidth: 45,
+            ),
             DataCell(
               SizedBox(
                 width: 35,
@@ -327,6 +428,7 @@ class _InteriorWallItemsScreenState extends State<InteriorWallItemsScreen> {
                       TextStyle(color: Theme.of(context).colorScheme.secondary),
                   controller: laborHours1Controllers[i],
                   onChanged: (value) {
+                    isDirty = true;
                     //
                     double parsedValue = double.parse(value);
                     widget.laborHours1[i] = double.parse(
@@ -334,15 +436,9 @@ class _InteriorWallItemsScreenState extends State<InteriorWallItemsScreen> {
                     );
                     //
                     widget.laborHours2[i] = calculateWorkHours2(
-                        i,
-                        emptyCustomList,
-                        widget.laborHours1,
-                        calculationQuantity);
+                        i, emptyCustomList, widget.laborHours1, hourlyRate);
                     laborHours2Controllers[i].text = calculateWorkHours2(
-                            i,
-                            emptyCustomList,
-                            widget.laborHours1,
-                            calculationQuantity)
+                            i, emptyCustomList, widget.laborHours1, hourlyRate)
                         .toStringAsFixed(2);
                     //
                     widget.laborCost[i] =
@@ -358,26 +454,17 @@ class _InteriorWallItemsScreenState extends State<InteriorWallItemsScreen> {
                             .toStringAsFixed(2);
 
                     // Recalculate and update the material 2 when quantity changes
-                    widget.material2[i] = calculateMaterialCost(i,
-                        widget.material1, calculationQuantity, emptyCustomList);
+                    widget.material2[i] = calculateMaterialCost(
+                        i, widget.material1, hourlyRate, emptyCustomList);
                     material2Controllers[i].text = calculateMaterialCost(
-                            i,
-                            widget.material1,
-                            calculationQuantity,
-                            emptyCustomList)
+                            i, widget.material1, hourlyRate, emptyCustomList)
                         .toStringAsFixed(2);
 
                     // Recalculate and update the total price when quantity changes
                     widget.totalPrice[i] = calculateTotalPrice(
-                        i,
-                        widget.laborCost,
-                        widget.material1,
-                        calculationQuantity);
+                        i, widget.laborCost, widget.material1, hourlyRate);
                     totalPriceControllers[i].text = calculateTotalPrice(
-                            i,
-                            widget.laborCost,
-                            widget.material1,
-                            calculationQuantity)
+                            i, widget.laborCost, widget.material1, hourlyRate)
                         .toStringAsFixed(2);
                     rebuildDataTable();
                   },
@@ -410,14 +497,14 @@ class _InteriorWallItemsScreenState extends State<InteriorWallItemsScreen> {
 
               // Recalculate and update the material 2 when material 1 changes
               double updatedMaterial2 = calculateMaterialCost(
-                  i, widget.material1, calculationQuantity, emptyCustomList);
+                  i, widget.material1, hourlyRate, emptyCustomList);
               widget.material2[i] = updatedMaterial2;
               material2Controllers[i].text =
                   updatedMaterial2.toStringAsFixed(2);
 
               // Recalculate total price
               double updatedTotalPrice = calculateTotalPrice(
-                  i, widget.laborCost, widget.material1, calculationQuantity);
+                  i, widget.laborCost, widget.material1, hourlyRate);
               widget.totalPrice[i] = updatedTotalPrice;
               totalPriceControllers[i].text =
                   updatedTotalPrice.toStringAsFixed(2);
@@ -518,124 +605,128 @@ class _InteriorWallItemsScreenState extends State<InteriorWallItemsScreen> {
 
 // Add the "Total Sum" row to the rows list
     rows.add(totalSumRow);
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.name),
-      ),
-      body: SingleChildScrollView(
-        scrollDirection: Axis.vertical,
-        child: Column(
-          children: [
-            SingleChildScrollView(
-              scrollDirection: Axis.horizontal,
-              child: DataTable(
-                border: TableBorder.all(
-                    width: 2, color: Theme.of(context).colorScheme.background),
-                horizontalMargin: 15,
-                columnSpacing: 0,
-                dataRowMaxHeight: double.infinity,
-                dataRowMinHeight: 20,
-                columns: columns, // Define your columns here
-                rows: rows,
+    return PopScope(
+      onPopInvoked: isDirty ? _onWillPop : (didPop) {},
+      child: Scaffold(
+        appBar: AppBar(
+          title: Text(widget.name),
+        ),
+        body: SingleChildScrollView(
+          scrollDirection: Axis.vertical,
+          child: Column(
+            children: [
+              SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: DataTable(
+                  border: TableBorder.all(
+                      width: 2,
+                      color: Theme.of(context).colorScheme.background),
+                  horizontalMargin: 15,
+                  columnSpacing: 0,
+                  dataRowMaxHeight: double.infinity,
+                  dataRowMinHeight: 20,
+                  columns: columns, // Define your columns here
+                  rows: rows,
+                ),
               ),
-            ),
-            FloatingActionButton(
-              onPressed: () async {
-                final name = await openDialog();
-                if (name == null || name.isEmpty) return;
-                setState(() {
-                  this.name = name;
-                });
-                InnerWallModel innerWallModel = InnerWallModel(
-                  name: name,
-                  description: widget.description,
-                  unit: widget.unit,
-                  quantity: widget.quantity,
-                  materialQuantity: widget.materialQuantity,
-                  laborHours1: widget.laborHours1,
-                  laborHours2: widget.laborHours2,
-                  laborCost: widget.laborCost,
-                  material1: widget.material1,
-                  material2: widget.material2,
-                  totalPrice: widget.totalPrice,
-                );
-                writeJson(innerWallModel);
-                ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                    content: Text('Data has been saved as $name.json')));
-              },
-              child: Text("Save to JSON"),
-              heroTag: "btn1",
-            ),
-            FloatingActionButton(
-                child: Text("Load data"),
-                heroTag: "btn2",
-                onPressed: () {
-                  openLoadingDialog().then((value) {
-                    if (value == null || value.isEmpty) return;
-                    setState(() {
-                      this.name = value;
-                    });
-                    readJsonFile(name).then(
-                      (value) {
-                        InnerWallModel innerWallModel =
-                            InnerWallModel.fromJson(value);
-                        setState(() {
-                          widget.description = innerWallModel.description;
-                          widget.unit = innerWallModel.unit;
-                          widget.quantity = innerWallModel.quantity;
-                          widget.materialQuantity =
-                              innerWallModel.materialQuantity;
-                          widget.laborHours1 = innerWallModel.laborHours1;
-                          widget.laborHours2 = innerWallModel.laborHours2;
-                          widget.laborCost = innerWallModel.laborCost;
-                          widget.material1 = innerWallModel.material1;
-                          widget.material2 = innerWallModel.material2;
-                          widget.totalPrice = innerWallModel.totalPrice;
-                          calculateCalculationQuantity();
-                          setInitialValues();
-                          updateTotalSum();
-                        });
-                      },
-                    );
+              FloatingActionButton(
+                onPressed: () async {
+                  final name = await openDialog();
+                  if (name == null || name.isEmpty) return;
+                  setState(() {
+                    this.name = name;
                   });
-                }),
-            FloatingActionButton(
-              heroTag: "btn3",
-              onPressed: () {
-                generateInnerWallExcelDocument(
-                  "InnerWallItems",
-                  columns,
-                  widget.description,
-                  widget.unit,
-                  quantityControllers,
-                  materialQuantityControllers,
-                  laborHours1Controllers,
-                  laborHours2Controllers,
-                  laborCostControllers,
-                  material1Controllers,
-                  material2Controllers,
-                  totalPriceControllers,
-                  widget.name,
-                );
-                ScaffoldMessenger.of(context).showSnackBar(
-                  SnackBar(
-                    content: Text(
-                        'Excel file has been created in your Downloads folder'),
-                  ),
-                );
-              },
-              child: Text("Save to excel"),
-            ),
-            SingleChildScrollView(
-              scrollDirection: Axis.horizontal,
-              child: DataTable(
-                dataRowMaxHeight: double.infinity,
-                dataRowMinHeight: 60,
-                columns: calculationColumns, // Define your columns here
-                rows: calculationRows,
+                  InnerWallModel innerWallModel = InnerWallModel(
+                    name: name,
+                    description: widget.description,
+                    unit: widget.unit,
+                    quantity: widget.quantity,
+                    materialQuantity: widget.materialQuantity,
+                    laborHours1: widget.laborHours1,
+                    laborHours2: widget.laborHours2,
+                    laborCost: widget.laborCost,
+                    material1: widget.material1,
+                    material2: widget.material2,
+                    totalPrice: widget.totalPrice,
+                  );
+                  writeJson(innerWallModel);
+                  ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                      content: Text('Data has been saved as $name.json')));
+                },
+                child: Text("Save to JSON"),
+                heroTag: "btn1",
               ),
-            )
-          ],
+              FloatingActionButton(
+                  child: Text("Load data"),
+                  heroTag: "btn2",
+                  onPressed: () {
+                    openLoadingDialog().then((value) {
+                      if (value == null || value.isEmpty) return;
+                      setState(() {
+                        this.name = value;
+                      });
+                      readJsonFile(name).then(
+                        (value) {
+                          InnerWallModel innerWallModel =
+                              InnerWallModel.fromJson(value);
+                          setState(() {
+                            widget.description = innerWallModel.description;
+                            widget.unit = innerWallModel.unit;
+                            widget.quantity = innerWallModel.quantity;
+                            widget.materialQuantity =
+                                innerWallModel.materialQuantity;
+                            widget.laborHours1 = innerWallModel.laborHours1;
+                            widget.laborHours2 = innerWallModel.laborHours2;
+                            widget.laborCost = innerWallModel.laborCost;
+                            widget.material1 = innerWallModel.material1;
+                            widget.material2 = innerWallModel.material2;
+                            widget.totalPrice = innerWallModel.totalPrice;
+                            calculateCalculationQuantity();
+                            setInitialValues();
+                            updateTotalSum();
+                          });
+                        },
+                      );
+                    });
+                  }),
+              FloatingActionButton(
+                heroTag: "btn3",
+                onPressed: () {
+                  generateInnerWallExcelDocument(
+                    "InnerWallItems",
+                    columns,
+                    widget.description,
+                    widget.unit,
+                    quantityControllers,
+                    materialQuantityControllers,
+                    laborHours1Controllers,
+                    laborHours2Controllers,
+                    laborCostControllers,
+                    material1Controllers,
+                    material2Controllers,
+                    totalPriceControllers,
+                    widget.name,
+                  );
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(
+                      content: Text(
+                          'Excel file has been created in your Downloads folder'),
+                    ),
+                  );
+                },
+                child: Text("Save to excel"),
+              ),
+              SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: DataTable(
+                  dataRowMaxHeight: double.infinity,
+                  dataRowMinHeight: 60,
+                  columns: calculationColumns, // Define your columns here
+                  rows: calculationRows,
+                ),
+              )
+            ],
+          ),
         ),
       ),
     );
