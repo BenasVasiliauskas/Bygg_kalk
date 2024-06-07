@@ -135,7 +135,6 @@ void reCalculate() {
   totalMaterialCosts[2] = innerWallMaterialCosts.values.reduce((s, e) => s + e);
   budgetSums[2] = innerWallBudgetSum.values.reduce((s, e) => s + e);
   //
-
   totalHours[3] = innerDoorHours.values.reduce((s, e) => s + e);
   totalLaborCosts[3] = innerDoorLaborCosts.values.reduce((s, e) => s + e);
   totalMaterialCosts[3] = innerDoorMaterialCosts.values.reduce((s, e) => s + e);
