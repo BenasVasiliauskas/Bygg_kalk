@@ -4,7 +4,6 @@ import 'package:cost_calculator/data/original_data.dart';
 import 'package:cost_calculator/functions/create_worksheet.dart';
 import 'package:cost_calculator/functions/initialise_functions.dart';
 import 'package:cost_calculator/functions/save_to_json.dart';
-import 'package:cost_calculator/items/outer_wall_item.dart';
 import 'package:cost_calculator/models/outer_wall_data_model.dart';
 import 'package:cost_calculator/pages/shared/globals/calculation_variables.dart';
 import 'package:flutter/material.dart';
@@ -176,59 +175,55 @@ class _ExteriorWallItemsScreenState extends State<ExteriorWallItemsScreen> {
     loadingController = TextEditingController();
   }
 
-  Future<void> _onWillPop(bool isDirty) async {
-    if (isDirty) {
-      // ignore: unused_local_variable
-      final shouldSave = await Future.delayed(Duration.zero);
-      showDialog<bool>(
-        context: context,
-        builder: (context) => AlertDialog(
-          title: Text('Unsaved Changes'),
-          content: Text(
-              'You have unsaved changes. Do you want to save them before leaving?'),
-          actions: [
+  void _updateLaborHours() {
+    if (!mounted) return; // Ensure the widget is still mounted
+
+    for (int i = 0; i < exteriorWallData.length; i++) {
+      if (exteriorWallData[i].name == widget.name) {
+        setState(() {
+          for (int j = 0; j < exteriorWallData[i].laborHours1.length; j++) {
+            widget.laborHours1[j] = exteriorWallData[i].laborHours1[j];
+          }
+        });
+        return;
+      }
+    }
+  }
+
+  Future<bool?> _showBackDialog() {
+    return showDialog<bool>(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: const Text("Do you want to save?"),
+          content: const Text(
+              "Are you sure you want to leave the page without saving?"),
+          actions: <Widget>[
             TextButton(
+              style: TextButton.styleFrom(
+                textStyle: Theme.of(context).textTheme.labelLarge,
+              ),
+              child: const Text('Save and leave'),
               onPressed: () {
-                exteriorWallData
-                    .map(
-                      (wallItem) => OuterWallItem(
-                        wallItem.name,
-                        wallItem.description,
-                        wallItem.unit,
-                        wallItem.quantity,
-                        wallItem.materialQuantity,
-                        wallItem.laborHours1,
-                        wallItem.laborHours2,
-                        wallItem.laborCost,
-                        wallItem.material,
-                        wallItem.materials,
-                        wallItem.totalPrice,
-                        wallItem.color,
-                      ),
-                    )
-                    .toList();
-                //slow and janky but works, now figure out how to make it pop up only on change
-                for (int i = 0; i < exteriorWallData.length; i++) {
-                  for (int j = 0; j < widget.description.length; j++) {
-                    widget.laborHours1[j] = exteriorWallData[i].laborHours1[j];
-                  }
-                }
                 markAsClean();
-                Navigator.of(context).pop();
+                Navigator.pop(context, true);
               },
-              child: Text('No'),
             ),
             TextButton(
+              style: TextButton.styleFrom(
+                textStyle: Theme.of(context).textTheme.labelLarge,
+              ),
+              child: const Text('Leave'),
               onPressed: () {
+                _updateLaborHours();
                 markAsClean();
-                Navigator.of(context).pop();
+                Navigator.pop(context, true);
               },
-              child: Text('Yes'),
             ),
           ],
-        ),
-      );
-    }
+        );
+      },
+    );
   }
 
   void calculateCalculationQuantity() {
@@ -647,7 +642,20 @@ class _ExteriorWallItemsScreenState extends State<ExteriorWallItemsScreen> {
     rows.add(totalSumRow);
 
     return PopScope(
-      onPopInvoked: isDirty ? _onWillPop : (didPop) {},
+      canPop: false,
+      onPopInvoked: (bool didPop) async {
+        if (didPop) {
+          return;
+        }
+        if (isDirty) {
+          final bool shouldPop = await _showBackDialog() ?? false;
+          if (context.mounted && shouldPop) {
+            Navigator.pop(context);
+          }
+        } else {
+          Navigator.pop(context);
+        }
+      },
       child: Scaffold(
         appBar: AppBar(
           title: Text(widget.name),

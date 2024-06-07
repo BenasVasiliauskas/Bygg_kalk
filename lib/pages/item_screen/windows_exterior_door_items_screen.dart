@@ -587,7 +587,6 @@ class _WindowsExteriorDoorItemsScreen
 
 // Add the "Total Sum" row to the rows list
     rows.add(totalSumRow);
-
     return PopScope(
       canPop: false,
       onPopInvoked: (bool didPop) async {
