@@ -164,12 +164,6 @@ List<DataColumn> calculationColumnsNorw = [
   DataColumn(
     label: Text('Mengde'),
   ),
-  DataColumn(
-    label: Text('Time pris. Ny bygg og ombygging.'),
-  ),
-  DataColumn(
-    label: Text('Enhet'),
-  ),
 ];
 
 DataRow totalSumRowNorw(

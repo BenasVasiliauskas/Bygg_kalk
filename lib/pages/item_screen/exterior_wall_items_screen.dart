@@ -333,8 +333,8 @@ class _ExteriorWallItemsScreenState extends State<ExteriorWallItemsScreen> {
             calculationQuantity = double.parse(value);
             for (int i = 0; i < widget.description.length; i++) {
               // Recalculate and update the material quantity when quantity changes
-              widget.materialQuantity[i] = calculateMaterialQuantity(
-                  i, widget.quantity, calculationQuantity);
+              widget.materialQuantity[i] =
+                  calculateMaterialQuantity(i, widget.quantity, hourlyRate);
 
               materialQuantityControllers[i].text = calculateMaterialQuantity(
                       i, widget.quantity, calculationQuantity)

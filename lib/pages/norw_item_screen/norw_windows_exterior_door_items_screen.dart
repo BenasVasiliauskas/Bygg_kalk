@@ -1,5 +1,6 @@
 // ignore_for_file: must_be_immutable
 
+import 'package:cost_calculator/data/norw_data_original.dart';
 import 'package:cost_calculator/functions/initialise_functions.dart';
 import 'package:cost_calculator/functions/save_to_json.dart';
 import 'package:cost_calculator/models/windows_exterior_doors_model.dart';
@@ -120,20 +121,108 @@ class _NorwWindowsExteriorDoorItemsScreenState
 
   void initialiseStates() {
     for (int i = 0; i < widget.description.length; i++) {
-      descriptionControllers.add(TextEditingController());
-      unitControllers.add(TextEditingController());
-      quantityControllers.add(TextEditingController());
-      materialQuantityControllers.add(TextEditingController());
-      laborHours1Controllers.add(TextEditingController());
-      laborHours2Controllers.add(TextEditingController());
-      laborCostControllers.add(TextEditingController());
-      material1Controllers.add(TextEditingController());
-      material2Controllers.add(TextEditingController());
-      totalPriceControllers.add(TextEditingController());
+      descriptionControllers.add(
+        TextEditingController(
+          text: widget.description[i],
+        ),
+      );
+      unitControllers.add(
+        TextEditingController(
+          text: widget.unit[i],
+        ),
+      );
+      quantityControllers.add(
+        TextEditingController(
+          text: widget.quantity[i].toStringAsFixed(2),
+        ),
+      );
+      laborHours1Controllers.add(
+        TextEditingController(
+          text: widget.laborHours1[i].toStringAsFixed(2),
+        ),
+      );
+      laborHours2Controllers.add(
+        TextEditingController(
+          text: widget.laborHours2[i].toStringAsFixed(2),
+        ),
+      );
+      laborCostControllers.add(
+        TextEditingController(
+          text: widget.laborCost[i].toStringAsFixed(2),
+        ),
+      );
+      material1Controllers.add(
+        TextEditingController(
+          text: widget.material1[i].toStringAsFixed(2),
+        ),
+      );
+      material2Controllers.add(
+        TextEditingController(
+          text: widget.material2[i].toStringAsFixed(2),
+        ),
+      );
+      totalPriceControllers.add(
+        TextEditingController(
+          text: widget.totalPrice[i].toStringAsFixed(2),
+        ),
+      );
     }
     initialiseEmptyList();
     savingController = TextEditingController();
     loadingController = TextEditingController();
+  }
+
+  void _updateLaborHours() {
+    if (!mounted) return; // Ensure the widget is still mounted
+
+    for (int i = 0; i < norwWindowsExteriorDoors.length; i++) {
+      if (norwWindowsExteriorDoors[i].name == widget.name) {
+        setState(() {
+          for (int j = 0;
+              j < norwWindowsExteriorDoors[i].laborHours1.length;
+              j++) {
+            widget.laborHours1[j] = norwWindowsExteriorDoors[i].laborHours1[j];
+          }
+        });
+        return;
+      }
+    }
+  }
+
+  Future<bool?> _showBackDialog() {
+    return showDialog<bool>(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: const Text("Vil du spare?"),
+          content: const Text(
+              "Er du sikker på at du vil forlate siden uten å lagre?"),
+          actions: <Widget>[
+            TextButton(
+              style: TextButton.styleFrom(
+                textStyle: Theme.of(context).textTheme.labelLarge,
+              ),
+              child: const Text('Lagre og gå'),
+              onPressed: () {
+                markAsClean();
+                Navigator.pop(context, true);
+              },
+            ),
+            TextButton(
+              style: TextButton.styleFrom(
+                textStyle: Theme.of(context).textTheme.labelLarge,
+              ),
+              child: const Text('Gå'),
+              onPressed: () {
+                _updateLaborHours();
+                markAsClean();
+                Navigator.pop(context, true);
+              },
+            ),
+          ],
+        );
+      },
+    );
   }
 
   void calculateCalculationQuantity() {
@@ -294,7 +383,7 @@ class _NorwWindowsExteriorDoorItemsScreenState
         DataRow(
           cells: [
             dataCellDisplay(widget.description, i, 120),
-            dataCellDisplay(widget.unit, i, 30, optionalPadding: 12),
+            dataCellDisplay(widget.unit, i, 40, optionalPadding: 12),
             dataCellDisplayController(quantityControllers, i),
 
             DataCell(
@@ -308,6 +397,7 @@ class _NorwWindowsExteriorDoorItemsScreenState
                       TextStyle(color: Theme.of(context).colorScheme.primary),
                   controller: laborHours1Controllers[i],
                   onChanged: (value) {
+                    isDirty = true;
                     //
                     double parsedValue = double.parse(value);
                     widget.laborHours1[i] = double.parse(
@@ -384,7 +474,7 @@ class _NorwWindowsExteriorDoorItemsScreenState
               },
               Theme.of(context).colorScheme.background,
               true,
-              optionalWidth: 45,
+              optionalWidth: 55,
             ),
             dataCellDo(
               laborCostControllers,
@@ -448,7 +538,7 @@ class _NorwWindowsExteriorDoorItemsScreenState
               },
               Color.fromARGB(255, 153, 240, 131),
               true,
-              optionalWidth: 55,
+              optionalWidth: 75,
             ),
           ],
         ),
@@ -531,137 +621,154 @@ class _NorwWindowsExteriorDoorItemsScreenState
             (value) {},
             Color.fromARGB(255, 153, 240, 131),
             true,
-            55),
+            75),
       ],
     );
 
 // Add the "Total Sum" row to the rows list
     rows.add(totalSumRow);
 
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.name),
-      ),
-      body: SingleChildScrollView(
-        scrollDirection: Axis.vertical,
-        child: Column(
-          children: [
-            SingleChildScrollView(
-              scrollDirection: Axis.horizontal,
-              child: DataTable(
-                border: TableBorder.all(
-                    width: 2, color: Theme.of(context).colorScheme.background),
-                horizontalMargin: 15,
-                columnSpacing: 0,
-                dataRowMaxHeight: double.infinity,
-                dataRowMinHeight: 60,
-                columns: columns, // Define your columns here
-                rows: rows,
+    return PopScope(
+      canPop: false,
+      onPopInvoked: (bool didPop) async {
+        if (didPop) {
+          return;
+        }
+        if (isDirty) {
+          final bool shouldPop = await _showBackDialog() ?? false;
+          if (context.mounted && shouldPop) {
+            Navigator.pop(context);
+          }
+        } else {
+          Navigator.pop(context);
+        }
+      },
+      child: Scaffold(
+        appBar: AppBar(
+          title: Text(widget.name),
+        ),
+        body: SingleChildScrollView(
+          scrollDirection: Axis.vertical,
+          child: Column(
+            children: [
+              SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: DataTable(
+                  border: TableBorder.all(
+                      width: 2,
+                      color: Theme.of(context).colorScheme.background),
+                  horizontalMargin: 15,
+                  columnSpacing: 0,
+                  dataRowMaxHeight: double.infinity,
+                  dataRowMinHeight: 60,
+                  columns: columns, // Define your columns here
+                  rows: rows,
+                ),
               ),
-            ),
-            FloatingActionButton(
-              onPressed: () {
-                generateNorwWindowsExteriorDoorExcelDocument(
-                  "Vinduer og ytterdører",
-                  columns,
-                  widget.description,
-                  widget.unit,
-                  quantityControllers,
-                  materialQuantityControllers,
-                  laborHours1Controllers,
-                  laborHours2Controllers,
-                  laborCostControllers,
-                  material1Controllers,
-                  material2Controllers,
-                  totalPriceControllers,
-                  widget.name,
-                );
-                ScaffoldMessenger.of(context).showSnackBar(
-                  SnackBar(
-                    content:
-                        Text('Excel-filen er opprettet i mappen Nedlastinger'),
-                  ),
-                );
-              },
-              child: Text("Save"),
-            ),
-            FloatingActionButton(
-              onPressed: () async {
-                final name = await openDialog();
-                if (name == null || name.isEmpty) return;
-                setState(() {
-                  this.name = name;
-                });
-                WindowsAndExteriorDoorsModel windowsAndExteriorDoorsModel =
-                    WindowsAndExteriorDoorsModel(
-                  name: name,
-                  description: widget.description,
-                  unit: widget.unit,
-                  quantity: widget.quantity,
-                  laborHours1: widget.laborHours1,
-                  laborHours2: widget.laborHours2,
-                  laborCost: widget.laborCost,
-                  material: widget.material1,
-                  materials: widget.material2,
-                  totalPrice: widget.totalPrice,
-                );
-                writeJson(windowsAndExteriorDoorsModel);
-                ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                    content: Text('Dataene er lagret som $name.json')));
-              },
-              child: Text("Lagre til JSON"),
-              heroTag: "btn1",
-            ),
-            FloatingActionButton(
-                child: Text("Last inn data"),
-                heroTag: "btn2",
+              FloatingActionButton(
                 onPressed: () {
-                  openLoadingDialog().then((value) {
-                    if (value == null || value.isEmpty) return;
-                    setState(() {
-                      this.name = value;
-                    });
-                    readJsonFile(name).then(
-                      (value) {
-                        WindowsAndExteriorDoorsModel
-                            windowsAndExteriorDoorsModel =
-                            WindowsAndExteriorDoorsModel.fromJson(value);
-                        setState(() {
-                          widget.description =
-                              windowsAndExteriorDoorsModel.description;
-                          widget.unit = windowsAndExteriorDoorsModel.unit;
-                          widget.quantity =
-                              windowsAndExteriorDoorsModel.quantity;
-                          widget.laborHours1 =
-                              windowsAndExteriorDoorsModel.laborHours1;
-                          widget.laborHours2 =
-                              windowsAndExteriorDoorsModel.laborHours2;
-                          widget.laborCost =
-                              windowsAndExteriorDoorsModel.laborCost;
-                          widget.material1 =
-                              windowsAndExteriorDoorsModel.material;
-                          widget.material2 =
-                              windowsAndExteriorDoorsModel.materials;
-                          widget.totalPrice =
-                              windowsAndExteriorDoorsModel.totalPrice;
-                          calculateCalculationQuantity();
-                          setInitialValues();
-                          updateTotalSum();
-                        });
-                      },
-                    );
-                  });
-                }),
-            SingleChildScrollView(
-              scrollDirection: Axis.horizontal,
-              child: DataTable(
-                dataRowMaxHeight: double.infinity,
-                dataRowMinHeight: 60,
-                columns: calculationColumns, // Define your columns here
-                rows: calculationRows,
+                  generateNorwWindowsExteriorDoorExcelDocument(
+                    "Vinduer og ytterdører",
+                    columns,
+                    widget.description,
+                    widget.unit,
+                    quantityControllers,
+                    materialQuantityControllers,
+                    laborHours1Controllers,
+                    laborHours2Controllers,
+                    laborCostControllers,
+                    material1Controllers,
+                    material2Controllers,
+                    totalPriceControllers,
+                    widget.name,
+                  );
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(
+                      content: Text(
+                          'Excel-filen er opprettet i mappen Nedlastinger'),
+                    ),
+                  );
+                },
+                child: Text("Save"),
               ),
-            )
-          ],
+              FloatingActionButton(
+                onPressed: () async {
+                  final name = await openDialog();
+                  if (name == null || name.isEmpty) return;
+                  setState(() {
+                    this.name = name;
+                  });
+                  WindowsAndExteriorDoorsModel windowsAndExteriorDoorsModel =
+                      WindowsAndExteriorDoorsModel(
+                    name: name,
+                    description: widget.description,
+                    unit: widget.unit,
+                    quantity: widget.quantity,
+                    laborHours1: widget.laborHours1,
+                    laborHours2: widget.laborHours2,
+                    laborCost: widget.laborCost,
+                    material: widget.material1,
+                    materials: widget.material2,
+                    totalPrice: widget.totalPrice,
+                  );
+                  writeJson(windowsAndExteriorDoorsModel);
+                  ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                      content: Text('Dataene er lagret som $name.json')));
+                },
+                child: Text("Lagre til JSON"),
+                heroTag: "btn1",
+              ),
+              FloatingActionButton(
+                  child: Text("Last inn data"),
+                  heroTag: "btn2",
+                  onPressed: () {
+                    openLoadingDialog().then((value) {
+                      if (value == null || value.isEmpty) return;
+                      setState(() {
+                        this.name = value;
+                      });
+                      readJsonFile(name).then(
+                        (value) {
+                          WindowsAndExteriorDoorsModel
+                              windowsAndExteriorDoorsModel =
+                              WindowsAndExteriorDoorsModel.fromJson(value);
+                          setState(() {
+                            widget.description =
+                                windowsAndExteriorDoorsModel.description;
+                            widget.unit = windowsAndExteriorDoorsModel.unit;
+                            widget.quantity =
+                                windowsAndExteriorDoorsModel.quantity;
+                            widget.laborHours1 =
+                                windowsAndExteriorDoorsModel.laborHours1;
+                            widget.laborHours2 =
+                                windowsAndExteriorDoorsModel.laborHours2;
+                            widget.laborCost =
+                                windowsAndExteriorDoorsModel.laborCost;
+                            widget.material1 =
+                                windowsAndExteriorDoorsModel.material;
+                            widget.material2 =
+                                windowsAndExteriorDoorsModel.materials;
+                            widget.totalPrice =
+                                windowsAndExteriorDoorsModel.totalPrice;
+                            calculateCalculationQuantity();
+                            setInitialValues();
+                            updateTotalSum();
+                          });
+                        },
+                      );
+                    });
+                  }),
+              SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: DataTable(
+                  dataRowMaxHeight: double.infinity,
+                  dataRowMinHeight: 60,
+                  columns: calculationColumns, // Define your columns here
+                  rows: calculationRows,
+                ),
+              )
+            ],
+          ),
         ),
       ),
     );

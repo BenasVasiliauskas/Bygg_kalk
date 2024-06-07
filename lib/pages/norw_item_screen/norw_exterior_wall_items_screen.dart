@@ -1,5 +1,6 @@
 // ignore_for_file: must_be_immutable
 
+import 'package:cost_calculator/data/norw_data_original.dart';
 import 'package:cost_calculator/functions/initialise_functions.dart';
 import 'package:cost_calculator/functions/save_to_json.dart';
 import 'package:cost_calculator/models/outer_wall_data_model.dart';
@@ -136,16 +137,56 @@ class _NorwExteriorWallItemsScreenState
 
   void initialiseStates() {
     for (int i = 0; i < widget.description.length; i++) {
-      descriptionControllers.add(TextEditingController());
-      unitControllers.add(TextEditingController());
-      quantityControllers.add(TextEditingController());
-      materialQuantityControllers.add(TextEditingController());
-      laborHours1Controllers.add(TextEditingController());
-      laborHours2Controllers.add(TextEditingController());
-      laborCostControllers.add(TextEditingController());
-      material1Controllers.add(TextEditingController());
-      material2Controllers.add(TextEditingController());
-      totalPriceControllers.add(TextEditingController());
+      descriptionControllers.add(
+        TextEditingController(
+          text: widget.description[i],
+        ),
+      );
+      unitControllers.add(
+        TextEditingController(
+          text: widget.unit[i],
+        ),
+      );
+      quantityControllers.add(
+        TextEditingController(
+          text: widget.quantity[i].toStringAsFixed(2),
+        ),
+      );
+      materialQuantityControllers.add(
+        TextEditingController(
+          text: widget.materialQuantity[i].toStringAsFixed(2),
+        ),
+      );
+      laborHours1Controllers.add(
+        TextEditingController(
+          text: widget.laborHours1[i].toStringAsFixed(2),
+        ),
+      );
+      laborHours2Controllers.add(
+        TextEditingController(
+          text: widget.laborHours2[i].toStringAsFixed(2),
+        ),
+      );
+      laborCostControllers.add(
+        TextEditingController(
+          text: widget.laborCost[i].toStringAsFixed(2),
+        ),
+      );
+      material1Controllers.add(
+        TextEditingController(
+          text: widget.material1[i].toStringAsFixed(2),
+        ),
+      );
+      material2Controllers.add(
+        TextEditingController(
+          text: widget.material2[i].toStringAsFixed(2),
+        ),
+      );
+      totalPriceControllers.add(
+        TextEditingController(
+          text: widget.totalPrice[i].toStringAsFixed(2),
+        ),
+      );
     }
     initialiseEmptyList();
     savingController = TextEditingController();
@@ -170,6 +211,57 @@ class _NorwExteriorWallItemsScreenState
         calculationQuantity.toStringAsFixed(2);
 
     recalculateValues();
+  }
+
+  void _updateLaborHours() {
+    if (!mounted) return; // Ensure the widget is still mounted
+
+    for (int i = 0; i < norwExteriorWallData.length; i++) {
+      if (norwExteriorWallData[i].name == widget.name) {
+        setState(() {
+          for (int j = 0; j < norwExteriorWallData[i].laborHours1.length; j++) {
+            widget.laborHours1[j] = norwExteriorWallData[i].laborHours1[j];
+          }
+        });
+        return;
+      }
+    }
+  }
+
+  Future<bool?> _showBackDialog() {
+    return showDialog<bool>(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: const Text("Vil du spare?"),
+          content: const Text(
+              "Er du sikker på at du vil forlate siden uten å lagre?"),
+          actions: <Widget>[
+            TextButton(
+              style: TextButton.styleFrom(
+                textStyle: Theme.of(context).textTheme.labelLarge,
+              ),
+              child: const Text('Lagre og gå'),
+              onPressed: () {
+                markAsClean();
+                Navigator.pop(context, true);
+              },
+            ),
+            TextButton(
+              style: TextButton.styleFrom(
+                textStyle: Theme.of(context).textTheme.labelLarge,
+              ),
+              child: const Text('Gå'),
+              onPressed: () {
+                _updateLaborHours();
+                markAsClean();
+                Navigator.pop(context, true);
+              },
+            ),
+          ],
+        );
+      },
+    );
   }
 
   void recalculateValues() {
@@ -207,7 +299,7 @@ class _NorwExteriorWallItemsScreenState
         i,
         widget.laborCost,
         widget.material1,
-        calculationQuantity,
+        hourlyRate,
       );
       totalPriceControllers[i].text = widget.totalPrice[i].toStringAsFixed(2);
     }
@@ -251,9 +343,9 @@ class _NorwExteriorWallItemsScreenState
                   .toStringAsFixed(2);
 
               widget.laborHours2[i] = calculateWorkHours2(
-                  i, emptyCustomList, widget.laborHours1, calculationQuantity);
-              laborHours2Controllers[i].text = calculateWorkHours2(i,
-                      emptyCustomList, widget.laborHours1, calculationQuantity)
+                  i, emptyCustomList, widget.laborHours1, hourlyRate);
+              laborHours2Controllers[i].text = calculateWorkHours2(
+                      i, emptyCustomList, widget.laborHours1, hourlyRate)
                   .toStringAsFixed(2);
 
               widget.laborCost[i] =
@@ -270,16 +362,16 @@ class _NorwExteriorWallItemsScreenState
 
               // Recalculate and update the material 2 when quantity changes
               widget.material2[i] = calculateMaterialCost(
-                  i, widget.material1, calculationQuantity, emptyCustomList);
+                  i, widget.material1, hourlyRate, emptyCustomList);
               material2Controllers[i].text = calculateMaterialCost(
-                      i, widget.material1, calculationQuantity, emptyCustomList)
+                      i, widget.material1, hourlyRate, emptyCustomList)
                   .toStringAsFixed(2);
 
               // Recalculate and update the total price when quantity changes
               widget.totalPrice[i] = calculateTotalPrice(
-                  i, widget.laborCost, widget.material1, calculationQuantity);
-              totalPriceControllers[i].text = calculateTotalPrice(i,
-                      widget.laborCost, widget.material1, calculationQuantity)
+                  i, widget.laborCost, widget.material1, hourlyRate);
+              totalPriceControllers[i].text = calculateTotalPrice(
+                      i, widget.laborCost, widget.material1, hourlyRate)
                   .toStringAsFixed(2);
               //Rebuild the data table
               rebuildDataTable();
@@ -312,7 +404,7 @@ class _NorwExteriorWallItemsScreenState
         DataRow(
           cells: [
             dataCellDisplay(widget.description, i, 120),
-            dataCellDisplay(widget.unit, i, 30, optionalPadding: 12),
+            dataCellDisplay(widget.unit, i, 40, optionalPadding: 12),
             dataCellDisplayController(quantityControllers, i),
             dataCellDo(
               materialQuantityControllers,
@@ -335,6 +427,7 @@ class _NorwExteriorWallItemsScreenState
                       TextStyle(color: Theme.of(context).colorScheme.secondary),
                   controller: laborHours1Controllers[i],
                   onChanged: (value) {
+                    isDirty = true;
                     //
                     double parsedValue = double.parse(value);
                     widget.laborHours1[i] = double.parse(
@@ -366,26 +459,17 @@ class _NorwExteriorWallItemsScreenState
                             .toStringAsFixed(2);
 
                     // Recalculate and update the material 2 when quantity changes
-                    widget.material2[i] = calculateMaterialCost(i,
-                        widget.material1, calculationQuantity, emptyCustomList);
+                    widget.material2[i] = calculateMaterialCost(
+                        i, widget.material1, hourlyRate, emptyCustomList);
                     material2Controllers[i].text = calculateMaterialCost(
-                            i,
-                            widget.material1,
-                            calculationQuantity,
-                            emptyCustomList)
+                            i, widget.material1, hourlyRate, emptyCustomList)
                         .toStringAsFixed(2);
 
                     // Recalculate and update the total price when quantity changes
                     widget.totalPrice[i] = calculateTotalPrice(
-                        i,
-                        widget.laborCost,
-                        widget.material1,
-                        calculationQuantity);
+                        i, widget.laborCost, widget.material1, hourlyRate);
                     totalPriceControllers[i].text = calculateTotalPrice(
-                            i,
-                            widget.laborCost,
-                            widget.material1,
-                            calculationQuantity)
+                            i, widget.laborCost, widget.material1, hourlyRate)
                         .toStringAsFixed(2);
                     rebuildDataTable();
                   },
@@ -411,7 +495,7 @@ class _NorwExteriorWallItemsScreenState
               },
               Theme.of(context).colorScheme.background,
               true,
-              optionalWidth: 45,
+              optionalWidth: 55,
             ),
             dataCellDo(
               laborCostControllers,
@@ -475,7 +559,7 @@ class _NorwExteriorWallItemsScreenState
               },
               Color.fromARGB(255, 153, 240, 131),
               true,
-              optionalWidth: 55,
+              optionalWidth: 75,
             ),
           ],
         ),
@@ -570,123 +654,140 @@ class _NorwExteriorWallItemsScreenState
 // Add the "Total Sum" row to the rows list
     rows.add(totalSumRow);
 
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.name),
-      ),
-      body: SingleChildScrollView(
-        scrollDirection: Axis.vertical,
-        child: Column(
-          children: [
-            SingleChildScrollView(
-              scrollDirection: Axis.horizontal,
-              child: DataTable(
-                border: TableBorder.all(
-                    width: 2, color: Theme.of(context).colorScheme.background),
-                horizontalMargin: 15,
-                columnSpacing: 0,
-                dataRowMaxHeight: double.infinity,
-                dataRowMinHeight: 60,
-                columns: columns, // Define your columns here
-                rows: rows,
+    return PopScope(
+      canPop: false,
+      onPopInvoked: (bool didPop) async {
+        if (didPop) {
+          return;
+        }
+        if (isDirty) {
+          final bool shouldPop = await _showBackDialog() ?? false;
+          if (context.mounted && shouldPop) {
+            Navigator.pop(context);
+          }
+        } else {
+          Navigator.pop(context);
+        }
+      },
+      child: Scaffold(
+        appBar: AppBar(
+          title: Text(widget.name),
+        ),
+        body: SingleChildScrollView(
+          scrollDirection: Axis.vertical,
+          child: Column(
+            children: [
+              SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: DataTable(
+                  border: TableBorder.all(
+                      width: 2,
+                      color: Theme.of(context).colorScheme.background),
+                  horizontalMargin: 15,
+                  columnSpacing: 0,
+                  dataRowMaxHeight: double.infinity,
+                  dataRowMinHeight: 60,
+                  columns: columns, // Define your columns here
+                  rows: rows,
+                ),
               ),
-            ),
-            FloatingActionButton(
-              onPressed: () {
-                generateNorwExteriorWallExcelDocument(
-                  "Yttervegger",
-                  columns,
-                  widget.description,
-                  widget.unit,
-                  quantityControllers,
-                  materialQuantityControllers,
-                  laborHours1Controllers,
-                  laborHours2Controllers,
-                  laborCostControllers,
-                  material1Controllers,
-                  material2Controllers,
-                  totalPriceControllers,
-                  widget.name,
-                );
-                ScaffoldMessenger.of(context).showSnackBar(
-                  SnackBar(
-                    content:
-                        Text('Excel-filen er opprettet i mappen Nedlastinger'),
-                  ),
-                );
-              },
-              child: Text("Lagre i Excel"),
-            ),
-            FloatingActionButton(
-              onPressed: () async {
-                final name = await openDialog();
-                if (name == null || name.isEmpty) return;
-                setState(() {
-                  this.name = name;
-                });
-                OuterWallModel outerwallModel = OuterWallModel(
-                  name: name,
-                  description: widget.description,
-                  unit: widget.unit,
-                  quantity: widget.quantity,
-                  materialQuantity: widget.materialQuantity,
-                  laborHours1: widget.laborHours1,
-                  laborHours2: widget.laborHours2,
-                  laborCost: widget.laborCost,
-                  material: widget.material1,
-                  materials: widget.material2,
-                  totalPrice: widget.totalPrice,
-                );
-                writeJson(outerwallModel);
-                ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                    content: Text('Dataene er lagret som $name.json')));
-              },
-              child: Text("Lagre til JSON"),
-              heroTag: "btn1",
-            ),
-            FloatingActionButton(
-                child: Text("Last inn data"),
-                heroTag: "btn2",
+              FloatingActionButton(
                 onPressed: () {
-                  openLoadingDialog().then((value) {
-                    if (value == null || value.isEmpty) return;
-                    setState(() {
-                      this.name = value;
-                    });
-                    readJsonFile(name).then(
-                      (value) {
-                        OuterWallModel outerwallModel =
-                            OuterWallModel.fromJson(value);
-                        setState(() {
-                          widget.description = outerwallModel.description;
-                          widget.unit = outerwallModel.unit;
-                          widget.quantity = outerwallModel.quantity;
-                          widget.materialQuantity =
-                              outerwallModel.materialQuantity;
-                          widget.laborHours1 = outerwallModel.laborHours1;
-                          widget.laborHours2 = outerwallModel.laborHours2;
-                          widget.laborCost = outerwallModel.laborCost;
-                          widget.material1 = outerwallModel.material;
-                          widget.material2 = outerwallModel.materials;
-                          widget.totalPrice = outerwallModel.totalPrice;
-                          calculateCalculationQuantity();
-                          setInitialValues();
-                          updateTotalSum();
-                        });
-                      },
-                    );
-                  });
-                }),
-            SingleChildScrollView(
-              scrollDirection: Axis.horizontal,
-              child: DataTable(
-                dataRowMaxHeight: double.infinity,
-                dataRowMinHeight: 60,
-                columns: calculationColumns, // Define your columns here
-                rows: calculationRows,
+                  generateNorwExteriorWallExcelDocument(
+                    "Yttervegger",
+                    columns,
+                    widget.description,
+                    widget.unit,
+                    quantityControllers,
+                    materialQuantityControllers,
+                    laborHours1Controllers,
+                    laborHours2Controllers,
+                    laborCostControllers,
+                    material1Controllers,
+                    material2Controllers,
+                    totalPriceControllers,
+                    widget.name,
+                  );
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(
+                      content: Text(
+                          'Excel-filen er opprettet i mappen Nedlastinger'),
+                    ),
+                  );
+                },
+                child: Text("Lagre i Excel"),
               ),
-            )
-          ],
+              FloatingActionButton(
+                onPressed: () async {
+                  final name = await openDialog();
+                  if (name == null || name.isEmpty) return;
+                  setState(() {
+                    this.name = name;
+                  });
+                  OuterWallModel outerwallModel = OuterWallModel(
+                    name: name,
+                    description: widget.description,
+                    unit: widget.unit,
+                    quantity: widget.quantity,
+                    materialQuantity: widget.materialQuantity,
+                    laborHours1: widget.laborHours1,
+                    laborHours2: widget.laborHours2,
+                    laborCost: widget.laborCost,
+                    material: widget.material1,
+                    materials: widget.material2,
+                    totalPrice: widget.totalPrice,
+                  );
+                  writeJson(outerwallModel);
+                  ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                      content: Text('Dataene er lagret som $name.json')));
+                },
+                child: Text("Lagre til JSON"),
+                heroTag: "btn1",
+              ),
+              FloatingActionButton(
+                  child: Text("Last inn data"),
+                  heroTag: "btn2",
+                  onPressed: () {
+                    openLoadingDialog().then((value) {
+                      if (value == null || value.isEmpty) return;
+                      setState(() {
+                        this.name = value;
+                      });
+                      readJsonFile(name).then(
+                        (value) {
+                          OuterWallModel outerwallModel =
+                              OuterWallModel.fromJson(value);
+                          setState(() {
+                            widget.description = outerwallModel.description;
+                            widget.unit = outerwallModel.unit;
+                            widget.quantity = outerwallModel.quantity;
+                            widget.materialQuantity =
+                                outerwallModel.materialQuantity;
+                            widget.laborHours1 = outerwallModel.laborHours1;
+                            widget.laborHours2 = outerwallModel.laborHours2;
+                            widget.laborCost = outerwallModel.laborCost;
+                            widget.material1 = outerwallModel.material;
+                            widget.material2 = outerwallModel.materials;
+                            widget.totalPrice = outerwallModel.totalPrice;
+                            calculateCalculationQuantity();
+                            setInitialValues();
+                            updateTotalSum();
+                          });
+                        },
+                      );
+                    });
+                  }),
+              SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: DataTable(
+                  dataRowMaxHeight: double.infinity,
+                  dataRowMinHeight: 60,
+                  columns: calculationColumns, // Define your columns here
+                  rows: calculationRows,
+                ),
+              )
+            ],
+          ),
         ),
       ),
     );
