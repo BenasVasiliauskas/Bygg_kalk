@@ -25,14 +25,53 @@ Future<File> localFile(String name) async {
   return File('$path/${name}.json');
 }
 
-Future<File> writeJson(var wallModel) async {
-  final file = await localFile(wallModel.name);
+Future<void> fileDeleteIfExists(String name) async {
+  final file = await localFile(name);
+  if (await file.exists()) {
+    file.delete();
+  }
+}
 
+Future<File> writeJsonArrayStart(String name) async {
+  final file = await localFile(name);
+  await file.writeAsString(
+    mode: FileMode.writeOnlyAppend,
+    "[",
+  );
+
+  return file;
+}
+
+Future<File> writeJsonComma(String name) async {
+  final file = await localFile(name);
+  await file.writeAsString(
+    mode: FileMode.writeOnlyAppend,
+    ",",
+  );
+
+  return file;
+}
+
+Future<File> writeJsonArrayEnd(String name) async {
+  final file = await localFile(name);
+  await file.writeAsString(
+    mode: FileMode.writeOnlyAppend,
+    "]",
+  );
+
+  return file;
+}
+
+Future<File> writeJson(var model, String name) async {
+  final file = await localFile(name);
   // Convert list of objects to a list of maps
-  Map<String, dynamic> jsonData = wallModel.toJson();
+  Map<String, dynamic> jsonData = model.toJson();
 
   // Write the JSON string to the file
-  await file.writeAsString(jsonEncode(jsonData));
+  await file.writeAsString(
+    mode: FileMode.writeOnlyAppend,
+    jsonEncode(jsonData),
+  );
 
   return file;
 }

@@ -667,7 +667,7 @@ class _InnerDoorItemScreenState extends State<InnerDoorItemScreen> {
                     materials: widget.material2,
                     totalPrice: widget.totalPrice,
                   );
-                  writeJson(innerDoorModel);
+                  writeJson(innerDoorModel, name);
                   ScaffoldMessenger.of(context).showSnackBar(SnackBar(
                       content: Text('Data has been saved as $name.json')));
                 },

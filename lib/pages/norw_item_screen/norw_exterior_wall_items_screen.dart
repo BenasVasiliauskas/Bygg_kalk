@@ -737,7 +737,7 @@ class _NorwExteriorWallItemsScreenState
                     materials: widget.material2,
                     totalPrice: widget.totalPrice,
                   );
-                  writeJson(outerwallModel);
+                  writeJson(outerwallModel, name);
                   ScaffoldMessenger.of(context).showSnackBar(SnackBar(
                       content: Text('Dataene er lagret som $name.json')));
                 },

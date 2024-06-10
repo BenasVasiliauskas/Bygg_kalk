@@ -682,7 +682,7 @@ class _NorwParquetLaminatetemsScreenState
                     materials: widget.material2,
                     totalPrice: widget.totalPrice,
                   );
-                  writeJson(parquetAndLaminateModel);
+                  writeJson(parquetAndLaminateModel, name);
                   ScaffoldMessenger.of(context).showSnackBar(SnackBar(
                       content: Text('Dataene er lagret som $name.json')));
                 },

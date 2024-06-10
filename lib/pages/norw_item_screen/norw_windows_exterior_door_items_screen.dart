@@ -711,7 +711,7 @@ class _NorwWindowsExteriorDoorItemsScreenState
                     materials: widget.material2,
                     totalPrice: widget.totalPrice,
                   );
-                  writeJson(windowsAndExteriorDoorsModel);
+                  writeJson(windowsAndExteriorDoorsModel, name);
                   ScaffoldMessenger.of(context).showSnackBar(SnackBar(
                       content: Text('Dataene er lagret som $name.json')));
                 },

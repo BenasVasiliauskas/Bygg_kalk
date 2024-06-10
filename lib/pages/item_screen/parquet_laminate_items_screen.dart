@@ -637,7 +637,7 @@ class _ParquetLaminateItemsScreenState
                     materials: widget.material2,
                     totalPrice: widget.totalPrice,
                   );
-                  writeJson(parquetAndLaminateModel);
+                  writeJson(parquetAndLaminateModel, name);
                   ScaffoldMessenger.of(context).showSnackBar(SnackBar(
                       content: Text('Data has been saved as $name.json')));
                 },

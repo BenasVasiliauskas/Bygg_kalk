@@ -691,7 +691,7 @@ class _NorwInnerDoorItemScreenScreenState
                     materials: widget.material2,
                     totalPrice: widget.totalPrice,
                   );
-                  writeJson(innerDoorModel);
+                  writeJson(innerDoorModel, name);
                   ScaffoldMessenger.of(context).showSnackBar(SnackBar(
                       content: Text('Dataene er lagret som $name.json')));
                 },

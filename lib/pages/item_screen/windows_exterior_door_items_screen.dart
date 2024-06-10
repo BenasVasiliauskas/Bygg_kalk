@@ -644,7 +644,7 @@ class _WindowsExteriorDoorItemsScreen
                     materials: widget.material2,
                     totalPrice: widget.totalPrice,
                   );
-                  writeJson(windowsAndExteriorDoorsModel);
+                  writeJson(windowsAndExteriorDoorsModel, name);
                   ScaffoldMessenger.of(context).showSnackBar(SnackBar(
                       content: Text('Data has been saved as $name.json')));
                 },

@@ -698,7 +698,7 @@ class _ExteriorWallItemsScreenState extends State<ExteriorWallItemsScreen> {
                     materials: widget.material2,
                     totalPrice: widget.totalPrice,
                   );
-                  writeJson(outerwallModel);
+                  writeJson(outerwallModel, name);
                   ScaffoldMessenger.of(context).showSnackBar(SnackBar(
                       content: Text('Data has been saved as $name.json')));
                 },
