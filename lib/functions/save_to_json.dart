@@ -1,6 +1,3 @@
-// file picker doesnt work
-// make a pop up for user to input name then save the file to default download location?
-
 import 'dart:convert';
 import 'dart:io';
 import 'package:path_provider/path_provider.dart';
@@ -28,7 +25,7 @@ Future<File> localFile(String name) async {
 Future<void> fileDeleteIfExists(String name) async {
   final file = await localFile(name);
   if (await file.exists()) {
-    file.delete();
+    await file.delete();
   }
 }
 

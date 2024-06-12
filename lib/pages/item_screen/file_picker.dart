@@ -107,7 +107,7 @@ class _FilePickerScreenState extends State<FilePickerScreen> {
                       return;
                     }
                     WindowsAndExteriorDoorsModel windowsExteriorDoorsModel;
-                    fileDeleteIfExists(fileName);
+                    await fileDeleteIfExists(fileName);
                     //write a bracket for the start of the array
                     await writeJsonArrayStart(fileName);
                     for (var i = 0; i < windowsExteriorDoors.length; i++) {

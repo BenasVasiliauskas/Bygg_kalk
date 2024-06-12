@@ -229,8 +229,7 @@ class _WindowsExteriorDoorItemsScreen
 
     calculationQuantity = mat2Total / mat1Total;
 
-    quantityCalculationControllers.text =
-        calculationQuantity.toStringAsFixed(2);
+    quantityCalculationControllers.text = hourlyRate.toString();
   }
 
   void setInitialValues() {
@@ -626,14 +625,14 @@ class _WindowsExteriorDoorItemsScreen
               ),
               FloatingActionButton(
                 onPressed: () async {
-                  final name = await openDialog();
-                  if (name == null || name.isEmpty) return;
+                  final fileName = await openDialog();
+                  if (fileName == null || fileName.isEmpty) return;
                   setState(() {
-                    this.name = name;
+                    this.name = fileName;
                   });
                   WindowsAndExteriorDoorsModel windowsAndExteriorDoorsModel =
                       WindowsAndExteriorDoorsModel(
-                    name: name,
+                    name: fileName,
                     description: widget.description,
                     unit: widget.unit,
                     quantity: widget.quantity,
@@ -655,38 +654,46 @@ class _WindowsExteriorDoorItemsScreen
                   child: Text("Load data"),
                   heroTag: "btn2",
                   onPressed: () {
-                    openLoadingDialog().then((value) {
-                      if (value == null || value.isEmpty) return;
+                    openLoadingDialog().then((fileName) {
+                      if (fileName == null || fileName.isEmpty) return;
                       setState(() {
-                        this.name = value;
+                        this.name = fileName;
                       });
-                      readJsonFile(name).then(
+                      readJsonFile(fileName).then(
                         (value) {
-                          WindowsAndExteriorDoorsModel
-                              windowsAndExteriorDoorsModel =
-                              WindowsAndExteriorDoorsModel.fromJson(value);
-                          setState(() {
-                            widget.description =
-                                windowsAndExteriorDoorsModel.description;
-                            widget.unit = windowsAndExteriorDoorsModel.unit;
-                            widget.quantity =
-                                windowsAndExteriorDoorsModel.quantity;
-                            widget.laborHours1 =
-                                windowsAndExteriorDoorsModel.laborHours1;
-                            widget.laborHours2 =
-                                windowsAndExteriorDoorsModel.laborHours2;
-                            widget.laborCost =
-                                windowsAndExteriorDoorsModel.laborCost;
-                            widget.material1 =
-                                windowsAndExteriorDoorsModel.material;
-                            widget.material2 =
-                                windowsAndExteriorDoorsModel.materials;
-                            widget.totalPrice =
-                                windowsAndExteriorDoorsModel.totalPrice;
-                            calculateCalculationQuantity();
-                            setInitialValues();
-                            updateTotalSum();
-                          });
+                          for (int i = 0; i < value.length; i++) {
+                            WindowsAndExteriorDoorsModel
+                                windowsAndExteriorDoorsModel =
+                                WindowsAndExteriorDoorsModel.fromJson(value[i]);
+                            if (windowsAndExteriorDoorsModel.name ==
+                                widget.name) {
+                              setState(
+                                () {
+                                  widget.description =
+                                      windowsAndExteriorDoorsModel.description;
+                                  widget.unit =
+                                      windowsAndExteriorDoorsModel.unit;
+                                  widget.quantity =
+                                      windowsAndExteriorDoorsModel.quantity;
+                                  widget.laborHours1 =
+                                      windowsAndExteriorDoorsModel.laborHours1;
+                                  widget.laborHours2 =
+                                      windowsAndExteriorDoorsModel.laborHours2;
+                                  widget.laborCost =
+                                      windowsAndExteriorDoorsModel.laborCost;
+                                  widget.material1 =
+                                      windowsAndExteriorDoorsModel.material;
+                                  widget.material2 =
+                                      windowsAndExteriorDoorsModel.materials;
+                                  widget.totalPrice =
+                                      windowsAndExteriorDoorsModel.totalPrice;
+                                  setInitialValues();
+                                  calculateCalculationQuantity();
+                                  updateTotalSum();
+                                },
+                              );
+                            }
+                          }
                         },
                       );
                     });
