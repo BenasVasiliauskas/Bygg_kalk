@@ -709,38 +709,43 @@ class _ExteriorWallItemsScreenState extends State<ExteriorWallItemsScreen> {
                   child: Text("Load data"),
                   heroTag: "btn2",
                   onPressed: () {
-                    openLoadingDialog().then((fileName) {
-                      if (fileName == null || fileName.isEmpty) return;
-                      setState(() {
-                        this.name = fileName;
-                      });
-                      readJsonFile(fileName).then(
-                        (value) {
-                          for (int i = 0; i < value.length; i++) {
-                            OuterWallModel outerwallModel =
-                                OuterWallModel.fromJson(value[i]);
-                            if (outerwallModel.name == widget.name) {
-                              setState(() {
-                                widget.description = outerwallModel.description;
-                                widget.unit = outerwallModel.unit;
-                                widget.quantity = outerwallModel.quantity;
-                                widget.materialQuantity =
-                                    outerwallModel.materialQuantity;
-                                widget.laborHours1 = outerwallModel.laborHours1;
-                                widget.laborHours2 = outerwallModel.laborHours2;
-                                widget.laborCost = outerwallModel.laborCost;
-                                widget.material1 = outerwallModel.material;
-                                widget.material2 = outerwallModel.materials;
-                                widget.totalPrice = outerwallModel.totalPrice;
-                                setInitialValues();
-                                calculateCalculationQuantity();
-                                updateTotalSum();
-                              });
+                    openLoadingDialog().then(
+                      (fileName) {
+                        if (fileName == null || fileName.isEmpty) return;
+                        setState(() {
+                          this.name = fileName;
+                        });
+                        readJsonFile(fileName).then(
+                          (value) {
+                            for (int i = 0; i < value.length; i++) {
+                              OuterWallModel outerwallModel =
+                                  OuterWallModel.fromJson(value[i]);
+                              if (outerwallModel.name == widget.name) {
+                                setState(() {
+                                  widget.description =
+                                      outerwallModel.description;
+                                  widget.unit = outerwallModel.unit;
+                                  widget.quantity = outerwallModel.quantity;
+                                  widget.materialQuantity =
+                                      outerwallModel.materialQuantity;
+                                  widget.laborHours1 =
+                                      outerwallModel.laborHours1;
+                                  widget.laborHours2 =
+                                      outerwallModel.laborHours2;
+                                  widget.laborCost = outerwallModel.laborCost;
+                                  widget.material1 = outerwallModel.material;
+                                  widget.material2 = outerwallModel.materials;
+                                  widget.totalPrice = outerwallModel.totalPrice;
+                                  setInitialValues();
+                                  calculateCalculationQuantity();
+                                  updateTotalSum();
+                                });
+                              }
                             }
-                          }
-                        },
-                      );
-                    });
+                          },
+                        );
+                      },
+                    );
                   }),
               FloatingActionButton(
                 onPressed: () {

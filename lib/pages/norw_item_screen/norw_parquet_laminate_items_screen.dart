@@ -693,35 +693,41 @@ class _NorwParquetLaminatetemsScreenState
                   child: Text("Last inn data"),
                   heroTag: "btn2",
                   onPressed: () {
-                    openLoadingDialog().then((value) {
-                      if (value == null || value.isEmpty) return;
+                    openLoadingDialog().then((fileName) {
+                      if (fileName == null || fileName.isEmpty) return;
                       setState(() {
-                        this.name = value;
+                        this.name = fileName;
                       });
-                      readJsonFile(name).then(
+                      readJsonFile(fileName).then(
                         (value) {
-                          ParquetAndLaminateModel parquetAndLaminateModel =
-                              ParquetAndLaminateModel.fromJson(value);
-                          setState(() {
-                            widget.description =
-                                parquetAndLaminateModel.description;
-                            widget.unit = parquetAndLaminateModel.unit;
-                            widget.quantity = parquetAndLaminateModel.quantity;
-                            widget.laborHours1 =
-                                parquetAndLaminateModel.laborHours1;
-                            widget.laborHours2 =
-                                parquetAndLaminateModel.laborHours2;
-                            widget.laborCost =
-                                parquetAndLaminateModel.laborCost;
-                            widget.material1 = parquetAndLaminateModel.material;
-                            widget.material2 =
-                                parquetAndLaminateModel.materials;
-                            widget.totalPrice =
-                                parquetAndLaminateModel.totalPrice;
-                            calculateCalculationQuantity();
-                            setInitialValues();
-                            updateTotalSum();
-                          });
+                          for (int i = 0; i < value.length; i++) {
+                            ParquetAndLaminateModel parquetAndLaminateModel =
+                                ParquetAndLaminateModel.fromJson(value[i]);
+                            if (parquetAndLaminateModel.name == widget.name) {
+                              setState(() {
+                                widget.description =
+                                    parquetAndLaminateModel.description;
+                                widget.unit = parquetAndLaminateModel.unit;
+                                widget.quantity =
+                                    parquetAndLaminateModel.quantity;
+                                widget.laborHours1 =
+                                    parquetAndLaminateModel.laborHours1;
+                                widget.laborHours2 =
+                                    parquetAndLaminateModel.laborHours2;
+                                widget.laborCost =
+                                    parquetAndLaminateModel.laborCost;
+                                widget.material1 =
+                                    parquetAndLaminateModel.material;
+                                widget.material2 =
+                                    parquetAndLaminateModel.materials;
+                                widget.totalPrice =
+                                    parquetAndLaminateModel.totalPrice;
+                                setInitialValues();
+                                calculateCalculationQuantity();
+                                updateTotalSum();
+                              });
+                            }
+                          }
                         },
                       );
                     });

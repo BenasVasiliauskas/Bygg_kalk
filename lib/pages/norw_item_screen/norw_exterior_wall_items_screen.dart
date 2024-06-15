@@ -748,34 +748,43 @@ class _NorwExteriorWallItemsScreenState
                   child: Text("Last inn data"),
                   heroTag: "btn2",
                   onPressed: () {
-                    openLoadingDialog().then((value) {
-                      if (value == null || value.isEmpty) return;
-                      setState(() {
-                        this.name = value;
-                      });
-                      readJsonFile(name).then(
-                        (value) {
-                          OuterWallModel outerwallModel =
-                              OuterWallModel.fromJson(value);
-                          setState(() {
-                            widget.description = outerwallModel.description;
-                            widget.unit = outerwallModel.unit;
-                            widget.quantity = outerwallModel.quantity;
-                            widget.materialQuantity =
-                                outerwallModel.materialQuantity;
-                            widget.laborHours1 = outerwallModel.laborHours1;
-                            widget.laborHours2 = outerwallModel.laborHours2;
-                            widget.laborCost = outerwallModel.laborCost;
-                            widget.material1 = outerwallModel.material;
-                            widget.material2 = outerwallModel.materials;
-                            widget.totalPrice = outerwallModel.totalPrice;
-                            calculateCalculationQuantity();
-                            setInitialValues();
-                            updateTotalSum();
-                          });
-                        },
-                      );
-                    });
+                    openLoadingDialog().then(
+                      (fileName) {
+                        if (fileName == null || fileName.isEmpty) return;
+                        setState(() {
+                          this.name = fileName;
+                        });
+                        readJsonFile(fileName).then(
+                          (value) {
+                            for (int i = 0; i < value.length; i++) {
+                              OuterWallModel outerwallModel =
+                                  OuterWallModel.fromJson(value[i]);
+                              if (outerwallModel.name == widget.name) {
+                                setState(() {
+                                  widget.description =
+                                      outerwallModel.description;
+                                  widget.unit = outerwallModel.unit;
+                                  widget.quantity = outerwallModel.quantity;
+                                  widget.materialQuantity =
+                                      outerwallModel.materialQuantity;
+                                  widget.laborHours1 =
+                                      outerwallModel.laborHours1;
+                                  widget.laborHours2 =
+                                      outerwallModel.laborHours2;
+                                  widget.laborCost = outerwallModel.laborCost;
+                                  widget.material1 = outerwallModel.material;
+                                  widget.material2 = outerwallModel.materials;
+                                  widget.totalPrice = outerwallModel.totalPrice;
+                                  setInitialValues();
+                                  calculateCalculationQuantity();
+                                  updateTotalSum();
+                                });
+                              }
+                            }
+                          },
+                        );
+                      },
+                    );
                   }),
               SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
