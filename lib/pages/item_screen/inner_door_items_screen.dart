@@ -678,29 +678,33 @@ class _InnerDoorItemScreenState extends State<InnerDoorItemScreen> {
                   child: Text("Load data"),
                   heroTag: "btn2",
                   onPressed: () {
-                    openLoadingDialog().then((value) {
-                      if (value == null || value.isEmpty) return;
+                    openLoadingDialog().then((fileName) {
+                      if (fileName == null || fileName.isEmpty) return;
                       setState(() {
-                        this.name = value;
+                        this.name = fileName;
                       });
-                      readJsonFile(name).then(
+                      readJsonFile(fileName).then(
                         (value) {
-                          InnerDoorModel innerDoorModel =
-                              InnerDoorModel.fromJson(value);
-                          setState(() {
-                            widget.description = innerDoorModel.description;
-                            widget.unit = innerDoorModel.unit;
-                            widget.quantity = innerDoorModel.quantity;
-                            widget.laborHours1 = innerDoorModel.laborHours1;
-                            widget.laborHours2 = innerDoorModel.laborHours2;
-                            widget.laborCost = innerDoorModel.laborCost;
-                            widget.material1 = innerDoorModel.material;
-                            widget.material2 = innerDoorModel.materials;
-                            widget.totalPrice = innerDoorModel.totalPrice;
-                            calculateCalculationQuantity();
-                            setInitialValues();
-                            updateTotalSum();
-                          });
+                          for (int i = 0; i < value.length; i++) {
+                            InnerDoorModel innerDoorModel =
+                                InnerDoorModel.fromJson(value[i]);
+                            if (innerDoorModel.name == widget.name) {
+                              setState(() {
+                                widget.description = innerDoorModel.description;
+                                widget.unit = innerDoorModel.unit;
+                                widget.quantity = innerDoorModel.quantity;
+                                widget.laborHours1 = innerDoorModel.laborHours1;
+                                widget.laborHours2 = innerDoorModel.laborHours2;
+                                widget.laborCost = innerDoorModel.laborCost;
+                                widget.material1 = innerDoorModel.material;
+                                widget.material2 = innerDoorModel.materials;
+                                widget.totalPrice = innerDoorModel.totalPrice;
+                                setInitialValues();
+                                calculateCalculationQuantity();
+                                updateTotalSum();
+                              });
+                            }
+                          }
                         },
                       );
                     });

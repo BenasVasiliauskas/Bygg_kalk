@@ -709,31 +709,35 @@ class _ExteriorWallItemsScreenState extends State<ExteriorWallItemsScreen> {
                   child: Text("Load data"),
                   heroTag: "btn2",
                   onPressed: () {
-                    openLoadingDialog().then((value) {
-                      if (value == null || value.isEmpty) return;
+                    openLoadingDialog().then((fileName) {
+                      if (fileName == null || fileName.isEmpty) return;
                       setState(() {
-                        this.name = value;
+                        this.name = fileName;
                       });
-                      readJsonFile(name).then(
+                      readJsonFile(fileName).then(
                         (value) {
-                          OuterWallModel outerwallModel =
-                              OuterWallModel.fromJson(value);
-                          setState(() {
-                            widget.description = outerwallModel.description;
-                            widget.unit = outerwallModel.unit;
-                            widget.quantity = outerwallModel.quantity;
-                            widget.materialQuantity =
-                                outerwallModel.materialQuantity;
-                            widget.laborHours1 = outerwallModel.laborHours1;
-                            widget.laborHours2 = outerwallModel.laborHours2;
-                            widget.laborCost = outerwallModel.laborCost;
-                            widget.material1 = outerwallModel.material;
-                            widget.material2 = outerwallModel.materials;
-                            widget.totalPrice = outerwallModel.totalPrice;
-                            calculateCalculationQuantity();
-                            setInitialValues();
-                            updateTotalSum();
-                          });
+                          for (int i = 0; i < value.length; i++) {
+                            OuterWallModel outerwallModel =
+                                OuterWallModel.fromJson(value[i]);
+                            if (outerwallModel.name == widget.name) {
+                              setState(() {
+                                widget.description = outerwallModel.description;
+                                widget.unit = outerwallModel.unit;
+                                widget.quantity = outerwallModel.quantity;
+                                widget.materialQuantity =
+                                    outerwallModel.materialQuantity;
+                                widget.laborHours1 = outerwallModel.laborHours1;
+                                widget.laborHours2 = outerwallModel.laborHours2;
+                                widget.laborCost = outerwallModel.laborCost;
+                                widget.material1 = outerwallModel.material;
+                                widget.material2 = outerwallModel.materials;
+                                widget.totalPrice = outerwallModel.totalPrice;
+                                setInitialValues();
+                                calculateCalculationQuantity();
+                                updateTotalSum();
+                              });
+                            }
+                          }
                         },
                       );
                     });

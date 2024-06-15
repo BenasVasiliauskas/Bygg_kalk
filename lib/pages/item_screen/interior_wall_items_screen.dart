@@ -668,31 +668,35 @@ class _InteriorWallItemsScreenState extends State<InteriorWallItemsScreen> {
                   child: Text("Load data"),
                   heroTag: "btn2",
                   onPressed: () {
-                    openLoadingDialog().then((value) {
-                      if (value == null || value.isEmpty) return;
+                    openLoadingDialog().then((fileName) {
+                      if (fileName == null || fileName.isEmpty) return;
                       setState(() {
-                        this.name = value;
+                        this.name = fileName;
                       });
-                      readJsonFile(name).then(
+                      readJsonFile(fileName).then(
                         (value) {
-                          InnerWallModel innerWallModel =
-                              InnerWallModel.fromJson(value);
-                          setState(() {
-                            widget.description = innerWallModel.description;
-                            widget.unit = innerWallModel.unit;
-                            widget.quantity = innerWallModel.quantity;
-                            widget.materialQuantity =
-                                innerWallModel.materialQuantity;
-                            widget.laborHours1 = innerWallModel.laborHours1;
-                            widget.laborHours2 = innerWallModel.laborHours2;
-                            widget.laborCost = innerWallModel.laborCost;
-                            widget.material1 = innerWallModel.material1;
-                            widget.material2 = innerWallModel.material2;
-                            widget.totalPrice = innerWallModel.totalPrice;
-                            calculateCalculationQuantity();
-                            setInitialValues();
-                            updateTotalSum();
-                          });
+                          for (int i = 0; i < value.length; i++) {
+                            InnerWallModel innerWallModel =
+                                InnerWallModel.fromJson(value[i]);
+                            if (innerWallModel.name == widget.name) {
+                              setState(() {
+                                widget.description = innerWallModel.description;
+                                widget.unit = innerWallModel.unit;
+                                widget.quantity = innerWallModel.quantity;
+                                widget.materialQuantity =
+                                    innerWallModel.materialQuantity;
+                                widget.laborHours1 = innerWallModel.laborHours1;
+                                widget.laborHours2 = innerWallModel.laborHours2;
+                                widget.laborCost = innerWallModel.laborCost;
+                                widget.material1 = innerWallModel.material1;
+                                widget.material2 = innerWallModel.material2;
+                                widget.totalPrice = innerWallModel.totalPrice;
+                                calculateCalculationQuantity();
+                                setInitialValues();
+                                updateTotalSum();
+                              });
+                            }
+                          }
                         },
                       );
                     });
