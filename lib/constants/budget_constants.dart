@@ -4,6 +4,7 @@ List<String> calculatedNamesOrder = [
   'Interior walls',
   'Interior door',
   'Parquet and laminate',
+  "Totals"
 ];
 
 List<double> totalHours = [0, 0, 0, 0, 0, 0];
