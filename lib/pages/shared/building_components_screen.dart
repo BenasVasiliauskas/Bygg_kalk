@@ -1,5 +1,5 @@
 import 'package:cost_calculator/constants/language.dart';
-import 'package:cost_calculator/pages/item_screen/home_page.dart';
+import 'package:cost_calculator/pages/shared/home_page.dart';
 import 'package:cost_calculator/pages/item_sections/inner_door_sections.dart';
 import 'package:cost_calculator/pages/item_sections/inner_wall_sections.dart';
 import 'package:cost_calculator/pages/item_sections/outer_wall_sections.dart';

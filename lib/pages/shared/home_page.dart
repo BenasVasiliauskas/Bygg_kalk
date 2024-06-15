@@ -1,6 +1,6 @@
 import 'package:cost_calculator/constants/language.dart';
 import 'package:cost_calculator/pages/item_screen/file_picker.dart';
-import 'package:cost_calculator/pages/shared/budget_screen.dart';
+import 'package:cost_calculator/pages/item_screen/budget_screen.dart';
 import 'package:cost_calculator/pages/shared/building_components_screen.dart';
 import 'package:cost_calculator/pages/shared/options.dart';
 import 'package:cost_calculator/widgets/custom_drawer.dart';

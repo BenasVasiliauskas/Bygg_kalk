@@ -1,4 +1,4 @@
-import 'package:cost_calculator/pages/item_screen/home_page.dart';
+import 'package:cost_calculator/pages/shared/home_page.dart';
 import 'package:flutter/material.dart';
 
 class splashScreen extends StatefulWidget {
