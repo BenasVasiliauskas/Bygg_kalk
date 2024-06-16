@@ -54,11 +54,14 @@ class _SavingRowParquetLaminate extends State<SavingRowParquetLaminate> {
         TextButton(
           child: Text("Save"),
           onPressed: () async {
-            final name = await openDialog();
+            final fileName = await openDialog();
             //if name to file wasnt given
-            if (name == null || name.isEmpty) {
+            if (fileName == null || fileName.isEmpty) {
               return;
             }
+            await fileDeleteIfExists(fileName);
+            //write a bracket for the start of the array
+            await writeJsonArrayStart(fileName);
             ParquetAndLaminateModel ParquetLaminateModel;
             for (var i = 0; i < parquetAndLaminate.length; i++) {
               ParquetLaminateModel = ParquetAndLaminateModel(
@@ -73,11 +76,17 @@ class _SavingRowParquetLaminate extends State<SavingRowParquetLaminate> {
                 materials: parquetAndLaminate[i].materials,
                 totalPrice: parquetAndLaminate[i].totalPrice,
               );
-              writeJson(ParquetLaminateModel, name);
+              await writeJson(ParquetLaminateModel, fileName);
+              //write a comma for the next element, check if the length is over equals 1 and if it isnt the last element
+              if (parquetAndLaminate.length >= 1 &&
+                  i != parquetAndLaminate.length - 1) {
+                await writeJsonComma(fileName);
+              }
             }
+            await writeJsonArrayEnd(fileName);
             ScaffoldMessenger.of(context).showSnackBar(
               SnackBar(
-                content: Text('Data has been saved as $name.json'),
+                content: Text('Data has been saved as $fileName.json'),
               ),
             );
           },

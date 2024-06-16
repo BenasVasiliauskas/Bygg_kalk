@@ -54,11 +54,14 @@ class _SavingRowOuterWall extends State<SavingRowOuterWall> {
         TextButton(
           child: Text("Save"),
           onPressed: () async {
-            final name = await openDialog();
+            final fileName = await openDialog();
             //if name to file wasnt given
-            if (name == null || name.isEmpty) {
+            if (fileName == null || fileName.isEmpty) {
               return;
             }
+            await fileDeleteIfExists(fileName);
+            //write a bracket for the start of the array
+            await writeJsonArrayStart(fileName);
             OuterWallModel outerwallModel;
             for (var i = 0; i < exteriorWallData.length; i++) {
               outerwallModel = OuterWallModel(
@@ -74,11 +77,17 @@ class _SavingRowOuterWall extends State<SavingRowOuterWall> {
                 materials: exteriorWallData[i].materials,
                 totalPrice: exteriorWallData[i].totalPrice,
               );
-              writeJson(outerwallModel, name);
+              await writeJson(outerwallModel, fileName);
+              //write a comma for the next element, check if the length is over equals 1 and if it isnt the last element
+              if (exteriorWallData.length >= 1 &&
+                  i != exteriorWallData.length - 1) {
+                await writeJsonComma(fileName);
+              }
             }
+            await writeJsonArrayEnd(fileName);
             ScaffoldMessenger.of(context).showSnackBar(
               SnackBar(
-                content: Text('Data has been saved as $name.json'),
+                content: Text('Data has been saved as $fileName.json'),
               ),
             );
           },

@@ -1,0 +1,23 @@
+[
+  {
+    "name": "Interior door, pine 9x21",
+    "description": [
+      "Interior door Pine",
+      "Openings in timber frame, 1-2 m²",
+      "Lining pine door/window",
+      "Dytteremse around door",
+      "Feielist, oak lacquered, 9x20mm",
+      "Feielist, oak lacquered, 9x30mm",
+      "Door winder inner door",
+      "Frame strip pine, pre-painted"
+    ],
+    "unit": ["stk", "stk", "m", "lm", "lm", "lm", "stk", "lm"],
+    "quantity": [1.0, 1.0, 5.1, 11.0, 0.9, 0.9, 1.0, 10.6],
+    "laborHours1": [1.0, 0.35, 0.51, 0.11, 0.09, 0.09, 0.3, 1.06],
+    "laborHours2": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+    "laborCost": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+    "material": [1685.42, 162.05, 299.07, 78.32, 41.7, 62.56, 391.2, 507.85],
+    "materials": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+    "totalPrice": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+  }
+]

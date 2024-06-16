@@ -1,0 +1,253 @@
+[
+  {
+    "name": "Wooden truss 48x98, double sound wall, double plaster",
+    "description": [
+      "Skirting board pine, pre-painted",
+      "Pine ceiling molding, pre-painted",
+      "Grouting in front of sound wall/ceiling with grout",
+      "Plasterboard interior cladding, double plaster",
+      "Single timber frame solid wood without nails",
+      "Mineral wool A-plate",
+      "Single truss solid wood without nails",
+      "Mineral wool A-plate",
+      "Grouting in front of sound wall/ceiling w/grout",
+      "Plasterboard interior cladding, double plaster",
+      "Sparkling strip, stain sp.1, joint sp. 2, full sp.1, primer. 2 coats of paint",
+      "Pine ceiling molding, pre-painted",
+      "Pine skirting board, pre-painted"
+    ],
+    "unit": [
+      "lm",
+      "lm",
+      "lm",
+      "m²",
+      "m²",
+      "m²",
+      "m²",
+      "m²",
+      "lm",
+      "m²",
+      "m²",
+      "lm",
+      "lm"
+    ],
+    "quantity": [
+      0.42, 0.42, 1.2, 1.0, 1.0, 1.0, 1.0, 1.0, 1.2, 1.0, 1.0, 0.42, 0.42
+    ],
+    "materialQuantity": [
+      0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0
+    ],
+    "laborHours1": [
+      0.05, 0.05, 0.18, 0.36, 0.32, 0.09, 0.32, 0.09, 0.18, 0.36, 0.55, 0.05,
+      0.05
+    ],
+    "laborHours2": [
+      0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0
+    ],
+    "laborCost": [
+      0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0
+    ],
+    "material1": [
+      15.82, 16.71, 52.56, 102.25, 85.04, 76.4, 85.04, 76.4, 52.56, 102.25,
+      135.63, 16.71, 15.82
+    ],
+    "material2": [
+      0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0
+    ],
+    "totalPrice": [
+      0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0
+    ]
+  },
+  {
+    "name": "Wooden trusses 48x98, insulated, smooth panel",
+    "description": [
+      "Skirting board pine, pre-painted",
+      "Roof moulding pine, pre-painted",
+      "Smooth panel spruce, standing",
+      "Mineral wool A-plate",
+      "Single timber frame solid wood w/3 nails",
+      "Smooth panel spruce, vertical",
+      "Cornice pine, pre-painted",
+      "Skirting board pine, pre-painted"
+    ],
+    "unit": ["lm", "lm", "m²", "m²", "m²", "m²", "lm", "lm"],
+    "quantity": [0.42, 0.42, 1.0, 1.0, 1.0, 1.0, 0.42, 0.42],
+    "materialQuantity": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+    "laborHours1": [0.05, 0.05, 0.33, 0.09, 0.46, 0.33, 0.05, 0.05],
+    "laborHours2": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+    "laborCost": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+    "material1": [15.82, 16.71, 293.3, 76.4, 126.8, 293.3, 16.71, 15.82],
+    "material2": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+    "totalPrice": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+  },
+  {
+    "name": "Wooden truss 48x98, precut h=2400, plaster",
+    "description": [
+      "Skirting board pine, pre-painted",
+      "Cornice pine, pre-painted",
+      "Sparkling strip, stain sp.1, joint sp. 2, full sp.1, primer. 2 coats of paint",
+      "Plasterboard interior cladding, simple plaster",
+      "Mineral wool A-plate",
+      "Single timber frame solid wood precut h=2.4m, 3 sleepers",
+      "Plasterboard interior cladding, simple plaster",
+      "Sparkling strip, stain sp.1, joint sp. 2, full sp.1, primer. 2 coats of paint",
+      "Cornice pine, pre-painted",
+      "Skirting board pine, pre-painted"
+    ],
+    "unit": ["lm", "lm", "m²", "m²", "m²", "m²", "m²", "m²", "lm", "lm"],
+    "quantity": [1.0, 1.0, 2.4, 2.4, 2.4, 1.0, 2.4, 2.4, 1.0, 1.0],
+    "materialQuantity": [1.0, 1.0, 2.4, 2.4, 2.4, 1.0, 2.4, 2.4, 1.0, 1.0],
+    "laborHours1": [0.12, 0.13, 1.32, 0.55, 0.22, 0.4, 0.55, 1.32, 0.13, 0.12],
+    "laborHours2": [0.12, 0.13, 1.32, 0.55, 0.22, 0.4, 0.55, 1.32, 0.13, 0.12],
+    "laborCost": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+    "material1": [
+      37.66, 39.79, 325.51, 123.34, 183.36, 280.45, 123.34, 325.51, 39.79, 37.66
+    ],
+    "material2": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+    "totalPrice": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+  },
+  {
+    "name": "Steel trusses 2x75mm, double, insulated, plaster",
+    "description": [
+      "Skirting board pine, pre-painted",
+      "Cornice pine, pre-painted",
+      "Filler fermacell plasterboard",
+      "Grouting in front of sound wall/ceiling w/grout.",
+      "Plasterboard interior cladding, single plaster",
+      "Double timber frame, steel c/c 60",
+      "Mineral wool in steel studs",
+      "Plasterboard interior cladding, single plaster",
+      "Jointing at sound wall/ceiling w/jointing mat.",
+      "Filler fermacell plasterboard",
+      "Pine cornice, pre-painted",
+      "Skirting board pine, pre-painted"
+    ],
+    "unit": [
+      "lm",
+      "lm",
+      "m²",
+      "lm",
+      "m²",
+      "m²",
+      "m²",
+      "m²",
+      "lm",
+      "m²",
+      "lm",
+      "lm"
+    ],
+    "quantity": [
+      0.42, 0.42, 1.0, 1.2, 1.0, 1.0, 2.0, 1.0, 1.2, 1.0, 0.42, 0.42
+    ],
+    "materialQuantity": [
+      0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0
+    ],
+    "laborHours1": [
+      0.12, 0.13, 1.32, 0.55, 0.22, 0.4, 0.55, 1.32, 0.13, 0.12, 0.05, 0.05
+    ],
+    "laborHours2": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+    "laborCost": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+    "material1": [
+      15.82, 16.71, 135.63, 52.56, 102.25, 209.03, 124.0, 102.25, 52.56, 135.63,
+      16.71, 15.82
+    ],
+    "material2": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+    "totalPrice": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+  },
+  {
+    "name": "Steel trusses 2x100mm, double, insulated, plaster",
+    "description": [
+      "Skirting board pine, pre-painted",
+      "Cornice pine, pre-painted",
+      "Sparkling strip, stain sp.1, joint sp. 2, full sp.1, primer. 2 coats of paint",
+      "Grouting w/ sound wall/ceiling w/ grout.",
+      "Plasterboard interior cladding, simple plaster",
+      "Double timber frame, steel c/c 60",
+      "Mineral wool in steel studs",
+      "Plasterboard interior cladding, single plaster",
+      "Grouting at sound wall/ceiling w/jointing tape.",
+      "Sparkling strip, stain sp.1, joint sp. 2, full sp.1, primer. 2 coats of paint",
+      "Pine cornice, pre-painted",
+      "Skirting board pine, pre-painted"
+    ],
+    "unit": [
+      "lm",
+      "lm",
+      "m²",
+      "lm",
+      "m²",
+      "m²",
+      "m²",
+      "m²",
+      "lm",
+      "m²",
+      "lm",
+      "lm"
+    ],
+    "quantity": [
+      0.42, 0.42, 1.0, 1.2, 1.0, 1.0, 2.0, 1.0, 1.2, 1.0, 0.42, 0.42
+    ],
+    "materialQuantity": [
+      0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0
+    ],
+    "laborHours1": [
+      0.12, 0.13, 1.32, 0.55, 0.22, 0.4, 0.55, 1.32, 0.13, 0.12, 0.05, 0.05
+    ],
+    "laborHours2": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+    "laborCost": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+    "material1": [
+      15.82, 16.71, 135.63, 52.56, 102.25, 209.03, 124.0, 102.25, 52.56, 135.63,
+      16.71, 15.82
+    ],
+    "material2": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+    "totalPrice": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+  },
+  {
+    "name": "Steel trusses 2x75mm, double, insulated, double plaster",
+    "description": [
+      "Skirting board pine, pre-painted",
+      "Cornice pine, pre-painted",
+      "Sparkling strip, stain sp.1, joint sp. 2, full sp.1, primer. 2 coats of paint",
+      "Grouting w/ sound wall/ceiling w/ grout.",
+      "Plasterboard interior cladding, double plaster",
+      "Double timber frame, steel c/c 60",
+      "Mineral wool in steel studs",
+      "Plasterboard interior cladding, double plaster",
+      "Grouting at sound wall/ceiling w/jointing tape.",
+      "Sparkling strip, stain sp.1, joint sp. 2, full sp.1, primer. 2 coats of paint",
+      "Pine cornice, pre-painted",
+      "Skirting board pine, pre-painted"
+    ],
+    "unit": [
+      "lm",
+      "lm",
+      "m²",
+      "lm",
+      "m²",
+      "m²",
+      "m²",
+      "m²",
+      "lm",
+      "m²",
+      "lm",
+      "lm"
+    ],
+    "quantity": [
+      0.42, 0.42, 1.0, 1.2, 1.0, 1.0, 2.0, 1.0, 1.2, 1.0, 0.42, 0.42
+    ],
+    "materialQuantity": [
+      0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0
+    ],
+    "laborHours1": [
+      0.12, 0.13, 1.32, 0.55, 0.22, 0.4, 0.55, 1.32, 0.13, 0.12, 0.05, 0.05
+    ],
+    "laborHours2": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+    "laborCost": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+    "material1": [
+      15.82, 16.71, 135.63, 52.56, 102.25, 209.03, 124.0, 102.25, 52.56, 135.63,
+      16.71, 15.82
+    ],
+    "material2": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+    "totalPrice": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+  }
+]

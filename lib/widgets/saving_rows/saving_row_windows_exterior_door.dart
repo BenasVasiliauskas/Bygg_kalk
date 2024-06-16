@@ -55,11 +55,14 @@ class _SavingRowWindowExteriorDoor extends State<SavingRowWindowExteriorDoor> {
         TextButton(
           child: Text("Save"),
           onPressed: () async {
-            final name = await openDialog();
+            final fileName = await openDialog();
             //if name to file wasnt given
-            if (name == null || name.isEmpty) {
+            if (fileName == null || fileName.isEmpty) {
               return;
             }
+            await fileDeleteIfExists(fileName);
+            //write a bracket for the start of the array
+            await writeJsonArrayStart(fileName);
             WindowsAndExteriorDoorsModel WindowExteriorDoorModel;
             for (var i = 0; i < windowsExteriorDoors.length; i++) {
               WindowExteriorDoorModel = WindowsAndExteriorDoorsModel(
@@ -74,11 +77,17 @@ class _SavingRowWindowExteriorDoor extends State<SavingRowWindowExteriorDoor> {
                 materials: windowsExteriorDoors[i].materials,
                 totalPrice: windowsExteriorDoors[i].totalPrice,
               );
-              writeJson(WindowExteriorDoorModel, name);
+              await writeJson(WindowExteriorDoorModel, fileName);
+              //write a comma for the next element, check if the length is over equals 1 and if it isnt the last element
+              if (windowsExteriorDoors.length >= 1 &&
+                  i != windowsExteriorDoors.length - 1) {
+                await writeJsonComma(fileName);
+              }
             }
+            await writeJsonArrayEnd(fileName);
             ScaffoldMessenger.of(context).showSnackBar(
               SnackBar(
-                content: Text('Data has been saved as $name.json'),
+                content: Text('Data has been saved as $fileName.json'),
               ),
             );
           },
