@@ -706,7 +706,6 @@ class _InteriorWallItemsScreenState extends State<InteriorWallItemsScreen> {
                 onPressed: () {
                   generateInnerWallExcelDocument(
                     "InnerWallItems",
-                    columns,
                     widget.description,
                     widget.unit,
                     quantityControllers,

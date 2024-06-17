@@ -696,7 +696,6 @@ class _NorwInteriorWallItemsScreenState
                 onPressed: () {
                   generateNorwInnerWallExcelDocument(
                     "Innvendige vegger",
-                    columns,
                     widget.description,
                     widget.unit,
                     quantityControllers,

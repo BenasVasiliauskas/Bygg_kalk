@@ -749,12 +749,12 @@ class _ExteriorWallItemsScreenState extends State<ExteriorWallItemsScreen> {
                   }),
               FloatingActionButton(
                 onPressed: () {
-                  generateInnerDoorExcelDocument(
-                    "ExterioirWallItems",
-                    columns,
+                  generateOuterWallExcelDocument(
+                    "ExteriorWallItems",
                     widget.description,
                     widget.unit,
                     quantityControllers,
+                    materialQuantityControllers,
                     laborHours1Controllers,
                     laborHours2Controllers,
                     laborCostControllers,

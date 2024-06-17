@@ -669,7 +669,6 @@ class _NorwWindowsExteriorDoorItemsScreenState
                 onPressed: () {
                   generateNorwWindowsExteriorDoorExcelDocument(
                     "Vinduer og ytterdører",
-                    columns,
                     widget.description,
                     widget.unit,
                     quantityControllers,

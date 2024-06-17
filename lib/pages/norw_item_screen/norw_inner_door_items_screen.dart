@@ -650,7 +650,6 @@ class _NorwInnerDoorItemScreenScreenState
                 onPressed: () {
                   generateNorwInnerDoorExcelDocument(
                     "Innerdører",
-                    columns,
                     widget.description,
                     widget.unit,
                     quantityControllers,

@@ -640,7 +640,6 @@ class _NorwParquetLaminatetemsScreenState
                 onPressed: () {
                   generateNorwParquetAndLaminateExcelDocument(
                     "Parkett og laminat",
-                    columns,
                     widget.description,
                     widget.unit,
                     quantityControllers,

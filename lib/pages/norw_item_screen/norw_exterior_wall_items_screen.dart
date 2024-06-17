@@ -695,7 +695,6 @@ class _NorwExteriorWallItemsScreenState
                 onPressed: () {
                   generateNorwExteriorWallExcelDocument(
                     "Yttervegger",
-                    columns,
                     widget.description,
                     widget.unit,
                     quantityControllers,

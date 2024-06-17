@@ -702,7 +702,6 @@ class _WindowsExteriorDoorItemsScreen
                 onPressed: () {
                   generateWindowsOuterDoorExcelDocument(
                     "WindowsExteriorDoor",
-                    columns,
                     widget.description,
                     widget.unit,
                     quantityControllers,
