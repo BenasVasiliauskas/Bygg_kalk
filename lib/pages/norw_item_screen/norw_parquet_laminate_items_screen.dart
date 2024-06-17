@@ -643,7 +643,6 @@ class _NorwParquetLaminatetemsScreenState
                     widget.description,
                     widget.unit,
                     quantityControllers,
-                    materialQuantityControllers,
                     laborHours1Controllers,
                     laborHours2Controllers,
                     laborCostControllers,

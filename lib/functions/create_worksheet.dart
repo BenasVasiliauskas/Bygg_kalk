@@ -182,13 +182,12 @@ void addDataNorwExteriorWall(
   List<TextEditingController> totalPriceList,
 ) {
   double sumOfHours1 = 0;
-  double sumOfCustomHours = 0;
   double sumOfHours2 = 0;
   double sumOfJobCost = 0;
   double sumOfMaterial = 0;
   double sumOfMaterialCost = 0;
   double sumOfTotalPrice = 0;
-  Range range = worksheet.getRangeByName('A1:K1');
+  Range range = worksheet.getRangeByName('A1:J1');
   Range range1 = worksheet.getRangeByName('A1:A14');
 
   worksheet.getRangeByIndex(1, 1).setText('Beskrivelse');
@@ -196,12 +195,11 @@ void addDataNorwExteriorWall(
   worksheet.getRangeByIndex(1, 3).setText('Antall');
   worksheet.getRangeByIndex(1, 4).setText('Materialmengde');
   worksheet.getRangeByIndex(1, 5).setText('Timer');
-  worksheet.getRangeByIndex(1, 6).setText('Tilpassede timer');
-  worksheet.getRangeByIndex(1, 7).setText('Sum. tid.');
-  worksheet.getRangeByIndex(1, 8).setText('Jobbkostnad');
-  worksheet.getRangeByIndex(1, 9).setText('Materiale');
-  worksheet.getRangeByIndex(1, 10).setText('Materialkostnad');
-  worksheet.getRangeByIndex(1, 11).setText('Totalpris');
+  worksheet.getRangeByIndex(1, 6).setText('Sum. tid.');
+  worksheet.getRangeByIndex(1, 7).setText('Jobbkostnad');
+  worksheet.getRangeByIndex(1, 8).setText('Materiale');
+  worksheet.getRangeByIndex(1, 9).setText('Materialkostnad');
+  worksheet.getRangeByIndex(1, 10).setText('Totalpris');
 
   for (int i = 0; i <= descriptionList.length; i++) {
     if (i == descriptionList.length) {
@@ -210,14 +208,11 @@ void addDataNorwExteriorWall(
       worksheet.getRangeByIndex(i + 2, 3).setText("");
       worksheet.getRangeByIndex(i + 2, 4).setText("");
       worksheet.getRangeByIndex(i + 2, 5).setText(sumOfHours1.toString());
-      worksheet.getRangeByIndex(i + 2, 6).setText(sumOfCustomHours.toString());
-      worksheet.getRangeByIndex(i + 2, 7).setText(sumOfHours2.toString());
-      worksheet.getRangeByIndex(i + 2, 8).setText(sumOfJobCost.toString());
-      worksheet.getRangeByIndex(i + 2, 9).setText(sumOfMaterial.toString());
-      worksheet
-          .getRangeByIndex(i + 2, 10)
-          .setText(sumOfMaterialCost.toString());
-      worksheet.getRangeByIndex(i + 2, 11).setText(sumOfTotalPrice.toString());
+      worksheet.getRangeByIndex(i + 2, 6).setText(sumOfHours2.toString());
+      worksheet.getRangeByIndex(i + 2, 7).setText(sumOfJobCost.toString());
+      worksheet.getRangeByIndex(i + 2, 8).setText(sumOfMaterial.toString());
+      worksheet.getRangeByIndex(i + 2, 9).setText(sumOfMaterialCost.toString());
+      worksheet.getRangeByIndex(i + 2, 10).setText(sumOfTotalPrice.toString());
     } else {
       worksheet.getRangeByIndex(i + 2, 1).setText(descriptionList[i]);
       worksheet.getRangeByIndex(i + 2, 2).setText(unitList[i]);
@@ -226,15 +221,15 @@ void addDataNorwExteriorWall(
       worksheet.getRangeByIndex(i + 2, 5).setText(laborHours1List[i].text);
       sumOfHours1 += double.parse(laborHours1List[i].text);
 
-      worksheet.getRangeByIndex(i + 2, 7).setText(laborHours2List[i].text);
+      worksheet.getRangeByIndex(i + 2, 6).setText(laborHours2List[i].text);
       sumOfHours2 += double.parse(laborHours2List[i].text);
-      worksheet.getRangeByIndex(i + 2, 8).setText(laborCostList[i].text);
+      worksheet.getRangeByIndex(i + 2, 7).setText(laborCostList[i].text);
       sumOfJobCost += double.parse(laborCostList[i].text);
-      worksheet.getRangeByIndex(i + 2, 9).setText(material1List[i].text);
+      worksheet.getRangeByIndex(i + 2, 8).setText(material1List[i].text);
       sumOfMaterial += double.parse(material1List[i].text);
-      worksheet.getRangeByIndex(i + 2, 10).setText(material2List[i].text);
+      worksheet.getRangeByIndex(i + 2, 9).setText(material2List[i].text);
       sumOfMaterialCost += double.parse(material2List[i].text);
-      worksheet.getRangeByIndex(i + 2, 11).setText(totalPriceList[i].text);
+      worksheet.getRangeByIndex(i + 2, 10).setText(totalPriceList[i].text);
       sumOfTotalPrice += double.parse(totalPriceList[i].text);
     }
   }
@@ -764,7 +759,6 @@ Future<void> generateNorwParquetAndLaminateExcelDocument(
   List<String> descriptionList,
   List<String> unitList,
   List<TextEditingController> quantityLists,
-  List<TextEditingController> materialQuantityList,
   List<TextEditingController> laborHours1List,
   List<TextEditingController> laborHours2List,
   List<TextEditingController> laborCostList,
@@ -783,7 +777,6 @@ Future<void> generateNorwParquetAndLaminateExcelDocument(
     descriptionList,
     unitList,
     quantityLists,
-    materialQuantityList,
     laborHours1List,
     laborHours2List,
     laborCostList,
@@ -804,7 +797,6 @@ void addDataNorwParquetAndLaminate(
   List<String> descriptionList,
   List<String> unitList,
   List<TextEditingController> quantityLists,
-  List<TextEditingController> materialQuantityList,
   List<TextEditingController> laborHours1List,
   List<TextEditingController> laborHours2List,
   List<TextEditingController> laborCostList,
@@ -813,58 +805,50 @@ void addDataNorwParquetAndLaminate(
   List<TextEditingController> totalPriceList,
 ) {
   double sumOfHours1 = 0;
-  double sumOfCustomHours = 0;
   double sumOfHours2 = 0;
   double sumOfJobCost = 0;
   double sumOfMaterial = 0;
   double sumOfMaterialCost = 0;
   double sumOfTotalPrice = 0;
-  Range range = worksheet.getRangeByName('A1:K1');
-  Range range1 = worksheet.getRangeByName('A1:A14');
+  Range range = worksheet.getRangeByName('A1:I1');
+  Range range1 = worksheet.getRangeByName('A1:A4');
 
-  worksheet.getRangeByIndex(1, 1).setText('Description');
-  worksheet.getRangeByIndex(1, 2).setText('Unit');
-  worksheet.getRangeByIndex(1, 3).setText('Quantity');
-  worksheet.getRangeByIndex(1, 4).setText('Material quantity');
-  worksheet.getRangeByIndex(1, 5).setText('Hours');
-  worksheet.getRangeByIndex(1, 6).setText('Custom hours');
-  worksheet.getRangeByIndex(1, 7).setText('Hours2');
-  worksheet.getRangeByIndex(1, 8).setText('Job cost');
-  worksheet.getRangeByIndex(1, 9).setText('Material');
-  worksheet.getRangeByIndex(1, 10).setText('Material cost');
-  worksheet.getRangeByIndex(1, 11).setText('Total price');
+  worksheet.getRangeByIndex(1, 1).setText('Beskrivelse');
+  worksheet.getRangeByIndex(1, 2).setText('Enhet');
+  worksheet.getRangeByIndex(1, 3).setText('Antall');
+  worksheet.getRangeByIndex(1, 4).setText('Timer');
+  worksheet.getRangeByIndex(1, 5).setText('Sum. tid.');
+  worksheet.getRangeByIndex(1, 6).setText('Jobbkostnad');
+  worksheet.getRangeByIndex(1, 7).setText('Materiale');
+  worksheet.getRangeByIndex(1, 8).setText('Materialkostnad');
+  worksheet.getRangeByIndex(1, 9).setText('Totalpris');
 
   for (int i = 0; i <= descriptionList.length; i++) {
     if (i == descriptionList.length) {
       worksheet.getRangeByIndex(i + 2, 1).setText("Total sum");
       worksheet.getRangeByIndex(i + 2, 2).setText("");
       worksheet.getRangeByIndex(i + 2, 3).setText("");
-      worksheet.getRangeByIndex(i + 2, 4).setText("");
-      worksheet.getRangeByIndex(i + 2, 5).setText(sumOfHours1.toString());
-      worksheet.getRangeByIndex(i + 2, 6).setText(sumOfCustomHours.toString());
-      worksheet.getRangeByIndex(i + 2, 7).setText(sumOfHours2.toString());
-      worksheet.getRangeByIndex(i + 2, 8).setText(sumOfJobCost.toString());
-      worksheet.getRangeByIndex(i + 2, 9).setText(sumOfMaterial.toString());
-      worksheet
-          .getRangeByIndex(i + 2, 10)
-          .setText(sumOfMaterialCost.toString());
-      worksheet.getRangeByIndex(i + 2, 11).setText(sumOfTotalPrice.toString());
+      worksheet.getRangeByIndex(i + 2, 4).setText(sumOfHours1.toString());
+      worksheet.getRangeByIndex(i + 2, 5).setText(sumOfHours2.toString());
+      worksheet.getRangeByIndex(i + 2, 6).setText(sumOfJobCost.toString());
+      worksheet.getRangeByIndex(i + 2, 7).setText(sumOfMaterial.toString());
+      worksheet.getRangeByIndex(i + 2, 8).setText(sumOfMaterialCost.toString());
+      worksheet.getRangeByIndex(i + 2, 9).setText(sumOfTotalPrice.toString());
     } else {
       worksheet.getRangeByIndex(i + 2, 1).setText(descriptionList[i]);
       worksheet.getRangeByIndex(i + 2, 2).setText(unitList[i]);
       worksheet.getRangeByIndex(i + 2, 3).setText(quantityLists[i].text);
-      worksheet.getRangeByIndex(i + 2, 4).setText(materialQuantityList[i].text);
-      worksheet.getRangeByIndex(i + 2, 5).setText(laborHours1List[i].text);
+      worksheet.getRangeByIndex(i + 2, 4).setText(laborHours1List[i].text);
       sumOfHours1 += double.parse(laborHours1List[i].text);
-      worksheet.getRangeByIndex(i + 2, 7).setText(laborHours2List[i].text);
+      worksheet.getRangeByIndex(i + 2, 5).setText(laborHours2List[i].text);
       sumOfHours2 += double.parse(laborHours2List[i].text);
-      worksheet.getRangeByIndex(i + 2, 8).setText(laborCostList[i].text);
+      worksheet.getRangeByIndex(i + 2, 6).setText(laborCostList[i].text);
       sumOfJobCost += double.parse(laborCostList[i].text);
-      worksheet.getRangeByIndex(i + 2, 9).setText(material1List[i].text);
+      worksheet.getRangeByIndex(i + 2, 7).setText(material1List[i].text);
       sumOfMaterial += double.parse(material1List[i].text);
-      worksheet.getRangeByIndex(i + 2, 10).setText(material2List[i].text);
+      worksheet.getRangeByIndex(i + 2, 8).setText(material2List[i].text);
       sumOfMaterialCost += double.parse(material2List[i].text);
-      worksheet.getRangeByIndex(i + 2, 11).setText(totalPriceList[i].text);
+      worksheet.getRangeByIndex(i + 2, 9).setText(totalPriceList[i].text);
       sumOfTotalPrice += double.parse(totalPriceList[i].text);
     }
   }
@@ -882,7 +866,6 @@ void addDataNorwWindowsExteriorDoor(
   List<String> descriptionList,
   List<String> unitList,
   List<TextEditingController> quantityLists,
-  List<TextEditingController> materialQuantityList,
   List<TextEditingController> laborHours1List,
   List<TextEditingController> laborHours2List,
   List<TextEditingController> laborCostList,
@@ -891,58 +874,50 @@ void addDataNorwWindowsExteriorDoor(
   List<TextEditingController> totalPriceList,
 ) {
   double sumOfHours1 = 0;
-  double sumOfCustomHours = 0;
   double sumOfHours2 = 0;
   double sumOfJobCost = 0;
   double sumOfMaterial = 0;
   double sumOfMaterialCost = 0;
   double sumOfTotalPrice = 0;
-  Range range = worksheet.getRangeByName('A1:K1');
+  Range range = worksheet.getRangeByName('A1:I1');
   Range range1 = worksheet.getRangeByName('A1:A14');
 
-  worksheet.getRangeByIndex(1, 1).setText('Description');
-  worksheet.getRangeByIndex(1, 2).setText('Unit');
-  worksheet.getRangeByIndex(1, 3).setText('Quantity');
-  worksheet.getRangeByIndex(1, 4).setText('Material quantity');
-  worksheet.getRangeByIndex(1, 5).setText('Hours');
-  worksheet.getRangeByIndex(1, 6).setText('Custom hours');
-  worksheet.getRangeByIndex(1, 7).setText('Hours2');
-  worksheet.getRangeByIndex(1, 8).setText('Job cost');
-  worksheet.getRangeByIndex(1, 9).setText('Material');
-  worksheet.getRangeByIndex(1, 10).setText('Material cost');
-  worksheet.getRangeByIndex(1, 11).setText('Total price');
+  worksheet.getRangeByIndex(1, 1).setText('Beskrivelse');
+  worksheet.getRangeByIndex(1, 2).setText('Enhet');
+  worksheet.getRangeByIndex(1, 3).setText('Antall');
+  worksheet.getRangeByIndex(1, 4).setText('Timer');
+  worksheet.getRangeByIndex(1, 5).setText('Sum. tid.');
+  worksheet.getRangeByIndex(1, 6).setText('Jobbkostnad');
+  worksheet.getRangeByIndex(1, 7).setText('Materiale');
+  worksheet.getRangeByIndex(1, 8).setText('Materialkostnad');
+  worksheet.getRangeByIndex(1, 9).setText('Totalpris');
 
   for (int i = 0; i <= descriptionList.length; i++) {
     if (i == descriptionList.length) {
       worksheet.getRangeByIndex(i + 2, 1).setText("Total sum");
       worksheet.getRangeByIndex(i + 2, 2).setText("");
       worksheet.getRangeByIndex(i + 2, 3).setText("");
-      worksheet.getRangeByIndex(i + 2, 4).setText("");
-      worksheet.getRangeByIndex(i + 2, 5).setText(sumOfHours1.toString());
-      worksheet.getRangeByIndex(i + 2, 6).setText(sumOfCustomHours.toString());
-      worksheet.getRangeByIndex(i + 2, 7).setText(sumOfHours2.toString());
-      worksheet.getRangeByIndex(i + 2, 8).setText(sumOfJobCost.toString());
-      worksheet.getRangeByIndex(i + 2, 9).setText(sumOfMaterial.toString());
-      worksheet
-          .getRangeByIndex(i + 2, 10)
-          .setText(sumOfMaterialCost.toString());
-      worksheet.getRangeByIndex(i + 2, 11).setText(sumOfTotalPrice.toString());
+      worksheet.getRangeByIndex(i + 2, 4).setText(sumOfHours1.toString());
+      worksheet.getRangeByIndex(i + 2, 5).setText(sumOfHours2.toString());
+      worksheet.getRangeByIndex(i + 2, 6).setText(sumOfJobCost.toString());
+      worksheet.getRangeByIndex(i + 2, 7).setText(sumOfMaterial.toString());
+      worksheet.getRangeByIndex(i + 2, 8).setText(sumOfMaterialCost.toString());
+      worksheet.getRangeByIndex(i + 2, 9).setText(sumOfTotalPrice.toString());
     } else {
       worksheet.getRangeByIndex(i + 2, 1).setText(descriptionList[i]);
       worksheet.getRangeByIndex(i + 2, 2).setText(unitList[i]);
       worksheet.getRangeByIndex(i + 2, 3).setText(quantityLists[i].text);
-      worksheet.getRangeByIndex(i + 2, 4).setText(materialQuantityList[i].text);
-      worksheet.getRangeByIndex(i + 2, 5).setText(laborHours1List[i].text);
+      worksheet.getRangeByIndex(i + 2, 4).setText(laborHours1List[i].text);
       sumOfHours1 += double.parse(laborHours1List[i].text);
-      worksheet.getRangeByIndex(i + 2, 7).setText(laborHours2List[i].text);
+      worksheet.getRangeByIndex(i + 2, 5).setText(laborHours2List[i].text);
       sumOfHours2 += double.parse(laborHours2List[i].text);
-      worksheet.getRangeByIndex(i + 2, 8).setText(laborCostList[i].text);
+      worksheet.getRangeByIndex(i + 2, 6).setText(laborCostList[i].text);
       sumOfJobCost += double.parse(laborCostList[i].text);
-      worksheet.getRangeByIndex(i + 2, 9).setText(material1List[i].text);
+      worksheet.getRangeByIndex(i + 2, 7).setText(material1List[i].text);
       sumOfMaterial += double.parse(material1List[i].text);
-      worksheet.getRangeByIndex(i + 2, 10).setText(material2List[i].text);
+      worksheet.getRangeByIndex(i + 2, 8).setText(material2List[i].text);
       sumOfMaterialCost += double.parse(material2List[i].text);
-      worksheet.getRangeByIndex(i + 2, 11).setText(totalPriceList[i].text);
+      worksheet.getRangeByIndex(i + 2, 9).setText(totalPriceList[i].text);
       sumOfTotalPrice += double.parse(totalPriceList[i].text);
     }
   }
@@ -960,7 +935,6 @@ Future<void> generateNorwWindowsExteriorDoorExcelDocument(
   List<String> descriptionList,
   List<String> unitList,
   List<TextEditingController> quantityLists,
-  List<TextEditingController> materialQuantityList,
   List<TextEditingController> laborHours1List,
   List<TextEditingController> laborHours2List,
   List<TextEditingController> laborCostList,
@@ -980,7 +954,6 @@ Future<void> generateNorwWindowsExteriorDoorExcelDocument(
     descriptionList,
     unitList,
     quantityLists,
-    materialQuantityList,
     laborHours1List,
     laborHours2List,
     laborCostList,
@@ -989,7 +962,7 @@ Future<void> generateNorwWindowsExteriorDoorExcelDocument(
     totalPriceList,
   );
 
-  final List<int> bytes = exteriorWallWorkbook.saveAsStream();
+  final List<int> bytes = norwWindowsExteriorDoorsWorkbook.saveAsStream();
 
   String? downloadPath = await getDownloadPath();
   String filePath = '$downloadPath/' + excelName + '.xlsx';
@@ -1042,7 +1015,6 @@ void addDataNorwInnerDoor(
   List<String> descriptionList,
   List<String> unitList,
   List<TextEditingController> quantityLists,
-  List<TextEditingController> materialQuantityList,
   List<TextEditingController> laborHours1List,
   List<TextEditingController> laborHours2List,
   List<TextEditingController> laborCostList,
@@ -1051,58 +1023,50 @@ void addDataNorwInnerDoor(
   List<TextEditingController> totalPriceList,
 ) {
   double sumOfHours1 = 0;
-  double sumOfCustomHours = 0;
   double sumOfHours2 = 0;
   double sumOfJobCost = 0;
   double sumOfMaterial = 0;
   double sumOfMaterialCost = 0;
   double sumOfTotalPrice = 0;
-  Range range = worksheet.getRangeByName('A1:K1');
-  Range range1 = worksheet.getRangeByName('A1:A14');
+  Range range = worksheet.getRangeByName('A1:I1');
+  Range range1 = worksheet.getRangeByName('A1:A10');
 
-  worksheet.getRangeByIndex(1, 1).setText('Description');
-  worksheet.getRangeByIndex(1, 2).setText('Unit');
-  worksheet.getRangeByIndex(1, 3).setText('Quantity');
-  worksheet.getRangeByIndex(1, 4).setText('Material quantity');
-  worksheet.getRangeByIndex(1, 5).setText('Hours');
-  worksheet.getRangeByIndex(1, 6).setText('Custom hours');
-  worksheet.getRangeByIndex(1, 7).setText('Hours2');
-  worksheet.getRangeByIndex(1, 8).setText('Job cost');
-  worksheet.getRangeByIndex(1, 9).setText('Material');
-  worksheet.getRangeByIndex(1, 10).setText('Material cost');
-  worksheet.getRangeByIndex(1, 11).setText('Total price');
+  worksheet.getRangeByIndex(1, 1).setText('Beskrivelse');
+  worksheet.getRangeByIndex(1, 2).setText('Enhet');
+  worksheet.getRangeByIndex(1, 3).setText('Antall');
+  worksheet.getRangeByIndex(1, 4).setText('Timer');
+  worksheet.getRangeByIndex(1, 5).setText('Sum. tid.');
+  worksheet.getRangeByIndex(1, 6).setText('Jobbkostnad');
+  worksheet.getRangeByIndex(1, 7).setText('Materiale');
+  worksheet.getRangeByIndex(1, 8).setText('Materialkostnad');
+  worksheet.getRangeByIndex(1, 9).setText('Totalpris');
 
   for (int i = 0; i <= descriptionList.length; i++) {
     if (i == descriptionList.length) {
       worksheet.getRangeByIndex(i + 2, 1).setText("Total sum");
       worksheet.getRangeByIndex(i + 2, 2).setText("");
       worksheet.getRangeByIndex(i + 2, 3).setText("");
-      worksheet.getRangeByIndex(i + 2, 4).setText("");
-      worksheet.getRangeByIndex(i + 2, 5).setText(sumOfHours1.toString());
-      worksheet.getRangeByIndex(i + 2, 6).setText(sumOfCustomHours.toString());
-      worksheet.getRangeByIndex(i + 2, 7).setText(sumOfHours2.toString());
-      worksheet.getRangeByIndex(i + 2, 8).setText(sumOfJobCost.toString());
-      worksheet.getRangeByIndex(i + 2, 9).setText(sumOfMaterial.toString());
-      worksheet
-          .getRangeByIndex(i + 2, 10)
-          .setText(sumOfMaterialCost.toString());
-      worksheet.getRangeByIndex(i + 2, 11).setText(sumOfTotalPrice.toString());
+      worksheet.getRangeByIndex(i + 2, 4).setText(sumOfHours1.toString());
+      worksheet.getRangeByIndex(i + 2, 5).setText(sumOfHours2.toString());
+      worksheet.getRangeByIndex(i + 2, 6).setText(sumOfJobCost.toString());
+      worksheet.getRangeByIndex(i + 2, 7).setText(sumOfMaterial.toString());
+      worksheet.getRangeByIndex(i + 2, 8).setText(sumOfMaterialCost.toString());
+      worksheet.getRangeByIndex(i + 2, 9).setText(sumOfTotalPrice.toString());
     } else {
       worksheet.getRangeByIndex(i + 2, 1).setText(descriptionList[i]);
       worksheet.getRangeByIndex(i + 2, 2).setText(unitList[i]);
       worksheet.getRangeByIndex(i + 2, 3).setText(quantityLists[i].text);
-      worksheet.getRangeByIndex(i + 2, 4).setText(materialQuantityList[i].text);
-      worksheet.getRangeByIndex(i + 2, 5).setText(laborHours1List[i].text);
+      worksheet.getRangeByIndex(i + 2, 4).setText(laborHours1List[i].text);
       sumOfHours1 += double.parse(laborHours1List[i].text);
-      worksheet.getRangeByIndex(i + 2, 7).setText(laborHours2List[i].text);
+      worksheet.getRangeByIndex(i + 2, 5).setText(laborHours2List[i].text);
       sumOfHours2 += double.parse(laborHours2List[i].text);
-      worksheet.getRangeByIndex(i + 2, 8).setText(laborCostList[i].text);
+      worksheet.getRangeByIndex(i + 2, 6).setText(laborCostList[i].text);
       sumOfJobCost += double.parse(laborCostList[i].text);
-      worksheet.getRangeByIndex(i + 2, 9).setText(material1List[i].text);
+      worksheet.getRangeByIndex(i + 2, 7).setText(material1List[i].text);
       sumOfMaterial += double.parse(material1List[i].text);
-      worksheet.getRangeByIndex(i + 2, 10).setText(material2List[i].text);
+      worksheet.getRangeByIndex(i + 2, 8).setText(material2List[i].text);
       sumOfMaterialCost += double.parse(material2List[i].text);
-      worksheet.getRangeByIndex(i + 2, 11).setText(totalPriceList[i].text);
+      worksheet.getRangeByIndex(i + 2, 9).setText(totalPriceList[i].text);
       sumOfTotalPrice += double.parse(totalPriceList[i].text);
     }
   }
@@ -1139,7 +1103,6 @@ Future<void> generateNorwInnerDoorExcelDocument(
     descriptionList,
     unitList,
     quantityLists,
-    materialQuantityList,
     laborHours1List,
     laborHours2List,
     laborCostList,
@@ -1186,7 +1149,7 @@ Future<void> generateInnerDoorExcelDocument(
     totalPriceList,
   );
 
-  List<int> bytes = innerDoorWorkbook.saveAsStream();
+  final List<int> bytes = innerDoorWorkbook.saveAsStream();
 
   String? downloadPath = await getDownloadPath();
   String filePath = '$downloadPath/' + excelName + '.xlsx';
@@ -1372,7 +1335,6 @@ void addNorwData(
   Workbook workbook,
 ) {
   double sumOfHours1 = 0;
-  double sumOfCustomHours = 0;
   double sumOfHours2 = 0;
   double sumOfJobCost = 0;
   double sumOfMaterial = 0;
@@ -1386,12 +1348,11 @@ void addNorwData(
   worksheet.getRangeByIndex(1, 3).setText('Mengde');
   worksheet.getRangeByIndex(1, 4).setText('Mengde av material');
   worksheet.getRangeByIndex(1, 5).setText('Enh. tid.');
-  worksheet.getRangeByIndex(1, 6).setText('Enh. tid.');
-  worksheet.getRangeByIndex(1, 7).setText('Sum. tid.');
-  worksheet.getRangeByIndex(1, 8).setText('Arb.pris');
-  worksheet.getRangeByIndex(1, 9).setText('Enh. mater.');
-  worksheet.getRangeByIndex(1, 10).setText('Sum. material');
-  worksheet.getRangeByIndex(1, 11).setText('Total pris');
+  worksheet.getRangeByIndex(1, 6).setText('Sum. tid.');
+  worksheet.getRangeByIndex(1, 7).setText('Arb.pris');
+  worksheet.getRangeByIndex(1, 8).setText('Enh. mater.');
+  worksheet.getRangeByIndex(1, 9).setText('Sum. material');
+  worksheet.getRangeByIndex(1, 10).setText('Total pris');
 
   for (int i = 0; i <= descriptionList.length; i++) {
     if (i == descriptionList.length) {
@@ -1400,14 +1361,11 @@ void addNorwData(
       worksheet.getRangeByIndex(i + 2, 3).setText("");
       worksheet.getRangeByIndex(i + 2, 4).setText("");
       worksheet.getRangeByIndex(i + 2, 5).setText(sumOfHours1.toString());
-      worksheet.getRangeByIndex(i + 2, 6).setText(sumOfCustomHours.toString());
-      worksheet.getRangeByIndex(i + 2, 7).setText(sumOfHours2.toString());
-      worksheet.getRangeByIndex(i + 2, 8).setText(sumOfJobCost.toString());
-      worksheet.getRangeByIndex(i + 2, 9).setText(sumOfMaterial.toString());
-      worksheet
-          .getRangeByIndex(i + 2, 10)
-          .setText(sumOfMaterialCost.toString());
-      worksheet.getRangeByIndex(i + 2, 11).setText(sumOfTotalPrice.toString());
+      worksheet.getRangeByIndex(i + 2, 6).setText(sumOfHours2.toString());
+      worksheet.getRangeByIndex(i + 2, 7).setText(sumOfJobCost.toString());
+      worksheet.getRangeByIndex(i + 2, 8).setText(sumOfMaterial.toString());
+      worksheet.getRangeByIndex(i + 2, 9).setText(sumOfMaterialCost.toString());
+      worksheet.getRangeByIndex(i + 2, 10).setText(sumOfTotalPrice.toString());
     } else {
       worksheet.getRangeByIndex(i + 2, 1).setText(descriptionList[i]);
       worksheet.getRangeByIndex(i + 2, 2).setText(unitList[i]);
@@ -1415,15 +1373,15 @@ void addNorwData(
       worksheet.getRangeByIndex(i + 2, 4).setText(materialQuantityList[i].text);
       worksheet.getRangeByIndex(i + 2, 5).setText(laborHours1List[i].text);
       sumOfHours1 += double.parse(laborHours1List[i].text);
-      worksheet.getRangeByIndex(i + 2, 7).setText(laborHours2List[i].text);
+      worksheet.getRangeByIndex(i + 2, 6).setText(laborHours2List[i].text);
       sumOfHours2 += double.parse(laborHours2List[i].text);
-      worksheet.getRangeByIndex(i + 2, 8).setText(laborCostList[i].text);
+      worksheet.getRangeByIndex(i + 2, 7).setText(laborCostList[i].text);
       sumOfJobCost += double.parse(laborCostList[i].text);
-      worksheet.getRangeByIndex(i + 2, 9).setText(material1List[i].text);
+      worksheet.getRangeByIndex(i + 2, 8).setText(material1List[i].text);
       sumOfMaterial += double.parse(material1List[i].text);
-      worksheet.getRangeByIndex(i + 2, 10).setText(material2List[i].text);
+      worksheet.getRangeByIndex(i + 2, 9).setText(material2List[i].text);
       sumOfMaterialCost += double.parse(material2List[i].text);
-      worksheet.getRangeByIndex(i + 2, 11).setText(totalPriceList[i].text);
+      worksheet.getRangeByIndex(i + 2, 10).setText(totalPriceList[i].text);
       sumOfTotalPrice += double.parse(totalPriceList[i].text);
     }
   }
@@ -1481,5 +1439,5 @@ Future<void> generateNorwInnerWallExcelDocument(
       norwInnerWallWorkbook);
 
   final List<int> bytes = norwInnerWallWorkbook.saveAsStream();
-  File("norw" + excelName + ".xlsx").writeAsBytes(bytes);
+  File(excelName + ".xlsx").writeAsBytes(bytes);
 }

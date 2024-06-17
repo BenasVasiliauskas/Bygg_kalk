@@ -672,7 +672,6 @@ class _NorwWindowsExteriorDoorItemsScreenState
                     widget.description,
                     widget.unit,
                     quantityControllers,
-                    materialQuantityControllers,
                     laborHours1Controllers,
                     laborHours2Controllers,
                     laborCostControllers,
