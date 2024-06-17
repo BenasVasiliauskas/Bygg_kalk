@@ -104,6 +104,15 @@ class _SavingRowInnerDoor extends State<SavingRowInnerDoor> {
             choose();
           },
         ),
+        DropdownMenu(dropdownMenuEntries: <DropdownMenuEntry<String>>[
+          for (int i = 0; i < innerDoor.length; i++)
+            DropdownMenuEntry(
+                value: innerDoor[i].name, label: innerDoor[i].name),
+        ]),
+        TextButton(
+          onPressed: () {},
+          child: Text("Save to excel"),
+        ),
       ],
     );
   }

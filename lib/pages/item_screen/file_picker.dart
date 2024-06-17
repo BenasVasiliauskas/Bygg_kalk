@@ -57,10 +57,22 @@ class _FilePickerScreenState extends State<FilePickerScreen> {
         padding: const EdgeInsets.all(8.0),
         child: Column(
           children: [
-            SavingRowOuterWall("Exterior walls"),
-            SavingRowWindowExteriorDoor("Windows/exterior doors"),
-            SavingRowInnerWall("Interior walls"),
-            SavingRowInnerDoor("Interior door"),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: SavingRowOuterWall("Exterior walls"),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: SavingRowWindowExteriorDoor("Windows/exterior doors"),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: SavingRowInnerWall("Interior walls"),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: SavingRowInnerDoor("Interior door"),
+            ),
             SavingRowParquetLaminate("Parquet and laminate"),
           ],
         ),

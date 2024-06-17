@@ -107,6 +107,16 @@ class _SavingRowInnerWall extends State<SavingRowInnerWall> {
             choose();
           },
         ),
+        DropdownMenu(dropdownMenuEntries: <DropdownMenuEntry<String>>[
+          for (int i = 0; i < dataInnerWallData.length; i++)
+            DropdownMenuEntry(
+                value: dataInnerWallData[i].name,
+                label: dataInnerWallData[i].name),
+        ]),
+        TextButton(
+          onPressed: () {},
+          child: Text("Save to excel"),
+        ),
       ],
     );
   }

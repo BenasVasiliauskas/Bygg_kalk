@@ -106,6 +106,16 @@ class _SavingRowWindowExteriorDoor extends State<SavingRowWindowExteriorDoor> {
             choose();
           },
         ),
+        DropdownMenu(dropdownMenuEntries: <DropdownMenuEntry<String>>[
+          for (int i = 0; i < windowsExteriorDoors.length; i++)
+            DropdownMenuEntry(
+                value: windowsExteriorDoors[i].name,
+                label: windowsExteriorDoors[i].name),
+        ]),
+        TextButton(
+          onPressed: () {},
+          child: Text("Save to excel"),
+        ),
       ],
     );
   }

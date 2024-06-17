@@ -106,6 +106,12 @@ class _SavingRowOuterWall extends State<SavingRowOuterWall> {
             choose();
           },
         ),
+        DropdownMenu(dropdownMenuEntries: <DropdownMenuEntry<String>>[
+          for (int i = 0; i < exteriorWallData.length; i++)
+            DropdownMenuEntry(
+                value: exteriorWallData[i].name,
+                label: exteriorWallData[i].name),
+        ]),
         // FloatingActionButton(
         //   onPressed: () {
         //     generateInnerDoorExcelDocument(
@@ -131,6 +137,10 @@ class _SavingRowOuterWall extends State<SavingRowOuterWall> {
         //   },
         //   child: Text("Save to Excel"),
         // ),
+        TextButton(
+          onPressed: () {},
+          child: Text("Save to excel"),
+        ),
       ],
     );
   }

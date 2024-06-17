@@ -105,6 +105,16 @@ class _SavingRowParquetLaminate extends State<SavingRowParquetLaminate> {
             choose();
           },
         ),
+        DropdownMenu(dropdownMenuEntries: <DropdownMenuEntry<String>>[
+          for (int i = 0; i < parquetAndLaminate.length; i++)
+            DropdownMenuEntry(
+                value: parquetAndLaminate[i].name,
+                label: parquetAndLaminate[i].name),
+        ]),
+        TextButton(
+          onPressed: () {},
+          child: Text("Save to excel"),
+        ),
       ],
     );
   }
