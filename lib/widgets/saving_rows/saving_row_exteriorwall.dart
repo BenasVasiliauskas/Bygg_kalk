@@ -52,47 +52,52 @@ class _SavingRowOuterWall extends State<SavingRowOuterWall> {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        Text(widget.name),
-        TextButton(
-          child: Text("Save"),
-          onPressed: () async {
-            final fileName = await openDialog();
-            //if name to file wasnt given
-            if (fileName == null || fileName.isEmpty) {
-              return;
-            }
-            await fileDeleteIfExists(fileName);
-            //write a bracket for the start of the array
-            await writeJsonArrayStart(fileName);
-            OuterWallModel outerwallModel;
-            for (var i = 0; i < exteriorWallData.length; i++) {
-              outerwallModel = OuterWallModel(
-                name: exteriorWallData[i].name,
-                description: exteriorWallData[i].description,
-                unit: exteriorWallData[i].unit,
-                quantity: exteriorWallData[i].quantity,
-                materialQuantity: exteriorWallData[i].materialQuantity,
-                laborHours1: exteriorWallData[i].laborHours1,
-                laborHours2: exteriorWallData[i].laborHours2,
-                laborCost: exteriorWallData[i].laborCost,
-                material: exteriorWallData[i].material,
-                materials: exteriorWallData[i].materials,
-                totalPrice: exteriorWallData[i].totalPrice,
-              );
-              await writeJson(outerwallModel, fileName);
-              //write a comma for the next element, check if the length is over equals 1 and if it isnt the last element
-              if (exteriorWallData.length >= 1 &&
-                  i != exteriorWallData.length - 1) {
-                await writeJsonComma(fileName);
+        SizedBox(
+          width: 150,
+          child: Text(widget.name),
+        ),
+        SizedBox(
+          child: TextButton(
+            child: Text("Save"),
+            onPressed: () async {
+              final fileName = await openDialog();
+              //if name to file wasnt given
+              if (fileName == null || fileName.isEmpty) {
+                return;
               }
-            }
-            await writeJsonArrayEnd(fileName);
-            ScaffoldMessenger.of(context).showSnackBar(
-              SnackBar(
-                content: Text('Data has been saved as $fileName.json'),
-              ),
-            );
-          },
+              await fileDeleteIfExists(fileName);
+              //write a bracket for the start of the array
+              await writeJsonArrayStart(fileName);
+              OuterWallModel outerwallModel;
+              for (var i = 0; i < exteriorWallData.length; i++) {
+                outerwallModel = OuterWallModel(
+                  name: exteriorWallData[i].name,
+                  description: exteriorWallData[i].description,
+                  unit: exteriorWallData[i].unit,
+                  quantity: exteriorWallData[i].quantity,
+                  materialQuantity: exteriorWallData[i].materialQuantity,
+                  laborHours1: exteriorWallData[i].laborHours1,
+                  laborHours2: exteriorWallData[i].laborHours2,
+                  laborCost: exteriorWallData[i].laborCost,
+                  material: exteriorWallData[i].material,
+                  materials: exteriorWallData[i].materials,
+                  totalPrice: exteriorWallData[i].totalPrice,
+                );
+                await writeJson(outerwallModel, fileName);
+                //write a comma for the next element, check if the length is over equals 1 and if it isnt the last element
+                if (exteriorWallData.length >= 1 &&
+                    i != exteriorWallData.length - 1) {
+                  await writeJsonComma(fileName);
+                }
+              }
+              await writeJsonArrayEnd(fileName);
+              ScaffoldMessenger.of(context).showSnackBar(
+                SnackBar(
+                  content: Text('Data has been saved as $fileName.json'),
+                ),
+              );
+            },
+          ),
         ),
         TextButton(
           child: Text(
@@ -109,6 +114,7 @@ class _SavingRowOuterWall extends State<SavingRowOuterWall> {
           },
         ),
         DropdownMenu(
+            width: 500,
             onSelected: (value) {
               selectedName = value.toString();
             },

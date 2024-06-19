@@ -52,7 +52,10 @@ class _SavingRowInnerDoor extends State<SavingRowInnerDoor> {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        Text(widget.name),
+        SizedBox(
+          width: 148,
+          child: Text(widget.name),
+        ),
         TextButton(
           child: Text("Save"),
           onPressed: () async {
@@ -107,6 +110,7 @@ class _SavingRowInnerDoor extends State<SavingRowInnerDoor> {
           },
         ),
         DropdownMenu(
+            width: 500,
             onSelected: (value) {
               selectedName = value.toString();
             },

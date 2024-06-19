@@ -51,7 +51,10 @@ class _SavingRowParquetLaminate extends State<SavingRowParquetLaminate> {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        Text(widget.name),
+        SizedBox(
+          width: 155,
+          child: Text(widget.name),
+        ),
         TextButton(
           child: Text("Save"),
           onPressed: () async {
@@ -107,6 +110,7 @@ class _SavingRowParquetLaminate extends State<SavingRowParquetLaminate> {
           },
         ),
         DropdownMenu(
+            width: 500,
             onSelected: (value) {
               selectedName = value.toString();
             },
