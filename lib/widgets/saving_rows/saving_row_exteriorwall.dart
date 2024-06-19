@@ -2,6 +2,7 @@
 
 import 'package:cost_calculator/constants/language.dart';
 import 'package:cost_calculator/data/data.dart';
+import 'package:cost_calculator/data/norw_data.dart';
 import 'package:cost_calculator/functions/create_worksheet.dart';
 import 'package:cost_calculator/functions/save_to_json.dart';
 import 'package:cost_calculator/models/outer_wall_data_model.dart';
@@ -45,6 +46,8 @@ bool? isJobCostChecked = false;
 bool? isMaterialChecked = false;
 bool? isTotalMaterialsCostChecked = false;
 bool? isTotalPriceChecked = false;
+var lengthOfArray =
+    languageEnglish ? exteriorWallData.length : norwExteriorWallData.length;
 
 class _SavingRowOuterWall extends State<SavingRowOuterWall> {
   TextEditingController savingController = TextEditingController(text: "");
@@ -54,11 +57,15 @@ class _SavingRowOuterWall extends State<SavingRowOuterWall> {
       children: [
         SizedBox(
           width: 150,
-          child: Text(widget.name),
+          child: Text(languageEnglish ? "Exterior walls" : "Yttervegger"),
         ),
         SizedBox(
           child: TextButton(
-            child: Text("Save"),
+            child: Text(languageEnglish
+                ? "Save"
+                : languageNorwegian
+                    ? "Lagre"
+                    : "SaveOtherLang"),
             onPressed: () async {
               final fileName = await openDialog();
               //if name to file wasnt given
@@ -69,31 +76,54 @@ class _SavingRowOuterWall extends State<SavingRowOuterWall> {
               //write a bracket for the start of the array
               await writeJsonArrayStart(fileName);
               OuterWallModel outerwallModel;
-              for (var i = 0; i < exteriorWallData.length; i++) {
+              for (var i = 0; i < lengthOfArray; i++) {
                 outerwallModel = OuterWallModel(
-                  name: exteriorWallData[i].name,
-                  description: exteriorWallData[i].description,
-                  unit: exteriorWallData[i].unit,
-                  quantity: exteriorWallData[i].quantity,
-                  materialQuantity: exteriorWallData[i].materialQuantity,
-                  laborHours1: exteriorWallData[i].laborHours1,
-                  laborHours2: exteriorWallData[i].laborHours2,
-                  laborCost: exteriorWallData[i].laborCost,
-                  material: exteriorWallData[i].material,
-                  materials: exteriorWallData[i].materials,
-                  totalPrice: exteriorWallData[i].totalPrice,
+                  name: languageEnglish
+                      ? exteriorWallData[i].name
+                      : norwExteriorWallData[i].name,
+                  description: languageEnglish
+                      ? exteriorWallData[i].description
+                      : norwExteriorWallData[i].description,
+                  unit: languageEnglish
+                      ? exteriorWallData[i].unit
+                      : norwExteriorWallData[i].unit,
+                  quantity: languageEnglish
+                      ? exteriorWallData[i].quantity
+                      : norwExteriorWallData[i].materialQuantity,
+                  materialQuantity: languageEnglish
+                      ? exteriorWallData[i].materialQuantity
+                      : norwExteriorWallData[i].materialQuantity,
+                  laborHours1: languageEnglish
+                      ? exteriorWallData[i].laborHours1
+                      : norwExteriorWallData[i].laborHours1,
+                  laborHours2: languageEnglish
+                      ? exteriorWallData[i].laborHours2
+                      : norwExteriorWallData[i].laborHours2,
+                  laborCost: languageEnglish
+                      ? exteriorWallData[i].laborCost
+                      : norwExteriorWallData[i].laborCost,
+                  material: languageEnglish
+                      ? exteriorWallData[i].material
+                      : norwExteriorWallData[i].material,
+                  materials: languageEnglish
+                      ? exteriorWallData[i].materials
+                      : norwExteriorWallData[i].materials,
+                  totalPrice: languageEnglish
+                      ? exteriorWallData[i].totalPrice
+                      : norwExteriorWallData[i].totalPrice,
                 );
                 await writeJson(outerwallModel, fileName);
                 //write a comma for the next element, check if the length is over equals 1 and if it isnt the last element
-                if (exteriorWallData.length >= 1 &&
-                    i != exteriorWallData.length - 1) {
+                if (lengthOfArray >= 1 && i != lengthOfArray - 1) {
                   await writeJsonComma(fileName);
                 }
               }
               await writeJsonArrayEnd(fileName);
               ScaffoldMessenger.of(context).showSnackBar(
                 SnackBar(
-                  content: Text('Data has been saved as $fileName.json'),
+                  content: Text(languageEnglish
+                      ? 'Data has been saved as $fileName.json'
+                      : "Dataene er lagret som $fileName.json"),
                 ),
               );
             },
@@ -106,7 +136,7 @@ class _SavingRowOuterWall extends State<SavingRowOuterWall> {
                 : languageLithuanian
                     ? "Užkrauti"
                     : languageNorwegian
-                        ? "Load in norwegian"
+                        ? "Last"
                         : "Load in polish",
           ),
           onPressed: () {
@@ -119,16 +149,21 @@ class _SavingRowOuterWall extends State<SavingRowOuterWall> {
               selectedName = value.toString();
             },
             dropdownMenuEntries: <DropdownMenuEntry<String>>[
-              for (int i = 0; i < exteriorWallData.length; i++)
+              for (int i = 0; i < lengthOfArray; i++)
                 DropdownMenuEntry(
-                    value: exteriorWallData[i].name,
-                    label: exteriorWallData[i].name),
+                  value: languageEnglish
+                      ? exteriorWallData[i].name
+                      : norwExteriorWallData[i].name,
+                  label: languageEnglish
+                      ? exteriorWallData[i].name
+                      : norwExteriorWallData[i].name,
+                ),
             ]),
         TextButton(
           onPressed: () {
             openExcelDialog();
           },
-          child: Text("Save to excel"),
+          child: Text(languageEnglish ? "Save to excel" : "Lagre i Excel"),
         ),
       ],
     );
@@ -137,7 +172,7 @@ class _SavingRowOuterWall extends State<SavingRowOuterWall> {
   Future<String?> openExcelDialog() => showDialog(
       context: context,
       builder: (context) => AlertDialog(
-            title: Text("Name the file"),
+            title: Text(languageEnglish ? "Name the file" : "Gi filen et navn"),
             content: SingleChildScrollView(
               scrollDirection: Axis.vertical,
               child: Column(
@@ -146,11 +181,15 @@ class _SavingRowOuterWall extends State<SavingRowOuterWall> {
                     controller: savingController,
                     autofocus: true,
                     decoration: InputDecoration(
-                      hintText: "Enter the name of the file",
+                      hintText: languageEnglish
+                          ? "Enter the name of the file"
+                          : "Skriv inn navnet på filen",
                     ),
                   ),
                   CheckboxListTile(
-                      title: const Text("Save field called: Description"),
+                      title: Text(languageEnglish
+                          ? "Save field called: Description"
+                          : "Lagre felt kalt: Beskrivelse"),
                       value: isDescriptionChecked,
                       onChanged: (bool? value) {
                         setState(() {
@@ -160,7 +199,9 @@ class _SavingRowOuterWall extends State<SavingRowOuterWall> {
                         openExcelDialog();
                       }),
                   CheckboxListTile(
-                      title: const Text("Save field called: Units"),
+                      title: Text(languageEnglish
+                          ? "Save field called: Units"
+                          : "Lagre felt kalt: Enheter"),
                       value: isUnitsChecked,
                       onChanged: (bool? value) {
                         setState(() {
@@ -170,7 +211,9 @@ class _SavingRowOuterWall extends State<SavingRowOuterWall> {
                         openExcelDialog();
                       }),
                   CheckboxListTile(
-                      title: const Text("Save field called: Quantity"),
+                      title: Text(languageEnglish
+                          ? "Save field called: Quantity"
+                          : "Lagre felt kalt: Antall"),
                       value: isQuantityChecked,
                       onChanged: (bool? value) {
                         setState(() {
@@ -180,7 +223,9 @@ class _SavingRowOuterWall extends State<SavingRowOuterWall> {
                         openExcelDialog();
                       }),
                   CheckboxListTile(
-                      title: const Text("Save field called: Material quantity"),
+                      title: Text(languageEnglish
+                          ? "Save field called: Material quantity"
+                          : "Lagre felt kalt: Materialmengde"),
                       value: isMaterialQuantityChecked,
                       onChanged: (bool? value) {
                         setState(() {
@@ -190,7 +235,9 @@ class _SavingRowOuterWall extends State<SavingRowOuterWall> {
                         openExcelDialog();
                       }),
                   CheckboxListTile(
-                      title: const Text("Save field called: Hours"),
+                      title: Text(languageEnglish
+                          ? "Save field called: Hours"
+                          : "Lagre felt kalt: Timer"),
                       value: isHoursChecked,
                       onChanged: (bool? value) {
                         setState(() {
@@ -200,7 +247,9 @@ class _SavingRowOuterWall extends State<SavingRowOuterWall> {
                         openExcelDialog();
                       }),
                   CheckboxListTile(
-                      title: const Text("Save field called: Total hours"),
+                      title: Text(languageEnglish
+                          ? "Save field called: Total hours"
+                          : "Lagre felt kalt: Totalt antall timer"),
                       value: isTotalHoursChecked,
                       onChanged: (bool? value) {
                         setState(() {
@@ -210,7 +259,9 @@ class _SavingRowOuterWall extends State<SavingRowOuterWall> {
                         openExcelDialog();
                       }),
                   CheckboxListTile(
-                      title: const Text("Save field called: Labor cost"),
+                      title: Text(languageEnglish
+                          ? "Save field called: Labor cost"
+                          : "Lagre felt kalt: Arbeidskostnad"),
                       value: isJobCostChecked,
                       onChanged: (bool? value) {
                         setState(() {
@@ -220,7 +271,9 @@ class _SavingRowOuterWall extends State<SavingRowOuterWall> {
                         openExcelDialog();
                       }),
                   CheckboxListTile(
-                      title: const Text("Save field called: Materials"),
+                      title: Text(languageEnglish
+                          ? "Save field called: Materials"
+                          : "Lagre felt kalt: Materialer"),
                       value: isMaterialChecked,
                       onChanged: (bool? value) {
                         setState(() {
@@ -230,8 +283,9 @@ class _SavingRowOuterWall extends State<SavingRowOuterWall> {
                         openExcelDialog();
                       }),
                   CheckboxListTile(
-                      title:
-                          const Text("Save field called:Total Material cost"),
+                      title: Text(languageEnglish
+                          ? "Save field called:Total Material cost"
+                          : "Lagre felt kalt: Total materialkostnad"),
                       value: isTotalMaterialsCostChecked,
                       onChanged: (bool? value) {
                         setState(() {
@@ -241,7 +295,9 @@ class _SavingRowOuterWall extends State<SavingRowOuterWall> {
                         openExcelDialog();
                       }),
                   CheckboxListTile(
-                      title: const Text("Save field called: Total price"),
+                      title: Text(languageEnglish
+                          ? "Save field called: Total price"
+                          : "Lagre felt kalt: Total pris"),
                       value: isTotalPriceChecked,
                       onChanged: (bool? value) {
                         setState(() {
@@ -258,7 +314,7 @@ class _SavingRowOuterWall extends State<SavingRowOuterWall> {
                 onPressed: () {
                   Navigator.of(context).pop();
                 },
-                child: Text("Cancel"),
+                child: Text(languageEnglish ? "Cancel" : "Avbryt"),
               ),
               TextButton(
                   onPressed: () {
@@ -336,7 +392,11 @@ class _SavingRowOuterWall extends State<SavingRowOuterWall> {
                     );
                     Navigator.of(context).pop();
                   },
-                  child: Text("Save")),
+                  child: Text(languageEnglish
+                      ? "Save"
+                      : languageNorwegian
+                          ? "Lagre"
+                          : "SaveOtherLang")),
             ],
           ));
 
@@ -362,14 +422,16 @@ class _SavingRowOuterWall extends State<SavingRowOuterWall> {
   Future<String?> openDialog() => showDialog<String>(
         context: context,
         builder: (context) => AlertDialog(
-          title: Text("Name the file"),
+          title: Text(languageEnglish ? "Name the file" : "Gi filen et navn"),
           content: Column(
             children: [
               TextField(
                 controller: savingController,
                 autofocus: true,
                 decoration: InputDecoration(
-                  hintText: "Enter the name of the file",
+                  hintText: languageEnglish
+                      ? "Enter the name of the file"
+                      : "Skriv inn navnet på filen",
                 ),
               ),
             ],
@@ -379,13 +441,17 @@ class _SavingRowOuterWall extends State<SavingRowOuterWall> {
               onPressed: () {
                 Navigator.of(context).pop();
               },
-              child: Text("Cancel"),
+              child: Text(languageEnglish ? "Cancel" : "Avbryt"),
             ),
             TextButton(
                 onPressed: () {
                   submit();
                 },
-                child: Text("Save")),
+                child: Text(languageEnglish
+                    ? "Save"
+                    : languageNorwegian
+                        ? "Lagre"
+                        : "SaveOtherLang")),
           ],
         ),
       );
