@@ -2,6 +2,7 @@
 
 import 'package:cost_calculator/constants/language.dart';
 import 'package:cost_calculator/data/data.dart';
+import 'package:cost_calculator/data/norw_data.dart';
 import 'package:cost_calculator/functions/create_worksheet.dart';
 import 'package:cost_calculator/functions/save_to_json.dart';
 import 'package:cost_calculator/models/inner_door_data_model.dart';
@@ -45,6 +46,7 @@ bool? isJobCostChecked = false;
 bool? isMaterialChecked = false;
 bool? isTotalMaterialsCostChecked = false;
 bool? isTotalPriceChecked = false;
+var lengthOfArray = languageEnglish ? innerDoor.length : norwInnerDoor.length;
 
 class _SavingRowInnerDoor extends State<SavingRowInnerDoor> {
   TextEditingController savingController = TextEditingController(text: "");
@@ -54,10 +56,14 @@ class _SavingRowInnerDoor extends State<SavingRowInnerDoor> {
       children: [
         SizedBox(
           width: 148,
-          child: Text(widget.name),
+          child: Text(languageEnglish ? "Inner doors" : "Innerdører"),
         ),
         TextButton(
-          child: Text("Save"),
+          child: Text(languageEnglish
+              ? "Save"
+              : languageNorwegian
+                  ? "Lagre"
+                  : "SaveOtherLang"),
           onPressed: () async {
             final fileName = await openDialog();
             //if name to file wasnt given
@@ -68,29 +74,49 @@ class _SavingRowInnerDoor extends State<SavingRowInnerDoor> {
             //write a bracket for the start of the array
             await writeJsonArrayStart(fileName);
             InnerDoorModel innerDoorModel;
-            for (var i = 0; i < innerDoor.length; i++) {
+            for (var i = 0; i < lengthOfArray; i++) {
               innerDoorModel = InnerDoorModel(
-                name: innerDoor[i].name,
-                description: innerDoor[i].description,
-                unit: innerDoor[i].unit,
-                quantity: innerDoor[i].quantity,
-                laborHours1: innerDoor[i].laborHours1,
-                laborHours2: innerDoor[i].laborHours2,
-                laborCost: innerDoor[i].laborCost,
-                material: innerDoor[i].material,
-                materials: innerDoor[i].materials,
-                totalPrice: innerDoor[i].totalPrice,
+                name:
+                    languageEnglish ? innerDoor[i].name : norwInnerDoor[i].name,
+                description: languageEnglish
+                    ? innerDoor[i].description
+                    : norwInnerDoor[i].description,
+                unit:
+                    languageEnglish ? innerDoor[i].unit : norwInnerDoor[i].unit,
+                quantity: languageEnglish
+                    ? innerDoor[i].quantity
+                    : norwInnerDoor[i].quantity,
+                laborHours1: languageEnglish
+                    ? innerDoor[i].laborHours1
+                    : norwInnerDoor[i].laborHours1,
+                laborHours2: languageEnglish
+                    ? innerDoor[i].laborHours2
+                    : norwInnerDoor[i].laborHours2,
+                laborCost: languageEnglish
+                    ? innerDoor[i].laborCost
+                    : norwInnerDoor[i].laborCost,
+                material: languageEnglish
+                    ? innerDoor[i].material
+                    : norwInnerDoor[i].material,
+                materials: languageEnglish
+                    ? innerDoor[i].materials
+                    : norwInnerDoor[i].materials,
+                totalPrice: languageEnglish
+                    ? innerDoor[i].totalPrice
+                    : norwInnerDoor[i].totalPrice,
               );
               await writeJson(innerDoorModel, fileName);
               //write a comma for the next element, check if the length is over equals 1 and if it isnt the last element
-              if (innerDoor.length >= 1 && i != innerDoor.length - 1) {
+              if (lengthOfArray >= 1 && i != lengthOfArray - 1) {
                 await writeJsonComma(fileName);
               }
             }
             await writeJsonArrayEnd(fileName);
             ScaffoldMessenger.of(context).showSnackBar(
               SnackBar(
-                content: Text('Data has been saved as $fileName.json'),
+                content: Text(languageEnglish
+                    ? 'Data has been saved as $fileName.json'
+                    : "Dataene er lagret som $fileName.json"),
               ),
             );
           },
@@ -102,7 +128,7 @@ class _SavingRowInnerDoor extends State<SavingRowInnerDoor> {
                 : languageLithuanian
                     ? "Užkrauti"
                     : languageNorwegian
-                        ? "Load in norwegian"
+                        ? "Last"
                         : "Load in polish",
           ),
           onPressed: () {
@@ -115,13 +141,20 @@ class _SavingRowInnerDoor extends State<SavingRowInnerDoor> {
               selectedName = value.toString();
             },
             dropdownMenuEntries: <DropdownMenuEntry<String>>[
-              for (int i = 0; i < innerDoor.length; i++)
+              for (int i = 0; i < lengthOfArray; i++)
                 DropdownMenuEntry(
-                    value: innerDoor[i].name, label: innerDoor[i].name),
+                    value: languageEnglish
+                        ? innerDoor[i].name
+                        : norwInnerDoor[i].name,
+                    label: languageEnglish
+                        ? innerDoor[i].name
+                        : norwInnerDoor[i].name),
             ]),
         TextButton(
-          onPressed: () {},
-          child: Text("Save to excel"),
+          onPressed: () {
+            openExcelDialog();
+          },
+          child: Text(languageEnglish ? "Save to excel" : "Lagre i Excel"),
         ),
       ],
     );
@@ -130,7 +163,7 @@ class _SavingRowInnerDoor extends State<SavingRowInnerDoor> {
   Future<String?> openExcelDialog() => showDialog(
       context: context,
       builder: (context) => AlertDialog(
-            title: Text("Name the file"),
+            title: Text(languageEnglish ? "Name the file" : "Gi filen et navn"),
             content: SingleChildScrollView(
               scrollDirection: Axis.vertical,
               child: Column(
@@ -139,11 +172,15 @@ class _SavingRowInnerDoor extends State<SavingRowInnerDoor> {
                     controller: savingController,
                     autofocus: true,
                     decoration: InputDecoration(
-                      hintText: "Enter the name of the file",
+                      hintText: languageEnglish
+                          ? "Enter the name of the file"
+                          : "Skriv inn navnet på filen",
                     ),
                   ),
                   CheckboxListTile(
-                      title: const Text("Save field called: Description"),
+                      title: Text(languageEnglish
+                          ? "Save field called: Description"
+                          : "Lagre felt kalt: Beskrivelse"),
                       value: isDescriptionChecked,
                       onChanged: (bool? value) {
                         setState(() {
@@ -153,7 +190,9 @@ class _SavingRowInnerDoor extends State<SavingRowInnerDoor> {
                         openExcelDialog();
                       }),
                   CheckboxListTile(
-                      title: const Text("Save field called: Units"),
+                      title: Text(languageEnglish
+                          ? "Save field called: Units"
+                          : "Lagre felt kalt: Enheter"),
                       value: isUnitsChecked,
                       onChanged: (bool? value) {
                         setState(() {
@@ -163,7 +202,9 @@ class _SavingRowInnerDoor extends State<SavingRowInnerDoor> {
                         openExcelDialog();
                       }),
                   CheckboxListTile(
-                      title: const Text("Save field called: Quantity"),
+                      title: Text(languageEnglish
+                          ? "Save field called: Material quantity"
+                          : "Lagre felt kalt: Materialmengde"),
                       value: isQuantityChecked,
                       onChanged: (bool? value) {
                         setState(() {
@@ -173,7 +214,9 @@ class _SavingRowInnerDoor extends State<SavingRowInnerDoor> {
                         openExcelDialog();
                       }),
                   CheckboxListTile(
-                      title: const Text("Save field called: Hours"),
+                      title: Text(languageEnglish
+                          ? "Save field called: Hours"
+                          : "Lagre felt kalt: Timer"),
                       value: isHoursChecked,
                       onChanged: (bool? value) {
                         setState(() {
@@ -183,7 +226,9 @@ class _SavingRowInnerDoor extends State<SavingRowInnerDoor> {
                         openExcelDialog();
                       }),
                   CheckboxListTile(
-                      title: const Text("Save field called: Total hours"),
+                      title: Text(languageEnglish
+                          ? "Save field called: Total hours"
+                          : "Lagre felt kalt: Totalt antall timer"),
                       value: isTotalHoursChecked,
                       onChanged: (bool? value) {
                         setState(() {
@@ -193,7 +238,9 @@ class _SavingRowInnerDoor extends State<SavingRowInnerDoor> {
                         openExcelDialog();
                       }),
                   CheckboxListTile(
-                      title: const Text("Save field called: Labor cost"),
+                      title: Text(languageEnglish
+                          ? "Save field called: Labor cost"
+                          : "Lagre felt kalt: Arbeidskostnad"),
                       value: isJobCostChecked,
                       onChanged: (bool? value) {
                         setState(() {
@@ -203,7 +250,9 @@ class _SavingRowInnerDoor extends State<SavingRowInnerDoor> {
                         openExcelDialog();
                       }),
                   CheckboxListTile(
-                      title: const Text("Save field called: Materials"),
+                      title: Text(languageEnglish
+                          ? "Save field called: Materials"
+                          : "Lagre felt kalt: Materialer"),
                       value: isMaterialChecked,
                       onChanged: (bool? value) {
                         setState(() {
@@ -213,8 +262,9 @@ class _SavingRowInnerDoor extends State<SavingRowInnerDoor> {
                         openExcelDialog();
                       }),
                   CheckboxListTile(
-                      title:
-                          const Text("Save field called:Total Material cost"),
+                      title: Text(languageEnglish
+                          ? "Save field called:Total Material cost"
+                          : "Lagre felt kalt: Total materialkostnad"),
                       value: isTotalMaterialsCostChecked,
                       onChanged: (bool? value) {
                         setState(() {
@@ -224,7 +274,9 @@ class _SavingRowInnerDoor extends State<SavingRowInnerDoor> {
                         openExcelDialog();
                       }),
                   CheckboxListTile(
-                      title: const Text("Save field called: Total price"),
+                      title: Text(languageEnglish
+                          ? "Save field called: Total price"
+                          : "Lagre felt kalt: Total pris"),
                       value: isTotalPriceChecked,
                       onChanged: (bool? value) {
                         setState(() {
@@ -308,7 +360,11 @@ class _SavingRowInnerDoor extends State<SavingRowInnerDoor> {
                     );
                     Navigator.of(context).pop();
                   },
-                  child: Text("Save")),
+                  child: Text(languageEnglish
+                      ? "Save"
+                      : languageNorwegian
+                          ? "Lagre"
+                          : "SaveOtherLang")),
             ],
           ));
 
@@ -334,14 +390,16 @@ class _SavingRowInnerDoor extends State<SavingRowInnerDoor> {
   Future<String?> openDialog() => showDialog<String>(
         context: context,
         builder: (context) => AlertDialog(
-          title: Text("Name the file"),
+          title: Text(languageEnglish ? "Name the file" : "Gi filen et navn"),
           content: Column(
             children: [
               TextField(
                 controller: savingController,
                 autofocus: true,
                 decoration: InputDecoration(
-                  hintText: "Enter the name of the file",
+                  hintText: languageEnglish
+                      ? "Enter the name of the file"
+                      : "Skriv inn navnet på filen",
                 ),
               ),
             ],
@@ -351,13 +409,17 @@ class _SavingRowInnerDoor extends State<SavingRowInnerDoor> {
               onPressed: () {
                 Navigator.of(context).pop();
               },
-              child: Text("Cancel"),
+              child: Text(languageEnglish ? "Cancel" : "Avbryt"),
             ),
             TextButton(
                 onPressed: () {
                   submit();
                 },
-                child: Text("Save")),
+                child: Text(languageEnglish
+                    ? "Save"
+                    : languageNorwegian
+                        ? "Lagre"
+                        : "SaveOtherLang")),
           ],
         ),
       );

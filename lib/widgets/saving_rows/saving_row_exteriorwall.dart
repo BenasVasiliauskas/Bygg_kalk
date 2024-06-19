@@ -89,7 +89,7 @@ class _SavingRowOuterWall extends State<SavingRowOuterWall> {
                       : norwExteriorWallData[i].unit,
                   quantity: languageEnglish
                       ? exteriorWallData[i].quantity
-                      : norwExteriorWallData[i].materialQuantity,
+                      : norwExteriorWallData[i].quantity,
                   materialQuantity: languageEnglish
                       ? exteriorWallData[i].materialQuantity
                       : norwExteriorWallData[i].materialQuantity,
