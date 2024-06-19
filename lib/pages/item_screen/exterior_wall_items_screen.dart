@@ -1,7 +1,6 @@
 // ignore_for_file: must_be_immutable
 
 import 'package:cost_calculator/data/original_data.dart';
-import 'package:cost_calculator/functions/create_worksheet.dart';
 import 'package:cost_calculator/functions/initialise_functions.dart';
 import 'package:cost_calculator/functions/save_to_json.dart';
 import 'package:cost_calculator/models/outer_wall_data_model.dart';
@@ -747,31 +746,6 @@ class _ExteriorWallItemsScreenState extends State<ExteriorWallItemsScreen> {
                       },
                     );
                   }),
-              FloatingActionButton(
-                onPressed: () {
-                  generateOuterWallExcelDocument(
-                    "ExteriorWallItems",
-                    widget.description,
-                    widget.unit,
-                    quantityControllers,
-                    materialQuantityControllers,
-                    laborHours1Controllers,
-                    laborHours2Controllers,
-                    laborCostControllers,
-                    material1Controllers,
-                    material2Controllers,
-                    totalPriceControllers,
-                    widget.name,
-                  );
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    SnackBar(
-                      content: Text(
-                          'Excel file has been created in your Downloads folder'),
-                    ),
-                  );
-                },
-                child: Text("Save to Excel"),
-              ),
               SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
                 child: DataTable(

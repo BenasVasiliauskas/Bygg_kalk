@@ -99,14 +99,14 @@ void addDataExteriorWall(
   Worksheet worksheet,
   List<String> descriptionList,
   List<String> unitList,
-  List<TextEditingController> quantityLists,
-  List<TextEditingController> materialQuantityList,
-  List<TextEditingController> laborHours1List,
-  List<TextEditingController> laborHours2List,
-  List<TextEditingController> laborCostList,
-  List<TextEditingController> material1List,
-  List<TextEditingController> material2List,
-  List<TextEditingController> totalPriceList,
+  List<double> quantityLists,
+  List<double> materialQuantityList,
+  List<double> laborHours1List,
+  List<double> laborHours2List,
+  List<double> laborCostList,
+  List<double> material1List,
+  List<double> material2List,
+  List<double> totalPriceList,
 ) {
   double sumOfHours1 = 0;
   double sumOfHours2 = 0;
@@ -143,20 +143,28 @@ void addDataExteriorWall(
     } else {
       worksheet.getRangeByIndex(i + 2, 1).setText(descriptionList[i]);
       worksheet.getRangeByIndex(i + 2, 2).setText(unitList[i]);
-      worksheet.getRangeByIndex(i + 2, 3).setText(quantityLists[i].text);
-      worksheet.getRangeByIndex(i + 2, 4).setText(materialQuantityList[i].text);
-      worksheet.getRangeByIndex(i + 2, 5).setText(laborHours1List[i].text);
-      sumOfHours1 += double.parse(laborHours1List[i].text);
-      worksheet.getRangeByIndex(i + 2, 6).setText(laborHours2List[i].text);
-      sumOfHours2 += double.parse(laborHours2List[i].text);
-      worksheet.getRangeByIndex(i + 2, 7).setText(laborCostList[i].text);
-      sumOfJobCost += double.parse(laborCostList[i].text);
-      worksheet.getRangeByIndex(i + 2, 8).setText(material1List[i].text);
-      sumOfMaterial += double.parse(material1List[i].text);
-      worksheet.getRangeByIndex(i + 2, 9).setText(material2List[i].text);
-      sumOfMaterialCost += double.parse(material2List[i].text);
-      worksheet.getRangeByIndex(i + 2, 10).setText(totalPriceList[i].text);
-      sumOfTotalPrice += double.parse(totalPriceList[i].text);
+      worksheet.getRangeByIndex(i + 2, 3).setText(quantityLists[i].toString());
+      worksheet
+          .getRangeByIndex(i + 2, 4)
+          .setText(materialQuantityList[i].toString());
+      worksheet
+          .getRangeByIndex(i + 2, 5)
+          .setText(laborHours1List[i].toString());
+      sumOfHours1 += laborHours1List[i];
+      worksheet
+          .getRangeByIndex(i + 2, 6)
+          .setText(laborHours2List[i].toString());
+      sumOfHours2 += laborHours2List[i];
+      worksheet.getRangeByIndex(i + 2, 7).setText(laborCostList[i].toString());
+      sumOfJobCost += laborCostList[i];
+      worksheet.getRangeByIndex(i + 2, 8).setText(material1List[i].toString());
+      sumOfMaterial += material1List[i];
+      worksheet.getRangeByIndex(i + 2, 9).setText(material2List[i].toString());
+      sumOfMaterialCost += material2List[i];
+      worksheet
+          .getRangeByIndex(i + 2, 10)
+          .setText(totalPriceList[i].toString());
+      sumOfTotalPrice += totalPriceList[i];
     }
   }
   range.cellStyle.wrapText = false;
@@ -593,15 +601,15 @@ Future<void> generateExteriorWallExcelDocument(
   String excelName,
   List<String> descriptionList,
   List<String> unitList,
-  List<TextEditingController> quantityLists,
-  List<TextEditingController> materialQuantityList,
-  List<TextEditingController> laborHours1List,
-  List<TextEditingController> customColumnList,
-  List<TextEditingController> laborHours2List,
-  List<TextEditingController> laborCostList,
-  List<TextEditingController> material1List,
-  List<TextEditingController> material2List,
-  List<TextEditingController> totalPriceList,
+  List<double> quantityLists,
+  List<double> materialQuantityList,
+  List<double> laborHours1List,
+  List<double> customColumnList,
+  List<double> laborHours2List,
+  List<double> laborCostList,
+  List<double> material1List,
+  List<double> material2List,
+  List<double> totalPriceList,
   String tabletName,
 ) async {
   final Worksheet worksheet = exteriorWallWorkbook.worksheets[0];
@@ -1202,14 +1210,14 @@ Future<void> generateOuterWallExcelDocument(
   String excelName,
   List<String> descriptionList,
   List<String> unitList,
-  List<TextEditingController> quantityLists,
-  List<TextEditingController> materialQuantityList,
-  List<TextEditingController> laborHours1List,
-  List<TextEditingController> laborHours2List,
-  List<TextEditingController> laborCostList,
-  List<TextEditingController> material1List,
-  List<TextEditingController> material2List,
-  List<TextEditingController> totalPriceList,
+  List<double> quantityLists,
+  List<double> materialQuantityList,
+  List<double> laborHours1List,
+  List<double> laborHours2List,
+  List<double> laborCostList,
+  List<double> material1List,
+  List<double> material2List,
+  List<double> totalPriceList,
   String tabletName,
 ) async {
   final Worksheet worksheet = outerWallWorkbook.worksheets[0];
