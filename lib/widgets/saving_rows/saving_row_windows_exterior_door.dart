@@ -2,6 +2,7 @@
 
 import 'package:cost_calculator/constants/language.dart';
 import 'package:cost_calculator/data/data.dart';
+import 'package:cost_calculator/functions/create_worksheet.dart';
 import 'package:cost_calculator/functions/save_to_json.dart';
 import 'package:cost_calculator/models/windows_exterior_doors_model.dart';
 import 'package:file_picker/file_picker.dart';
@@ -33,11 +34,11 @@ Future<void> choose() async {
   }
 }
 
+String selectedName = "";
+int indexOfName = -1;
 bool? isDescriptionChecked = false;
 bool? isUnitsChecked = false;
-bool? isChecked = false;
 bool? isQuantityChecked = false;
-bool? isMaterialQuantityChecked = false;
 bool? isHoursChecked = false;
 bool? isTotalHoursChecked = false;
 bool? isJobCostChecked = false;
@@ -106,18 +107,232 @@ class _SavingRowWindowExteriorDoor extends State<SavingRowWindowExteriorDoor> {
             choose();
           },
         ),
-        DropdownMenu(dropdownMenuEntries: <DropdownMenuEntry<String>>[
-          for (int i = 0; i < windowsExteriorDoors.length; i++)
-            DropdownMenuEntry(
-                value: windowsExteriorDoors[i].name,
-                label: windowsExteriorDoors[i].name),
-        ]),
+        DropdownMenu(
+            onSelected: (value) {
+              selectedName = value.toString();
+            },
+            dropdownMenuEntries: <DropdownMenuEntry<String>>[
+              for (int i = 0; i < windowsExteriorDoors.length; i++)
+                DropdownMenuEntry(
+                    value: windowsExteriorDoors[i].name,
+                    label: windowsExteriorDoors[i].name),
+            ]),
         TextButton(
-          onPressed: () {},
+          onPressed: () {
+            openExcelDialog();
+          },
           child: Text("Save to excel"),
         ),
       ],
     );
+  }
+
+  Future<String?> openExcelDialog() => showDialog(
+      context: context,
+      builder: (context) => AlertDialog(
+            title: Text("Name the file"),
+            content: SingleChildScrollView(
+              scrollDirection: Axis.vertical,
+              child: Column(
+                children: [
+                  TextField(
+                    controller: savingController,
+                    autofocus: true,
+                    decoration: InputDecoration(
+                      hintText: "Enter the name of the file",
+                    ),
+                  ),
+                  CheckboxListTile(
+                      title: const Text("Save field called: Description"),
+                      value: isDescriptionChecked,
+                      onChanged: (bool? value) {
+                        setState(() {
+                          isDescriptionChecked = value;
+                        });
+                        Navigator.pop(context);
+                        openExcelDialog();
+                      }),
+                  CheckboxListTile(
+                      title: const Text("Save field called: Units"),
+                      value: isUnitsChecked,
+                      onChanged: (bool? value) {
+                        setState(() {
+                          isUnitsChecked = value;
+                        });
+                        Navigator.pop(context);
+                        openExcelDialog();
+                      }),
+                  CheckboxListTile(
+                      title: const Text("Save field called: Quantity"),
+                      value: isQuantityChecked,
+                      onChanged: (bool? value) {
+                        setState(() {
+                          isQuantityChecked = value;
+                        });
+                        Navigator.pop(context);
+                        openExcelDialog();
+                      }),
+                  CheckboxListTile(
+                      title: const Text("Save field called: Hours"),
+                      value: isHoursChecked,
+                      onChanged: (bool? value) {
+                        setState(() {
+                          isHoursChecked = value;
+                        });
+                        Navigator.pop(context);
+                        openExcelDialog();
+                      }),
+                  CheckboxListTile(
+                      title: const Text("Save field called: Total hours"),
+                      value: isTotalHoursChecked,
+                      onChanged: (bool? value) {
+                        setState(() {
+                          isTotalHoursChecked = value;
+                        });
+                        Navigator.pop(context);
+                        openExcelDialog();
+                      }),
+                  CheckboxListTile(
+                      title: const Text("Save field called: Labor cost"),
+                      value: isJobCostChecked,
+                      onChanged: (bool? value) {
+                        setState(() {
+                          isJobCostChecked = value;
+                        });
+                        Navigator.pop(context);
+                        openExcelDialog();
+                      }),
+                  CheckboxListTile(
+                      title: const Text("Save field called: Materials"),
+                      value: isMaterialChecked,
+                      onChanged: (bool? value) {
+                        setState(() {
+                          isMaterialChecked = value;
+                        });
+                        Navigator.pop(context);
+                        openExcelDialog();
+                      }),
+                  CheckboxListTile(
+                      title:
+                          const Text("Save field called:Total Material cost"),
+                      value: isTotalMaterialsCostChecked,
+                      onChanged: (bool? value) {
+                        setState(() {
+                          isTotalMaterialsCostChecked = value;
+                        });
+                        Navigator.pop(context);
+                        openExcelDialog();
+                      }),
+                  CheckboxListTile(
+                      title: const Text("Save field called: Total price"),
+                      value: isTotalPriceChecked,
+                      onChanged: (bool? value) {
+                        setState(() {
+                          isTotalPriceChecked = value;
+                        });
+                        Navigator.pop(context);
+                        openExcelDialog();
+                      }),
+                ],
+              ),
+            ),
+            actions: [
+              TextButton(
+                onPressed: () {
+                  Navigator.of(context).pop();
+                },
+                child: Text("Cancel"),
+              ),
+              TextButton(
+                  onPressed: () {
+                    findIndex();
+                    if (indexOfName == -1) {
+                      return;
+                    }
+                    generateWindowsOuterDoorExcelDocument(
+                      savingController.text,
+                      //
+                      isDescriptionChecked != null &&
+                              isDescriptionChecked == true
+                          ? windowsExteriorDoors[indexOfName].description
+                          //
+                          : generateEmptyStringList(
+                              windowsExteriorDoors[indexOfName].description),
+                      //
+                      isUnitsChecked != null && isUnitsChecked == true
+                          ? windowsExteriorDoors[indexOfName].unit
+                          //
+                          : generateEmptyStringList(
+                              windowsExteriorDoors[indexOfName].unit),
+                      //
+                      isQuantityChecked != null && isQuantityChecked == true
+                          ? windowsExteriorDoors[indexOfName].quantity
+                          //
+                          : generateEmptyList(
+                              windowsExteriorDoors[indexOfName].quantity),
+                      //
+                      isHoursChecked != null && isHoursChecked == true
+                          ? windowsExteriorDoors[indexOfName].laborHours1
+                          //
+                          : generateEmptyList(
+                              windowsExteriorDoors[indexOfName].laborHours1),
+                      //
+                      isTotalHoursChecked != null && isTotalHoursChecked == true
+                          ? windowsExteriorDoors[indexOfName].laborHours2
+                          //
+                          : generateEmptyList(
+                              windowsExteriorDoors[indexOfName].laborHours2),
+                      //
+                      isJobCostChecked != null && isJobCostChecked == true
+                          ? windowsExteriorDoors[indexOfName].laborCost
+                          //
+                          : generateEmptyList(
+                              windowsExteriorDoors[indexOfName].laborCost),
+                      //
+                      isMaterialChecked != null && isMaterialChecked == true
+                          ? windowsExteriorDoors[indexOfName].material
+                          //
+                          : generateEmptyList(
+                              windowsExteriorDoors[indexOfName].material),
+                      //
+                      isTotalMaterialsCostChecked != null &&
+                              isTotalMaterialsCostChecked == true
+                          ? windowsExteriorDoors[indexOfName].materials
+                          //
+                          : generateEmptyList(
+                              windowsExteriorDoors[indexOfName].materials),
+                      //
+                      isTotalPriceChecked != null && isTotalPriceChecked == true
+                          ? windowsExteriorDoors[indexOfName].totalPrice
+                          //
+                          : generateEmptyList(
+                              windowsExteriorDoors[indexOfName].totalPrice),
+                      //
+                      widget.name,
+                    );
+                    Navigator.of(context).pop();
+                  },
+                  child: Text("Save")),
+            ],
+          ));
+
+  void findIndex() {
+    for (int i = 0; i < windowsExteriorDoors.length; i++) {
+      if (windowsExteriorDoors[i].name == selectedName) {
+        indexOfName = i;
+        return;
+      }
+    }
+  }
+
+  List<String> generateEmptyStringList(originalList) {
+    var emptyList = List<String>.filled(originalList.length, "");
+    return emptyList;
+  }
+
+  List<double> generateEmptyList(originalList) {
+    var emptyList = List<double>.filled(originalList.length, 0);
+    return emptyList;
   }
 
   Future<String?> openDialog() => showDialog<String>(
@@ -133,46 +348,6 @@ class _SavingRowWindowExteriorDoor extends State<SavingRowWindowExteriorDoor> {
                   hintText: "Enter the name of the file",
                 ),
               ),
-              CheckboxListTile(
-                  title: const Text("Save field called: A"),
-                  value: isChecked,
-                  onChanged: (bool? value) {
-                    setState(() {
-                      isChecked = value;
-                    });
-                    Navigator.pop(context);
-                    openDialog();
-                  }),
-              CheckboxListTile(
-                  title: const Text("Save field called: B"),
-                  value: isChecked,
-                  onChanged: (bool? value) {
-                    setState(() {
-                      isChecked = value;
-                    });
-                    Navigator.pop(context);
-                    openDialog();
-                  }),
-              CheckboxListTile(
-                  title: const Text("Save field called: C"),
-                  value: isChecked,
-                  onChanged: (bool? value) {
-                    setState(() {
-                      isChecked = value;
-                    });
-                    Navigator.pop(context);
-                    openDialog();
-                  }),
-              CheckboxListTile(
-                  title: const Text("Save field called: D"),
-                  value: isChecked,
-                  onChanged: (bool? value) {
-                    setState(() {
-                      isChecked = value;
-                    });
-                    Navigator.pop(context);
-                    openDialog();
-                  }),
             ],
           ),
           actions: [

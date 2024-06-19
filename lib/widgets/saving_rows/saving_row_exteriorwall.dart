@@ -118,31 +118,6 @@ class _SavingRowOuterWall extends State<SavingRowOuterWall> {
                     value: exteriorWallData[i].name,
                     label: exteriorWallData[i].name),
             ]),
-        // FloatingActionButton(
-        //   onPressed: () {
-        //     generateInnerDoorExcelDocument(
-        //       "ExterioirWallItems",
-        //       exteriorWallData[0].description,
-        //       exteriorWallData[0].unit,
-        //       exteriorWallData[0].quantity,
-        //       exteriorWallData[0].laborHours1,
-        //       exteriorWallData[0].laborHours2,
-        //       exteriorWallData[0].laborCost,
-        //       exteriorWallData[0].material,
-        //       exteriorWallData[0].materials,
-        //       exteriorWallData[0].totalPrice,
-        //       widget.name,
-        //     );
-
-        //     ScaffoldMessenger.of(context).showSnackBar(
-        //       SnackBar(
-        //         content: Text(
-        //             'Excel file has been created in your Downloads folder'),
-        //       ),
-        //     );
-        //   },
-        //   child: Text("Save to Excel"),
-        // ),
         TextButton(
           onPressed: () {
             openExcelDialog();

@@ -9,7 +9,6 @@ import 'package:flutter/material.dart';
 import 'package:collection/collection.dart';
 import '../../constants/innerwall_constants.dart';
 import '../../constants/norw_budget_constants.dart';
-import '../../functions/create_worksheet.dart';
 
 class NorwParquetLaminatetemsScreen extends StatefulWidget {
   String name;
@@ -635,30 +634,6 @@ class _NorwParquetLaminatetemsScreenState
                   columns: columns, // Define your columns here
                   rows: rows,
                 ),
-              ),
-              FloatingActionButton(
-                onPressed: () {
-                  generateNorwParquetAndLaminateExcelDocument(
-                    "Parkett og laminat",
-                    widget.description,
-                    widget.unit,
-                    quantityControllers,
-                    laborHours1Controllers,
-                    laborHours2Controllers,
-                    laborCostControllers,
-                    material1Controllers,
-                    material2Controllers,
-                    totalPriceControllers,
-                    widget.name,
-                  );
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    SnackBar(
-                      content: Text(
-                          'Excel-filen er opprettet i mappen Nedlastinger'),
-                    ),
-                  );
-                },
-                child: Text("Save"),
               ),
               FloatingActionButton(
                 onPressed: () async {

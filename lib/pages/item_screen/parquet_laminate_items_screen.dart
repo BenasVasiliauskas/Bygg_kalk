@@ -1,7 +1,6 @@
 // ignore_for_file: must_be_immutable
 
 import 'package:cost_calculator/data/original_data.dart';
-import 'package:cost_calculator/functions/create_worksheet.dart';
 import 'package:cost_calculator/functions/initialise_functions.dart';
 import 'package:cost_calculator/functions/save_to_json.dart';
 import 'package:cost_calculator/models/parquet_laminate_data_model.dart';
@@ -687,30 +686,6 @@ class _ParquetLaminateItemsScreenState
                       );
                     });
                   }),
-              FloatingActionButton(
-                onPressed: () {
-                  generateInnerDoorExcelDocument(
-                    "ParquetAndLaminateItems",
-                    widget.description,
-                    widget.unit,
-                    quantityControllers,
-                    laborHours1Controllers,
-                    laborHours2Controllers,
-                    laborCostControllers,
-                    material1Controllers,
-                    material2Controllers,
-                    totalPriceControllers,
-                    widget.name,
-                  );
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    SnackBar(
-                      content: Text(
-                          'Excel file has been created in your Downloads folder'),
-                    ),
-                  );
-                },
-                child: Text("Save to excel"),
-              ),
               SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
                 child: DataTable(

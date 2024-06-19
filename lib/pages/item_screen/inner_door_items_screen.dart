@@ -8,8 +8,6 @@ import 'package:flutter/material.dart';
 import '../../constants/budget_constants.dart';
 import '../../constants/innerwall_constants.dart';
 
-import 'package:cost_calculator/functions/create_worksheet.dart';
-
 class InnerDoorItemScreen extends StatefulWidget {
   String name;
   List<String> description;
@@ -709,30 +707,6 @@ class _InnerDoorItemScreenState extends State<InnerDoorItemScreen> {
                       );
                     });
                   }),
-              FloatingActionButton(
-                onPressed: () {
-                  generateInnerDoorExcelDocument(
-                    "InnerDoorItemScreen",
-                    widget.description,
-                    widget.unit,
-                    quantityControllers,
-                    laborHours1Controllers,
-                    laborHours2Controllers,
-                    laborCostControllers,
-                    material1Controllers,
-                    material2Controllers,
-                    totalPriceControllers,
-                    widget.name,
-                  );
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    SnackBar(
-                      content: Text(
-                          'Excel file has been created in your Downloads folder'),
-                    ),
-                  );
-                },
-                child: Text("Save to excel"),
-              ),
               SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
                 child: DataTable(

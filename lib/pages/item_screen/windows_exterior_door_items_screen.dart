@@ -7,7 +7,6 @@ import 'package:cost_calculator/models/windows_exterior_doors_model.dart';
 import 'package:flutter/material.dart';
 import '../../constants/budget_constants.dart';
 import '../../constants/innerwall_constants.dart';
-import '../../functions/create_worksheet.dart';
 import '../shared/globals/calculation_variables.dart';
 
 class WindowsExteriorDoorItemsScreen extends StatefulWidget {
@@ -698,30 +697,6 @@ class _WindowsExteriorDoorItemsScreen
                       );
                     });
                   }),
-              FloatingActionButton(
-                onPressed: () {
-                  generateWindowsOuterDoorExcelDocument(
-                    "WindowsExteriorDoor",
-                    widget.description,
-                    widget.unit,
-                    quantityControllers,
-                    laborHours1Controllers,
-                    laborHours2Controllers,
-                    laborCostControllers,
-                    material1Controllers,
-                    material2Controllers,
-                    totalPriceControllers,
-                    widget.name,
-                  );
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    SnackBar(
-                      content: Text(
-                          'Excel file has been created in your Downloads folder'),
-                    ),
-                  );
-                },
-                child: Text("Save to excel"),
-              ),
               SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
                 child: DataTable(
