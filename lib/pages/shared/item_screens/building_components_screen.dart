@@ -360,7 +360,7 @@ class _buildingComponentsScreenState extends State<buildingComponentsScreen> {
                     ],
                   ),
                 ),
-                Text("0"),
+                Text("1"),
               ],
             ),
             Row(

@@ -1,4 +1,5 @@
 import 'package:cost_calculator/pages/item_screen/support_system_screen.dart';
+import 'package:cost_calculator/pages/norw_item_screen/norw_support_system_item_screen.dart';
 
 import 'package:flutter/material.dart';
 import '../constants/language.dart';
@@ -47,7 +48,7 @@ class SupportSystemItem extends StatelessWidget {
                   material2,
                   totalPrice,
                 )
-              : SupportSystemItemScreen(
+              : NorwSupportSystemItemScreen(
                   name,
                   description,
                   unit,
