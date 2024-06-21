@@ -1351,7 +1351,6 @@ final windowsExteriorDoors = [
     ],
   ),
 ];
-
 final supportSystem = [
   SupportSystemModel(
       name: "Beams and columns, glulam / steel - Single-family house",

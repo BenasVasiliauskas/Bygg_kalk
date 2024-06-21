@@ -1,6 +1,7 @@
 import 'package:cost_calculator/models/inner_door_data_model.dart';
 import 'package:cost_calculator/models/kitchen_data_model.dart';
 import 'package:cost_calculator/models/parquet_laminate_data_model.dart';
+import 'package:cost_calculator/models/support_system_data_model.dart';
 import 'package:cost_calculator/models/windows_exterior_doors_model.dart';
 
 import '../models/inner_wall_data_model.dart';
@@ -1351,6 +1352,109 @@ final windowsExteriorDoors = [
   ),
 ];
 
+final supportSystem = [
+  SupportSystemModel(
+      name: "Beams and columns, glulam / steel - Single-family house",
+      description: [
+        "Glulam beam 115x315",
+        "Glulam beam 90x225",
+        "Glulam beam impr 90x300",
+        "Glulam beam impr 90x270",
+        "Glulam post impr 90x90",
+        "Glulam post 115x115",
+        "Glulam post 90x90",
+        "Steel beam, HEB 220 (73.63 kg/lm) 220mm",
+        "Steel column HUP (14.63 kg/lm) 100x100x5",
+      ],
+      unit: [
+        "lm",
+        "lm",
+        "lm",
+        "lm",
+        "lm",
+        "lm",
+        "lm",
+        "kg",
+        "kg",
+      ],
+      quantity: [
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+      ],
+      laborHours1: [
+        0.40,
+        0.40,
+        0.40,
+        0.40,
+        0.17,
+        0.17,
+        0.17,
+        0.02,
+        0.02,
+      ],
+      laborHours2: [
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+      ],
+      laborCost: [
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+      ],
+      material: [
+        841.76,
+        503.34,
+        839.34,
+        538.54,
+        350.56,
+        358.56,
+        230.56,
+        27.84,
+        12.50,
+      ],
+      materials: [
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+      ],
+      totalPrice: [
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+      ])
+];
 final exteriorWallData = [
   OuterWallModel(
       name: "Timber truss 48x198, 50mm liner, standing double seam, plaster",
