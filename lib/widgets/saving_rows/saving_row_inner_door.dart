@@ -39,7 +39,6 @@ int indexOfName = -1;
 bool? isDescriptionChecked = false;
 bool? isUnitsChecked = false;
 bool? isQuantityChecked = false;
-bool? isMaterialQuantityChecked = false;
 bool? isHoursChecked = false;
 bool? isTotalHoursChecked = false;
 bool? isJobCostChecked = false;
@@ -55,7 +54,7 @@ class _SavingRowInnerDoor extends State<SavingRowInnerDoor> {
     return Row(
       children: [
         SizedBox(
-          width: 148,
+          width: 150,
           child: Text(languageEnglish ? "Inner doors" : "Innerdører"),
         ),
         TextButton(
@@ -143,6 +142,12 @@ class _SavingRowInnerDoor extends State<SavingRowInnerDoor> {
             dropdownMenuEntries: <DropdownMenuEntry<String>>[
               for (int i = 0; i < lengthOfArray; i++)
                 DropdownMenuEntry(
+                    labelWidget: SizedBox(
+                      width: MediaQuery.of(context).size.width * 0.90,
+                      child: Text(languageEnglish
+                          ? innerDoor[i].name
+                          : norwInnerDoor[i].name),
+                    ),
                     value: languageEnglish
                         ? innerDoor[i].name
                         : norwInnerDoor[i].name,
@@ -203,8 +208,8 @@ class _SavingRowInnerDoor extends State<SavingRowInnerDoor> {
                       }),
                   CheckboxListTile(
                       title: Text(languageEnglish
-                          ? "Save field called: Material quantity"
-                          : "Lagre felt kalt: Materialmengde"),
+                          ? "Save field called: Quantity"
+                          : "Lagre felt kalt: Mengde"),
                       value: isQuantityChecked,
                       onChanged: (bool? value) {
                         setState(() {
@@ -369,8 +374,10 @@ class _SavingRowInnerDoor extends State<SavingRowInnerDoor> {
           ));
 
   void findIndex() {
-    for (int i = 0; i < innerDoor.length; i++) {
-      if (innerDoor[i].name == selectedName) {
+    for (int i = 0; i < lengthOfArray; i++) {
+      if (languageEnglish
+          ? innerDoor[i].name == selectedName
+          : norwInnerDoor[i].name == selectedName) {
         indexOfName = i;
         return;
       }

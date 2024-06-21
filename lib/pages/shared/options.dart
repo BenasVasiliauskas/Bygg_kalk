@@ -30,114 +30,117 @@ class _optionsScreenState extends State<optionsScreen> {
     showDialog(
       context: context,
       builder: (BuildContext context) {
-        return AlertDialog(
-          title: languageEnglish
-              ? Text("General")
-              : languageNorwegian
-                  ? Text("Generell")
-                  : languageLithuanian
-                      ? Text("Bendri")
-                      : Text("Ogólny"),
-          content: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              Text(selectedOption),
-              RadioListTile<String>(
-                title: languageEnglish
-                    ? Text("English")
+        return SingleChildScrollView(
+          scrollDirection: Axis.vertical,
+          child: AlertDialog(
+            title: languageEnglish
+                ? Text("General")
+                : languageNorwegian
+                    ? Text("Generell")
+                    : languageLithuanian
+                        ? Text("Bendri")
+                        : Text("Ogólny"),
+            content: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Text(selectedOption),
+                RadioListTile<String>(
+                  title: languageEnglish
+                      ? Text("English")
+                      : languageNorwegian
+                          ? Text("Engelsk")
+                          : languageLithuanian
+                              ? Text("Anglų")
+                              : Text("Angielski"),
+                  value: 'English',
+                  groupValue: selectedOption,
+                  onChanged: (String? value) {
+                    setState(() {
+                      selectedOption = value!;
+                      languageChangedToEnglish();
+                    });
+                    Navigator.of(context).pop(); // Close the dialog
+                    showGeneralDialog(
+                        context); // Reopen the dialog to reflect the change
+                  },
+                ),
+                RadioListTile<String>(
+                  title: languageEnglish
+                      ? Text("Norwegian")
+                      : languageNorwegian
+                          ? Text("Norsk")
+                          : languageLithuanian
+                              ? Text("Norwegų")
+                              : Text("Norweski"),
+                  value: 'Norwegian',
+                  groupValue: selectedOption,
+                  onChanged: (String? value) {
+                    setState(() {
+                      selectedOption = value!;
+                      languageChangedToNorwegian();
+                    });
+                    Navigator.of(context).pop(); // Close the dialog
+                    showGeneralDialog(
+                        context); // Reopen the dialog to reflect the change
+                  },
+                ),
+                RadioListTile<String>(
+                  title: languageEnglish
+                      ? Text("Lithuanian")
+                      : languageNorwegian
+                          ? Text("Litauisk")
+                          : languageLithuanian
+                              ? Text("Lietuvių")
+                              : Text("Litewski"),
+                  value: 'Lithuanian',
+                  groupValue: selectedOption,
+                  onChanged: (String? value) {
+                    setState(() {
+                      selectedOption = value!;
+                      languageChangedToLithuanian();
+                    });
+                    Navigator.of(context).pop(); // Close the dialog
+                    showGeneralDialog(
+                        context); // Reopen the dialog to reflect the change
+                  },
+                ),
+                RadioListTile<String>(
+                  title: languageEnglish
+                      ? Text("Polish")
+                      : languageNorwegian
+                          ? Text("Polsk")
+                          : languageLithuanian
+                              ? Text("Lenkų")
+                              : Text("Polski"),
+                  value: 'Polish',
+                  groupValue: selectedOption,
+                  onChanged: (String? value) {
+                    setState(() {
+                      selectedOption = value!;
+                      languageChangedToPolish();
+                    });
+                    Navigator.of(context).pop(); // Close the dialog
+                    showGeneralDialog(
+                        context); // Reopen the dialog to reflect the change
+                  },
+                ),
+              ],
+            ),
+            actions: <Widget>[
+              TextButton(
+                child: languageEnglish
+                    ? Text("Close")
                     : languageNorwegian
-                        ? Text("Engelsk")
+                        ? Text('Lukk')
                         : languageLithuanian
-                            ? Text("Anglų")
-                            : Text("Angielski"),
-                value: 'English',
-                groupValue: selectedOption,
-                onChanged: (String? value) {
-                  setState(() {
-                    selectedOption = value!;
-                    languageChangedToEnglish();
-                  });
-                  Navigator.of(context).pop(); // Close the dialog
-                  showGeneralDialog(
-                      context); // Reopen the dialog to reflect the change
-                },
-              ),
-              RadioListTile<String>(
-                title: languageEnglish
-                    ? Text("Norwegian")
-                    : languageNorwegian
-                        ? Text("Norsk")
-                        : languageLithuanian
-                            ? Text("Norwegų")
-                            : Text("Norweski"),
-                value: 'Norwegian',
-                groupValue: selectedOption,
-                onChanged: (String? value) {
-                  setState(() {
-                    selectedOption = value!;
-                    languageChangedToNorwegian();
-                  });
-                  Navigator.of(context).pop(); // Close the dialog
-                  showGeneralDialog(
-                      context); // Reopen the dialog to reflect the change
-                },
-              ),
-              RadioListTile<String>(
-                title: languageEnglish
-                    ? Text("Lithuanian")
-                    : languageNorwegian
-                        ? Text("Litauisk")
-                        : languageLithuanian
-                            ? Text("Lietuvių")
-                            : Text("Litewski"),
-                value: 'Lithuanian',
-                groupValue: selectedOption,
-                onChanged: (String? value) {
-                  setState(() {
-                    selectedOption = value!;
-                    languageChangedToLithuanian();
-                  });
-                  Navigator.of(context).pop(); // Close the dialog
-                  showGeneralDialog(
-                      context); // Reopen the dialog to reflect the change
-                },
-              ),
-              RadioListTile<String>(
-                title: languageEnglish
-                    ? Text("Polish")
-                    : languageNorwegian
-                        ? Text("Polsk")
-                        : languageLithuanian
-                            ? Text("Lenkų")
-                            : Text("Polski"),
-                value: 'Polish',
-                groupValue: selectedOption,
-                onChanged: (String? value) {
-                  setState(() {
-                    selectedOption = value!;
-                    languageChangedToPolish();
-                  });
-                  Navigator.of(context).pop(); // Close the dialog
-                  showGeneralDialog(
-                      context); // Reopen the dialog to reflect the change
+                            ? Text("Uždaryti")
+                            : Text("Zamknij"),
+                onPressed: () {
+                  Navigator.of(context).pop();
                 },
               ),
             ],
           ),
-          actions: <Widget>[
-            TextButton(
-              child: languageEnglish
-                  ? Text("Close")
-                  : languageNorwegian
-                      ? Text('Lukk')
-                      : languageLithuanian
-                          ? Text("Uždaryti")
-                          : Text("Zamknij"),
-              onPressed: () {
-                Navigator.of(context).pop();
-              },
-            ),
-          ],
         );
       },
     );
@@ -395,6 +398,7 @@ class _optionsScreenState extends State<optionsScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       drawer: CustomDrawer(),
       appBar: AppBar(
         title: languageEnglish

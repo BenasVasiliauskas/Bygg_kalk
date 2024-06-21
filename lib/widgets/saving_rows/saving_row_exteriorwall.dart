@@ -59,75 +59,73 @@ class _SavingRowOuterWall extends State<SavingRowOuterWall> {
           width: 150,
           child: Text(languageEnglish ? "Exterior walls" : "Yttervegger"),
         ),
-        SizedBox(
-          child: TextButton(
-            child: Text(languageEnglish
-                ? "Save"
-                : languageNorwegian
-                    ? "Lagre"
-                    : "SaveOtherLang"),
-            onPressed: () async {
-              final fileName = await openDialog();
-              //if name to file wasnt given
-              if (fileName == null || fileName.isEmpty) {
-                return;
-              }
-              await fileDeleteIfExists(fileName);
-              //write a bracket for the start of the array
-              await writeJsonArrayStart(fileName);
-              OuterWallModel outerwallModel;
-              for (var i = 0; i < lengthOfArray; i++) {
-                outerwallModel = OuterWallModel(
-                  name: languageEnglish
-                      ? exteriorWallData[i].name
-                      : norwExteriorWallData[i].name,
-                  description: languageEnglish
-                      ? exteriorWallData[i].description
-                      : norwExteriorWallData[i].description,
-                  unit: languageEnglish
-                      ? exteriorWallData[i].unit
-                      : norwExteriorWallData[i].unit,
-                  quantity: languageEnglish
-                      ? exteriorWallData[i].quantity
-                      : norwExteriorWallData[i].quantity,
-                  materialQuantity: languageEnglish
-                      ? exteriorWallData[i].materialQuantity
-                      : norwExteriorWallData[i].materialQuantity,
-                  laborHours1: languageEnglish
-                      ? exteriorWallData[i].laborHours1
-                      : norwExteriorWallData[i].laborHours1,
-                  laborHours2: languageEnglish
-                      ? exteriorWallData[i].laborHours2
-                      : norwExteriorWallData[i].laborHours2,
-                  laborCost: languageEnglish
-                      ? exteriorWallData[i].laborCost
-                      : norwExteriorWallData[i].laborCost,
-                  material: languageEnglish
-                      ? exteriorWallData[i].material
-                      : norwExteriorWallData[i].material,
-                  materials: languageEnglish
-                      ? exteriorWallData[i].materials
-                      : norwExteriorWallData[i].materials,
-                  totalPrice: languageEnglish
-                      ? exteriorWallData[i].totalPrice
-                      : norwExteriorWallData[i].totalPrice,
-                );
-                await writeJson(outerwallModel, fileName);
-                //write a comma for the next element, check if the length is over equals 1 and if it isnt the last element
-                if (lengthOfArray >= 1 && i != lengthOfArray - 1) {
-                  await writeJsonComma(fileName);
-                }
-              }
-              await writeJsonArrayEnd(fileName);
-              ScaffoldMessenger.of(context).showSnackBar(
-                SnackBar(
-                  content: Text(languageEnglish
-                      ? 'Data has been saved as $fileName.json'
-                      : "Dataene er lagret som $fileName.json"),
-                ),
+        TextButton(
+          child: Text(languageEnglish
+              ? "Save"
+              : languageNorwegian
+                  ? "Lagre"
+                  : "SaveOtherLang"),
+          onPressed: () async {
+            final fileName = await openDialog();
+            //if name to file wasnt given
+            if (fileName == null || fileName.isEmpty) {
+              return;
+            }
+            await fileDeleteIfExists(fileName);
+            //write a bracket for the start of the array
+            await writeJsonArrayStart(fileName);
+            OuterWallModel outerwallModel;
+            for (var i = 0; i < lengthOfArray; i++) {
+              outerwallModel = OuterWallModel(
+                name: languageEnglish
+                    ? exteriorWallData[i].name
+                    : norwExteriorWallData[i].name,
+                description: languageEnglish
+                    ? exteriorWallData[i].description
+                    : norwExteriorWallData[i].description,
+                unit: languageEnglish
+                    ? exteriorWallData[i].unit
+                    : norwExteriorWallData[i].unit,
+                quantity: languageEnglish
+                    ? exteriorWallData[i].quantity
+                    : norwExteriorWallData[i].quantity,
+                materialQuantity: languageEnglish
+                    ? exteriorWallData[i].materialQuantity
+                    : norwExteriorWallData[i].materialQuantity,
+                laborHours1: languageEnglish
+                    ? exteriorWallData[i].laborHours1
+                    : norwExteriorWallData[i].laborHours1,
+                laborHours2: languageEnglish
+                    ? exteriorWallData[i].laborHours2
+                    : norwExteriorWallData[i].laborHours2,
+                laborCost: languageEnglish
+                    ? exteriorWallData[i].laborCost
+                    : norwExteriorWallData[i].laborCost,
+                material: languageEnglish
+                    ? exteriorWallData[i].material
+                    : norwExteriorWallData[i].material,
+                materials: languageEnglish
+                    ? exteriorWallData[i].materials
+                    : norwExteriorWallData[i].materials,
+                totalPrice: languageEnglish
+                    ? exteriorWallData[i].totalPrice
+                    : norwExteriorWallData[i].totalPrice,
               );
-            },
-          ),
+              await writeJson(outerwallModel, fileName);
+              //write a comma for the next element, check if the length is over equals 1 and if it isnt the last element
+              if (lengthOfArray >= 1 && i != lengthOfArray - 1) {
+                await writeJsonComma(fileName);
+              }
+            }
+            await writeJsonArrayEnd(fileName);
+            ScaffoldMessenger.of(context).showSnackBar(
+              SnackBar(
+                content: Text(languageEnglish
+                    ? 'Data has been saved as $fileName.json'
+                    : "Dataene er lagret som $fileName.json"),
+              ),
+            );
+          },
         ),
         TextButton(
           child: Text(
@@ -144,6 +142,7 @@ class _SavingRowOuterWall extends State<SavingRowOuterWall> {
           },
         ),
         DropdownMenu(
+            textStyle: TextStyle(overflow: TextOverflow.ellipsis),
             width: 500,
             onSelected: (value) {
               selectedName = value.toString();
@@ -151,6 +150,12 @@ class _SavingRowOuterWall extends State<SavingRowOuterWall> {
             dropdownMenuEntries: <DropdownMenuEntry<String>>[
               for (int i = 0; i < lengthOfArray; i++)
                 DropdownMenuEntry(
+                  labelWidget: SizedBox(
+                    width: MediaQuery.of(context).size.width * 0.90,
+                    child: Text(languageEnglish
+                        ? exteriorWallData[i].name
+                        : norwExteriorWallData[i].name),
+                  ),
                   value: languageEnglish
                       ? exteriorWallData[i].name
                       : norwExteriorWallData[i].name,
@@ -401,8 +406,10 @@ class _SavingRowOuterWall extends State<SavingRowOuterWall> {
           ));
 
   void findIndex() {
-    for (int i = 0; i < exteriorWallData.length; i++) {
-      if (exteriorWallData[i].name == selectedName) {
+    for (int i = 0; i < lengthOfArray; i++) {
+      if (languageEnglish
+          ? exteriorWallData[i].name == selectedName
+          : norwExteriorWallData[i].name == selectedName) {
         indexOfName = i;
         return;
       }

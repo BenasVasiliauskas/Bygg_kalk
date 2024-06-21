@@ -2,6 +2,7 @@
 
 import 'package:cost_calculator/constants/language.dart';
 import 'package:cost_calculator/data/data.dart';
+import 'package:cost_calculator/data/norw_data.dart';
 import 'package:cost_calculator/functions/create_worksheet.dart';
 import 'package:cost_calculator/functions/save_to_json.dart';
 import 'package:cost_calculator/models/parquet_laminate_data_model.dart';
@@ -44,6 +45,8 @@ bool? isJobCostChecked = false;
 bool? isMaterialChecked = false;
 bool? isTotalMaterialsCostChecked = false;
 bool? isTotalPriceChecked = false;
+var lengthOfArray =
+    languageEnglish ? parquetAndLaminate.length : norwParquetAndLaminate.length;
 
 class _SavingRowParquetLaminate extends State<SavingRowParquetLaminate> {
   TextEditingController savingController = TextEditingController(text: "");
@@ -52,11 +55,15 @@ class _SavingRowParquetLaminate extends State<SavingRowParquetLaminate> {
     return Row(
       children: [
         SizedBox(
-          width: 155,
-          child: Text(widget.name),
+          width: 150,
+          child: Text(languageEnglish ? widget.name : "Parkett og laminat"),
         ),
         TextButton(
-          child: Text("Save"),
+          child: Text(languageEnglish
+              ? "Save"
+              : languageNorwegian
+                  ? "Lagre"
+                  : "SaveOtherLang"),
           onPressed: () async {
             final fileName = await openDialog();
             //if name to file wasnt given
@@ -67,30 +74,51 @@ class _SavingRowParquetLaminate extends State<SavingRowParquetLaminate> {
             //write a bracket for the start of the array
             await writeJsonArrayStart(fileName);
             ParquetAndLaminateModel ParquetLaminateModel;
-            for (var i = 0; i < parquetAndLaminate.length; i++) {
+            for (var i = 0; i < lengthOfArray; i++) {
               ParquetLaminateModel = ParquetAndLaminateModel(
-                name: parquetAndLaminate[i].name,
-                description: parquetAndLaminate[i].description,
-                unit: parquetAndLaminate[i].unit,
-                quantity: parquetAndLaminate[i].quantity,
-                laborHours1: parquetAndLaminate[i].laborHours1,
-                laborHours2: parquetAndLaminate[i].laborHours2,
-                laborCost: parquetAndLaminate[i].laborCost,
-                material: parquetAndLaminate[i].material,
-                materials: parquetAndLaminate[i].materials,
-                totalPrice: parquetAndLaminate[i].totalPrice,
+                name: languageEnglish
+                    ? parquetAndLaminate[i].name
+                    : norwParquetAndLaminate[i].name,
+                description: languageEnglish
+                    ? parquetAndLaminate[i].description
+                    : norwParquetAndLaminate[i].description,
+                unit: languageEnglish
+                    ? parquetAndLaminate[i].unit
+                    : norwParquetAndLaminate[i].unit,
+                quantity: languageEnglish
+                    ? parquetAndLaminate[i].quantity
+                    : norwParquetAndLaminate[i].quantity,
+                laborHours1: languageEnglish
+                    ? parquetAndLaminate[i].laborHours1
+                    : norwParquetAndLaminate[i].laborHours1,
+                laborHours2: languageEnglish
+                    ? parquetAndLaminate[i].laborHours2
+                    : norwParquetAndLaminate[i].laborHours2,
+                laborCost: languageEnglish
+                    ? parquetAndLaminate[i].laborCost
+                    : norwParquetAndLaminate[i].laborCost,
+                material: languageEnglish
+                    ? parquetAndLaminate[i].material
+                    : norwParquetAndLaminate[i].material,
+                materials: languageEnglish
+                    ? parquetAndLaminate[i].materials
+                    : norwParquetAndLaminate[i].materials,
+                totalPrice: languageEnglish
+                    ? parquetAndLaminate[i].totalPrice
+                    : norwParquetAndLaminate[i].totalPrice,
               );
               await writeJson(ParquetLaminateModel, fileName);
               //write a comma for the next element, check if the length is over equals 1 and if it isnt the last element
-              if (parquetAndLaminate.length >= 1 &&
-                  i != parquetAndLaminate.length - 1) {
+              if (lengthOfArray >= 1 && i != lengthOfArray - 1) {
                 await writeJsonComma(fileName);
               }
             }
             await writeJsonArrayEnd(fileName);
             ScaffoldMessenger.of(context).showSnackBar(
               SnackBar(
-                content: Text('Data has been saved as $fileName.json'),
+                content: Text(languageEnglish
+                    ? 'Data has been saved as $fileName.json'
+                    : "Dataene er lagret som $fileName.json"),
               ),
             );
           },
@@ -102,7 +130,7 @@ class _SavingRowParquetLaminate extends State<SavingRowParquetLaminate> {
                 : languageLithuanian
                     ? "Užkrauti"
                     : languageNorwegian
-                        ? "Load in norwegian"
+                        ? "Last"
                         : "Load in polish",
           ),
           onPressed: () {
@@ -115,8 +143,14 @@ class _SavingRowParquetLaminate extends State<SavingRowParquetLaminate> {
               selectedName = value.toString();
             },
             dropdownMenuEntries: <DropdownMenuEntry<String>>[
-              for (int i = 0; i < parquetAndLaminate.length; i++)
+              for (int i = 0; i < lengthOfArray; i++)
                 DropdownMenuEntry(
+                    labelWidget: SizedBox(
+                      width: MediaQuery.of(context).size.width * 0.90,
+                      child: Text(languageEnglish
+                          ? parquetAndLaminate[i].name
+                          : norwParquetAndLaminate[i].name),
+                    ),
                     value: parquetAndLaminate[i].name,
                     label: parquetAndLaminate[i].name),
             ]),
@@ -124,7 +158,7 @@ class _SavingRowParquetLaminate extends State<SavingRowParquetLaminate> {
           onPressed: () {
             openExcelDialog();
           },
-          child: Text("Save to excel"),
+          child: Text(languageEnglish ? "Save to excel" : "Lagre i Excel"),
         ),
       ],
     );
@@ -133,7 +167,7 @@ class _SavingRowParquetLaminate extends State<SavingRowParquetLaminate> {
   Future<String?> openExcelDialog() => showDialog(
       context: context,
       builder: (context) => AlertDialog(
-            title: Text("Name the file"),
+            title: Text(languageEnglish ? "Name the file" : "Gi filen et navn"),
             content: SingleChildScrollView(
               scrollDirection: Axis.vertical,
               child: Column(
@@ -142,11 +176,15 @@ class _SavingRowParquetLaminate extends State<SavingRowParquetLaminate> {
                     controller: savingController,
                     autofocus: true,
                     decoration: InputDecoration(
-                      hintText: "Enter the name of the file",
+                      hintText: languageEnglish
+                          ? "Enter the name of the file"
+                          : "Skriv inn navnet på filen",
                     ),
                   ),
                   CheckboxListTile(
-                      title: const Text("Save field called: Description"),
+                      title: Text(languageEnglish
+                          ? "Save field called: Description"
+                          : "Lagre felt kalt: Beskrivelse"),
                       value: isDescriptionChecked,
                       onChanged: (bool? value) {
                         setState(() {
@@ -156,7 +194,9 @@ class _SavingRowParquetLaminate extends State<SavingRowParquetLaminate> {
                         openExcelDialog();
                       }),
                   CheckboxListTile(
-                      title: const Text("Save field called: Units"),
+                      title: Text(languageEnglish
+                          ? "Save field called: Units"
+                          : "Lagre felt kalt: Enheter"),
                       value: isUnitsChecked,
                       onChanged: (bool? value) {
                         setState(() {
@@ -166,7 +206,9 @@ class _SavingRowParquetLaminate extends State<SavingRowParquetLaminate> {
                         openExcelDialog();
                       }),
                   CheckboxListTile(
-                      title: const Text("Save field called: Quantity"),
+                      title: Text(languageEnglish
+                          ? "Save field called: Quantity"
+                          : "Lagre felt kalt: Antall"),
                       value: isQuantityChecked,
                       onChanged: (bool? value) {
                         setState(() {
@@ -176,7 +218,9 @@ class _SavingRowParquetLaminate extends State<SavingRowParquetLaminate> {
                         openExcelDialog();
                       }),
                   CheckboxListTile(
-                      title: const Text("Save field called: Hours"),
+                      title: Text(languageEnglish
+                          ? "Save field called: Hours"
+                          : "Lagre felt kalt: Timer"),
                       value: isHoursChecked,
                       onChanged: (bool? value) {
                         setState(() {
@@ -186,7 +230,9 @@ class _SavingRowParquetLaminate extends State<SavingRowParquetLaminate> {
                         openExcelDialog();
                       }),
                   CheckboxListTile(
-                      title: const Text("Save field called: Total hours"),
+                      title: Text(languageEnglish
+                          ? "Save field called: Total hours"
+                          : "Lagre felt kalt: Totalt antall timer"),
                       value: isTotalHoursChecked,
                       onChanged: (bool? value) {
                         setState(() {
@@ -196,7 +242,9 @@ class _SavingRowParquetLaminate extends State<SavingRowParquetLaminate> {
                         openExcelDialog();
                       }),
                   CheckboxListTile(
-                      title: const Text("Save field called: Labor cost"),
+                      title: Text(languageEnglish
+                          ? "Save field called: Labor cost"
+                          : "Lagre felt kalt: Arbeidskostnad"),
                       value: isJobCostChecked,
                       onChanged: (bool? value) {
                         setState(() {
@@ -206,7 +254,9 @@ class _SavingRowParquetLaminate extends State<SavingRowParquetLaminate> {
                         openExcelDialog();
                       }),
                   CheckboxListTile(
-                      title: const Text("Save field called: Materials"),
+                      title: Text(languageEnglish
+                          ? "Save field called: Materials"
+                          : "Lagre felt kalt: Materialer"),
                       value: isMaterialChecked,
                       onChanged: (bool? value) {
                         setState(() {
@@ -216,8 +266,9 @@ class _SavingRowParquetLaminate extends State<SavingRowParquetLaminate> {
                         openExcelDialog();
                       }),
                   CheckboxListTile(
-                      title:
-                          const Text("Save field called:Total Material cost"),
+                      title: Text(languageEnglish
+                          ? "Save field called:Total Material cost"
+                          : "Lagre felt kalt: Total materialkostnad"),
                       value: isTotalMaterialsCostChecked,
                       onChanged: (bool? value) {
                         setState(() {
@@ -227,7 +278,9 @@ class _SavingRowParquetLaminate extends State<SavingRowParquetLaminate> {
                         openExcelDialog();
                       }),
                   CheckboxListTile(
-                      title: const Text("Save field called: Total price"),
+                      title: Text(languageEnglish
+                          ? "Save field called: Total price"
+                          : "Lagre felt kalt: Total pris"),
                       value: isTotalPriceChecked,
                       onChanged: (bool? value) {
                         setState(() {
@@ -320,8 +373,10 @@ class _SavingRowParquetLaminate extends State<SavingRowParquetLaminate> {
           ));
 
   void findIndex() {
-    for (int i = 0; i < parquetAndLaminate.length; i++) {
-      if (parquetAndLaminate[i].name == selectedName) {
+    for (int i = 0; i < lengthOfArray; i++) {
+      if (languageEnglish
+          ? parquetAndLaminate[i].name == selectedName
+          : norwParquetAndLaminate[i].name == selectedName) {
         indexOfName = i;
         return;
       }

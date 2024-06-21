@@ -34,7 +34,7 @@ class CustomDrawer extends StatelessWidget {
                               width: 35,
                               height: 35,
                               color: Colors.white,
-                              child: FlutterLogo(),
+                              child: Image.asset("assets/Icon.png"),
                             ),
                           ),
                           Text(
@@ -145,21 +145,6 @@ class CustomDrawer extends StatelessWidget {
               );
             },
           ),
-//////// old
-
-          // removed kitchen from the drawer
-          // ListTile(
-          //   title: languageEnglish == true ? Text('Kitchen') : Text('Kjøkken'),
-          //   onTap: () {
-          //     Navigator.of(context).pushReplacement(
-          //       MaterialPageRoute(
-          //         builder: (context) {
-          //           return KitchenScreen();
-          //         },
-          //       ),
-          //     );
-          //   },
-          // ),
         ],
       ),
     );

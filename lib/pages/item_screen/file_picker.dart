@@ -47,34 +47,44 @@ class _FilePickerScreenState extends State<FilePickerScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       backgroundColor: Theme.of(context).colorScheme.background,
       drawer: CustomDrawer(),
       appBar: AppBar(
         centerTitle: true,
         title: const Text('Bygg Kalk'),
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: Column(
-          children: [
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: SavingRowOuterWall("Exterior walls"),
+      body: SingleChildScrollView(
+        scrollDirection: Axis.horizontal,
+        child: SingleChildScrollView(
+          scrollDirection: Axis.vertical,
+          child: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Column(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: SavingRowOuterWall("Exterior walls"),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: SavingRowWindowExteriorDoor("Windows/exterior doors"),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: SavingRowInnerWall("Interior walls"),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: SavingRowInnerDoor("Interior door"),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: SavingRowParquetLaminate("Parquet and laminate"),
+                ),
+              ],
             ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: SavingRowWindowExteriorDoor("Windows/exterior doors"),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: SavingRowInnerWall("Interior walls"),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: SavingRowInnerDoor("Interior door"),
-            ),
-            SavingRowParquetLaminate("Parquet and laminate"),
-          ],
+          ),
         ),
       ),
     );
