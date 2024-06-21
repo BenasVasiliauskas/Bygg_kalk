@@ -1,4 +1,5 @@
 import 'package:cost_calculator/pages/item_screen/waste_item_screen.dart';
+import 'package:cost_calculator/pages/norw_item_screen/norw_waste_item_screen.dart';
 import 'package:flutter/material.dart';
 import '../constants/language.dart';
 
@@ -46,7 +47,7 @@ class WasteItem extends StatelessWidget {
                   material2,
                   totalPrice,
                 )
-              : WasteItemScreen(
+              : NorwWasteItemScreen(
                   name,
                   description,
                   unit,
