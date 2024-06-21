@@ -1,4 +1,5 @@
 import 'package:cost_calculator/pages/item_screen/hull_roofing_item_screen.dart';
+import 'package:cost_calculator/pages/norw_item_screen/norw_hull_roofing_item_screen.dart';
 import 'package:flutter/material.dart';
 import '../constants/language.dart';
 
@@ -46,7 +47,7 @@ class HullRoofingItem extends StatelessWidget {
                   material2,
                   totalPrice,
                 )
-              : HullRoofingItemScreen(
+              : NorwHullRoofingItemScreen(
                   name,
                   description,
                   unit,
