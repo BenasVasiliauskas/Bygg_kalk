@@ -1,4 +1,5 @@
 import 'package:cost_calculator/pages/item_screen/outer_roof_item_screen.dart';
+import 'package:cost_calculator/pages/norw_item_screen/norw_outer_roof_item_screen.dart';
 import 'package:flutter/material.dart';
 import '../constants/language.dart';
 
@@ -49,7 +50,7 @@ class OuterRoofItem extends StatelessWidget {
                   material2,
                   totalPrice,
                 )
-              : OuterRoofItemScreen(
+              : NorwOuterRoofItemScreen(
                   name,
                   description,
                   unit,
