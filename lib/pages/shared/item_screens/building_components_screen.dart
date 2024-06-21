@@ -68,7 +68,9 @@ class _buildingComponentsScreenState extends State<buildingComponentsScreen> {
                     children: [
                       Padding(
                         padding: const EdgeInsets.fromLTRB(0, 0, 8, 0),
-                        child: Icon(FontAwesomeIcons.folder),
+                        child: SizedBox(
+                            width: 50,
+                            child: Image.asset("assets/SupportSystem.png")),
                       ),
                       Text(languageEnglish ? "Support system" : "Bæresystemet"),
                     ],
@@ -91,7 +93,9 @@ class _buildingComponentsScreenState extends State<buildingComponentsScreen> {
                     children: [
                       Padding(
                         padding: const EdgeInsets.fromLTRB(0, 0, 8, 0),
-                        child: Icon(FontAwesomeIcons.folder),
+                        child: SizedBox(
+                            width: 50,
+                            child: Image.asset("assets/ExteriorWalls.png")),
                       ),
                       Text(languageEnglish ? "Exterior walls" : "Yttervegger"),
                     ],
@@ -116,7 +120,8 @@ class _buildingComponentsScreenState extends State<buildingComponentsScreen> {
                     children: [
                       Padding(
                         padding: const EdgeInsets.fromLTRB(0, 0, 8, 0),
-                        child: Icon(FontAwesomeIcons.folder),
+                        child: SizedBox(
+                            width: 50, child: Image.asset("assets/Window.png")),
                       ),
                       Text(languageEnglish
                           ? "Window/exterior door"
@@ -143,7 +148,9 @@ class _buildingComponentsScreenState extends State<buildingComponentsScreen> {
                     children: [
                       Padding(
                         padding: const EdgeInsets.fromLTRB(0, 0, 8, 0),
-                        child: Icon(FontAwesomeIcons.folder),
+                        child: SizedBox(
+                            width: 50,
+                            child: Image.asset("assets/InnerWall.png")),
                       ),
                       Text(languageEnglish ? "Interior walls" : "Innevegger"),
                     ],
@@ -168,7 +175,9 @@ class _buildingComponentsScreenState extends State<buildingComponentsScreen> {
                     children: [
                       Padding(
                         padding: const EdgeInsets.fromLTRB(0, 0, 8, 0),
-                        child: Icon(FontAwesomeIcons.folder),
+                        child: SizedBox(
+                            width: 50,
+                            child: Image.asset("assets/InnerDoor.png")),
                       ),
                       Text(languageEnglish ? "Interior door" : "Innedør"),
                     ],
@@ -191,7 +200,11 @@ class _buildingComponentsScreenState extends State<buildingComponentsScreen> {
                     children: [
                       Padding(
                         padding: const EdgeInsets.fromLTRB(0, 0, 8, 0),
-                        child: Icon(FontAwesomeIcons.folder),
+                        child: Padding(
+                          padding: const EdgeInsets.fromLTRB(0, 0, 8, 0),
+                          child: SizedBox(
+                              width: 50, child: Image.asset("assets/Deck.png")),
+                        ),
                       ),
                       Text(languageEnglish ? "Deck" : "Dekke"),
                     ],
@@ -214,7 +227,9 @@ class _buildingComponentsScreenState extends State<buildingComponentsScreen> {
                     children: [
                       Padding(
                         padding: const EdgeInsets.fromLTRB(0, 0, 8, 0),
-                        child: Icon(FontAwesomeIcons.folder),
+                        child: SizedBox(
+                            width: 50,
+                            child: Image.asset("assets/Flooring.png")),
                       ),
                       Text(languageEnglish ? "Flooring" : "Gulvbelegg"),
                     ],
@@ -237,7 +252,9 @@ class _buildingComponentsScreenState extends State<buildingComponentsScreen> {
                     children: [
                       Padding(
                         padding: const EdgeInsets.fromLTRB(0, 0, 8, 0),
-                        child: Icon(FontAwesomeIcons.folder),
+                        child: SizedBox(
+                            width: 50,
+                            child: Image.asset("assets/ExteriorRoof.png")),
                       ),
                       Text(languageEnglish ? "Exterior roof" : "Yttertak"),
                     ],
@@ -260,7 +277,9 @@ class _buildingComponentsScreenState extends State<buildingComponentsScreen> {
                     children: [
                       Padding(
                         padding: const EdgeInsets.fromLTRB(0, 0, 8, 0),
-                        child: Icon(FontAwesomeIcons.folder),
+                        child: SizedBox(
+                            width: 50,
+                            child: Image.asset("assets/Terrace.png")),
                       ),
                       Text(languageEnglish
                           ? "Terrace/railings"
@@ -285,7 +304,9 @@ class _buildingComponentsScreenState extends State<buildingComponentsScreen> {
                     children: [
                       Padding(
                         padding: const EdgeInsets.fromLTRB(0, 0, 8, 0),
-                        child: Icon(FontAwesomeIcons.folder),
+                        child: SizedBox(
+                            width: 50,
+                            child: Image.asset("assets/InnerStairs.png")),
                       ),
                       Text(languageEnglish ? "Inner stairs" : "Trapper"),
                     ],
@@ -308,7 +329,9 @@ class _buildingComponentsScreenState extends State<buildingComponentsScreen> {
                     children: [
                       Padding(
                         padding: const EdgeInsets.fromLTRB(0, 0, 8, 0),
-                        child: Icon(FontAwesomeIcons.folder),
+                        child: SizedBox(
+                            width: 50,
+                            child: Image.asset("assets/HullRoofing.png")),
                       ),
                       Text(languageEnglish ? "Hull roofing" : "Hulltaking"),
                     ],
@@ -331,7 +354,9 @@ class _buildingComponentsScreenState extends State<buildingComponentsScreen> {
                     children: [
                       Padding(
                         padding: const EdgeInsets.fromLTRB(0, 0, 8, 0),
-                        child: Icon(FontAwesomeIcons.folder),
+                        child: SizedBox(
+                            width: 50,
+                            child: Image.asset("assets/Scaffold.png")),
                       ),
                       Text(languageEnglish ? "Scaffolding" : "Stillas"),
                     ],
@@ -354,7 +379,8 @@ class _buildingComponentsScreenState extends State<buildingComponentsScreen> {
                     children: [
                       Padding(
                         padding: const EdgeInsets.fromLTRB(0, 0, 8, 0),
-                        child: Icon(FontAwesomeIcons.folder),
+                        child: SizedBox(
+                            width: 50, child: Image.asset("assets/Waste.png")),
                       ),
                       Text(languageEnglish ? "Waste management" : "Avfall"),
                     ],
@@ -379,7 +405,9 @@ class _buildingComponentsScreenState extends State<buildingComponentsScreen> {
                     children: [
                       Padding(
                         padding: const EdgeInsets.fromLTRB(0, 0, 8, 0),
-                        child: Icon(FontAwesomeIcons.folder),
+                        child: SizedBox(
+                            width: 50,
+                            child: Image.asset("assets/Parquet.png")),
                       ),
                       Text(languageEnglish
                           ? "Parquet and laminate"
