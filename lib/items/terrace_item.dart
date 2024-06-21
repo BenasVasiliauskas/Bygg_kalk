@@ -1,4 +1,5 @@
 import 'package:cost_calculator/pages/item_screen/terrace_item_screen.dart';
+import 'package:cost_calculator/pages/norw_item_screen/norw_terrace_item_screen.dart';
 import 'package:flutter/material.dart';
 import '../constants/language.dart';
 
@@ -46,7 +47,7 @@ class TerraceItem extends StatelessWidget {
                   material2,
                   totalPrice,
                 )
-              : TerraceItemScreen(
+              : NorwTerraceItemScreen(
                   name,
                   description,
                   unit,
