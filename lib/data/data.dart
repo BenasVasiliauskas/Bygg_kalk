@@ -1,4 +1,5 @@
 import 'package:cost_calculator/models/deck_data_model.dart';
+import 'package:cost_calculator/models/flooring_data_model.dart';
 import 'package:cost_calculator/models/inner_door_data_model.dart';
 import 'package:cost_calculator/models/parquet_laminate_data_model.dart';
 import 'package:cost_calculator/models/support_system_data_model.dart';
@@ -862,11 +863,11 @@ final deckData = [
     "m²",
     "m²",
   ], quantity: [
-    0,
-    0,
-    0,
-    0,
-    0,
+    1.00,
+    2.50,
+    0.12,
+    1.00,
+    1.00,
   ], laborHours1: [
     0.21,
     0.16,
@@ -1414,6 +1415,84 @@ final supportSystem = [
         0.00,
         0.00,
       ])
+];
+
+final flooringData = [
+  FlooringModel(
+    name: "Wet room wall w/panel - wet room tile + tile 25x33",
+    description: [
+      "Wet room tiles Litex on walls",
+      "Tile, ceramic on wall, white",
+      "Nail punch for membrane in wet room",
+      "Bottom panel, spruce, screwed",
+      "Filling with sealant in corners",
+      "Lubricating membrane for sealing panels, wall",
+    ],
+    unit: [
+      "m²",
+      "m²",
+      "m²",
+      "m²",
+      "m²",
+      "m²",
+    ],
+    quantity: [
+      1.00,
+      1.00,
+      1.00,
+      1.00,
+      0.30,
+      1.00,
+    ],
+    laborHours1: [
+      0.23,
+      1.21,
+      0.17,
+      0.30,
+      0.03,
+      0.35,
+    ],
+    laborHours2: [
+      0.00,
+      0.00,
+      0.00,
+      0.00,
+      0.00,
+      0.00,
+    ],
+    laborCost: [
+      0.00,
+      0.00,
+      0.00,
+      0.00,
+      0.00,
+      0.00,
+    ],
+    material: [
+      637.68,
+      374.56,
+      17.21,
+      144.28,
+      3.71,
+      329.52,
+    ],
+    materials: [
+      0.00,
+      0.00,
+      0.00,
+      0.00,
+      0.00,
+      0.00,
+    ],
+    totalPrice: [
+      0.00,
+      0.00,
+      0.00,
+      0.00,
+      0.00,
+      0.00,
+    ],
+  )
 ];
 
 final exteriorWallData = [
