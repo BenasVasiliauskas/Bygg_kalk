@@ -1,4 +1,5 @@
 import 'package:cost_calculator/models/deck_data_model.dart';
+import 'package:cost_calculator/models/inner_stairs_model.dart';
 import 'package:cost_calculator/models/outer_roof_model.dart';
 import 'package:cost_calculator/models/outer_wall_data_model.dart';
 import 'package:cost_calculator/models/parquet_laminate_data_model.dart';
@@ -1807,4 +1808,35 @@ final norwOuterRoofData = [
       0.00,
     ],
   )
+];
+
+final norwInnerStairsData = [
+  InnerStairsModel(name: "Trapper innvendig, tre rettløp", description: [
+    "Åpninger i bjelkelag >4 m²",
+    "Trapp rett hvit gr. prefab., furu eik toning",
+  ], unit: [
+    "stk",
+    "stk",
+  ], quantity: [
+    1.00,
+    1.00,
+  ], laborHours1: [
+    1.27,
+    20.14,
+  ], laborHours2: [
+    0.00,
+    0.00,
+  ], laborCost: [
+    0.00,
+    0.00,
+  ], material: [
+    838.42,
+    45000,
+  ], materials: [
+    0.00,
+    0.00,
+  ], totalPrice: [
+    0.00,
+    0.00,
+  ])
 ];

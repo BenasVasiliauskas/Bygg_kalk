@@ -1,0 +1,55 @@
+import 'package:cost_calculator/constants/language.dart';
+import 'package:cost_calculator/pages/shared/item_screens/inner_stairs_screen.dart';
+import 'package:cost_calculator/widgets/custom_drawer.dart';
+import 'package:flutter/material.dart';
+
+class InnerStairsSections extends StatefulWidget {
+  const InnerStairsSections({super.key});
+
+  @override
+  State<InnerStairsSections> createState() => _InnerStairsSectionsState();
+}
+
+class _InnerStairsSectionsState extends State<InnerStairsSections> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      drawer: CustomDrawer(),
+      appBar: AppBar(
+        title: Text(
+          languageEnglish
+              ? "Inner stairs"
+              : languageLithuanian
+                  ? "Vidaus laiptai"
+                  : languageNorwegian
+                      ? "Innvendige trapper"
+                      : "Schody wewnętrzne",
+        ),
+      ),
+      body: Column(
+        children: [
+          TextButton(
+            onPressed: () {
+              Navigator.of(context).pushReplacement(
+                MaterialPageRoute(
+                  builder: (context) {
+                    return InnerStairsScreen();
+                  },
+                ),
+              );
+            },
+            child: Text(
+              languageEnglish
+                  ? "Inner stairs"
+                  : languageLithuanian
+                      ? "Vidaus laiptai"
+                      : languageNorwegian
+                          ? "Innvendige trapper"
+                          : "Schody wewnętrzne",
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
