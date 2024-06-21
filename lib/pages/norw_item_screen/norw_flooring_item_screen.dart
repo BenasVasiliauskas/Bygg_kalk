@@ -5,11 +5,11 @@ import 'package:cost_calculator/constants/innerwall_constants.dart';
 import 'package:cost_calculator/data/data.dart';
 import 'package:cost_calculator/functions/initialise_functions.dart';
 import 'package:cost_calculator/functions/save_to_json.dart';
-import 'package:cost_calculator/models/deck_data_model.dart';
+import 'package:cost_calculator/models/flooring_data_model.dart';
 import 'package:cost_calculator/pages/shared/globals/calculation_variables.dart';
 import 'package:flutter/material.dart';
 
-class NorwDeckItemScreen extends StatefulWidget {
+class NorwFlooringItemScreen extends StatefulWidget {
   String name;
   List<String> description;
   List<String> unit;
@@ -21,7 +21,7 @@ class NorwDeckItemScreen extends StatefulWidget {
   List<double> material2;
   List<double> totalPrice;
 
-  NorwDeckItemScreen(
+  NorwFlooringItemScreen(
     this.name,
     this.description,
     this.unit,
@@ -35,12 +35,12 @@ class NorwDeckItemScreen extends StatefulWidget {
   );
 
   @override
-  State<NorwDeckItemScreen> createState() => _NorwDeckItemScreenState();
+  State<NorwFlooringItemScreen> createState() => _NorwFlooringItemScreenState();
 }
 
 List<double> emptyCustomList = [];
 
-class _NorwDeckItemScreenState extends State<NorwDeckItemScreen> {
+class _NorwFlooringItemScreenState extends State<NorwFlooringItemScreen> {
   List<DataRow> rows = [];
   List<TextEditingController> descriptionControllers = [];
   List<TextEditingController> unitControllers = [];
@@ -311,7 +311,7 @@ class _NorwDeckItemScreenState extends State<NorwDeckItemScreen> {
 
   @override
   Widget build(BuildContext context) {
-    List<DataColumn> calculationColumns = calculationColumnsNorw;
+    List<DataColumn> calculationColumns = calculationColumnsEng;
 
     List<DataRow> calculationRows = [
       DataRow(
@@ -654,7 +654,7 @@ class _NorwDeckItemScreenState extends State<NorwDeckItemScreen> {
                   setState(() {
                     this.name = name;
                   });
-                  DeckModel deckModel = DeckModel(
+                  FlooringModel flooringModel = FlooringModel(
                     name: name,
                     description: widget.description,
                     unit: widget.unit,
@@ -667,7 +667,7 @@ class _NorwDeckItemScreenState extends State<NorwDeckItemScreen> {
                     totalPrice: widget.totalPrice,
                   );
 
-                  writeJson(deckModel, name);
+                  writeJson(flooringModel, name);
                   ScaffoldMessenger.of(context).showSnackBar(SnackBar(
                       content: Text('Dataene er lagret som $name.json')));
                 },
@@ -686,18 +686,19 @@ class _NorwDeckItemScreenState extends State<NorwDeckItemScreen> {
                       readJsonFile(fileName).then(
                         (value) {
                           for (int i = 0; i < value.length; i++) {
-                            DeckModel deckModel = DeckModel.fromJson(value[i]);
-                            if (deckModel.name == widget.name) {
+                            FlooringModel flooringModel =
+                                FlooringModel.fromJson(value[i]);
+                            if (flooringModel.name == widget.name) {
                               setState(() {
-                                widget.description = deckModel.description;
-                                widget.unit = deckModel.unit;
-                                widget.quantity = deckModel.quantity;
-                                widget.laborHours1 = deckModel.laborHours1;
-                                widget.laborHours2 = deckModel.laborHours2;
-                                widget.laborCost = deckModel.laborCost;
-                                widget.material1 = deckModel.material;
-                                widget.material2 = deckModel.materials;
-                                widget.totalPrice = deckModel.totalPrice;
+                                widget.description = flooringModel.description;
+                                widget.unit = flooringModel.unit;
+                                widget.quantity = flooringModel.quantity;
+                                widget.laborHours1 = flooringModel.laborHours1;
+                                widget.laborHours2 = flooringModel.laborHours2;
+                                widget.laborCost = flooringModel.laborCost;
+                                widget.material1 = flooringModel.material;
+                                widget.material2 = flooringModel.materials;
+                                widget.totalPrice = flooringModel.totalPrice;
                                 setInitialValues();
                                 calculateCalculationQuantity();
                                 updateTotalSum();
