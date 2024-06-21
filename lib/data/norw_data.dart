@@ -8,6 +8,7 @@ import 'package:cost_calculator/models/parquet_laminate_data_model.dart';
 import 'package:cost_calculator/models/scaffolding_data_model.dart';
 import 'package:cost_calculator/models/support_system_data_model.dart';
 import 'package:cost_calculator/models/terrace_model.dart';
+import 'package:cost_calculator/models/waste_data_model.dart';
 import 'package:cost_calculator/models/windows_exterior_doors_model.dart';
 
 import '../models/inner_door_data_model.dart';
@@ -2063,4 +2064,70 @@ final norwScaffoldingData = [
         0.00,
         0.00,
       ])
+];
+final norwWasteData = [
+  WasteModel(name: "Avfall flytting", description: [
+    "Container 10 m³: Innhenting. Takst. og mur",
+    "Container 10 m³: Innhenting. Rent treverk",
+    "Container 10 m³: Utsetting",
+    "Container 10 m³: Leie pr. Uke",
+    "Container 10 m³: Tømme-avgift. Rent treverk",
+    "Container 10 m³: Tømme-avgift. Takst. og mur",
+  ], unit: [
+    "RS",
+    "RS",
+    "RS",
+    "RS",
+    "RS",
+    "RS",
+  ], quantity: [
+    0.00,
+    0.00,
+    0.00,
+    0.00,
+    0.00,
+    0.00,
+  ], laborHours1: [
+    0.00,
+    0.00,
+    0.00,
+    0.00,
+    0.00,
+    0.00,
+  ], laborHours2: [
+    0.00,
+    0.00,
+    0.00,
+    0.00,
+    0.00,
+    0.00,
+  ], laborCost: [
+    0.00,
+    0.00,
+    0.00,
+    0.00,
+    0.00,
+    0.00,
+  ], material: [
+    5135.00,
+    3275.00,
+    491.00,
+    1500.00,
+    3264.00,
+    5124.00,
+  ], materials: [
+    0.00,
+    0.00,
+    0.00,
+    0.00,
+    0.00,
+    0.00,
+  ], totalPrice: [
+    0.00,
+    0.00,
+    0.00,
+    0.00,
+    0.00,
+    0.00,
+  ])
 ];

@@ -8,6 +8,7 @@ import 'package:cost_calculator/models/parquet_laminate_data_model.dart';
 import 'package:cost_calculator/models/scaffolding_data_model.dart';
 import 'package:cost_calculator/models/support_system_data_model.dart';
 import 'package:cost_calculator/models/terrace_model.dart';
+import 'package:cost_calculator/models/waste_data_model.dart';
 import 'package:cost_calculator/models/windows_exterior_doors_model.dart';
 
 import '../models/inner_wall_data_model.dart';
@@ -2050,4 +2051,71 @@ final innerStairsData = [
       0.00,
     ],
   )
+];
+
+final wasteData = [
+  WasteModel(name: "Waste removal", description: [
+    "Container 10 m³: Collection. Tariff. and wall",
+    "Container 10 m³: Collection. Clean wood",
+    "Container 10 m³: Deployment",
+    "Container 10 m³: Rent per week",
+    "Container 10 m³: Emptying fee. Clean wood",
+    "Container 10 m³: Emptying fee. Takst. and masonry",
+  ], unit: [
+    "RS",
+    "RS",
+    "RS",
+    "RS",
+    "RS",
+    "RS",
+  ], quantity: [
+    0.00,
+    0.00,
+    0.00,
+    0.00,
+    0.00,
+    0.00,
+  ], laborHours1: [
+    0.00,
+    0.00,
+    0.00,
+    0.00,
+    0.00,
+    0.00,
+  ], laborHours2: [
+    0.00,
+    0.00,
+    0.00,
+    0.00,
+    0.00,
+    0.00,
+  ], laborCost: [
+    0.00,
+    0.00,
+    0.00,
+    0.00,
+    0.00,
+    0.00,
+  ], material: [
+    5135.00,
+    3275.00,
+    491.00,
+    1500.00,
+    3264.00,
+    5124.00,
+  ], materials: [
+    0.00,
+    0.00,
+    0.00,
+    0.00,
+    0.00,
+    0.00,
+  ], totalPrice: [
+    0.00,
+    0.00,
+    0.00,
+    0.00,
+    0.00,
+    0.00,
+  ])
 ];
