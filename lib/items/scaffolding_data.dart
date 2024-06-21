@@ -1,4 +1,5 @@
 import 'package:cost_calculator/pages/item_screen/scaffolding_item_screen.dart';
+import 'package:cost_calculator/pages/norw_item_screen/norw_scaffolding_item_screen.dart';
 import 'package:flutter/material.dart';
 import '../constants/language.dart';
 
@@ -46,7 +47,7 @@ class ScaffoldingItem extends StatelessWidget {
                   material2,
                   totalPrice,
                 )
-              : ScaffoldingItemScreen(
+              : NorwScaffoldingItemScreen(
                   name,
                   description,
                   unit,
