@@ -1,16 +1,16 @@
 import 'package:cost_calculator/constants/language.dart';
-import 'package:cost_calculator/pages/shared/item_screens/inner_door_screen.dart';
+import 'package:cost_calculator/pages/shared/item_screens/support_system_screen.dart';
 import 'package:cost_calculator/widgets/custom_drawer.dart';
 import 'package:flutter/material.dart';
 
-class InnerDoorSections extends StatefulWidget {
-  const InnerDoorSections({super.key});
+class SupportSystemSections extends StatefulWidget {
+  const SupportSystemSections({super.key});
 
   @override
-  State<InnerDoorSections> createState() => _InnerDoorSectionsState();
+  State<SupportSystemSections> createState() => _SupportSystemSectionsState();
 }
 
-class _InnerDoorSectionsState extends State<InnerDoorSections> {
+class _SupportSystemSectionsState extends State<SupportSystemSections> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -18,12 +18,12 @@ class _InnerDoorSectionsState extends State<InnerDoorSections> {
       appBar: AppBar(
         title: Text(
           languageEnglish
-              ? "Inner doors"
+              ? "Support system"
               : languageLithuanian
-                  ? "Vidinės durys"
+                  ? "Paramos sistemos"
                   : languageNorwegian
-                      ? "Innvendige dører"
-                      : "Drzwi wewnętrzne",
+                      ? "Bæresystemer"
+                      : "Systemy wsparcia",
         ),
       ),
       body: Column(
@@ -33,19 +33,19 @@ class _InnerDoorSectionsState extends State<InnerDoorSections> {
               Navigator.of(context).pushReplacement(
                 MaterialPageRoute(
                   builder: (context) {
-                    return InnerDoorScreen();
+                    return SupportSystemScreen();
                   },
                 ),
               );
             },
             child: Text(
               languageEnglish
-                  ? "Inner doors"
+                  ? "Support system"
                   : languageLithuanian
-                      ? "Vidinės durys"
+                      ? "Paramos sistemos"
                       : languageNorwegian
-                          ? "Innvendige dører"
-                          : "Drzwi wewnętrzne",
+                          ? "Bæresystemer"
+                          : "Systemy wsparcia",
             ),
           ),
         ],

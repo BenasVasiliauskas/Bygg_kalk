@@ -1,4 +1,5 @@
 import 'package:cost_calculator/constants/language.dart';
+import 'package:cost_calculator/pages/item_sections/support_system_sections.dart';
 import 'package:cost_calculator/pages/shared/home_page.dart';
 import 'package:cost_calculator/pages/item_sections/inner_door_sections.dart';
 import 'package:cost_calculator/pages/item_sections/inner_wall_sections.dart';
@@ -48,18 +49,24 @@ class _buildingComponentsScreenState extends State<buildingComponentsScreen> {
             Row(
               children: [
                 TextButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.of(context).pushReplacement(
+                      MaterialPageRoute(builder: (context) {
+                        return SupportSystemSections();
+                      }),
+                    );
+                  },
                   child: Row(
                     children: [
                       Padding(
                         padding: const EdgeInsets.fromLTRB(0, 0, 8, 0),
                         child: Icon(FontAwesomeIcons.folder),
                       ),
-                      Text(languageEnglish ? "Carrier system" : "Bæresystemet"),
+                      Text(languageEnglish ? "Support system" : "Bæresystemet"),
                     ],
                   ),
                 ),
-                Text("0"),
+                Text("1"),
               ],
             ),
             Row(

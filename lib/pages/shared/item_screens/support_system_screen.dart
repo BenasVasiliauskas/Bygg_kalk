@@ -1,17 +1,17 @@
 import 'package:cost_calculator/data/data.dart';
 import 'package:cost_calculator/data/norw_data.dart';
-import 'package:cost_calculator/items/inner_door_item.dart';
+import 'package:cost_calculator/items/support_system_item.dart';
 
 import 'package:flutter/material.dart';
-import '../../constants/language.dart';
-import '../../widgets/custom_drawer.dart';
+import '../../../constants/language.dart';
+import '../../../widgets/custom_drawer.dart';
 
-class InnerDoorScreen extends StatefulWidget {
+class SupportSystemScreen extends StatefulWidget {
   @override
-  State<InnerDoorScreen> createState() => _InnerDoorScreenState();
+  State<SupportSystemScreen> createState() => _SupportSystemScreenState();
 }
 
-class _InnerDoorScreenState extends State<InnerDoorScreen> {
+class _SupportSystemScreenState extends State<SupportSystemScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,9 +22,9 @@ class _InnerDoorScreenState extends State<InnerDoorScreen> {
       body: languageEnglish == true
           ? GridView.count(
               padding: const EdgeInsets.all(25),
-              children: innerDoor
+              children: supportSystem
                   .map(
-                    (catData) => InnerDoorItem(
+                    (catData) => SupportSystemItem(
                       catData.name,
                       catData.description,
                       catData.unit,
@@ -47,7 +47,7 @@ class _InnerDoorScreenState extends State<InnerDoorScreen> {
               padding: const EdgeInsets.all(25),
               children: norwInnerDoor
                   .map(
-                    (catData) => InnerDoorItem(
+                    (catData) => SupportSystemItem(
                       catData.name,
                       catData.description,
                       catData.unit,

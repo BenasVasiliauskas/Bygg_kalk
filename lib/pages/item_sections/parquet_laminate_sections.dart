@@ -1,5 +1,5 @@
 import 'package:cost_calculator/constants/language.dart';
-import 'package:cost_calculator/pages/shared/parquet_laminate_screen.dart';
+import 'package:cost_calculator/pages/shared/item_screens/parquet_laminate_screen.dart';
 import 'package:cost_calculator/widgets/custom_drawer.dart';
 import 'package:flutter/material.dart';
 

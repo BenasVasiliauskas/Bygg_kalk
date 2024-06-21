@@ -1,17 +1,17 @@
 import 'package:cost_calculator/data/data.dart';
 import 'package:cost_calculator/data/norw_data.dart';
-import 'package:cost_calculator/items/parquet_laminate_item.dart';
+import 'package:cost_calculator/items/inner_door_item.dart';
 
 import 'package:flutter/material.dart';
-import '../../constants/language.dart';
-import '../../widgets/custom_drawer.dart';
+import '../../../constants/language.dart';
+import '../../../widgets/custom_drawer.dart';
 
-class ParquetLaminateScreen extends StatefulWidget {
+class InnerDoorScreen extends StatefulWidget {
   @override
-  State<ParquetLaminateScreen> createState() => _ParquetLaminateScreenState();
+  State<InnerDoorScreen> createState() => _InnerDoorScreenState();
 }
 
-class _ParquetLaminateScreenState extends State<ParquetLaminateScreen> {
+class _InnerDoorScreenState extends State<InnerDoorScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,9 +22,9 @@ class _ParquetLaminateScreenState extends State<ParquetLaminateScreen> {
       body: languageEnglish == true
           ? GridView.count(
               padding: const EdgeInsets.all(25),
-              children: parquetAndLaminate
+              children: innerDoor
                   .map(
-                    (catData) => ParquetLaminateItem(
+                    (catData) => InnerDoorItem(
                       catData.name,
                       catData.description,
                       catData.unit,
@@ -45,9 +45,9 @@ class _ParquetLaminateScreenState extends State<ParquetLaminateScreen> {
             )
           : GridView.count(
               padding: const EdgeInsets.all(25),
-              children: norwParquetAndLaminate
+              children: norwInnerDoor
                   .map(
-                    (catData) => ParquetLaminateItem(
+                    (catData) => InnerDoorItem(
                       catData.name,
                       catData.description,
                       catData.unit,

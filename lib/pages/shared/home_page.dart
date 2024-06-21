@@ -2,7 +2,7 @@ import 'package:cost_calculator/constants/language.dart';
 import 'package:cost_calculator/pages/item_screen/file_picker.dart';
 import 'package:cost_calculator/pages/item_screen/budget_screen.dart';
 import 'package:cost_calculator/pages/norw_item_screen/norw_budget_screen.dart';
-import 'package:cost_calculator/pages/shared/building_components_screen.dart';
+import 'package:cost_calculator/pages/shared/item_screens/building_components_screen.dart';
 import 'package:cost_calculator/pages/shared/options.dart';
 import 'package:cost_calculator/widgets/custom_drawer.dart';
 import 'package:flutter/material.dart';
