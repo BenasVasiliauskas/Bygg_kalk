@@ -1,4 +1,5 @@
 import 'package:cost_calculator/pages/item_screen/deck_item_screen.dart';
+import 'package:cost_calculator/pages/norw_item_screen/norw_deck_item_screen.dart';
 import 'package:flutter/material.dart';
 import '../constants/language.dart';
 
@@ -46,7 +47,7 @@ class DeckItem extends StatelessWidget {
                   material2,
                   totalPrice,
                 )
-              : DeckItemScreen(
+              : NorwDeckItemScreen(
                   name,
                   description,
                   unit,
@@ -58,18 +59,6 @@ class DeckItem extends StatelessWidget {
                   material2,
                   totalPrice,
                 );
-          // : NorwSupportSystemItemScreen(
-          //     name,
-          //     description,
-          //     unit,
-          //     quantity,
-          //     laborHours1,
-          //     laborHours2,
-          //     laborCost,
-          //     material1,
-          //     material2,
-          //     totalPrice,
-          //   );
         },
       ),
     );
