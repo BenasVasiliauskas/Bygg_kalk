@@ -5,6 +5,7 @@ import 'package:cost_calculator/models/inner_door_data_model.dart';
 import 'package:cost_calculator/models/inner_stairs_model.dart';
 import 'package:cost_calculator/models/outer_roof_model.dart';
 import 'package:cost_calculator/models/parquet_laminate_data_model.dart';
+import 'package:cost_calculator/models/scaffolding_data_model.dart';
 import 'package:cost_calculator/models/support_system_data_model.dart';
 import 'package:cost_calculator/models/terrace_model.dart';
 import 'package:cost_calculator/models/windows_exterior_doors_model.dart';
@@ -1953,6 +1954,56 @@ final hullRoofingData = [
         0.00,
         0.00,
         0.00,
+        0.00,
+        0.00,
+        0.00,
+      ])
+];
+
+final scaffoldingData = [
+  ScaffoldingModel(
+      name: "Beams and columns, glulam/steel - Detached house",
+      description: [
+        "Rental of scaffolding per m²/month. - 132m²",
+        "Assembly of light scaffolding",
+        "Dismantling of light scaffolding",
+      ],
+      unit: [
+        "stk",
+        "m²",
+        "m²",
+      ],
+      quantity: [
+        0.00,
+        0.00,
+        0.00,
+      ],
+      laborHours1: [
+        0.00,
+        0.15,
+        0.15,
+      ],
+      laborHours2: [
+        0.00,
+        0.00,
+        0.00,
+      ],
+      laborCost: [
+        0.00,
+        0.00,
+        0.00,
+      ],
+      material: [
+        10350.00,
+        0.00,
+        0.00,
+      ],
+      materials: [
+        0.00,
+        0.00,
+        0.00,
+      ],
+      totalPrice: [
         0.00,
         0.00,
         0.00,

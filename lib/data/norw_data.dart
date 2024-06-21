@@ -5,6 +5,7 @@ import 'package:cost_calculator/models/inner_stairs_model.dart';
 import 'package:cost_calculator/models/outer_roof_model.dart';
 import 'package:cost_calculator/models/outer_wall_data_model.dart';
 import 'package:cost_calculator/models/parquet_laminate_data_model.dart';
+import 'package:cost_calculator/models/scaffolding_data_model.dart';
 import 'package:cost_calculator/models/support_system_data_model.dart';
 import 'package:cost_calculator/models/terrace_model.dart';
 import 'package:cost_calculator/models/windows_exterior_doors_model.dart';
@@ -2008,6 +2009,56 @@ final norwHullRoofingData = [
         0.00,
         0.00,
         0.00,
+        0.00,
+        0.00,
+        0.00,
+      ])
+];
+
+final norwScaffoldingData = [
+  ScaffoldingModel(
+      name: "Dragere og søyler, limtre / stål - Enebolig",
+      description: [
+        "Leie av stillas pr. m²/mnd. - 132m²",
+        "Montering av Lett stillase",
+        "Demontering av Lett stillase",
+      ],
+      unit: [
+        "stk",
+        "m²",
+        "m²",
+      ],
+      quantity: [
+        0.00,
+        0.00,
+        0.00,
+      ],
+      laborHours1: [
+        0.00,
+        0.15,
+        0.15,
+      ],
+      laborHours2: [
+        0.00,
+        0.00,
+        0.00,
+      ],
+      laborCost: [
+        0.00,
+        0.00,
+        0.00,
+      ],
+      material: [
+        10350.00,
+        0.00,
+        0.00,
+      ],
+      materials: [
+        0.00,
+        0.00,
+        0.00,
+      ],
+      totalPrice: [
         0.00,
         0.00,
         0.00,
