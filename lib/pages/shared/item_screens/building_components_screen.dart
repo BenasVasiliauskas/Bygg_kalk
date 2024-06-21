@@ -287,7 +287,7 @@ class _buildingComponentsScreenState extends State<buildingComponentsScreen> {
                         padding: const EdgeInsets.fromLTRB(0, 0, 8, 0),
                         child: Icon(FontAwesomeIcons.folder),
                       ),
-                      Text(languageEnglish ? "Trapper" : "Trapper"),
+                      Text(languageEnglish ? "Inner stairs" : "Trapper"),
                     ],
                   ),
                 ),

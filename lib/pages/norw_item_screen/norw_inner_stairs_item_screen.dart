@@ -5,11 +5,11 @@ import 'package:cost_calculator/constants/innerwall_constants.dart';
 import 'package:cost_calculator/data/data.dart';
 import 'package:cost_calculator/functions/initialise_functions.dart';
 import 'package:cost_calculator/functions/save_to_json.dart';
-import 'package:cost_calculator/models/deck_data_model.dart';
+import 'package:cost_calculator/models/inner_stairs_model.dart';
 import 'package:cost_calculator/pages/shared/globals/calculation_variables.dart';
 import 'package:flutter/material.dart';
 
-class NorwDeckItemScreen extends StatefulWidget {
+class NorwInnerStairsItemScreen extends StatefulWidget {
   String name;
   List<String> description;
   List<String> unit;
@@ -21,7 +21,7 @@ class NorwDeckItemScreen extends StatefulWidget {
   List<double> material2;
   List<double> totalPrice;
 
-  NorwDeckItemScreen(
+  NorwInnerStairsItemScreen(
     this.name,
     this.description,
     this.unit,
@@ -35,12 +35,13 @@ class NorwDeckItemScreen extends StatefulWidget {
   );
 
   @override
-  State<NorwDeckItemScreen> createState() => _NorwDeckItemScreenState();
+  State<NorwInnerStairsItemScreen> createState() =>
+      _NorwInnerStairsItemScreenState();
 }
 
 List<double> emptyCustomList = [];
 
-class _NorwDeckItemScreenState extends State<NorwDeckItemScreen> {
+class _NorwInnerStairsItemScreenState extends State<NorwInnerStairsItemScreen> {
   List<DataRow> rows = [];
   List<TextEditingController> descriptionControllers = [];
   List<TextEditingController> unitControllers = [];
@@ -654,7 +655,7 @@ class _NorwDeckItemScreenState extends State<NorwDeckItemScreen> {
                   setState(() {
                     this.name = name;
                   });
-                  DeckModel deckModel = DeckModel(
+                  InnerStairsModel innerStairsModel = InnerStairsModel(
                     name: name,
                     description: widget.description,
                     unit: widget.unit,
@@ -667,7 +668,7 @@ class _NorwDeckItemScreenState extends State<NorwDeckItemScreen> {
                     totalPrice: widget.totalPrice,
                   );
 
-                  writeJson(deckModel, name);
+                  writeJson(innerStairsModel, name);
                   ScaffoldMessenger.of(context).showSnackBar(SnackBar(
                       content: Text('Dataene er lagret som $name.json')));
                 },
@@ -686,18 +687,22 @@ class _NorwDeckItemScreenState extends State<NorwDeckItemScreen> {
                       readJsonFile(fileName).then(
                         (value) {
                           for (int i = 0; i < value.length; i++) {
-                            DeckModel deckModel = DeckModel.fromJson(value[i]);
-                            if (deckModel.name == widget.name) {
+                            InnerStairsModel innerStairsModel =
+                                InnerStairsModel.fromJson(value[i]);
+                            if (innerStairsModel.name == widget.name) {
                               setState(() {
-                                widget.description = deckModel.description;
-                                widget.unit = deckModel.unit;
-                                widget.quantity = deckModel.quantity;
-                                widget.laborHours1 = deckModel.laborHours1;
-                                widget.laborHours2 = deckModel.laborHours2;
-                                widget.laborCost = deckModel.laborCost;
-                                widget.material1 = deckModel.material;
-                                widget.material2 = deckModel.materials;
-                                widget.totalPrice = deckModel.totalPrice;
+                                widget.description =
+                                    innerStairsModel.description;
+                                widget.unit = innerStairsModel.unit;
+                                widget.quantity = innerStairsModel.quantity;
+                                widget.laborHours1 =
+                                    innerStairsModel.laborHours1;
+                                widget.laborHours2 =
+                                    innerStairsModel.laborHours2;
+                                widget.laborCost = innerStairsModel.laborCost;
+                                widget.material1 = innerStairsModel.material;
+                                widget.material2 = innerStairsModel.materials;
+                                widget.totalPrice = innerStairsModel.totalPrice;
                                 setInitialValues();
                                 calculateCalculationQuantity();
                                 updateTotalSum();
