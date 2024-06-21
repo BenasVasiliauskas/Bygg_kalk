@@ -1,5 +1,5 @@
+import 'package:cost_calculator/models/deck_data_model.dart';
 import 'package:cost_calculator/models/inner_door_data_model.dart';
-import 'package:cost_calculator/models/kitchen_data_model.dart';
 import 'package:cost_calculator/models/parquet_laminate_data_model.dart';
 import 'package:cost_calculator/models/support_system_data_model.dart';
 import 'package:cost_calculator/models/windows_exterior_doors_model.dart';
@@ -848,101 +848,62 @@ final dataInnerWallData = [
   //     material2: material2,
   //     totalPrice: totalPrice)
 ];
-
-final kitchenData = [
-  KitchenModel(
-    name: "Interior design in housing, kitchen cabinets",
-    description: [
-      "Wall cabinet pine 1 door",
-      "Kitchen knobs porcelain white",
-      "Light strip cabinet, profiled pine (2,4 lm)",
-      "Fitting piece kitchen oak foil",
-      "Wall cabinet pine spice rack",
-      "Ventilator kitchen for wall",
-      "Cabinet pine 2 doors",
-      "Cabinet pine 1 door",
-    ],
-    unit: [
-      "stk",
-      "stk",
-      "stk",
-      "stk",
-      "stk",
-      "stk",
-      "stk",
-      "stk",
-    ],
-    quantity: [
-      0.00,
-      0.00,
-      0.00,
-      0.00,
-      0.00,
-      0.00,
-      0.00,
-      0.00,
-    ],
-    laborHours1: [
-      0.71,
-      0.07,
-      0.25,
-      0.18,
-      0.81,
-      0.77,
-      0.81,
-      0.72,
-    ],
-    laborHours2: [
-      0.00,
-      0.00,
-      0.00,
-      0.00,
-      0.00,
-      0.00,
-      0.00,
-      0.00,
-    ],
-    laborCost: [
-      0.00,
-      0.00,
-      0.00,
-      0.00,
-      0.00,
-      0.00,
-      0.00,
-      0.00,
-    ],
-    material: [
-      1397.80,
-      94.80,
-      525.20,
-      302.76,
-      1620.00,
-      12777.20,
-      2160.00,
-      1260.00,
-    ],
-    materials: [
-      0.00,
-      0.00,
-      0.00,
-      0.00,
-      0.00,
-      0.00,
-      0.00,
-      0.00,
-    ],
-    totalPrice: [
-      0.00,
-      0.00,
-      0.00,
-      0.00,
-      0.00,
-      0.00,
-      0.00,
-      0.00,
-    ],
-  )
+final deckData = [
+  DeckModel(name: "Floor on ground, poured, insulated, screeded", description: [
+    "Screed and steel trowel of concrete surface",
+    "Reinforcement with mesh, K 131 (2.1 kg per m²)",
+    "Concrete B30 in floor on ground",
+    "Radon stop on ground",
+    "Polystyrene w/seam, EPS, 150 kPa",
+  ], unit: [
+    "m²",
+    "kg",
+    "m³",
+    "m²",
+    "m²",
+  ], quantity: [
+    0,
+    0,
+    0,
+    0,
+    0,
+  ], laborHours1: [
+    0.21,
+    0.16,
+    0.09,
+    0.12,
+    0.23,
+  ], laborHours2: [
+    0,
+    0,
+    0,
+    0,
+    0,
+  ], laborCost: [
+    0,
+    0,
+    0,
+    0,
+    0,
+  ], material: [
+    45.12,
+    68.88,
+    222.95,
+    74.66,
+    406.71,
+  ], materials: [
+    0,
+    0,
+    0,
+    0,
+    0,
+  ], totalPrice: [
+    0,
+    0,
+    0,
+    0,
+    0,
+  ])
 ];
 
 final innerDoor = [

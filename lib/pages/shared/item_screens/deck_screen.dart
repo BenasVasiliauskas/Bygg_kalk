@@ -1,17 +1,16 @@
 import 'package:cost_calculator/data/data.dart';
 import 'package:cost_calculator/data/norw_data.dart';
-import 'package:cost_calculator/items/support_system_item.dart';
-
+import 'package:cost_calculator/items/deck_item.dart';
 import 'package:flutter/material.dart';
 import '../../../constants/language.dart';
 import '../../../widgets/custom_drawer.dart';
 
-class SupportSystemScreen extends StatefulWidget {
+class DeckScreen extends StatefulWidget {
   @override
-  State<SupportSystemScreen> createState() => _SupportSystemScreenState();
+  State<DeckScreen> createState() => _DeckScreenState();
 }
 
-class _SupportSystemScreenState extends State<SupportSystemScreen> {
+class _DeckScreenState extends State<DeckScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,9 +21,9 @@ class _SupportSystemScreenState extends State<SupportSystemScreen> {
       body: languageEnglish == true
           ? GridView.count(
               padding: const EdgeInsets.all(25),
-              children: supportSystem
+              children: deckData
                   .map(
-                    (catData) => SupportSystemItem(
+                    (catData) => DeckItem(
                       catData.name,
                       catData.description,
                       catData.unit,
@@ -45,9 +44,9 @@ class _SupportSystemScreenState extends State<SupportSystemScreen> {
             )
           : GridView.count(
               padding: const EdgeInsets.all(25),
-              children: norwSupportSystem
+              children: norwDeckData
                   .map(
-                    (catData) => SupportSystemItem(
+                    (catData) => DeckItem(
                       catData.name,
                       catData.description,
                       catData.unit,

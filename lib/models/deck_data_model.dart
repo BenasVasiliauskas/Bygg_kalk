@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class KitchenModel {
+class DeckModel {
   String name;
   List<String> description;
   List<String> unit;
@@ -13,7 +13,7 @@ class KitchenModel {
   List<double> totalPrice;
   final Color color;
 
-  KitchenModel({
+  DeckModel({
     required this.name,
     required this.description,
     required this.unit,
@@ -25,8 +25,7 @@ class KitchenModel {
     required this.materials,
     required this.totalPrice,
     Color? color, // Change to nullable Color
-  }) : color = color ?? const Color.fromARGB(255, 101, 80, 194);
-
+  }) : color = color ?? Color.fromARGB(255, 99, 105, 128); // Initialize color
   Map<String, dynamic> toJson() {
     return {
       'name': name,
@@ -42,7 +41,7 @@ class KitchenModel {
     };
   }
 
-  KitchenModel.fromJson(Map<String, dynamic> json)
+  DeckModel.fromJson(Map<String, dynamic> json)
       : name = json['name'],
         description = (json['description'] as List<dynamic>)
             .map((item) => item.toString())
@@ -71,6 +70,5 @@ class KitchenModel {
         totalPrice = json['totalPrice'] is List
             ? json['totalPrice'].cast<double>().toList()
             : [],
-        color = const Color.fromARGB(
-            255, 101, 80, 194); // Initialize color with Colors.orange
+        color = Color.fromARGB(255, 99, 105, 128);
 }
