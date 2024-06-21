@@ -3,6 +3,7 @@ import 'package:cost_calculator/models/outer_roof_model.dart';
 import 'package:cost_calculator/models/outer_wall_data_model.dart';
 import 'package:cost_calculator/models/parquet_laminate_data_model.dart';
 import 'package:cost_calculator/models/support_system_data_model.dart';
+import 'package:cost_calculator/models/terrace_model.dart';
 import 'package:cost_calculator/models/windows_exterior_doors_model.dart';
 
 import '../models/inner_door_data_model.dart';
@@ -1628,6 +1629,39 @@ final norwExteriorWallData = [
       ])
 ];
 
+final norwTerraceData = [
+  TerraceModel(
+    name: "Stainless steel and glass railings",
+    description: [
+      "Rekkverk, glass / Rustfritt stål - Icopal",
+    ],
+    unit: [
+      "m",
+    ],
+    quantity: [
+      1,
+    ],
+    laborHours1: [
+      1.32,
+    ],
+    laborHours2: [
+      0,
+    ],
+    laborCost: [
+      0,
+    ],
+    material: [
+      1,
+      145.22,
+    ],
+    materials: [
+      0,
+    ],
+    totalPrice: [
+      0,
+    ],
+  )
+];
 final norwOuterRoofData = [
   OuterRoofModel(
     name: "Sperretak av tre, takspon, gipsplater,",

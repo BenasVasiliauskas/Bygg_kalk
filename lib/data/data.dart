@@ -4,6 +4,7 @@ import 'package:cost_calculator/models/inner_door_data_model.dart';
 import 'package:cost_calculator/models/outer_roof_model.dart';
 import 'package:cost_calculator/models/parquet_laminate_data_model.dart';
 import 'package:cost_calculator/models/support_system_data_model.dart';
+import 'package:cost_calculator/models/terrace_model.dart';
 import 'package:cost_calculator/models/windows_exterior_doors_model.dart';
 
 import '../models/inner_wall_data_model.dart';
@@ -1492,6 +1493,39 @@ final flooringData = [
       0.00,
       0.00,
       0.00,
+    ],
+  )
+];
+final terraceData = [
+  TerraceModel(
+    name: "Railings in stainless steel and glass",
+    description: [
+      "Railing, glass / Stainless steel - Icopal",
+    ],
+    unit: [
+      "m",
+    ],
+    quantity: [
+      1,
+    ],
+    laborHours1: [
+      1.32,
+    ],
+    laborHours2: [
+      0,
+    ],
+    laborCost: [
+      0,
+    ],
+    material: [
+      1,
+      145.22,
+    ],
+    materials: [
+      0,
+    ],
+    totalPrice: [
+      0,
     ],
   )
 ];

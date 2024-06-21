@@ -3,6 +3,7 @@ import 'package:cost_calculator/pages/item_sections/deck_sections.dart';
 import 'package:cost_calculator/pages/item_sections/flooring_sections.dart';
 import 'package:cost_calculator/pages/item_sections/outer_roof_sections.dart';
 import 'package:cost_calculator/pages/item_sections/support_system_sections.dart';
+import 'package:cost_calculator/pages/item_sections/terrace_sections.dart';
 import 'package:cost_calculator/pages/shared/home_page.dart';
 import 'package:cost_calculator/pages/item_sections/inner_door_sections.dart';
 import 'package:cost_calculator/pages/item_sections/inner_wall_sections.dart';
@@ -244,7 +245,13 @@ class _buildingComponentsScreenState extends State<buildingComponentsScreen> {
             Row(
               children: [
                 TextButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.of(context).pushReplacement(
+                      MaterialPageRoute(builder: (context) {
+                        return TerraceSections();
+                      }),
+                    );
+                  },
                   child: Row(
                     children: [
                       Padding(
@@ -257,7 +264,7 @@ class _buildingComponentsScreenState extends State<buildingComponentsScreen> {
                     ],
                   ),
                 ),
-                Text("0"),
+                Text("1"),
               ],
             ),
             Row(
