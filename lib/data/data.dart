@@ -1,5 +1,6 @@
 import 'package:cost_calculator/models/deck_data_model.dart';
 import 'package:cost_calculator/models/flooring_data_model.dart';
+import 'package:cost_calculator/models/hull_roofing_data_model.dart';
 import 'package:cost_calculator/models/inner_door_data_model.dart';
 import 'package:cost_calculator/models/inner_stairs_model.dart';
 import 'package:cost_calculator/models/outer_roof_model.dart';
@@ -1851,6 +1852,102 @@ final exteriorWallData = [
         0.00,
         0.00,
         0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+      ])
+];
+
+final hullRoofingData = [
+  HullRoofingModel(
+      name:
+          "Punched roofing single-family house 245m² GFA - 2 floors (Calculate quantity and select material type),",
+      description: [
+        "Punched ceiling box chipboard",
+        "Hollow roofing ceiling box plasterboard",
+        "Hull roofing ceiling box wood panel",
+        "Hull roofing wall - tiles",
+        "Punched roofing wall wood panel",
+        "Punched roofing wall chipboard",
+        "Punched roofing wall plasterboard",
+        "Punched roofing for ventilation",
+      ],
+      unit: [
+        "stk",
+        "stk",
+        "stk",
+        "stk",
+        "stk",
+        "stk",
+        "stk",
+        "stk",
+      ],
+      quantity: [
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+      ],
+      laborHours1: [
+        0.18,
+        0.18,
+        0.18,
+        0.20,
+        0.15,
+        0.15,
+        0.15,
+        0.15,
+      ],
+      laborHours2: [
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+      ],
+      laborCost: [
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+      ],
+      material: [
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+      ],
+      materials: [
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+      ],
+      totalPrice: [
         0.00,
         0.00,
         0.00,

@@ -1,5 +1,6 @@
 import 'package:cost_calculator/models/deck_data_model.dart';
 import 'package:cost_calculator/models/flooring_data_model.dart';
+import 'package:cost_calculator/models/hull_roofing_data_model.dart';
 import 'package:cost_calculator/models/inner_stairs_model.dart';
 import 'package:cost_calculator/models/outer_roof_model.dart';
 import 'package:cost_calculator/models/outer_wall_data_model.dart';
@@ -1916,4 +1917,99 @@ final norwInnerStairsData = [
     0.00,
     0.00,
   ])
+];
+final norwHullRoofingData = [
+  HullRoofingModel(
+      name:
+          "Stanset taktekking av enebolig 245m² BTA - 2 etasjer (Beregn mengde og velg materialtype),",
+      description: [
+        "Takboks av stansede sponplater",
+        "Hull takboks av gipsplater",
+        "Hull tak takboks trepanel",
+        "Hulltak vegg - fliser",
+        "Hulltakvegg trepanel",
+        "Hulltak vegg - sponplater",
+        "Stanset takvegg gipsplater",
+        "Stanset taktekking for ventilasjon",
+      ],
+      unit: [
+        "stk",
+        "stk",
+        "stk",
+        "stk",
+        "stk",
+        "stk",
+        "stk",
+        "stk",
+      ],
+      quantity: [
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+      ],
+      laborHours1: [
+        0.18,
+        0.18,
+        0.18,
+        0.20,
+        0.15,
+        0.15,
+        0.15,
+        0.15,
+      ],
+      laborHours2: [
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+      ],
+      laborCost: [
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+      ],
+      material: [
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+      ],
+      materials: [
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+      ],
+      totalPrice: [
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+      ])
 ];
