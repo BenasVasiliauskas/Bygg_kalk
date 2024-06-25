@@ -82,6 +82,78 @@ class _FilePickerScreenState extends State<FilePickerScreen> {
                   padding: const EdgeInsets.all(8.0),
                   child: SavingRowParquetLaminate("Parquet and laminate"),
                 ),
+                // TextButton(
+                //   onPressed: () async {
+                //     var fileName = "test";
+                //     await writeJsonArrayStart(fileName);
+                //     OuterWallModel outerWallModel;
+                //     for (int i = 0; i < exteriorWallData.length; i++) {
+                //       outerWallModel = OuterWallModel(
+                //           name: exteriorWallData[i].name,
+                //           description: exteriorWallData[i].description,
+                //           unit: exteriorWallData[i].unit,
+                //           quantity: exteriorWallData[i].quantity,
+                //           materialQuantity:
+                //               exteriorWallData[i].materialQuantity,
+                //           laborHours1: exteriorWallData[i].laborHours1,
+                //           laborHours2: exteriorWallData[i].laborHours2,
+                //           laborCost: exteriorWallData[i].laborCost,
+                //           material: exteriorWallData[i].material,
+                //           materials: exteriorWallData[i].materials,
+                //           totalPrice: exteriorWallData[i].totalPrice);
+                //       await writeJson(outerWallModel, fileName);
+                //       //write a comma for the next element, check if the length is over equals 1 and if it isnt the last element
+                //       if (exteriorWallData.length >= 1 &&
+                //           i != exteriorWallData.length - 1) {
+                //         await writeJsonComma(fileName);
+                //       }
+                //     }
+                //     await writeJsonArrayEnd(fileName);
+                //   },
+                //   child: Text("test"),
+                // ),
+                // TextButton(
+                //   onPressed: () {
+                //     var fileName = "test";
+                //     readJsonFile(fileName).then((value) {
+                //       writeProjectToJson(fileName, exteriorWallData.length);
+                //     });
+
+                //     readJsonFile(fileName).then(
+                //       (value) {
+                //         for (int i = 0; i < value.length; i++) {
+                //           print("a");
+                //         }
+                //         for (int i = 0; i < value.length; i++) {
+                //           OuterWallModel outerwallModel =
+                //               OuterWallModel.fromJson(value[i]);
+                //           if (outerwallModel.name == exteriorWallData[0].name) {
+                //             exteriorWallData[0].description = outerwallModel
+                //                 .description; //should be current files data == newly read files data
+                //             exteriorWallData[0].unit = outerwallModel.unit;
+                //             exteriorWallData[0].quantity =
+                //                 outerwallModel.quantity;
+                //             exteriorWallData[0].materialQuantity =
+                //                 outerwallModel.materialQuantity;
+                //             exteriorWallData[0].laborHours1 =
+                //                 outerwallModel.laborHours1;
+                //             exteriorWallData[0].laborHours2 =
+                //                 outerwallModel.laborHours2;
+                //             exteriorWallData[0].laborCost =
+                //                 outerwallModel.laborCost;
+                //             exteriorWallData[0].material =
+                //                 outerwallModel.material;
+                //             exteriorWallData[0].materials =
+                //                 outerwallModel.materials;
+                //             exteriorWallData[0].totalPrice =
+                //                 outerwallModel.totalPrice;
+                //           }
+                //         }
+                //       },
+                //     );
+                //   },
+                //   child: Text("Test2"),
+                // )
               ],
             ),
           ),

@@ -1,5 +1,6 @@
 import 'dart:convert';
 import 'dart:io';
+import 'package:cost_calculator/data/data.dart';
 import 'package:path_provider/path_provider.dart';
 
 Future<String> get localPath async {
@@ -20,6 +21,12 @@ Future<File> localFile(String name) async {
   final path = await localPath;
 
   return File('$path/${name}.json');
+}
+
+Future<File> localDartFile(String name) async {
+  final path = await localPath;
+
+  return File('$path/${name}.dart');
 }
 
 Future<void> fileDeleteIfExists(String name) async {
@@ -55,6 +62,16 @@ Future<File> writeJsonArrayEnd(String name) async {
     mode: FileMode.writeOnlyAppend,
     "]",
   );
+
+  return file;
+}
+
+Future<File> writeProjectToJson(var name, int lengthOfModel) async {
+  final file = await readJsonFile(name);
+
+  for (int i = 0; i < lengthOfModel; i++) {
+    print(exteriorWallData[i].name);
+  }
 
   return file;
 }

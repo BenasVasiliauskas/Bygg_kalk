@@ -1,4 +1,5 @@
 import 'package:cost_calculator/pages/item_screen/windows_exterior_door_items_screen.dart';
+import 'package:cost_calculator/pages/item_sections/windows_exterior_door_sections.dart';
 import 'package:cost_calculator/pages/norw_item_screen/norw_windows_exterior_door_items_screen.dart';
 
 import 'package:flutter/material.dart';
@@ -69,27 +70,40 @@ class WindowExteriorDoorItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return InkWell(
-      borderRadius: BorderRadius.circular(15),
-      splashColor: Theme.of(context).primaryColor,
-      onTap: () => selectCategory(context),
-      child: Container(
-        padding: const EdgeInsets.all(15),
-        child: Center(
-          child: Text(
-            name,
+    return PopScope(
+      canPop: false,
+      onPopInvoked: (bool didPop) async {
+        if (didPop) {
+          return;
+        }
+        Navigator.of(context).pushReplacement(
+          MaterialPageRoute(builder: (context) {
+            return WindowsExteriorDoorSections();
+          }),
+        );
+      },
+      child: InkWell(
+        borderRadius: BorderRadius.circular(15),
+        splashColor: Theme.of(context).primaryColor,
+        onTap: () => selectCategory(context),
+        child: Container(
+          padding: const EdgeInsets.all(15),
+          child: Center(
+            child: Text(
+              name,
+            ),
           ),
-        ),
-        decoration: BoxDecoration(
-          gradient: LinearGradient(
-            colors: [
-              color.withOpacity(0.7),
-              color,
-            ],
-            begin: Alignment.topLeft,
-            end: Alignment.bottomRight,
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              colors: [
+                color.withOpacity(0.7),
+                color,
+              ],
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
+            ),
+            borderRadius: BorderRadius.circular(15),
           ),
-          borderRadius: BorderRadius.circular(15),
         ),
       ),
     );

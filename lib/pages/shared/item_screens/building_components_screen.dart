@@ -29,396 +29,415 @@ class buildingComponentsScreen extends StatefulWidget {
 class _buildingComponentsScreenState extends State<buildingComponentsScreen> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      drawer: CustomDrawer(),
-      appBar: AppBar(
-        title: const Text('Building components'),
-        actions: [
-          IconButton(
-            icon: const Icon(
-              FontAwesomeIcons.houseChimney,
-            ),
-            tooltip: 'Return to home',
-            onPressed: () {
-              Navigator.of(context).pushReplacement(
-                MaterialPageRoute(
-                  builder: (context) {
-                    return homePage();
-                  },
-                ),
-              );
-            },
-          ),
-        ],
-      ),
-      body: SingleChildScrollView(
-        child: Column(
-          children: [
-            Row(
-              children: [
-                TextButton(
-                  onPressed: () {
-                    Navigator.of(context).pushReplacement(
-                      MaterialPageRoute(builder: (context) {
-                        return SupportSystemSections();
-                      }),
-                    );
-                  },
-                  child: Row(
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.fromLTRB(0, 0, 8, 0),
-                        child: SizedBox(
-                            width: 50,
-                            child: Image.asset("assets/SupportSystem.png")),
-                      ),
-                      Text(languageEnglish ? "Support system" : "Bæresystemet"),
-                    ],
+    return PopScope(
+      canPop: false,
+      onPopInvoked: (bool didPop) async {
+        if (didPop) {
+          return;
+        }
+        Navigator.of(context).pushReplacement(
+          MaterialPageRoute(builder: (context) {
+            return homePage();
+          }),
+        );
+      },
+      child: Scaffold(
+        drawer: CustomDrawer(),
+        appBar: AppBar(
+          title: const Text('Building components'),
+          actions: [
+            IconButton(
+              icon: const Icon(
+                FontAwesomeIcons.houseChimney,
+              ),
+              tooltip: 'Return to home',
+              onPressed: () {
+                Navigator.of(context).pushReplacement(
+                  MaterialPageRoute(
+                    builder: (context) {
+                      return homePage();
+                    },
                   ),
-                ),
-                Text("1"),
-              ],
-            ),
-            Row(
-              children: [
-                TextButton(
-                  onPressed: () {
-                    Navigator.of(context).pushReplacement(
-                      MaterialPageRoute(builder: (context) {
-                        return OuterWallSections();
-                      }),
-                    );
-                  },
-                  child: Row(
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.fromLTRB(0, 0, 8, 0),
-                        child: SizedBox(
-                            width: 50,
-                            child: Image.asset("assets/ExteriorWalls.png")),
-                      ),
-                      Text(languageEnglish ? "Exterior walls" : "Yttervegger"),
-                    ],
-                  ),
-                ),
-                Text("1"),
-              ],
-            ),
-            Row(
-              children: [
-                TextButton(
-                  onPressed: () {
-                    Navigator.of(context).pushReplacement(
-                      MaterialPageRoute(
-                        builder: (context) {
-                          return WindowsExteriorDoorSections();
-                        },
-                      ),
-                    );
-                  },
-                  child: Row(
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.fromLTRB(0, 0, 8, 0),
-                        child: SizedBox(
-                            width: 50, child: Image.asset("assets/Window.png")),
-                      ),
-                      Text(languageEnglish
-                          ? "Window/exterior door"
-                          : "Vindu/ytterdør"),
-                    ],
-                  ),
-                ),
-                Text("2"),
-              ],
-            ),
-            Row(
-              children: [
-                TextButton(
-                  onPressed: () {
-                    Navigator.of(context).pushReplacement(
-                      MaterialPageRoute(
-                        builder: (context) {
-                          return InnerWallSections();
-                        },
-                      ),
-                    );
-                  },
-                  child: Row(
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.fromLTRB(0, 0, 8, 0),
-                        child: SizedBox(
-                            width: 50,
-                            child: Image.asset("assets/InnerWall.png")),
-                      ),
-                      Text(languageEnglish ? "Interior walls" : "Innevegger"),
-                    ],
-                  ),
-                ),
-                Text("6"),
-              ],
-            ),
-            Row(
-              children: [
-                TextButton(
-                  onPressed: () {
-                    Navigator.of(context).pushReplacement(
-                      MaterialPageRoute(
-                        builder: (context) {
-                          return InnerDoorSections();
-                        },
-                      ),
-                    );
-                  },
-                  child: Row(
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.fromLTRB(0, 0, 8, 0),
-                        child: SizedBox(
-                            width: 50,
-                            child: Image.asset("assets/InnerDoor.png")),
-                      ),
-                      Text(languageEnglish ? "Interior door" : "Innedør"),
-                    ],
-                  ),
-                ),
-                Text("1"),
-              ],
-            ),
-            Row(
-              children: [
-                TextButton(
-                  onPressed: () {
-                    Navigator.of(context).pushReplacement(
-                      MaterialPageRoute(builder: (context) {
-                        return DeckSections();
-                      }),
-                    );
-                  },
-                  child: Row(
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.fromLTRB(0, 0, 8, 0),
-                        child: Padding(
-                          padding: const EdgeInsets.fromLTRB(0, 0, 8, 0),
-                          child: SizedBox(
-                              width: 50, child: Image.asset("assets/Deck.png")),
-                        ),
-                      ),
-                      Text(languageEnglish ? "Deck" : "Dekke"),
-                    ],
-                  ),
-                ),
-                Text("1"),
-              ],
-            ),
-            Row(
-              children: [
-                TextButton(
-                  onPressed: () {
-                    Navigator.of(context).pushReplacement(
-                      MaterialPageRoute(builder: (context) {
-                        return FlooringSections();
-                      }),
-                    );
-                  },
-                  child: Row(
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.fromLTRB(0, 0, 8, 0),
-                        child: SizedBox(
-                            width: 50,
-                            child: Image.asset("assets/Flooring.png")),
-                      ),
-                      Text(languageEnglish ? "Flooring" : "Gulvbelegg"),
-                    ],
-                  ),
-                ),
-                Text("1"),
-              ],
-            ),
-            Row(
-              children: [
-                TextButton(
-                  onPressed: () {
-                    Navigator.of(context).pushReplacement(
-                      MaterialPageRoute(builder: (context) {
-                        return OuterRoofSections();
-                      }),
-                    );
-                  },
-                  child: Row(
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.fromLTRB(0, 0, 8, 0),
-                        child: SizedBox(
-                            width: 50,
-                            child: Image.asset("assets/ExteriorRoof.png")),
-                      ),
-                      Text(languageEnglish ? "Exterior roof" : "Yttertak"),
-                    ],
-                  ),
-                ),
-                Text("1"),
-              ],
-            ),
-            Row(
-              children: [
-                TextButton(
-                  onPressed: () {
-                    Navigator.of(context).pushReplacement(
-                      MaterialPageRoute(builder: (context) {
-                        return TerraceSections();
-                      }),
-                    );
-                  },
-                  child: Row(
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.fromLTRB(0, 0, 8, 0),
-                        child: SizedBox(
-                            width: 50,
-                            child: Image.asset("assets/Terrace.png")),
-                      ),
-                      Text(languageEnglish
-                          ? "Terrace/railings"
-                          : "Terrasse/rekkverk"),
-                    ],
-                  ),
-                ),
-                Text("1"),
-              ],
-            ),
-            Row(
-              children: [
-                TextButton(
-                  onPressed: () {
-                    Navigator.of(context).pushReplacement(
-                      MaterialPageRoute(builder: (context) {
-                        return InnerStairsSections();
-                      }),
-                    );
-                  },
-                  child: Row(
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.fromLTRB(0, 0, 8, 0),
-                        child: SizedBox(
-                            width: 50,
-                            child: Image.asset("assets/InnerStairs.png")),
-                      ),
-                      Text(languageEnglish ? "Inner stairs" : "Trapper"),
-                    ],
-                  ),
-                ),
-                Text("1"),
-              ],
-            ),
-            Row(
-              children: [
-                TextButton(
-                  onPressed: () {
-                    Navigator.of(context).pushReplacement(
-                      MaterialPageRoute(builder: (context) {
-                        return HullRoofingSections();
-                      }),
-                    );
-                  },
-                  child: Row(
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.fromLTRB(0, 0, 8, 0),
-                        child: SizedBox(
-                            width: 50,
-                            child: Image.asset("assets/HullRoofing.png")),
-                      ),
-                      Text(languageEnglish ? "Hull roofing" : "Hulltaking"),
-                    ],
-                  ),
-                ),
-                Text("1"),
-              ],
-            ),
-            Row(
-              children: [
-                TextButton(
-                  onPressed: () {
-                    Navigator.of(context).pushReplacement(
-                      MaterialPageRoute(builder: (context) {
-                        return ScaffoldingSections();
-                      }),
-                    );
-                  },
-                  child: Row(
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.fromLTRB(0, 0, 8, 0),
-                        child: SizedBox(
-                            width: 50,
-                            child: Image.asset("assets/Scaffold.png")),
-                      ),
-                      Text(languageEnglish ? "Scaffolding" : "Stillas"),
-                    ],
-                  ),
-                ),
-                Text("1"),
-              ],
-            ),
-            Row(
-              children: [
-                TextButton(
-                  onPressed: () {
-                    Navigator.of(context).pushReplacement(
-                      MaterialPageRoute(builder: (context) {
-                        return WasteSections();
-                      }),
-                    );
-                  },
-                  child: Row(
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.fromLTRB(0, 0, 8, 0),
-                        child: SizedBox(
-                            width: 50, child: Image.asset("assets/Waste.png")),
-                      ),
-                      Text(languageEnglish ? "Waste management" : "Avfall"),
-                    ],
-                  ),
-                ),
-                Text("1"),
-              ],
-            ),
-            Row(
-              children: [
-                TextButton(
-                  onPressed: () {
-                    Navigator.of(context).pushReplacement(
-                      MaterialPageRoute(
-                        builder: (context) {
-                          return ParquetLaminateSections();
-                        },
-                      ),
-                    );
-                  },
-                  child: Row(
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.fromLTRB(0, 0, 8, 0),
-                        child: SizedBox(
-                            width: 50,
-                            child: Image.asset("assets/Parquet.png")),
-                      ),
-                      Text(languageEnglish
-                          ? "Parquet and laminate"
-                          : "Parquet og laminat"),
-                    ],
-                  ),
-                ),
-                Text("1"),
-              ],
+                );
+              },
             ),
           ],
+        ),
+        body: SingleChildScrollView(
+          child: Column(
+            children: [
+              Row(
+                children: [
+                  TextButton(
+                    onPressed: () {
+                      Navigator.of(context).pushReplacement(
+                        MaterialPageRoute(builder: (context) {
+                          return SupportSystemSections();
+                        }),
+                      );
+                    },
+                    child: Row(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.fromLTRB(0, 0, 8, 0),
+                          child: SizedBox(
+                              width: 50,
+                              child: Image.asset("assets/SupportSystem.png")),
+                        ),
+                        Text(languageEnglish
+                            ? "Support system"
+                            : "Bæresystemet"),
+                      ],
+                    ),
+                  ),
+                  Text("1"),
+                ],
+              ),
+              Row(
+                children: [
+                  TextButton(
+                    onPressed: () {
+                      Navigator.of(context).pushReplacement(
+                        MaterialPageRoute(builder: (context) {
+                          return OuterWallSections();
+                        }),
+                      );
+                    },
+                    child: Row(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.fromLTRB(0, 0, 8, 0),
+                          child: SizedBox(
+                              width: 50,
+                              child: Image.asset("assets/ExteriorWalls.png")),
+                        ),
+                        Text(
+                            languageEnglish ? "Exterior walls" : "Yttervegger"),
+                      ],
+                    ),
+                  ),
+                  Text("1"),
+                ],
+              ),
+              Row(
+                children: [
+                  TextButton(
+                    onPressed: () {
+                      Navigator.of(context).pushReplacement(
+                        MaterialPageRoute(
+                          builder: (context) {
+                            return WindowsExteriorDoorSections();
+                          },
+                        ),
+                      );
+                    },
+                    child: Row(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.fromLTRB(0, 0, 8, 0),
+                          child: SizedBox(
+                              width: 50,
+                              child: Image.asset("assets/Window.png")),
+                        ),
+                        Text(languageEnglish
+                            ? "Window/exterior door"
+                            : "Vindu/ytterdør"),
+                      ],
+                    ),
+                  ),
+                  Text("2"),
+                ],
+              ),
+              Row(
+                children: [
+                  TextButton(
+                    onPressed: () {
+                      Navigator.of(context).pushReplacement(
+                        MaterialPageRoute(
+                          builder: (context) {
+                            return InnerWallSections();
+                          },
+                        ),
+                      );
+                    },
+                    child: Row(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.fromLTRB(0, 0, 8, 0),
+                          child: SizedBox(
+                              width: 50,
+                              child: Image.asset("assets/InnerWall.png")),
+                        ),
+                        Text(languageEnglish ? "Interior walls" : "Innevegger"),
+                      ],
+                    ),
+                  ),
+                  Text("6"),
+                ],
+              ),
+              Row(
+                children: [
+                  TextButton(
+                    onPressed: () {
+                      Navigator.of(context).pushReplacement(
+                        MaterialPageRoute(
+                          builder: (context) {
+                            return InnerDoorSections();
+                          },
+                        ),
+                      );
+                    },
+                    child: Row(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.fromLTRB(0, 0, 8, 0),
+                          child: SizedBox(
+                              width: 50,
+                              child: Image.asset("assets/InnerDoor.png")),
+                        ),
+                        Text(languageEnglish ? "Interior door" : "Innedør"),
+                      ],
+                    ),
+                  ),
+                  Text("1"),
+                ],
+              ),
+              Row(
+                children: [
+                  TextButton(
+                    onPressed: () {
+                      Navigator.of(context).pushReplacement(
+                        MaterialPageRoute(builder: (context) {
+                          return DeckSections();
+                        }),
+                      );
+                    },
+                    child: Row(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.fromLTRB(0, 0, 8, 0),
+                          child: Padding(
+                            padding: const EdgeInsets.fromLTRB(0, 0, 8, 0),
+                            child: SizedBox(
+                                width: 50,
+                                child: Image.asset("assets/Deck.png")),
+                          ),
+                        ),
+                        Text(languageEnglish ? "Deck" : "Dekke"),
+                      ],
+                    ),
+                  ),
+                  Text("1"),
+                ],
+              ),
+              Row(
+                children: [
+                  TextButton(
+                    onPressed: () {
+                      Navigator.of(context).pushReplacement(
+                        MaterialPageRoute(builder: (context) {
+                          return FlooringSections();
+                        }),
+                      );
+                    },
+                    child: Row(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.fromLTRB(0, 0, 8, 0),
+                          child: SizedBox(
+                              width: 50,
+                              child: Image.asset("assets/Flooring.png")),
+                        ),
+                        Text(languageEnglish ? "Flooring" : "Gulvbelegg"),
+                      ],
+                    ),
+                  ),
+                  Text("1"),
+                ],
+              ),
+              Row(
+                children: [
+                  TextButton(
+                    onPressed: () {
+                      Navigator.of(context).pushReplacement(
+                        MaterialPageRoute(builder: (context) {
+                          return OuterRoofSections();
+                        }),
+                      );
+                    },
+                    child: Row(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.fromLTRB(0, 0, 8, 0),
+                          child: SizedBox(
+                              width: 50,
+                              child: Image.asset("assets/ExteriorRoof.png")),
+                        ),
+                        Text(languageEnglish ? "Exterior roof" : "Yttertak"),
+                      ],
+                    ),
+                  ),
+                  Text("1"),
+                ],
+              ),
+              Row(
+                children: [
+                  TextButton(
+                    onPressed: () {
+                      Navigator.of(context).pushReplacement(
+                        MaterialPageRoute(builder: (context) {
+                          return TerraceSections();
+                        }),
+                      );
+                    },
+                    child: Row(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.fromLTRB(0, 0, 8, 0),
+                          child: SizedBox(
+                              width: 50,
+                              child: Image.asset("assets/Terrace.png")),
+                        ),
+                        Text(languageEnglish
+                            ? "Terrace/railings"
+                            : "Terrasse/rekkverk"),
+                      ],
+                    ),
+                  ),
+                  Text("1"),
+                ],
+              ),
+              Row(
+                children: [
+                  TextButton(
+                    onPressed: () {
+                      Navigator.of(context).pushReplacement(
+                        MaterialPageRoute(builder: (context) {
+                          return InnerStairsSections();
+                        }),
+                      );
+                    },
+                    child: Row(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.fromLTRB(0, 0, 8, 0),
+                          child: SizedBox(
+                              width: 50,
+                              child: Image.asset("assets/InnerStairs.png")),
+                        ),
+                        Text(languageEnglish ? "Inner stairs" : "Trapper"),
+                      ],
+                    ),
+                  ),
+                  Text("1"),
+                ],
+              ),
+              Row(
+                children: [
+                  TextButton(
+                    onPressed: () {
+                      Navigator.of(context).pushReplacement(
+                        MaterialPageRoute(builder: (context) {
+                          return HullRoofingSections();
+                        }),
+                      );
+                    },
+                    child: Row(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.fromLTRB(0, 0, 8, 0),
+                          child: SizedBox(
+                              width: 50,
+                              child: Image.asset("assets/HullRoofing.png")),
+                        ),
+                        Text(languageEnglish ? "Hull roofing" : "Hulltaking"),
+                      ],
+                    ),
+                  ),
+                  Text("1"),
+                ],
+              ),
+              Row(
+                children: [
+                  TextButton(
+                    onPressed: () {
+                      Navigator.of(context).pushReplacement(
+                        MaterialPageRoute(builder: (context) {
+                          return ScaffoldingSections();
+                        }),
+                      );
+                    },
+                    child: Row(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.fromLTRB(0, 0, 8, 0),
+                          child: SizedBox(
+                              width: 50,
+                              child: Image.asset("assets/Scaffold.png")),
+                        ),
+                        Text(languageEnglish ? "Scaffolding" : "Stillas"),
+                      ],
+                    ),
+                  ),
+                  Text("1"),
+                ],
+              ),
+              Row(
+                children: [
+                  TextButton(
+                    onPressed: () {
+                      Navigator.of(context).pushReplacement(
+                        MaterialPageRoute(builder: (context) {
+                          return WasteSections();
+                        }),
+                      );
+                    },
+                    child: Row(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.fromLTRB(0, 0, 8, 0),
+                          child: SizedBox(
+                              width: 50,
+                              child: Image.asset("assets/Waste.png")),
+                        ),
+                        Text(languageEnglish ? "Waste management" : "Avfall"),
+                      ],
+                    ),
+                  ),
+                  Text("1"),
+                ],
+              ),
+              Row(
+                children: [
+                  TextButton(
+                    onPressed: () {
+                      Navigator.of(context).pushReplacement(
+                        MaterialPageRoute(
+                          builder: (context) {
+                            return ParquetLaminateSections();
+                          },
+                        ),
+                      );
+                    },
+                    child: Row(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.fromLTRB(0, 0, 8, 0),
+                          child: SizedBox(
+                              width: 50,
+                              child: Image.asset("assets/Parquet.png")),
+                        ),
+                        Text(languageEnglish
+                            ? "Parquet and laminate"
+                            : "Parquet og laminat"),
+                      ],
+                    ),
+                  ),
+                  Text("1"),
+                ],
+              ),
+            ],
+          ),
         ),
       ),
     );
