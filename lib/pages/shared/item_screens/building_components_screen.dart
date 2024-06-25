@@ -44,13 +44,25 @@ class _buildingComponentsScreenState extends State<buildingComponentsScreen> {
       child: Scaffold(
         drawer: CustomDrawer(),
         appBar: AppBar(
-          title: const Text('Building components'),
+          title: Text(languageEnglish
+              ? 'Building components'
+              : languageLithuanian
+                  ? "Statybos komponentai"
+                  : languageNorwegian
+                      ? "Bygningskomponenter"
+                      : "Komponenty budynku"),
           actions: [
             IconButton(
               icon: const Icon(
                 FontAwesomeIcons.houseChimney,
               ),
-              tooltip: 'Return to home',
+              tooltip: languageEnglish
+                  ? 'Return to main menu'
+                  : languageLithuanian
+                      ? "Grįžti į pagrindinį meniu"
+                      : languageNorwegian
+                          ? "Gå tilbake til hovedmenyen"
+                          : "Powrót do menu głównego",
               onPressed: () {
                 Navigator.of(context).pushReplacement(
                   MaterialPageRoute(

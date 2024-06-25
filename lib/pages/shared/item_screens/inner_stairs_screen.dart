@@ -1,7 +1,9 @@
 import 'package:cost_calculator/data/data.dart';
 import 'package:cost_calculator/data/norw_data.dart';
 import 'package:cost_calculator/items/inner_stairs_item.dart';
+import 'package:cost_calculator/pages/shared/home_page.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import '../../../constants/language.dart';
 import '../../../widgets/custom_drawer.dart';
 
@@ -16,6 +18,29 @@ class _InnerStairsScreen extends State<InnerStairsScreen> {
     return Scaffold(
       drawer: CustomDrawer(),
       appBar: AppBar(
+        actions: [
+          IconButton(
+            icon: const Icon(
+              FontAwesomeIcons.houseChimney,
+            ),
+            tooltip: languageEnglish
+                ? 'Return to main menu'
+                : languageLithuanian
+                    ? "Grįžti į pagrindinį meniu"
+                    : languageNorwegian
+                        ? "Gå tilbake til hovedmenyen"
+                        : "Powrót do menu głównego",
+            onPressed: () {
+              Navigator.of(context).pushReplacement(
+                MaterialPageRoute(
+                  builder: (context) {
+                    return homePage();
+                  },
+                ),
+              );
+            },
+          ),
+        ],
         title: const Text('Bygg Kalk'),
       ),
       body: languageEnglish == true
