@@ -1,4 +1,3 @@
-import 'package:cost_calculator/data/data.dart';
 import 'package:cost_calculator/pages/item_screen/parquet_laminate_items_screen.dart';
 import 'package:cost_calculator/pages/item_sections/parquet_laminate_sections.dart';
 import 'package:cost_calculator/pages/norw_item_screen/norw_parquet_laminate_items_screen.dart';
