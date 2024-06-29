@@ -1,6 +1,7 @@
 import 'package:cost_calculator/data/data.dart';
 import 'package:cost_calculator/data/norw_data.dart';
 import 'package:cost_calculator/items/support_system_item.dart';
+import 'package:cost_calculator/pages/item_screen/support_system_screen.dart';
 import 'package:cost_calculator/pages/shared/home_page.dart';
 
 import 'package:flutter/material.dart';
@@ -44,53 +45,87 @@ class _SupportSystemScreenState extends State<SupportSystemScreen> {
         ],
         title: const Text('Bygg Kalk'),
       ),
-      body: languageEnglish == true
-          ? GridView.count(
-              padding: const EdgeInsets.all(25),
-              children: supportSystem
-                  .map(
-                    (catData) => SupportSystemItem(
-                      catData.name,
-                      catData.description,
-                      catData.unit,
-                      catData.quantity,
-                      catData.laborHours1,
-                      catData.laborHours2,
-                      catData.laborCost,
-                      catData.material,
-                      catData.materials,
-                      catData.totalPrice,
-                      catData.color,
+      body: GridView.count(
+        padding: const EdgeInsets.all(25),
+        children: languageEnglish
+            ? supportSystem.map(
+                (catData) {
+                  return Row(
+                    children: [
+                      Expanded(
+                        child: SupportSystemItem(
+                          catData.name,
+                          catData.description,
+                          catData.unit,
+                          catData.quantity,
+                          catData.laborHours1,
+                          catData.laborHours2,
+                          catData.laborCost,
+                          catData.material,
+                          catData.materials,
+                          catData.totalPrice,
+                          catData.color,
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(8),
+                        child: Container(
+                          width: 100,
+                          height: double.infinity,
+                          child: Center(
+                            child: TextField(
+                              controller:
+                                  supportSystemCalculationQuantityController,
+                              onChanged: (value) {
+                                setState(() {
+                                  supportSystemCalculationQuantityController
+                                      .text = value;
+                                });
+                              },
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  );
+                },
+              ).toList()
+            : norwSupportSystem.map((catData) {
+                return Row(
+                  children: [
+                    Expanded(
+                      child: SupportSystemItem(
+                        catData.name,
+                        catData.description,
+                        catData.unit,
+                        catData.quantity,
+                        catData.laborHours1,
+                        catData.laborHours2,
+                        catData.laborCost,
+                        catData.material,
+                        catData.materials,
+                        catData.totalPrice,
+                        catData.color,
+                      ),
                     ),
-                  )
-                  .toList(),
-              crossAxisCount: 1,
-              mainAxisSpacing: 20,
-              childAspectRatio: 7 / 2,
-            )
-          : GridView.count(
-              padding: const EdgeInsets.all(25),
-              children: norwSupportSystem
-                  .map(
-                    (catData) => SupportSystemItem(
-                      catData.name,
-                      catData.description,
-                      catData.unit,
-                      catData.quantity,
-                      catData.laborHours1,
-                      catData.laborHours2,
-                      catData.laborCost,
-                      catData.material,
-                      catData.materials,
-                      catData.totalPrice,
-                      catData.color,
+                    Container(
+                      width: 100,
+                      height: double.infinity,
+                      color: Colors.grey, // Change this to your preferred color
+                      child: Center(
+                        child: Text(
+                          'Additional Info',
+                          style: TextStyle(color: Colors.white),
+                        ),
+                      ),
                     ),
-                  )
-                  .toList(),
-              crossAxisCount: 1,
-              mainAxisSpacing: 20,
-              childAspectRatio: 7 / 2,
-            ),
+                  ],
+                );
+              }).toList(),
+        crossAxisCount: 1,
+        mainAxisSpacing: 20,
+        childAspectRatio: 7 / 2,
+      ),
     );
   }
 }

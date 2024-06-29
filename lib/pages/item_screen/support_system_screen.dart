@@ -39,6 +39,10 @@ class SupportSystemItemScreen extends StatefulWidget {
       _SupportSystemItemScreenState();
 }
 
+TextEditingController supportSystemCalculationQuantityController =
+    TextEditingController();
+double calculationQuantity = 0;
+
 List<double> emptyCustomList = [];
 
 class _SupportSystemItemScreenState extends State<SupportSystemItemScreen> {
@@ -55,8 +59,6 @@ class _SupportSystemItemScreenState extends State<SupportSystemItemScreen> {
   late TextEditingController savingController;
   late TextEditingController loadingController;
 //
-  TextEditingController quantityCalculationControllers =
-      TextEditingController();
 
   //
 
@@ -169,28 +171,19 @@ class _SupportSystemItemScreenState extends State<SupportSystemItemScreen> {
     initialiseEmptyList();
     savingController = TextEditingController();
     loadingController = TextEditingController();
-  }
-
-  void calculateCalculationQuantity() {
-    double mat2Total = widget.material2
-        .fold(0, (previousValue, element) => previousValue + element);
-    double mat1Total = widget.material1
-        .fold(0, (previousValue, element) => previousValue + element);
-
-    calculationQuantity = mat2Total / mat1Total;
-
-    quantityCalculationControllers.text =
-        calculationQuantity.toStringAsFixed(2);
+    if (supportSystemCalculationQuantityController.text != "")
+      calculationQuantity =
+          double.parse(supportSystemCalculationQuantityController.text);
   }
 
   void _updateLaborHours() {
     if (!mounted) return; // Ensure the widget is still mounted
 
-    for (int i = 0; i < innerDoor.length; i++) {
-      if (innerDoor[i].name == widget.name) {
+    for (int i = 0; i < supportSystem.length; i++) {
+      if (supportSystem[i].name == widget.name) {
         setState(() {
-          for (int j = 0; j < innerDoor[i].laborHours1.length; j++) {
-            widget.laborHours1[j] = innerDoor[i].laborHours1[j];
+          for (int j = 0; j < supportSystem[i].laborHours1.length; j++) {
+            widget.laborHours1[j] = supportSystem[i].laborHours1[j];
           }
         });
         return;
@@ -234,6 +227,18 @@ class _SupportSystemItemScreenState extends State<SupportSystemItemScreen> {
     );
   }
 
+  void calculateCalculationQuantity() {
+    double mat2Total = widget.material2
+        .fold(0, (previousValue, element) => previousValue + element);
+    double mat1Total = widget.material1
+        .fold(0, (previousValue, element) => previousValue + element);
+
+    calculationQuantity = mat2Total / mat1Total;
+
+    supportSystemCalculationQuantityController.text =
+        calculationQuantity.toStringAsFixed(2);
+  }
+
   void setInitialValues() {
     for (int i = 0; i < widget.description.length; i++) {
       descriptionControllers[i].text = widget.description[i];
@@ -246,7 +251,7 @@ class _SupportSystemItemScreenState extends State<SupportSystemItemScreen> {
       material2Controllers[i].text = widget.material2[i].toStringAsFixed(2);
       totalPriceControllers[i].text = widget.totalPrice[i].toStringAsFixed(2);
     }
-    quantityCalculationControllers.text =
+    supportSystemCalculationQuantityController.text =
         calculationQuantity.toStringAsFixed(2);
     recalculateValues();
   }
@@ -266,7 +271,7 @@ class _SupportSystemItemScreenState extends State<SupportSystemItemScreen> {
       widget.laborCost[i] = calculateJobCost(
         i,
         widget.laborHours2,
-        hourlyRate,
+        calculationQuantity,
       );
       laborCostControllers[i].text = widget.laborCost[i].toStringAsFixed(2);
 
@@ -312,60 +317,6 @@ class _SupportSystemItemScreenState extends State<SupportSystemItemScreen> {
 
   @override
   Widget build(BuildContext context) {
-    List<DataColumn> calculationColumns = calculationColumnsEng;
-
-    List<DataRow> calculationRows = [
-      DataRow(
-        cells: [
-          dataCellDoSingle(quantityCalculationControllers, (value) {
-            calculationQuantity = double.parse(value);
-            for (int i = 0; i < widget.description.length; i++) {
-              widget.laborHours2[i] = calculateWorkHours2(
-                  i, emptyCustomList, widget.laborHours1, calculationQuantity);
-              laborHours2Controllers[i].text = calculateWorkHours2(i,
-                      emptyCustomList, widget.laborHours1, calculationQuantity)
-                  .toStringAsFixed(2);
-
-              widget.laborCost[i] = calculateJobCost(
-                i,
-                widget.laborHours1,
-                hourlyRate,
-              );
-              laborCostControllers[i].text = calculateJobCost(
-                i,
-                widget.laborHours1,
-                hourlyRate,
-              ).toStringAsFixed(2);
-              widget.laborCost[i] = calculateJobCost(
-                i,
-                widget.laborHours2,
-                hourlyRate,
-              );
-              laborCostControllers[i].text = calculateJobCost(
-                i,
-                widget.laborHours2,
-                hourlyRate,
-              ).toStringAsFixed(2);
-              // Recalculate and update the material 2 when quantity changes
-              widget.material2[i] = calculateMaterialCost(
-                  i, widget.material1, calculationQuantity, emptyCustomList);
-              material2Controllers[i].text = calculateMaterialCost(
-                      i, widget.material1, calculationQuantity, emptyCustomList)
-                  .toStringAsFixed(2);
-              // Recalculate and update the total price when quantity changes
-              widget.totalPrice[i] = calculateTotalPrice(
-                  i, widget.laborCost, widget.material1, calculationQuantity);
-              totalPriceControllers[i].text = calculateTotalPrice(i,
-                      widget.laborCost, widget.material1, calculationQuantity)
-                  .toStringAsFixed(2);
-              //Rebuild the data table
-              rebuildDataTable();
-            }
-          }, Color.fromARGB(255, 218, 128, 122), false, 100),
-        ],
-      ),
-    ];
-
     List<DataColumn> columns = [
       createDataColumn("Description", 98, () {}),
       createDataColumn("Unit", 55, () {}),
@@ -426,23 +377,23 @@ class _SupportSystemItemScreenState extends State<SupportSystemItemScreen> {
                       widget.laborCost[i] = calculateJobCost(
                         i,
                         widget.laborHours1,
-                        hourlyRate,
+                        supportSystemCalculationQuantityController,
                       );
                       laborCostControllers[i].text = calculateJobCost(
                         i,
                         widget.laborHours1,
-                        hourlyRate,
+                        supportSystemCalculationQuantityController,
                       ).toStringAsFixed(2);
                       //
                       widget.laborCost[i] = calculateJobCost(
                         i,
                         widget.laborHours2,
-                        hourlyRate,
+                        supportSystemCalculationQuantityController,
                       );
                       laborCostControllers[i].text = calculateJobCost(
                         i,
                         widget.laborHours2,
-                        hourlyRate,
+                        supportSystemCalculationQuantityController,
                       ).toStringAsFixed(2);
                       // Recalculate and update the material 2 when quantity changes
                       widget.material2[i] = calculateMaterialCost(
@@ -485,7 +436,7 @@ class _SupportSystemItemScreenState extends State<SupportSystemItemScreen> {
               double updatedLaborCost = calculateJobCost(
                 i,
                 widget.laborHours2,
-                hourlyRate,
+                supportSystemCalculationQuantityController,
               ); // Calculate the labor cost
               widget.laborCost[i] =
                   double.parse(updatedLaborCost.toStringAsFixed(2));
@@ -714,15 +665,6 @@ class _SupportSystemItemScreenState extends State<SupportSystemItemScreen> {
                       );
                     });
                   }),
-              SingleChildScrollView(
-                scrollDirection: Axis.horizontal,
-                child: DataTable(
-                  dataRowMaxHeight: double.infinity,
-                  dataRowMinHeight: 60,
-                  columns: calculationColumns, // Define your columns here
-                  rows: calculationRows,
-                ),
-              )
             ],
           ),
         ),

@@ -175,8 +175,9 @@ class _InteriorWallItemsScreenState extends State<InteriorWallItemsScreen> {
     initialiseEmptyList();
     savingController = TextEditingController();
     loadingController = TextEditingController();
-    calculationQuantity =
-        double.parse(innerWallCalculationQuantityController.text);
+    if (innerWallCalculationQuantityController.text != "")
+      calculationQuantity =
+          double.parse(innerWallCalculationQuantityController.text);
   }
 
   void _updateLaborHours() {
