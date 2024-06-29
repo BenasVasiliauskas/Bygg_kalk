@@ -1,6 +1,7 @@
 import 'package:cost_calculator/data/data.dart';
 import 'package:cost_calculator/data/norw_data.dart';
 import 'package:cost_calculator/items/outer_wall_item.dart';
+import 'package:cost_calculator/pages/item_screen/exterior_wall_items_screen.dart';
 import 'package:cost_calculator/pages/shared/home_page.dart';
 
 import 'package:flutter/material.dart';
@@ -44,55 +45,88 @@ class _ExteriorWallScreenState extends State<ExteriorWallScreen> {
         ],
         title: const Text('Bygg Kalk'),
       ),
-      body: languageEnglish == true
-          ? GridView.count(
-              padding: const EdgeInsets.all(25),
-              children: exteriorWallData
-                  .map(
-                    (wallItem) => OuterWallItem(
-                      wallItem.name,
-                      wallItem.description,
-                      wallItem.unit,
-                      wallItem.quantity,
-                      wallItem.materialQuantity,
-                      wallItem.laborHours1,
-                      wallItem.laborHours2,
-                      wallItem.laborCost,
-                      wallItem.material,
-                      wallItem.materials,
-                      wallItem.totalPrice,
-                      wallItem.color,
+      body: GridView.count(
+        padding: const EdgeInsets.all(25),
+        children: languageEnglish
+            ? exteriorWallData.map(
+                (wallItem) {
+                  return Row(
+                    children: [
+                      Expanded(
+                        child: OuterWallItem(
+                          wallItem.name,
+                          wallItem.description,
+                          wallItem.unit,
+                          wallItem.quantity,
+                          wallItem.materialQuantity,
+                          wallItem.laborHours1,
+                          wallItem.laborHours2,
+                          wallItem.laborCost,
+                          wallItem.material,
+                          wallItem.materials,
+                          wallItem.totalPrice,
+                          wallItem.color,
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(8),
+                        child: Container(
+                          width: 100,
+                          height: double.infinity,
+                          child: Center(
+                            child: TextField(
+                              controller: exteriorWallCalculationControllers,
+                              onChanged: (value) {
+                                setState(() {
+                                  exteriorWallCalculationControllers.text =
+                                      value;
+                                });
+                              },
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  );
+                },
+              ).toList()
+            : norwExteriorWallData.map((wallItem) {
+                return Row(
+                  children: [
+                    Expanded(
+                      child: OuterWallItem(
+                        wallItem.name,
+                        wallItem.description,
+                        wallItem.unit,
+                        wallItem.quantity,
+                        wallItem.materialQuantity,
+                        wallItem.laborHours1,
+                        wallItem.laborHours2,
+                        wallItem.laborCost,
+                        wallItem.material,
+                        wallItem.materials,
+                        wallItem.totalPrice,
+                        wallItem.color,
+                      ),
                     ),
-                  )
-                  .toList(),
-              crossAxisCount: 1,
-              mainAxisSpacing: 20,
-              childAspectRatio: 7 / 2,
-            )
-          : GridView.count(
-              padding: const EdgeInsets.all(25),
-              children: norwExteriorWallData
-                  .map(
-                    (wallItem) => OuterWallItem(
-                      wallItem.name,
-                      wallItem.description,
-                      wallItem.unit,
-                      wallItem.quantity,
-                      wallItem.materialQuantity,
-                      wallItem.laborHours1,
-                      wallItem.laborHours2,
-                      wallItem.laborCost,
-                      wallItem.material,
-                      wallItem.materials,
-                      wallItem.totalPrice,
-                      wallItem.color,
+                    Container(
+                      width: 100,
+                      height: double.infinity,
+                      color: Colors.grey, // Change this to your preferred color
+                      child: Center(
+                        child: Text(
+                          'Additional Info',
+                          style: TextStyle(color: Colors.white),
+                        ),
+                      ),
                     ),
-                  )
-                  .toList(),
-              crossAxisCount: 1,
-              mainAxisSpacing: 20,
-              childAspectRatio: 7 / 2,
-            ),
+                  ],
+                );
+              }).toList(),
+        crossAxisCount: 1,
+        mainAxisSpacing: 20,
+        childAspectRatio: 7 / 2,
+      ),
     );
   }
 }
