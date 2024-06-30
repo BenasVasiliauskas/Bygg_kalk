@@ -2,6 +2,7 @@ import 'package:cost_calculator/data/data.dart';
 import 'package:cost_calculator/data/norw_data.dart';
 import 'package:cost_calculator/items/parquet_laminate_item.dart';
 import 'package:cost_calculator/pages/item_screen/parquet_laminate_items_screen.dart';
+import 'package:cost_calculator/pages/norw_item_screen/norw_parquet_laminate_items_screen.dart';
 import 'package:cost_calculator/pages/shared/home_page.dart';
 
 import 'package:flutter/material.dart';
@@ -117,10 +118,10 @@ class _ParquetLaminateScreenState extends State<ParquetLaminateScreen> {
                           child: Center(
                             child: TextField(
                               controller:
-                                  parquetAndLaminateCalculationControllers,
+                                  norwParquetAndLaminateCalculationControllers,
                               onChanged: (value) {
                                 setState(() {
-                                  parquetAndLaminateCalculationControllers
+                                  norwParquetAndLaminateCalculationControllers
                                       .text = value;
                                 });
                               },
