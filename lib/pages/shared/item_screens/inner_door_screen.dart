@@ -1,6 +1,7 @@
 import 'package:cost_calculator/data/data.dart';
 import 'package:cost_calculator/data/norw_data.dart';
 import 'package:cost_calculator/items/inner_door_item.dart';
+import 'package:cost_calculator/pages/item_screen/inner_door_items_screen.dart';
 import 'package:cost_calculator/pages/shared/home_page.dart';
 
 import 'package:flutter/material.dart';
@@ -44,53 +45,93 @@ class _InnerDoorScreenState extends State<InnerDoorScreen> {
         ],
         title: const Text('Bygg Kalk'),
       ),
-      body: languageEnglish == true
-          ? GridView.count(
-              padding: const EdgeInsets.all(25),
-              children: innerDoor
-                  .map(
-                    (catData) => InnerDoorItem(
-                      catData.name,
-                      catData.description,
-                      catData.unit,
-                      catData.quantity,
-                      catData.laborHours1,
-                      catData.laborHours2,
-                      catData.laborCost,
-                      catData.material,
-                      catData.materials,
-                      catData.totalPrice,
-                      catData.color,
-                    ),
-                  )
-                  .toList(),
-              crossAxisCount: 1,
-              mainAxisSpacing: 20,
-              childAspectRatio: 7 / 2,
-            )
-          : GridView.count(
-              padding: const EdgeInsets.all(25),
-              children: norwInnerDoor
-                  .map(
-                    (catData) => InnerDoorItem(
-                      catData.name,
-                      catData.description,
-                      catData.unit,
-                      catData.quantity,
-                      catData.laborHours1,
-                      catData.laborHours2,
-                      catData.laborCost,
-                      catData.material,
-                      catData.materials,
-                      catData.totalPrice,
-                      catData.color,
-                    ),
-                  )
-                  .toList(),
-              crossAxisCount: 1,
-              mainAxisSpacing: 20,
-              childAspectRatio: 7 / 2,
-            ),
+      body: GridView.count(
+        padding: const EdgeInsets.all(25),
+        children: languageEnglish == true
+            ? innerDoor.map(
+                (catData) {
+                  return Row(
+                    children: [
+                      Expanded(
+                        child: InnerDoorItem(
+                          catData.name,
+                          catData.description,
+                          catData.unit,
+                          catData.quantity,
+                          catData.laborHours1,
+                          catData.laborHours2,
+                          catData.laborCost,
+                          catData.material,
+                          catData.materials,
+                          catData.totalPrice,
+                          catData.color,
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(8),
+                        child: Container(
+                          width: 100,
+                          height: double.infinity,
+                          child: Center(
+                            child: TextField(
+                              controller: innerDoorCalculationControllers,
+                              onChanged: (value) {
+                                setState(() {
+                                  innerDoorCalculationControllers.text = value;
+                                });
+                              },
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  );
+                },
+              ).toList()
+            : norwInnerDoor.map(
+                (catData) {
+                  return Row(
+                    children: [
+                      Expanded(
+                        child: InnerDoorItem(
+                          catData.name,
+                          catData.description,
+                          catData.unit,
+                          catData.quantity,
+                          catData.laborHours1,
+                          catData.laborHours2,
+                          catData.laborCost,
+                          catData.material,
+                          catData.materials,
+                          catData.totalPrice,
+                          catData.color,
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(8),
+                        child: Container(
+                          width: 100,
+                          height: double.infinity,
+                          child: Center(
+                            child: TextField(
+                              controller: innerDoorCalculationControllers,
+                              onChanged: (value) {
+                                setState(() {
+                                  innerDoorCalculationControllers.text = value;
+                                });
+                              },
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  );
+                },
+              ).toList(),
+        crossAxisCount: 1,
+        mainAxisSpacing: 20,
+        childAspectRatio: 7 / 2,
+      ),
     );
   }
 }

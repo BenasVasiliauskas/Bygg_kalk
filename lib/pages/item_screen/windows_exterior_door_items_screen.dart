@@ -233,9 +233,8 @@ class _WindowsExteriorDoorItemsScreen
 
     calculationQuantity = mat2Total / mat1Total;
 
-    if (windowsExteriorDoorsCalculationControllers.text != "")
-      windowsExteriorDoorsCalculationControllers.text =
-          calculationQuantity.toString();
+    windowsExteriorDoorsCalculationControllers.text =
+        calculationQuantity.toString();
   }
 
   void setInitialValues() {
