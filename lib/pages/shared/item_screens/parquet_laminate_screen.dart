@@ -1,6 +1,7 @@
 import 'package:cost_calculator/data/data.dart';
 import 'package:cost_calculator/data/norw_data.dart';
 import 'package:cost_calculator/items/parquet_laminate_item.dart';
+import 'package:cost_calculator/pages/item_screen/parquet_laminate_items_screen.dart';
 import 'package:cost_calculator/pages/shared/home_page.dart';
 
 import 'package:flutter/material.dart';
@@ -44,53 +45,97 @@ class _ParquetLaminateScreenState extends State<ParquetLaminateScreen> {
         ],
         title: const Text('Bygg Kalk'),
       ),
-      body: languageEnglish == true
-          ? GridView.count(
-              padding: const EdgeInsets.all(25),
-              children: parquetAndLaminate
-                  .map(
-                    (catData) => ParquetLaminateItem(
-                      catData.name,
-                      catData.description,
-                      catData.unit,
-                      catData.quantity,
-                      catData.laborHours1,
-                      catData.laborHours2,
-                      catData.laborCost,
-                      catData.material,
-                      catData.materials,
-                      catData.totalPrice,
-                      catData.color,
-                    ),
-                  )
-                  .toList(),
-              crossAxisCount: 1,
-              mainAxisSpacing: 20,
-              childAspectRatio: 7 / 2,
-            )
-          : GridView.count(
-              padding: const EdgeInsets.all(25),
-              children: norwParquetAndLaminate
-                  .map(
-                    (catData) => ParquetLaminateItem(
-                      catData.name,
-                      catData.description,
-                      catData.unit,
-                      catData.quantity,
-                      catData.laborHours1,
-                      catData.laborHours2,
-                      catData.laborCost,
-                      catData.material,
-                      catData.materials,
-                      catData.totalPrice,
-                      catData.color,
-                    ),
-                  )
-                  .toList(),
-              crossAxisCount: 1,
-              mainAxisSpacing: 20,
-              childAspectRatio: 7 / 2,
-            ),
+      body: GridView.count(
+        padding: const EdgeInsets.all(25),
+        children: languageEnglish == true
+            ? parquetAndLaminate.map(
+                (catData) {
+                  return Row(
+                    children: [
+                      Expanded(
+                        child: ParquetLaminateItem(
+                          catData.name,
+                          catData.description,
+                          catData.unit,
+                          catData.quantity,
+                          catData.laborHours1,
+                          catData.laborHours2,
+                          catData.laborCost,
+                          catData.material,
+                          catData.materials,
+                          catData.totalPrice,
+                          catData.color,
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(8),
+                        child: Container(
+                          width: 100,
+                          height: double.infinity,
+                          child: Center(
+                            child: TextField(
+                              controller:
+                                  parquetAndLaminateCalculationControllers,
+                              onChanged: (value) {
+                                setState(() {
+                                  parquetAndLaminateCalculationControllers
+                                      .text = value;
+                                });
+                              },
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  );
+                },
+              ).toList()
+            : norwParquetAndLaminate.map(
+                (catData) {
+                  return Row(
+                    children: [
+                      Expanded(
+                        child: ParquetLaminateItem(
+                          catData.name,
+                          catData.description,
+                          catData.unit,
+                          catData.quantity,
+                          catData.laborHours1,
+                          catData.laborHours2,
+                          catData.laborCost,
+                          catData.material,
+                          catData.materials,
+                          catData.totalPrice,
+                          catData.color,
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(8),
+                        child: Container(
+                          width: 100,
+                          height: double.infinity,
+                          child: Center(
+                            child: TextField(
+                              controller:
+                                  parquetAndLaminateCalculationControllers,
+                              onChanged: (value) {
+                                setState(() {
+                                  parquetAndLaminateCalculationControllers
+                                      .text = value;
+                                });
+                              },
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  );
+                },
+              ).toList(),
+        crossAxisCount: 1,
+        mainAxisSpacing: 20,
+        childAspectRatio: 7 / 2,
+      ),
     );
   }
 }
