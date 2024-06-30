@@ -265,7 +265,7 @@ class _TerraceItemScreenState extends State<TerraceItemScreen> {
       widget.laborCost[i] = calculateJobCost(
         i,
         widget.laborHours2,
-        hourlyRate,
+        calculationQuantity,
       );
       laborCostControllers[i].text = widget.laborCost[i].toStringAsFixed(2);
 
@@ -371,23 +371,23 @@ class _TerraceItemScreenState extends State<TerraceItemScreen> {
                       widget.laborCost[i] = calculateJobCost(
                         i,
                         widget.laborHours1,
-                        hourlyRate,
+                        calculationQuantity,
                       );
                       laborCostControllers[i].text = calculateJobCost(
                         i,
                         widget.laborHours1,
-                        hourlyRate,
+                        calculationQuantity,
                       ).toStringAsFixed(2);
                       //
                       widget.laborCost[i] = calculateJobCost(
                         i,
                         widget.laborHours2,
-                        hourlyRate,
+                        calculationQuantity,
                       );
                       laborCostControllers[i].text = calculateJobCost(
                         i,
                         widget.laborHours2,
-                        hourlyRate,
+                        calculationQuantity,
                       ).toStringAsFixed(2);
                       // Recalculate and update the material 2 when quantity changes
                       widget.material2[i] = calculateMaterialCost(
@@ -430,7 +430,7 @@ class _TerraceItemScreenState extends State<TerraceItemScreen> {
               double updatedLaborCost = calculateJobCost(
                 i,
                 widget.laborHours2,
-                hourlyRate,
+                calculationQuantity,
               ); // Calculate the labor cost
               widget.laborCost[i] =
                   double.parse(updatedLaborCost.toStringAsFixed(2));
