@@ -1,6 +1,7 @@
 import 'package:cost_calculator/data/data.dart';
 import 'package:cost_calculator/data/norw_data.dart';
 import 'package:cost_calculator/pages/item_screen/windows_exterior_door_items_screen.dart';
+import 'package:cost_calculator/pages/norw_item_screen/norw_windows_exterior_door_items_screen.dart';
 import 'package:cost_calculator/pages/shared/home_page.dart';
 
 import 'package:flutter/material.dart';
@@ -118,10 +119,10 @@ class _WindowsExteriorDoorScreenState extends State<WindowsExteriorDoorScreen> {
                           child: Center(
                             child: TextField(
                               controller:
-                                  windowsExteriorDoorsCalculationControllers,
+                                  norwWindowsExteriorDoorsCalculationControllers,
                               onChanged: (value) {
                                 setState(() {
-                                  windowsExteriorDoorsCalculationControllers
+                                  norwWindowsExteriorDoorsCalculationControllers
                                       .text = value;
                                 });
                               },
