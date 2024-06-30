@@ -2,6 +2,7 @@ import 'package:cost_calculator/data/data.dart';
 import 'package:cost_calculator/data/norw_data.dart';
 import 'package:cost_calculator/items/hull_roofing_item.dart';
 import 'package:cost_calculator/pages/item_screen/hull_roofing_item_screen.dart';
+import 'package:cost_calculator/pages/norw_item_screen/norw_hull_roofing_item_screen.dart';
 import 'package:cost_calculator/pages/shared/home_page.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -113,10 +114,10 @@ class _HullRoofingScreenState extends State<HullRoofingScreen> {
                           height: double.infinity,
                           child: Center(
                             child: TextField(
-                              controller: hullCalculationControllers,
+                              controller: norwHullCalculationControllers,
                               onChanged: (value) {
                                 setState(() {
-                                  hullCalculationControllers.text = value;
+                                  norwHullCalculationControllers.text = value;
                                 });
                               },
                             ),
