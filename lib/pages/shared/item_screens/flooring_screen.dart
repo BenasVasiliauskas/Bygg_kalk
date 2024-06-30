@@ -2,6 +2,7 @@ import 'package:cost_calculator/data/data.dart';
 import 'package:cost_calculator/data/norw_data.dart';
 import 'package:cost_calculator/items/flooring_item.dart';
 import 'package:cost_calculator/pages/item_screen/flooring_item_screen.dart';
+import 'package:cost_calculator/pages/norw_item_screen/norw_flooring_item_screen.dart';
 import 'package:cost_calculator/pages/shared/home_page.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -113,10 +114,11 @@ class _FlooringSectionsState extends State<FlooringScreen> {
                           height: double.infinity,
                           child: Center(
                             child: TextField(
-                              controller: flooringCalculationControllers,
+                              controller: norwFlooringCalculationControllers,
                               onChanged: (value) {
                                 setState(() {
-                                  flooringCalculationControllers.text = value;
+                                  norwFlooringCalculationControllers.text =
+                                      value;
                                 });
                               },
                             ),
