@@ -51,7 +51,6 @@ class WindowExteriorDoorItem extends StatelessWidget {
                   totalPrice,
                 )
               : NorwWindowsExteriorDoorItemsScreen(
-                  // change to norw
                   name,
                   description,
                   unit,
