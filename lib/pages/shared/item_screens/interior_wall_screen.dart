@@ -1,6 +1,7 @@
 import 'package:cost_calculator/data/data.dart';
 import 'package:cost_calculator/data/norw_data.dart';
 import 'package:cost_calculator/pages/item_screen/interior_wall_items_screen.dart';
+import 'package:cost_calculator/pages/norw_item_screen/norw_interior_wall_items_screen.dart';
 import 'package:cost_calculator/pages/shared/home_page.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import '../../../items/inner_wall_item.dart';
@@ -110,15 +111,22 @@ class _InnerWallScreenState extends State<InnerWallScreen> {
                           catData.color,
                         ),
                       ),
-                      Container(
-                        width: 100,
-                        height: double.infinity,
-                        color:
-                            Colors.grey, // Change this to your preferred color
-                        child: Center(
-                          child: Text(
-                            'Additional Info',
-                            style: TextStyle(color: Colors.white),
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Container(
+                          width: 100,
+                          height: double.infinity,
+                          child: Center(
+                            child: TextField(
+                              controller:
+                                  norwInnerWallCalculationQuantityController,
+                              onChanged: (value) {
+                                setState(() {
+                                  norwInnerWallCalculationQuantityController
+                                      .text = value;
+                                });
+                              },
+                            ),
                           ),
                         ),
                       ),
