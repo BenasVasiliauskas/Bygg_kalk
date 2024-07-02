@@ -1,7 +1,9 @@
 import 'package:cost_calculator/constants/language.dart';
 import 'package:cost_calculator/data/data.dart';
+import 'package:cost_calculator/functions/load_project_from_json.dart';
 import 'package:cost_calculator/functions/save_project_to_json.dart';
 import 'package:cost_calculator/functions/save_to_json.dart';
+import 'package:cost_calculator/models/outer_wall_data_model.dart';
 import 'package:cost_calculator/pages/shared/home_page.dart';
 import 'package:cost_calculator/widgets/custom_drawer.dart';
 import 'package:cost_calculator/widgets/saving_rows/saving_row_exteriorwall.dart';
@@ -18,6 +20,9 @@ class FilePickerScreen extends StatefulWidget {
   @override
   State<FilePickerScreen> createState() => _FilePickerScreenState();
 }
+
+TextEditingController loadingController = TextEditingController();
+TextEditingController savingController = TextEditingController();
 
 bool? isDescriptionChecked = false;
 bool? isUnitsChecked = false;
@@ -103,41 +108,52 @@ class _FilePickerScreenState extends State<FilePickerScreen> {
                   TextButton(
                     onPressed: () async {
                       final fileName = await openDialog();
-                      //reading like this is fine, so we can just write 50 mllion save calls?
-                      var dataInnerWall = dataInnerWallData;
-                      var dataDeckData = deckData;
-                      var dataInnerDoor = innerDoor;
-                      var dataParquetAndLaminate = parquetAndLaminate;
-                      var dataWindowsExteriorDoors = windowsExteriorDoors;
-                      var dataSupportSystem = supportSystem;
-                      var dataFlooringData = flooringData;
-                      var dataTerraceData = terraceData;
-                      var dataOuterRoofData = outerRoofData;
-                      var dataExteriorWallData = exteriorWallData;
-                      var dataHullRoofingData = hullRoofingData;
-                      var dataScaffoldingData = scaffoldingData;
-                      var dataInnerStairsData = innerStairsData;
-                      var dataWasteData = wasteData;
 
                       await writeJsonArrayStart(fileName!);
-                      await saveProject(fileName, dataInnerWall);
-                      await saveProject(fileName, dataDeckData);
-                      await saveProject(fileName, dataInnerDoor);
-                      await saveProject(fileName, dataParquetAndLaminate);
-                      await saveProject(fileName, dataWindowsExteriorDoors);
-                      await saveProject(fileName, dataSupportSystem);
-                      await saveProject(fileName, dataFlooringData);
-                      await saveProject(fileName, dataTerraceData);
-                      await saveProject(fileName, dataOuterRoofData);
-                      await saveProject(fileName, dataExteriorWallData);
-                      await saveProject(fileName, dataHullRoofingData);
-                      await saveProject(fileName, dataScaffoldingData);
-                      await saveProject(fileName, dataInnerStairsData);
-                      await saveProject(fileName, dataWasteData);
+
+                      await saveProject(fileName, dataInnerWallData);
+                      await saveProject(fileName, deckData);
+                      await saveProject(fileName, innerDoor);
+                      await saveProject(fileName, parquetAndLaminate);
+                      await saveProject(fileName, windowsExteriorDoors);
+                      await saveProject(fileName, supportSystem);
+                      await saveProject(fileName, flooringData);
+                      await saveProject(fileName, terraceData);
+                      await saveProject(fileName, outerRoofData);
+                      await saveProject(fileName, exteriorWallData);
+                      await saveProject(fileName, hullRoofingData);
+                      await saveProject(fileName, scaffoldingData);
+                      await saveProject(fileName, innerStairsData);
+                      await saveProject(fileName, wasteData);
 
                       await writeJsonArrayEnd(fileName);
                     },
                     child: Text("Save project"),
+                  ),
+                  TextButton(
+                    onPressed: () async {
+                      final fileName = await openLoadingDialog();
+
+                      var data = await readJsonFile(fileName!);
+                      OuterWallModel outerWallModel = OuterWallModel(
+                        name: "",
+                        description: [
+                          "",
+                        ],
+                        unit: [],
+                        quantity: [],
+                        materialQuantity: [],
+                        laborHours1: [],
+                        laborHours2: [],
+                        laborCost: [],
+                        material: [],
+                        materials: [],
+                        totalPrice: [],
+                      );
+
+                      await loadProject(fileName, data, outerWallModel);
+                    },
+                    child: Text("Load a project"),
                   ),
                 ],
               ),
@@ -146,6 +162,32 @@ class _FilePickerScreenState extends State<FilePickerScreen> {
         ),
       ),
     );
+  }
+
+  Future<String?> openLoadingDialog() => showDialog<String>(
+        context: context,
+        builder: (context) => AlertDialog(
+          title: Text("Name of the file you want to load"),
+          content: TextField(
+            controller: loadingController,
+            autofocus: true,
+            decoration: InputDecoration(
+              hintText: "Enter the name of the file",
+            ),
+          ),
+          actions: [
+            TextButton(
+                onPressed: () {
+                  submitLoading();
+                },
+                child: Text("Load")),
+          ],
+        ),
+      );
+
+  void submitLoading() {
+    Navigator.of(context).pop(loadingController.text);
+    loadingController.clear();
   }
 
   Future<String?> openDialog() => showDialog<String>(
