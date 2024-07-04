@@ -1,4 +1,4 @@
-import 'package:cost_calculator/data/data.dart';
+import 'package:cost_calculator/data/norw_data.dart';
 import 'package:cost_calculator/models/deck_data_model.dart';
 import 'package:cost_calculator/models/flooring_data_model.dart';
 import 'package:cost_calculator/models/hull_roofing_data_model.dart';
@@ -13,22 +13,22 @@ import 'package:cost_calculator/models/support_system_data_model.dart';
 import 'package:cost_calculator/models/terrace_model.dart';
 import 'package:cost_calculator/models/waste_data_model.dart';
 import 'package:cost_calculator/models/windows_exterior_doors_model.dart';
-import 'package:cost_calculator/pages/item_screen/deck_item_screen.dart';
-import 'package:cost_calculator/pages/item_screen/exterior_wall_items_screen.dart';
-import 'package:cost_calculator/pages/item_screen/flooring_item_screen.dart';
-import 'package:cost_calculator/pages/item_screen/hull_roofing_item_screen.dart';
-import 'package:cost_calculator/pages/item_screen/inner_door_items_screen.dart';
-import 'package:cost_calculator/pages/item_screen/inner_stairs_item_screen.dart';
-import 'package:cost_calculator/pages/item_screen/interior_wall_items_screen.dart';
-import 'package:cost_calculator/pages/item_screen/outer_roof_item_screen.dart';
-import 'package:cost_calculator/pages/item_screen/parquet_laminate_items_screen.dart';
-import 'package:cost_calculator/pages/item_screen/scaffolding_item_screen.dart';
-import 'package:cost_calculator/pages/item_screen/support_system_screen.dart';
-import 'package:cost_calculator/pages/item_screen/terrace_item_screen.dart';
-import 'package:cost_calculator/pages/item_screen/waste_item_screen.dart';
-import 'package:cost_calculator/pages/item_screen/windows_exterior_door_items_screen.dart';
+import 'package:cost_calculator/pages/norw_item_screen/norw_deck_item_screen.dart';
+import 'package:cost_calculator/pages/norw_item_screen/norw_exterior_wall_items_screen.dart';
+import 'package:cost_calculator/pages/norw_item_screen/norw_flooring_item_screen.dart';
+import 'package:cost_calculator/pages/norw_item_screen/norw_hull_roofing_item_screen.dart';
+import 'package:cost_calculator/pages/norw_item_screen/norw_inner_door_items_screen.dart';
+import 'package:cost_calculator/pages/norw_item_screen/norw_inner_stairs_item_screen.dart';
+import 'package:cost_calculator/pages/norw_item_screen/norw_interior_wall_items_screen.dart';
+import 'package:cost_calculator/pages/norw_item_screen/norw_outer_roof_item_screen.dart';
+import 'package:cost_calculator/pages/norw_item_screen/norw_parquet_laminate_items_screen.dart';
+import 'package:cost_calculator/pages/norw_item_screen/norw_scaffolding_item_screen.dart';
+import 'package:cost_calculator/pages/norw_item_screen/norw_support_system_item_screen.dart';
+import 'package:cost_calculator/pages/norw_item_screen/norw_terrace_item_screen.dart';
+import 'package:cost_calculator/pages/norw_item_screen/norw_waste_item_screen.dart';
+import 'package:cost_calculator/pages/norw_item_screen/norw_windows_exterior_door_items_screen.dart';
 
-Future<void> loadProject(String fileName, var data, var model) async {
+Future<void> norwLoadProject(String fileName, var data, var model) async {
   for (int i = 0; i < data.length; i++) {
     model.runtimeType == OuterWallModel
         ? {
@@ -139,27 +139,27 @@ Future<void> loadWasteModel(var model) async {
   double mat2Total = 0;
   double mat1Total = 0;
   double calculationQuantity = 0;
-  for (int i = 0; i < wasteData.length; i++) {
-    if (model.name == wasteData[i].name) {
-      wasteData[i].name = model.name;
-      wasteData[i].description = model.description;
-      wasteData[i].unit = model.unit;
-      wasteData[i].quantity = model.quantity;
-      wasteData[i].laborHours1 = model.laborHours1;
-      wasteData[i].laborHours2 = model.laborHours2;
-      wasteData[i].laborCost = model.laborCost;
-      wasteData[i].material = model.material;
-      wasteData[i].materials = model.materials;
-      wasteData[i].totalPrice = model.totalPrice;
-      mat2Total = wasteData[i]
+  for (int i = 0; i < norwWasteData.length; i++) {
+    if (model.name == norwWasteData[i].name) {
+      norwWasteData[i].name = model.name;
+      norwWasteData[i].description = model.description;
+      norwWasteData[i].unit = model.unit;
+      norwWasteData[i].quantity = model.quantity;
+      norwWasteData[i].laborHours1 = model.laborHours1;
+      norwWasteData[i].laborHours2 = model.laborHours2;
+      norwWasteData[i].laborCost = model.laborCost;
+      norwWasteData[i].material = model.material;
+      norwWasteData[i].materials = model.materials;
+      norwWasteData[i].totalPrice = model.totalPrice;
+      mat2Total = norwWasteData[i]
           .materials
           .fold(0, (previousValue, element) => previousValue + element);
-      mat1Total = wasteData[i]
+      mat1Total = norwWasteData[i]
           .material
           .fold(0, (previousValue, element) => previousValue + element);
       if (calculationQuantity == 0 && mat2Total != 0 && mat1Total != 0) {
         double calculationQuantity = mat2Total / mat1Total;
-        wasteCalculationControllers.text =
+        norwWasteCalculationControllers.text =
             calculationQuantity.toStringAsFixed(2);
       }
     }
@@ -171,27 +171,27 @@ Future<void> loadInnerStairsModel(var model) async {
   double mat2Total = 0;
   double mat1Total = 0;
   double calculationQuantity = 0;
-  for (int i = 0; i < innerStairsData.length; i++) {
-    if (model.name == innerStairsData[i].name) {
-      innerStairsData[i].name = model.name;
-      innerStairsData[i].description = model.description;
-      innerStairsData[i].unit = model.unit;
-      innerStairsData[i].quantity = model.quantity;
-      innerStairsData[i].laborHours1 = model.laborHours1;
-      innerStairsData[i].laborHours2 = model.laborHours2;
-      innerStairsData[i].laborCost = model.laborCost;
-      innerStairsData[i].material = model.material;
-      innerStairsData[i].materials = model.materials;
-      innerStairsData[i].totalPrice = model.totalPrice;
-      mat2Total = innerStairsData[i]
+  for (int i = 0; i < norwInnerStairsData.length; i++) {
+    if (model.name == norwInnerStairsData[i].name) {
+      norwInnerStairsData[i].name = model.name;
+      norwInnerStairsData[i].description = model.description;
+      norwInnerStairsData[i].unit = model.unit;
+      norwInnerStairsData[i].quantity = model.quantity;
+      norwInnerStairsData[i].laborHours1 = model.laborHours1;
+      norwInnerStairsData[i].laborHours2 = model.laborHours2;
+      norwInnerStairsData[i].laborCost = model.laborCost;
+      norwInnerStairsData[i].material = model.material;
+      norwInnerStairsData[i].materials = model.materials;
+      norwInnerStairsData[i].totalPrice = model.totalPrice;
+      mat2Total = norwInnerStairsData[i]
           .materials
           .fold(0, (previousValue, element) => previousValue + element);
-      mat1Total = innerStairsData[i]
+      mat1Total = norwInnerStairsData[i]
           .material
           .fold(0, (previousValue, element) => previousValue + element);
       if (calculationQuantity == 0 && mat2Total != 0 && mat1Total != 0) {
         double calculationQuantity = mat2Total / mat1Total;
-        innerStairsCalculationControllers.text =
+        norwInnerStairsCalculationControllers.text =
             calculationQuantity.toStringAsFixed(2);
       }
     }
@@ -203,27 +203,27 @@ Future<void> loadScaffoldingModel(var model) async {
   double mat2Total = 0;
   double mat1Total = 0;
   double calculationQuantity = 0;
-  for (int i = 0; i < scaffoldingData.length; i++) {
-    if (model.name == scaffoldingData[i].name) {
-      scaffoldingData[i].name = model.name;
-      scaffoldingData[i].description = model.description;
-      scaffoldingData[i].unit = model.unit;
-      scaffoldingData[i].quantity = model.quantity;
-      scaffoldingData[i].laborHours1 = model.laborHours1;
-      scaffoldingData[i].laborHours2 = model.laborHours2;
-      scaffoldingData[i].laborCost = model.laborCost;
-      scaffoldingData[i].material = model.material;
-      scaffoldingData[i].materials = model.materials;
-      scaffoldingData[i].totalPrice = model.totalPrice;
-      mat2Total = scaffoldingData[i]
+  for (int i = 0; i < norwScaffoldingData.length; i++) {
+    if (model.name == norwScaffoldingData[i].name) {
+      norwScaffoldingData[i].name = model.name;
+      norwScaffoldingData[i].description = model.description;
+      norwScaffoldingData[i].unit = model.unit;
+      norwScaffoldingData[i].quantity = model.quantity;
+      norwScaffoldingData[i].laborHours1 = model.laborHours1;
+      norwScaffoldingData[i].laborHours2 = model.laborHours2;
+      norwScaffoldingData[i].laborCost = model.laborCost;
+      norwScaffoldingData[i].material = model.material;
+      norwScaffoldingData[i].materials = model.materials;
+      norwScaffoldingData[i].totalPrice = model.totalPrice;
+      mat2Total = norwScaffoldingData[i]
           .materials
           .fold(0, (previousValue, element) => previousValue + element);
-      mat1Total = scaffoldingData[i]
+      mat1Total = norwScaffoldingData[i]
           .material
           .fold(0, (previousValue, element) => previousValue + element);
       if (calculationQuantity == 0 && mat2Total != 0 && mat1Total != 0) {
         double calculationQuantity = mat2Total / mat1Total;
-        scaffoldingCalculationControllers.text =
+        norwScaffoldingCalculationControllers.text =
             calculationQuantity.toStringAsFixed(2);
       }
     }
@@ -235,27 +235,27 @@ Future<void> loadHullRoofingModel(var model) async {
   double mat2Total = 0;
   double mat1Total = 0;
   double calculationQuantity = 0;
-  for (int i = 0; i < hullRoofingData.length; i++) {
-    if (model.name == hullRoofingData[i].name) {
-      hullRoofingData[i].name = model.name;
-      hullRoofingData[i].description = model.description;
-      hullRoofingData[i].unit = model.unit;
-      hullRoofingData[i].quantity = model.quantity;
-      hullRoofingData[i].laborHours1 = model.laborHours1;
-      hullRoofingData[i].laborHours2 = model.laborHours2;
-      hullRoofingData[i].laborCost = model.laborCost;
-      hullRoofingData[i].material = model.material;
-      hullRoofingData[i].materials = model.materials;
-      hullRoofingData[i].totalPrice = model.totalPrice;
-      mat2Total = hullRoofingData[i]
+  for (int i = 0; i < norwHullRoofingData.length; i++) {
+    if (model.name == norwHullRoofingData[i].name) {
+      norwHullRoofingData[i].name = model.name;
+      norwHullRoofingData[i].description = model.description;
+      norwHullRoofingData[i].unit = model.unit;
+      norwHullRoofingData[i].quantity = model.quantity;
+      norwHullRoofingData[i].laborHours1 = model.laborHours1;
+      norwHullRoofingData[i].laborHours2 = model.laborHours2;
+      norwHullRoofingData[i].laborCost = model.laborCost;
+      norwHullRoofingData[i].material = model.material;
+      norwHullRoofingData[i].materials = model.materials;
+      norwHullRoofingData[i].totalPrice = model.totalPrice;
+      mat2Total = norwHullRoofingData[i]
           .materials
           .fold(0, (previousValue, element) => previousValue + element);
-      mat1Total = hullRoofingData[i]
+      mat1Total = norwHullRoofingData[i]
           .material
           .fold(0, (previousValue, element) => previousValue + element);
       if (calculationQuantity == 0 && mat2Total != 0 && mat1Total != 0) {
         double calculationQuantity = mat2Total / mat1Total;
-        hullCalculationControllers.text =
+        norwHullCalculationControllers.text =
             calculationQuantity.toStringAsFixed(2);
       }
     }
@@ -267,28 +267,28 @@ Future<void> loadOuterRoofModel(var model) async {
   double mat2Total = 0;
   double mat1Total = 0;
   double calculationQuantity = 0;
-  for (int i = 0; i < outerRoofData.length; i++) {
-    if (model.name == outerRoofData[i].name) {
-      outerRoofData[i].name = model.name;
-      outerRoofData[i].description = model.description;
-      outerRoofData[i].unit = model.unit;
-      outerRoofData[i].quantity = model.quantity;
-      outerRoofData[i].materialQuantity = model.materialQuantity;
-      outerRoofData[i].laborHours1 = model.laborHours1;
-      outerRoofData[i].laborHours2 = model.laborHours2;
-      outerRoofData[i].laborCost = model.laborCost;
-      outerRoofData[i].material = model.material;
-      outerRoofData[i].materials = model.materials;
-      outerRoofData[i].totalPrice = model.totalPrice;
-      mat2Total = outerRoofData[i]
+  for (int i = 0; i < norwOuterRoofData.length; i++) {
+    if (model.name == norwOuterRoofData[i].name) {
+      norwOuterRoofData[i].name = model.name;
+      norwOuterRoofData[i].description = model.description;
+      norwOuterRoofData[i].unit = model.unit;
+      norwOuterRoofData[i].quantity = model.quantity;
+      norwOuterRoofData[i].materialQuantity = model.materialQuantity;
+      norwOuterRoofData[i].laborHours1 = model.laborHours1;
+      norwOuterRoofData[i].laborHours2 = model.laborHours2;
+      norwOuterRoofData[i].laborCost = model.laborCost;
+      norwOuterRoofData[i].material = model.material;
+      norwOuterRoofData[i].materials = model.materials;
+      norwOuterRoofData[i].totalPrice = model.totalPrice;
+      mat2Total = norwOuterRoofData[i]
           .materials
           .fold(0, (previousValue, element) => previousValue + element);
-      mat1Total = outerRoofData[i]
+      mat1Total = norwOuterRoofData[i]
           .material
           .fold(0, (previousValue, element) => previousValue + element);
       if (calculationQuantity == 0 && mat2Total != 0 && mat1Total != 0) {
         double calculationQuantity = mat2Total / mat1Total;
-        outerRoofCalculationControllers.text =
+        norwOuterRoofCalculationControllers.text =
             calculationQuantity.toStringAsFixed(2);
       }
     }
@@ -300,27 +300,27 @@ Future<void> loadTerraceModel(var model) async {
   double mat2Total = 0;
   double mat1Total = 0;
   double calculationQuantity = 0;
-  for (int i = 0; i < terraceData.length; i++) {
-    if (model.name == terraceData[i].name) {
-      terraceData[i].name = model.name;
-      terraceData[i].description = model.description;
-      terraceData[i].unit = model.unit;
-      terraceData[i].quantity = model.quantity;
-      terraceData[i].laborHours1 = model.laborHours1;
-      terraceData[i].laborHours2 = model.laborHours2;
-      terraceData[i].laborCost = model.laborCost;
-      terraceData[i].material = model.material;
-      terraceData[i].materials = model.materials;
-      terraceData[i].totalPrice = model.totalPrice;
-      mat2Total = terraceData[i]
+  for (int i = 0; i < norwTerraceData.length; i++) {
+    if (model.name == norwTerraceData[i].name) {
+      norwTerraceData[i].name = model.name;
+      norwTerraceData[i].description = model.description;
+      norwTerraceData[i].unit = model.unit;
+      norwTerraceData[i].quantity = model.quantity;
+      norwTerraceData[i].laborHours1 = model.laborHours1;
+      norwTerraceData[i].laborHours2 = model.laborHours2;
+      norwTerraceData[i].laborCost = model.laborCost;
+      norwTerraceData[i].material = model.material;
+      norwTerraceData[i].materials = model.materials;
+      norwTerraceData[i].totalPrice = model.totalPrice;
+      mat2Total = norwTerraceData[i]
           .materials
           .fold(0, (previousValue, element) => previousValue + element);
-      mat1Total = terraceData[i]
+      mat1Total = norwTerraceData[i]
           .material
           .fold(0, (previousValue, element) => previousValue + element);
       if (calculationQuantity == 0 && mat2Total != 0 && mat1Total != 0) {
         double calculationQuantity = mat2Total / mat1Total;
-        terraceCalculationControllers.text =
+        norwTerraceCalculationControllers.text =
             calculationQuantity.toStringAsFixed(2);
       }
     }
@@ -332,27 +332,27 @@ Future<void> loadFlooringModel(var model) async {
   double mat2Total = 0;
   double mat1Total = 0;
   double calculationQuantity = 0;
-  for (int i = 0; i < flooringData.length; i++) {
-    if (model.name == flooringData[i].name) {
-      flooringData[i].name = model.name;
-      flooringData[i].description = model.description;
-      flooringData[i].unit = model.unit;
-      flooringData[i].quantity = model.quantity;
-      flooringData[i].laborHours1 = model.laborHours1;
-      flooringData[i].laborHours2 = model.laborHours2;
-      flooringData[i].laborCost = model.laborCost;
-      flooringData[i].material = model.material;
-      flooringData[i].materials = model.materials;
-      flooringData[i].totalPrice = model.totalPrice;
-      mat2Total = flooringData[i]
+  for (int i = 0; i < norwFlooringData.length; i++) {
+    if (model.name == norwFlooringData[i].name) {
+      norwFlooringData[i].name = model.name;
+      norwFlooringData[i].description = model.description;
+      norwFlooringData[i].unit = model.unit;
+      norwFlooringData[i].quantity = model.quantity;
+      norwFlooringData[i].laborHours1 = model.laborHours1;
+      norwFlooringData[i].laborHours2 = model.laborHours2;
+      norwFlooringData[i].laborCost = model.laborCost;
+      norwFlooringData[i].material = model.material;
+      norwFlooringData[i].materials = model.materials;
+      norwFlooringData[i].totalPrice = model.totalPrice;
+      mat2Total = norwFlooringData[i]
           .materials
           .fold(0, (previousValue, element) => previousValue + element);
-      mat1Total = flooringData[i]
+      mat1Total = norwFlooringData[i]
           .material
           .fold(0, (previousValue, element) => previousValue + element);
       if (calculationQuantity == 0 && mat2Total != 0 && mat1Total != 0) {
         double calculationQuantity = mat2Total / mat1Total;
-        flooringCalculationControllers.text =
+        norwFlooringCalculationControllers.text =
             calculationQuantity.toStringAsFixed(2);
       }
     }
@@ -364,27 +364,27 @@ Future<void> loadSupportSystemModel(var model) async {
   double mat2Total = 0;
   double mat1Total = 0;
   double calculationQuantity = 0;
-  for (int i = 0; i < supportSystem.length; i++) {
-    if (model.name == supportSystem[i].name) {
-      supportSystem[i].name = model.name;
-      supportSystem[i].description = model.description;
-      supportSystem[i].unit = model.unit;
-      supportSystem[i].quantity = model.quantity;
-      supportSystem[i].laborHours1 = model.laborHours1;
-      supportSystem[i].laborHours2 = model.laborHours2;
-      supportSystem[i].laborCost = model.laborCost;
-      supportSystem[i].material = model.material;
-      supportSystem[i].materials = model.materials;
-      supportSystem[i].totalPrice = model.totalPrice;
-      mat2Total = supportSystem[i]
+  for (int i = 0; i < norwSupportSystem.length; i++) {
+    if (model.name == norwSupportSystem[i].name) {
+      norwSupportSystem[i].name = model.name;
+      norwSupportSystem[i].description = model.description;
+      norwSupportSystem[i].unit = model.unit;
+      norwSupportSystem[i].quantity = model.quantity;
+      norwSupportSystem[i].laborHours1 = model.laborHours1;
+      norwSupportSystem[i].laborHours2 = model.laborHours2;
+      norwSupportSystem[i].laborCost = model.laborCost;
+      norwSupportSystem[i].material = model.material;
+      norwSupportSystem[i].materials = model.materials;
+      norwSupportSystem[i].totalPrice = model.totalPrice;
+      mat2Total = norwSupportSystem[i]
           .materials
           .fold(0, (previousValue, element) => previousValue + element);
-      mat1Total = supportSystem[i]
+      mat1Total = norwSupportSystem[i]
           .material
           .fold(0, (previousValue, element) => previousValue + element);
       if (calculationQuantity == 0 && mat2Total != 0 && mat1Total != 0) {
         double calculationQuantity = mat2Total / mat1Total;
-        supportSystemCalculationQuantityController.text =
+        norwSupportSystemCalculationQuantityController.text =
             calculationQuantity.toStringAsFixed(2);
       }
     }
@@ -396,27 +396,27 @@ Future<void> loadWindowsAndExteriorDoorsModel(var model) async {
   double mat2Total = 0;
   double mat1Total = 0;
   double calculationQuantity = 0;
-  for (int i = 0; i < windowsExteriorDoors.length; i++) {
-    if (model.name == windowsExteriorDoors[i].name) {
-      windowsExteriorDoors[i].name = model.name;
-      windowsExteriorDoors[i].description = model.description;
-      windowsExteriorDoors[i].unit = model.unit;
-      windowsExteriorDoors[i].quantity = model.quantity;
-      windowsExteriorDoors[i].laborHours1 = model.laborHours1;
-      windowsExteriorDoors[i].laborHours2 = model.laborHours2;
-      windowsExteriorDoors[i].laborCost = model.laborCost;
-      windowsExteriorDoors[i].material = model.material;
-      windowsExteriorDoors[i].materials = model.materials;
-      windowsExteriorDoors[i].totalPrice = model.totalPrice;
-      mat2Total = windowsExteriorDoors[i]
+  for (int i = 0; i < norwWindowsExteriorDoors.length; i++) {
+    if (model.name == norwWindowsExteriorDoors[i].name) {
+      norwWindowsExteriorDoors[i].name = model.name;
+      norwWindowsExteriorDoors[i].description = model.description;
+      norwWindowsExteriorDoors[i].unit = model.unit;
+      norwWindowsExteriorDoors[i].quantity = model.quantity;
+      norwWindowsExteriorDoors[i].laborHours1 = model.laborHours1;
+      norwWindowsExteriorDoors[i].laborHours2 = model.laborHours2;
+      norwWindowsExteriorDoors[i].laborCost = model.laborCost;
+      norwWindowsExteriorDoors[i].material = model.material;
+      norwWindowsExteriorDoors[i].materials = model.materials;
+      norwWindowsExteriorDoors[i].totalPrice = model.totalPrice;
+      mat2Total = norwWindowsExteriorDoors[i]
           .materials
           .fold(0, (previousValue, element) => previousValue + element);
-      mat1Total = windowsExteriorDoors[i]
+      mat1Total = norwWindowsExteriorDoors[i]
           .material
           .fold(0, (previousValue, element) => previousValue + element);
       if (calculationQuantity == 0 && mat2Total != 0 && mat1Total != 0) {
         double calculationQuantity = mat2Total / mat1Total;
-        windowsExteriorDoorsCalculationControllers.text =
+        norwWindowsExteriorDoorsCalculationControllers.text =
             calculationQuantity.toStringAsFixed(2);
       }
     }
@@ -428,27 +428,27 @@ Future<void> loadParquetAndLaminateModel(var model) async {
   double mat2Total = 0;
   double mat1Total = 0;
   double calculationQuantity = 0;
-  for (int i = 0; i < parquetAndLaminate.length; i++) {
-    if (model.name == parquetAndLaminate[i].name) {
-      parquetAndLaminate[i].name = model.name;
-      parquetAndLaminate[i].description = model.description;
-      parquetAndLaminate[i].unit = model.unit;
-      parquetAndLaminate[i].quantity = model.quantity;
-      parquetAndLaminate[i].laborHours1 = model.laborHours1;
-      parquetAndLaminate[i].laborHours2 = model.laborHours2;
-      parquetAndLaminate[i].laborCost = model.laborCost;
-      parquetAndLaminate[i].material = model.material;
-      parquetAndLaminate[i].materials = model.materials;
-      parquetAndLaminate[i].totalPrice = model.totalPrice;
-      mat2Total = parquetAndLaminate[i]
+  for (int i = 0; i < norwParquetAndLaminate.length; i++) {
+    if (model.name == norwParquetAndLaminate[i].name) {
+      norwParquetAndLaminate[i].name = model.name;
+      norwParquetAndLaminate[i].description = model.description;
+      norwParquetAndLaminate[i].unit = model.unit;
+      norwParquetAndLaminate[i].quantity = model.quantity;
+      norwParquetAndLaminate[i].laborHours1 = model.laborHours1;
+      norwParquetAndLaminate[i].laborHours2 = model.laborHours2;
+      norwParquetAndLaminate[i].laborCost = model.laborCost;
+      norwParquetAndLaminate[i].material = model.material;
+      norwParquetAndLaminate[i].materials = model.materials;
+      norwParquetAndLaminate[i].totalPrice = model.totalPrice;
+      mat2Total = norwParquetAndLaminate[i]
           .materials
           .fold(0, (previousValue, element) => previousValue + element);
-      mat1Total = parquetAndLaminate[i]
+      mat1Total = norwParquetAndLaminate[i]
           .material
           .fold(0, (previousValue, element) => previousValue + element);
       if (calculationQuantity == 0 && mat2Total != 0 && mat1Total != 0) {
         double calculationQuantity = mat2Total / mat1Total;
-        parquetAndLaminateCalculationControllers.text =
+        norwParquetAndLaminateCalculationControllers.text =
             calculationQuantity.toStringAsFixed(2);
       }
     }
@@ -460,27 +460,27 @@ Future<void> loadInnerDoorModel(var model) async {
   double mat2Total = 0;
   double mat1Total = 0;
   double calculationQuantity = 0;
-  for (int i = 0; i < innerDoor.length; i++) {
-    if (model.name == innerDoor[i].name) {
-      innerDoor[i].name = model.name;
-      innerDoor[i].description = model.description;
-      innerDoor[i].unit = model.unit;
-      innerDoor[i].quantity = model.quantity;
-      innerDoor[i].laborHours1 = model.laborHours1;
-      innerDoor[i].laborHours2 = model.laborHours2;
-      innerDoor[i].laborCost = model.laborCost;
-      innerDoor[i].material = model.material;
-      innerDoor[i].materials = model.materials;
-      innerDoor[i].totalPrice = model.totalPrice;
-      mat2Total = innerDoor[i]
+  for (int i = 0; i < norwInnerDoor.length; i++) {
+    if (model.name == norwInnerDoor[i].name) {
+      norwInnerDoor[i].name = model.name;
+      norwInnerDoor[i].description = model.description;
+      norwInnerDoor[i].unit = model.unit;
+      norwInnerDoor[i].quantity = model.quantity;
+      norwInnerDoor[i].laborHours1 = model.laborHours1;
+      norwInnerDoor[i].laborHours2 = model.laborHours2;
+      norwInnerDoor[i].laborCost = model.laborCost;
+      norwInnerDoor[i].material = model.material;
+      norwInnerDoor[i].materials = model.materials;
+      norwInnerDoor[i].totalPrice = model.totalPrice;
+      mat2Total = norwInnerDoor[i]
           .materials
           .fold(0, (previousValue, element) => previousValue + element);
-      mat1Total = innerDoor[i]
+      mat1Total = norwInnerDoor[i]
           .material
           .fold(0, (previousValue, element) => previousValue + element);
       if (calculationQuantity == 0 && mat2Total != 0 && mat1Total != 0) {
         double calculationQuantity = mat2Total / mat1Total;
-        innerDoorCalculationControllers.text =
+        norwInnerDoorCalculationControllers.text =
             calculationQuantity.toStringAsFixed(2);
       }
     }
@@ -492,27 +492,27 @@ Future<void> loadDeckModel(var model) async {
   double mat2Total = 0;
   double mat1Total = 0;
   double calculationQuantity = 0;
-  for (int i = 0; i < deckData.length; i++) {
-    if (model.name == deckData[i].name) {
-      deckData[i].name = model.name;
-      deckData[i].description = model.description;
-      deckData[i].unit = model.unit;
-      deckData[i].quantity = model.quantity;
-      deckData[i].laborHours1 = model.laborHours1;
-      deckData[i].laborHours2 = model.laborHours2;
-      deckData[i].laborCost = model.laborCost;
-      deckData[i].material = model.material;
-      deckData[i].materials = model.materials;
-      deckData[i].totalPrice = model.totalPrice;
-      mat2Total = deckData[i]
+  for (int i = 0; i < norwDeckData.length; i++) {
+    if (model.name == norwDeckData[i].name) {
+      norwDeckData[i].name = model.name;
+      norwDeckData[i].description = model.description;
+      norwDeckData[i].unit = model.unit;
+      norwDeckData[i].quantity = model.quantity;
+      norwDeckData[i].laborHours1 = model.laborHours1;
+      norwDeckData[i].laborHours2 = model.laborHours2;
+      norwDeckData[i].laborCost = model.laborCost;
+      norwDeckData[i].material = model.material;
+      norwDeckData[i].materials = model.materials;
+      norwDeckData[i].totalPrice = model.totalPrice;
+      mat2Total = norwDeckData[i]
           .materials
           .fold(0, (previousValue, element) => previousValue + element);
-      mat1Total = deckData[i]
+      mat1Total = norwDeckData[i]
           .material
           .fold(0, (previousValue, element) => previousValue + element);
       if (calculationQuantity == 0 && mat2Total != 0 && mat1Total != 0) {
         double calculationQuantity = mat2Total / mat1Total;
-        deckCalculationControllers.text =
+        norwDeckCalculationControllers.text =
             calculationQuantity.toStringAsFixed(2);
       }
     }
@@ -524,28 +524,28 @@ Future<void> loadOuterWallModel(var model) async {
   double mat2Total = 0;
   double mat1Total = 0;
   double calculationQuantity = 0;
-  for (int i = 0; i < exteriorWallData.length; i++) {
-    if (model.name == exteriorWallData[i].name) {
-      exteriorWallData[i].name = model.name;
-      exteriorWallData[i].description = model.description;
-      exteriorWallData[i].unit = model.unit;
-      exteriorWallData[i].quantity = model.quantity;
-      exteriorWallData[i].materialQuantity = model.materialQuantity;
-      exteriorWallData[i].laborHours1 = model.laborHours1;
-      exteriorWallData[i].laborHours2 = model.laborHours2;
-      exteriorWallData[i].laborCost = model.laborCost;
-      exteriorWallData[i].material = model.material;
-      exteriorWallData[i].materials = model.materials;
-      exteriorWallData[i].totalPrice = model.totalPrice;
-      mat2Total = exteriorWallData[i]
+  for (int i = 0; i < norwExteriorWallData.length; i++) {
+    if (model.name == norwExteriorWallData[i].name) {
+      norwExteriorWallData[i].name = model.name;
+      norwExteriorWallData[i].description = model.description;
+      norwExteriorWallData[i].unit = model.unit;
+      norwExteriorWallData[i].quantity = model.quantity;
+      norwExteriorWallData[i].materialQuantity = model.materialQuantity;
+      norwExteriorWallData[i].laborHours1 = model.laborHours1;
+      norwExteriorWallData[i].laborHours2 = model.laborHours2;
+      norwExteriorWallData[i].laborCost = model.laborCost;
+      norwExteriorWallData[i].material = model.material;
+      norwExteriorWallData[i].materials = model.materials;
+      norwExteriorWallData[i].totalPrice = model.totalPrice;
+      mat2Total = norwExteriorWallData[i]
           .materials
           .fold(0, (previousValue, element) => previousValue + element);
-      mat1Total = exteriorWallData[i]
+      mat1Total = norwExteriorWallData[i]
           .material
           .fold(0, (previousValue, element) => previousValue + element);
       if (calculationQuantity == 0 && mat2Total != 0 && mat1Total != 0) {
         double calculationQuantity = mat2Total / mat1Total;
-        exteriorWallCalculationControllers.text =
+        norwExteriorWallCalculationControllers.text =
             calculationQuantity.toStringAsFixed(2);
       }
     }
@@ -557,28 +557,28 @@ Future<void> loadInnerWallModel(var model) async {
   double mat2Total = 0;
   double mat1Total = 0;
   double calculationQuantity = 0;
-  for (int i = 0; i < dataInnerWallData.length; i++) {
-    if (model.name == dataInnerWallData[i].name) {
-      dataInnerWallData[i].name = model.name;
-      dataInnerWallData[i].description = model.description;
-      dataInnerWallData[i].unit = model.unit;
-      dataInnerWallData[i].quantity = model.quantity;
-      dataInnerWallData[i].materialQuantity = model.materialQuantity;
-      dataInnerWallData[i].laborHours1 = model.laborHours1;
-      dataInnerWallData[i].laborHours2 = model.laborHours2;
-      dataInnerWallData[i].laborCost = model.laborCost;
-      dataInnerWallData[i].material1 = model.material1;
-      dataInnerWallData[i].material2 = model.material2;
-      dataInnerWallData[i].totalPrice = model.totalPrice;
-      mat2Total = dataInnerWallData[i]
+  for (int i = 0; i < norwInnerWallData.length; i++) {
+    if (model.name == norwInnerWallData[i].name) {
+      norwInnerWallData[i].name = model.name;
+      norwInnerWallData[i].description = model.description;
+      norwInnerWallData[i].unit = model.unit;
+      norwInnerWallData[i].quantity = model.quantity;
+      norwInnerWallData[i].materialQuantity = model.materialQuantity;
+      norwInnerWallData[i].laborHours1 = model.laborHours1;
+      norwInnerWallData[i].laborHours2 = model.laborHours2;
+      norwInnerWallData[i].laborCost = model.laborCost;
+      norwInnerWallData[i].material1 = model.material1;
+      norwInnerWallData[i].material2 = model.material2;
+      norwInnerWallData[i].totalPrice = model.totalPrice;
+      mat2Total = norwInnerWallData[i]
           .material2
           .fold(0, (previousValue, element) => previousValue + element);
-      mat1Total = dataInnerWallData[i]
+      mat1Total = norwInnerWallData[i]
           .material1
           .fold(0, (previousValue, element) => previousValue + element);
       if (calculationQuantity == 0 && mat2Total != 0 && mat1Total != 0) {
         double calculationQuantity = mat2Total / mat1Total;
-        innerWallCalculationQuantityController.text =
+        norwInnerWallCalculationQuantityController.text =
             calculationQuantity.toStringAsFixed(2);
       }
     }

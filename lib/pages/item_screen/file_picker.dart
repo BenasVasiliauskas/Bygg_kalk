@@ -2,6 +2,7 @@ import 'package:cost_calculator/constants/empty_models.dart';
 import 'package:cost_calculator/constants/language.dart';
 import 'package:cost_calculator/data/data.dart';
 import 'package:cost_calculator/functions/load_project_from_json.dart';
+import 'package:cost_calculator/functions/norw_load_project_from_json.dart';
 import 'package:cost_calculator/functions/save_project_to_json.dart';
 import 'package:cost_calculator/functions/save_to_json.dart';
 import 'package:cost_calculator/pages/shared/home_page.dart';
@@ -112,23 +113,44 @@ class _FilePickerScreenState extends State<FilePickerScreen> {
                       await writeJsonArrayStart(fileName!);
 
                       await saveProject(fileName, dataInnerWallData);
+                      await writeJsonComma(fileName);
                       await saveProject(fileName, deckData);
+                      await writeJsonComma(fileName);
                       await saveProject(fileName, innerDoor);
+                      await writeJsonComma(fileName);
                       await saveProject(fileName, parquetAndLaminate);
+                      await writeJsonComma(fileName);
                       await saveProject(fileName, windowsExteriorDoors);
+                      await writeJsonComma(fileName);
                       await saveProject(fileName, supportSystem);
+                      await writeJsonComma(fileName);
                       await saveProject(fileName, flooringData);
+                      await writeJsonComma(fileName);
                       await saveProject(fileName, terraceData);
+                      await writeJsonComma(fileName);
                       await saveProject(fileName, outerRoofData);
+                      await writeJsonComma(fileName);
                       await saveProject(fileName, exteriorWallData);
+                      await writeJsonComma(fileName);
                       await saveProject(fileName, hullRoofingData);
+                      await writeJsonComma(fileName);
                       await saveProject(fileName, scaffoldingData);
+                      await writeJsonComma(fileName);
                       await saveProject(fileName, innerStairsData);
+                      await writeJsonComma(fileName);
                       await saveProject(fileName, wasteData);
 
                       await writeJsonArrayEnd(fileName);
                     },
-                    child: Text("Save project"),
+                    child: Text(
+                      languageEnglish
+                          ? "Save project"
+                          : languageNorwegian
+                              ? "Lagre prosjekt"
+                              : languageLithuanian
+                                  ? "Išsaugoti projektą"
+                                  : "Zapisz projekt",
+                    ),
                   ),
                   TextButton(
                     onPressed: () async {
@@ -139,28 +161,68 @@ class _FilePickerScreenState extends State<FilePickerScreen> {
                         final fileName = file.name;
 
                         var data = await readJsonFileSelected(fileName);
-                        await loadProject(fileName, data, emptyDeckModel);
-                        await loadProject(fileName, data, emptyFlooringModel);
-                        await loadProject(fileName, data, emptyInnerDoorModel);
-                        await loadProject(
-                            fileName, data, emptyInnerStairsModel);
-                        await loadProject(fileName, data, emptyInnerWallModel);
-                        await loadProject(fileName, data, emptyOuterRoofModel);
-                        await loadProject(fileName, data, emptyOuterWallModel);
-                        await loadProject(
-                            fileName, data, emptyParquetAndLaminateModel);
-                        await loadProject(
-                            fileName, data, emptyScaffoldingModel);
-                        await loadProject(
-                            fileName, data, emptySupportSystemModel);
-                        await loadProject(fileName, data, emptyTerraceModel);
-                        await loadProject(
-                            fileName, data, emptyWindowsExteriorDoorsModel);
+                        //if language is english load english
+                        if (languageEnglish) {
+                          await loadProject(fileName, data, emptyDeckModel);
+                          await loadProject(fileName, data, emptyFlooringModel);
+                          await loadProject(
+                              fileName, data, emptyInnerDoorModel);
+                          await loadProject(
+                              fileName, data, emptyInnerStairsModel);
+                          await loadProject(
+                              fileName, data, emptyInnerWallModel);
+                          await loadProject(
+                              fileName, data, emptyOuterRoofModel);
+                          await loadProject(
+                              fileName, data, emptyOuterWallModel);
+                          await loadProject(
+                              fileName, data, emptyParquetAndLaminateModel);
+                          await loadProject(
+                              fileName, data, emptyScaffoldingModel);
+                          await loadProject(
+                              fileName, data, emptySupportSystemModel);
+                          await loadProject(fileName, data, emptyTerraceModel);
+                          await loadProject(
+                              fileName, data, emptyWindowsExteriorDoorsModel);
+                        } //if its norwegian load norw doc
+                        else if (languageNorwegian) {
+                          await norwLoadProject(fileName, data, emptyDeckModel);
+                          await norwLoadProject(
+                              fileName, data, emptyFlooringModel);
+                          await norwLoadProject(
+                              fileName, data, emptyInnerDoorModel);
+                          await norwLoadProject(
+                              fileName, data, emptyInnerStairsModel);
+                          await norwLoadProject(
+                              fileName, data, emptyInnerWallModel);
+                          await norwLoadProject(
+                              fileName, data, emptyOuterRoofModel);
+                          await norwLoadProject(
+                              fileName, data, emptyOuterWallModel);
+                          await norwLoadProject(
+                              fileName, data, emptyParquetAndLaminateModel);
+                          await norwLoadProject(
+                              fileName, data, emptyScaffoldingModel);
+                          await norwLoadProject(
+                              fileName, data, emptySupportSystemModel);
+                          await norwLoadProject(
+                              fileName, data, emptyTerraceModel);
+                          await norwLoadProject(
+                              fileName, data, emptyWindowsExteriorDoorsModel);
+                        }
                       } else {
                         // User canceled the picker
                       }
                     },
-                    child: Text("Load a project"),
+                    child: Text(
+                      languageEnglish
+                          ? "Load a project"
+                          : languageNorwegian
+                              ? "Last inn et prosjekt"
+                              : languageLithuanian
+                                  ? "Užkrauti projektą"
+                                  : "Załaduj projekt",
+                    ),
                   ),
                 ],
               ),

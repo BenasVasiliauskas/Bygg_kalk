@@ -60,18 +60,6 @@ class ScaffoldingItem extends StatelessWidget {
                   material2,
                   totalPrice,
                 );
-          // : NorwSupportSystemItemScreen(
-          //     name,
-          //     description,
-          //     unit,
-          //     quantity,
-          //     laborHours1,
-          //     laborHours2,
-          //     laborCost,
-          //     material1,
-          //     material2,
-          //     totalPrice,
-          //   );
         },
       ),
     );
