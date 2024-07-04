@@ -96,6 +96,24 @@ Future<File> _jsonFile(String fileName) async {
   return File('$path/${fileName}.json');
 }
 
+Future<File> _jsonFileSelected(String fileName) async {
+  final path = await localPath;
+
+  return File('$path/${fileName}');
+}
+
+Future readJsonFileSelected(String fileName) async {
+  String jsonContent = "";
+  File file = await _jsonFileSelected(fileName);
+  try {
+    jsonContent = await file.readAsString();
+    return json.decode(jsonContent);
+  } catch (e) {
+    print("Error reading from file: $e");
+  }
+  return null;
+}
+
 Future readJsonFile(String fileName) async {
   String jsonContent = "";
   File file = await _jsonFile(fileName);

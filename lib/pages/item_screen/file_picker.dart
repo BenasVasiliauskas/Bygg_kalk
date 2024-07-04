@@ -132,24 +132,33 @@ class _FilePickerScreenState extends State<FilePickerScreen> {
                   ),
                   TextButton(
                     onPressed: () async {
-                      final fileName = await openLoadingDialog();
+                      FilePickerResult? result =
+                          await FilePicker.platform.pickFiles();
+                      if (result != null) {
+                        PlatformFile file = result.files.first;
+                        final fileName = file.name;
 
-                      var data = await readJsonFile(fileName!);
-                      await loadProject(fileName, data, emptyDeckModel);
-                      await loadProject(fileName, data, emptyFlooringModel);
-                      await loadProject(fileName, data, emptyInnerDoorModel);
-                      await loadProject(fileName, data, emptyInnerStairsModel);
-                      await loadProject(fileName, data, emptyInnerWallModel);
-                      await loadProject(fileName, data, emptyOuterRoofModel);
-                      await loadProject(fileName, data, emptyOuterWallModel);
-                      await loadProject(
-                          fileName, data, emptyParquetAndLaminateModel);
-                      await loadProject(fileName, data, emptyScaffoldingModel);
-                      await loadProject(
-                          fileName, data, emptySupportSystemModel);
-                      await loadProject(fileName, data, emptyTerraceModel);
-                      await loadProject(
-                          fileName, data, emptyWindowsExteriorDoorsModel);
+                        var data = await readJsonFileSelected(fileName);
+                        await loadProject(fileName, data, emptyDeckModel);
+                        await loadProject(fileName, data, emptyFlooringModel);
+                        await loadProject(fileName, data, emptyInnerDoorModel);
+                        await loadProject(
+                            fileName, data, emptyInnerStairsModel);
+                        await loadProject(fileName, data, emptyInnerWallModel);
+                        await loadProject(fileName, data, emptyOuterRoofModel);
+                        await loadProject(fileName, data, emptyOuterWallModel);
+                        await loadProject(
+                            fileName, data, emptyParquetAndLaminateModel);
+                        await loadProject(
+                            fileName, data, emptyScaffoldingModel);
+                        await loadProject(
+                            fileName, data, emptySupportSystemModel);
+                        await loadProject(fileName, data, emptyTerraceModel);
+                        await loadProject(
+                            fileName, data, emptyWindowsExteriorDoorsModel);
+                      } else {
+                        // User canceled the picker
+                      }
                     },
                     child: Text("Load a project"),
                   ),
