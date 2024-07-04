@@ -1,1 +1,689 @@
-[{"name":"Wooden truss 48x98, double sound wall, double plaster","description":["Skirting board pine, pre-painted","Pine ceiling molding, pre-painted","Grouting in front of sound wall/ceiling with grout","Plasterboard interior cladding, double plaster","Single timber frame solid wood without nails","Mineral wool A-plate","Single truss solid wood without nails","Mineral wool A-plate","Grouting in front of sound wall/ceiling w/grout","Plasterboard interior cladding, double plaster","Sparkling strip, stain sp.1, joint sp. 2, full sp.1, primer. 2 coats of paint","Pine ceiling molding, pre-painted","Pine skirting board, pre-painted"],"unit":["lm","lm","lm","m²","m²","m²","m²","m²","lm","m²","m²","lm","lm"],"quantity":[0.42,0.42,1.2,1.0,1.0,1.0,1.0,1.0,1.2,1.0,1.0,0.42,0.42],"materialQuantity":[0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0],"laborHours1":[0.05,0.05,0.18,0.36,0.32,0.09,0.32,0.09,0.18,0.36,0.55,0.05,0.05],"laborHours2":[0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0],"laborCost":[0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0],"material1":[15.82,16.71,52.56,102.25,85.04,76.4,85.04,76.4,52.56,102.25,135.63,16.71,15.82],"material2":[0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0],"totalPrice":[0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]},{"name":"Wooden trusses 48x98, insulated, smooth panel","description":["Skirting board pine, pre-painted","Roof moulding pine, pre-painted","Smooth panel spruce, standing","Mineral wool A-plate","Single timber frame solid wood w/3 nails","Smooth panel spruce, vertical","Cornice pine, pre-painted","Skirting board pine, pre-painted"],"unit":["lm","lm","m²","m²","m²","m²","lm","lm"],"quantity":[0.42,0.42,1.0,1.0,1.0,1.0,0.42,0.42],"materialQuantity":[0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0],"laborHours1":[0.05,0.05,0.33,0.09,0.46,0.33,0.05,0.05],"laborHours2":[0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0],"laborCost":[0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0],"material1":[15.82,16.71,293.3,76.4,126.8,293.3,16.71,15.82],"material2":[0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0],"totalPrice":[0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]},{"name":"Wooden truss 48x98, precut h=2400, plaster","description":["Skirting board pine, pre-painted","Cornice pine, pre-painted","Sparkling strip, stain sp.1, joint sp. 2, full sp.1, primer. 2 coats of paint","Plasterboard interior cladding, simple plaster","Mineral wool A-plate","Single timber frame solid wood precut h=2.4m, 3 sleepers","Plasterboard interior cladding, simple plaster","Sparkling strip, stain sp.1, joint sp. 2, full sp.1, primer. 2 coats of paint","Cornice pine, pre-painted","Skirting board pine, pre-painted"],"unit":["lm","lm","m²","m²","m²","m²","m²","m²","lm","lm"],"quantity":[1.0,1.0,2.4,2.4,2.4,1.0,2.4,2.4,1.0,1.0],"materialQuantity":[1.0,1.0,2.4,2.4,2.4,1.0,2.4,2.4,1.0,1.0],"laborHours1":[0.12,0.13,1.32,0.55,0.22,0.4,0.55,1.32,0.13,0.12],"laborHours2":[0.12,0.13,1.32,0.55,0.22,0.4,0.55,1.32,0.13,0.12],"laborCost":[0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0],"material1":[37.66,39.79,325.51,123.34,183.36,280.45,123.34,325.51,39.79,37.66],"material2":[0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0],"totalPrice":[0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]},{"name":"Steel trusses 2x75mm, double, insulated, plaster","description":["Skirting board pine, pre-painted","Cornice pine, pre-painted","Filler fermacell plasterboard","Grouting in front of sound wall/ceiling w/grout.","Plasterboard interior cladding, single plaster","Double timber frame, steel c/c 60","Mineral wool in steel studs","Plasterboard interior cladding, single plaster","Jointing at sound wall/ceiling w/jointing mat.","Filler fermacell plasterboard","Pine cornice, pre-painted","Skirting board pine, pre-painted"],"unit":["lm","lm","m²","lm","m²","m²","m²","m²","lm","m²","lm","lm"],"quantity":[0.42,0.42,1.0,1.2,1.0,1.0,2.0,1.0,1.2,1.0,0.42,0.42],"materialQuantity":[0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0],"laborHours1":[0.12,0.13,1.32,0.55,0.22,0.4,0.55,1.32,0.13,0.12,0.05,0.05],"laborHours2":[0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0],"laborCost":[0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0],"material1":[15.82,16.71,135.63,52.56,102.25,209.03,124.0,102.25,52.56,135.63,16.71,15.82],"material2":[0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0],"totalPrice":[0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]},{"name":"Steel trusses 2x100mm, double, insulated, plaster","description":["Skirting board pine, pre-painted","Cornice pine, pre-painted","Sparkling strip, stain sp.1, joint sp. 2, full sp.1, primer. 2 coats of paint","Grouting w/ sound wall/ceiling w/ grout.","Plasterboard interior cladding, simple plaster","Double timber frame, steel c/c 60","Mineral wool in steel studs","Plasterboard interior cladding, single plaster","Grouting at sound wall/ceiling w/jointing tape.","Sparkling strip, stain sp.1, joint sp. 2, full sp.1, primer. 2 coats of paint","Pine cornice, pre-painted","Skirting board pine, pre-painted"],"unit":["lm","lm","m²","lm","m²","m²","m²","m²","lm","m²","lm","lm"],"quantity":[0.42,0.42,1.0,1.2,1.0,1.0,2.0,1.0,1.2,1.0,0.42,0.42],"materialQuantity":[0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0],"laborHours1":[0.12,0.13,1.32,0.55,0.22,0.4,0.55,1.32,0.13,0.12,0.05,0.05],"laborHours2":[0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0],"laborCost":[0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0],"material1":[15.82,16.71,135.63,52.56,102.25,209.03,124.0,102.25,52.56,135.63,16.71,15.82],"material2":[0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0],"totalPrice":[0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]},{"name":"Steel trusses 2x75mm, double, insulated, double plaster","description":["Skirting board pine, pre-painted","Cornice pine, pre-painted","Sparkling strip, stain sp.1, joint sp. 2, full sp.1, primer. 2 coats of paint","Grouting w/ sound wall/ceiling w/ grout.","Plasterboard interior cladding, double plaster","Double timber frame, steel c/c 60","Mineral wool in steel studs","Plasterboard interior cladding, double plaster","Grouting at sound wall/ceiling w/jointing tape.","Sparkling strip, stain sp.1, joint sp. 2, full sp.1, primer. 2 coats of paint","Pine cornice, pre-painted","Skirting board pine, pre-painted"],"unit":["lm","lm","m²","lm","m²","m²","m²","m²","lm","m²","lm","lm"],"quantity":[0.42,0.42,1.0,1.2,1.0,1.0,2.0,1.0,1.2,1.0,0.42,0.42],"materialQuantity":[0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0],"laborHours1":[0.12,0.13,1.32,0.55,0.22,0.4,0.55,1.32,0.13,0.12,0.05,0.05],"laborHours2":[0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0],"laborCost":[0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0],"material1":[15.82,16.71,135.63,52.56,102.25,209.03,124.0,102.25,52.56,135.63,16.71,15.82],"material2":[0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0],"totalPrice":[0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]},{"name":"Floor on ground, poured, insulated, screeded","description":["Screed and steel trowel of concrete surface","Reinforcement with mesh, K 131 (2.1 kg per m²)","Concrete B30 in floor on ground","Radon stop on ground","Polystyrene w/seam, EPS, 150 kPa"],"unit":["m²","kg","m³","m²","m²"],"quantity":[1.0,2.5,0.12,1.0,1.0],"laborHours1":[0.21,0.16,0.09,0.12,0.23],"laborHours2":[0.0,0.0,0.0,0.0,0.0],"laborCost":[0.0,0.0,0.0,0.0,0.0],"material":[45.12,68.88,222.95,74.66,406.71],"materials":[0.0,0.0,0.0,0.0,0.0],"totalPrice":[0.0,0.0,0.0,0.0,0.0]},{"name":"Interior door, pine 9x21","description":["Interior door Pine","Openings in timber frame, 1-2 m²","Lining pine door/window","Dytteremse around door","Feielist, oak lacquered, 9x20mm","Feielist, oak lacquered, 9x30mm","Door winder inner door","Frame strip pine, pre-painted"],"unit":["stk","stk","m","lm","lm","lm","stk","lm"],"quantity":[1.0,1.0,5.1,11.0,0.9,0.9,1.0,10.6],"laborHours1":[1.0,0.35,0.51,0.11,0.09,0.09,0.3,1.06],"laborHours2":[0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0],"laborCost":[0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0],"material":[1685.42,162.05,299.07,78.32,41.7,62.56,391.2,507.85],"materials":[0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0],"totalPrice":[0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]},{"name":"Surface covering parquet","description":["Parquet on subfloor, oak","Laminate flooring, oak"],"unit":["m²","m²"],"quantity":[1.0,1.0],"laborHours1":[0.36,0.25],"laborHours2":[0.0,0.0],"laborCost":[0.0,0.0],"material":[528.3,528.3],"materials":[0.0,0.0],"totalPrice":[0.0,0.0]},{"name":"Window, wooden wall top swing 12x10","description":["External frame strip door/window","Water tray fittings, galvanized steel, below","Water tray fittings, galvanized steel, above","Water tray spruce for fittings","Water tray spruce for fittings","Clamping strip","Wind barrier strip, tape","Openings in timber frame, 1-2 m²","Membrane sneak window-door","Pine window, top white","Lining pine door/window","Dytteremse around window","Grouting, bottom filler strip, window + door","Pine frame molding, pre-painted"],"unit":["m","lm","lm","m","m","m","lm","stk","m²","stk","m","lm","lm","lm"],"quantity":[4.8,0.56,0.56,1.3,1.4,4.4,4.8,1.0,1.4,1.0,4.4,13.2,4.4,4.8],"laborHours1":[0.44,0.12,0.12,0.15,0.16,0.25,0.11,0.4,0.12,1.06,0.51,0.15,0.66,0.55],"laborHours2":[0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0],"laborCost":[0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0],"material":[92.36,54.66,72.58,39.4,144.86,19.76,86.78,392.32,205.25,12327.33,684.9,93.98,298.85,229.96],"materials":[0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0],"totalPrice":[0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]},{"name":"Exterior door of wood, in timber frame wall, white, 10x21","description":["Exterior frame strip door/window","Water tray spruce for fittings","Water tray fittings, galvanized steel, above","Clamping strip","Wind barrier strip, tape","Threshold fitting 1 kink, plasticized steel","Exterior door, white","Door winder, exterior door","Openings in timber frame, 2-3 m²","Lining pine door/window","Dytteremse around door","Grouting, bottom filling strip, window + door","Feielist, oak lacquered, 9x50mm","Pine frame molding, pre-painted"],"unit":["m","m","lm","m","lm","stk","stk","stk","stk","m","lm","lm","lm","lm"],"quantity":[5.6,1.2,0.48,5.2,5.6,1.1,1.0,1.0,1.0,5.2,15.6,5.2,1.0,5.2],"laborHours1":[0.52,0.14,0.1,0.3,0.13,0.23,1.15,0.35,0.4,0.6,0.18,0.78,0.12,0.6],"laborHours2":[0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0],"laborCost":[0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0],"material":[107.74,124.17,62.21,23.34,101.25,66.11,13102.99,463.2,559.17,809.43,111.07,353.18,88.12,249.14],"materials":[0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0],"totalPrice":[0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]},{"name":"Beams and columns, glulam / steel - Single-family house","description":["Glulam beam 115x315","Glulam beam 90x225","Glulam beam impr 90x300","Glulam beam impr 90x270","Glulam post impr 90x90","Glulam post 115x115","Glulam post 90x90","Steel beam, HEB 220 (73.63 kg/lm) 220mm","Steel column HUP (14.63 kg/lm) 100x100x5"],"unit":["lm","lm","lm","lm","lm","lm","lm","kg","kg"],"quantity":[0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0],"laborHours1":[0.4,0.4,0.4,0.4,0.17,0.17,0.17,0.02,0.02],"laborHours2":[0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0],"laborCost":[0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0],"material":[841.76,503.34,839.34,538.54,350.56,358.56,230.56,27.84,12.5],"materials":[0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0],"totalPrice":[0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]},{"name":"Wet room wall w/panel - wet room tile + tile 25x33","description":["Wet room tiles Litex on walls","Tile, ceramic on wall, white","Nail punch for membrane in wet room","Bottom panel, spruce, screwed","Filling with sealant in corners","Lubricating membrane for sealing panels, wall"],"unit":["m²","m²","m²","m²","m²","m²"],"quantity":[1.0,1.0,1.0,1.0,0.3,1.0],"laborHours1":[0.23,1.21,0.17,0.3,0.03,0.35],"laborHours2":[0.0,0.0,0.0,0.0,0.0,0.0],"laborCost":[0.0,0.0,0.0,0.0,0.0,0.0],"material":[637.68,374.56,17.21,144.28,3.71,329.52],"materials":[0.0,0.0,0.0,0.0,0.0,0.0],"totalPrice":[0.0,0.0,0.0,0.0,0.0,0.0]},{"name":"Railings in stainless steel and glass","description":["Railing, glass / Stainless steel - Icopal"],"unit":["m"],"quantity":[1.0],"laborHours1":[1.32],"laborHours2":[0.0],"laborCost":[0.0],"material":[1.0,145.22],"materials":[0.0],"totalPrice":[0.0]},{"name":"Barrier roof of wood, shingles, plasterboard,","description":["Roofing shingle ridge board","Roofing shingle eaves board","Roofing shingle charcoal black","Roofing of waterproof veneer","Roof lining for air gap c/c 600","Roof underlay roof foil","Barrier roof of solid wood, c/c 600","Mineral wool A-plate, with paper","Diffusion-tight plastic (Ceiling)","Ceiling lining c/c 600","Mineral wool A-plate in joists","Plasterboard in ceiling, simple"],"unit":["m","m","m²","m²","m²","m²","m²","m²","m²","m²","m²","m²"],"quantity":[0.5,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0],"materialQuantity":[0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0],"laborHours1":[0.06,0.03,0.13,0.23,0.14,0.08,0.24,0.12,0.06,0.21,0.12,0.31],"laborHours2":[0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0],"laborCost":[0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0],"material":[85.24,86.07,273.23,218.57,33.6,163.83,148.5,175.2,11.04,85.69,76.4,117.29],"materials":[0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0],"totalPrice":[0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]},{"name":"Timber truss 48x198, 50mm liner, standing double seam, plaster","description":["Plasterboard interior cladding, single plaster","2 coats stain, exterior","Simple timber frame, solid wood without nails","Mineral wool A-plate - wall","Standing panel with double rebate","Lathing on facade c/c 600","Loops, impregnated wall","Plasterboard exterior, 9.5 mm undercladding","Mouse tape","Wind barrier strip, tape","Diffusion-proof plastic (Wall)","Lathing for internal cladding c/c 600","Mineral wool A-plate - wall","Sparkling strip, stain sp.1, joint sp. 2, full sp.1, primer. 2 coats of paint","Pine cornice, pre-painted","Skirting board pine, pre-painted"],"unit":["m²","m²","m²","m²","m²","m²","m²","m²","m","lm","m²","m²","m²","m²","lm","lm"],"quantity":[1.0,1.13,1.0,1.0,1.13,1.13,1.13,1.13,0.42,0.06,1.0,1.0,1.0,1.0,0.42,0.42],"materialQuantity":[0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0],"laborHours1":[0.23,0.13,0.32,0.1,0.32,0.19,0.05,0.19,0.01,0.0,0.05,0.18,0.09,0.55,0.05,0.05],"laborHours2":[0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0],"laborCost":[0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0],"material":[51.39,103.83,204.29,151.2,502.96,37.9,24.33,87.11,10.21,1.08,13.82,47.65,40.4,135.63,16.71,15.82],"materials":[0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0],"totalPrice":[0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]},{"name":"Punched roofing single-family house 245m² GFA - 2 floors (Calculate quantity and select material type),","description":["Punched ceiling box chipboard","Hollow roofing ceiling box plasterboard","Hull roofing ceiling box wood panel","Hull roofing wall - tiles","Punched roofing wall wood panel","Punched roofing wall chipboard","Punched roofing wall plasterboard","Punched roofing for ventilation"],"unit":["stk","stk","stk","stk","stk","stk","stk","stk"],"quantity":[0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0],"laborHours1":[0.18,0.18,0.18,0.2,0.15,0.15,0.15,0.15],"laborHours2":[0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0],"laborCost":[0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0],"material":[0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0],"materials":[0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0],"totalPrice":[0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]},{"name":"Beams and columns, glulam/steel - Detached house","description":["Rental of scaffolding per m²/month. - 132m²","Assembly of light scaffolding","Dismantling of light scaffolding"],"unit":["stk","m²","m²"],"quantity":[0.0,0.0,0.0],"laborHours1":[0.0,0.15,0.15],"laborHours2":[0.0,0.0,0.0],"laborCost":[0.0,0.0,0.0],"material":[10350.0,0.0,0.0],"materials":[0.0,0.0,0.0],"totalPrice":[0.0,0.0,0.0]},{"name":"Stairs inside, three straight runs","description":["Openings in joists >4 m²","Staircase straight white gr. prefab., pine oak toning"],"unit":["stk","stk"],"quantity":[1.0,1.0],"laborHours1":[1.27,20.14],"laborHours2":[0.0,0.0],"laborCost":[0.0,0.0],"material":[838.42,45000.0],"materials":[0.0,0.0],"totalPrice":[0.0,0.0]},{"name":"Waste removal","description":["Container 10 m³: Collection. Tariff. and wall","Container 10 m³: Collection. Clean wood","Container 10 m³: Deployment","Container 10 m³: Rent per week","Container 10 m³: Emptying fee. Clean wood","Container 10 m³: Emptying fee. Takst. and masonry"],"unit":["RS","RS","RS","RS","RS","RS"],"quantity":[0.0,0.0,0.0,0.0,0.0,0.0],"laborHours1":[0.0,0.0,0.0,0.0,0.0,0.0],"laborHours2":[0.0,0.0,0.0,0.0,0.0,0.0],"laborCost":[0.0,0.0,0.0,0.0,0.0,0.0],"material":[5135.0,3275.0,491.0,1500.0,3264.0,5124.0],"materials":[0.0,0.0,0.0,0.0,0.0,0.0],"totalPrice":[0.0,0.0,0.0,0.0,0.0,0.0]}]
+[
+  {
+    "name": "Bindingsverk av tre 48x98, dobbel lydvegg, dobbel gips",
+    "description": [
+      "Gulvlist furu, ferdig malt",
+      "Taklist furu, ferdig malt",
+      "Fuging v/ lydvegg/tak m/fugem.",
+      "Gipsplate innvendig kledning, dobbel gips",
+      "Enkelt bindingsverk heltre u/spikerslag",
+      "Mineralull A-plate",
+      "Enkelt bindingsverk heltre u/spikerslag",
+      "Mineralull A-plate",
+      "Fuging v/ lydvegg/tak m/fugem.",
+      "Gipsplate innvendig kledning, dobbel gips",
+      "Sparkling strimmel, flekksp.1, skjøtsp. 2, helsp.1, grunning. 2 strøk maling",
+      "Taklist furu, ferdig malt",
+      "Gulvlist furu, ferdig malt"
+    ],
+    "unit": [
+      "lm",
+      "lm",
+      "lm",
+      "m²",
+      "m²",
+      "m²",
+      "m²",
+      "m²",
+      "lm",
+      "m²",
+      "m²",
+      "lm",
+      "lm"
+    ],
+    "quantity": [
+      0.42, 0.42, 1.2, 1.0, 1.0, 1.0, 1.0, 1.0, 1.2, 1.0, 1.0, 0.42, 0.42
+    ],
+    "materialQuantity": [
+      0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0
+    ],
+    "laborHours1": [
+      0.05, 0.05, 0.18, 0.36, 0.32, 0.09, 0.32, 0.09, 0.18, 0.36, 0.55, 0.05,
+      0.05
+    ],
+    "laborHours2": [
+      0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0
+    ],
+    "laborCost": [
+      0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0
+    ],
+    "material1": [
+      15.82, 16.71, 52.56, 102.25, 85.04, 76.4, 85.04, 76.4, 52.56, 102.25,
+      135.63, 16.71, 15.82
+    ],
+    "material2": [
+      0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0
+    ],
+    "totalPrice": [
+      0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0
+    ]
+  },
+  {
+    "name": "Bindingsverk av tre 48x98, isolert, glattpanel",
+    "description": [
+      "Gulvlist furu, ferdig malt",
+      "Taklist furu, ferdig malt",
+      "Glattpanel gran, stående",
+      "Mineralull A-plate",
+      "Enkelt bindingsverk heltre m/3 spiker",
+      "Glattpanel gran, stående",
+      "Taklist furu, ferdig malt",
+      "Gulvlist furu, ferdig malt"
+    ],
+    "unit": ["lm", "lm", "m²", "m²", "m²", "m²", "lm", "lm"],
+    "quantity": [0.42, 0.42, 1.0, 1.0, 1.0, 1.0, 0.42, 0.42],
+    "materialQuantity": [0.84, 0.84, 2.0, 2.0, 2.0, 2.0, 0.84, 0.84],
+    "laborHours1": [6.9, 0.05, 0.33, 0.09, 0.46, 0.33, 0.05, 0.05],
+    "laborHours2": [13.8, 0.1, 0.66, 0.18, 0.92, 0.66, 0.1, 0.1],
+    "laborCost": [27.6, 0.2, 1.32, 0.36, 1.84, 1.32, 0.2, 0.2],
+    "material1": [15.82, 16.71, 293.3, 76.4, 126.8, 293.3, 16.71, 15.82],
+    "material2": [31.64, 33.42, 586.6, 152.8, 253.6, 586.6, 33.42, 31.64],
+    "totalPrice": [
+      59.24, 33.620000000000005, 587.9200000000001, 153.16000000000003, 255.44,
+      587.9200000000001, 33.620000000000005, 31.84
+    ]
+  },
+  {
+    "name": "Bindingsverk av tre 48x98, kappet h=2400, gips",
+    "description": [
+      "Gulvlist furu, ferdig malt",
+      "Taklist furu, ferdig malt",
+      "Sparkling strimmel, flekksp.1, skjøtsp. 2, helsp.1, grunning. 2 strøk maling",
+      "Gipsplate innvendig kledning, enkel gips",
+      "Mineralull A-plate",
+      "Enkelt bindingsverk heltre precut h=2,4m, 3 svill",
+      "Gipsplate innvendig kledning, enkel gips",
+      "Sparkling strimmel, flekksp.1, skjøtsp. 2, helsp.1, grunning. 2 strøk maling",
+      "Taklist furu, ferdig malt",
+      "Gulvlist furu, ferdig malt"
+    ],
+    "unit": ["lm", "lm", "m²", "m²", "m²", "m²", "m²", "m²", "lm", "lm"],
+    "quantity": [1.0, 1.0, 2.4, 2.4, 2.4, 1.0, 2.4, 2.4, 1.0, 1.0],
+    "materialQuantity": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+    "laborHours1": [0.12, 0.13, 1.32, 0.55, 0.22, 0.4, 0.55, 1.32, 0.13, 0.12],
+    "laborHours2": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+    "laborCost": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+    "material1": [
+      37.66, 39.79, 325.51, 123.34, 183.36, 280.45, 123.34, 325.51, 39.79, 37.66
+    ],
+    "material2": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+    "totalPrice": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+  },
+  {
+    "name": "Bindingsverk av stål 2x75mm, dobbelt, isolert, gips",
+    "description": [
+      "Gulvlist furu, ferdig malt",
+      "aklist furu, ferdig malt",
+      "Sparkel fermacell gipsplater",
+      "/Fuging v/ lydvegg/tak m/fugem.",
+      "Gipsplate innvendig kledning, enkel gips",
+      "Dobbelt bindingsverk, stål c/c 60",
+      "Mineralull i stålstender",
+      "Gipsplate innvendig kledning, enkel gips",
+      "Fuging v/ lydvegg/tak m/fugem.",
+      "Sparkel fermacell gipsplater",
+      "Taklist furu, ferdig malt",
+      "Gulvlist furu, ferdig malt"
+    ],
+    "unit": [
+      "lm",
+      "lm",
+      "m²",
+      "lm",
+      "m²",
+      "m²",
+      "m²",
+      "m²",
+      "lm",
+      "m²",
+      "lm",
+      "lm"
+    ],
+    "quantity": [
+      0.42, 0.42, 1.0, 1.2, 1.0, 1.0, 2.0, 1.0, 1.2, 1.0, 0.42, 0.42
+    ],
+    "materialQuantity": [
+      0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0
+    ],
+    "laborHours1": [
+      0.12, 0.13, 1.32, 0.55, 0.22, 0.4, 0.55, 1.32, 0.13, 0.12, 0.05, 0.05
+    ],
+    "laborHours2": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+    "laborCost": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+    "material1": [
+      15.82, 16.71, 135.63, 52.56, 102.25, 209.03, 124.0, 102.25, 52.56, 135.63,
+      16.71, 15.82
+    ],
+    "material2": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+    "totalPrice": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+  },
+  {
+    "name": "Bindingsverk av stål 2x100mm, dobbelt, isolert, gips",
+    "description": [
+      "Gulvlist furu, ferdig malt",
+      "Taklist furu, ferdig malt",
+      "Sparkling strimmel, flekksp.1, skjøtsp. 2, helsp.1, grunning. 2 strøk maling",
+      "Fuging v/ lydvegg/tak m/fugem.",
+      "Gipsplate innvendig kledning, enkel gips",
+      "Dobbelt bindingsverk, stål c/c 60",
+      "Mineralull i stålstender",
+      "Gipsplate innvendig kledning, enkel gips",
+      "Fuging v/ lydvegg/tak m/fugem.",
+      "Sparkling strimmel, flekksp.1, skjøtsp. 2, helsp.1, grunning. 2 strøk maling",
+      "Taklist furu, ferdig malt",
+      "Gulvlist furu, ferdig malt"
+    ],
+    "unit": [
+      "lm",
+      "lm",
+      "m²",
+      "lm",
+      "m²",
+      "m²",
+      "m²",
+      "m²",
+      "lm",
+      "m²",
+      "lm",
+      "lm"
+    ],
+    "quantity": [
+      0.42, 0.42, 1.0, 1.2, 1.0, 1.0, 2.0, 1.0, 1.2, 1.0, 0.42, 0.42
+    ],
+    "materialQuantity": [
+      0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0
+    ],
+    "laborHours1": [
+      0.12, 0.13, 1.32, 0.55, 0.22, 0.4, 0.55, 1.32, 0.13, 0.12, 0.05, 0.05
+    ],
+    "laborHours2": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+    "laborCost": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+    "material1": [
+      15.82, 16.71, 135.63, 52.56, 102.25, 209.03, 124.0, 102.25, 52.56, 135.63,
+      16.71, 15.82
+    ],
+    "material2": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+    "totalPrice": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+  },
+  {
+    "name": "Bindingsverk av stål 2x75mm, dobbelt, isolert, dobbel gips",
+    "description": [
+      "Gulvlist furu, ferdig malt",
+      "Taklist furu, ferdig malt",
+      "Sparkling strimmel, flekksp.1, skjøtsp. 2, helsp.1, grunning. 2 strøk maling",
+      "Fuging v/ lydvegg/tak m/fugem.",
+      "Gipsplate innvendig kledning, dobbel gips",
+      "Dobbelt bindingsverk, stål c/c 60",
+      "Mineralull i stålstender",
+      "Gipsplate innvendig kledning, dobbel gips",
+      "Fuging v/ lydvegg/tak m/fugem.",
+      "Sparkling strimmel, flekksp.1, skjøtsp. 2, helsp.1, grunning. 2 strøk maling",
+      "Taklist furu, ferdig malt",
+      "Gulvlist furu, ferdig malt"
+    ],
+    "unit": [
+      "lm",
+      "lm",
+      "m²",
+      "lm",
+      "m²",
+      "m²",
+      "m²",
+      "m²",
+      "lm",
+      "m²",
+      "lm",
+      "lm"
+    ],
+    "quantity": [
+      0.42, 0.42, 1.0, 1.2, 1.0, 1.0, 2.0, 1.0, 1.2, 1.0, 0.42, 0.42
+    ],
+    "materialQuantity": [
+      0.84, 0.84, 2.0, 2.4, 2.0, 2.0, 4.0, 2.0, 2.4, 2.0, 0.84, 0.84
+    ],
+    "laborHours1": [
+      6.9, 6.9, 6.9, 0.55, 0.22, 0.4, 0.55, 1.32, 0.13, 0.12, 0.05, 0.05
+    ],
+    "laborHours2": [
+      13.8, 13.8, 13.8, 1.1, 0.44, 0.8, 1.1, 2.64, 0.26, 0.24, 0.1, 0.1
+    ],
+    "laborCost": [
+      27.6, 27.6, 27.6, 2.2, 0.88, 1.6, 2.2, 5.28, 0.52, 0.48, 0.2, 0.2
+    ],
+    "material1": [
+      15.82, 16.71, 135.63, 52.56, 102.25, 209.03, 124.0, 102.25, 52.56, 135.63,
+      16.71, 15.82
+    ],
+    "material2": [
+      31.64, 33.42, 271.26, 105.12, 204.5, 418.06, 248.0, 204.5, 105.12, 271.26,
+      33.42, 31.64
+    ],
+    "totalPrice": [
+      59.24, 61.02, 298.86, 107.32000000000001, 205.38, 419.66, 250.2, 209.78,
+      105.64, 271.74, 33.620000000000005, 31.84
+    ]
+  },
+  {
+    "name": "Gulv på grunn, plasstøpt, isolert, påstøp",
+    "description": [
+      "Avtrekking og stålgl. av betongoverflate",
+      "Armering med nett, K 131 (2,1 kg pr m²)",
+      "Betong B30 i gulv på grunn",
+      "Radonstopp på grunn",
+      "Polystyren m/fals, EPS, 150 kPa"
+    ],
+    "unit": ["m²", "kg", "m³", "m²", "m²"],
+    "quantity": [1.0, 2.5, 0.12, 1.0, 1.0],
+    "laborHours1": [0.21, 0.16, 0.09, 0.12, 0.23],
+    "laborHours2": [0.0, 0.0, 0.0, 0.0, 0.0],
+    "laborCost": [0.0, 0.0, 0.0, 0.0, 0.0],
+    "material": [45.12, 68.88, 222.95, 74.66, 406.71],
+    "materials": [0.0, 0.0, 0.0, 0.0, 0.0],
+    "totalPrice": [0.0, 0.0, 0.0, 0.0, 0.0]
+  },
+  {
+    "name": "Innerdør, furu 9x21",
+    "description": [
+      "Innerdør Furu",
+      "Åpninger i bindingsverk, 1-2 m²",
+      "Utforing furu dør/vindu",
+      "Dytteremse rundt dør",
+      "Feielist, eik lakkert, 9x20mm",
+      "Feielist, eik lakkert, 9x30mm",
+      "Dørvrider Innerdør\t",
+      "Karmlist furu, ferdig malt"
+    ],
+    "unit": ["stk", "stk", "m", "lm", "lm", "lm", "stk", "lm"],
+    "quantity": [1.0, 1.0, 5.1, 11.0, 0.9, 0.9, 1.0, 10.6],
+    "laborHours1": [1.0, 0.35, 0.51, 0.11, 0.09, 0.09, 0.3, 1.06],
+    "laborHours2": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+    "laborCost": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+    "material": [1685.42, 162.05, 299.07, 78.32, 41.7, 62.56, 391.2, 507.85],
+    "materials": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+    "totalPrice": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+  },
+  {
+    "name": "Overflate dekker parkett",
+    "description": [
+      "Parkett på undergulv, eik",
+      "Laminat gulv på undergulv, eik"
+    ],
+    "unit": ["m²", "m²"],
+    "quantity": [1.0, 1.0],
+    "laborHours1": [0.36, 0.25],
+    "laborHours2": [0.0, 0.0],
+    "laborCost": [0.0, 0.0],
+    "material": [528.3, 528.3],
+    "materials": [0.0, 0.0],
+    "totalPrice": [0.0, 0.0]
+  },
+  {
+    "name": "Vindu, trevegg toppsving 12x10",
+    "description": [
+      "Utvendig karmlist dør/vindu",
+      "Vannbrettbeslag, galv. stål, under",
+      "Vannbrettbeslag, galv. stål, over",
+      "Vannbrett gran for beslag",
+      "Vannbrett gran for beslag",
+      "Klemlist",
+      "Vindsperre-remse, tape",
+      "Åpninger i bindingsverk, 1-2 m²",
+      "Membran smyg vinduer-dør",
+      "Vindu av furu, toppsv. hvitm.",
+      "Utforing furu dør/vindu",
+      "Dytteremse rundt vindu",
+      "Fuging, bunnfyllingslist, vindu+dør",
+      "Karmlist furu, ferdig malt"
+    ],
+    "unit": [
+      "m",
+      "lm",
+      "lm",
+      "m",
+      "m",
+      "m",
+      "lm",
+      "stk",
+      "m²",
+      "stk",
+      "m",
+      "lm",
+      "lm",
+      "lm"
+    ],
+    "quantity": [
+      4.8, 0.56, 0.56, 1.3, 1.4, 4.4, 4.8, 1.0, 1.4, 1.0, 4.4, 13.2, 4.4, 4.8
+    ],
+    "laborHours1": [
+      0.44, 0.12, 0.12, 0.15, 0.16, 0.25, 0.11, 0.4, 0.12, 1.06, 0.51, 0.15,
+      0.66, 0.55
+    ],
+    "laborHours2": [
+      0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0
+    ],
+    "laborCost": [
+      0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0
+    ],
+    "material": [
+      92.36, 54.66, 72.58, 39.4, 144.86, 19.76, 86.78, 392.32, 205.25, 12327.33,
+      684.9, 93.98, 298.85, 229.96
+    ],
+    "materials": [
+      0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0
+    ],
+    "totalPrice": [
+      0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0
+    ]
+  },
+  {
+    "name": "Ytterdør av tre, i bindingsverksvegg, hvit, 10x21",
+    "description": [
+      "Utvendig karmlist dør/vindu",
+      "Vannbrett gran for beslag",
+      "Vannbrettbeslag, galv. stål, over",
+      "Klemlist",
+      "Vindsperre-remse, tape",
+      "Terskelbeslag 1 knekk, plastisert stål",
+      "Ytterdør, hvit",
+      "Dørvrider Ytterdør",
+      "Åpninger i bindingsverk, 2-3 m²",
+      "Utforing furu dør/vindu",
+      "Dytteremse rundt dør",
+      "Fuging, bunnfyllingslist, vindu+dør",
+      "Feielist, eik lakkert, 9x50mm",
+      "Karmlist furu, ferdig malt"
+    ],
+    "unit": [
+      "m",
+      "m",
+      "lm",
+      "m",
+      "lm",
+      "stk",
+      "stk",
+      "stk",
+      "stk",
+      "m",
+      "lm",
+      "lm",
+      "lm",
+      "lm"
+    ],
+    "quantity": [
+      5.6, 1.2, 0.48, 5.2, 5.6, 1.1, 1.0, 1.0, 1.0, 5.2, 15.6, 5.2, 1.0, 5.2
+    ],
+    "laborHours1": [
+      1.23, 0.14, 0.1, 1.23, 0.13, 0.23, 1.15, 0.35, 0.4, 0.6, 0.18, 0.78, 0.12,
+      0.6
+    ],
+    "laborHours2": [
+      2.46, 0.28, 0.2, 2.46, 0.26, 0.46, 2.3, 0.7, 0.8, 1.2, 0.36, 1.56, 0.24,
+      1.2
+    ],
+    "laborCost": [
+      4.92, 0.56, 0.4, 4.92, 0.52, 0.92, 4.6, 1.4, 1.6, 2.4, 0.72, 3.12, 0.48,
+      2.4
+    ],
+    "material": [
+      107.74, 124.17, 62.21, 23.34, 101.25, 66.11, 13102.99, 463.2, 559.17,
+      809.43, 111.07, 353.18, 88.12, 249.14
+    ],
+    "materials": [
+      215.48, 248.34, 124.42, 46.68, 202.5, 132.22, 26205.98, 926.4, 1118.34,
+      1618.86, 222.14, 706.36, 176.24, 498.28
+    ],
+    "totalPrice": [
+      220.39999999999998, 248.9, 124.82000000000001, 51.6, 203.02, 133.14,
+      26210.579999999998, 927.8, 1119.9399999999998, 1621.26,
+      222.85999999999999, 709.48, 176.72, 500.67999999999995
+    ]
+  },
+  {
+    "name": "Bjelker og søyler, limtre / stål - Enebolig",
+    "description": [
+      "Limtrebjelke 115x315",
+      "Limtrebjelke 90x225",
+      "Limtrebjelke impr 90x300",
+      "Limtrebjelke impr 90x270",
+      "Limtre stolpe impr 90x90",
+      "Limtre stolpe 115x115",
+      "Limtre stolpe 90x90",
+      "Stålbjelke, HEB 220 (73,63 kg/lm) 220 mm",
+      "Stålsøyle HUP (14,63 kg/lm) 100x100x5"
+    ],
+    "unit": ["lm", "lm", "lm", "lm", "lm", "lm", "lm", "kg", "kg"],
+    "quantity": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+    "laborHours1": [1.23, 0.4, 0.4, 0.4, 0.17, 0.17, 0.17, 0.02, 0.02],
+    "laborHours2": [2.46, 0.8, 0.8, 0.8, 0.34, 0.34, 0.34, 0.04, 0.04],
+    "laborCost": [4.92, 1.6, 1.6, 1.6, 0.68, 0.68, 0.68, 0.08, 0.08],
+    "material": [
+      841.76, 503.34, 839.34, 538.54, 350.56, 358.56, 230.56, 27.84, 12.5
+    ],
+    "materials": [
+      1683.52, 1006.68, 1678.68, 1077.08, 701.12, 717.12, 461.12, 55.68, 25.0
+    ],
+    "totalPrice": [
+      1688.44, 1008.28, 1680.28, 1078.6799999999998, 701.8, 717.8, 461.8, 55.76,
+      25.08
+    ]
+  },
+  {
+    "name": "Våtromsvegg m/panel - våtromsfliser + fliser 25x33",
+    "description": [
+      "Våtromsfliser Litex på vegg",
+      "Fliser, keramikk på vegg, hvit",
+      "Spikerslag for membran i våtrom",
+      "Bunnpanel, gran, skrudd",
+      "Fylling med fugemasse i hjørner",
+      "Smøremembran for tetting av paneler, vegg"
+    ],
+    "unit": ["m²", "m²", "m²", "m²", "m²", "m²"],
+    "quantity": [1.0, 1.0, 1.0, 1.0, 0.3, 1.0],
+    "laborHours1": [0.23, 1.21, 0.17, 0.3, 0.03, 0.35],
+    "laborHours2": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+    "laborCost": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+    "material": [637.68, 374.56, 17.21, 144.28, 3.71, 329.52],
+    "materials": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+    "totalPrice": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+  },
+  {
+    "name": "Stainless steel and glass railings",
+    "description": ["Rekkverk, glass / Rustfritt stål - Icopal"],
+    "unit": ["m"],
+    "quantity": [1.0],
+    "laborHours1": [1.32],
+    "laborHours2": [0.0],
+    "laborCost": [0.0],
+    "material": [1.0, 145.22],
+    "materials": [0.0],
+    "totalPrice": [0.0]
+  },
+  {
+    "name": "Sperretak av tre, takspon, gipsplater,",
+    "description": [
+      "Takspon til mønebord",
+      "Takshingel takfotplate",
+      "Takshingel kullsvart",
+      "Taktekking av vanntett finér",
+      "Takbelegg for luftspalte c/c 600 Takbelegg av takfolie",
+      "Undertak av takfolie",
+      "Sperretak av massivtre, c/c 600",
+      "Mineralull A-plate, med papir",
+      "Diffusjonstett plast (tak)",
+      "Takbekledning c/c 600",
+      "Mineralull A-plate i bjelkelag",
+      "Gipsplater i tak, enkle"
+    ],
+    "unit": [
+      "m",
+      "m",
+      "m²",
+      "m²",
+      "m²",
+      "m²",
+      "m²",
+      "m²",
+      "m²",
+      "m²",
+      "m²",
+      "m²"
+    ],
+    "quantity": [0.5, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0],
+    "materialQuantity": [
+      0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0
+    ],
+    "laborHours1": [
+      0.06, 0.03, 0.13, 0.23, 0.14, 0.08, 0.24, 0.12, 0.06, 0.21, 0.12, 0.31
+    ],
+    "laborHours2": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+    "laborCost": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+    "material": [
+      85.24, 86.07, 273.23, 218.57, 33.6, 163.83, 148.5, 175.2, 11.04, 85.69,
+      76.4, 117.29
+    ],
+    "materials": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+    "totalPrice": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+  },
+  {
+    "name": "Bindingsverk av tre 48x198, 50mm påforing, stående dobbelfals, gips",
+    "description": [
+      "Gipsplate innvendig kledning, enkel gips",
+      "2 strøk beis, utvendig",
+      "Enkelt bindingsverk heltre u/spikerslag",
+      "Mineralull A-plate - vegg",
+      "Stående panel med dobbeltfals",
+      "Utlekting på fasade c/c 600",
+      "Sløyfer, impregnert vegg",
+      "Gipspl. utvendig, 9,5 mm underkledn",
+      "Musebånd",
+      "Vindsperre-remse, tape",
+      "Diffusjonstett plast (Vegg)",
+      "Utlekting for innv. kledning c/c 600",
+      "Mineralull A-plate - vegg",
+      "Sparkling strimmel, flekksp.1, skjøtsp. 2, helsp.1, grunning. 2 strøk maling",
+      "Taklist furu, ferdig malt",
+      "Gulvlist furu, ferdig malt"
+    ],
+    "unit": [
+      "m²",
+      "m²",
+      "m²",
+      "m²",
+      "m²",
+      "m²",
+      "m²",
+      "m²",
+      "m",
+      "lm",
+      "m²",
+      "m²",
+      "m²",
+      "m²",
+      "lm",
+      "lm"
+    ],
+    "quantity": [
+      1.0, 1.13, 1.0, 1.0, 1.13, 1.13, 1.13, 1.13, 0.42, 0.06, 1.0, 1.0, 1.0,
+      1.0, 0.42, 0.42
+    ],
+    "materialQuantity": [
+      0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
+      0.0
+    ],
+    "laborHours1": [
+      0.23, 0.13, 0.32, 0.1, 0.32, 0.19, 0.05, 0.19, 0.01, 0.0, 0.05, 0.18,
+      0.09, 0.55, 0.05, 0.05
+    ],
+    "laborHours2": [
+      0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
+      0.0
+    ],
+    "laborCost": [
+      0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
+      0.0
+    ],
+    "material": [
+      51.39, 103.83, 204.29, 151.2, 502.96, 37.9, 24.33, 87.11, 10.21, 1.08,
+      13.82, 47.65, 40.4, 135.63, 16.71, 15.82
+    ],
+    "materials": [
+      0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
+      0.0
+    ],
+    "totalPrice": [
+      0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
+      0.0
+    ]
+  },
+  {
+    "name": "Stanset taktekking av enebolig 245m² BTA - 2 etasjer (Beregn mengde og velg materialtype),",
+    "description": [
+      "Takboks av stansede sponplater",
+      "Hull takboks av gipsplater",
+      "Hull tak takboks trepanel",
+      "Hulltak vegg - fliser",
+      "Hulltakvegg trepanel",
+      "Hulltak vegg - sponplater",
+      "Stanset takvegg gipsplater",
+      "Stanset taktekking for ventilasjon"
+    ],
+    "unit": ["stk", "stk", "stk", "stk", "stk", "stk", "stk", "stk"],
+    "quantity": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+    "laborHours1": [0.18, 0.18, 0.18, 0.2, 0.15, 0.15, 0.15, 0.15],
+    "laborHours2": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+    "laborCost": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+    "material": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+    "materials": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+    "totalPrice": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+  },
+  {
+    "name": "Dragere og søyler, limtre / stål - Enebolig",
+    "description": [
+      "Leie av stillas pr. m²/mnd. - 132m²",
+      "Montering av Lett stillase",
+      "Demontering av Lett stillase"
+    ],
+    "unit": ["stk", "m²", "m²"],
+    "quantity": [0.0, 0.0, 0.0],
+    "laborHours1": [0.0, 0.15, 0.15],
+    "laborHours2": [0.0, 0.0, 0.0],
+    "laborCost": [0.0, 0.0, 0.0],
+    "material": [10350.0, 0.0, 0.0],
+    "materials": [0.0, 0.0, 0.0],
+    "totalPrice": [0.0, 0.0, 0.0]
+  },
+  {
+    "name": "Trapper innvendig, tre rettløp",
+    "description": [
+      "Åpninger i bjelkelag >4 m²",
+      "Trapp rett hvit gr. prefab., furu eik toning"
+    ],
+    "unit": ["stk", "stk"],
+    "quantity": [1.0, 1.0],
+    "laborHours1": [1.27, 20.14],
+    "laborHours2": [0.0, 0.0],
+    "laborCost": [0.0, 0.0],
+    "material": [838.42, 45000.0],
+    "materials": [0.0, 0.0],
+    "totalPrice": [0.0, 0.0]
+  },
+  {
+    "name": "Avfall flytting",
+    "description": [
+      "Container 10 m³: Innhenting. Takst. og mur",
+      "Container 10 m³: Innhenting. Rent treverk",
+      "Container 10 m³: Utsetting",
+      "Container 10 m³: Leie pr. Uke",
+      "Container 10 m³: Tømme-avgift. Rent treverk",
+      "Container 10 m³: Tømme-avgift. Takst. og mur"
+    ],
+    "unit": ["RS", "RS", "RS", "RS", "RS", "RS"],
+    "quantity": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+    "laborHours1": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+    "laborHours2": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+    "laborCost": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+    "material": [5135.0, 3275.0, 491.0, 1500.0, 3264.0, 5124.0],
+    "materials": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+    "totalPrice": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+  }
+]
