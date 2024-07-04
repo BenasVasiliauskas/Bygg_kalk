@@ -840,20 +840,6 @@ final dataInnerWallData = [
       0.00,
     ],
   ),
-
-  //
-  // InnerWallModel(
-  //     name: name,
-  //     description: description,
-  //     unit: unit,
-  //     quantity: quantity,
-  //     materialQuantity: materialQuantity,
-  //     laborHours1: laborHours1,
-  //     laborHours2: laborHours2,
-  //     laborCost: laborCost,
-  //     material1: material1,
-  //     material2: material2,
-  //     totalPrice: totalPrice)
 ];
 final deckData = [
   DeckModel(name: "Floor on ground, poured, insulated, screeded", description: [

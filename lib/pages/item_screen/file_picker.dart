@@ -1,9 +1,9 @@
+import 'package:cost_calculator/constants/empty_models.dart';
 import 'package:cost_calculator/constants/language.dart';
 import 'package:cost_calculator/data/data.dart';
 import 'package:cost_calculator/functions/load_project_from_json.dart';
 import 'package:cost_calculator/functions/save_project_to_json.dart';
 import 'package:cost_calculator/functions/save_to_json.dart';
-import 'package:cost_calculator/models/outer_wall_data_model.dart';
 import 'package:cost_calculator/pages/shared/home_page.dart';
 import 'package:cost_calculator/widgets/custom_drawer.dart';
 import 'package:cost_calculator/widgets/saving_rows/saving_row_exteriorwall.dart';
@@ -135,23 +135,21 @@ class _FilePickerScreenState extends State<FilePickerScreen> {
                       final fileName = await openLoadingDialog();
 
                       var data = await readJsonFile(fileName!);
-                      OuterWallModel outerWallModel = OuterWallModel(
-                        name: "",
-                        description: [
-                          "",
-                        ],
-                        unit: [],
-                        quantity: [],
-                        materialQuantity: [],
-                        laborHours1: [],
-                        laborHours2: [],
-                        laborCost: [],
-                        material: [],
-                        materials: [],
-                        totalPrice: [],
-                      );
-
-                      await loadProject(fileName, data, outerWallModel);
+                      await loadProject(fileName, data, emptyDeckModel);
+                      await loadProject(fileName, data, emptyFlooringModel);
+                      await loadProject(fileName, data, emptyInnerDoorModel);
+                      await loadProject(fileName, data, emptyInnerStairsModel);
+                      await loadProject(fileName, data, emptyInnerWallModel);
+                      await loadProject(fileName, data, emptyOuterRoofModel);
+                      await loadProject(fileName, data, emptyOuterWallModel);
+                      await loadProject(
+                          fileName, data, emptyParquetAndLaminateModel);
+                      await loadProject(fileName, data, emptyScaffoldingModel);
+                      await loadProject(
+                          fileName, data, emptySupportSystemModel);
+                      await loadProject(fileName, data, emptyTerraceModel);
+                      await loadProject(
+                          fileName, data, emptyWindowsExteriorDoorsModel);
                     },
                     child: Text("Load a project"),
                   ),
