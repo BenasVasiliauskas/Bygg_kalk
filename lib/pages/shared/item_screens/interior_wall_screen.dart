@@ -87,6 +87,7 @@ class _InnerWallScreenState extends State<InnerWallScreen> {
                           ),
                         ),
                       ),
+                      Text("m²")
                     ],
                   );
                 },
@@ -130,6 +131,7 @@ class _InnerWallScreenState extends State<InnerWallScreen> {
                           ),
                         ),
                       ),
+                      Text("m²")
                     ],
                   );
                 },

@@ -85,6 +85,7 @@ class _InnerStairsScreen extends State<InnerStairsScreen> {
                           ),
                         ),
                       ),
+                      Text("Units")
                     ],
                   );
                 },
@@ -126,6 +127,7 @@ class _InnerStairsScreen extends State<InnerStairsScreen> {
                           ),
                         ),
                       ),
+                      Text("stk")
                     ],
                   );
                 },

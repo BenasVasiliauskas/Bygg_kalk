@@ -85,6 +85,7 @@ class _ScaffoldingScreenState extends State<ScaffoldingScreen> {
                           ),
                         ),
                       ),
+                      Text("Units")
                     ],
                   );
                 },
@@ -126,6 +127,7 @@ class _ScaffoldingScreenState extends State<ScaffoldingScreen> {
                           ),
                         ),
                       ),
+                      Text("stk")
                     ],
                   );
                 },

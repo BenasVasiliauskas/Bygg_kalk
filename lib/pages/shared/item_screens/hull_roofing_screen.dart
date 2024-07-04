@@ -84,6 +84,7 @@ class _HullRoofingScreenState extends State<HullRoofingScreen> {
                           ),
                         ),
                       ),
+                      Text("Units")
                     ],
                   );
                 },
@@ -124,6 +125,7 @@ class _HullRoofingScreenState extends State<HullRoofingScreen> {
                           ),
                         ),
                       ),
+                      Text("stk")
                     ],
                   );
                 },

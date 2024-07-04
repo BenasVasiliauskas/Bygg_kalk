@@ -85,6 +85,7 @@ class _OuterRoofScreenState extends State<OuterRoofScreen> {
                           ),
                         ),
                       ),
+                      Text("m²")
                     ],
                   );
                 },
@@ -127,6 +128,7 @@ class _OuterRoofScreenState extends State<OuterRoofScreen> {
                           ),
                         ),
                       ),
+                      Text("m²")
                     ],
                   );
                 },

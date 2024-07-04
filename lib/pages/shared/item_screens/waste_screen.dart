@@ -84,6 +84,7 @@ class _WasteScreenState extends State<WasteScreen> {
                           ),
                         ),
                       ),
+                      Text("Units")
                     ],
                   );
                 },
@@ -124,6 +125,7 @@ class _WasteScreenState extends State<WasteScreen> {
                           ),
                         ),
                       ),
+                      Text("stk")
                     ],
                   );
                 },

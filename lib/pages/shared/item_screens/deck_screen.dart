@@ -84,6 +84,7 @@ class _DeckScreenState extends State<DeckScreen> {
                           ),
                         ),
                       ),
+                      Text("m²")
                     ],
                   );
                 },
@@ -124,6 +125,7 @@ class _DeckScreenState extends State<DeckScreen> {
                           ),
                         ),
                       ),
+                      Text("m²")
                     ],
                   );
                 },

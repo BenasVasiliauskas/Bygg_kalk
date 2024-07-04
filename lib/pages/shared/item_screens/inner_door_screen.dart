@@ -85,6 +85,7 @@ class _InnerDoorScreenState extends State<InnerDoorScreen> {
                           ),
                         ),
                       ),
+                      Text("stk"),
                     ],
                   );
                 },
@@ -126,6 +127,7 @@ class _InnerDoorScreenState extends State<InnerDoorScreen> {
                           ),
                         ),
                       ),
+                      Text("stk")
                     ],
                   );
                 },

@@ -38,22 +38,6 @@ bool? isMaterialChecked = false;
 bool? isTotalMaterialsCostChecked = false;
 bool? isTotalPriceChecked = false;
 
-Future<void> choose() async {
-  FilePickerResult? result = await FilePicker.platform.pickFiles();
-
-  if (result != null) {
-    PlatformFile file = result.files.first;
-
-    print(file.name);
-    print(file.bytes);
-    print(file.size);
-    print(file.extension);
-    print(file.path);
-  } else {
-    // User canceled the picker
-  }
-}
-
 class _FilePickerScreenState extends State<FilePickerScreen> {
   TextEditingController savingController = TextEditingController(text: "");
   @override

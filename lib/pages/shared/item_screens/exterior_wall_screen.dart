@@ -87,6 +87,7 @@ class _ExteriorWallScreenState extends State<ExteriorWallScreen> {
                           ),
                         ),
                       ),
+                      Text("m²"),
                     ],
                   );
                 },
@@ -128,6 +129,7 @@ class _ExteriorWallScreenState extends State<ExteriorWallScreen> {
                         ),
                       ),
                     ),
+                    Text("m²"),
                   ],
                 );
               }).toList(),

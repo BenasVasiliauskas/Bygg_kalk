@@ -88,6 +88,7 @@ class _WindowsExteriorDoorScreenState extends State<WindowsExteriorDoorScreen> {
                           ),
                         ),
                       ),
+                      Text("Units")
                     ],
                   );
                 },
@@ -130,6 +131,7 @@ class _WindowsExteriorDoorScreenState extends State<WindowsExteriorDoorScreen> {
                           ),
                         ),
                       ),
+                      Text("stk")
                     ],
                   );
                 },

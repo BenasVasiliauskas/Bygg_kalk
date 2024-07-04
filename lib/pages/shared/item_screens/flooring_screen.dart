@@ -84,6 +84,7 @@ class _FlooringSectionsState extends State<FlooringScreen> {
                           ),
                         ),
                       ),
+                      Text("m²")
                     ],
                   );
                 },
@@ -125,6 +126,7 @@ class _FlooringSectionsState extends State<FlooringScreen> {
                           ),
                         ),
                       ),
+                      Text("m²")
                     ],
                   );
                 },

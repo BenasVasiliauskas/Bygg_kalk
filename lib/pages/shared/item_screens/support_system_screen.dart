@@ -87,6 +87,7 @@ class _SupportSystemScreenState extends State<SupportSystemScreen> {
                           ),
                         ),
                       ),
+                      Text("Units")
                     ],
                   );
                 },
@@ -128,6 +129,7 @@ class _SupportSystemScreenState extends State<SupportSystemScreen> {
                         ),
                       ),
                     ),
+                    Text("stk")
                   ],
                 );
               }).toList(),

@@ -87,6 +87,7 @@ class _ParquetLaminateScreenState extends State<ParquetLaminateScreen> {
                           ),
                         ),
                       ),
+                      Text("m²")
                     ],
                   );
                 },
@@ -129,6 +130,7 @@ class _ParquetLaminateScreenState extends State<ParquetLaminateScreen> {
                           ),
                         ),
                       ),
+                      Text("m²")
                     ],
                   );
                 },
