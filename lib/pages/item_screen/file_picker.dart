@@ -110,8 +110,8 @@ class _FilePickerScreenState extends State<FilePickerScreen> {
                   TextButton(
                     onPressed: () async {
                       final fileName = await openDialog();
-
-                      await writeJsonArrayStart(fileName!);
+                      await fileDeleteIfExists(fileName!);
+                      await writeJsonArrayStart(fileName);
                       if (languageEnglish) {
                         await saveProject(fileName, dataInnerWallData);
                         await writeJsonComma(fileName);
