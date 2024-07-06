@@ -8,7 +8,7 @@ ThemeData lightMode = ThemeData(
     secondary: Colors.black,
   ),
   appBarTheme: AppBarTheme(
-    backgroundColor: Color.fromARGB(255, 2, 114, 45),
+    backgroundColor: Color.fromARGB(255, 49, 161, 226),
   ),
   floatingActionButtonTheme: FloatingActionButtonThemeData(
     backgroundColor: Colors.white,

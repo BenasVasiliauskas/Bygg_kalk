@@ -61,8 +61,13 @@ class CustomDrawer extends StatelessWidget {
               FontAwesomeIcons.houseChimney,
               color: Colors.blue,
             ),
-            title:
-                languageEnglish == true ? Text('Home page') : Text('Huvedmeny'),
+            title: languageEnglish
+                ? Text('Home page')
+                : languageNorwegian
+                    ? Text('Huvedmeny')
+                    : languageLithuanian
+                        ? Text("Pagrindinis meniu")
+                        : Text("Strona główna"),
             onTap: () {
               Navigator.of(context).pushReplacement(
                 MaterialPageRoute(
@@ -78,9 +83,13 @@ class CustomDrawer extends StatelessWidget {
               FontAwesomeIcons.book,
               color: Colors.blue,
             ),
-            title: languageEnglish == true
+            title: languageEnglish
                 ? Text('Documents')
-                : Text('Bygningsdeler'),
+                : languageNorwegian
+                    ? Text('Bygningsdeler')
+                    : languageLithuanian
+                        ? Text("Dokumentai")
+                        : Text("Dokumenty"),
             onTap: () {
               Navigator.of(context).pushReplacement(
                 MaterialPageRoute(
@@ -96,9 +105,13 @@ class CustomDrawer extends StatelessWidget {
               FontAwesomeIcons.gear,
               color: Colors.blue,
             ),
-            title: languageEnglish == true
+            title: languageEnglish
                 ? Text('Options')
-                : Text('Innstillinger'),
+                : languageNorwegian
+                    ? Text('Innstillinger')
+                    : languageLithuanian
+                        ? Text("Nustatymai")
+                        : Text("Opcje"),
             onTap: () {
               Navigator.of(context).pushReplacement(
                 MaterialPageRoute(
@@ -114,7 +127,13 @@ class CustomDrawer extends StatelessWidget {
               FontAwesomeIcons.dollarSign,
               color: Colors.blue,
             ),
-            title: languageEnglish == true ? Text('Budget') : Text('Budsjett'),
+            title: languageEnglish
+                ? Text('Budget')
+                : languageNorwegian
+                    ? Text('Budsjett')
+                    : languageLithuanian
+                        ? Text("Biudžetas")
+                        : Text("Budżet"),
             onTap: () {
               Navigator.of(context).pushReplacement(
                 MaterialPageRoute(
@@ -122,24 +141,6 @@ class CustomDrawer extends StatelessWidget {
                     return languageEnglish
                         ? BudgetScreen()
                         : NorwBudgetScreen();
-                  },
-                ),
-              );
-            },
-          ),
-          ListTile(
-            leading: FaIcon(
-              FontAwesomeIcons.fileShield,
-              color: Colors.blue,
-            ),
-            title: languageEnglish == true
-                ? Text('Privacy policy')
-                : Text('Personvernerklæring'),
-            onTap: () {
-              Navigator.of(context).pushReplacement(
-                MaterialPageRoute(
-                  builder: (context) {
-                    return privacyPolicy();
                   },
                 ),
               );
