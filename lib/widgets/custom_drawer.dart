@@ -2,7 +2,6 @@ import 'package:cost_calculator/constants/language.dart';
 import 'package:cost_calculator/pages/item_screen/file_picker.dart';
 import 'package:cost_calculator/pages/shared/home_page.dart';
 import 'package:cost_calculator/pages/shared/options.dart';
-import 'package:cost_calculator/pages/shared/privacy_policy.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import '../pages/item_screen/budget_screen.dart';
