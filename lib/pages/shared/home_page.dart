@@ -2,13 +2,12 @@ import 'package:cost_calculator/constants/language.dart';
 import 'package:cost_calculator/pages/item_screen/file_picker.dart';
 import 'package:cost_calculator/pages/item_screen/budget_screen.dart';
 import 'package:cost_calculator/pages/norw_item_screen/norw_budget_screen.dart';
+import 'package:cost_calculator/pages/shared/help_page.dart';
 import 'package:cost_calculator/pages/shared/item_screens/building_components_screen.dart';
 import 'package:cost_calculator/pages/shared/options.dart';
 import 'package:cost_calculator/pages/shared/privacy_policy.dart';
 import 'package:cost_calculator/widgets/custom_drawer.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class homePage extends StatefulWidget {
@@ -255,10 +254,10 @@ class _homePageState extends State<homePage> {
                             icon: Icon(FontAwesomeIcons.question),
                             color: Colors.white,
                             onPressed: () {
-                              // Navigator.of(context).pushReplacement(
-                              //     MaterialPageRoute(builder: (context) {
-                              //   return privacyPolicy();
-                              // }));
+                              Navigator.of(context).pushReplacement(
+                                  MaterialPageRoute(builder: (context) {
+                                return helpPage();
+                              }));
                             }),
                         Text(
                           textAlign: TextAlign.center,
