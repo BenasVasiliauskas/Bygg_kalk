@@ -48,7 +48,7 @@ class _BudgetScreenState extends State<BudgetScreen> {
                       label: SizedBox(
                         width: 70,
                         child: Text(
-                          'Name',
+                          'Cost type',
                         ),
                       ),
                     ),
@@ -194,44 +194,6 @@ class _BudgetScreenState extends State<BudgetScreen> {
                         ),
                         DataCell(
                           Text(timeCoefficient.toString()),
-                        ),
-                      ],
-                    ),
-                    DataRow(
-                      cells: [
-                        DataCell(
-                          Text(
-                            "Materials markup %",
-                          ),
-                        ),
-                        DataCell(
-                          Text(
-                            "",
-                          ),
-                        ),
-                        DataCell(
-                          Text(
-                            markup.toString(),
-                          ),
-                        ),
-                      ],
-                    ),
-                    DataRow(
-                      cells: [
-                        DataCell(
-                          Text(
-                            "Site setup and operation %",
-                          ),
-                        ),
-                        DataCell(
-                          Text(
-                            "",
-                          ),
-                        ),
-                        DataCell(
-                          Text(
-                            costs.toString(),
-                          ),
                         ),
                       ],
                     ),

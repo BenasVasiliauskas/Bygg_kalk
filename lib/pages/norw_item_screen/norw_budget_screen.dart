@@ -48,7 +48,7 @@ class _NorwBudgetScreenState extends State<NorwBudgetScreen> {
                       label: SizedBox(
                         width: 70,
                         child: Text(
-                          'Name',
+                          'Kostnadsart',
                         ),
                       ),
                     ),
@@ -104,7 +104,12 @@ class _NorwBudgetScreenState extends State<NorwBudgetScreen> {
                           SizedBox(
                             width: 70,
                             child: Text(
-                              totalHours[index].toStringAsFixed(2),
+                              index == calculatedNamesOrder.length - 1
+                                  ? totalHours
+                                      .reduce(
+                                          (value, element) => value + element)
+                                      .toStringAsFixed(2)
+                                  : totalHours[index].toStringAsFixed(2),
                             ),
                           ),
                         ),
@@ -112,7 +117,9 @@ class _NorwBudgetScreenState extends State<NorwBudgetScreen> {
                           SizedBox(
                             width: 70,
                             child: Text(
-                              totalLaborCosts[index].toStringAsFixed(2),
+                              index == calculatedNamesOrder.length - 1
+                                  ? sumLaborCosts.toStringAsFixed(2)
+                                  : totalLaborCosts[index].toStringAsFixed(2),
                             ),
                           ),
                         ),
@@ -120,7 +127,10 @@ class _NorwBudgetScreenState extends State<NorwBudgetScreen> {
                           SizedBox(
                             width: 70,
                             child: Text(
-                              totalMaterialCosts[index].toStringAsFixed(2),
+                              index == calculatedNamesOrder.length - 1
+                                  ? sumMaterialCosts.toStringAsFixed(2)
+                                  : totalMaterialCosts[index]
+                                      .toStringAsFixed(2),
                             ),
                           ),
                         ),
@@ -128,7 +138,12 @@ class _NorwBudgetScreenState extends State<NorwBudgetScreen> {
                           SizedBox(
                             width: 100,
                             child: Text(
-                              budgetSums[index].toStringAsFixed(2),
+                              index == calculatedNamesOrder.length - 1
+                                  ? budgetSums
+                                      .reduce(
+                                          (value, element) => value + element)
+                                      .toStringAsFixed(2)
+                                  : budgetSums[index].toStringAsFixed(2),
                             ),
                           ),
                         ),
@@ -179,44 +194,6 @@ class _NorwBudgetScreenState extends State<NorwBudgetScreen> {
                         ),
                         DataCell(
                           Text(timeCoefficient.toString()),
-                        ),
-                      ],
-                    ),
-                    DataRow(
-                      cells: [
-                        DataCell(
-                          Text(
-                            "Material påslag %",
-                          ),
-                        ),
-                        DataCell(
-                          Text(
-                            "",
-                          ),
-                        ),
-                        DataCell(
-                          Text(
-                            markup.toString(),
-                          ),
-                        ),
-                      ],
-                    ),
-                    DataRow(
-                      cells: [
-                        DataCell(
-                          Text(
-                            "Rigg og drift av byggeplass %",
-                          ),
-                        ),
-                        DataCell(
-                          Text(
-                            "",
-                          ),
-                        ),
-                        DataCell(
-                          Text(
-                            costs.toString(),
-                          ),
                         ),
                       ],
                     ),
