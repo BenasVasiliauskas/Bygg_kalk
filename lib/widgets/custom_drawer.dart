@@ -1,7 +1,9 @@
 import 'package:cost_calculator/constants/language.dart';
 import 'package:cost_calculator/pages/item_screen/file_picker.dart';
+import 'package:cost_calculator/pages/shared/help_page.dart';
 import 'package:cost_calculator/pages/shared/home_page.dart';
 import 'package:cost_calculator/pages/shared/options.dart';
+import 'package:cost_calculator/pages/shared/privacy_policy.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import '../pages/item_screen/budget_screen.dart';
@@ -230,6 +232,48 @@ class CustomDrawer extends StatelessWidget {
               );
             },
           ),
+          //
+          ListTile(
+            leading: Icon(
+              FontAwesomeIcons.fileShield,
+              color: Colors.blue,
+            ),
+            title: Text(
+              languageEnglish
+                  ? 'Privacy policy'
+                  : languageNorwegian
+                      ? 'Personvernerklæring'
+                      : languageLithuanian
+                          ? "Privatumo politika"
+                          : "Polityka prywatności",
+            ),
+            onTap: () {
+              Navigator.of(context)
+                  .pushReplacement(MaterialPageRoute(builder: (context) {
+                return privacyPolicy();
+              }));
+            },
+          ),
+          ListTile(
+              leading: FaIcon(
+                (FontAwesomeIcons.question),
+                color: Colors.blue,
+              ),
+              title: Text(
+                languageEnglish
+                    ? 'Need help?'
+                    : languageNorwegian
+                        ? 'Trenger du hjelp?'
+                        : languageLithuanian
+                            ? "Ar reikia pagalbos"
+                            : "Potrzebujesz pomocy?",
+              ),
+              onTap: () {
+                Navigator.of(context)
+                    .pushReplacement(MaterialPageRoute(builder: (context) {
+                  return helpPage();
+                }));
+              }),
         ],
       ),
     );
