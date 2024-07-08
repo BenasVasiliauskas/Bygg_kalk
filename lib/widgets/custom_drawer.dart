@@ -22,7 +22,7 @@ class CustomDrawer extends StatelessWidget {
               decoration: BoxDecoration(
                 color: Theme.of(context).appBarTheme.backgroundColor,
               ),
-              child: languageEnglish == true
+              child: languageEnglish
                   ? Container(
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -50,9 +50,94 @@ class CustomDrawer extends StatelessWidget {
                         ],
                       ),
                     )
-                  : Container(
-                      child: Text('Tømrerarbeid  kalkyle'),
-                    ),
+                  : languageNorwegian
+                      ? Container(
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              ClipRRect(
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(15)),
+                                child: Container(
+                                  width: 35,
+                                  height: 35,
+                                  color: Colors.white,
+                                  child: Image.asset("assets/Icon.png"),
+                                ),
+                              ),
+                              Text(
+                                'Tømrerarbeid  kalkyle',
+                                style: TextStyle(color: Colors.white),
+                              ),
+                              IconButton(
+                                onPressed: () {
+                                  Navigator.pop(context);
+                                },
+                                icon: FaIcon(FontAwesomeIcons.arrowDown),
+                                color: Colors.white,
+                              )
+                            ],
+                          ),
+                        )
+                      : languageLithuanian
+                          ? Container(
+                              child: Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  ClipRRect(
+                                    borderRadius:
+                                        BorderRadius.all(Radius.circular(15)),
+                                    child: Container(
+                                      width: 35,
+                                      height: 35,
+                                      color: Colors.white,
+                                      child: Image.asset("assets/Icon.png"),
+                                    ),
+                                  ),
+                                  Text(
+                                    'Dailidžių skaičiavimas',
+                                    style: TextStyle(color: Colors.white),
+                                  ),
+                                  IconButton(
+                                    onPressed: () {
+                                      Navigator.pop(context);
+                                    },
+                                    icon: FaIcon(FontAwesomeIcons.arrowDown),
+                                    color: Colors.white,
+                                  )
+                                ],
+                              ),
+                            )
+                          : Container(
+                              child: Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  ClipRRect(
+                                    borderRadius:
+                                        BorderRadius.all(Radius.circular(15)),
+                                    child: Container(
+                                      width: 35,
+                                      height: 35,
+                                      color: Colors.white,
+                                      child: Image.asset("assets/Icon.png"),
+                                    ),
+                                  ),
+                                  Text(
+                                    'Obliczenia ciesielskie',
+                                    style: TextStyle(color: Colors.white),
+                                  ),
+                                  IconButton(
+                                    onPressed: () {
+                                      Navigator.pop(context);
+                                    },
+                                    icon: FaIcon(FontAwesomeIcons.arrowDown),
+                                    color: Colors.white,
+                                  )
+                                ],
+                              ),
+                            ),
             ),
           ),
           ListTile(
