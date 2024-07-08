@@ -169,7 +169,11 @@ class _FilePickerScreenState extends State<FilePickerScreen> {
                   TextButton(
                     onPressed: () async {
                       FilePickerResult? result =
-                          await FilePicker.platform.pickFiles();
+                          await FilePicker.platform.pickFiles(
+                        type: FileType.custom,
+                        allowedExtensions: ["json"],
+                      );
+
                       if (result != null) {
                         PlatformFile file = result.files.first;
                         final fileName = file.name;
