@@ -1,3 +1,7 @@
+// ignore_for_file: unused_import
+
+import 'dart:io';
+
 import 'package:cost_calculator/constants/empty_models.dart';
 import 'package:cost_calculator/constants/language.dart';
 import 'package:cost_calculator/data/data.dart';
@@ -6,6 +10,7 @@ import 'package:cost_calculator/functions/load_project_from_json.dart';
 import 'package:cost_calculator/functions/norw_load_project_from_json.dart';
 import 'package:cost_calculator/functions/save_project_to_json.dart';
 import 'package:cost_calculator/functions/save_to_json.dart';
+import 'package:cost_calculator/pages/shared/globals/file_picker_variables.dart';
 import 'package:cost_calculator/pages/shared/home_page.dart';
 import 'package:cost_calculator/widgets/custom_drawer.dart';
 import 'package:cost_calculator/widgets/saving_rows/saving_row_exteriorwall.dart';
@@ -15,6 +20,9 @@ import 'package:cost_calculator/widgets/saving_rows/saving_row_parquet_laminate.
 import 'package:cost_calculator/widgets/saving_rows/saving_row_windows_exterior_door.dart';
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
+import 'package:path_provider/path_provider.dart';
+import 'dart:io' as io;
+import 'package:path/path.dart' as path;
 
 class FilePickerScreen extends StatefulWidget {
   const FilePickerScreen({super.key});
@@ -40,7 +48,13 @@ bool? isTotalPriceChecked = false;
 
 class _FilePickerScreenState extends State<FilePickerScreen> {
   TextEditingController savingController = TextEditingController(text: "");
+  List<io.FileSystemEntity> file = [];
   @override
+  void initState() {
+    super.initState();
+    _listofFiles();
+  }
+
   Widget build(BuildContext context) {
     return PopScope(
       canPop: false,
@@ -70,27 +84,44 @@ class _FilePickerScreenState extends State<FilePickerScreen> {
               padding: const EdgeInsets.all(8.0),
               child: Column(
                 children: [
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: SavingRowOuterWall("Exterior walls"),
+                  Container(
+                    child: Column(
+                      children: <Widget>[
+                        // your Content if there
+                        SizedBox(
+                          width: 500,
+                          height: (file.length * 20)
+                              .toDouble(), // Adjust height based on the number of files
+                          child: ListView.builder(
+                              itemCount: file.length,
+                              itemBuilder: (BuildContext context, int index) {
+                                return Text(path.basename(file[index].path));
+                              }),
+                        )
+                      ],
+                    ),
                   ),
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child:
-                        SavingRowWindowExteriorDoor("Windows/exterior doors"),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: SavingRowInnerWall("Interior walls"),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: SavingRowInnerDoor("Interior door"),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: SavingRowParquetLaminate("Parquet and laminate"),
-                  ),
+                  // Padding(
+                  //   padding: const EdgeInsets.all(8.0),
+                  //   child: SavingRowOuterWall("Exterior walls"),
+                  // ),
+                  // Padding(
+                  //   padding: const EdgeInsets.all(8.0),
+                  //   child:
+                  //       SavingRowWindowExteriorDoor("Windows/exterior doors"),
+                  // ),
+                  // Padding(
+                  //   padding: const EdgeInsets.all(8.0),
+                  //   child: SavingRowInnerWall("Interior walls"),
+                  // ),
+                  // Padding(
+                  //   padding: const EdgeInsets.all(8.0),
+                  //   child: SavingRowInnerDoor("Interior door"),
+                  // ),
+                  // Padding(
+                  //   padding: const EdgeInsets.all(8.0),
+                  //   child: SavingRowParquetLaminate("Parquet and laminate"),
+                  // ),
                   TextButton(
                     onPressed: () async {
                       final fileName = await openDialog();
@@ -249,6 +280,31 @@ class _FilePickerScreenState extends State<FilePickerScreen> {
         ),
       ),
     );
+  }
+
+  Future<String> get localPath async {
+    final directory;
+    if (Platform.isIOS) {
+      directory = await getApplicationDocumentsDirectory();
+    } else if (Platform.isAndroid) {
+      directory = Directory('/storage/emulated/0/Download');
+    } else if (Platform.isWindows) {
+      return Directory.current.path;
+    } else {
+      directory = await getApplicationDocumentsDirectory();
+    }
+    return directory.path;
+  }
+
+  void _listofFiles() async {
+    final directory = await localPath;
+    final files = io.Directory(directory)
+        .listSync()
+        .where((file) => file.path.endsWith('.json'))
+        .toList();
+    setState(() {
+      file = files;
+    });
   }
 
   Future<String?> openLoadingDialog() => showDialog<String>(
