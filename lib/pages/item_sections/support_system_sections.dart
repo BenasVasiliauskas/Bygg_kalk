@@ -78,12 +78,52 @@ class _SupportSystemSectionsState extends State<SupportSystemSections> {
               },
               child: Text(
                 languageEnglish
-                    ? "Support system"
+                    ? "New building"
                     : languageLithuanian
-                        ? "Paramos sistemos"
+                        ? "Naujas pastatas"
                         : languageNorwegian
-                            ? "Bæresystemer"
-                            : "Systemy wsparcia",
+                            ? "Ny bygning"
+                            : "ŚNowy budynek",
+              ),
+            ),
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).pushReplacement(
+                  MaterialPageRoute(
+                    builder: (context) {
+                      return SupportSystemScreen();
+                    },
+                  ),
+                );
+              },
+              child: Text(
+                languageEnglish
+                    ? "Reconstruction"
+                    : languageLithuanian
+                        ? "Rekonstrukcija"
+                        : languageNorwegian
+                            ? "Rekonstruksjon"
+                            : "Rekonstrukcja",
+              ),
+            ),
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).pushReplacement(
+                  MaterialPageRoute(
+                    builder: (context) {
+                      return SupportSystemScreen();
+                    },
+                  ),
+                );
+              },
+              child: Text(
+                languageEnglish
+                    ? "Demolition"
+                    : languageLithuanian
+                        ? "Griovimas"
+                        : languageNorwegian
+                            ? "Riving"
+                            : "Rozbiórka",
               ),
             ),
           ],
