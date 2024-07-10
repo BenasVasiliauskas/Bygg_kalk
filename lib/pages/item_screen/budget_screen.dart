@@ -229,23 +229,6 @@ class _BudgetScreenState extends State<BudgetScreen> {
                       cells: [
                         DataCell(
                           Text(
-                            "Time factor",
-                          ),
-                        ),
-                        DataCell(
-                          Text(
-                            "",
-                          ),
-                        ),
-                        DataCell(
-                          Text(timeCoefficient.toString()),
-                        ),
-                      ],
-                    ),
-                    DataRow(
-                      cells: [
-                        DataCell(
-                          Text(
                             "Site setup and operation",
                           ),
                         ),
