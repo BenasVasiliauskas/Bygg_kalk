@@ -252,12 +252,12 @@ class _optionsScreenState extends State<optionsScreen> {
       builder: (BuildContext context) {
         return AlertDialog(
           title: languageEnglish
-              ? Text("Time coefficient")
+              ? Text("Time factor")
               : languageNorwegian
-                  ? Text('Tidskoeffisient')
+                  ? Text('Tidsfaktor')
                   : languageLithuanian
-                      ? Text("Laiko koeficientas")
-                      : Text("Współczynnik czasu"),
+                      ? Text("Laiko faktorius")
+                      : Text("Czynnik czasu"),
           content: Row(
             mainAxisSize: MainAxisSize.min,
             children: [
@@ -424,122 +424,125 @@ class _optionsScreenState extends State<optionsScreen> {
         ),
         body: SingleChildScrollView(
           scrollDirection: Axis.vertical,
-          child: Column(
-            children: [
-              Row(
-                children: [
-                  languageEnglish
-                      ? Text("Primary")
-                      : languageNorwegian
-                          ? Text('Primær')
-                          : languageLithuanian
-                              ? Text("Pirminiai")
-                              : Text("Podstawowy"),
-                ],
-              ),
-              Row(
-                children: [
-                  Icon(FontAwesomeIcons.gear),
-                  TextButton(
-                    child: languageEnglish
-                        ? Text("General")
+          child: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Column(
+              children: [
+                Row(
+                  children: [
+                    languageEnglish
+                        ? Text("Primary")
                         : languageNorwegian
-                            ? Text('Generelt')
+                            ? Text('Primær')
                             : languageLithuanian
-                                ? Text("Bendri")
-                                : Text("Ogólne"),
-                    onPressed: () {
-                      showGeneralDialog(context);
-                    },
-                  )
-                ],
-              ),
-              Row(
-                children: [
-                  Icon(FontAwesomeIcons.folderPlus),
-                  TextButton(
-                    child: languageEnglish
-                        ? Text("Display")
-                        : languageNorwegian
-                            ? Text('Visning')
-                            : languageLithuanian
-                                ? Text("Ekrano")
-                                : Text("Wyświetlacz"),
-                    onPressed: () {
-                      showDisplayDialog(context);
-                    },
-                  )
-                ],
-              ),
-              Row(
-                children: [
-                  Icon(FontAwesomeIcons.boxArchive),
-                  TextButton(
-                    child: languageEnglish
-                        ? Text("Hourly rate")
-                        : languageNorwegian
-                            ? Text('Time pris')
-                            : languageLithuanian
-                                ? Text("Val. įkainis")
-                                : Text("Stawka godzinowa"),
-                    onPressed: () {
-                      showHourlyRateDialog(context);
-                    },
-                  )
-                ],
-              ),
-              Row(
-                children: [
-                  Icon(FontAwesomeIcons.barcode),
-                  TextButton(
-                    child: languageEnglish
-                        ? Text("Surcharge")
-                        : languageNorwegian
-                            ? Text('Påslag')
-                            : languageLithuanian
-                                ? Text("Antkainis")
-                                : Text("Dopłata"),
-                    onPressed: () {
-                      showMarkupDialog(context);
-                    },
-                  )
-                ],
-              ),
-              Row(
-                children: [
-                  Icon(FontAwesomeIcons.fileExcel),
-                  TextButton(
-                    child: languageEnglish
-                        ? Text("Site costs")
-                        : languageNorwegian
-                            ? Text('Rigg og Drift')
-                            : languageLithuanian
-                                ? Text("Statybvietes išlaidos")
-                                : Text("Koszty witryny"),
-                    onPressed: () {
-                      showCostsDialog(context);
-                    },
-                  )
-                ],
-              ),
-              Row(
-                children: [
-                  Icon(FontAwesomeIcons.tag),
-                  TextButton(
-                    child: languageEnglish
-                        ? Text("Time coefficient")
-                        : languageNorwegian
-                            ? Text('Tidskoeffisient')
-                            : languageLithuanian
-                                ? Text("Laiko koeficientas")
-                                : Text("Współczynnik czasu"),
-                    onPressed: () {
-                      showTimeCoefficientDialog(context);
-                    },
-                  )
-                ],
-              ),
-            ],
+                                ? Text("Pirminiai")
+                                : Text("Podstawowy"),
+                  ],
+                ),
+                Row(
+                  children: [
+                    Icon(FontAwesomeIcons.gear),
+                    TextButton(
+                      child: languageEnglish
+                          ? Text("General")
+                          : languageNorwegian
+                              ? Text('Generelt')
+                              : languageLithuanian
+                                  ? Text("Bendri")
+                                  : Text("Ogólne"),
+                      onPressed: () {
+                        showGeneralDialog(context);
+                      },
+                    )
+                  ],
+                ),
+                Row(
+                  children: [
+                    Icon(FontAwesomeIcons.folderPlus),
+                    TextButton(
+                      child: languageEnglish
+                          ? Text("Display")
+                          : languageNorwegian
+                              ? Text('Visning')
+                              : languageLithuanian
+                                  ? Text("Ekrano")
+                                  : Text("Wyświetlacz"),
+                      onPressed: () {
+                        showDisplayDialog(context);
+                      },
+                    )
+                  ],
+                ),
+                Row(
+                  children: [
+                    Icon(FontAwesomeIcons.boxArchive),
+                    TextButton(
+                      child: languageEnglish
+                          ? Text("Hourly rate")
+                          : languageNorwegian
+                              ? Text('Time pris')
+                              : languageLithuanian
+                                  ? Text("Val. įkainis")
+                                  : Text("Stawka godzinowa"),
+                      onPressed: () {
+                        showHourlyRateDialog(context);
+                      },
+                    )
+                  ],
+                ),
+                Row(
+                  children: [
+                    Icon(FontAwesomeIcons.barcode),
+                    TextButton(
+                      child: languageEnglish
+                          ? Text("Surcharge")
+                          : languageNorwegian
+                              ? Text('Påslag')
+                              : languageLithuanian
+                                  ? Text("Antkainis")
+                                  : Text("Dopłata"),
+                      onPressed: () {
+                        showMarkupDialog(context);
+                      },
+                    )
+                  ],
+                ),
+                Row(
+                  children: [
+                    Icon(FontAwesomeIcons.fileExcel),
+                    TextButton(
+                      child: languageEnglish
+                          ? Text("Site costs")
+                          : languageNorwegian
+                              ? Text('Rigg og Drift')
+                              : languageLithuanian
+                                  ? Text("Statybvietes išlaidos")
+                                  : Text("Koszty witryny"),
+                      onPressed: () {
+                        showCostsDialog(context);
+                      },
+                    )
+                  ],
+                ),
+                Row(
+                  children: [
+                    Icon(FontAwesomeIcons.tag),
+                    TextButton(
+                      child: languageEnglish
+                          ? Text("Time coefficient")
+                          : languageNorwegian
+                              ? Text('Tidskoeffisient')
+                              : languageLithuanian
+                                  ? Text("Laiko koeficientas")
+                                  : Text("Współczynnik czasu"),
+                      onPressed: () {
+                        showTimeCoefficientDialog(context);
+                      },
+                    )
+                  ],
+                ),
+              ],
+            ),
           ),
         ),
       ),
