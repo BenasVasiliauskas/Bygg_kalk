@@ -37,9 +37,6 @@ Future<void> choose() async {
 
 String selectedName = "";
 int indexOfName = -1;
-bool? isDescriptionChecked = false;
-bool? isUnitsChecked = false;
-bool? isQuantityChecked = false;
 bool? isHoursChecked = false;
 bool? isTotalHoursChecked = false;
 bool? isJobCostChecked = false;
@@ -190,42 +187,6 @@ class _SavingRowWindowExteriorDoor extends State<SavingRowWindowExteriorDoor> {
                   ),
                   CheckboxListTile(
                       title: Text(languageEnglish
-                          ? "Save field called: Description"
-                          : "Lagre felt kalt: Beskrivelse"),
-                      value: isDescriptionChecked,
-                      onChanged: (bool? value) {
-                        setState(() {
-                          isDescriptionChecked = value;
-                        });
-                        Navigator.pop(context);
-                        openExcelDialog();
-                      }),
-                  CheckboxListTile(
-                      title: Text(languageEnglish
-                          ? "Save field called: Units"
-                          : "Lagre felt kalt: Enheter"),
-                      value: isUnitsChecked,
-                      onChanged: (bool? value) {
-                        setState(() {
-                          isUnitsChecked = value;
-                        });
-                        Navigator.pop(context);
-                        openExcelDialog();
-                      }),
-                  CheckboxListTile(
-                      title: Text(languageEnglish
-                          ? "Save field called:  Quantity"
-                          : "Lagre felt kalt: Mengde"),
-                      value: isQuantityChecked,
-                      onChanged: (bool? value) {
-                        setState(() {
-                          isQuantityChecked = value;
-                        });
-                        Navigator.pop(context);
-                        openExcelDialog();
-                      }),
-                  CheckboxListTile(
-                      title: Text(languageEnglish
                           ? "Save field called: Hours"
                           : "Lagre felt kalt: Timer"),
                       value: isHoursChecked,
@@ -315,24 +276,11 @@ class _SavingRowWindowExteriorDoor extends State<SavingRowWindowExteriorDoor> {
                     generateWindowsOuterDoorExcelDocument(
                       savingController.text,
                       //
-                      isDescriptionChecked != null &&
-                              isDescriptionChecked == true
-                          ? windowsExteriorDoors[indexOfName].description
-                          //
-                          : generateEmptyStringList(
-                              windowsExteriorDoors[indexOfName].description),
+                      windowsExteriorDoors[indexOfName].description,
                       //
-                      isUnitsChecked != null && isUnitsChecked == true
-                          ? windowsExteriorDoors[indexOfName].unit
-                          //
-                          : generateEmptyStringList(
-                              windowsExteriorDoors[indexOfName].unit),
+                      windowsExteriorDoors[indexOfName].unit,
                       //
-                      isQuantityChecked != null && isQuantityChecked == true
-                          ? windowsExteriorDoors[indexOfName].quantity
-                          //
-                          : generateEmptyList(
-                              windowsExteriorDoors[indexOfName].quantity),
+                      windowsExteriorDoors[indexOfName].quantity,
                       //
                       isHoursChecked != null && isHoursChecked == true
                           ? windowsExteriorDoors[indexOfName].laborHours1

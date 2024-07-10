@@ -78,12 +78,52 @@ class _DeckSectionsState extends State<DeckSections> {
               },
               child: Text(
                 languageEnglish
-                    ? "Deck"
+                    ? "New building"
                     : languageLithuanian
-                        ? "Denis"
+                        ? "Naujas pastatas"
                         : languageNorwegian
-                            ? "Dekk"
-                            : "Pokład",
+                            ? "Ny bygning"
+                            : "ŚNowy budynek",
+              ),
+            ),
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).pushReplacement(
+                  MaterialPageRoute(
+                    builder: (context) {
+                      return DeckScreen();
+                    },
+                  ),
+                );
+              },
+              child: Text(
+                languageEnglish
+                    ? "Reconstruction"
+                    : languageLithuanian
+                        ? "Rekonstrukcija"
+                        : languageNorwegian
+                            ? "Rekonstruksjon"
+                            : "Rekonstrukcja",
+              ),
+            ),
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).pushReplacement(
+                  MaterialPageRoute(
+                    builder: (context) {
+                      return DeckScreen();
+                    },
+                  ),
+                );
+              },
+              child: Text(
+                languageEnglish
+                    ? "Demolition"
+                    : languageLithuanian
+                        ? "Griovimas"
+                        : languageNorwegian
+                            ? "Riving"
+                            : "Rozbiórka",
               ),
             ),
           ],
