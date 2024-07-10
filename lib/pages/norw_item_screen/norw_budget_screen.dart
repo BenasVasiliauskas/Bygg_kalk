@@ -235,23 +235,6 @@ class _NorwBudgetScreenState extends State<NorwBudgetScreen> {
                       cells: [
                         DataCell(
                           Text(
-                            "Tidsfaktor",
-                          ),
-                        ),
-                        DataCell(
-                          Text(
-                            "",
-                          ),
-                        ),
-                        DataCell(
-                          Text(timeCoefficient.toString()),
-                        ),
-                      ],
-                    ),
-                    DataRow(
-                      cells: [
-                        DataCell(
-                          Text(
                             "Rigg og drift av byggeplass",
                           ),
                         ),
