@@ -36,9 +36,7 @@ Future<void> choose() async {
 
 String selectedName = "";
 int indexOfName = -1;
-bool? isDescriptionChecked = false;
-bool? isUnitsChecked = false;
-bool? isQuantityChecked = false;
+
 bool? isHoursChecked = false;
 bool? isTotalHoursChecked = false;
 bool? isJobCostChecked = false;
@@ -184,42 +182,6 @@ class _SavingRowInnerDoor extends State<SavingRowInnerDoor> {
                   ),
                   CheckboxListTile(
                       title: Text(languageEnglish
-                          ? "Save field called: Description"
-                          : "Lagre felt kalt: Beskrivelse"),
-                      value: isDescriptionChecked,
-                      onChanged: (bool? value) {
-                        setState(() {
-                          isDescriptionChecked = value;
-                        });
-                        Navigator.pop(context);
-                        openExcelDialog();
-                      }),
-                  CheckboxListTile(
-                      title: Text(languageEnglish
-                          ? "Save field called: Units"
-                          : "Lagre felt kalt: Enheter"),
-                      value: isUnitsChecked,
-                      onChanged: (bool? value) {
-                        setState(() {
-                          isUnitsChecked = value;
-                        });
-                        Navigator.pop(context);
-                        openExcelDialog();
-                      }),
-                  CheckboxListTile(
-                      title: Text(languageEnglish
-                          ? "Save field called: Quantity"
-                          : "Lagre felt kalt: Mengde"),
-                      value: isQuantityChecked,
-                      onChanged: (bool? value) {
-                        setState(() {
-                          isQuantityChecked = value;
-                        });
-                        Navigator.pop(context);
-                        openExcelDialog();
-                      }),
-                  CheckboxListTile(
-                      title: Text(languageEnglish
                           ? "Save field called: Hours"
                           : "Lagre felt kalt: Timer"),
                       value: isHoursChecked,
@@ -309,23 +271,11 @@ class _SavingRowInnerDoor extends State<SavingRowInnerDoor> {
                     generateInnerDoorExcelDocument(
                       savingController.text,
                       //
-                      isDescriptionChecked != null &&
-                              isDescriptionChecked == true
-                          ? innerDoor[indexOfName].description
-                          //
-                          : generateEmptyStringList(
-                              innerDoor[indexOfName].description),
+                      innerDoor[indexOfName].description,
                       //
-                      isUnitsChecked != null && isUnitsChecked == true
-                          ? innerDoor[indexOfName].unit
-                          //
-                          : generateEmptyStringList(
-                              innerDoor[indexOfName].unit),
+                      innerDoor[indexOfName].unit,
                       //
-                      isQuantityChecked != null && isQuantityChecked == true
-                          ? innerDoor[indexOfName].quantity
-                          //
-                          : generateEmptyList(innerDoor[indexOfName].quantity),
+                      innerDoor[indexOfName].quantity,
                       //
                       isHoursChecked != null && isHoursChecked == true
                           ? innerDoor[indexOfName].laborHours1
