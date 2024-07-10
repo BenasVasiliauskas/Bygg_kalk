@@ -36,9 +36,7 @@ Future<void> choose() async {
 
 String selectedName = "";
 int indexOfName = -1;
-bool? isDescriptionChecked = false;
-bool? isUnitsChecked = false;
-bool? isQuantityChecked = false;
+
 bool? isHoursChecked = false;
 bool? isTotalHoursChecked = false;
 bool? isJobCostChecked = false;
@@ -183,42 +181,6 @@ class _SavingRowParquetLaminate extends State<SavingRowParquetLaminate> {
                   ),
                   CheckboxListTile(
                       title: Text(languageEnglish
-                          ? "Save field called: Description"
-                          : "Lagre felt kalt: Beskrivelse"),
-                      value: isDescriptionChecked,
-                      onChanged: (bool? value) {
-                        setState(() {
-                          isDescriptionChecked = value;
-                        });
-                        Navigator.pop(context);
-                        openExcelDialog();
-                      }),
-                  CheckboxListTile(
-                      title: Text(languageEnglish
-                          ? "Save field called: Units"
-                          : "Lagre felt kalt: Enheter"),
-                      value: isUnitsChecked,
-                      onChanged: (bool? value) {
-                        setState(() {
-                          isUnitsChecked = value;
-                        });
-                        Navigator.pop(context);
-                        openExcelDialog();
-                      }),
-                  CheckboxListTile(
-                      title: Text(languageEnglish
-                          ? "Save field called: Quantity"
-                          : "Lagre felt kalt: Antall"),
-                      value: isQuantityChecked,
-                      onChanged: (bool? value) {
-                        setState(() {
-                          isQuantityChecked = value;
-                        });
-                        Navigator.pop(context);
-                        openExcelDialog();
-                      }),
-                  CheckboxListTile(
-                      title: Text(languageEnglish
                           ? "Save field called: Hours"
                           : "Lagre felt kalt: Timer"),
                       value: isHoursChecked,
@@ -308,24 +270,13 @@ class _SavingRowParquetLaminate extends State<SavingRowParquetLaminate> {
                     generateParquetLaminateExcelDocument(
                       savingController.text,
                       //
-                      isDescriptionChecked != null &&
-                              isDescriptionChecked == true
-                          ? parquetAndLaminate[indexOfName].description
-                          //
-                          : generateEmptyStringList(
-                              parquetAndLaminate[indexOfName].description),
+                      parquetAndLaminate[indexOfName].description,
                       //
-                      isUnitsChecked != null && isUnitsChecked == true
-                          ? parquetAndLaminate[indexOfName].unit
-                          //
-                          : generateEmptyStringList(
-                              parquetAndLaminate[indexOfName].unit),
+                      parquetAndLaminate[indexOfName].unit,
                       //
-                      isQuantityChecked != null && isQuantityChecked == true
-                          ? parquetAndLaminate[indexOfName].quantity
-                          //
-                          : generateEmptyList(
-                              parquetAndLaminate[indexOfName].quantity),
+                      parquetAndLaminate[indexOfName].quantity
+                      //
+                      ,
                       //
                       isHoursChecked != null && isHoursChecked == true
                           ? parquetAndLaminate[indexOfName].laborHours1
