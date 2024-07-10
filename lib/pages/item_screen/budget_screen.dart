@@ -1,5 +1,9 @@
+import 'package:cost_calculator/constants/empty_models.dart';
+import 'package:cost_calculator/functions/load_project_from_json.dart';
+import 'package:cost_calculator/functions/save_to_json.dart';
 import 'package:cost_calculator/pages/shared/globals/calculation_variables.dart';
 import 'package:cost_calculator/pages/shared/home_page.dart';
+import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:cost_calculator/constants/budget_constants.dart';
 import 'package:cost_calculator/widgets/custom_drawer.dart';
@@ -32,7 +36,48 @@ class _BudgetScreenState extends State<BudgetScreen> {
       },
       child: Scaffold(
         appBar: AppBar(
-          title: Text('Budget Screen'),
+          title: Row(
+            children: [
+              Text("Budget screen"),
+              Padding(
+                padding: const EdgeInsets.all(12.0),
+                child: TextButton(
+                  onPressed: () async {
+                    FilePickerResult? result =
+                        await FilePicker.platform.pickFiles(
+                      type: FileType.custom,
+                      allowedExtensions: ["json"],
+                    );
+
+                    if (result != null) {
+                      PlatformFile file = result.files.first;
+                      final fileName = file.name;
+
+                      var data = await readJsonFileSelected(fileName);
+                      await loadProject(fileName, data, emptyDeckModel);
+                      await loadProject(fileName, data, emptyFlooringModel);
+                      await loadProject(fileName, data, emptyInnerDoorModel);
+                      await loadProject(fileName, data, emptyInnerStairsModel);
+                      await loadProject(fileName, data, emptyInnerWallModel);
+                      await loadProject(fileName, data, emptyOuterRoofModel);
+                      await loadProject(fileName, data, emptyOuterWallModel);
+                      await loadProject(
+                          fileName, data, emptyParquetAndLaminateModel);
+                      await loadProject(fileName, data, emptyScaffoldingModel);
+                      await loadProject(
+                          fileName, data, emptySupportSystemModel);
+                      await loadProject(fileName, data, emptyTerraceModel);
+                      await loadProject(
+                          fileName, data, emptyWindowsExteriorDoorsModel);
+                    } else {
+                      // User canceled the picker
+                    }
+                  },
+                  child: Text("Load a project"),
+                ),
+              ),
+            ],
+          ),
         ),
         drawer: CustomDrawer(),
         body: SingleChildScrollView(

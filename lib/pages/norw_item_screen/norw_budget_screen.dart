@@ -1,5 +1,9 @@
+import 'package:cost_calculator/constants/empty_models.dart';
+import 'package:cost_calculator/functions/norw_load_project_from_json.dart';
+import 'package:cost_calculator/functions/save_to_json.dart';
 import 'package:cost_calculator/pages/shared/globals/calculation_variables.dart';
 import 'package:cost_calculator/pages/shared/home_page.dart';
+import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:cost_calculator/constants/norw_budget_constants.dart';
 import 'package:cost_calculator/widgets/custom_drawer.dart';
@@ -32,7 +36,54 @@ class _NorwBudgetScreenState extends State<NorwBudgetScreen> {
       },
       child: Scaffold(
         appBar: AppBar(
-          title: Text('Budsjettskjermen'),
+          title: Row(
+            children: [
+              Text('Budsjettskjermen'),
+              Padding(
+                padding: const EdgeInsets.all(12.0),
+                child: TextButton(
+                  onPressed: () async {
+                    FilePickerResult? result =
+                        await FilePicker.platform.pickFiles(
+                      type: FileType.custom,
+                      allowedExtensions: ["json"],
+                    );
+                    if (result != null) {
+                      PlatformFile file = result.files.first;
+                      final fileName = file.name;
+
+                      var data = await readJsonFileSelected(fileName);
+
+                      await norwLoadProject(fileName, data, emptyDeckModel);
+                      await norwLoadProject(fileName, data, emptyFlooringModel);
+                      await norwLoadProject(
+                          fileName, data, emptyInnerDoorModel);
+                      await norwLoadProject(
+                          fileName, data, emptyInnerStairsModel);
+                      await norwLoadProject(
+                          fileName, data, emptyInnerWallModel);
+                      await norwLoadProject(
+                          fileName, data, emptyOuterRoofModel);
+                      await norwLoadProject(
+                          fileName, data, emptyOuterWallModel);
+                      await norwLoadProject(
+                          fileName, data, emptyParquetAndLaminateModel);
+                      await norwLoadProject(
+                          fileName, data, emptyScaffoldingModel);
+                      await norwLoadProject(
+                          fileName, data, emptySupportSystemModel);
+                      await norwLoadProject(fileName, data, emptyTerraceModel);
+                      await norwLoadProject(
+                          fileName, data, emptyWindowsExteriorDoorsModel);
+                    } else {
+                      // User canceled the picker
+                    }
+                  },
+                  child: Text("Last inn et prosjekt"),
+                ),
+              ),
+            ],
+          ),
         ),
         drawer: CustomDrawer(),
         body: SingleChildScrollView(
