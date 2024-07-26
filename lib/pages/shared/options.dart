@@ -428,7 +428,7 @@ class _optionsScreenState extends State<optionsScreen> {
             padding: const EdgeInsets.all(8.0),
             child: Column(
               children: [
-                Row(
+                Row(  
                   children: [
                     languageEnglish
                         ? Text("Primary")

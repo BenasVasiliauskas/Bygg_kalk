@@ -1,7 +1,9 @@
 import 'package:cost_calculator/models/deck_data_model.dart';
 import 'package:cost_calculator/models/flooring_data_model.dart';
 import 'package:cost_calculator/models/hull_roofing_data_model.dart';
+import 'package:cost_calculator/models/inner_door_data_model.dart';
 import 'package:cost_calculator/models/inner_stairs_model.dart';
+import 'package:cost_calculator/models/inner_wall_data_model.dart';
 import 'package:cost_calculator/models/outer_roof_model.dart';
 import 'package:cost_calculator/models/outer_wall_data_model.dart';
 import 'package:cost_calculator/models/parquet_laminate_data_model.dart';
@@ -11,27 +13,23 @@ import 'package:cost_calculator/models/terrace_model.dart';
 import 'package:cost_calculator/models/waste_data_model.dart';
 import 'package:cost_calculator/models/windows_exterior_doors_model.dart';
 
-import '../models/inner_door_data_model.dart';
-import '../models/inner_wall_data_model.dart';
-
-final norwInnerWallData = [
-  //
+final polInnerWallData = [
   InnerWallModel(
-    name: "Bindingsverk av tre 48x98, dobbel lydvegg, dobbel gips",
+    name: "Drewniana rama 48x98, podwójna ściana akustyczna, podwójny tynk",
     description: [
-      "Gulvlist furu, ferdig malt",
-      "Taklist furu, ferdig malt",
-      "Fuging v/ lydvegg/tak m/fugem.",
-      "Gipsplate innvendig kledning, dobbel gips",
-      "Enkelt bindingsverk heltre u/spikerslag",
-      "Mineralull A-plate",
-      "Enkelt bindingsverk heltre u/spikerslag",
-      "Mineralull A-plate",
-      "Fuging v/ lydvegg/tak m/fugem.",
-      "Gipsplate innvendig kledning, dobbel gips",
-      "Sparkling strimmel, flekksp.1, skjøtsp. 2, helsp.1, grunning. 2 strøk maling",
-      "Taklist furu, ferdig malt",
-      "Gulvlist furu, ferdig malt",
+      "Listwa przypodłogowa sosnowa, wstępnie malowana",
+      "Listwa sufitowa sosnowa, wstępnie malowana",
+      "Fugowanie w ścianie akustycznej / suficie za pomocą fugi",
+      "Okładzina wewnętrzna z płyt gipsowo-kartonowych, podwójny tynk",
+      "Prosta rama drewniana, lite drewno z gwoździami",
+      "Płyta A z wełny mineralnej",
+      "Pojedyncza rama drewniana, lite drewno, bez gwoździ",
+      "Płyta A z wełny mineralnej",
+      "Łączenie w ścianie akustycznej/suficie z membraną łączącą",
+      "Okładzina wewnętrzna z płyt gipsowo-kartonowych, podwójny tynk",
+      "Błyszcząca listwa, flekksp.1, skjøtsp. 2, helsp.1, podkład. 2 warstwy farby",
+      "Listwa sufitowa sosnowa, wstępnie malowana",
+      "Listwa przypodłogowa sosnowa, wstępnie malowana",
     ],
     unit: [
       "lm",
@@ -169,19 +167,18 @@ final norwInnerWallData = [
       0.00,
     ],
   ),
-
   //
   InnerWallModel(
-    name: "Bindingsverk av tre 48x98, isolert, glattpanel",
+    name: "Kratownice drewniane 48x98, izolowane, panel gładki",
     description: [
-      "Gulvlist furu, ferdig malt",
-      "Taklist furu, ferdig malt",
-      "Glattpanel gran, stående",
-      "Mineralull A-plate",
-      "Enkelt bindingsverk heltre m/3 spiker",
-      "Glattpanel gran, stående",
-      "Taklist furu, ferdig malt",
-      "Gulvlist furu, ferdig malt",
+      "Listwa przypodłogowa sosnowa, wstępnie malowana",
+      "Listwa sufitowa sosnowa, wstępnie malowana",
+      "Gładka boazeria świerkowa, pionowa",
+      "Płyta A z wełny mineralnej",
+      "Prosta rama drewniana z litego drewna z 3 gwoździami",
+      "Gładka boazeria świerkowa, pionowa",
+      "Listwa sufitowa sosnowa, wstępnie malowana",
+      "Listwa przypodłogowa sosnowa, wstępnie malowana",
     ],
     unit: [
       "lm",
@@ -274,21 +271,20 @@ final norwInnerWallData = [
       0.00,
     ],
   ),
-
   //
   InnerWallModel(
-    name: "Bindingsverk av tre 48x98, kappet h=2400, gips",
+    name: "Rama drewniana 48x98, cięcie h=2400, płyta gipsowo-kartonowa",
     description: [
-      "Gulvlist furu, ferdig malt",
-      "Taklist furu, ferdig malt",
-      "Sparkling strimmel, flekksp.1, skjøtsp. 2, helsp.1, grunning. 2 strøk maling",
-      "Gipsplate innvendig kledning, enkel gips",
-      "Mineralull A-plate",
-      "Enkelt bindingsverk heltre precut h=2,4m, 3 svill",
-      "Gipsplate innvendig kledning, enkel gips",
-      "Sparkling strimmel, flekksp.1, skjøtsp. 2, helsp.1, grunning. 2 strøk maling",
-      "Taklist furu, ferdig malt",
-      "Gulvlist furu, ferdig malt",
+      "Listwa przypodłogowa sosnowa, wstępnie malowana",
+      "Listwa sufitowa sosnowa, wstępnie malowana",
+      "Listwa błyszcząca, bejca sp. 1, fuga sp. 2, pełna sp. 1, podkład. 2 warstwy farby",
+      "Okładzina wewnętrzna z płyt gipsowo-kartonowych, tynk zwykły",
+      "Płyta A z wełny mineralnej",
+      "Prosta rama drewniana z litego drewna wstępnie przyciętego h=2,4 m, 3 podkłady",
+      "Okładzina wewnętrzna z płyt gipsowo-kartonowych, tynk zwykły",
+      "Błyszcząca listwa, flekksp.1, skjøtsp. 2, helsp.1, podkład. 2 warstwy farby",
+      "Listwa sufitowa sosnowa, wstępnie malowana",
+      "Listwa przypodłogowa sosnowa, wstępnie malowana",
     ],
     unit: [
       "lm",
@@ -399,23 +395,22 @@ final norwInnerWallData = [
       0.00,
     ],
   ),
-
   //
   InnerWallModel(
-    name: "Bindingsverk av stål 2x75mm, dobbelt, isolert, gips",
+    name: "Kratownica stalowa 2x75mm, podwójna, izolowana, gipsowa",
     description: [
-      "Gulvlist furu, ferdig malt",
-      "aklist furu, ferdig malt",
-      "Sparkel fermacell gipsplater",
-      "/Fuging v/ lydvegg/tak m/fugem.",
-      "Gipsplate innvendig kledning, enkel gips",
-      "Dobbelt bindingsverk, stål c/c 60",
-      "Mineralull i stålstender",
-      "Gipsplate innvendig kledning, enkel gips",
-      "Fuging v/ lydvegg/tak m/fugem.",
-      "Sparkel fermacell gipsplater",
-      "Taklist furu, ferdig malt",
-      "Gulvlist furu, ferdig malt",
+      "Listwa przypodłogowa sosnowa, wstępnie malowana",
+      "Listwa przypodłogowa sosnowa, wstępnie malowana",
+      "Płyta gipsowo-kartonowa fermacell",
+      "Łączenie przy ścianie dźwiękochłonnej/suficie z fugą",
+      "Okładzina wewnętrzna z płyt gipsowo-kartonowych, tynk zwykły",
+      "Podwójna rama drewniana, stal c/c 60",
+      "Wełna mineralna w stalowych słupkach",
+      "Okładzina wewnętrzna z płyt gipsowo-kartonowych, tynk pojedynczy",
+      "Łączenie w ścianie dźwiękochłonnej/suficie z membraną łączącą",
+      "Szpachlowanie płyt gipsowo-kartonowych fermacell",
+      "Listwy sufitowe sosnowe, wstępnie malowane",
+      "Listwa podłogowa sosnowa, wstępnie malowana",
     ],
     unit: [
       "lm",
@@ -544,23 +539,22 @@ final norwInnerWallData = [
       0.00,
     ],
   ),
-
   //
   InnerWallModel(
-    name: "Bindingsverk av stål 2x100mm, dobbelt, isolert, gips",
+    name: "Kratownica stalowa 2x100mm, podwójna, izolowana, gipsowa",
     description: [
-      "Gulvlist furu, ferdig malt",
-      "Taklist furu, ferdig malt",
-      "Sparkling strimmel, flekksp.1, skjøtsp. 2, helsp.1, grunning. 2 strøk maling",
-      "Fuging v/ lydvegg/tak m/fugem.",
-      "Gipsplate innvendig kledning, enkel gips",
-      "Dobbelt bindingsverk, stål c/c 60",
-      "Mineralull i stålstender",
-      "Gipsplate innvendig kledning, enkel gips",
-      "Fuging v/ lydvegg/tak m/fugem.",
-      "Sparkling strimmel, flekksp.1, skjøtsp. 2, helsp.1, grunning. 2 strøk maling",
-      "Taklist furu, ferdig malt",
-      "Gulvlist furu, ferdig malt",
+      "Listwa przypodłogowa sosnowa, wstępnie malowana",
+      "Listwa sufitowa sosnowa, wstępnie malowana",
+      "Listwa błyszcząca, bejca sp. 1, fuga sp. 2, pełna sp. 1, podkład. 2 warstwy farby",
+      "Spoinowanie ściany akustycznej/sufitu fugą",
+      "Okładzina wewnętrzna z płyt gipsowo-kartonowych, tynk zwykły",
+      "Podwójna rama drewniana, stal c/c 60",
+      "Wełna mineralna w stalowych słupkach",
+      "Okładzina wewnętrzna z płyt gipsowo-kartonowych, tynk pojedynczy",
+      "Łączenie w ścianie dźwiękochłonnej/suficie z membraną łączącą",
+      "Błyszcząca listwa, flekksp.1, skjøtsp. 2, helsp.1, podkład. 2 warstwy farby",
+      "Listwa sufitowa sosnowa, wstępnie malowana",
+      "Listwa przypodłogowa sosnowa, wstępnie malowana",
     ],
     unit: [
       "lm",
@@ -689,23 +683,22 @@ final norwInnerWallData = [
       0.00,
     ],
   ),
-
   //
   InnerWallModel(
-    name: "Bindingsverk av stål 2x75mm, dobbelt, isolert, dobbel gips",
+    name: "Kratownica stalowa 2x75mm, podwójna, izolowana, podwójny tynk",
     description: [
-      "Gulvlist furu, ferdig malt",
-      "Taklist furu, ferdig malt",
-      "Sparkling strimmel, flekksp.1, skjøtsp. 2, helsp.1, grunning. 2 strøk maling",
-      "Fuging v/ lydvegg/tak m/fugem.",
-      "Gipsplate innvendig kledning, dobbel gips",
-      "Dobbelt bindingsverk, stål c/c 60",
-      "Mineralull i stålstender",
-      "Gipsplate innvendig kledning, dobbel gips",
-      "Fuging v/ lydvegg/tak m/fugem.",
-      "Sparkling strimmel, flekksp.1, skjøtsp. 2, helsp.1, grunning. 2 strøk maling",
-      "Taklist furu, ferdig malt",
-      "Gulvlist furu, ferdig malt",
+      "Listwa przypodłogowa sosnowa, wstępnie malowana",
+      "Listwa sufitowa sosnowa, wstępnie malowana",
+      "Listwa błyszcząca, bejca sp. 1, fuga sp. 2, pełna sp. 1, podkład. 2 warstwy farby",
+      "Spoinowanie ściany akustycznej/sufitu fugą",
+      "Okładzina wewnętrzna z płyt gipsowo-kartonowych, podwójny tynk",
+      "Podwójna rama drewniana, stal c/c 60",
+      "Wełna mineralna w stalowych słupkach",
+      "Okładzina wewnętrzna z płyt gipsowo-kartonowych, podwójny tynk",
+      "Łączenie w ścianie dźwiękochłonnej/suficie z membraną łączącą",
+      "Błyszcząca listwa, flekksp.1, skjøtsp. 2, helsp.1, podkład. 2 warstwy farby",
+      "Listwa sufitowa sosnowa, wstępnie malowana",
+      "Listwa przypodłogowa sosnowa, wstępnie malowana",
     ],
     unit: [
       "lm",
@@ -836,120 +829,122 @@ final norwInnerWallData = [
   ),
 ];
 
-final norwSupportSystem = [
+final polSupportSystem = [
   SupportSystemModel(
-      name: "Bjelker og søyler, limtre / stål - Enebolig",
-      description: [
-        "Limtrebjelke 115x315",
-        "Limtrebjelke 90x225",
-        "Limtrebjelke impr 90x300",
-        "Limtrebjelke impr 90x270",
-        "Limtre stolpe impr 90x90",
-        "Limtre stolpe 115x115",
-        "Limtre stolpe 90x90",
-        "Stålbjelke, HEB 220 (73,63 kg/lm) 220 mm",
-        "Stålsøyle HUP (14,63 kg/lm) 100x100x5",
-      ],
-      unit: [
-        "lm",
-        "lm",
-        "lm",
-        "lm",
-        "lm",
-        "lm",
-        "lm",
-        "kg",
-        "kg",
-      ],
-      quantity: [
-        0.00,
-        0.00,
-        0.00,
-        0.00,
-        0.00,
-        0.00,
-        0.00,
-        0.00,
-        0.00,
-      ],
-      laborHours1: [
-        0.40,
-        0.40,
-        0.40,
-        0.40,
-        0.17,
-        0.17,
-        0.17,
-        0.02,
-        0.02,
-      ],
-      laborHours2: [
-        0.00,
-        0.00,
-        0.00,
-        0.00,
-        0.00,
-        0.00,
-        0.00,
-        0.00,
-        0.00,
-      ],
-      laborCost: [
-        0.00,
-        0.00,
-        0.00,
-        0.00,
-        0.00,
-        0.00,
-        0.00,
-        0.00,
-        0.00,
-      ],
-      material: [
-        841.76,
-        503.34,
-        839.34,
-        538.54,
-        350.56,
-        358.56,
-        230.56,
-        27.84,
-        12.50,
-      ],
-      materials: [
-        0.00,
-        0.00,
-        0.00,
-        0.00,
-        0.00,
-        0.00,
-        0.00,
-        0.00,
-        0.00,
-      ],
-      totalPrice: [
-        0.00,
-        0.00,
-        0.00,
-        0.00,
-        0.00,
-        0.00,
-        0.00,
-        0.00,
-        0.00,
-      ])
+    name: "Belki i słupy, drewno klejone / stal - Dom wolnostojący",
+    description: [
+      "Belka z drewna klejonego 115x315",
+      "Belka z drewna klejonego 90x225",
+      "Belka z drewna klejonego impr 90x300",
+      "Belka z drewna klejonego impr 90x270",
+      "Słupek z drewna klejonego impr 90x90",
+      "Słupek z drewna klejonego 115x115",
+      "Słupek z drewna klejonego 90x90",
+      "Belka stalowa HEB 220 (73,63 kg/lm) 220 mm",
+      "Słup stalowy HUP (14,63 kg/lm) 100x100x5",
+    ],
+    unit: [
+      "lm",
+      "lm",
+      "lm",
+      "lm",
+      "lm",
+      "lm",
+      "lm",
+      "kg",
+      "kg",
+    ],
+    quantity: [
+      0.00,
+      0.00,
+      0.00,
+      0.00,
+      0.00,
+      0.00,
+      0.00,
+      0.00,
+      0.00,
+    ],
+    laborHours1: [
+      0.40,
+      0.40,
+      0.40,
+      0.40,
+      0.17,
+      0.17,
+      0.17,
+      0.02,
+      0.02,
+    ],
+    laborHours2: [
+      0.00,
+      0.00,
+      0.00,
+      0.00,
+      0.00,
+      0.00,
+      0.00,
+      0.00,
+      0.00,
+    ],
+    laborCost: [
+      0.00,
+      0.00,
+      0.00,
+      0.00,
+      0.00,
+      0.00,
+      0.00,
+      0.00,
+      0.00,
+    ],
+    material: [
+      841.76,
+      503.34,
+      839.34,
+      538.54,
+      350.56,
+      358.56,
+      230.56,
+      27.84,
+      12.50,
+    ],
+    materials: [
+      0.00,
+      0.00,
+      0.00,
+      0.00,
+      0.00,
+      0.00,
+      0.00,
+      0.00,
+      0.00,
+    ],
+    totalPrice: [
+      0.00,
+      0.00,
+      0.00,
+      0.00,
+      0.00,
+      0.00,
+      0.00,
+      0.00,
+      0.00,
+    ],
+  )
 ];
 
-final norwFlooringData = [
+final polFlooringData = [
   FlooringModel(
-    name: "Våtromsvegg m/panel - våtromsfliser + fliser 25x33",
+    name:
+        "Ściana w pomieszczeniu mokrym z panelami - płytki w pomieszczeniu mokrym + płytki 25x33",
     description: [
-      "Våtromsfliser Litex på vegg",
-      "Fliser, keramikk på vegg, hvit",
-      "Spikerslag for membran i våtrom",
-      "Bunnpanel, gran, skrudd",
-      "Fylling med fugemasse i hjørner",
-      "Smøremembran for tetting av paneler, vegg",
+      "Płytki Litex do pomieszczeń mokrych na ścianę",
+      "Płytki ceramiczne na ścianę, białe",
+      "Przebijak do gwoździ do membran w pomieszczeniach mokrych",
+      "Panel dolny, świerkowy, przykręcany",
+      "Wypełnianie fugą w narożnikach",
+      "Membrana smarująca do uszczelniania paneli ściennych",
     ],
     unit: [
       "m²",
@@ -1018,15 +1013,15 @@ final norwFlooringData = [
   )
 ];
 
-final norwDeckData = [
+final polDeckData = [
   DeckModel(
-    name: "Gulv på grunn, plasstøpt, isolert, påstøp",
+    name: "Podłoga na gruncie, wylewana, izolowana, wylewana",
     description: [
-      "Avtrekking og stålgl. av betongoverflate",
-      "Armering med nett, K 131 (2,1 kg pr m²)",
-      "Betong B30 i gulv på grunn",
-      "Radonstopp på grunn",
-      "Polystyren m/fals, EPS, 150 kPa",
+      "Zdzieranie i stalowe wygładzanie powierzchni betonu",
+      "Zbrojenie siatką, K 131 (2,1 kg na m²)",
+      "Beton B30 w podłodze na gruncie",
+      "Radon stop na ziemi",
+      "Styropian ze szwem, EPS, 150 kPa"
     ],
     unit: [
       "m²",
@@ -1087,18 +1082,18 @@ final norwDeckData = [
   )
 ];
 
-final norwInnerDoor = [
+final polInnerDoor = [
   InnerDoorModel(
-    name: "Innerdør, furu 9x21",
+    name: "Drzwi wewnętrzne, sosna 9x21",
     description: [
-      "Innerdør Furu",
-      "Åpninger i bindingsverk, 1-2 m²",
-      "Utforing furu dør/vindu",
-      "Dytteremse rundt dør",
-      "Feielist, eik lakkert, 9x20mm",
-      "Feielist, eik lakkert, 9x30mm",
-      "Dørvrider Innerdør	",
-      "Karmlist furu, ferdig malt",
+      "Drzwi wewnętrzne sosnowe",
+      "Otwory w ościeżnicy drewnianej, 1-2 m²",
+      "Okładzina drzwi/okna sosnowe",
+      "Ościeżnica wokół drzwi",
+      "Listwa, dąb lakierowany, 9x20mm",
+      "Listwa, dąb lakierowany, 9x30mm",
+      "Gałka do drzwi wewnętrznych",
+      "Listwa ramowa sosnowa, wstępnie malowana",
     ],
     unit: [
       "stk",
@@ -1183,45 +1178,60 @@ final norwInnerDoor = [
   )
 ];
 
-final norwParquetAndLaminate = [
+final polParquetAndLaminate = [
   ParquetAndLaminateModel(
-    name: "Overflate dekker parkett",
+    name: "Powierzchnia pokrywająca parkiet",
     description: [
       "Parkett på undergulv, eik",
-      "Laminat gulv på undergulv, eik"
+      "Laminat gulv på undergulv, eik",
     ],
-    unit: ["m²", "m²"],
-    quantity: [1.00, 1.00],
-    laborHours1: [0.36, 0.25],
+    unit: [
+      "m²",
+      "m²",
+    ],
+    quantity: [
+      1.00,
+      1.00,
+    ],
+    laborHours1: [
+      0.36,
+      0.25,
+    ],
     laborHours2: [0.00, 0.00],
     laborCost: [0.00, 0.00],
     material: [
       528.30,
       528.30,
     ],
-    materials: [0.00, 0.00],
-    totalPrice: [0.00, 0.00],
+    materials: [
+      0.00,
+      0.00,
+    ],
+    totalPrice: [
+      0.00,
+      0.00,
+    ],
   ),
 ];
 
-final norwWindowsExteriorDoors = [
+final polWindowsExteriorDoors = [
   WindowsAndExteriorDoorsModel(
-    name: "Vindu, trevegg toppsving 12x10",
+    name: "Okno, drewniana ściana górna obrót 12x10",
     description: [
-      "Utvendig karmlist dør/vindu",
-      "Vannbrettbeslag, galv. stål, under",
-      "Vannbrettbeslag, galv. stål, over",
-      "Vannbrett gran for beslag",
-      "Vannbrett gran for beslag",
-      "Klemlist",
-      "Vindsperre-remse, tape",
-      "Åpninger i bindingsverk, 1-2 m²",
-      "Membran smyg vinduer-dør",
-      "Vindu av furu, toppsv. hvitm.",
-      "Utforing furu dør/vindu",
-      "Dytteremse rundt vindu",
-      "Fuging, bunnfyllingslist, vindu+dør",
-      "Karmlist furu, ferdig malt",
+      "Zewnętrzna ościeżnica drzwi/okna",
+      "Osprzęt tacy wodnej, stal ocynkowana, poniżej",
+      "Osprzęt tacy na wodę, stal ocynkowana, powyżej",
+      "Taca na wodę, świerk do okuć",
+      "Świerkowa taca na wodę do armatury",
+      "Listwa zaciskowa",
+      "Taśma wiatroizolacyjna, taśma",
+      "Otwory w ramie drewnianej, 1-2 m²",
+      "Membrana do wąskich drzwi okiennych",
+      "Okno sosnowe, górna część w kolorze białym",
+      "Okładzina drzwi/okna sosnowego",
+      "Listwa amortyzująca wokół okna",
+      "Fugowanie, dolna listwa wypełniająca, okno + drzwi",
+      "Listwa ramowa sosnowa, wstępnie malowana",
     ],
     unit: [
       "m",
@@ -1352,23 +1362,24 @@ final norwWindowsExteriorDoors = [
       0.00,
     ],
   ),
+  //
   WindowsAndExteriorDoorsModel(
-    name: "Ytterdør av tre, i bindingsverksvegg, hvit, 10x21",
+    name: "Drzwi zewnętrzne z drewna, w ścianie z muru pruskiego, białe, 10x21",
     description: [
-      "Utvendig karmlist dør/vindu",
-      "Vannbrett gran for beslag",
-      "Vannbrettbeslag, galv. stål, over",
-      "Klemlist",
-      "Vindsperre-remse, tape",
-      "Terskelbeslag 1 knekk, plastisert stål",
-      "Ytterdør, hvit",
-      "Dørvrider Ytterdør",
-      "Åpninger i bindingsverk, 2-3 m²",
-      "Utforing furu dør/vindu",
-      "Dytteremse rundt dør",
-      "Fuging, bunnfyllingslist, vindu+dør",
-      "Feielist, eik lakkert, 9x50mm",
-      "Karmlist furu, ferdig malt",
+      "Zewnętrzna listwa ramowa drzwi/okna",
+      "Taca na wodę, świerk do armatury",
+      "Osprzęt tacy wodnej, stal ocynkowana, powyżej",
+      "Listwa zaciskowa",
+      "Taśma wiatroizolacyjna, taśma",
+      "Okucie progowe 1 zagięcie, stal plastyfikowana",
+      "Drzwi zewnętrzne, białe",
+      "Gałka drzwi zewnętrznych",
+      "Otwory w ościeżnicy drewnianej, 2-3 m²",
+      "Okładzina drzwi/okna sosnowego",
+      "Listwa wypełniająca wokół drzwi",
+      "Fugowanie, dolna listwa wypełniająca, okno + drzwi",
+      "Listwa, dąb lakierowany, 9x50mm",
+      "Listwa ościeżnicowa sosnowa, lakierowana",
     ],
     unit: [
       "m",
@@ -1501,26 +1512,26 @@ final norwWindowsExteriorDoors = [
   ),
 ];
 
-final norwExteriorWallData = [
+final polExteriorWallData = [
   OuterWallModel(
-    name: "Bindingsverk av tre 48x198, 50mm påforing, stående dobbelfals, gips",
+    name: "Rama drewniana 48x198, okładzina 50 mm, rąbek stojący, tynk",
     description: [
-      "Gipsplate innvendig kledning, enkel gips",
-      "2 strøk beis, utvendig",
-      "Enkelt bindingsverk heltre u/spikerslag",
-      "Mineralull A-plate - vegg",
-      "Stående panel med dobbeltfals",
-      "Utlekting på fasade c/c 600",
-      "Sløyfer, impregnert vegg",
-      "Gipspl. utvendig, 9,5 mm underkledn",
-      "Musebånd",
-      "Vindsperre-remse, tape",
-      "Diffusjonstett plast (Vegg)",
-      "Utlekting for innv. kledning c/c 600",
-      "Mineralull A-plate - vegg",
-      "Sparkling strimmel, flekksp.1, skjøtsp. 2, helsp.1, grunning. 2 strøk maling",
-      "Taklist furu, ferdig malt",
-      "Gulvlist furu, ferdig malt",
+      "Okładzina wewnętrzna z płyt gipsowo-kartonowych, zwykły tynk",
+      "2 warstwy bejcy na zewnątrz",
+      "Prosty szkielet drewniany, lite drewno, bez gwoździ",
+      "Płyta A z wełny mineralnej - ściana",
+      "Panel stojący z podwójną przylgą",
+      "Okładzina na elewacji c/c 600",
+      "Pętle, impregnowana ściana",
+      "Płyta gipsowo-kartonowa zewnętrzna, podkład 9,5 mm",
+      "Taśma z myszką",
+      "Taśma wiatroizolacyjna, taśma",
+      "Dyfuzyjne tworzywo sztuczne (ściana)",
+      "Okładzina wewnętrzna c/c 600",
+      "Płyta A z wełny mineralnej - ściana",
+      "Taśma błyszcząca, flekksp.1, skjøtsp. 2, helsp.1, podkład. 2 warstwy farby",
+      "Listwa sufitowa sosnowa, wstępnie malowana",
+      "Listwa przypodłogowa sosnowa, wstępnie malowana",
     ],
     unit: [
       "m²",
@@ -1686,22 +1697,23 @@ final norwExteriorWallData = [
     ],
   )
 ];
-final norwOuterRoofData = [
+
+final polOuterRoofData = [
   OuterRoofModel(
-    name: "Sperretak av tre, takspon, gipsplater",
+    name: "Dach barierowy wykonany z drewna, gontów, płyt gipsowo-kartonowych",
     description: [
-      "Takspon til mønebord",
-      "Takshingel takfotplate",
-      "Takshingel kullsvart",
-      "Taktekking av vanntett finér",
-      "Takbelegg for luftspalte c/c 600 Takbelegg av takfolie",
-      "Undertak av takfolie",
-      "Sperretak av massivtre, c/c 600",
-      "Mineralull A-plate, med papir",
-      "Diffusjonstett plast (tak)",
-      "Takbekledning c/c 600",
-      "Mineralull A-plate i bjelkelag",
-      "Gipsplater i tak, enkle",
+      "Gont dachowy na stół kalenicowy",
+      "Blacha okapowa do gontów dachowych",
+      "Gont dachowy sadza",
+      "Pokrycie dachowe z wodoodpornej okleiny",
+      "Pokrycie dachowe dla szczeliny powietrznej c/c 600 Pokrycie dachowe z folii dachowej",
+      "Podkład z folii dachowej",
+      "Dach barierowy z litego drewna, c/c 600",
+      "Płyta A z wełny mineralnej, z papierem",
+      "Szczelne dyfuzyjnie tworzywo sztuczne (dach)",
+      "Okładzina sufitowa c/c 600",
+      "Płyta A z wełny mineralnej w legarach",
+      "Płyta gipsowo-kartonowa w suficie, prosta",
     ],
     unit: [
       "m",
@@ -1831,11 +1843,12 @@ final norwOuterRoofData = [
     ],
   )
 ];
-final norwTerraceData = [
+
+final polTerraceData = [
   TerraceModel(
-    name: "Rekkverk i rustfritt stål og glass",
+    name: "Balustrady ze stali nierdzewnej i szkła",
     description: [
-      "Rekkverk, glass / Rustfritt stål - Icopal",
+      "Balustrada, szkło / stal nierdzewna - Icopal",
     ],
     unit: [
       "m",
@@ -1864,12 +1877,13 @@ final norwTerraceData = [
     ],
   )
 ];
-final norwInnerStairsData = [
+
+final polInnerStairsData = [
   InnerStairsModel(
-    name: "Trapper innvendig, tre rettløp",
+    name: "Schody w środku, trzy biegi z rzędu",
     description: [
-      "Åpninger i bjelkelag >4 m²",
-      "Trapp rett hvit gr. prefab., furu eik toning",
+      "Otwory w legarach >4 m²",
+      "Schody proste białe gr. prefabryk., tonacja dąb sosna",
     ],
     unit: [
       "stk",
@@ -1905,109 +1919,111 @@ final norwInnerStairsData = [
     ],
   )
 ];
-final norwHullRoofingData = [
+
+final polHullRoofingData = [
   HullRoofingModel(
-      name:
-          "Stanset taktekking av enebolig 245m² BTA - 2 etasjer (Beregn mengde og velg materialtype),",
-      description: [
-        "Takboks av stansede sponplater",
-        "Hull takboks av gipsplater",
-        "Hull tak takboks trepanel",
-        "Hulltak vegg - fliser",
-        "Hulltakvegg trepanel",
-        "Hulltak vegg - sponplater",
-        "Stanset takvegg gipsplater",
-        "Stanset taktekking for ventilasjon",
-      ],
-      unit: [
-        "stk",
-        "stk",
-        "stk",
-        "stk",
-        "stk",
-        "stk",
-        "stk",
-        "stk",
-      ],
-      quantity: [
-        0.00,
-        0.00,
-        0.00,
-        0.00,
-        0.00,
-        0.00,
-        0.00,
-        0.00,
-      ],
-      laborHours1: [
-        0.18,
-        0.18,
-        0.18,
-        0.20,
-        0.15,
-        0.15,
-        0.15,
-        0.15,
-      ],
-      laborHours2: [
-        0.00,
-        0.00,
-        0.00,
-        0.00,
-        0.00,
-        0.00,
-        0.00,
-        0.00,
-      ],
-      laborCost: [
-        0.00,
-        0.00,
-        0.00,
-        0.00,
-        0.00,
-        0.00,
-        0.00,
-        0.00,
-      ],
-      material: [
-        0.00,
-        0.00,
-        0.00,
-        0.00,
-        0.00,
-        0.00,
-        0.00,
-        0.00,
-      ],
-      materials: [
-        0.00,
-        0.00,
-        0.00,
-        0.00,
-        0.00,
-        0.00,
-        0.00,
-        0.00,
-      ],
-      totalPrice: [
-        0.00,
-        0.00,
-        0.00,
-        0.00,
-        0.00,
-        0.00,
-        0.00,
-        0.00,
-      ])
+    name:
+        "Dziurkowane pokrycie dachowe domu jednorodzinnego 245m² GFA - 2 kondygnacje (Oblicz ilość i wybierz rodzaj materiału)",
+    description: [
+      "Puszka sufitowa z perforowanej płyty wiórowej",
+      "Pudełko sufitowe z płyty gipsowo-kartonowej"
+          "Pusta skrzynka sufitowa z boazerii drewnianej",
+      "Pusta ściana sufitowa - płytki",
+      "Pusta ściana sufitowa - boazeria drewniana",
+      "Dziurkowana ściana sufitowa - płyta wiórowa",
+      "Dziurkowana ściana sufitowa - płyta gipsowo-kartonowa",
+      "Dziurkowane pokrycie dachowe do wentylacji",
+    ],
+    unit: [
+      "stk",
+      "stk",
+      "stk",
+      "stk",
+      "stk",
+      "stk",
+      "stk",
+      "stk",
+    ],
+    quantity: [
+      0.00,
+      0.00,
+      0.00,
+      0.00,
+      0.00,
+      0.00,
+      0.00,
+      0.00,
+    ],
+    laborHours1: [
+      0.18,
+      0.18,
+      0.18,
+      0.20,
+      0.15,
+      0.15,
+      0.15,
+      0.15,
+    ],
+    laborHours2: [
+      0.00,
+      0.00,
+      0.00,
+      0.00,
+      0.00,
+      0.00,
+      0.00,
+      0.00,
+    ],
+    laborCost: [
+      0.00,
+      0.00,
+      0.00,
+      0.00,
+      0.00,
+      0.00,
+      0.00,
+      0.00,
+    ],
+    material: [
+      0.00,
+      0.00,
+      0.00,
+      0.00,
+      0.00,
+      0.00,
+      0.00,
+      0.00,
+    ],
+    materials: [
+      0.00,
+      0.00,
+      0.00,
+      0.00,
+      0.00,
+      0.00,
+      0.00,
+      0.00,
+    ],
+    totalPrice: [
+      0.00,
+      0.00,
+      0.00,
+      0.00,
+      0.00,
+      0.00,
+      0.00,
+      0.00,
+    ],
+  )
 ];
 
-final norwScaffoldingData = [
+final polScaffodlingData = [
   ScaffoldingModel(
-    name: "Dragere og søyler, limtre / stål - Enebolig",
+    name: "Belki i słupy, drewno klejone / stal - Dom wolnostojący",
     description: [
-      "Leie av stillas pr. m²/mnd. - 132m²",
-      "Montering av Lett stillase",
-      "Demontering av Lett stillase",
+      "Wynajem rusztowań za m²/miesiąc. - 132m²",
+      "Montaż lekkich rusztowań",
+      "Demontaż lekkich rusztowań",
     ],
     unit: [
       "stk",
@@ -2051,16 +2067,17 @@ final norwScaffoldingData = [
     ],
   )
 ];
-final norwWasteData = [
+
+final polWasteData = [
   WasteModel(
-    name: "Avfall flytting",
+    name: "Usuwanie odpadów",
     description: [
-      "Container 10 m³: Innhenting. Takst. og mur",
-      "Container 10 m³: Innhenting. Rent treverk",
-      "Container 10 m³: Utsetting",
-      "Container 10 m³: Leie pr. Uke",
-      "Container 10 m³: Tømme-avgift. Rent treverk",
-      "Container 10 m³: Tømme-avgift. Takst. og mur",
+      "Pojemnik 10 m³: Kolekcja. Taryfa. i ściana",
+      "Kontener 10 m³: Odbiór. Czyste drewno",
+      "Kontener 10 m³: Rozkładanie Kontener 10 m³",
+      "Kontener 10 m³: Wynajem na tydzień",
+      "Kontener 10 m³: Opłata za opróżnienie. Czyste drewno",
+      "Kontener 10 m³: Opłata za opróżnienie. Taryfa. i murarskie",
     ],
     unit: [
       "RS",
