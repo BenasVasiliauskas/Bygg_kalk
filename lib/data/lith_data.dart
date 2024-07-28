@@ -13,23 +13,23 @@ import 'package:cost_calculator/models/terrace_model.dart';
 import 'package:cost_calculator/models/waste_data_model.dart';
 import 'package:cost_calculator/models/windows_exterior_doors_model.dart';
 
-final polInnerWallData = [
+final litInnerWallData = [
   InnerWallModel(
-    name: "Drewniana rama 48x98, podwójna ściana akustyczna, podwójny tynk",
+    name: "48x98 medinis karkasas, dviguba akustinė siena, dvigubas tinkas",
     description: [
-      "Listwa przypodłogowa sosnowa, wstępnie malowana",
-      "Listwa sufitowa sosnowa, wstępnie malowana",
-      "Fugowanie w ścianie akustycznej / suficie za pomocą fugi",
-      "Okładzina wewnętrzna z płyt gipsowo-kartonowych, podwójny tynk",
-      "Prosta rama drewniana, lite drewno z gwoździami",
-      "Płyta A z wełny mineralnej",
-      "Pojedyncza rama drewniana, lite drewno, bez gwoździ",
-      "Płyta A z wełny mineralnej",
-      "Łączenie w ścianie akustycznej/suficie z membraną łączącą",
-      "Okładzina wewnętrzna z płyt gipsowo-kartonowych, podwójny tynk",
-      "Błyszcząca listwa, flekksp.1, skjøtsp. 2, helsp.1, podkład. 2 warstwy farby",
-      "Listwa sufitowa sosnowa, wstępnie malowana",
-      "Listwa przypodłogowa sosnowa, wstępnie malowana",
+      "Pušinės grindjuostės, iš anksto dažytos",
+      "Pušinė lubų grindjuostė, iš anksto dažyta",
+      "Akustinės sienos / lubų glaistymas skiediniu",
+      "Vidaus gipso plokščių apdaila, dvigubas tinkas",
+      "Paprastas medinis karkasas, medžio masyvas su vinimis",
+      "Mineralinės vatos A plokštė",
+      "Paprastas medinis karkasas, medžio masyvas, be vinių",
+      "Mineralinės vatos A plokštė",
+      "Akustinės sienos / lubų sujungimas su klijuojamąja membrana",
+      "Vidinė gipso plokščių apdaila, dvigubas tinkas",
+      "Blizgi apdaila, flekksp.1, skjøtsp. 2, helsp.1, gruntas. 2 sluoksniai dažų",
+      "Pušinės lubų grindjuostės, iš anksto dažytos",
+      "Pušinė grindjuostė, iš anksto dažyta",
     ],
     unit: [
       "lm",
@@ -169,16 +169,16 @@ final polInnerWallData = [
   ),
   //
   InnerWallModel(
-    name: "Kratownice drewniane 48x98, izolowane, panel gładki",
+    name: "Medinės santvaros 48x98, apšiltintos, paprastos plokštės",
     description: [
-      "Listwa przypodłogowa sosnowa, wstępnie malowana",
-      "Listwa sufitowa sosnowa, wstępnie malowana",
-      "Gładka boazeria świerkowa, pionowa",
-      "Płyta A z wełny mineralnej",
-      "Prosta rama drewniana z litego drewna z 3 gwoździami",
-      "Gładka boazeria świerkowa, pionowa",
-      "Listwa sufitowa sosnowa, wstępnie malowana",
-      "Listwa przypodłogowa sosnowa, wstępnie malowana",
+      "Pušinės grindjuostės, iš anksto dažytos",
+      "Pušies lubų apdaila, iš anksto dažyta",
+      "Lygus eglės apkalimas, vertikalus",
+      "Mineralinės vatos A plokštė",
+      "Tiesus medžio masyvo rėmas su 3 vinimis",
+      "Lygus eglės apkalimas, vertikalus",
+      "Iš anksto dažytos pušinės lubų apdailos juostos",
+      "Pušinės grindjuostės, iš anksto dažytos",
     ],
     unit: [
       "lm",
@@ -273,18 +273,18 @@ final polInnerWallData = [
   ),
   //
   InnerWallModel(
-    name: "Rama drewniana 48x98, cięcie h=2400, płyta gipsowo-kartonowa",
+    name: "Medinis rėmas 48x98, pjūvis h=2400, gipso kartonas",
     description: [
-      "Listwa przypodłogowa sosnowa, wstępnie malowana",
-      "Listwa sufitowa sosnowa, wstępnie malowana",
-      "Listwa błyszcząca, bejca sp. 1, fuga sp. 2, pełna sp. 1, podkład. 2 warstwy farby",
-      "Okładzina wewnętrzna z płyt gipsowo-kartonowych, tynk zwykły",
-      "Płyta A z wełny mineralnej",
-      "Prosta rama drewniana z litego drewna wstępnie przyciętego h=2,4 m, 3 podkłady",
-      "Okładzina wewnętrzna z płyt gipsowo-kartonowych, tynk zwykły",
-      "Błyszcząca listwa, flekksp.1, skjøtsp. 2, helsp.1, podkład. 2 warstwy farby",
-      "Listwa sufitowa sosnowa, wstępnie malowana",
-      "Listwa przypodłogowa sosnowa, wstępnie malowana",
+      "Pušinės grindjuostės, iš anksto dažytos",
+      "Pušinė lubų grindjuostė, iš anksto dažyta",
+      "Blizgi grindjuostė, dažyta sp. 1, skiedinio sp. 2, vientisa sp. 1, gruntas. 2 sluoksniai dažų",
+      "Vidaus gipso kartono plokščių apdaila, paprastas tinkas",
+      "Mineralinės vatos A plokštė",
+      "Paprastas medžio masyvo karkasas, iš anksto supjaustytas h=2,4 m, 3 gruntai",
+      "Vidinė gipso plokščių apdaila, paprastas tinkas",
+      "Blizgi apdaila, flekksp.1, skjøtsp. 2, helsp.1, gruntas. 2 sluoksniai dažų",
+      "Pušinės lubų grindjuostės, iš anksto dažytos",
+      "Pušinė grindjuostė, iš anksto dažyta",
     ],
     unit: [
       "lm",
@@ -397,20 +397,20 @@ final polInnerWallData = [
   ),
   //
   InnerWallModel(
-    name: "Kratownica stalowa 2x75mm, podwójna, izolowana, gipsowa",
+    name: "2x75 mm plieninė santvara, dviguba, apšiltinta, gipsinė",
     description: [
-      "Listwa przypodłogowa sosnowa, wstępnie malowana",
-      "Listwa przypodłogowa sosnowa, wstępnie malowana",
-      "Płyta gipsowo-kartonowa fermacell",
-      "Łączenie przy ścianie dźwiękochłonnej/suficie z fugą",
-      "Okładzina wewnętrzna z płyt gipsowo-kartonowych, tynk zwykły",
-      "Podwójna rama drewniana, stal c/c 60",
-      "Wełna mineralna w stalowych słupkach",
-      "Okładzina wewnętrzna z płyt gipsowo-kartonowych, tynk pojedynczy",
-      "Łączenie w ścianie dźwiękochłonnej/suficie z membraną łączącą",
-      "Szpachlowanie płyt gipsowo-kartonowych fermacell",
-      "Listwy sufitowe sosnowe, wstępnie malowane",
-      "Listwa podłogowa sosnowa, wstępnie malowana",
+      "Pušinės grindjuostės, iš anksto dažytos",
+      "Pušinės grindjuostės, iš anksto dažytos",
+      "Fermacell gipso plokštės",
+      "Sujungimas ties garsą sugeriančia siena / jungiamosiomis lubomis",
+      "Vidinė gipso kartono plokščių apdaila, paprastas tinkas",
+      "Dvigubas medinis karkasas, c/c 60 plienas",
+      "Mineralinė vata plieninėse smeigėse",
+      "Vidinė gipso plokščių apdaila, paprastas tinkas",
+      "Garsą sugeriančių sienų ir (arba) lubų sujungimas su klijuojamąja membrana",
+      "Fermacell gipso plokščių sujungimas",
+      "Iš anksto dažytos pušinės lubų apdailos detalės",
+      "Iš anksto dažytos pušinės grindų profiliuotės",
     ],
     unit: [
       "lm",
@@ -541,20 +541,20 @@ final polInnerWallData = [
   ),
   //
   InnerWallModel(
-    name: "Kratownica stalowa 2x100mm, podwójna, izolowana, gipsowa",
+    name: "2x100 mm plieninė santvara, dviguba, apšiltinta, gipsinė",
     description: [
-      "Listwa przypodłogowa sosnowa, wstępnie malowana",
-      "Listwa sufitowa sosnowa, wstępnie malowana",
-      "Listwa błyszcząca, bejca sp. 1, fuga sp. 2, pełna sp. 1, podkład. 2 warstwy farby",
-      "Spoinowanie ściany akustycznej/sufitu fugą",
-      "Okładzina wewnętrzna z płyt gipsowo-kartonowych, tynk zwykły",
-      "Podwójna rama drewniana, stal c/c 60",
-      "Wełna mineralna w stalowych słupkach",
-      "Okładzina wewnętrzna z płyt gipsowo-kartonowych, tynk pojedynczy",
-      "Łączenie w ścianie dźwiękochłonnej/suficie z membraną łączącą",
-      "Błyszcząca listwa, flekksp.1, skjøtsp. 2, helsp.1, podkład. 2 warstwy farby",
-      "Listwa sufitowa sosnowa, wstępnie malowana",
-      "Listwa przypodłogowa sosnowa, wstępnie malowana",
+      "Pušinės grindjuostės, iš anksto dažytos",
+      "Pušinė lubų grindjuostė, iš anksto dažyta",
+      "Blizgi grindjuostė, dažyta sp. 1, skiedinio sp. 2, vientisa sp. 1, gruntas. 2 sluoksniai dažų",
+      "Akustinės sienos / lubų glaistymas skiediniu",
+      "Vidaus apdailos gipso kartono plokštėmis, paprastas tinkas",
+      "Dvigubas medinis karkasas, plieno c/c 60",
+      "Mineralinė vata plieninėse smeigėse",
+      "Vidinė gipso plokščių apdaila, paprastas tinkas",
+      "Garsą sugeriančios sienos / lubų sujungimas su klijuojamąja plėvele",
+      "Blizgi apdaila, flekksp.1, skjøtsp. 2, helsp.1, gruntas. 2 sluoksniai dažų",
+      "Pušinė lubų grindjuostė, iš anksto dažyta",
+      "Pušinė grindjuostė, iš anksto dažyta",
     ],
     unit: [
       "lm",
@@ -685,20 +685,20 @@ final polInnerWallData = [
   ),
   //
   InnerWallModel(
-    name: "Kratownica stalowa 2x75mm, podwójna, izolowana, podwójny tynk",
+    name: "2x75 mm plieninė santvara, dvigubai apšiltinta, dvigubai tinkuota",
     description: [
-      "Listwa przypodłogowa sosnowa, wstępnie malowana",
-      "Listwa sufitowa sosnowa, wstępnie malowana",
-      "Listwa błyszcząca, bejca sp. 1, fuga sp. 2, pełna sp. 1, podkład. 2 warstwy farby",
-      "Spoinowanie ściany akustycznej/sufitu fugą",
-      "Okładzina wewnętrzna z płyt gipsowo-kartonowych, podwójny tynk",
-      "Podwójna rama drewniana, stal c/c 60",
-      "Wełna mineralna w stalowych słupkach",
-      "Okładzina wewnętrzna z płyt gipsowo-kartonowych, podwójny tynk",
-      "Łączenie w ścianie dźwiękochłonnej/suficie z membraną łączącą",
-      "Błyszcząca listwa, flekksp.1, skjøtsp. 2, helsp.1, podkład. 2 warstwy farby",
-      "Listwa sufitowa sosnowa, wstępnie malowana",
-      "Listwa przypodłogowa sosnowa, wstępnie malowana",
+      "Pušinės grindjuostės, iš anksto dažytos",
+      "Pušinė lubų grindjuostė, iš anksto dažyta",
+      "Blizgi grindjuostė, dažyta sp. 1, skiedinio sp. 2, vientisa sp. 1, gruntas. 2 sluoksniai dažų",
+      "Akustinės sienos / lubų glaistymas skiediniu",
+      "Vidaus apdailos gipso kartono plokštėmis, dvigubas tinkas",
+      "Dvigubas medinis karkasas, c/c 60 plienas",
+      "Mineralinė vata plieninėse smeigėse",
+      "Vidinė gipso plokščių apdaila, dvigubas tinkas",
+      "Garsą izoliuojančios sienos / lubų sujungimas su klijuojamąja plėvele",
+      "Blizgi apdaila, flekksp.1, skjøtsp. 2, helsp.1, gruntas. 2 sluoksniai dažų",
+      "Pušinė lubų grindjuostė, iš anksto dažyta",
+      "Pušinė grindjuostė, iš anksto dažyta",
     ],
     unit: [
       "lm",
@@ -829,19 +829,19 @@ final polInnerWallData = [
   ),
 ];
 
-final polSupportSystem = [
+final litSupportSystem = [
   SupportSystemModel(
-    name: "Belki i słupy, drewno klejone / stal - Dom wolnostojący",
+    name: "Sijos ir kolonos, klijuotos medienos ir plieno - Individualus namas",
     description: [
-      "Belka z drewna klejonego 115x315",
-      "Belka z drewna klejonego 90x225",
-      "Belka z drewna klejonego impr 90x300",
-      "Belka z drewna klejonego impr 90x270",
-      "Słupek z drewna klejonego impr 90x90",
-      "Słupek z drewna klejonego 115x115",
-      "Słupek z drewna klejonego 90x90",
-      "Belka stalowa HEB 220 (73,63 kg/lm) 220 mm",
-      "Słup stalowy HUP (14,63 kg/lm) 100x100x5",
+      "Gluamo sija 115x315",
+      "Gluamo sija 90x225",
+      "Gluamo sija impr 90x300",
+      "Glulam sijos impr 90x270",
+      "Gluam stulpas impr 90x90",
+      "Gluamo stulpas 115x115",
+      "Gluam stulpas 90x90",
+      "HEB 220 plieninė sija (73,63 kg/lm) 220 mm",
+      "HUP plieninis stulpas (14,63 kg/lm) 100x100x5",
     ],
     unit: [
       "lm",
@@ -934,17 +934,17 @@ final polSupportSystem = [
   )
 ];
 
-final polFlooringData = [
+final litFlooringData = [
   FlooringModel(
     name:
-        "Ściana w pomieszczeniu mokrym z panelami - płytki w pomieszczeniu mokrym + płytki 25x33",
+        "Drėgno kambario siena su plokštėmis - drėgno kambario plytelės + 25x33 plytelės",
     description: [
-      "Płytki Litex do pomieszczeń mokrych na ścianę",
-      "Płytki ceramiczne na ścianę, białe",
-      "Przebijak do gwoździ do membran w pomieszczeniach mokrych",
-      "Panel dolny, świerkowy, przykręcany",
-      "Wypełnianie fugą w narożnikach",
-      "Membrana smarująca do uszczelniania paneli ściennych",
+      "Litex drėgnų patalpų plytelės sienoms",
+      "Keraminės plytelės sienoms, baltos",
+      "Vinių perforatorius drėgnų patalpų membranoms",
+      "Apatinė plokštė, eglė, prisukama varžtais",
+      "Skiedinio užpildas kampuose",
+      "Tepimo membrana sieninėms plokštėms sandarinti",
     ],
     unit: [
       "m²",
@@ -1013,15 +1013,15 @@ final polFlooringData = [
   )
 ];
 
-final polDeckData = [
+final litDeckData = [
   DeckModel(
-    name: "Podłoga na gruncie, wylewana, izolowana, wylewana",
+    name: "Grindys ant žemės, išlietos, apšiltintos, išlietos",
     description: [
-      "Zdzieranie i stalowe wygładzanie powierzchni betonu",
-      "Zbrojenie siatką, K 131 (2,1 kg na m²)",
-      "Beton B30 w podłodze na gruncie",
-      "Radon stop na ziemi",
-      "Styropian ze szwem, EPS, 150 kPa"
+      "Betono paviršiaus nuėmimas ir išlyginimas plienu",
+      "Tinklinė armatūra, K 131 (2,1 kg/m²)",
+      "B30 betonas grindyse ant grunto",
+      "Radono ribotuvas ant grunto",
+      "Siūlinis polistirenas, EPS, 150 kPa"
     ],
     unit: [
       "m²",
@@ -1082,18 +1082,18 @@ final polDeckData = [
   )
 ];
 
-final polInnerDoor = [
+final litInnerDoor = [
   InnerDoorModel(
-    name: "Drzwi wewnętrzne, sosna 9x21",
+    name: "Vidaus durys, pušies 9x21",
     description: [
-      "Drzwi wewnętrzne sosnowe",
-      "Otwory w ościeżnicy drewnianej, 1-2 m²",
-      "Okładzina drzwi/okna sosnowe",
-      "Ościeżnica wokół drzwi",
-      "Listwa, dąb lakierowany, 9x20mm",
-      "Listwa, dąb lakierowany, 9x30mm",
-      "Gałka do drzwi wewnętrznych",
-      "Listwa ramowa sosnowa, wstępnie malowana",
+      "Vidaus pušies durys",
+      "Medinės rėminės angos, 1-2 m²",
+      "Durų apmušalai / pušiniai langai",
+      "Rėmas aplink duris",
+      "Lentelė, lakuotas ąžuolas, 9x20 mm",
+      "Lentelė, lakuotas ąžuolas, 9x30 mm",
+      "Vidaus durų rankena",
+      "Pušies rėmelio profiliuotė, iš anksto dažyta",
     ],
     unit: [
       "stk",
@@ -1178,12 +1178,12 @@ final polInnerDoor = [
   )
 ];
 
-final polParquetAndLaminate = [
+final litParquetAndLaminate = [
   ParquetAndLaminateModel(
-    name: "Powierzchnia pokrywająca parkiet",
+    name: "Parketo grindų danga",
     description: [
-      "Parkett på undergulv, eik",
-      "Laminat gulv på undergulv, eik",
+      "Ąžuolinis parketas ant grindų pagrindo",
+      "Laminuotos grindys ant grindų pagrindo, ąžuolas",
     ],
     unit: [
       "m²",
@@ -1220,24 +1220,24 @@ final polParquetAndLaminate = [
   ),
 ];
 
-final polWindowsExteriorDoors = [
+final litWindowsExteriorDOors = [
   WindowsAndExteriorDoorsModel(
-    name: "Okno, drewniana ściana górna obrót 12x10",
+    name: "Langas, medinė viršutinė siena 12x10 posūkis",
     description: [
-      "Zewnętrzna ościeżnica drzwi/okna",
-      "Osprzęt tacy wodnej, stal ocynkowana, poniżej",
-      "Osprzęt tacy na wodę, stal ocynkowana, powyżej",
-      "Taca na wodę, świerk do okuć",
-      "Świerkowa taca na wodę do armatury",
-      "Listwa zaciskowa",
-      "Taśma wiatroizolacyjna, taśma",
-      "Otwory w ramie drewnianej, 1-2 m²",
-      "Membrana do wąskich drzwi okiennych",
-      "Okno sosnowe, górna część w kolorze białym",
-      "Okładzina drzwi/okna sosnowego",
-      "Listwa amortyzująca wokół okna",
-      "Fugowanie, dolna listwa wypełniająca, okno + drzwi",
-      "Listwa ramowa sosnowa, wstępnie malowana",
+      "Išorinių durų ir (arba) langų rėmas",
+      "Vandens padėklo armatūra, cinkuotas plienas, žemiau",
+      "Vandens padėklo jungiamosios dalys, cinkuotas plienas, viršuje",
+      "Vandens padėklas, eglė jungiamosioms detalėms",
+      "Eglinis vandens padėklas armatūrai",
+      "Tvirtinimo juosta",
+      "Vėjo juosta, juosta",
+      "Angos mediniame karkase, 1-2 m²",
+      "Membrana siauroms langų durims",
+      "Pušinis langas, viršutinė dalis baltos spalvos",
+      "Durų ir (arba) pušinių langų apmušalai",
+      "Paminkštinimo juosta aplink langą",
+      "Glaistymas, apatinė užpildo juosta, langas + durys",
+      "Pušies rėmo profiliuotė, iš anksto dažyta",
     ],
     unit: [
       "m",
@@ -1370,22 +1370,22 @@ final polWindowsExteriorDoors = [
   ),
   //
   WindowsAndExteriorDoorsModel(
-    name: "Drzwi zewnętrzne z drewna, w ścianie z muru pruskiego, białe, 10x21",
+    name: "Medinės lauko durys pusrūsio sienoje, baltos, 10x21",
     description: [
-      "Zewnętrzna listwa ramowa drzwi/okna",
-      "Taca na wodę, świerk do armatury",
-      "Osprzęt tacy wodnej, stal ocynkowana, powyżej",
-      "Listwa zaciskowa",
-      "Taśma wiatroizolacyjna, taśma",
-      "Okucie progowe 1 zagięcie, stal plastyfikowana",
-      "Drzwi zewnętrzne, białe",
-      "Gałka drzwi zewnętrznych",
-      "Otwory w ościeżnicy drewnianej, 2-3 m²",
-      "Okładzina drzwi/okna sosnowego",
-      "Listwa wypełniająca wokół drzwi",
-      "Fugowanie, dolna listwa wypełniająca, okno + drzwi",
-      "Listwa, dąb lakierowany, 9x50mm",
-      "Listwa ościeżnicowa sosnowa, lakierowana",
+      "Išorinių durų / langų rėmų lipdiniai",
+      "Vandens padėklas, eglė jungiamosioms detalėms",
+      "Vandens padėklas, cinkuoto plieno jungiamosios detalės, viršuje",
+      "Tvirtinimo juosta",
+      "Vėjo izoliacinė juosta, juosta",
+      "Slenksčio jungiamoji detalė, 1 lenkimas, plastifikuotas plienas",
+      "Išorinės durys, baltos spalvos",
+      "Išorinių durų rankena",
+      "Medinės rėmo angos, 2-3 m²",
+      "Durų / pušinių langų apmušalai",
+      "Užpildo juosta aplink duris",
+      "Glaistymas, apatinė užpildo juosta, langas + durys",
+      "Lentelė, lakuotas ąžuolas, 9x50 mm",
+      "Lentelė, lakuota, pušies rėmo profiliuotė",
     ],
     unit: [
       "m",
@@ -1518,26 +1518,27 @@ final polWindowsExteriorDoors = [
   ),
 ];
 
-final polExteriorWallData = [
+final litExteriorWallData = [
   OuterWallModel(
-    name: "Rama drewniana 48x198, okładzina 50 mm, rąbek stojący, tynk",
+    name:
+        "48x198 medinis karkasas, 50 mm dailylentės, stovinčios siūlės, tinkas",
     description: [
-      "Okładzina wewnętrzna z płyt gipsowo-kartonowych, zwykły tynk",
-      "2 warstwy bejcy na zewnątrz",
-      "Prosty szkielet drewniany, lite drewno, bez gwoździ",
-      "Płyta A z wełny mineralnej - ściana",
-      "Panel stojący z podwójną przylgą",
-      "Okładzina na elewacji c/c 600",
-      "Pętle, impregnowana ściana",
-      "Płyta gipsowo-kartonowa zewnętrzna, podkład 9,5 mm",
-      "Taśma z myszką",
-      "Taśma wiatroizolacyjna, taśma",
-      "Dyfuzyjne tworzywo sztuczne (ściana)",
-      "Okładzina wewnętrzna c/c 600",
-      "Płyta A z wełny mineralnej - ściana",
-      "Taśma błyszcząca, flekksp.1, skjøtsp. 2, helsp.1, podkład. 2 warstwy farby",
-      "Listwa sufitowa sosnowa, wstępnie malowana",
-      "Listwa przypodłogowa sosnowa, wstępnie malowana",
+      "Vidinės gipso plokščių apdailos, paprastas tinkas",
+      "2 sluoksniai išorės dažų",
+      "Paprastas medinis karkasas, medžio masyvas, be vinių",
+      "Mineralinės vatos A plokštė - siena",
+      "Stovinti plokštė su dviguba įduba",
+      "Fasadų apdaila c/c 600",
+      "Kilpos, impregnuota siena",
+      "Išorinė gipso kartono plokštė, 9,5 mm paklotas",
+      "Pelės juosta",
+      "Vėjo izoliacinė juosta, juosta",
+      "Difuzinis plastikas (sieninis)",
+      "Vidaus apdailos medžiagos c/c 600",
+      "Mineralinės vatos A plokštė - siena",
+      "Blizgi juosta, flekksp.1, skjøtsp. 2, helsp.1, gruntas. 2 sluoksniai dažų",
+      "Pušies lubų juosta, iš anksto dažyta",
+      "Pušinė grindjuostė, iš anksto dažyta",
     ],
     unit: [
       "m²",
@@ -1704,22 +1705,22 @@ final polExteriorWallData = [
   )
 ];
 
-final polOuterRoofData = [
+final litOuterRoofData = [
   OuterRoofModel(
-    name: "Dach barierowy wykonany z drewna, gontów, płyt gipsowo-kartonowych",
+    name: "Barjerinis stogas iš medžio, čerpių, gipso kartono plokščių",
     description: [
-      "Gont dachowy na stół kalenicowy",
-      "Blacha okapowa do gontów dachowych",
-      "Gont dachowy sadza",
-      "Pokrycie dachowe z wodoodpornej okleiny",
-      "Pokrycie dachowe dla szczeliny powietrznej c/c 600 Pokrycie dachowe z folii dachowej",
-      "Podkład z folii dachowej",
-      "Dach barierowy z litego drewna, c/c 600",
-      "Płyta A z wełny mineralnej, z papierem",
-      "Szczelne dyfuzyjnie tworzywo sztuczne (dach)",
-      "Okładzina sufitowa c/c 600",
-      "Płyta A z wełny mineralnej w legarach",
-      "Płyta gipsowo-kartonowa w suficie, prosta",
+      "Stogo čerpės kraigo stalui",
+      "Karnizo lakštas stogo čerpėms",
+      "Suodinos stogo čerpės",
+      "Vandeniui atspari fanerinė stogo danga",
+      "Stogo danga oro tarpui c/c 600 Stogo plėvelės stogo danga",
+      "Stogo plėvelės paklotas",
+      "Stogas su medžio masyvo užtvara, c/c 600",
+      "Mineralinės vatos A plokštė, su popieriumi",
+      "Difuzijos nepraleidžiantis plastikas (stogas)",
+      "Lubų danga, c/c 600",
+      "Mineralinės vatos A plokštė su sijomis",
+      "Gipso kartono plokštė lubose, tiesi",
     ],
     unit: [
       "m",
@@ -1850,11 +1851,11 @@ final polOuterRoofData = [
   )
 ];
 
-final polTerraceData = [
+final litTerraceData = [
   TerraceModel(
-    name: "Balustrady ze stali nierdzewnej i szkła",
+    name: "Nerūdijančio plieno ir stiklo turėklai",
     description: [
-      "Balustrada, szkło / stal nierdzewna - Icopal",
+      "Turėklai, stiklas / nerūdijantis plienas - Icopal",
     ],
     unit: [
       "m",
@@ -1884,12 +1885,12 @@ final polTerraceData = [
   )
 ];
 
-final polInnerStairsData = [
+final litInnerStairsData = [
   InnerStairsModel(
-    name: "Schody w środku, trzy biegi z rzędu",
+    name: "Laiptai viduryje, trys važiavimai iš eilės",
     description: [
-      "Otwory w legarach >4 m²",
-      "Schody proste białe gr. prefabryk., tonacja dąb sosna",
+      "Angos sijose >4 m²",
+      "Tiesūs balti surenkamieji laiptai, ąžuolo pušies atspalvio",
     ],
     unit: [
       "stk",
@@ -1926,19 +1927,19 @@ final polInnerStairsData = [
   )
 ];
 
-final polHullRoofingData = [
+final litHullRoofingData = [
   HullRoofingModel(
     name:
-        "Dziurkowane pokrycie dachowe domu jednorodzinnego 245m² GFA - 2 kondygnacje (Oblicz ilość i wybierz rodzaj materiału)",
+        "245 m² ploto vienbučio namo - 2 aukštų - denginio stogo danga (apskaičiuokite kiekį ir pasirinkite medžiagos tipą)",
     description: [
-      "Puszka sufitowa z perforowanej płyty wiórowej",
-      "Pudełko sufitowe z płyty gipsowo-kartonowej"
-          "Pusta skrzynka sufitowa z boazerii drewnianej",
-      "Pusta ściana sufitowa - płytki",
-      "Pusta ściana sufitowa - boazeria drewniana",
-      "Dziurkowana ściana sufitowa - płyta wiórowa",
-      "Dziurkowana ściana sufitowa - płyta gipsowo-kartonowa",
-      "Dziurkowane pokrycie dachowe do wentylacji",
+      "Perforuota medžio drožlių plokštės lubų dėžė",
+      "Lubų dėžė iš gipso kartono plokščių",
+      "Tuščiavidurė lubų dėžė iš medžio plokščių",
+      "Tuščios lubų sienelės - plokštės",
+      "Tuščiavidurė lubų siena iš medžio plokščių",
+      "Tuščiavidurė lubų siena iš medžio drožlių plokščių",
+      "Tuščiavidurė lubų siena iš gipso kartono plokščių",
+      "Perforuota stogo danga ventiliacijai",
     ],
     unit: [
       "stk",
@@ -2023,13 +2024,13 @@ final polHullRoofingData = [
   )
 ];
 
-final polScaffoldingData = [
+final litScaffoldingData = [
   ScaffoldingModel(
-    name: "Belki i słupy, drewno klejone / stal - Dom wolnostojący",
+    name: "Sijos ir kolonos, klijuotos medienos ir plieno - Individualus namas",
     description: [
-      "Wynajem rusztowań za m²/miesiąc. - 132m²",
-      "Montaż lekkich rusztowań",
-      "Demontaż lekkich rusztowań",
+      "Pastolių nuoma už m²/mėn. - 132m²",
+      "Lengvųjų pastolių montavimas",
+      "Lengvųjų pastolių demontavimas",
     ],
     unit: [
       "stk",
@@ -2074,16 +2075,16 @@ final polScaffoldingData = [
   )
 ];
 
-final polWasteData = [
+final litWasteData = [
   WasteModel(
-    name: "Usuwanie odpadów",
+    name: "Atliekų šalinimas",
     description: [
-      "Pojemnik 10 m³: Kolekcja. Taryfa. i ściana",
-      "Kontener 10 m³: Odbiór. Czyste drewno",
-      "Kontener 10 m³: Rozkładanie Kontener 10 m³",
-      "Kontener 10 m³: Wynajem na tydzień",
-      "Kontener 10 m³: Opłata za opróżnienie. Czyste drewno",
-      "Kontener 10 m³: Opłata za opróżnienie. Taryfa. i murarskie",
+      "Konteineris 10 m³: Kolekcija. Tarifas. ir sienos",
+      "Konteineris 10 m³: Kolekcija. Švari mediena",
+      "Konteineris 10 m³: Konteineris 10 m³",
+      "Konteineris 10 m³: Savaitinė nuoma",
+      "Konteineris 10 m³: Ištuštinimo mokestis. Švari mediena",
+      "Konteineris 10 m³: Ištuštinimo mokestis. Tarifas. ir mūras",
     ],
     unit: [
       "RS",

@@ -1197,14 +1197,8 @@ final polParquetAndLaminate = [
       0.36,
       0.25,
     ],
-    laborHours2: [
-      0.00,
-      0.00,
-    ],
-    laborCost: [
-      0.00,
-      0.00,
-    ],
+    laborHours2: [0.00, 0.00],
+    laborCost: [0.00, 0.00],
     material: [
       528.30,
       528.30,
@@ -2023,7 +2017,7 @@ final polHullRoofingData = [
   )
 ];
 
-final polScaffoldingData = [
+final polScaffodlingData = [
   ScaffoldingModel(
     name: "Belki i słupy, drewno klejone / stal - Dom wolnostojący",
     description: [
