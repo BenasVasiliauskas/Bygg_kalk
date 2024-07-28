@@ -42,7 +42,7 @@ class NorwWindowsExteriorDoorItemsScreen extends StatefulWidget {
 
 //
 TextEditingController norwWindowsExteriorDoorsCalculationControllers =
-    TextEditingController();
+    TextEditingController(text: calculationQuantity.toStringAsFixed(2));
 List<double> emptyCustomList = [];
 double calculationQuantity = 0;
 
@@ -253,8 +253,6 @@ class _NorwWindowsExteriorDoorItemsScreenState
       material2Controllers[i].text = widget.material2[i].toStringAsFixed(2);
       totalPriceControllers[i].text = widget.totalPrice[i].toStringAsFixed(2);
     }
-    norwWindowsExteriorDoorsCalculationControllers.text =
-        calculationQuantity.toStringAsFixed(2);
 
     recalculateValues();
   }

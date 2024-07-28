@@ -119,12 +119,11 @@ class _InnerWallScreenState extends State<InnerWallScreen> {
                           height: double.infinity,
                           child: Center(
                             child: TextField(
-                              controller:
-                                  norwInnerWallCalculationQuantityController,
+                              controller: norwInnerWallCalculationControllers,
                               onChanged: (value) {
                                 setState(() {
-                                  norwInnerWallCalculationQuantityController
-                                      .text = value;
+                                  norwInnerWallCalculationControllers.text =
+                                      value;
                                 });
                               },
                             ),

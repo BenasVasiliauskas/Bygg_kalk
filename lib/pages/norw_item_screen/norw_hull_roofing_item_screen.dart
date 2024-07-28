@@ -39,7 +39,8 @@ class NorwHullRoofingItemScreen extends StatefulWidget {
       _NorwHullRoofingItemScreenState();
 }
 
-TextEditingController norwHullCalculationControllers = TextEditingController();
+TextEditingController norwHullCalculationControllers =
+    TextEditingController(text: calculationQuantity.toStringAsFixed(2));
 List<double> emptyCustomList = [];
 double calculationQuantity = 0;
 
@@ -248,8 +249,7 @@ class _NorwHullRoofingItemScreenState extends State<NorwHullRoofingItemScreen> {
       material2Controllers[i].text = widget.material2[i].toStringAsFixed(2);
       totalPriceControllers[i].text = widget.totalPrice[i].toStringAsFixed(2);
     }
-    norwHullCalculationControllers.text =
-        calculationQuantity.toStringAsFixed(2);
+
     recalculateValues();
   }
 

@@ -39,8 +39,8 @@ class NorwSupportSystemItemScreen extends StatefulWidget {
       _NorwSupportSystemItemScreenState();
 }
 
-TextEditingController norwSupportSystemCalculationQuantityController =
-    TextEditingController();
+TextEditingController norwSupportSystemCalculationControllers =
+    TextEditingController(text: calculationQuantity.toStringAsFixed(2));
 List<double> emptyCustomList = [];
 double calculationQuantity = 0;
 
@@ -171,9 +171,9 @@ class _NorwSupportSystemItemScreenState
     initialiseEmptyList();
     savingController = TextEditingController();
     loadingController = TextEditingController();
-    if (norwSupportSystemCalculationQuantityController.text != "")
+    if (norwSupportSystemCalculationControllers.text != "")
       calculationQuantity =
-          double.parse(norwSupportSystemCalculationQuantityController.text);
+          double.parse(norwSupportSystemCalculationControllers.text);
   }
 
   void calculateCalculationQuantity() {
@@ -183,9 +183,6 @@ class _NorwSupportSystemItemScreenState
         .fold(0, (previousValue, element) => previousValue + element);
 
     calculationQuantity = mat2Total / mat1Total;
-
-    norwSupportSystemCalculationQuantityController.text =
-        calculationQuantity.toStringAsFixed(2);
   }
 
   void _updateLaborHours() {
@@ -251,7 +248,7 @@ class _NorwSupportSystemItemScreenState
       material2Controllers[i].text = widget.material2[i].toStringAsFixed(2);
       totalPriceControllers[i].text = widget.totalPrice[i].toStringAsFixed(2);
     }
-    norwSupportSystemCalculationQuantityController.text =
+    norwSupportSystemCalculationControllers.text =
         calculationQuantity.toStringAsFixed(2);
     recalculateValues();
   }

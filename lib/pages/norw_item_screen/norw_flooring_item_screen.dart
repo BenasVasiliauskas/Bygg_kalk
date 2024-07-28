@@ -38,9 +38,8 @@ class NorwFlooringItemScreen extends StatefulWidget {
   State<NorwFlooringItemScreen> createState() => _NorwFlooringItemScreenState();
 }
 
-//
 TextEditingController norwFlooringCalculationControllers =
-    TextEditingController();
+    TextEditingController(text: calculationQuantity.toStringAsFixed(2));
 List<double> emptyCustomList = [];
 double calculationQuantity = 0;
 
@@ -249,8 +248,7 @@ class _NorwFlooringItemScreenState extends State<NorwFlooringItemScreen> {
       material2Controllers[i].text = widget.material2[i].toStringAsFixed(2);
       totalPriceControllers[i].text = widget.totalPrice[i].toStringAsFixed(2);
     }
-    norwFlooringCalculationControllers.text =
-        calculationQuantity.toStringAsFixed(2);
+
     recalculateValues();
   }
 

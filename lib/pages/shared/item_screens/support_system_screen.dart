@@ -117,12 +117,11 @@ class _SupportSystemScreenState extends State<SupportSystemScreen> {
                         height: double.infinity,
                         child: Center(
                           child: TextField(
-                            controller:
-                                norwSupportSystemCalculationQuantityController,
+                            controller: norwSupportSystemCalculationControllers,
                             onChanged: (value) {
                               setState(() {
-                                norwSupportSystemCalculationQuantityController
-                                    .text = value;
+                                norwSupportSystemCalculationControllers.text =
+                                    value;
                               });
                             },
                           ),

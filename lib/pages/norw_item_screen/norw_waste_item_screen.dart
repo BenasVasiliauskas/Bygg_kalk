@@ -38,7 +38,8 @@ class NorwWasteItemScreen extends StatefulWidget {
   State<NorwWasteItemScreen> createState() => _NorwWasteItemScreenState();
 }
 
-TextEditingController norwWasteCalculationControllers = TextEditingController();
+TextEditingController norwWasteCalculationControllers =
+    TextEditingController(text: calculationQuantity.toStringAsFixed(2));
 List<double> emptyCustomList = [];
 double calculationQuantity = 0;
 
@@ -247,8 +248,7 @@ class _NorwWasteItemScreenState extends State<NorwWasteItemScreen> {
       material2Controllers[i].text = widget.material2[i].toStringAsFixed(2);
       totalPriceControllers[i].text = widget.totalPrice[i].toStringAsFixed(2);
     }
-    norwWasteCalculationControllers.text =
-        calculationQuantity.toStringAsFixed(2);
+
     recalculateValues();
   }
 

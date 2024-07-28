@@ -44,7 +44,7 @@ class NorwOuterRoofItemScreen extends StatefulWidget {
 List<double> emptyCustomList = [];
 //
 TextEditingController norwOuterRoofCalculationControllers =
-    TextEditingController();
+    TextEditingController(text: calculationQuantity.toStringAsFixed(2));
 double calculationQuantity = 0;
 
 class _NorwOuterRoofItemScreenState extends State<NorwOuterRoofItemScreen> {
@@ -255,8 +255,6 @@ class _NorwOuterRoofItemScreenState extends State<NorwOuterRoofItemScreen> {
       material2Controllers[i].text = widget.material2[i].toStringAsFixed(2);
       totalPriceControllers[i].text = widget.totalPrice[i].toStringAsFixed(2);
     }
-    norwOuterRoofCalculationControllers.text =
-        calculationQuantity.toStringAsFixed(2);
 
     recalculateValues();
   }

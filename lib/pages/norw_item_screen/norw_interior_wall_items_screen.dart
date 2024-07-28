@@ -41,8 +41,8 @@ class NorwInteriorWallItemsScreen extends StatefulWidget {
       _NorwInteriorWallItemsScreenState();
 }
 
-TextEditingController norwInnerWallCalculationQuantityController =
-    TextEditingController();
+TextEditingController norwInnerWallCalculationControllers =
+    TextEditingController(text: calculationQuantity.toStringAsFixed(2));
 List<double> emptyCustomList = [];
 double calculationQuantity = 0;
 
@@ -77,7 +77,7 @@ class _NorwInteriorWallItemsScreenState
 
     calculationQuantity = mat2Total / mat1Total;
 
-    norwInnerWallCalculationQuantityController.text =
+    norwInnerWallCalculationControllers.text =
         calculationQuantity.toStringAsFixed(2);
   }
 
@@ -186,9 +186,9 @@ class _NorwInteriorWallItemsScreenState
     initialiseEmptyList();
     savingController = TextEditingController();
     loadingController = TextEditingController();
-    if (norwInnerWallCalculationQuantityController.text != "")
+    if (norwInnerWallCalculationControllers.text != "")
       calculationQuantity =
-          double.parse(norwInnerWallCalculationQuantityController.text);
+          double.parse(norwInnerWallCalculationControllers.text);
   }
 
   void setInitialValues() {
@@ -205,8 +205,7 @@ class _NorwInteriorWallItemsScreenState
       material2Controllers[i].text = widget.material2[i].toStringAsFixed(2);
       totalPriceControllers[i].text = widget.totalPrice[i].toStringAsFixed(2);
     }
-    norwInnerWallCalculationQuantityController.text =
-        calculationQuantity.toStringAsFixed(2);
+
     recalculateValues();
   }
 

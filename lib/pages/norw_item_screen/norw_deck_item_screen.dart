@@ -39,7 +39,8 @@ class NorwDeckItemScreen extends StatefulWidget {
 }
 
 //
-TextEditingController norwDeckCalculationControllers = TextEditingController();
+TextEditingController norwDeckCalculationControllers =
+    TextEditingController(text: calculationQuantity.toStringAsFixed(2));
 List<double> emptyCustomList = [];
 
 double calculationQuantity = 0;
@@ -180,9 +181,6 @@ class _NorwDeckItemScreenState extends State<NorwDeckItemScreen> {
         .fold(0, (previousValue, element) => previousValue + element);
 
     calculationQuantity = mat2Total / mat1Total;
-
-    norwDeckCalculationControllers.text =
-        calculationQuantity.toStringAsFixed(2);
   }
 
   void _updateLaborHours() {

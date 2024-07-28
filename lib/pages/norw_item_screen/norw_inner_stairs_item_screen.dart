@@ -42,7 +42,7 @@ class NorwInnerStairsItemScreen extends StatefulWidget {
 List<double> emptyCustomList = [];
 //
 TextEditingController norwInnerStairsCalculationControllers =
-    TextEditingController();
+    TextEditingController(text: calculationQuantity.toStringAsFixed(2));
 double calculationQuantity = 0;
 
 class _NorwInnerStairsItemScreenState extends State<NorwInnerStairsItemScreen> {
@@ -250,8 +250,7 @@ class _NorwInnerStairsItemScreenState extends State<NorwInnerStairsItemScreen> {
       material2Controllers[i].text = widget.material2[i].toStringAsFixed(2);
       totalPriceControllers[i].text = widget.totalPrice[i].toStringAsFixed(2);
     }
-    norwInnerStairsCalculationControllers.text =
-        calculationQuantity.toStringAsFixed(2);
+
     recalculateValues();
   }
 

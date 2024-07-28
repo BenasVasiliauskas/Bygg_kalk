@@ -19,7 +19,6 @@ import 'package:cost_calculator/pages/norw_item_screen/norw_flooring_item_screen
 import 'package:cost_calculator/pages/norw_item_screen/norw_hull_roofing_item_screen.dart';
 import 'package:cost_calculator/pages/norw_item_screen/norw_inner_door_items_screen.dart';
 import 'package:cost_calculator/pages/norw_item_screen/norw_inner_stairs_item_screen.dart';
-import 'package:cost_calculator/pages/norw_item_screen/norw_interior_wall_items_screen.dart';
 import 'package:cost_calculator/pages/norw_item_screen/norw_outer_roof_item_screen.dart';
 import 'package:cost_calculator/pages/norw_item_screen/norw_parquet_laminate_items_screen.dart';
 import 'package:cost_calculator/pages/norw_item_screen/norw_scaffolding_item_screen.dart';
@@ -384,7 +383,7 @@ Future<void> loadSupportSystemModel(var model) async {
           .fold(0, (previousValue, element) => previousValue + element);
       if (calculationQuantity == 0 && mat2Total != 0 && mat1Total != 0) {
         double calculationQuantity = mat2Total / mat1Total;
-        norwSupportSystemCalculationQuantityController.text =
+        norwSupportSystemCalculationControllers.text =
             calculationQuantity.toStringAsFixed(2);
       }
     }
@@ -578,7 +577,7 @@ Future<void> loadInnerWallModel(var model) async {
           .fold(0, (previousValue, element) => previousValue + element);
       if (calculationQuantity == 0 && mat2Total != 0 && mat1Total != 0) {
         double calculationQuantity = mat2Total / mat1Total;
-        norwInnerWallCalculationQuantityController.text =
+        norwSupportSystemCalculationControllers.text =
             calculationQuantity.toStringAsFixed(2);
       }
     }
