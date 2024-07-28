@@ -42,8 +42,7 @@ class ExteriorWallItemsScreen extends StatefulWidget {
 }
 
 TextEditingController exteriorWallCalculationControllers =
-    TextEditingController();
-
+    TextEditingController(text: calculationQuantity.toStringAsFixed(2));
 double calculationQuantity = 0;
 
 List<double> emptyCustomList = [];
@@ -258,8 +257,6 @@ class _ExteriorWallItemsScreenState extends State<ExteriorWallItemsScreen> {
       material2Controllers[i].text = widget.material2[i].toStringAsFixed(2);
       totalPriceControllers[i].text = widget.totalPrice[i].toStringAsFixed(2);
     }
-    exteriorWallCalculationControllers.text =
-        calculationQuantity.toStringAsFixed(2);
 
     recalculateValues();
   }

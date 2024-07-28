@@ -38,7 +38,8 @@ class DeckItemScreen extends StatefulWidget {
   State<DeckItemScreen> createState() => _DeckItemScreenState();
 }
 
-TextEditingController deckCalculationControllers = TextEditingController();
+TextEditingController deckCalculationControllers =
+    TextEditingController(text: calculationQuantity.toStringAsFixed(2));
 List<double> emptyCustomList = [];
 double calculationQuantity = 0;
 

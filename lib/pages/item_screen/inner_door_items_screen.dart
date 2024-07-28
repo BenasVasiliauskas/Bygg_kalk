@@ -37,7 +37,8 @@ class InnerDoorItemScreen extends StatefulWidget {
   _InnerDoorItemScreenState createState() => _InnerDoorItemScreenState();
 }
 
-TextEditingController innerDoorCalculationControllers = TextEditingController();
+TextEditingController innerDoorCalculationControllers =
+    TextEditingController(text: calculationQuantity.toStringAsFixed(2));
 double calculationQuantity = 0;
 List<double> emptyCustomList = [];
 
@@ -246,8 +247,7 @@ class _InnerDoorItemScreenState extends State<InnerDoorItemScreen> {
       material2Controllers[i].text = widget.material2[i].toStringAsFixed(2);
       totalPriceControllers[i].text = widget.totalPrice[i].toStringAsFixed(2);
     }
-    innerDoorCalculationControllers.text =
-        calculationQuantity.toStringAsFixed(2);
+
     recalculateValues();
   }
 

@@ -40,7 +40,7 @@ class WindowsExteriorDoorItemsScreen extends StatefulWidget {
 }
 
 TextEditingController windowsExteriorDoorsCalculationControllers =
-    TextEditingController();
+    TextEditingController(text: calculationQuantity.toStringAsFixed(2));
 double calculationQuantity = 0;
 
 List<double> emptyCustomList = [];

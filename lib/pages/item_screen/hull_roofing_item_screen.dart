@@ -39,7 +39,8 @@ class HullRoofingItemScreen extends StatefulWidget {
 }
 
 List<double> emptyCustomList = [];
-TextEditingController hullCalculationControllers = TextEditingController();
+TextEditingController hullCalculationControllers =
+    TextEditingController(text: calculationQuantity.toStringAsFixed(2));
 
 double calculationQuantity = 0;
 
@@ -247,7 +248,6 @@ class _HullRoofingItemScreenState extends State<HullRoofingItemScreen> {
       material2Controllers[i].text = widget.material2[i].toStringAsFixed(2);
       totalPriceControllers[i].text = widget.totalPrice[i].toStringAsFixed(2);
     }
-    hullCalculationControllers.text = calculationQuantity.toStringAsFixed(2);
     recalculateValues();
   }
 

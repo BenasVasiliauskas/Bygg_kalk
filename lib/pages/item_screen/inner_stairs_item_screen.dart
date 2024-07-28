@@ -39,7 +39,7 @@ class InnerStairsItemScreen extends StatefulWidget {
 }
 
 TextEditingController innerStairsCalculationControllers =
-    TextEditingController();
+    TextEditingController(text: calculationQuantity.toStringAsFixed(2));
 double calculationQuantity = 0;
 List<double> emptyCustomList = [];
 
@@ -249,8 +249,7 @@ class _InnerStairsItemScreenState extends State<InnerStairsItemScreen> {
       material2Controllers[i].text = widget.material2[i].toStringAsFixed(2);
       totalPriceControllers[i].text = widget.totalPrice[i].toStringAsFixed(2);
     }
-    innerStairsCalculationControllers.text =
-        calculationQuantity.toStringAsFixed(2);
+
     recalculateValues();
   }
 

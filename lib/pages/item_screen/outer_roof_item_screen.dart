@@ -40,7 +40,8 @@ class OuterRoofItemScreen extends StatefulWidget {
   _OuterRoofItemScreenState createState() => _OuterRoofItemScreenState();
 }
 
-TextEditingController outerRoofCalculationControllers = TextEditingController();
+TextEditingController outerRoofCalculationControllers =
+    TextEditingController(text: calculationQuantity.toStringAsFixed(2));
 List<double> emptyCustomList = [];
 double calculationQuantity = 0;
 

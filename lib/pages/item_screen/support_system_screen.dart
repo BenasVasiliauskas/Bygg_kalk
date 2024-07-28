@@ -40,7 +40,8 @@ class SupportSystemItemScreen extends StatefulWidget {
 }
 
 TextEditingController supportSystemCalculationQuantityController =
-    TextEditingController();
+    TextEditingController(text: calculationQuantity.toStringAsFixed(2));
+
 double calculationQuantity = 0;
 
 List<double> emptyCustomList = [];
@@ -251,8 +252,7 @@ class _SupportSystemItemScreenState extends State<SupportSystemItemScreen> {
       material2Controllers[i].text = widget.material2[i].toStringAsFixed(2);
       totalPriceControllers[i].text = widget.totalPrice[i].toStringAsFixed(2);
     }
-    supportSystemCalculationQuantityController.text =
-        calculationQuantity.toStringAsFixed(2);
+
     recalculateValues();
   }
 
