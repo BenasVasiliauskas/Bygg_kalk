@@ -579,6 +579,7 @@ class _optionsScreenState extends State<optionsScreen> {
       languageNorwegian = false;
       languagePolish = false;
       languageLithuanian = false;
+      SharedPrefs.setLanguage('English');
     });
   }
 
@@ -588,6 +589,7 @@ class _optionsScreenState extends State<optionsScreen> {
       languageNorwegian = true;
       languagePolish = false;
       languageLithuanian = false;
+      SharedPrefs.setLanguage('Norwegian');
     });
   }
 
@@ -597,6 +599,7 @@ class _optionsScreenState extends State<optionsScreen> {
       languageNorwegian = false;
       languagePolish = true;
       languageLithuanian = false;
+      SharedPrefs.setLanguage('Polish');
     });
   }
 
@@ -606,6 +609,7 @@ class _optionsScreenState extends State<optionsScreen> {
       languageNorwegian = false;
       languagePolish = false;
       languageLithuanian = true;
+      SharedPrefs.setLanguage('Lithuanian');
     });
   }
 }

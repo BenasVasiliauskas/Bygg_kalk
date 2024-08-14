@@ -12,11 +12,23 @@ void main() async {
   if (language != null) {
     if (language == 'English') {
       languageEnglish = true;
+      languageNorwegian = false;
+      languageLithuanian = false;
+      languagePolish = false;
     } else if (language == 'Norwegian') {
+      languageEnglish = false;
       languageNorwegian = true;
+      languageLithuanian = false;
+      languagePolish = false;
     } else if (language == 'Lithuanian') {
+      languageEnglish = false;
+      languageNorwegian = false;
       languageLithuanian = true;
+      languagePolish = false;
     } else if (language == 'Polish') {
+      languageEnglish = false;
+      languageNorwegian = false;
+      languageLithuanian = false;
       languagePolish = true;
     }
   }
