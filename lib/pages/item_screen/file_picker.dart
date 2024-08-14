@@ -13,11 +13,7 @@ import 'package:cost_calculator/functions/save_to_json.dart';
 import 'package:cost_calculator/pages/shared/globals/file_picker_variables.dart';
 import 'package:cost_calculator/pages/shared/home_page.dart';
 import 'package:cost_calculator/widgets/custom_drawer.dart';
-import 'package:cost_calculator/widgets/saving_rows/saving_row_exteriorwall.dart';
-import 'package:cost_calculator/widgets/saving_rows/saving_row_inner_door.dart';
-import 'package:cost_calculator/widgets/saving_rows/saving_row_inner_wall.dart';
-import 'package:cost_calculator/widgets/saving_rows/saving_row_parquet_laminate.dart';
-import 'package:cost_calculator/widgets/saving_rows/saving_row_windows_exterior_door.dart';
+
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:path_provider/path_provider.dart';

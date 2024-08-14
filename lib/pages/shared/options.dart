@@ -7,6 +7,7 @@ import 'package:cost_calculator/widgets/custom_drawer.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:provider/provider.dart';
+import 'package:cost_calculator/constants/shared_prefs.dart';
 
 class optionsScreen extends StatefulWidget {
   const optionsScreen({super.key});
@@ -16,6 +17,29 @@ class optionsScreen extends StatefulWidget {
 }
 
 class _optionsScreenState extends State<optionsScreen> {
+  @override
+  void initState() {
+    super.initState();
+    _loadLanguage();
+  }
+
+  Future<void> _loadLanguage() async {
+    String? language = await SharedPrefs.getLanguage();
+    if (language != null) {
+      setState(() {
+        if (language == 'English') {
+          languageChangedToEnglish();
+        } else if (language == 'Norwegian') {
+          languageChangedToNorwegian();
+        } else if (language == 'Lithuanian') {
+          languageChangedToLithuanian();
+        } else if (language == 'Polish') {
+          languageChangedToPolish();
+        }
+      });
+    }
+  }
+
   void onLanguageChanged(bool newValue) {
     setState(() {
       if (languageEnglish) {
@@ -428,7 +452,7 @@ class _optionsScreenState extends State<optionsScreen> {
             padding: const EdgeInsets.all(8.0),
             child: Column(
               children: [
-                Row(  
+                Row(
                   children: [
                     languageEnglish
                         ? Text("Primary")

@@ -16,6 +16,7 @@ class DeckItem extends StatelessWidget {
   final List<double> material2;
   final List<double> totalPrice;
   final Color color;
+  //final String testvar;
 
   DeckItem(
     this.name,
@@ -29,6 +30,7 @@ class DeckItem extends StatelessWidget {
     this.material2,
     this.totalPrice,
     this.color,
+    //[this.testvar = ""]
   );
 
   void selectCategory(BuildContext ctx) {
