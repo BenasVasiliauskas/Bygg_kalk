@@ -1,0 +1,31 @@
+[
+  {
+    "name": "Beams and columns, glulam / steel - Single-family house",
+    "description": [
+      "Glulam beam 115x315",
+      "Glulam beam 90x225",
+      "Glulam beam impr 90x300",
+      "Glulam beam impr 90x270",
+      "Glulam post impr 90x90",
+      "Glulam post 115x115",
+      "Glulam post 90x90",
+      "Steel beam, HEB 220 (73.63 kg/lm) 220mm",
+      "Steel column HUP (14.63 kg/lm) 100x100x5"
+    ],
+    "unit": ["lm", "lm", "lm", "lm", "lm", "lm", "lm", "kg", "kg"],
+    "quantity": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+    "laborHours1": [0.4, 0.4, 0.4, 0.4, 0.17, 0.17, 0.17, 0.02, 0.02],
+    "laborHours2": [0.8, 0.8, 0.8, 0.8, 0.34, 0.34, 0.34, 0.04, 0.04],
+    "laborCost": [1.6, 1.6, 1.6, 1.6, 0.68, 0.68, 0.68, 0.08, 0.08],
+    "material": [
+      841.76, 503.34, 839.34, 538.54, 350.56, 358.56, 230.56, 27.84, 12.5
+    ],
+    "materials": [
+      1683.52, 1006.68, 1678.68, 1077.08, 701.12, 717.12, 461.12, 55.68, 25.0
+    ],
+    "totalPrice": [
+      1685.12, 1008.28, 1680.28, 1078.6799999999998, 701.8, 717.8, 461.8, 55.76,
+      25.08
+    ]
+  }
+]

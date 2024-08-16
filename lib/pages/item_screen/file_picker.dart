@@ -97,27 +97,6 @@ class _FilePickerScreenState extends State<FilePickerScreen> {
                       ],
                     ),
                   ),
-                  // Padding(
-                  //   padding: const EdgeInsets.all(8.0),
-                  //   child: SavingRowOuterWall("Exterior walls"),
-                  // ),
-                  // Padding(
-                  //   padding: const EdgeInsets.all(8.0),
-                  //   child:
-                  //       SavingRowWindowExteriorDoor("Windows/exterior doors"),
-                  // ),
-                  // Padding(
-                  //   padding: const EdgeInsets.all(8.0),
-                  //   child: SavingRowInnerWall("Interior walls"),
-                  // ),
-                  // Padding(
-                  //   padding: const EdgeInsets.all(8.0),
-                  //   child: SavingRowInnerDoor("Interior door"),
-                  // ),
-                  // Padding(
-                  //   padding: const EdgeInsets.all(8.0),
-                  //   child: SavingRowParquetLaminate("Parquet and laminate"),
-                  // ),
                   TextButton(
                     onPressed: () async {
                       final fileName = await openDialog();

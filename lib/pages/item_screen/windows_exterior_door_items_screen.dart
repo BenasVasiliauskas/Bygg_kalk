@@ -62,7 +62,6 @@ class _WindowsExteriorDoorItemsScreen
   //
 
   //
-  String name = '';
   void initialiseEmptyList() {
     emptyCustomList = createList(widget.description.length);
   }
@@ -584,12 +583,10 @@ class _WindowsExteriorDoorItemsScreen
                 onPressed: () async {
                   final fileName = await openDialog();
                   if (fileName == null || fileName.isEmpty) return;
-                  setState(() {
-                    this.name = fileName;
-                  });
+
                   WindowsAndExteriorDoorsModel windowsAndExteriorDoorsModel =
                       WindowsAndExteriorDoorsModel(
-                    name: fileName,
+                    name: widget.name,
                     description: widget.description,
                     unit: widget.unit,
                     quantity: widget.quantity,
@@ -600,9 +597,9 @@ class _WindowsExteriorDoorItemsScreen
                     materials: widget.material2,
                     totalPrice: widget.totalPrice,
                   );
-                  writeJson(windowsAndExteriorDoorsModel, name);
+                  writeJson(windowsAndExteriorDoorsModel, fileName);
                   ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                      content: Text('Data has been saved as $name.json')));
+                      content: Text('Data has been saved as $fileName.json')));
                 },
                 child: Text("Save to JSON"),
                 heroTag: "btn1",
@@ -613,9 +610,7 @@ class _WindowsExteriorDoorItemsScreen
                   onPressed: () {
                     openLoadingDialog().then((fileName) {
                       if (fileName == null || fileName.isEmpty) return;
-                      setState(() {
-                        this.name = fileName;
-                      });
+
                       readJsonFile(fileName).then(
                         (value) {
                           for (int i = 0; i < value.length; i++) {

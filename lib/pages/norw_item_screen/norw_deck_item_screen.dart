@@ -61,8 +61,6 @@ class _NorwDeckItemScreenState extends State<NorwDeckItemScreen> {
 
   //
 
-  String name = '';
-
   void initialiseEmptyList() {
     emptyCustomList = createList(widget.description.length);
   }
@@ -596,13 +594,11 @@ class _NorwDeckItemScreenState extends State<NorwDeckItemScreen> {
               ),
               FloatingActionButton(
                 onPressed: () async {
-                  final name = await openDialog();
-                  if (name == null || name.isEmpty) return;
-                  setState(() {
-                    this.name = name;
-                  });
+                  final fileName = await openDialog();
+                  if (fileName == null || fileName.isEmpty) return;
+
                   DeckModel deckModel = DeckModel(
-                    name: name,
+                    name: widget.name,
                     description: widget.description,
                     unit: widget.unit,
                     quantity: widget.quantity,
@@ -614,9 +610,9 @@ class _NorwDeckItemScreenState extends State<NorwDeckItemScreen> {
                     totalPrice: widget.totalPrice,
                   );
 
-                  writeJson(deckModel, name);
+                  writeJson(deckModel, fileName);
                   ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                      content: Text('Dataene er lagret som $name.json')));
+                      content: Text('Dataene er lagret som $fileName.json')));
                 },
                 child: Text("Lagre til JSON"),
                 heroTag: "btn1",
@@ -627,9 +623,7 @@ class _NorwDeckItemScreenState extends State<NorwDeckItemScreen> {
                   onPressed: () {
                     openLoadingDialog().then((fileName) {
                       if (fileName == null || fileName.isEmpty) return;
-                      setState(() {
-                        this.name = fileName;
-                      });
+
                       readJsonFile(fileName).then(
                         (value) {
                           for (int i = 0; i < value.length; i++) {

@@ -61,8 +61,6 @@ class _NorwScaffoldingItemScreenState extends State<NorwScaffoldingItemScreen> {
 
   //
 
-  String name = '';
-
   void initialiseEmptyList() {
     emptyCustomList = createList(widget.description.length);
   }
@@ -599,13 +597,11 @@ class _NorwScaffoldingItemScreenState extends State<NorwScaffoldingItemScreen> {
               ),
               FloatingActionButton(
                 onPressed: () async {
-                  final name = await openDialog();
-                  if (name == null || name.isEmpty) return;
-                  setState(() {
-                    this.name = name;
-                  });
+                  final fileName = await openDialog();
+                  if (fileName == null || fileName.isEmpty) return;
+
                   ScaffoldingModel scaffoldingModel = ScaffoldingModel(
-                    name: name,
+                    name: widget.name,
                     description: widget.description,
                     unit: widget.unit,
                     quantity: widget.quantity,
@@ -617,9 +613,9 @@ class _NorwScaffoldingItemScreenState extends State<NorwScaffoldingItemScreen> {
                     totalPrice: widget.totalPrice,
                   );
 
-                  writeJson(scaffoldingModel, name);
+                  writeJson(scaffoldingModel, fileName);
                   ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                      content: Text('Dataene er lagret som $name.json')));
+                      content: Text('Dataene er lagret som $fileName.json')));
                 },
                 child: Text("Lagre til JSON"),
                 heroTag: "btn1",
@@ -630,9 +626,7 @@ class _NorwScaffoldingItemScreenState extends State<NorwScaffoldingItemScreen> {
                   onPressed: () {
                     openLoadingDialog().then((fileName) {
                       if (fileName == null || fileName.isEmpty) return;
-                      setState(() {
-                        this.name = fileName;
-                      });
+
                       readJsonFile(fileName).then(
                         (value) {
                           for (int i = 0; i < value.length; i++) {

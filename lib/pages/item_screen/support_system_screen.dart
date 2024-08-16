@@ -63,8 +63,6 @@ class _SupportSystemItemScreenState extends State<SupportSystemItemScreen> {
 
   //
 
-  String name = '';
-
   void initialiseEmptyList() {
     emptyCustomList = createList(widget.description.length);
   }
@@ -601,13 +599,11 @@ class _SupportSystemItemScreenState extends State<SupportSystemItemScreen> {
               ),
               FloatingActionButton(
                 onPressed: () async {
-                  final name = await openDialog();
-                  if (name == null || name.isEmpty) return;
-                  setState(() {
-                    this.name = name;
-                  });
+                  final fileName = await openDialog();
+                  if (fileName == null || fileName.isEmpty) return;
+
                   SupportSystemModel supportSystemModel = SupportSystemModel(
-                    name: name,
+                    name: widget.name,
                     description: widget.description,
                     unit: widget.unit,
                     quantity: widget.quantity,
@@ -619,9 +615,9 @@ class _SupportSystemItemScreenState extends State<SupportSystemItemScreen> {
                     totalPrice: widget.totalPrice,
                   );
 
-                  writeJson(supportSystemModel, name);
+                  writeJson(supportSystemModel, fileName);
                   ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                      content: Text('Data has been saved as $name.json')));
+                      content: Text('Data has been saved as $fileName.json')));
                 },
                 child: Text("Save to JSON"),
                 heroTag: "btn1",
@@ -632,14 +628,15 @@ class _SupportSystemItemScreenState extends State<SupportSystemItemScreen> {
                   onPressed: () {
                     openLoadingDialog().then((fileName) {
                       if (fileName == null || fileName.isEmpty) return;
-                      setState(() {
-                        this.name = fileName;
-                      });
+
                       readJsonFile(fileName).then(
                         (value) {
                           for (int i = 0; i < value.length; i++) {
                             SupportSystemModel supportSystemModel =
                                 SupportSystemModel.fromJson(value[i]);
+                            print(supportSystemModel.name);
+                            print(widget.name);
+                            print(widget.name == supportSystemModel.name);
                             if (supportSystemModel.name == widget.name) {
                               setState(() {
                                 widget.description =

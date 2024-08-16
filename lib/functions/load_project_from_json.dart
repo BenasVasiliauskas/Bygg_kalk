@@ -141,8 +141,8 @@ Future<void> loadWasteModel(var model) async {
   double calculationQuantity = 0;
   for (int i = 0; i < wasteData.length; i++) {
     if (model.name == wasteData[i].name) {
-      wasteData[i].name = model.name;
-      wasteData[i].description = model.description;
+      // wasteData[i].name = model.name;
+      // wasteData[i].description = model.description;
       wasteData[i].unit = model.unit;
       wasteData[i].quantity = model.quantity;
       wasteData[i].laborHours1 = model.laborHours1;

@@ -60,8 +60,6 @@ class _InnerStairsItemScreenState extends State<InnerStairsItemScreen> {
 
   //
 
-  String name = '';
-
   void initialiseEmptyList() {
     emptyCustomList = createList(widget.description.length);
   }
@@ -598,13 +596,11 @@ class _InnerStairsItemScreenState extends State<InnerStairsItemScreen> {
               ),
               FloatingActionButton(
                 onPressed: () async {
-                  final name = await openDialog();
-                  if (name == null || name.isEmpty) return;
-                  setState(() {
-                    this.name = name;
-                  });
+                  final fileName = await openDialog();
+                  if (fileName == null || fileName.isEmpty) return;
+
                   InnerStairsModel innerStairsModel = InnerStairsModel(
-                    name: name,
+                    name: widget.name,
                     description: widget.description,
                     unit: widget.unit,
                     quantity: widget.quantity,
@@ -616,9 +612,9 @@ class _InnerStairsItemScreenState extends State<InnerStairsItemScreen> {
                     totalPrice: widget.totalPrice,
                   );
 
-                  writeJson(innerStairsModel, name);
+                  writeJson(innerStairsModel, fileName);
                   ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                      content: Text('Data has been saved as $name.json')));
+                      content: Text('Data has been saved as $fileName.json')));
                 },
                 child: Text("Save to JSON"),
                 heroTag: "btn1",
@@ -629,9 +625,7 @@ class _InnerStairsItemScreenState extends State<InnerStairsItemScreen> {
                   onPressed: () {
                     openLoadingDialog().then((fileName) {
                       if (fileName == null || fileName.isEmpty) return;
-                      setState(() {
-                        this.name = fileName;
-                      });
+
                       readJsonFile(fileName).then(
                         (value) {
                           for (int i = 0; i < value.length; i++) {
