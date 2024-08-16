@@ -674,6 +674,7 @@ class _NorwWindowsExteriorDoorItemsScreenState
                                   setInitialValues();
                                   calculateCalculationQuantity();
                                   updateTotalSum();
+                                  isDirty = true;
                                 },
                               );
                             }

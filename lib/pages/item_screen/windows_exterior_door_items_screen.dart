@@ -632,6 +632,7 @@ class _WindowsExteriorDoorItemsScreen
                                   setInitialValues();
                                   calculateCalculationQuantity();
                                   updateTotalSum();
+                                  isDirty = true;
                                 },
                               );
                             }

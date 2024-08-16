@@ -629,6 +629,7 @@ class _WasteItemScreenState extends State<WasteItemScreen> {
                                 setInitialValues();
                                 calculateCalculationQuantity();
                                 updateTotalSum();
+                                isDirty = true;
                               });
                             }
                           }

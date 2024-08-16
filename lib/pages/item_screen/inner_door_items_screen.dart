@@ -629,6 +629,7 @@ class _InnerDoorItemScreenState extends State<InnerDoorItemScreen> {
                                 setInitialValues();
                                 calculateCalculationQuantity();
                                 updateTotalSum();
+                                isDirty = true;
                               });
                             }
                           }

@@ -694,6 +694,7 @@ class _NorwExteriorWallItemsScreenState
                                   setInitialValues();
                                   calculateCalculationQuantity();
                                   updateTotalSum();
+                                  isDirty = true;
                                 });
                               }
                             }

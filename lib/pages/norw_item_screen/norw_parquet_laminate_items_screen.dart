@@ -642,6 +642,7 @@ class _NorwParquetLaminatetemsScreenState
                                 setInitialValues();
                                 calculateCalculationQuantity();
                                 updateTotalSum();
+                                isDirty = true;
                               });
                             }
                           }

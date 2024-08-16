@@ -621,6 +621,7 @@ class _ParquetLaminateItemsScreenState
                                 setInitialValues();
                                 calculateCalculationQuantity();
                                 updateTotalSum();
+                                isDirty = true;
                               });
                             }
                           }

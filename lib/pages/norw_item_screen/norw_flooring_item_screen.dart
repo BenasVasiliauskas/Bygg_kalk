@@ -633,6 +633,7 @@ class _NorwFlooringItemScreenState extends State<NorwFlooringItemScreen> {
                                 setInitialValues();
                                 calculateCalculationQuantity();
                                 updateTotalSum();
+                                isDirty = true;
                               });
                             }
                           }

@@ -229,9 +229,8 @@ class _ExteriorWallItemsScreenState extends State<ExteriorWallItemsScreen> {
 
     calculationQuantity = mat2Total / mat1Total;
 
-    if (exteriorWallCalculationControllers.text != "")
-      exteriorWallCalculationControllers.text =
-          calculationQuantity.toStringAsFixed(2);
+    exteriorWallCalculationControllers.text =
+        calculationQuantity.toStringAsFixed(2);
   }
 
   void setInitialValues() {
@@ -674,6 +673,7 @@ class _ExteriorWallItemsScreenState extends State<ExteriorWallItemsScreen> {
                                   setInitialValues();
                                   calculateCalculationQuantity();
                                   updateTotalSum();
+                                  isDirty = true;
                                 });
                               }
                             }

@@ -637,6 +637,7 @@ class _NorwInnerStairsItemScreenState extends State<NorwInnerStairsItemScreen> {
                                 setInitialValues();
                                 calculateCalculationQuantity();
                                 updateTotalSum();
+                                isDirty = true;
                               });
                             }
                           }

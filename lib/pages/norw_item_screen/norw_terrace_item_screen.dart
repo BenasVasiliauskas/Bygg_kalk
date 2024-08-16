@@ -634,6 +634,7 @@ class _NorwTerraceItemScreenState extends State<NorwTerraceItemScreen> {
                                 setInitialValues();
                                 calculateCalculationQuantity();
                                 updateTotalSum();
+                                isDirty = true;
                               });
                             }
                           }

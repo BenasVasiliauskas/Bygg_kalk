@@ -642,6 +642,7 @@ class _InteriorWallItemsScreenState extends State<InteriorWallItemsScreen> {
                                 calculateCalculationQuantity();
                                 setInitialValues();
                                 updateTotalSum();
+                                isDirty = true;
                               });
                             }
                           }

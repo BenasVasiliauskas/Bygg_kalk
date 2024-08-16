@@ -635,6 +635,7 @@ class _InnerStairsItemScreenState extends State<InnerStairsItemScreen> {
                                 setInitialValues();
                                 calculateCalculationQuantity();
                                 updateTotalSum();
+                                isDirty = true;
                               });
                             }
                           }

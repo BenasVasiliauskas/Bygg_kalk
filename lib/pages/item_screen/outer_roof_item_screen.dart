@@ -672,6 +672,7 @@ class _OuterRoofItemScreenState extends State<OuterRoofItemScreen> {
                                   setInitialValues();
                                   calculateCalculationQuantity();
                                   updateTotalSum();
+                                  isDirty = true;
                                 });
                               }
                             }

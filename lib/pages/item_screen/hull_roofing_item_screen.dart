@@ -632,6 +632,7 @@ class _HullRoofingItemScreenState extends State<HullRoofingItemScreen> {
                                 setInitialValues();
                                 calculateCalculationQuantity();
                                 updateTotalSum();
+                                isDirty = true;
                               });
                             }
                           }

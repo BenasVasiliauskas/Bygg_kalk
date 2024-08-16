@@ -674,6 +674,7 @@ class _NorwOuterRoofItemScreenState extends State<NorwOuterRoofItemScreen> {
                                   setInitialValues();
                                   calculateCalculationQuantity();
                                   updateTotalSum();
+                                  isDirty = true;
                                 });
                               }
                             }

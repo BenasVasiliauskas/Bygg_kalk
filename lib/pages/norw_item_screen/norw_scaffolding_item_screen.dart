@@ -638,6 +638,7 @@ class _NorwScaffoldingItemScreenState extends State<NorwScaffoldingItemScreen> {
                                 setInitialValues();
                                 calculateCalculationQuantity();
                                 updateTotalSum();
+                                isDirty = true;
                               });
                             }
                           }

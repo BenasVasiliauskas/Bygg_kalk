@@ -631,6 +631,7 @@ class _FlooringItemScreenState extends State<FlooringItemScreen> {
                                 setInitialValues();
                                 calculateCalculationQuantity();
                                 updateTotalSum();
+                                isDirty = true;
                               });
                             }
                           }

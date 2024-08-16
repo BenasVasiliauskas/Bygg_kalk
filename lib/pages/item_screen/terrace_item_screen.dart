@@ -629,6 +629,7 @@ class _TerraceItemScreenState extends State<TerraceItemScreen> {
                                 setInitialValues();
                                 calculateCalculationQuantity();
                                 updateTotalSum();
+                                isDirty = true;
                               });
                             }
                           }

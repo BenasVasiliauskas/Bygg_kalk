@@ -634,6 +634,7 @@ class _ScaffoldingItemScreenState extends State<ScaffoldingItemScreen> {
                                 setInitialValues();
                                 calculateCalculationQuantity();
                                 updateTotalSum();
+                                isDirty = true;
                               });
                             }
                           }

@@ -629,6 +629,7 @@ class _DeckItemScreenState extends State<DeckItemScreen> {
                                 setInitialValues();
                                 calculateCalculationQuantity();
                                 updateTotalSum();
+                                isDirty = true;
                               });
                             }
                           }

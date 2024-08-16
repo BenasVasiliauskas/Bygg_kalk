@@ -632,6 +632,7 @@ class _NorwWasteItemScreenState extends State<NorwWasteItemScreen> {
                                 setInitialValues();
                                 calculateCalculationQuantity();
                                 updateTotalSum();
+                                isDirty = true;
                               });
                             }
                           }

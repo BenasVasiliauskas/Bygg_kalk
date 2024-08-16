@@ -630,6 +630,7 @@ class _NorwDeckItemScreenState extends State<NorwDeckItemScreen> {
                                 setInitialValues();
                                 calculateCalculationQuantity();
                                 updateTotalSum();
+                                isDirty = true;
                               });
                             }
                           }

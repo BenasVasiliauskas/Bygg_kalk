@@ -638,6 +638,7 @@ class _NorwSupportSystemItemScreenState
                                 setInitialValues();
                                 calculateCalculationQuantity();
                                 updateTotalSum();
+                                isDirty = true;
                               });
                             }
                           }

@@ -637,6 +637,7 @@ class _NorwHullRoofingItemScreenState extends State<NorwHullRoofingItemScreen> {
                                 setInitialValues();
                                 calculateCalculationQuantity();
                                 updateTotalSum();
+                                isDirty = true;
                               });
                             }
                           }

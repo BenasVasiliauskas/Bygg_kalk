@@ -642,6 +642,7 @@ class _NorwInnerDoorItemScreenScreenState
                                 setInitialValues();
                                 calculateCalculationQuantity();
                                 updateTotalSum();
+                                isDirty = true;
                               });
                             }
                           }

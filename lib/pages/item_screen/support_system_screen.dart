@@ -639,6 +639,7 @@ class _SupportSystemItemScreenState extends State<SupportSystemItemScreen> {
                                 setInitialValues();
                                 calculateCalculationQuantity();
                                 updateTotalSum();
+                                isDirty = true;
                               });
                             }
                           }
