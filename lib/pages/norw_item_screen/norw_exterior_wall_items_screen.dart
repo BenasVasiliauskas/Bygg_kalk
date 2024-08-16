@@ -6,7 +6,6 @@ import 'package:cost_calculator/functions/save_to_json.dart';
 import 'package:cost_calculator/models/outer_wall_data_model.dart';
 import 'package:cost_calculator/pages/shared/globals/calculation_variables.dart';
 import 'package:flutter/material.dart';
-import '../../constants/innerwall_constants.dart';
 import '../../constants/norw_budget_constants.dart';
 
 class NorwExteriorWallItemsScreen extends StatefulWidget {
@@ -45,7 +44,6 @@ TextEditingController norwExteriorWallCalculationControllers =
     TextEditingController(text: calculationQuantity.toStringAsFixed(2));
 //
 double calculationQuantity = 0;
-List<double> emptyCustomList = [];
 
 class _NorwExteriorWallItemsScreenState
     extends State<NorwExteriorWallItemsScreen> {
@@ -64,10 +62,6 @@ class _NorwExteriorWallItemsScreenState
   late TextEditingController loadingController;
 
   //
-
-  void initialiseEmptyList() {
-    emptyCustomList = createList(widget.description.length);
-  }
 
   void calculateCalculationQuantity() {
     double mat2Total = widget.material2
@@ -186,7 +180,7 @@ class _NorwExteriorWallItemsScreenState
         ),
       );
     }
-    initialiseEmptyList();
+
     savingController = TextEditingController();
     loadingController = TextEditingController();
     if (norwExteriorWallCalculationControllers.text != "")
@@ -273,7 +267,6 @@ class _NorwExteriorWallItemsScreenState
       // Recalculate labor hours 2
       widget.laborHours2[i] = calculateWorkHours2(
         i,
-        emptyCustomList,
         widget.laborHours1,
         calculationQuantity,
       );
@@ -290,7 +283,6 @@ class _NorwExteriorWallItemsScreenState
         i,
         widget.material1,
         calculationQuantity,
-        emptyCustomList,
       );
       material2Controllers[i].text = widget.material2[i].toStringAsFixed(2);
       // Recalculate total price
@@ -379,15 +371,9 @@ class _NorwExteriorWallItemsScreenState
                     );
                     //
                     widget.laborHours2[i] = calculateWorkHours2(
-                        i,
-                        emptyCustomList,
-                        widget.laborHours1,
-                        calculationQuantity);
+                        i, widget.laborHours1, calculationQuantity);
                     laborHours2Controllers[i].text = calculateWorkHours2(
-                            i,
-                            emptyCustomList,
-                            widget.laborHours1,
-                            calculationQuantity)
+                            i, widget.laborHours1, calculationQuantity)
                         .toStringAsFixed(2);
                     //
                     widget.laborCost[i] = calculateJobCost(
@@ -403,14 +389,16 @@ class _NorwExteriorWallItemsScreenState
                         .toStringAsFixed(2);
 
                     // Recalculate and update the material 2 when quantity changes
-                    widget.material2[i] = calculateMaterialCost(i,
-                        widget.material1, calculationQuantity, emptyCustomList);
+                    widget.material2[i] = calculateMaterialCost(
+                      i,
+                      widget.material1,
+                      calculationQuantity,
+                    );
                     material2Controllers[i].text = calculateMaterialCost(
-                            i,
-                            widget.material1,
-                            calculationQuantity,
-                            emptyCustomList)
-                        .toStringAsFixed(2);
+                      i,
+                      widget.material1,
+                      calculationQuantity,
+                    ).toStringAsFixed(2);
 
                     // Recalculate and update the total price when quantity changes
                     widget.totalPrice[i] = calculateTotalPrice(
@@ -473,7 +461,10 @@ class _NorwExteriorWallItemsScreenState
 
                 // Recalculate and update the material 2 when material 1 changes
                 double updatedMaterial2 = calculateMaterialCost(
-                    i, widget.material1, calculationQuantity, emptyCustomList);
+                  i,
+                  widget.material1,
+                  calculationQuantity,
+                );
                 widget.material2[i] = updatedMaterial2;
                 material2Controllers[i].text =
                     updatedMaterial2.toStringAsFixed(2);

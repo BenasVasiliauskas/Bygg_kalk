@@ -6,7 +6,6 @@ import 'package:cost_calculator/models/inner_door_data_model.dart';
 import 'package:cost_calculator/pages/shared/globals/calculation_variables.dart';
 import 'package:flutter/material.dart';
 import '../../constants/budget_constants.dart';
-import '../../constants/innerwall_constants.dart';
 
 class InnerDoorItemScreen extends StatefulWidget {
   String name;
@@ -39,8 +38,6 @@ class InnerDoorItemScreen extends StatefulWidget {
 
 TextEditingController innerDoorCalculationControllers =
     TextEditingController(text: calculationQuantity.toStringAsFixed(2));
-double calculationQuantity = 0;
-List<double> emptyCustomList = [];
 
 class _InnerDoorItemScreenState extends State<InnerDoorItemScreen> {
   List<DataRow> rows = [];
@@ -58,10 +55,6 @@ class _InnerDoorItemScreenState extends State<InnerDoorItemScreen> {
   //
 
   //
-
-  void initialiseEmptyList() {
-    emptyCustomList = createList(widget.description.length);
-  }
 
   void rebuildDataTable() {
     List<DataRow> updatedRows =
@@ -163,7 +156,7 @@ class _InnerDoorItemScreenState extends State<InnerDoorItemScreen> {
         ),
       );
     }
-    initialiseEmptyList();
+
     savingController = TextEditingController();
     loadingController = TextEditingController();
     if (innerDoorCalculationControllers.text != "")
@@ -254,7 +247,6 @@ class _InnerDoorItemScreenState extends State<InnerDoorItemScreen> {
       // Recalculate labor hours 2
       widget.laborHours2[i] = calculateWorkHours2(
         i,
-        emptyCustomList,
         widget.laborHours1,
         calculationQuantity,
       );
@@ -273,7 +265,6 @@ class _InnerDoorItemScreenState extends State<InnerDoorItemScreen> {
         i,
         widget.material1,
         calculationQuantity,
-        emptyCustomList,
       );
       material2Controllers[i].text = widget.material2[i].toStringAsFixed(2);
 
@@ -356,15 +347,9 @@ class _InnerDoorItemScreenState extends State<InnerDoorItemScreen> {
                       );
                       //
                       widget.laborHours2[i] = calculateWorkHours2(
-                          i,
-                          emptyCustomList,
-                          widget.laborHours1,
-                          calculationQuantity);
+                          i, widget.laborHours1, calculationQuantity);
                       laborHours2Controllers[i].text = calculateWorkHours2(
-                              i,
-                              emptyCustomList,
-                              widget.laborHours1,
-                              calculationQuantity)
+                              i, widget.laborHours1, calculationQuantity)
                           .toStringAsFixed(2);
                       //
                       widget.laborCost[i] = calculateJobCost(
@@ -390,16 +375,15 @@ class _InnerDoorItemScreenState extends State<InnerDoorItemScreen> {
                       ).toStringAsFixed(2);
                       // Recalculate and update the material 2 when quantity changes
                       widget.material2[i] = calculateMaterialCost(
-                          i,
-                          widget.material1,
-                          calculationQuantity,
-                          emptyCustomList);
+                        i,
+                        widget.material1,
+                        calculationQuantity,
+                      );
                       material2Controllers[i].text = calculateMaterialCost(
-                              i,
-                              widget.material1,
-                              calculationQuantity,
-                              emptyCustomList)
-                          .toStringAsFixed(2);
+                        i,
+                        widget.material1,
+                        calculationQuantity,
+                      ).toStringAsFixed(2);
                       // Recalculate and update the total price when quantity changes
                       widget.totalPrice[i] = calculateTotalPrice(
                           i,
@@ -447,7 +431,10 @@ class _InnerDoorItemScreenState extends State<InnerDoorItemScreen> {
 
               // Recalculate and update the material 2 when material 1 changes
               double updatedMaterial2 = calculateMaterialCost(
-                  i, widget.material1, calculationQuantity, emptyCustomList);
+                i,
+                widget.material1,
+                calculationQuantity,
+              );
               widget.material2[i] = updatedMaterial2;
               material2Controllers[i].text =
                   updatedMaterial2.toStringAsFixed(2);

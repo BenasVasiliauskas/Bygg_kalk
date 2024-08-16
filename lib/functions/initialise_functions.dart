@@ -14,8 +14,8 @@ double calculateMaterialQuantity(
   return quantity * calculationQuantity;
 }
 
-double calculateWorkHours2(int index, emptyCustomList,
-    List<double> widgetLaborHours1, calculationQuantity) {
+double calculateWorkHours2(
+    int index, List<double> widgetLaborHours1, calculationQuantity) {
   double laborHours1 = widgetLaborHours1[index];
   return laborHours1 * calculationQuantity;
 }
@@ -26,8 +26,8 @@ double calculateJobCost(int index, List<double> widgetLaborHours2,
   return laborHours2 * hourlyRateConstructionRemodeling;
 }
 
-double calculateMaterialCost(int index, List<double> widgetMaterial1,
-    calculationQuantity, emptyCustomList) {
+double calculateMaterialCost(
+    int index, List<double> widgetMaterial1, calculationQuantity) {
   double material1 = widgetMaterial1[index];
   return material1 * calculationQuantity;
 }
