@@ -1,14 +1,11 @@
+import 'package:cost_calculator/constants/language.dart';
 import 'package:cost_calculator/data/data.dart';
 import 'package:cost_calculator/data/norw_data.dart';
 import 'package:cost_calculator/items/support_system_item.dart';
-import 'package:cost_calculator/pages/item_screen/support_system_screen.dart';
-import 'package:cost_calculator/pages/norw_item_screen/norw_support_system_item_screen.dart';
 import 'package:cost_calculator/pages/shared/home_page.dart';
-
+import 'package:cost_calculator/widgets/custom_drawer.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import '../../../constants/language.dart';
-import '../../../widgets/custom_drawer.dart';
 
 class SupportSystemScreen extends StatefulWidget {
   @override
@@ -16,6 +13,45 @@ class SupportSystemScreen extends StatefulWidget {
 }
 
 class _SupportSystemScreenState extends State<SupportSystemScreen> {
+  List<TextEditingController> supportSystemControllers = [];
+  List<TextEditingController> norwSupportSystemControllers = [];
+
+  @override
+  void initState() {
+    super.initState();
+
+    // Initialize controllers based on the length of the support system lists
+    supportSystemControllers = List.generate(
+      supportSystem.length,
+      (index) => TextEditingController(
+        text: supportSystem[index].calculationQuantity?.isNotEmpty == true
+            ? supportSystem[index].calculationQuantity!.first.toString()
+            : '0.0',
+      ),
+    );
+
+    norwSupportSystemControllers = List.generate(
+      norwSupportSystem.length,
+      (index) => TextEditingController(
+        text: norwSupportSystem[index].calculationQuantity?.isNotEmpty == true
+            ? norwSupportSystem[index].calculationQuantity!.first.toString()
+            : '0.0',
+      ),
+    );
+  }
+
+  @override
+  void dispose() {
+    // Dispose of controllers when the widget is disposed
+    for (var controller in supportSystemControllers) {
+      controller.dispose();
+    }
+    for (var controller in norwSupportSystemControllers) {
+      controller.dispose();
+    }
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -49,8 +85,11 @@ class _SupportSystemScreenState extends State<SupportSystemScreen> {
       body: GridView.count(
         padding: const EdgeInsets.all(25),
         children: languageEnglish
-            ? supportSystem.map(
-                (catData) {
+            ? supportSystem.asMap().entries.map(
+                (entry) {
+                  final index = entry.key;
+                  final catData = entry.value;
+
                   return Row(
                     children: [
                       Expanded(
@@ -75,12 +114,10 @@ class _SupportSystemScreenState extends State<SupportSystemScreen> {
                           height: double.infinity,
                           child: Center(
                             child: TextField(
-                              controller:
-                                  supportSystemCalculationQuantityController,
+                              controller: supportSystemControllers[index],
                               onChanged: (value) {
                                 setState(() {
-                                  supportSystemCalculationQuantityController
-                                      .text = value;
+                                  supportSystemControllers[index].text = value;
                                 });
                               },
                             ),
@@ -92,7 +129,10 @@ class _SupportSystemScreenState extends State<SupportSystemScreen> {
                   );
                 },
               ).toList()
-            : norwSupportSystem.map((catData) {
+            : norwSupportSystem.asMap().entries.map((entry) {
+                final index = entry.key;
+                final catData = entry.value;
+
                 return Row(
                   children: [
                     Expanded(
@@ -117,10 +157,10 @@ class _SupportSystemScreenState extends State<SupportSystemScreen> {
                         height: double.infinity,
                         child: Center(
                           child: TextField(
-                            controller: norwSupportSystemCalculationControllers,
+                            controller: norwSupportSystemControllers[index],
                             onChanged: (value) {
                               setState(() {
-                                norwSupportSystemCalculationControllers.text =
+                                norwSupportSystemControllers[index].text =
                                     value;
                               });
                             },

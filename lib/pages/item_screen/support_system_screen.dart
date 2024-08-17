@@ -19,19 +19,22 @@ class SupportSystemItemScreen extends StatefulWidget {
   List<double> material1;
   List<double> material2;
   List<double> totalPrice;
+  List<double> calculationQuantity;
 
   SupportSystemItemScreen(
-    this.name,
-    this.description,
-    this.unit,
-    this.quantity,
-    this.laborHours1,
-    this.laborHours2,
-    this.laborCost,
-    this.material1,
-    this.material2,
-    this.totalPrice,
-  );
+      this.name,
+      this.description,
+      this.unit,
+      this.quantity,
+      this.laborHours1,
+      this.laborHours2,
+      this.laborCost,
+      this.material1,
+      this.material2,
+      this.totalPrice,
+      {this.calculationQuantity = const [
+        0,
+      ]});
 
   @override
   State<SupportSystemItemScreen> createState() =>
@@ -618,9 +621,6 @@ class _SupportSystemItemScreenState extends State<SupportSystemItemScreen> {
                           for (int i = 0; i < value.length; i++) {
                             SupportSystemModel supportSystemModel =
                                 SupportSystemModel.fromJson(value[i]);
-                            print(supportSystemModel.name);
-                            print(widget.name);
-                            print(widget.name == supportSystemModel.name);
                             if (supportSystemModel.name == widget.name) {
                               setState(() {
                                 widget.description =

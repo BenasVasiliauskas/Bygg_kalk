@@ -17,6 +17,7 @@ class SupportSystemItem extends StatelessWidget {
   final List<double> material2;
   final List<double> totalPrice;
   final Color color;
+  final List<double> calculationQuantity;
 
   SupportSystemItem(
     this.name,
@@ -29,8 +30,11 @@ class SupportSystemItem extends StatelessWidget {
     this.material1,
     this.material2,
     this.totalPrice,
-    this.color,
-  );
+    this.color, {
+    this.calculationQuantity = const [
+      0,
+    ],
+  });
 
   void selectCategory(BuildContext ctx) {
     Navigator.of(ctx).push(
@@ -48,6 +52,7 @@ class SupportSystemItem extends StatelessWidget {
                   material1,
                   material2,
                   totalPrice,
+                  calculationQuantity: calculationQuantity,
                 )
               : NorwSupportSystemItemScreen(
                   name,

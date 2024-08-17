@@ -11,6 +11,7 @@ class SupportSystemModel {
   List<double> material;
   List<double> materials;
   List<double> totalPrice;
+  List<double>? calculationQuantity; // Add this line
   final Color color;
 
   SupportSystemModel({
@@ -24,6 +25,9 @@ class SupportSystemModel {
     required this.material,
     required this.materials,
     required this.totalPrice,
+    this.calculationQuantity = const [
+      0,
+    ], // Initialize this field
     Color? color, // Change to nullable Color
   }) : color = color ?? Color.fromARGB(255, 108, 135, 224); // Initialize color
   Map<String, dynamic> toJson() {
