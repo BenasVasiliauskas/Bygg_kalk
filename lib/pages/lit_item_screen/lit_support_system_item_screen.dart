@@ -8,7 +8,7 @@ import 'package:cost_calculator/models/support_system_data_model.dart';
 import 'package:cost_calculator/pages/shared/globals/calculation_variables.dart';
 import 'package:flutter/material.dart';
 
-class NorwSupportSystemItemScreen extends StatefulWidget {
+class LitSupportSystemItemScreen extends StatefulWidget {
   String name;
   List<String> description;
   List<String> unit;
@@ -20,7 +20,7 @@ class NorwSupportSystemItemScreen extends StatefulWidget {
   List<double> material2;
   List<double> totalPrice;
 
-  NorwSupportSystemItemScreen(
+  LitSupportSystemItemScreen(
     this.name,
     this.description,
     this.unit,
@@ -34,17 +34,17 @@ class NorwSupportSystemItemScreen extends StatefulWidget {
   );
 
   @override
-  State<NorwSupportSystemItemScreen> createState() =>
-      _NorwSupportSystemItemScreenState();
+  State<LitSupportSystemItemScreen> createState() =>
+      _LitSupportSystemItemScreenState();
 }
 
-TextEditingController norwSupportSystemCalculationControllers =
+TextEditingController litSupportSystemCalculationControllers =
     TextEditingController(text: calculationQuantity.toStringAsFixed(2));
 
 double calculationQuantity = 0;
 
-class _NorwSupportSystemItemScreenState
-    extends State<NorwSupportSystemItemScreen> {
+class _LitSupportSystemItemScreenState
+    extends State<LitSupportSystemItemScreen> {
   List<DataRow> rows = [];
   List<TextEditingController> descriptionControllers = [];
   List<TextEditingController> unitControllers = [];
@@ -164,9 +164,9 @@ class _NorwSupportSystemItemScreenState
 
     savingController = TextEditingController();
     loadingController = TextEditingController();
-    if (norwSupportSystemCalculationControllers.text != "")
+    if (litSupportSystemCalculationControllers.text != "")
       calculationQuantity =
-          double.parse(norwSupportSystemCalculationControllers.text);
+          double.parse(litSupportSystemCalculationControllers.text);
   }
 
   void calculateCalculationQuantity() {
@@ -241,7 +241,7 @@ class _NorwSupportSystemItemScreenState
       material2Controllers[i].text = widget.material2[i].toStringAsFixed(2);
       totalPriceControllers[i].text = widget.totalPrice[i].toStringAsFixed(2);
     }
-    norwSupportSystemCalculationControllers.text =
+    litSupportSystemCalculationControllers.text =
         calculationQuantity.toStringAsFixed(2);
     recalculateValues();
   }
