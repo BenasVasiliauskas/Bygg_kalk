@@ -1,8 +1,12 @@
 import 'package:cost_calculator/data/data.dart';
+import 'package:cost_calculator/data/lith_data.dart';
 import 'package:cost_calculator/data/norw_data.dart';
+import 'package:cost_calculator/data/polish_data.dart';
 import 'package:cost_calculator/items/inner_door_item.dart';
 import 'package:cost_calculator/pages/item_screen/inner_door_items_screen.dart';
+import 'package:cost_calculator/pages/lit_item_screen/lit_inner_door_items_screen.dart';
 import 'package:cost_calculator/pages/norw_item_screen/norw_inner_door_items_screen.dart';
+import 'package:cost_calculator/pages/pol_item_screen/pol_inner_door_items_screen.dart';
 import 'package:cost_calculator/pages/shared/home_page.dart';
 
 import 'package:flutter/material.dart';
@@ -90,48 +94,137 @@ class _InnerDoorScreenState extends State<InnerDoorScreen> {
                   );
                 },
               ).toList()
-            : norwInnerDoor.map(
-                (catData) {
-                  return Row(
-                    children: [
-                      Expanded(
-                        child: InnerDoorItem(
-                          catData.name,
-                          catData.description,
-                          catData.unit,
-                          catData.quantity,
-                          catData.laborHours1,
-                          catData.laborHours2,
-                          catData.laborCost,
-                          catData.material,
-                          catData.materials,
-                          catData.totalPrice,
-                          catData.color,
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.all(8),
-                        child: Container(
-                          width: 100,
-                          height: double.infinity,
-                          child: Center(
-                            child: TextField(
-                              controller: norwInnerDoorCalculationControllers,
-                              onChanged: (value) {
-                                setState(() {
-                                  norwInnerDoorCalculationControllers.text =
-                                      value;
-                                });
-                              },
+            : languageNorwegian
+                ? norwInnerDoor.map(
+                    (catData) {
+                      return Row(
+                        children: [
+                          Expanded(
+                            child: InnerDoorItem(
+                              catData.name,
+                              catData.description,
+                              catData.unit,
+                              catData.quantity,
+                              catData.laborHours1,
+                              catData.laborHours2,
+                              catData.laborCost,
+                              catData.material,
+                              catData.materials,
+                              catData.totalPrice,
+                              catData.color,
                             ),
                           ),
-                        ),
-                      ),
-                      Text("stk")
-                    ],
-                  );
-                },
-              ).toList(),
+                          Padding(
+                            padding: const EdgeInsets.all(8),
+                            child: Container(
+                              width: 100,
+                              height: double.infinity,
+                              child: Center(
+                                child: TextField(
+                                  controller:
+                                      norwInnerDoorCalculationControllers,
+                                  onChanged: (value) {
+                                    setState(() {
+                                      norwInnerDoorCalculationControllers.text =
+                                          value;
+                                    });
+                                  },
+                                ),
+                              ),
+                            ),
+                          ),
+                          Text("stk")
+                        ],
+                      );
+                    },
+                  ).toList()
+                : languagePolish
+                    ? polInnerDoor.map(
+                        (catData) {
+                          return Row(
+                            children: [
+                              Expanded(
+                                child: InnerDoorItem(
+                                  catData.name,
+                                  catData.description,
+                                  catData.unit,
+                                  catData.quantity,
+                                  catData.laborHours1,
+                                  catData.laborHours2,
+                                  catData.laborCost,
+                                  catData.material,
+                                  catData.materials,
+                                  catData.totalPrice,
+                                  catData.color,
+                                ),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.all(8),
+                                child: Container(
+                                  width: 100,
+                                  height: double.infinity,
+                                  child: Center(
+                                    child: TextField(
+                                      controller:
+                                          polInnerDoorCalculationControllers,
+                                      onChanged: (value) {
+                                        setState(() {
+                                          polInnerDoorCalculationControllers
+                                              .text = value;
+                                        });
+                                      },
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              Text("szt")
+                            ],
+                          );
+                        },
+                      ).toList()
+                    : litInnerDoor.map(
+                        (catData) {
+                          return Row(
+                            children: [
+                              Expanded(
+                                child: InnerDoorItem(
+                                  catData.name,
+                                  catData.description,
+                                  catData.unit,
+                                  catData.quantity,
+                                  catData.laborHours1,
+                                  catData.laborHours2,
+                                  catData.laborCost,
+                                  catData.material,
+                                  catData.materials,
+                                  catData.totalPrice,
+                                  catData.color,
+                                ),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.all(8),
+                                child: Container(
+                                  width: 100,
+                                  height: double.infinity,
+                                  child: Center(
+                                    child: TextField(
+                                      controller:
+                                          litInnerDoorCalculationControllers,
+                                      onChanged: (value) {
+                                        setState(() {
+                                          litInnerDoorCalculationControllers
+                                              .text = value;
+                                        });
+                                      },
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              Text("vnt")
+                            ],
+                          );
+                        },
+                      ).toList(),
         crossAxisCount: 1,
         mainAxisSpacing: 20,
         childAspectRatio: 7 / 2,

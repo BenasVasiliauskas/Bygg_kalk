@@ -1,5 +1,6 @@
 // ignore_for_file: must_be_immutable
 
+import 'package:cost_calculator/data/lith_data.dart';
 import 'package:cost_calculator/data/norw_data_original.dart';
 import 'package:cost_calculator/functions/initialise_functions.dart';
 import 'package:cost_calculator/functions/save_to_json.dart';
@@ -8,7 +9,7 @@ import 'package:cost_calculator/pages/shared/globals/calculation_variables.dart'
 import 'package:flutter/material.dart';
 import '../../constants/norw_budget_constants.dart';
 
-class NorwInnerDoorItemScreenScreen extends StatefulWidget {
+class LitInnerDoorItemScreenScreen extends StatefulWidget {
   String name;
   List<String> description;
   List<String> unit;
@@ -20,7 +21,7 @@ class NorwInnerDoorItemScreenScreen extends StatefulWidget {
   List<double> material2;
   List<double> totalPrice;
 
-  NorwInnerDoorItemScreenScreen(
+  LitInnerDoorItemScreenScreen(
     this.name,
     this.description,
     this.unit,
@@ -34,18 +35,18 @@ class NorwInnerDoorItemScreenScreen extends StatefulWidget {
   );
 
   @override
-  _NorwInnerDoorItemScreenScreenState createState() =>
-      _NorwInnerDoorItemScreenScreenState();
+  _LitInnerDoorItemScreenScreenState createState() =>
+      _LitInnerDoorItemScreenScreenState();
 }
 
 //
-TextEditingController norwInnerDoorCalculationControllers =
+TextEditingController litInnerDoorCalculationControllers =
     TextEditingController(text: calculationQuantity.toStringAsFixed(2));
 
 double calculationQuantity = 0;
 
-class _NorwInnerDoorItemScreenScreenState
-    extends State<NorwInnerDoorItemScreenScreen> {
+class _LitInnerDoorItemScreenScreenState
+    extends State<LitInnerDoorItemScreenScreen> {
   List<DataRow> rows = [];
   List<TextEditingController> descriptionControllers = [];
   List<TextEditingController> unitControllers = [];
@@ -164,9 +165,9 @@ class _NorwInnerDoorItemScreenScreenState
 
     savingController = TextEditingController();
     loadingController = TextEditingController();
-    if (norwInnerDoorCalculationControllers.text != "")
+    if (litInnerDoorCalculationControllers.text != "")
       calculationQuantity =
-          double.parse(norwInnerDoorCalculationControllers.text);
+          double.parse(litInnerDoorCalculationControllers.text);
   }
 
   void recalculateValues() {
@@ -213,18 +214,18 @@ class _NorwInnerDoorItemScreenScreenState
 
     calculationQuantity = mat2Total / mat1Total;
 
-    norwInnerDoorCalculationControllers.text =
+    litInnerDoorCalculationControllers.text =
         calculationQuantity.toStringAsFixed(2);
   }
 
   void _updateLaborHours() {
     if (!mounted) return; // Ensure the widget is still mounted
 
-    for (int i = 0; i < norwInnerDoor.length; i++) {
-      if (norwInnerDoor[i].name == widget.name) {
+    for (int i = 0; i < litInnerDoor.length; i++) {
+      if (litInnerDoor[i].name == widget.name) {
         setState(() {
-          for (int j = 0; j < norwInnerDoor[i].laborHours1.length; j++) {
-            widget.laborHours1[j] = norwInnerDoor[i].laborHours1[j];
+          for (int j = 0; j < litInnerDoor[i].laborHours1.length; j++) {
+            widget.laborHours1[j] = litInnerDoor[i].laborHours1[j];
           }
         });
         return;
