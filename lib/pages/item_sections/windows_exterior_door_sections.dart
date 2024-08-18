@@ -68,25 +68,34 @@ class _WindowsExteriorDoorSectionsState
         ),
         body: Column(
           children: [
-            TextButton(
-              onPressed: () {
-                Navigator.of(context).pushReplacement(
-                  MaterialPageRoute(
-                    builder: (context) {
-                      return WindowsExteriorDoorScreen();
-                    },
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                TextButton(
+                  onPressed: () {
+                    Navigator.of(context).pushReplacement(
+                      MaterialPageRoute(
+                        builder: (context) {
+                          return WindowsExteriorDoorScreen();
+                        },
+                      ),
+                    );
+                  },
+                  child: Text(
+                    languageEnglish
+                        ? "Windows and exterior doors"
+                        : languageLithuanian
+                            ? "Langai ir išorinės durys"
+                            : languageNorwegian
+                                ? "Vinduer og ytterdører"
+                                : "Okna i drzwi zewnętrzne",
                   ),
-                );
-              },
-              child: Text(
-                languageEnglish
-                    ? "Windows and exterior doors"
-                    : languageLithuanian
-                        ? "Langai ir išorinės durys"
-                        : languageNorwegian
-                            ? "Vinduer og ytterdører"
-                            : "Okna i drzwi zewnętrzne",
-              ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Text("2"),
+                )
+              ],
             )
           ],
         ),
