@@ -8,7 +8,7 @@ import 'package:cost_calculator/models/waste_data_model.dart';
 import 'package:cost_calculator/pages/shared/globals/calculation_variables.dart';
 import 'package:flutter/material.dart';
 
-class NorwWasteItemScreen extends StatefulWidget {
+class PolWasteItemScreen extends StatefulWidget {
   String name;
   List<String> description;
   List<String> unit;
@@ -20,7 +20,7 @@ class NorwWasteItemScreen extends StatefulWidget {
   List<double> material2;
   List<double> totalPrice;
 
-  NorwWasteItemScreen(
+  PolWasteItemScreen(
     this.name,
     this.description,
     this.unit,
@@ -34,15 +34,15 @@ class NorwWasteItemScreen extends StatefulWidget {
   );
 
   @override
-  State<NorwWasteItemScreen> createState() => _NorwWasteItemScreenState();
+  State<PolWasteItemScreen> createState() => _PolWasteItemScreenState();
 }
 
-TextEditingController norwWasteCalculationControllers =
+TextEditingController polWasteCalculationControllers =
     TextEditingController(text: calculationQuantity.toStringAsFixed(2));
 
 double calculationQuantity = 0;
 
-class _NorwWasteItemScreenState extends State<NorwWasteItemScreen> {
+class _PolWasteItemScreenState extends State<PolWasteItemScreen> {
   List<DataRow> rows = [];
   List<TextEditingController> descriptionControllers = [];
   List<TextEditingController> unitControllers = [];
@@ -162,8 +162,8 @@ class _NorwWasteItemScreenState extends State<NorwWasteItemScreen> {
 
     savingController = TextEditingController();
     loadingController = TextEditingController();
-    if (norwWasteCalculationControllers.text != "")
-      calculationQuantity = double.parse(norwWasteCalculationControllers.text);
+    if (polWasteCalculationControllers.text != "")
+      calculationQuantity = double.parse(polWasteCalculationControllers.text);
   }
 
   void calculateCalculationQuantity() {
@@ -174,7 +174,7 @@ class _NorwWasteItemScreenState extends State<NorwWasteItemScreen> {
 
     calculationQuantity = mat2Total / mat1Total;
 
-    norwWasteCalculationControllers.text =
+    polWasteCalculationControllers.text =
         calculationQuantity.toStringAsFixed(2);
   }
 
