@@ -66,65 +66,92 @@ class _SupportSystemSectionsState extends State<SupportSystemSections> {
         ),
         body: Column(
           children: [
-            TextButton(
-              onPressed: () {
-                Navigator.of(context).pushReplacement(
-                  MaterialPageRoute(
-                    builder: (context) {
-                      return SupportSystemScreen();
-                    },
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                TextButton(
+                  onPressed: () {
+                    Navigator.of(context).pushReplacement(
+                      MaterialPageRoute(
+                        builder: (context) {
+                          return SupportSystemScreen();
+                        },
+                      ),
+                    );
+                  },
+                  child: Text(
+                    languageEnglish
+                        ? "New building"
+                        : languageLithuanian
+                            ? "Naujas pastatas"
+                            : languageNorwegian
+                                ? "Ny bygning"
+                                : "ŚNowy budynek",
                   ),
-                );
-              },
-              child: Text(
-                languageEnglish
-                    ? "New building"
-                    : languageLithuanian
-                        ? "Naujas pastatas"
-                        : languageNorwegian
-                            ? "Ny bygning"
-                            : "ŚNowy budynek",
-              ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: const Text("1"),
+                ),
+              ],
             ),
-            TextButton(
-              onPressed: () {
-                Navigator.of(context).pushReplacement(
-                  MaterialPageRoute(
-                    builder: (context) {
-                      return SupportSystemScreen();
-                    },
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                TextButton(
+                  onPressed: () {
+                    Navigator.of(context).pushReplacement(
+                      MaterialPageRoute(
+                        builder: (context) {
+                          return SupportSystemScreen();
+                        },
+                      ),
+                    );
+                  },
+                  child: Text(
+                    languageEnglish
+                        ? "Reconstruction"
+                        : languageLithuanian
+                            ? "Rekonstrukcija"
+                            : languageNorwegian
+                                ? "Rekonstruksjon"
+                                : "Rekonstrukcja",
                   ),
-                );
-              },
-              child: Text(
-                languageEnglish
-                    ? "Reconstruction"
-                    : languageLithuanian
-                        ? "Rekonstrukcija"
-                        : languageNorwegian
-                            ? "Rekonstruksjon"
-                            : "Rekonstrukcja",
-              ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: const Text("1"),
+                ),
+              ],
             ),
-            TextButton(
-              onPressed: () {
-                Navigator.of(context).pushReplacement(
-                  MaterialPageRoute(
-                    builder: (context) {
-                      return SupportSystemScreen();
-                    },
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                TextButton(
+                  onPressed: () {
+                    Navigator.of(context).pushReplacement(
+                      MaterialPageRoute(
+                        builder: (context) {
+                          return SupportSystemScreen();
+                        },
+                      ),
+                    );
+                  },
+                  child: Text(
+                    languageEnglish
+                        ? "Demolition"
+                        : languageLithuanian
+                            ? "Griovimas"
+                            : languageNorwegian
+                                ? "Riving"
+                                : "Rozbiórka",
                   ),
-                );
-              },
-              child: Text(
-                languageEnglish
-                    ? "Demolition"
-                    : languageLithuanian
-                        ? "Griovimas"
-                        : languageNorwegian
-                            ? "Riving"
-                            : "Rozbiórka",
-              ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: const Text("1"),
+                ),
+              ],
             ),
           ],
         ),

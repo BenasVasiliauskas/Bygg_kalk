@@ -66,25 +66,34 @@ class _HullRoofingSectionsState extends State<HullRoofingSections> {
         ),
         body: Column(
           children: [
-            TextButton(
-              onPressed: () {
-                Navigator.of(context).pushReplacement(
-                  MaterialPageRoute(
-                    builder: (context) {
-                      return HullRoofingScreen();
-                    },
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                TextButton(
+                  onPressed: () {
+                    Navigator.of(context).pushReplacement(
+                      MaterialPageRoute(
+                        builder: (context) {
+                          return HullRoofingScreen();
+                        },
+                      ),
+                    );
+                  },
+                  child: Text(
+                    languageEnglish
+                        ? "Hull roofing"
+                        : languageLithuanian
+                            ? "Korpuso stogo danga"
+                            : languageNorwegian
+                                ? "Hultaking"
+                                : "Pokrycia dachowe Hull",
                   ),
-                );
-              },
-              child: Text(
-                languageEnglish
-                    ? "Hull roofing"
-                    : languageLithuanian
-                        ? "Korpuso stogo danga"
-                        : languageNorwegian
-                            ? "Hultaking"
-                            : "Pokrycia dachowe Hull",
-              ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: const Text("1"),
+                ),
+              ],
             ),
           ],
         ),

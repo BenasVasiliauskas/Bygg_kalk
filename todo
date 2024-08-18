@@ -5,8 +5,6 @@ dalintis project file
 timepris paaiskinimas kaina be pvm
 paslag on hover show information
 
-saving project check if file exists if it does propt user to overwrite old or to write a new one
-
 //
 saved data to be able to be loaded on diff language
 // maybe dont save descriptions and just save the numbers?

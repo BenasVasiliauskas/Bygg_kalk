@@ -66,25 +66,92 @@ class _FlooringSectionsState extends State<FlooringSections> {
         ),
         body: Column(
           children: [
-            TextButton(
-              onPressed: () {
-                Navigator.of(context).pushReplacement(
-                  MaterialPageRoute(
-                    builder: (context) {
-                      return FlooringScreen();
-                    },
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                TextButton(
+                  onPressed: () {
+                    Navigator.of(context).pushReplacement(
+                      MaterialPageRoute(
+                        builder: (context) {
+                          return FlooringScreen();
+                        },
+                      ),
+                    );
+                  },
+                  child: Text(
+                    languageEnglish
+                        ? "New flooring"
+                        : languageLithuanian
+                            ? "Naujos grindys"
+                            : languageNorwegian
+                                ? "Nytt gulvbelegg"
+                                : "Nowa wykładzina podłogowa",
                   ),
-                );
-              },
-              child: Text(
-                languageEnglish
-                    ? "Flooring"
-                    : languageLithuanian
-                        ? "Grindys"
-                        : languageNorwegian
-                            ? "Gulvbelegg"
-                            : "Wykładziny podłogowe",
-              ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: const Text("1"),
+                ),
+              ],
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                TextButton(
+                  onPressed: () {
+                    Navigator.of(context).pushReplacement(
+                      MaterialPageRoute(
+                        builder: (context) {
+                          return FlooringScreen();
+                        },
+                      ),
+                    );
+                  },
+                  child: Text(
+                    languageEnglish
+                        ? "Reconstruction"
+                        : languageLithuanian
+                            ? "Rekonstrukcija"
+                            : languageNorwegian
+                                ? "Rekonstruksjon"
+                                : "Rekonstrukcja",
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: const Text("1"),
+                ),
+              ],
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                TextButton(
+                  onPressed: () {
+                    Navigator.of(context).pushReplacement(
+                      MaterialPageRoute(
+                        builder: (context) {
+                          return FlooringScreen();
+                        },
+                      ),
+                    );
+                  },
+                  child: Text(
+                    languageEnglish
+                        ? "Demolition"
+                        : languageLithuanian
+                            ? "Griovimas"
+                            : languageNorwegian
+                                ? "Riving"
+                                : "Rozbiórka",
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: const Text("1"),
+                ),
+              ],
             ),
           ],
         ),

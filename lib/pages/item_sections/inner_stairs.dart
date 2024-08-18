@@ -66,25 +66,34 @@ class _InnerStairsSectionsState extends State<InnerStairsSections> {
         ),
         body: Column(
           children: [
-            TextButton(
-              onPressed: () {
-                Navigator.of(context).pushReplacement(
-                  MaterialPageRoute(
-                    builder: (context) {
-                      return InnerStairsScreen();
-                    },
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                TextButton(
+                  onPressed: () {
+                    Navigator.of(context).pushReplacement(
+                      MaterialPageRoute(
+                        builder: (context) {
+                          return InnerStairsScreen();
+                        },
+                      ),
+                    );
+                  },
+                  child: Text(
+                    languageEnglish
+                        ? "Inner stairs"
+                        : languageLithuanian
+                            ? "Vidaus laiptai"
+                            : languageNorwegian
+                                ? "Innvendige trapper"
+                                : "Schody wewnętrzne",
                   ),
-                );
-              },
-              child: Text(
-                languageEnglish
-                    ? "Inner stairs"
-                    : languageLithuanian
-                        ? "Vidaus laiptai"
-                        : languageNorwegian
-                            ? "Innvendige trapper"
-                            : "Schody wewnętrzne",
-              ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: const Text("1"),
+                ),
+              ],
             ),
           ],
         ),

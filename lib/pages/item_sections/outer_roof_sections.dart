@@ -66,25 +66,34 @@ class _OuterRoofSectionsState extends State<OuterRoofSections> {
         ),
         body: Column(
           children: [
-            TextButton(
-              onPressed: () {
-                Navigator.of(context).pushReplacement(
-                  MaterialPageRoute(
-                    builder: (context) {
-                      return OuterRoofScreen();
-                    },
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                TextButton(
+                  onPressed: () {
+                    Navigator.of(context).pushReplacement(
+                      MaterialPageRoute(
+                        builder: (context) {
+                          return OuterRoofScreen();
+                        },
+                      ),
+                    );
+                  },
+                  child: Text(
+                    languageEnglish
+                        ? "Outer roof"
+                        : languageLithuanian
+                            ? "Išorinis stogas"
+                            : languageNorwegian
+                                ? "Yttertak"
+                                : "Dach zewnętrzny",
                   ),
-                );
-              },
-              child: Text(
-                languageEnglish
-                    ? "Outer roof"
-                    : languageLithuanian
-                        ? "Išorinis stogas"
-                        : languageNorwegian
-                            ? "Yttertak"
-                            : "Dach zewnętrzny",
-              ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: const Text("1"),
+                ),
+              ],
             ),
           ],
         ),

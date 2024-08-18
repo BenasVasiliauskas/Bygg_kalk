@@ -66,25 +66,34 @@ class _InnerDoorSectionsState extends State<InnerDoorSections> {
         ),
         body: Column(
           children: [
-            TextButton(
-              onPressed: () {
-                Navigator.of(context).pushReplacement(
-                  MaterialPageRoute(
-                    builder: (context) {
-                      return InnerDoorScreen();
-                    },
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                TextButton(
+                  onPressed: () {
+                    Navigator.of(context).pushReplacement(
+                      MaterialPageRoute(
+                        builder: (context) {
+                          return InnerDoorScreen();
+                        },
+                      ),
+                    );
+                  },
+                  child: Text(
+                    languageEnglish
+                        ? "Inner doors"
+                        : languageLithuanian
+                            ? "Vidinės durys"
+                            : languageNorwegian
+                                ? "Innvendige dører"
+                                : "Drzwi wewnętrzne",
                   ),
-                );
-              },
-              child: Text(
-                languageEnglish
-                    ? "Inner doors"
-                    : languageLithuanian
-                        ? "Vidinės durys"
-                        : languageNorwegian
-                            ? "Innvendige dører"
-                            : "Drzwi wewnętrzne",
-              ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: const Text("1"),
+                ),
+              ],
             ),
           ],
         ),
