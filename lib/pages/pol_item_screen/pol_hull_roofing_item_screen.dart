@@ -8,7 +8,7 @@ import 'package:cost_calculator/models/hull_roofing_data_model.dart';
 import 'package:cost_calculator/pages/shared/globals/calculation_variables.dart';
 import 'package:flutter/material.dart';
 
-class NorwHullRoofingItemScreen extends StatefulWidget {
+class PolHullRoofingItemScreen extends StatefulWidget {
   String name;
   List<String> description;
   List<String> unit;
@@ -20,7 +20,7 @@ class NorwHullRoofingItemScreen extends StatefulWidget {
   List<double> material2;
   List<double> totalPrice;
 
-  NorwHullRoofingItemScreen(
+  PolHullRoofingItemScreen(
     this.name,
     this.description,
     this.unit,
@@ -34,16 +34,16 @@ class NorwHullRoofingItemScreen extends StatefulWidget {
   );
 
   @override
-  State<NorwHullRoofingItemScreen> createState() =>
-      _NorwHullRoofingItemScreenState();
+  State<PolHullRoofingItemScreen> createState() =>
+      _PolHullRoofingItemScreenState();
 }
 
-TextEditingController norwHullCalculationControllers =
+TextEditingController polHullCalculationControllers =
     TextEditingController(text: calculationQuantity.toStringAsFixed(2));
 
 double calculationQuantity = 0;
 
-class _NorwHullRoofingItemScreenState extends State<NorwHullRoofingItemScreen> {
+class _PolHullRoofingItemScreenState extends State<PolHullRoofingItemScreen> {
   List<DataRow> rows = [];
   List<TextEditingController> descriptionControllers = [];
   List<TextEditingController> unitControllers = [];
@@ -163,8 +163,8 @@ class _NorwHullRoofingItemScreenState extends State<NorwHullRoofingItemScreen> {
 
     savingController = TextEditingController();
     loadingController = TextEditingController();
-    if (norwHullCalculationControllers.text != "")
-      calculationQuantity = double.parse(norwHullCalculationControllers.text);
+    if (polHullCalculationControllers.text != "")
+      calculationQuantity = double.parse(polHullCalculationControllers.text);
   }
 
   void calculateCalculationQuantity() {
@@ -175,8 +175,7 @@ class _NorwHullRoofingItemScreenState extends State<NorwHullRoofingItemScreen> {
 
     calculationQuantity = mat2Total / mat1Total;
 
-    norwHullCalculationControllers.text =
-        calculationQuantity.toStringAsFixed(2);
+    polHullCalculationControllers.text = calculationQuantity.toStringAsFixed(2);
   }
 
   void _updateLaborHours() {
