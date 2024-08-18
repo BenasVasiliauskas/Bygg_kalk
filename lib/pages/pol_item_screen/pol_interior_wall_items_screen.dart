@@ -1,6 +1,6 @@
 // ignore_for_file: must_be_immutable
 
-import 'package:cost_calculator/data/norw_data_original.dart';
+import 'package:cost_calculator/data/polish_data.dart';
 import 'package:cost_calculator/functions/initialise_functions.dart';
 import 'package:cost_calculator/functions/save_to_json.dart';
 import 'package:cost_calculator/models/inner_wall_data_model.dart';
@@ -8,7 +8,7 @@ import 'package:cost_calculator/pages/shared/globals/calculation_variables.dart'
 import 'package:flutter/material.dart';
 import '../../constants/norw_budget_constants.dart';
 
-class NorwInteriorWallItemsScreen extends StatefulWidget {
+class PolInteriorWallItemsScreen extends StatefulWidget {
   String name;
   List<String> description;
   List<String> unit;
@@ -21,7 +21,7 @@ class NorwInteriorWallItemsScreen extends StatefulWidget {
   List<double> material2;
   List<double> totalPrice;
 
-  NorwInteriorWallItemsScreen(
+  PolInteriorWallItemsScreen(
     this.name,
     this.description,
     this.unit,
@@ -36,17 +36,17 @@ class NorwInteriorWallItemsScreen extends StatefulWidget {
   );
 
   @override
-  _NorwInteriorWallItemsScreenState createState() =>
-      _NorwInteriorWallItemsScreenState();
+  _PolInteriorWallItemsScreenState createState() =>
+      _PolInteriorWallItemsScreenState();
 }
 
-TextEditingController norwInnerWallCalculationControllers =
+TextEditingController polInnerWallCalculationControllers =
     TextEditingController(text: calculationQuantity.toStringAsFixed(2));
 
 double calculationQuantity = 0;
 
-class _NorwInteriorWallItemsScreenState
-    extends State<NorwInteriorWallItemsScreen> {
+class _PolInteriorWallItemsScreenState
+    extends State<PolInteriorWallItemsScreen> {
   List<DataRow> rows = [];
   List<TextEditingController> descriptionControllers = [];
   List<TextEditingController> unitControllers = [];
@@ -71,7 +71,7 @@ class _NorwInteriorWallItemsScreenState
 
     calculationQuantity = mat2Total / mat1Total;
 
-    norwInnerWallCalculationControllers.text =
+    polInnerWallCalculationControllers.text =
         calculationQuantity.toStringAsFixed(2);
   }
 
@@ -180,9 +180,9 @@ class _NorwInteriorWallItemsScreenState
 
     savingController = TextEditingController();
     loadingController = TextEditingController();
-    if (norwInnerWallCalculationControllers.text != "")
+    if (polInnerWallCalculationControllers.text != "")
       calculationQuantity =
-          double.parse(norwInnerWallCalculationControllers.text);
+          double.parse(polInnerWallCalculationControllers.text);
   }
 
   void setInitialValues() {
@@ -206,11 +206,11 @@ class _NorwInteriorWallItemsScreenState
   void _updateLaborHours() {
     if (!mounted) return; // Ensure the widget is still mounted
 
-    for (int i = 0; i < norwInnerWallData.length; i++) {
-      if (norwInnerWallData[i].name == widget.name) {
+    for (int i = 0; i < polInnerWallData.length; i++) {
+      if (polInnerWallData[i].name == widget.name) {
         setState(() {
-          for (int j = 0; j < norwInnerWallData[i].laborHours1.length; j++) {
-            widget.laborHours1[j] = norwInnerWallData[i].laborHours1[j];
+          for (int j = 0; j < polInnerWallData[i].laborHours1.length; j++) {
+            widget.laborHours1[j] = polInnerWallData[i].laborHours1[j];
           }
         });
         return;

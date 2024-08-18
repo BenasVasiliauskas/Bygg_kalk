@@ -1,7 +1,6 @@
 // ignore_for_file: must_be_immutable
 
 import 'package:cost_calculator/data/lith_data.dart';
-import 'package:cost_calculator/data/norw_data_original.dart';
 import 'package:cost_calculator/functions/initialise_functions.dart';
 import 'package:cost_calculator/functions/save_to_json.dart';
 import 'package:cost_calculator/models/inner_door_data_model.dart';

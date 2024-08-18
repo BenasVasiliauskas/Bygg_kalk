@@ -1,7 +1,11 @@
 import 'package:cost_calculator/data/data.dart';
+import 'package:cost_calculator/data/lith_data.dart';
 import 'package:cost_calculator/data/norw_data.dart';
+import 'package:cost_calculator/data/polish_data.dart';
 import 'package:cost_calculator/pages/item_screen/interior_wall_items_screen.dart';
+import 'package:cost_calculator/pages/lit_item_screen/lit_interior_wall_items_screen.dart';
 import 'package:cost_calculator/pages/norw_item_screen/norw_interior_wall_items_screen.dart';
+import 'package:cost_calculator/pages/pol_item_screen/pol_interior_wall_items_screen.dart';
 import 'package:cost_calculator/pages/shared/home_page.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import '../../../items/inner_wall_item.dart';
@@ -92,49 +96,140 @@ class _InnerWallScreenState extends State<InnerWallScreen> {
                   );
                 },
               ).toList()
-            : norwInnerWallData.map(
-                (catData) {
-                  return Row(
-                    children: [
-                      Expanded(
-                        child: InnerWallItem(
-                          catData.name,
-                          catData.description,
-                          catData.unit,
-                          catData.quantity,
-                          catData.materialQuantity,
-                          catData.laborHours1,
-                          catData.laborHours2,
-                          catData.laborCost,
-                          catData.material1,
-                          catData.material2,
-                          catData.totalPrice,
-                          catData.color,
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Container(
-                          width: 100,
-                          height: double.infinity,
-                          child: Center(
-                            child: TextField(
-                              controller: norwInnerWallCalculationControllers,
-                              onChanged: (value) {
-                                setState(() {
-                                  norwInnerWallCalculationControllers.text =
-                                      value;
-                                });
-                              },
+            : languageNorwegian
+                ? norwInnerWallData.map(
+                    (catData) {
+                      return Row(
+                        children: [
+                          Expanded(
+                            child: InnerWallItem(
+                              catData.name,
+                              catData.description,
+                              catData.unit,
+                              catData.quantity,
+                              catData.materialQuantity,
+                              catData.laborHours1,
+                              catData.laborHours2,
+                              catData.laborCost,
+                              catData.material1,
+                              catData.material2,
+                              catData.totalPrice,
+                              catData.color,
                             ),
                           ),
-                        ),
-                      ),
-                      Text("m²")
-                    ],
-                  );
-                },
-              ).toList(),
+                          Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Container(
+                              width: 100,
+                              height: double.infinity,
+                              child: Center(
+                                child: TextField(
+                                  controller:
+                                      norwInnerWallCalculationControllers,
+                                  onChanged: (value) {
+                                    setState(() {
+                                      norwInnerWallCalculationControllers.text =
+                                          value;
+                                    });
+                                  },
+                                ),
+                              ),
+                            ),
+                          ),
+                          Text("m²")
+                        ],
+                      );
+                    },
+                  ).toList()
+                : languagePolish
+                    ? polInnerWallData.map(
+                        (catData) {
+                          return Row(
+                            children: [
+                              Expanded(
+                                child: InnerWallItem(
+                                  catData.name,
+                                  catData.description,
+                                  catData.unit,
+                                  catData.quantity,
+                                  catData.materialQuantity,
+                                  catData.laborHours1,
+                                  catData.laborHours2,
+                                  catData.laborCost,
+                                  catData.material1,
+                                  catData.material2,
+                                  catData.totalPrice,
+                                  catData.color,
+                                ),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Container(
+                                  width: 100,
+                                  height: double.infinity,
+                                  child: Center(
+                                    child: TextField(
+                                      controller:
+                                          polInnerWallCalculationControllers,
+                                      onChanged: (value) {
+                                        setState(() {
+                                          polInnerWallCalculationControllers
+                                              .text = value;
+                                        });
+                                      },
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              Text("m²")
+                            ],
+                          );
+                        },
+                      ).toList()
+                    : litInnerWallData.map(
+                        (catData) {
+                          return Row(
+                            children: [
+                              Expanded(
+                                child: InnerWallItem(
+                                  catData.name,
+                                  catData.description,
+                                  catData.unit,
+                                  catData.quantity,
+                                  catData.materialQuantity,
+                                  catData.laborHours1,
+                                  catData.laborHours2,
+                                  catData.laborCost,
+                                  catData.material1,
+                                  catData.material2,
+                                  catData.totalPrice,
+                                  catData.color,
+                                ),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Container(
+                                  width: 100,
+                                  height: double.infinity,
+                                  child: Center(
+                                    child: TextField(
+                                      controller:
+                                          litInnerWallCalculationControllers,
+                                      onChanged: (value) {
+                                        setState(() {
+                                          litInnerWallCalculationControllers
+                                              .text = value;
+                                        });
+                                      },
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              Text("m²")
+                            ],
+                          );
+                        },
+                      ).toList(),
         crossAxisCount: 1,
         mainAxisSpacing: 20,
         childAspectRatio: 7 / 2,
