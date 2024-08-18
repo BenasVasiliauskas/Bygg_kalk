@@ -66,25 +66,34 @@ class _TerraceSectionsState extends State<TerraceSections> {
         ),
         body: Column(
           children: [
-            TextButton(
-              onPressed: () {
-                Navigator.of(context).pushReplacement(
-                  MaterialPageRoute(
-                    builder: (context) {
-                      return TerraceScreen();
-                    },
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                TextButton(
+                  onPressed: () {
+                    Navigator.of(context).pushReplacement(
+                      MaterialPageRoute(
+                        builder: (context) {
+                          return TerraceScreen();
+                        },
+                      ),
+                    );
+                  },
+                  child: Text(
+                    languageEnglish
+                        ? "Terrace"
+                        : languageLithuanian
+                            ? "Terasa"
+                            : languageNorwegian
+                                ? "Terrasse/rekkverk"
+                                : "Taras",
                   ),
-                );
-              },
-              child: Text(
-                languageEnglish
-                    ? "Terrace"
-                    : languageLithuanian
-                        ? "Terasa"
-                        : languageNorwegian
-                            ? "Terrasse/rekkverk"
-                            : "Taras",
-              ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Text("1"),
+                )
+              ],
             ),
           ],
         ),
