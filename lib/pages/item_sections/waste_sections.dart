@@ -66,25 +66,34 @@ class _WasteSectionsState extends State<WasteSections> {
         ),
         body: Column(
           children: [
-            TextButton(
-              onPressed: () {
-                Navigator.of(context).pushReplacement(
-                  MaterialPageRoute(
-                    builder: (context) {
-                      return WasteScreen();
-                    },
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                TextButton(
+                  onPressed: () {
+                    Navigator.of(context).pushReplacement(
+                      MaterialPageRoute(
+                        builder: (context) {
+                          return WasteScreen();
+                        },
+                      ),
+                    );
+                  },
+                  child: Text(
+                    languageEnglish
+                        ? "Waste management"
+                        : languageLithuanian
+                            ? "Atliekų išvežimas"
+                            : languageNorwegian
+                                ? "Avfall flytting"
+                                : "Usuwanie odpadów",
                   ),
-                );
-              },
-              child: Text(
-                languageEnglish
-                    ? "Waste management"
-                    : languageLithuanian
-                        ? "Atliekų išvežimas"
-                        : languageNorwegian
-                            ? "Avfall flytting"
-                            : "Usuwanie odpadów",
-              ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Text("1"),
+                )
+              ],
             ),
           ],
         ),
