@@ -8,7 +8,7 @@ import 'package:cost_calculator/models/flooring_data_model.dart';
 import 'package:cost_calculator/pages/shared/globals/calculation_variables.dart';
 import 'package:flutter/material.dart';
 
-class NorwFlooringItemScreen extends StatefulWidget {
+class LitFlooringItemScreen extends StatefulWidget {
   String name;
   List<String> description;
   List<String> unit;
@@ -20,7 +20,7 @@ class NorwFlooringItemScreen extends StatefulWidget {
   List<double> material2;
   List<double> totalPrice;
 
-  NorwFlooringItemScreen(
+  LitFlooringItemScreen(
     this.name,
     this.description,
     this.unit,
@@ -34,15 +34,15 @@ class NorwFlooringItemScreen extends StatefulWidget {
   );
 
   @override
-  State<NorwFlooringItemScreen> createState() => _NorwFlooringItemScreenState();
+  State<LitFlooringItemScreen> createState() => _LitFlooringItemScreenState();
 }
 
-TextEditingController norwFlooringCalculationControllers =
+TextEditingController litFlooringCalculationControllers =
     TextEditingController(text: calculationQuantity.toStringAsFixed(2));
 
 double calculationQuantity = 0;
 
-class _NorwFlooringItemScreenState extends State<NorwFlooringItemScreen> {
+class _LitFlooringItemScreenState extends State<LitFlooringItemScreen> {
   List<DataRow> rows = [];
   List<TextEditingController> descriptionControllers = [];
   List<TextEditingController> unitControllers = [];
@@ -161,9 +161,9 @@ class _NorwFlooringItemScreenState extends State<NorwFlooringItemScreen> {
 
     savingController = TextEditingController();
     loadingController = TextEditingController();
-    if (norwFlooringCalculationControllers.text != "")
+    if (litFlooringCalculationControllers.text != "")
       calculationQuantity =
-          double.parse(norwFlooringCalculationControllers.text);
+          double.parse(litFlooringCalculationControllers.text);
   }
 
   void calculateCalculationQuantity() {
@@ -174,7 +174,7 @@ class _NorwFlooringItemScreenState extends State<NorwFlooringItemScreen> {
 
     calculationQuantity = mat2Total / mat1Total;
 
-    norwFlooringCalculationControllers.text =
+    litFlooringCalculationControllers.text =
         calculationQuantity.toStringAsFixed(2);
   }
 
