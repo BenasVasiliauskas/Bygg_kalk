@@ -598,9 +598,7 @@ class _NorwDeckItemScreenState extends State<NorwDeckItemScreen> {
                     totalPrice: widget.totalPrice,
                   );
 
-                  writeJson(deckModel, fileName);
-                  ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                      content: Text('Dataene er lagret som $fileName.json')));
+                  writeJson(context, deckModel, fileName);
                 },
                 child: Text("Lagre til JSON"),
                 heroTag: "btn1",

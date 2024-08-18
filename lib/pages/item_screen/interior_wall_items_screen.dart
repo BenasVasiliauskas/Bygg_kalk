@@ -607,9 +607,7 @@ class _InteriorWallItemsScreenState extends State<InteriorWallItemsScreen> {
                     material2: widget.material2,
                     totalPrice: widget.totalPrice,
                   );
-                  writeJson(innerWallModel, fileName);
-                  ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                      content: Text('Data has been saved as $fileName.json')));
+                  writeJson(context, innerWallModel, fileName);
                 },
                 child: Text("Save to JSON"),
                 heroTag: "btn1",

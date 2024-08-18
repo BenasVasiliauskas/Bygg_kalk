@@ -596,9 +596,7 @@ class _TerraceItemScreenState extends State<TerraceItemScreen> {
                     totalPrice: widget.totalPrice,
                   );
 
-                  writeJson(terraceModel, fileName);
-                  ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                      content: Text('Data has been saved as $fileName.json')));
+                  writeJson(context, terraceModel, fileName);
                 },
                 child: Text("Save to JSON"),
                 heroTag: "btn1",

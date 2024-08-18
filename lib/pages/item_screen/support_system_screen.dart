@@ -599,9 +599,7 @@ class _SupportSystemItemScreenState extends State<SupportSystemItemScreen> {
                     totalPrice: widget.totalPrice,
                   );
 
-                  writeJson(supportSystemModel, fileName);
-                  ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                      content: Text('Data has been saved as $fileName.json')));
+                  writeJson(context, supportSystemModel, fileName);
                 },
                 child: Text("Save to JSON"),
                 heroTag: "btn1",

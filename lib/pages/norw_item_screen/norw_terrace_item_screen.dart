@@ -601,9 +601,7 @@ class _NorwTerraceItemScreenState extends State<NorwTerraceItemScreen> {
                     totalPrice: widget.totalPrice,
                   );
 
-                  writeJson(terraceModel, fileName);
-                  ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                      content: Text('Dataene er lagret som $fileName.json')));
+                  writeJson(context, terraceModel, fileName);
                 },
                 child: Text("Lagre til JSON"),
                 heroTag: "btn1",

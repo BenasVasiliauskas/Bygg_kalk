@@ -1,6 +1,8 @@
 import 'dart:convert';
 import 'dart:io';
+import 'package:cost_calculator/constants/language.dart';
 import 'package:cost_calculator/data/data.dart';
+import 'package:flutter/material.dart';
 import 'package:path_provider/path_provider.dart';
 
 Future<String> get localPath async {
@@ -76,11 +78,89 @@ Future<File> writeProjectToJson(var name, int lengthOfModel) async {
   return file;
 }
 
-Future<File> writeJson(var model, String name) async {
+Future<File> writeJson(BuildContext context, var model, String name) async {
   final file = await localFile(name);
+  if (await file.exists()) {
+    // Show a dialog to ask the user if they want to overwrite the file
+    bool shouldOverwrite = await _showOverwriteDialog(context, name);
+
+    if (!shouldOverwrite) {
+      languageEnglish
+          ? ScaffoldMessenger.of(context).showSnackBar(
+              SnackBar(content: Text('Data saving has been canceled')))
+          : languageNorwegian
+              ? ScaffoldMessenger.of(context).showSnackBar(
+                  SnackBar(content: Text('Dataene er lagret som $name.json')))
+              : null;
+      // User chose to cancel, so return early and do not overwrite the file
+      return file;
+    }
+  }
   // Convert list of objects to a list of maps
   Map<String, dynamic> jsonData = model.toJson();
+  // Write the JSON string to the file
+  await file.writeAsString(
+    mode: FileMode.writeOnlyAppend,
+    jsonEncode(jsonData),
+  );
+  languageEnglish
+      ? ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text('Data has been saved as $name.json')))
+      : languageNorwegian
+          ? ScaffoldMessenger.of(context).showSnackBar(
+              SnackBar(content: Text('Dataene er lagret som $name.json')))
+          : null;
+  return file;
+}
 
+Future<bool> _showOverwriteDialog(BuildContext context, String fileName) async {
+  return await showDialog<bool>(
+        context: context,
+        builder: (context) => AlertDialog(
+          title: Text(languageEnglish
+              ? "File Already Exists"
+              : languageNorwegian
+                  ? "Fil eksisterer allerede"
+                  : ""),
+          content: Text(
+            languageEnglish
+                ? "A file named '$fileName.json' already exists. Do you want to overwrite it?"
+                : languageNorwegian
+                    ? "En fil med navnet '$fileName.json' eksisterer allerede. Vil du overskrive den?"
+                    : "",
+          ),
+          actions: [
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).pop(false);
+              },
+              child: Text(languageEnglish
+                  ? "Cancel"
+                  : languageNorwegian
+                      ? "Avbryt"
+                      : ""),
+            ),
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).pop(true);
+              },
+              child: Text(languageEnglish
+                  ? "Overwrite"
+                  : languageNorwegian
+                      ? "Overskriv"
+                      : ""),
+            ),
+          ],
+        ),
+      ) ??
+      false; // Default to false if the dialog is dismissed
+}
+
+Future<File> writeJsonOriginal(var model, String name) async {
+  final file = await localFile(name);
+
+  // Convert list of objects to a list of maps
+  Map<String, dynamic> jsonData = model.toJson();
   // Write the JSON string to the file
   await file.writeAsString(
     mode: FileMode.writeOnlyAppend,

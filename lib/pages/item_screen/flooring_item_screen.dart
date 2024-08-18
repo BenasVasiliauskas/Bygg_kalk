@@ -598,9 +598,7 @@ class _FlooringItemScreenState extends State<FlooringItemScreen> {
                     totalPrice: widget.totalPrice,
                   );
 
-                  writeJson(flooringModel, fileName);
-                  ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                      content: Text('Data has been saved as $fileName.json')));
+                  writeJson(context, flooringModel, fileName);
                 },
                 child: Text("Save to JSON"),
                 heroTag: "btn1",

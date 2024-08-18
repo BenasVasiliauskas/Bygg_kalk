@@ -635,9 +635,7 @@ class _NorwOuterRoofItemScreenState extends State<NorwOuterRoofItemScreen> {
                     materials: widget.material2,
                     totalPrice: widget.totalPrice,
                   );
-                  writeJson(outerRoofModel, fileName);
-                  ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                      content: Text('Dataene er lagret som $fileName.json')));
+                  writeJson(context, outerRoofModel, fileName);
                 },
                 child: Text("Lagre til JSON"),
                 heroTag: "btn1",

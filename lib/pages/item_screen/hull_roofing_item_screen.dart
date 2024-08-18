@@ -596,9 +596,7 @@ class _HullRoofingItemScreenState extends State<HullRoofingItemScreen> {
                     totalPrice: widget.totalPrice,
                   );
 
-                  writeJson(hullRoofingModel, fileName);
-                  ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                      content: Text('Data has been saved as $fileName.json')));
+                  writeJson(context, hullRoofingModel, fileName);
                 },
                 child: Text("Save to JSON"),
                 heroTag: "btn1",

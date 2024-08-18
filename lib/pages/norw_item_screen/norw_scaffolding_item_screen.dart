@@ -602,9 +602,7 @@ class _NorwScaffoldingItemScreenState extends State<NorwScaffoldingItemScreen> {
                     totalPrice: widget.totalPrice,
                   );
 
-                  writeJson(scaffoldingModel, fileName);
-                  ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                      content: Text('Dataene er lagret som $fileName.json')));
+                  writeJson(context, scaffoldingModel, fileName);
                 },
                 child: Text("Lagre til JSON"),
                 heroTag: "btn1",

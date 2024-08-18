@@ -600,9 +600,7 @@ class _NorwFlooringItemScreenState extends State<NorwFlooringItemScreen> {
                     totalPrice: widget.totalPrice,
                   );
 
-                  writeJson(flooringModel, fileName);
-                  ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                      content: Text('Dataene er lagret som $fileName.json')));
+                  writeJson(context, flooringModel, fileName);
                 },
                 child: Text("Lagre til JSON"),
                 heroTag: "btn1",

@@ -601,9 +601,7 @@ class _NorwSupportSystemItemScreenState
                     totalPrice: widget.totalPrice,
                   );
 
-                  writeJson(supportSystemModel, fileName);
-                  ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                      content: Text('Dataene er lagret som $fileName.json')));
+                  writeJson(context, supportSystemModel, fileName);
                 },
                 child: Text("Lagre til JSON"),
                 heroTag: "btn1",

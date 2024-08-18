@@ -601,9 +601,7 @@ class _NorwHullRoofingItemScreenState extends State<NorwHullRoofingItemScreen> {
                     totalPrice: widget.totalPrice,
                   );
 
-                  writeJson(hullRoofingModel, fileName);
-                  ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                      content: Text('Dataene er lagret som $fileName.json')));
+                  writeJson(context, hullRoofingModel, fileName);
                 },
                 child: Text("Lagre til JSON"),
                 heroTag: "btn1",

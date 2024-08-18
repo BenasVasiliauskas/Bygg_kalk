@@ -601,9 +601,7 @@ class _NorwInnerStairsItemScreenState extends State<NorwInnerStairsItemScreen> {
                     totalPrice: widget.totalPrice,
                   );
 
-                  writeJson(innerStairsModel, fileName);
-                  ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                      content: Text('Dataene er lagret som $fileName.json')));
+                  writeJson(context, innerStairsModel, fileName);
                 },
                 child: Text("Lagre til JSON"),
                 heroTag: "btn1",

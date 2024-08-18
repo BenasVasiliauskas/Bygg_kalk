@@ -655,9 +655,7 @@ class _NorwExteriorWallItemsScreenState
                     materials: widget.material2,
                     totalPrice: widget.totalPrice,
                   );
-                  writeJson(outerwallModel, fileName);
-                  ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                      content: Text('Dataene er lagret som $fileName.json')));
+                  writeJson(context, outerwallModel, fileName);
                 },
                 child: Text("Lagre til JSON"),
                 heroTag: "btn1",

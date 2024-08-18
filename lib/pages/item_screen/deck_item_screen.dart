@@ -597,9 +597,7 @@ class _DeckItemScreenState extends State<DeckItemScreen> {
                     totalPrice: widget.totalPrice,
                   );
 
-                  writeJson(deckModel, fileName);
-                  ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                      content: Text('Data has been saved as $fileName.json')));
+                  writeJson(context, deckModel, fileName);
                 },
                 child: Text("Save to JSON"),
                 heroTag: "btn1",

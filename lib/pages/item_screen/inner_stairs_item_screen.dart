@@ -599,9 +599,7 @@ class _InnerStairsItemScreenState extends State<InnerStairsItemScreen> {
                     totalPrice: widget.totalPrice,
                   );
 
-                  writeJson(innerStairsModel, fileName);
-                  ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                      content: Text('Data has been saved as $fileName.json')));
+                  writeJson(context, innerStairsModel, fileName);
                 },
                 child: Text("Save to JSON"),
                 heroTag: "btn1",

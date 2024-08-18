@@ -601,9 +601,7 @@ class _NorwParquetLaminatetemsScreenState
                     materials: widget.material2,
                     totalPrice: widget.totalPrice,
                   );
-                  writeJson(parquetAndLaminateModel, fileName);
-                  ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                      content: Text('Dataene er lagret som $fileName.json')));
+                  writeJson(context, parquetAndLaminateModel, fileName);
                 },
                 child: Text("Lagre til JSON"),
                 heroTag: "btn1",

@@ -598,9 +598,7 @@ class _ScaffoldingItemScreenState extends State<ScaffoldingItemScreen> {
                     totalPrice: widget.totalPrice,
                   );
 
-                  writeJson(scaffoldingModel, fileName);
-                  ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                      content: Text('Data has been saved as $fileName.json')));
+                  writeJson(context, scaffoldingModel, fileName);
                 },
                 child: Text("Save to JSON"),
                 heroTag: "btn1",

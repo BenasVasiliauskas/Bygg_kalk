@@ -599,9 +599,7 @@ class _NorwWasteItemScreenState extends State<NorwWasteItemScreen> {
                     totalPrice: widget.totalPrice,
                   );
 
-                  writeJson(wasteModel, fileName);
-                  ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                      content: Text('Dataene er lagret som $fileName.json')));
+                  writeJson(context, wasteModel, fileName);
                 },
                 child: Text("Lagre til JSON"),
                 heroTag: "btn1",
