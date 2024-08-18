@@ -98,7 +98,11 @@ class _buildingComponentsScreenState extends State<buildingComponentsScreen> {
                         ),
                         Text(languageEnglish
                             ? "Support system"
-                            : "Bæresystemet"),
+                            : languageNorwegian
+                                ? "Bæresystemet"
+                                : languagePolish
+                                    ? "System nośny"
+                                    : "Transporterio sistema"),
                       ],
                     ),
                   ),
@@ -123,8 +127,13 @@ class _buildingComponentsScreenState extends State<buildingComponentsScreen> {
                               width: 50,
                               child: Image.asset("assets/ExteriorWalls.png")),
                         ),
-                        Text(
-                            languageEnglish ? "Exterior walls" : "Yttervegger"),
+                        Text(languageEnglish
+                            ? "Exterior walls"
+                            : languageNorwegian
+                                ? "Yttervegger"
+                                : languagePolish
+                                    ? "Ściany zewnętrzne"
+                                    : "Išorinės sienos"),
                       ],
                     ),
                   ),
@@ -153,7 +162,11 @@ class _buildingComponentsScreenState extends State<buildingComponentsScreen> {
                         ),
                         Text(languageEnglish
                             ? "Window/exterior door"
-                            : "Vindu/ytterdør"),
+                            : languageNorwegian
+                                ? "Vindu/ytterdør"
+                                : languagePolish
+                                    ? "Okno/drzwi zewnętrzne"
+                                    : "Langas/išorinė durys"),
                       ],
                     ),
                   ),
@@ -180,7 +193,13 @@ class _buildingComponentsScreenState extends State<buildingComponentsScreen> {
                               width: 50,
                               child: Image.asset("assets/InnerWall.png")),
                         ),
-                        Text(languageEnglish ? "Interior walls" : "Innevegger"),
+                        Text(languageEnglish
+                            ? "Interior walls"
+                            : languageNorwegian
+                                ? "Innevegger"
+                                : languagePolish
+                                    ? "Ściany wewnętrzne"
+                                    : "Vidinės sienos"),
                       ],
                     ),
                   ),
@@ -207,7 +226,13 @@ class _buildingComponentsScreenState extends State<buildingComponentsScreen> {
                               width: 50,
                               child: Image.asset("assets/InnerDoor.png")),
                         ),
-                        Text(languageEnglish ? "Interior door" : "Innedør"),
+                        Text(languageEnglish
+                            ? "Interior door"
+                            : languageNorwegian
+                                ? "Innedør"
+                                : languagePolish
+                                    ? "Drzwi wewnętrzne"
+                                    : "Vidinės durys"),
                       ],
                     ),
                   ),
@@ -235,7 +260,13 @@ class _buildingComponentsScreenState extends State<buildingComponentsScreen> {
                                 child: Image.asset("assets/Deck.png")),
                           ),
                         ),
-                        Text(languageEnglish ? "Deck" : "Dekke"),
+                        Text(languageEnglish
+                            ? "Deck"
+                            : languageNorwegian
+                                ? "Dekke"
+                                : languagePolish
+                                    ? "Pokład"
+                                    : "Palubė"),
                       ],
                     ),
                   ),
@@ -260,7 +291,13 @@ class _buildingComponentsScreenState extends State<buildingComponentsScreen> {
                               width: 50,
                               child: Image.asset("assets/Flooring.png")),
                         ),
-                        Text(languageEnglish ? "Flooring" : "Gulvbelegg"),
+                        Text(languageEnglish
+                            ? "Flooring"
+                            : languageNorwegian
+                                ? "Gulvbelegg"
+                                : languagePolish
+                                    ? "Podłoga"
+                                    : "Grindys"),
                       ],
                     ),
                   ),
@@ -285,7 +322,13 @@ class _buildingComponentsScreenState extends State<buildingComponentsScreen> {
                               width: 50,
                               child: Image.asset("assets/ExteriorRoof.png")),
                         ),
-                        Text(languageEnglish ? "Exterior roof" : "Yttertak"),
+                        Text(languageEnglish
+                            ? "Exterior roof"
+                            : languageNorwegian
+                                ? "Yttertak"
+                                : languagePolish
+                                    ? "Dach zewnętrzny"
+                                    : "Išorinė stogo dalis"),
                       ],
                     ),
                   ),
@@ -312,7 +355,11 @@ class _buildingComponentsScreenState extends State<buildingComponentsScreen> {
                         ),
                         Text(languageEnglish
                             ? "Terrace/railings"
-                            : "Terrasse/rekkverk"),
+                            : languageNorwegian
+                                ? "Terrasse/rekkverk"
+                                : languagePolish
+                                    ? "Taras/barierki"
+                                    : "Terasa/turėklai"),
                       ],
                     ),
                   ),
@@ -337,7 +384,13 @@ class _buildingComponentsScreenState extends State<buildingComponentsScreen> {
                               width: 50,
                               child: Image.asset("assets/InnerStairs.png")),
                         ),
-                        Text(languageEnglish ? "Inner stairs" : "Trapper"),
+                        Text(languageEnglish
+                            ? "Inner stairs"
+                            : languageNorwegian
+                                ? "Trapper"
+                                : languagePolish
+                                    ? "Schody wewnętrzne"
+                                    : "Vidiniai laiptai"),
                       ],
                     ),
                   ),
@@ -362,7 +415,13 @@ class _buildingComponentsScreenState extends State<buildingComponentsScreen> {
                               width: 50,
                               child: Image.asset("assets/HullRoofing.png")),
                         ),
-                        Text(languageEnglish ? "Hull roofing" : "Hulltaking"),
+                        Text(languageEnglish
+                            ? "Hull roofing"
+                            : languageNorwegian
+                                ? "Hulltaking"
+                                : languagePolish
+                                    ? "Pokrycie kadłuba"
+                                    : "Korpuso stogas"),
                       ],
                     ),
                   ),
@@ -387,7 +446,13 @@ class _buildingComponentsScreenState extends State<buildingComponentsScreen> {
                               width: 50,
                               child: Image.asset("assets/Scaffold.png")),
                         ),
-                        Text(languageEnglish ? "Scaffolding" : "Stillas"),
+                        Text(languageEnglish
+                            ? "Scaffolding"
+                            : languageNorwegian
+                                ? "Stillas"
+                                : languagePolish
+                                    ? "Rusztowanie"
+                                    : "Pastoliai"),
                       ],
                     ),
                   ),
@@ -412,7 +477,13 @@ class _buildingComponentsScreenState extends State<buildingComponentsScreen> {
                               width: 50,
                               child: Image.asset("assets/Waste.png")),
                         ),
-                        Text(languageEnglish ? "Waste management" : "Avfall"),
+                        Text(languageEnglish
+                            ? "Waste management"
+                            : languageNorwegian
+                                ? "Avfall"
+                                : languagePolish
+                                    ? "Zarządzanie odpadami"
+                                    : "Atliekų tvarkymas"),
                       ],
                     ),
                   ),
@@ -441,7 +512,11 @@ class _buildingComponentsScreenState extends State<buildingComponentsScreen> {
                         ),
                         Text(languageEnglish
                             ? "Parquet and laminate"
-                            : "Parquet og laminat"),
+                            : languageNorwegian
+                                ? "Parquet og laminat"
+                                : languagePolish
+                                    ? "Parkiet i laminat"
+                                    : "Parketas ir laminatas"),
                       ],
                     ),
                   ),
