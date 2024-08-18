@@ -67,25 +67,34 @@ class _ParquetLaminateSectionsState extends State<ParquetLaminateSections> {
         ),
         body: Column(
           children: [
-            TextButton(
-              onPressed: () {
-                Navigator.of(context).pushReplacement(
-                  MaterialPageRoute(
-                    builder: (context) {
-                      return ParquetLaminateScreen();
-                    },
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                TextButton(
+                  onPressed: () {
+                    Navigator.of(context).pushReplacement(
+                      MaterialPageRoute(
+                        builder: (context) {
+                          return ParquetLaminateScreen();
+                        },
+                      ),
+                    );
+                  },
+                  child: Text(
+                    languageEnglish
+                        ? "Parquet and laminate"
+                        : languageLithuanian
+                            ? "Parketas ir laminatas"
+                            : languageNorwegian
+                                ? "Parkett og laminat"
+                                : "Parkiet i laminat",
                   ),
-                );
-              },
-              child: Text(
-                languageEnglish
-                    ? "Parquet and laminate"
-                    : languageLithuanian
-                        ? "Parketas ir laminatas"
-                        : languageNorwegian
-                            ? "Parkett og laminat"
-                            : "Parkiet i laminat",
-              ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Text("1"),
+                )
+              ],
             )
           ],
         ),
