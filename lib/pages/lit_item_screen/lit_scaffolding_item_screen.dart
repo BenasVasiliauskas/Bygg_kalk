@@ -8,7 +8,7 @@ import 'package:cost_calculator/models/scaffolding_data_model.dart';
 import 'package:cost_calculator/pages/shared/globals/calculation_variables.dart';
 import 'package:flutter/material.dart';
 
-class NorwScaffoldingItemScreen extends StatefulWidget {
+class LitScaffoldingItemScreen extends StatefulWidget {
   String name;
   List<String> description;
   List<String> unit;
@@ -20,7 +20,7 @@ class NorwScaffoldingItemScreen extends StatefulWidget {
   List<double> material2;
   List<double> totalPrice;
 
-  NorwScaffoldingItemScreen(
+  LitScaffoldingItemScreen(
     this.name,
     this.description,
     this.unit,
@@ -34,16 +34,16 @@ class NorwScaffoldingItemScreen extends StatefulWidget {
   );
 
   @override
-  State<NorwScaffoldingItemScreen> createState() =>
-      _NorwScaffoldingItemScreenState();
+  State<LitScaffoldingItemScreen> createState() =>
+      _LitScaffoldingItemScreenState();
 }
 
-TextEditingController norwScaffoldingCalculationControllers =
+TextEditingController litScaffoldingCalculationControllers =
     TextEditingController(text: calculationQuantity.toStringAsFixed(2));
 
 double calculationQuantity = 0;
 
-class _NorwScaffoldingItemScreenState extends State<NorwScaffoldingItemScreen> {
+class _LitScaffoldingItemScreenState extends State<LitScaffoldingItemScreen> {
   List<DataRow> rows = [];
   List<TextEditingController> descriptionControllers = [];
   List<TextEditingController> unitControllers = [];
@@ -163,9 +163,9 @@ class _NorwScaffoldingItemScreenState extends State<NorwScaffoldingItemScreen> {
 
     savingController = TextEditingController();
     loadingController = TextEditingController();
-    if (norwScaffoldingCalculationControllers.text != "")
+    if (litScaffoldingCalculationControllers.text != "")
       calculationQuantity =
-          double.parse(norwScaffoldingCalculationControllers.text);
+          double.parse(litScaffoldingCalculationControllers.text);
   }
 
   void calculateCalculationQuantity() {
@@ -176,7 +176,7 @@ class _NorwScaffoldingItemScreenState extends State<NorwScaffoldingItemScreen> {
 
     calculationQuantity = mat2Total / mat1Total;
 
-    norwScaffoldingCalculationControllers.text =
+    litScaffoldingCalculationControllers.text =
         calculationQuantity.toStringAsFixed(2);
   }
 
