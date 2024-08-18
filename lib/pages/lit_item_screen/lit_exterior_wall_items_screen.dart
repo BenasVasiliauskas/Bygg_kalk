@@ -1,6 +1,6 @@
 // ignore_for_file: must_be_immutable
 
-import 'package:cost_calculator/data/norw_data_original.dart';
+import 'package:cost_calculator/data/lith_data.dart';
 import 'package:cost_calculator/functions/initialise_functions.dart';
 import 'package:cost_calculator/functions/save_to_json.dart';
 import 'package:cost_calculator/models/outer_wall_data_model.dart';
@@ -8,7 +8,7 @@ import 'package:cost_calculator/pages/shared/globals/calculation_variables.dart'
 import 'package:flutter/material.dart';
 import '../../constants/norw_budget_constants.dart';
 
-class NorwExteriorWallItemsScreen extends StatefulWidget {
+class LitExteriorWallItemsScreen extends StatefulWidget {
   String name;
   List<String> description;
   List<String> unit;
@@ -21,7 +21,7 @@ class NorwExteriorWallItemsScreen extends StatefulWidget {
   List<double> material2;
   List<double> totalPrice;
 
-  NorwExteriorWallItemsScreen(
+  LitExteriorWallItemsScreen(
     this.name,
     this.description,
     this.unit,
@@ -36,17 +36,17 @@ class NorwExteriorWallItemsScreen extends StatefulWidget {
   );
 
   @override
-  _NorwExteriorWallItemsScreenState createState() =>
-      _NorwExteriorWallItemsScreenState();
+  _LitExteriorWallItemsScreenState createState() =>
+      _LitExteriorWallItemsScreenState();
 }
 
-TextEditingController norwExteriorWallCalculationControllers =
+TextEditingController litExteriorWallCalculationControllers =
     TextEditingController(text: calculationQuantity.toStringAsFixed(2));
 //
 double calculationQuantity = 0;
 
-class _NorwExteriorWallItemsScreenState
-    extends State<NorwExteriorWallItemsScreen> {
+class _LitExteriorWallItemsScreenState
+    extends State<LitExteriorWallItemsScreen> {
   List<DataRow> rows = [];
   List<TextEditingController> descriptionControllers = [];
   List<TextEditingController> unitControllers = [];
@@ -71,7 +71,7 @@ class _NorwExteriorWallItemsScreenState
 
     calculationQuantity = mat2Total / mat1Total;
 
-    norwExteriorWallCalculationControllers.text =
+    litExteriorWallCalculationControllers.text =
         calculationQuantity.toStringAsFixed(2);
   }
 
@@ -183,9 +183,9 @@ class _NorwExteriorWallItemsScreenState
 
     savingController = TextEditingController();
     loadingController = TextEditingController();
-    if (norwExteriorWallCalculationControllers.text != "")
+    if (litExteriorWallCalculationControllers.text != "")
       calculationQuantity =
-          double.parse(norwExteriorWallCalculationControllers.text);
+          double.parse(litExteriorWallCalculationControllers.text);
   }
 
   void setInitialValues() {
@@ -209,11 +209,11 @@ class _NorwExteriorWallItemsScreenState
   void _updateLaborHours() {
     if (!mounted) return; // Ensure the widget is still mounted
 
-    for (int i = 0; i < norwExteriorWallData.length; i++) {
-      if (norwExteriorWallData[i].name == widget.name) {
+    for (int i = 0; i < litExteriorWallData.length; i++) {
+      if (litExteriorWallData[i].name == widget.name) {
         setState(() {
-          for (int j = 0; j < norwExteriorWallData[i].laborHours1.length; j++) {
-            widget.laborHours1[j] = norwExteriorWallData[i].laborHours1[j];
+          for (int j = 0; j < litExteriorWallData[i].laborHours1.length; j++) {
+            widget.laborHours1[j] = litExteriorWallData[i].laborHours1[j];
           }
         });
         return;
