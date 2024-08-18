@@ -1,6 +1,6 @@
 // ignore_for_file: must_be_immutable
 
-import 'package:cost_calculator/data/norw_data_original.dart';
+import 'package:cost_calculator/data/lith_data.dart';
 import 'package:cost_calculator/functions/initialise_functions.dart';
 import 'package:cost_calculator/functions/save_to_json.dart';
 import 'package:cost_calculator/models/parquet_laminate_data_model.dart';
@@ -8,7 +8,7 @@ import 'package:cost_calculator/pages/shared/globals/calculation_variables.dart'
 import 'package:flutter/material.dart';
 import '../../constants/norw_budget_constants.dart';
 
-class NorwParquetLaminatetemsScreen extends StatefulWidget {
+class LitParquetLaminatetemsScreen extends StatefulWidget {
   String name;
   List<String> description;
   List<String> unit;
@@ -20,7 +20,7 @@ class NorwParquetLaminatetemsScreen extends StatefulWidget {
   List<double> material2;
   List<double> totalPrice;
 
-  NorwParquetLaminatetemsScreen(
+  LitParquetLaminatetemsScreen(
     this.name,
     this.description,
     this.unit,
@@ -34,16 +34,16 @@ class NorwParquetLaminatetemsScreen extends StatefulWidget {
   );
 
   @override
-  _NorwParquetLaminatetemsScreenState createState() =>
-      _NorwParquetLaminatetemsScreenState();
+  _LitParquetLaminatetemsScreenState createState() =>
+      _LitParquetLaminatetemsScreenState();
 }
 
 double calculationQuantity = 0;
-TextEditingController norwParquetAndLaminateCalculationControllers =
+TextEditingController litParquetAndLaminateCalculationControllers =
     TextEditingController(text: calculationQuantity.toStringAsFixed(2));
 
-class _NorwParquetLaminatetemsScreenState
-    extends State<NorwParquetLaminatetemsScreen> {
+class _LitParquetLaminatetemsScreenState
+    extends State<LitParquetLaminatetemsScreen> {
   List<DataRow> rows = [];
   List<TextEditingController> descriptionControllers = [];
   List<TextEditingController> unitControllers = [];
@@ -161,21 +161,21 @@ class _NorwParquetLaminatetemsScreenState
 
     savingController = TextEditingController();
     loadingController = TextEditingController();
-    if (norwParquetAndLaminateCalculationControllers.text != "")
+    if (litParquetAndLaminateCalculationControllers.text != "")
       calculationQuantity =
-          double.parse(norwParquetAndLaminateCalculationControllers.text);
+          double.parse(litParquetAndLaminateCalculationControllers.text);
   }
 
   void _updateLaborHours() {
     if (!mounted) return; // Ensure the widget is still mounted
 
-    for (int i = 0; i < norwParquetAndLaminate.length; i++) {
-      if (norwParquetAndLaminate[i].name == widget.name) {
+    for (int i = 0; i < litParquetAndLaminate.length; i++) {
+      if (litParquetAndLaminate[i].name == widget.name) {
         setState(() {
           for (int j = 0;
-              j < norwParquetAndLaminate[i].laborHours1.length;
+              j < litParquetAndLaminate[i].laborHours1.length;
               j++) {
-            widget.laborHours1[j] = norwParquetAndLaminate[i].laborHours1[j];
+            widget.laborHours1[j] = litParquetAndLaminate[i].laborHours1[j];
           }
         });
         return;
@@ -263,7 +263,7 @@ class _NorwParquetLaminatetemsScreenState
 
     calculationQuantity = mat2Total / mat1Total;
 
-    norwParquetAndLaminateCalculationControllers.text =
+    litParquetAndLaminateCalculationControllers.text =
         calculationQuantity.toStringAsFixed(2);
   }
 
