@@ -8,7 +8,7 @@ import 'package:cost_calculator/models/deck_data_model.dart';
 import 'package:cost_calculator/pages/shared/globals/calculation_variables.dart';
 import 'package:flutter/material.dart';
 
-class NorwDeckItemScreen extends StatefulWidget {
+class LitDeckItemScreen extends StatefulWidget {
   String name;
   List<String> description;
   List<String> unit;
@@ -20,7 +20,7 @@ class NorwDeckItemScreen extends StatefulWidget {
   List<double> material2;
   List<double> totalPrice;
 
-  NorwDeckItemScreen(
+  LitDeckItemScreen(
     this.name,
     this.description,
     this.unit,
@@ -34,16 +34,16 @@ class NorwDeckItemScreen extends StatefulWidget {
   );
 
   @override
-  State<NorwDeckItemScreen> createState() => _NorwDeckItemScreenState();
+  State<LitDeckItemScreen> createState() => _LitDeckItemScreenState();
 }
 
 //
-TextEditingController norwDeckCalculationControllers =
+TextEditingController litDeckCalculationControllers =
     TextEditingController(text: calculationQuantity.toStringAsFixed(2));
 
 double calculationQuantity = 0;
 
-class _NorwDeckItemScreenState extends State<NorwDeckItemScreen> {
+class _LitDeckItemScreenState extends State<LitDeckItemScreen> {
   List<DataRow> rows = [];
   List<TextEditingController> descriptionControllers = [];
   List<TextEditingController> unitControllers = [];
@@ -162,8 +162,8 @@ class _NorwDeckItemScreenState extends State<NorwDeckItemScreen> {
 
     savingController = TextEditingController();
     loadingController = TextEditingController();
-    if (norwDeckCalculationControllers.text != "")
-      calculationQuantity = double.parse(norwDeckCalculationControllers.text);
+    if (litDeckCalculationControllers.text != "")
+      calculationQuantity = double.parse(litDeckCalculationControllers.text);
   }
 
   void calculateCalculationQuantity() {
@@ -238,8 +238,7 @@ class _NorwDeckItemScreenState extends State<NorwDeckItemScreen> {
       material2Controllers[i].text = widget.material2[i].toStringAsFixed(2);
       totalPriceControllers[i].text = widget.totalPrice[i].toStringAsFixed(2);
     }
-    norwDeckCalculationControllers.text =
-        calculationQuantity.toStringAsFixed(2);
+    litDeckCalculationControllers.text = calculationQuantity.toStringAsFixed(2);
     recalculateValues();
   }
 
