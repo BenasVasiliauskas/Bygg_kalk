@@ -8,7 +8,7 @@ import 'package:cost_calculator/models/terrace_model.dart';
 import 'package:cost_calculator/pages/shared/globals/calculation_variables.dart';
 import 'package:flutter/material.dart';
 
-class NorwTerraceItemScreen extends StatefulWidget {
+class LitTerraceItemScreen extends StatefulWidget {
   String name;
   List<String> description;
   List<String> unit;
@@ -20,7 +20,7 @@ class NorwTerraceItemScreen extends StatefulWidget {
   List<double> material2;
   List<double> totalPrice;
 
-  NorwTerraceItemScreen(
+  LitTerraceItemScreen(
     this.name,
     this.description,
     this.unit,
@@ -34,16 +34,16 @@ class NorwTerraceItemScreen extends StatefulWidget {
   );
 
   @override
-  State<NorwTerraceItemScreen> createState() => _NorwTerraceItemScreenState();
+  State<LitTerraceItemScreen> createState() => _LitTerraceItemScreenState();
 }
 
 //
-TextEditingController norwTerraceCalculationControllers =
+TextEditingController litTerraceCalculationControllers =
     TextEditingController(text: calculationQuantity.toStringAsFixed(2));
 
 double calculationQuantity = 0;
 
-class _NorwTerraceItemScreenState extends State<NorwTerraceItemScreen> {
+class _LitTerraceItemScreenState extends State<LitTerraceItemScreen> {
   List<DataRow> rows = [];
   List<TextEditingController> descriptionControllers = [];
   List<TextEditingController> unitControllers = [];
@@ -162,9 +162,8 @@ class _NorwTerraceItemScreenState extends State<NorwTerraceItemScreen> {
 
     savingController = TextEditingController();
     loadingController = TextEditingController();
-    if (norwTerraceCalculationControllers.text != "")
-      calculationQuantity =
-          double.parse(norwTerraceCalculationControllers.text);
+    if (litTerraceCalculationControllers.text != "")
+      calculationQuantity = double.parse(litTerraceCalculationControllers.text);
   }
 
   void calculateCalculationQuantity() {
@@ -175,7 +174,7 @@ class _NorwTerraceItemScreenState extends State<NorwTerraceItemScreen> {
 
     calculationQuantity = mat2Total / mat1Total;
 
-    norwTerraceCalculationControllers.text =
+    litTerraceCalculationControllers.text =
         calculationQuantity.toStringAsFixed(2);
   }
 
