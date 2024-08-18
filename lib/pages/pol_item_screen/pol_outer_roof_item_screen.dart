@@ -8,7 +8,7 @@ import 'package:cost_calculator/pages/shared/globals/calculation_variables.dart'
 import 'package:flutter/material.dart';
 import '../../constants/budget_constants.dart';
 
-class NorwOuterRoofItemScreen extends StatefulWidget {
+class PolOuterRoofItemScreen extends StatefulWidget {
   String name;
   List<String> description;
   List<String> unit;
@@ -21,7 +21,7 @@ class NorwOuterRoofItemScreen extends StatefulWidget {
   List<double> material2;
   List<double> totalPrice;
 
-  NorwOuterRoofItemScreen(
+  PolOuterRoofItemScreen(
     this.name,
     this.description,
     this.unit,
@@ -36,16 +36,15 @@ class NorwOuterRoofItemScreen extends StatefulWidget {
   );
 
   @override
-  _NorwOuterRoofItemScreenState createState() =>
-      _NorwOuterRoofItemScreenState();
+  _PolOuterRoofItemScreenState createState() => _PolOuterRoofItemScreenState();
 }
 
 //
-TextEditingController norwOuterRoofCalculationControllers =
+TextEditingController polOuterRoofCalculationControllers =
     TextEditingController(text: calculationQuantity.toStringAsFixed(2));
 double calculationQuantity = 0;
 
-class _NorwOuterRoofItemScreenState extends State<NorwOuterRoofItemScreen> {
+class _PolOuterRoofItemScreenState extends State<PolOuterRoofItemScreen> {
   List<DataRow> rows = [];
   List<TextEditingController> descriptionControllers = [];
   List<TextEditingController> unitControllers = [];
@@ -166,9 +165,9 @@ class _NorwOuterRoofItemScreenState extends State<NorwOuterRoofItemScreen> {
 
     savingController = TextEditingController();
     loadingController = TextEditingController();
-    if (norwOuterRoofCalculationControllers.text != "")
+    if (polOuterRoofCalculationControllers.text != "")
       calculationQuantity =
-          double.parse(norwOuterRoofCalculationControllers.text);
+          double.parse(polOuterRoofCalculationControllers.text);
   }
 
   void _updateLaborHours() {
@@ -230,7 +229,7 @@ class _NorwOuterRoofItemScreenState extends State<NorwOuterRoofItemScreen> {
 
     calculationQuantity = mat2Total / mat1Total;
 
-    norwOuterRoofCalculationControllers.text =
+    polOuterRoofCalculationControllers.text =
         calculationQuantity.toStringAsFixed(2);
   }
 
