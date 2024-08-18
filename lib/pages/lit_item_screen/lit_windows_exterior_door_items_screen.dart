@@ -1,6 +1,6 @@
 // ignore_for_file: must_be_immutable
 
-import 'package:cost_calculator/data/norw_data_original.dart';
+import 'package:cost_calculator/data/lith_data.dart';
 import 'package:cost_calculator/functions/initialise_functions.dart';
 import 'package:cost_calculator/functions/save_to_json.dart';
 import 'package:cost_calculator/models/windows_exterior_doors_model.dart';
@@ -8,7 +8,7 @@ import 'package:cost_calculator/pages/shared/globals/calculation_variables.dart'
 import 'package:flutter/material.dart';
 import '../../constants/norw_budget_constants.dart';
 
-class NorwWindowsExteriorDoorItemsScreen extends StatefulWidget {
+class LitWindowsExteriorDoorItemsScreen extends StatefulWidget {
   String name;
   List<String> description;
   List<String> unit;
@@ -20,7 +20,7 @@ class NorwWindowsExteriorDoorItemsScreen extends StatefulWidget {
   List<double> material2;
   List<double> totalPrice;
 
-  NorwWindowsExteriorDoorItemsScreen(
+  LitWindowsExteriorDoorItemsScreen(
     this.name,
     this.description,
     this.unit,
@@ -34,18 +34,18 @@ class NorwWindowsExteriorDoorItemsScreen extends StatefulWidget {
   );
 
   @override
-  _NorwWindowsExteriorDoorItemsScreenState createState() =>
-      _NorwWindowsExteriorDoorItemsScreenState();
+  _LitWindowsExteriorDoorItemsScreenState createState() =>
+      _LitWindowsExteriorDoorItemsScreenState();
 }
 
 //
-TextEditingController norwWindowsExteriorDoorsCalculationControllers =
+TextEditingController litWindowsExteriorDoorsCalculationControllers =
     TextEditingController(text: calculationQuantity.toStringAsFixed(2));
 
 double calculationQuantity = 0;
 
-class _NorwWindowsExteriorDoorItemsScreenState
-    extends State<NorwWindowsExteriorDoorItemsScreen> {
+class _LitWindowsExteriorDoorItemsScreenState
+    extends State<LitWindowsExteriorDoorItemsScreen> {
   List<DataRow> rows = [];
   List<TextEditingController> descriptionControllers = [];
   List<TextEditingController> unitControllers = [];
@@ -164,21 +164,21 @@ class _NorwWindowsExteriorDoorItemsScreenState
 
     savingController = TextEditingController();
     loadingController = TextEditingController();
-    if (norwWindowsExteriorDoorsCalculationControllers.text != "")
+    if (litWindowsExteriorDoorsCalculationControllers.text != "")
       calculationQuantity =
-          double.parse(norwWindowsExteriorDoorsCalculationControllers.text);
+          double.parse(litWindowsExteriorDoorsCalculationControllers.text);
   }
 
   void _updateLaborHours() {
     if (!mounted) return; // Ensure the widget is still mounted
 
-    for (int i = 0; i < norwWindowsExteriorDoors.length; i++) {
-      if (norwWindowsExteriorDoors[i].name == widget.name) {
+    for (int i = 0; i < litWindowsExteriorDoors.length; i++) {
+      if (litWindowsExteriorDoors[i].name == widget.name) {
         setState(() {
           for (int j = 0;
-              j < norwWindowsExteriorDoors[i].laborHours1.length;
+              j < litWindowsExteriorDoors[i].laborHours1.length;
               j++) {
-            widget.laborHours1[j] = norwWindowsExteriorDoors[i].laborHours1[j];
+            widget.laborHours1[j] = litWindowsExteriorDoors[i].laborHours1[j];
           }
         });
         return;
@@ -230,7 +230,7 @@ class _NorwWindowsExteriorDoorItemsScreenState
 
     calculationQuantity = mat2Total / mat1Total;
 
-    norwWindowsExteriorDoorsCalculationControllers.text =
+    litWindowsExteriorDoorsCalculationControllers.text =
         calculationQuantity.toStringAsFixed(2);
   }
 

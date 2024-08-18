@@ -1220,7 +1220,7 @@ final litParquetAndLaminate = [
   ),
 ];
 
-final litWindowsExteriorDOors = [
+final litWindowsExteriorDoors = [
   WindowsAndExteriorDoorsModel(
     name: "Langas, medinė viršutinė siena 12x10 posūkis",
     description: [
