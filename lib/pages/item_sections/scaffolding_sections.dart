@@ -66,25 +66,34 @@ class _ScaffoldingSectionsState extends State<ScaffoldingSections> {
         ),
         body: Column(
           children: [
-            TextButton(
-              onPressed: () {
-                Navigator.of(context).pushReplacement(
-                  MaterialPageRoute(
-                    builder: (context) {
-                      return ScaffoldingScreen();
-                    },
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                TextButton(
+                  onPressed: () {
+                    Navigator.of(context).pushReplacement(
+                      MaterialPageRoute(
+                        builder: (context) {
+                          return ScaffoldingScreen();
+                        },
+                      ),
+                    );
+                  },
+                  child: Text(
+                    languageEnglish
+                        ? "Scaffolding"
+                        : languageLithuanian
+                            ? "Pastoliai"
+                            : languageNorwegian
+                                ? "Stilas"
+                                : "Rusztowanie",
                   ),
-                );
-              },
-              child: Text(
-                languageEnglish
-                    ? "Scaffolding"
-                    : languageLithuanian
-                        ? "Pastoliai"
-                        : languageNorwegian
-                            ? "Stilas"
-                            : "Rusztowanie",
-              ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Text("1"),
+                )
+              ],
             ),
           ],
         ),
