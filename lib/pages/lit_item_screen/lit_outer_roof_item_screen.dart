@@ -1,6 +1,6 @@
 // ignore_for_file: must_be_immutable
 
-import 'package:cost_calculator/data/original_data.dart';
+import 'package:cost_calculator/data/lith_data.dart';
 import 'package:cost_calculator/functions/initialise_functions.dart';
 import 'package:cost_calculator/functions/save_to_json.dart';
 import 'package:cost_calculator/models/outer_roof_model.dart';
@@ -173,11 +173,11 @@ class _LitOuterRoofItemScreenState extends State<LitOuterRoofItemScreen> {
   void _updateLaborHours() {
     if (!mounted) return; // Ensure the widget is still mounted
 
-    for (int i = 0; i < exteriorWallData.length; i++) {
-      if (exteriorWallData[i].name == widget.name) {
+    for (int i = 0; i < litOuterRoofData.length; i++) {
+      if (litOuterRoofData[i].name == widget.name) {
         setState(() {
-          for (int j = 0; j < exteriorWallData[i].laborHours1.length; j++) {
-            widget.laborHours1[j] = exteriorWallData[i].laborHours1[j];
+          for (int j = 0; j < litOuterRoofData[i].laborHours1.length; j++) {
+            widget.laborHours1[j] = litOuterRoofData[i].laborHours1[j];
           }
         });
         return;
