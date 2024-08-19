@@ -5,7 +5,7 @@ import 'package:cost_calculator/pages/shared/globals/calculation_variables.dart'
 import 'package:cost_calculator/pages/shared/home_page.dart';
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
-import 'package:cost_calculator/constants/norw_budget_constants.dart';
+import 'package:cost_calculator/constants/lit_budget_constants.dart';
 import 'package:cost_calculator/widgets/custom_drawer.dart';
 
 class NorwBudgetScreen extends StatefulWidget {
@@ -38,7 +38,7 @@ class _NorwBudgetScreenState extends State<NorwBudgetScreen> {
         appBar: AppBar(
           title: Row(
             children: [
-              Text('Budsjettskjermen'),
+              Text('Biudžeto ekranas'),
               Padding(
                 padding: const EdgeInsets.all(12.0),
                 child: TextButton(
@@ -79,7 +79,7 @@ class _NorwBudgetScreenState extends State<NorwBudgetScreen> {
                       // User canceled the picker
                     }
                   },
-                  child: Text("Last inn et prosjekt"),
+                  child: Text("Įkelti projektą"),
                 ),
               ),
             ],
@@ -99,7 +99,7 @@ class _NorwBudgetScreenState extends State<NorwBudgetScreen> {
                       label: SizedBox(
                         width: 70,
                         child: Text(
-                          'Kostnadsart',
+                          'Išlaidų tipas',
                         ),
                       ),
                     ),
@@ -107,7 +107,7 @@ class _NorwBudgetScreenState extends State<NorwBudgetScreen> {
                       label: SizedBox(
                         width: 80,
                         child: Text(
-                          'Totalt antall timer',
+                          'Bendras valandų skaičius',
                           softWrap: true,
                         ),
                       ),
@@ -116,7 +116,7 @@ class _NorwBudgetScreenState extends State<NorwBudgetScreen> {
                       label: SizedBox(
                         width: 80,
                         child: Text(
-                          'Arbeidskostnader',
+                          'Darbo sąnaudos',
                           softWrap: true,
                         ),
                       ),
@@ -125,7 +125,7 @@ class _NorwBudgetScreenState extends State<NorwBudgetScreen> {
                       label: SizedBox(
                         width: 80,
                         child: Text(
-                          'Materialkostnade',
+                          'Medžiagų sąnaudos',
                           softWrap: true,
                         ),
                       ),
@@ -134,7 +134,7 @@ class _NorwBudgetScreenState extends State<NorwBudgetScreen> {
                       label: SizedBox(
                         width: 85,
                         child: Text(
-                          'Budsjettsum',
+                          'Biudžeto suma',
                           softWrap: true,
                         ),
                       ),
@@ -235,7 +235,7 @@ class _NorwBudgetScreenState extends State<NorwBudgetScreen> {
                       cells: [
                         DataCell(
                           Text(
-                            "Rigg og drift av byggeplass",
+                            "Tvirtinimo darbai ir darbai statybvietėje",
                           ),
                         ),
                         DataCell(
@@ -254,7 +254,7 @@ class _NorwBudgetScreenState extends State<NorwBudgetScreen> {
                       cells: [
                         DataCell(
                           Text(
-                            "Sum materialkostnad",
+                            "Bendra medžiagų kaina",
                           ),
                         ),
                         DataCell(
@@ -271,7 +271,7 @@ class _NorwBudgetScreenState extends State<NorwBudgetScreen> {
                       cells: [
                         DataCell(
                           Text(
-                            "Avfall flytting",
+                            "Atliekų išvežimas",
                           ),
                         ),
                         DataCell(
@@ -288,7 +288,7 @@ class _NorwBudgetScreenState extends State<NorwBudgetScreen> {
                       cells: [
                         DataCell(
                           Text(
-                            "Materialer frakt",
+                            "Medžiagų gabenimas",
                           ),
                         ),
                         DataCell(
@@ -307,7 +307,7 @@ class _NorwBudgetScreenState extends State<NorwBudgetScreen> {
                       cells: [
                         DataCell(
                           Text(
-                            "Totale kostnader, (eksl. mva)",
+                            "Iš viso išlaidų (be PVM)",
                           ),
                         ),
                         DataCell(
@@ -329,7 +329,7 @@ class _NorwBudgetScreenState extends State<NorwBudgetScreen> {
                       cells: [
                         DataCell(
                           Text(
-                            "Mva",
+                            "PVM",
                           ),
                         ),
                         DataCell(
@@ -355,7 +355,7 @@ class _NorwBudgetScreenState extends State<NorwBudgetScreen> {
                       cells: [
                         DataCell(
                           Text(
-                            "Totale kostnader, (inkl. mva)",
+                            "Iš viso išlaidų (su PVM)",
                           ),
                         ),
                         DataCell(
