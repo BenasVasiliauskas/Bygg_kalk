@@ -1,4 +1,6 @@
 import 'package:cost_calculator/pages/item_sections/inner_wall_sections.dart';
+import 'package:cost_calculator/pages/lit_item_screen/lit_interior_wall_items_screen.dart';
+import 'package:cost_calculator/pages/pol_item_screen/pol_interior_wall_items_screen.dart';
 
 import '../pages/item_screen/interior_wall_items_screen.dart';
 import '../pages/norw_item_screen/norw_interior_wall_items_screen.dart';
@@ -38,7 +40,7 @@ class InnerWallItem extends StatelessWidget {
     Navigator.of(ctx).push(
       MaterialPageRoute(
         builder: (_) {
-          return languageEnglish == true
+          return languageEnglish
               ? InteriorWallItemsScreen(
                   name,
                   description,
@@ -52,19 +54,45 @@ class InnerWallItem extends StatelessWidget {
                   material2,
                   totalPrice,
                 )
-              : NorwInteriorWallItemsScreen(
-                  name,
-                  description,
-                  unit,
-                  quantity,
-                  materialQuantity,
-                  laborHours1,
-                  laborHours2,
-                  laborCost,
-                  material1,
-                  material2,
-                  totalPrice,
-                );
+              : languageNorwegian
+                  ? NorwInteriorWallItemsScreen(
+                      name,
+                      description,
+                      unit,
+                      quantity,
+                      materialQuantity,
+                      laborHours1,
+                      laborHours2,
+                      laborCost,
+                      material1,
+                      material2,
+                      totalPrice,
+                    )
+                  : languagePolish
+                      ? PolInteriorWallItemsScreen(
+                          name,
+                          description,
+                          unit,
+                          quantity,
+                          materialQuantity,
+                          laborHours1,
+                          laborHours2,
+                          laborCost,
+                          material1,
+                          material2,
+                          totalPrice)
+                      : LitInteriorWallItemsScreen(
+                          name,
+                          description,
+                          unit,
+                          quantity,
+                          materialQuantity,
+                          laborHours1,
+                          laborHours2,
+                          laborCost,
+                          material1,
+                          material2,
+                          totalPrice);
         },
       ),
     );

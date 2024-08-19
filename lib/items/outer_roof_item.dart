@@ -1,6 +1,8 @@
 import 'package:cost_calculator/pages/item_screen/outer_roof_item_screen.dart';
 import 'package:cost_calculator/pages/item_sections/outer_roof_sections.dart';
+import 'package:cost_calculator/pages/lit_item_screen/lit_outer_roof_item_screen.dart';
 import 'package:cost_calculator/pages/norw_item_screen/norw_outer_roof_item_screen.dart';
+import 'package:cost_calculator/pages/pol_item_screen/pol_outer_roof_item_screen.dart';
 import 'package:flutter/material.dart';
 import '../constants/language.dart';
 
@@ -37,7 +39,7 @@ class OuterRoofItem extends StatelessWidget {
     Navigator.of(ctx).push(
       MaterialPageRoute(
         builder: (_) {
-          return languageEnglish == true
+          return languageEnglish
               ? OuterRoofItemScreen(
                   name,
                   description,
@@ -51,19 +53,46 @@ class OuterRoofItem extends StatelessWidget {
                   material2,
                   totalPrice,
                 )
-              : NorwOuterRoofItemScreen(
-                  name,
-                  description,
-                  unit,
-                  quantity,
-                  materialQuantity,
-                  laborHours1,
-                  laborHours2,
-                  laborCost,
-                  material1,
-                  material2,
-                  totalPrice,
-                );
+              : languageNorwegian
+                  ? NorwOuterRoofItemScreen(
+                      name,
+                      description,
+                      unit,
+                      quantity,
+                      materialQuantity,
+                      laborHours1,
+                      laborHours2,
+                      laborCost,
+                      material1,
+                      material2,
+                      totalPrice,
+                    )
+                  : languagePolish
+                      ? PolOuterRoofItemScreen(
+                          name,
+                          description,
+                          unit,
+                          quantity,
+                          materialQuantity,
+                          laborHours1,
+                          laborHours2,
+                          laborCost,
+                          material1,
+                          material2,
+                          totalPrice,
+                        )
+                      : LitOuterRoofItemScreen(
+                          name,
+                          description,
+                          unit,
+                          quantity,
+                          materialQuantity,
+                          laborHours1,
+                          laborHours2,
+                          laborCost,
+                          material1,
+                          material2,
+                          totalPrice);
         },
       ),
     );

@@ -191,15 +191,15 @@ class _LitWindowsExteriorDoorItemsScreenState
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
-          title: const Text("Vil du spare?"),
-          content: const Text(
-              "Er du sikker på at du vil forlate siden uten å lagre?"),
+          title: const Text("Ar norite išsaugoti?"),
+          content:
+              const Text("Ar tikrai norite palikti puslapį jo neišsaugoję?"),
           actions: <Widget>[
             TextButton(
               style: TextButton.styleFrom(
                 textStyle: Theme.of(context).textTheme.labelLarge,
               ),
-              child: const Text('Lagre og gå'),
+              child: const Text('Išsaugoti ir išeiti'),
               onPressed: () {
                 markAsClean();
                 Navigator.pop(context, true);
@@ -209,7 +209,7 @@ class _LitWindowsExteriorDoorItemsScreenState
               style: TextButton.styleFrom(
                 textStyle: Theme.of(context).textTheme.labelLarge,
               ),
-              child: const Text('Gå'),
+              child: const Text('Palikti'),
               onPressed: () {
                 _updateLaborHours();
                 markAsClean();
@@ -513,7 +513,7 @@ class _LitWindowsExteriorDoorItemsScreenState
     DataRow totalSumRow = DataRow(
       cells: [
         dataCellDisplaySingle(
-          "Total (eks. mva)",
+          "Iš viso (be PVM)",
           70,
           Theme.of(context).colorScheme.background,
         ),
@@ -631,11 +631,11 @@ class _LitWindowsExteriorDoorItemsScreenState
                   );
                   writeJson(context, windowsAndExteriorDoorsModel, fileName);
                 },
-                child: Text("Lagre til JSON"),
+                child: Text("Išsaugoti į JSON"),
                 heroTag: "btn1",
               ),
               FloatingActionButton(
-                  child: Text("Last inn data"),
+                  child: Text("Įkelti duomenis"),
                   heroTag: "btn2",
                   onPressed: () {
                     openLoadingDialog().then((fileName) {
@@ -691,12 +691,12 @@ class _LitWindowsExteriorDoorItemsScreenState
   Future<String?> openLoadingDialog() => showDialog<String>(
         context: context,
         builder: (context) => AlertDialog(
-          title: Text("Navnet på filen du vil laste inn"),
+          title: Text("Failo, kurį norite įkelti, pavadinimas"),
           content: TextField(
             controller: loadingController,
             autofocus: true,
             decoration: InputDecoration(
-              hintText: "Skriv inn navnet på filen",
+              hintText: "Įveskite failo pavadinimą",
             ),
           ),
           actions: [
@@ -704,7 +704,7 @@ class _LitWindowsExteriorDoorItemsScreenState
                 onPressed: () {
                   submitLoading();
                 },
-                child: Text("Last")),
+                child: Text("Įkelti")),
           ],
         ),
       );
@@ -722,7 +722,7 @@ class _LitWindowsExteriorDoorItemsScreenState
             controller: savingController,
             autofocus: true,
             decoration: InputDecoration(
-              hintText: "Skriv inn navnet på filen",
+              hintText: "Įveskite failo pavadinimą",
             ),
           ),
           actions: [

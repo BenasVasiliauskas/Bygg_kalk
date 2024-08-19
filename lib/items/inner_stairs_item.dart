@@ -1,6 +1,8 @@
 import 'package:cost_calculator/pages/item_screen/inner_stairs_item_screen.dart';
 import 'package:cost_calculator/pages/item_sections/inner_stairs.dart';
+import 'package:cost_calculator/pages/lit_item_screen/lit_inner_stairs_item_screen.dart';
 import 'package:cost_calculator/pages/norw_item_screen/norw_inner_stairs_item_screen.dart';
+import 'package:cost_calculator/pages/pol_item_screen/pol_inner_stairs_item_screen.dart';
 import 'package:flutter/material.dart';
 import '../constants/language.dart';
 
@@ -35,7 +37,7 @@ class InnerStairsItem extends StatelessWidget {
     Navigator.of(ctx).push(
       MaterialPageRoute(
         builder: (_) {
-          return languageEnglish == true
+          return languageEnglish
               ? InnerStairsItemScreen(
                   name,
                   description,
@@ -48,18 +50,42 @@ class InnerStairsItem extends StatelessWidget {
                   material2,
                   totalPrice,
                 )
-              : NorwInnerStairsItemScreen(
-                  name,
-                  description,
-                  unit,
-                  quantity,
-                  laborHours1,
-                  laborHours2,
-                  laborCost,
-                  material1,
-                  material2,
-                  totalPrice,
-                );
+              : languageNorwegian
+                  ? NorwInnerStairsItemScreen(
+                      name,
+                      description,
+                      unit,
+                      quantity,
+                      laborHours1,
+                      laborHours2,
+                      laborCost,
+                      material1,
+                      material2,
+                      totalPrice,
+                    )
+                  : languagePolish
+                      ? PolInnerStairsItemScreen(
+                          name,
+                          description,
+                          unit,
+                          quantity,
+                          laborHours1,
+                          laborHours2,
+                          laborCost,
+                          material1,
+                          material2,
+                          totalPrice)
+                      : LitInnerStairsItemScreen(
+                          name,
+                          description,
+                          unit,
+                          quantity,
+                          laborHours1,
+                          laborHours2,
+                          laborCost,
+                          material1,
+                          material2,
+                          totalPrice);
         },
       ),
     );

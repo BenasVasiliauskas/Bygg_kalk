@@ -1,6 +1,8 @@
 import 'package:cost_calculator/pages/item_screen/flooring_item_screen.dart';
 import 'package:cost_calculator/pages/item_sections/flooring_sections.dart';
+import 'package:cost_calculator/pages/lit_item_screen/lit_flooring_item_screen.dart';
 import 'package:cost_calculator/pages/norw_item_screen/norw_flooring_item_screen.dart';
+import 'package:cost_calculator/pages/pol_item_screen/pol_flooring_item_screen.dart';
 import 'package:flutter/material.dart';
 import '../constants/language.dart';
 
@@ -35,7 +37,7 @@ class FlooringItem extends StatelessWidget {
     Navigator.of(ctx).push(
       MaterialPageRoute(
         builder: (_) {
-          return languageEnglish == true
+          return languageEnglish
               ? FlooringItemScreen(
                   name,
                   description,
@@ -48,18 +50,42 @@ class FlooringItem extends StatelessWidget {
                   material2,
                   totalPrice,
                 )
-              : NorwFlooringItemScreen(
-                  name,
-                  description,
-                  unit,
-                  quantity,
-                  laborHours1,
-                  laborHours2,
-                  laborCost,
-                  material1,
-                  material2,
-                  totalPrice,
-                );
+              : languageNorwegian
+                  ? NorwFlooringItemScreen(
+                      name,
+                      description,
+                      unit,
+                      quantity,
+                      laborHours1,
+                      laborHours2,
+                      laborCost,
+                      material1,
+                      material2,
+                      totalPrice,
+                    )
+                  : languagePolish
+                      ? PolFlooringItemScreen(
+                          name,
+                          description,
+                          unit,
+                          quantity,
+                          laborHours1,
+                          laborHours2,
+                          laborCost,
+                          material1,
+                          material2,
+                          totalPrice)
+                      : LitFlooringItemScreen(
+                          name,
+                          description,
+                          unit,
+                          quantity,
+                          laborHours1,
+                          laborHours2,
+                          laborCost,
+                          material1,
+                          material2,
+                          totalPrice);
         },
       ),
     );

@@ -1,6 +1,8 @@
 import 'package:cost_calculator/pages/item_screen/deck_item_screen.dart';
 import 'package:cost_calculator/pages/item_sections/deck_sections.dart';
+import 'package:cost_calculator/pages/lit_item_screen/lit_deck_item_screen.dart';
 import 'package:cost_calculator/pages/norw_item_screen/norw_deck_item_screen.dart';
+import 'package:cost_calculator/pages/pol_item_screen/pol_deck_item_screen.dart';
 import 'package:flutter/material.dart';
 import '../constants/language.dart';
 
@@ -16,7 +18,6 @@ class DeckItem extends StatelessWidget {
   final List<double> material2;
   final List<double> totalPrice;
   final Color color;
-  //final String testvar;
 
   DeckItem(
     this.name,
@@ -30,14 +31,13 @@ class DeckItem extends StatelessWidget {
     this.material2,
     this.totalPrice,
     this.color,
-    //[this.testvar = ""]
   );
 
   void selectCategory(BuildContext ctx) {
     Navigator.of(ctx).push(
       MaterialPageRoute(
         builder: (_) {
-          return languageEnglish == true
+          return languageEnglish
               ? DeckItemScreen(
                   name,
                   description,
@@ -50,18 +50,42 @@ class DeckItem extends StatelessWidget {
                   material2,
                   totalPrice,
                 )
-              : NorwDeckItemScreen(
-                  name,
-                  description,
-                  unit,
-                  quantity,
-                  laborHours1,
-                  laborHours2,
-                  laborCost,
-                  material1,
-                  material2,
-                  totalPrice,
-                );
+              : languageNorwegian
+                  ? NorwDeckItemScreen(
+                      name,
+                      description,
+                      unit,
+                      quantity,
+                      laborHours1,
+                      laborHours2,
+                      laborCost,
+                      material1,
+                      material2,
+                      totalPrice,
+                    )
+                  : languagePolish
+                      ? PolDeckItemScreen(
+                          name,
+                          description,
+                          unit,
+                          quantity,
+                          laborHours1,
+                          laborHours2,
+                          laborCost,
+                          material1,
+                          material2,
+                          totalPrice)
+                      : LitDeckItemScreen(
+                          name,
+                          description,
+                          unit,
+                          quantity,
+                          laborHours1,
+                          laborHours2,
+                          laborCost,
+                          material1,
+                          material2,
+                          totalPrice);
         },
       ),
     );

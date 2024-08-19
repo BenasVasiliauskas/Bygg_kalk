@@ -1,4 +1,6 @@
 import 'package:cost_calculator/pages/item_sections/outer_wall_sections.dart';
+import 'package:cost_calculator/pages/lit_item_screen/lit_exterior_wall_items_screen.dart';
+import 'package:cost_calculator/pages/pol_item_screen/pol_exterior_wall_items_screen.dart';
 
 import '../pages/item_screen/exterior_wall_items_screen.dart';
 import '../pages/norw_item_screen/norw_exterior_wall_items_screen.dart';
@@ -38,7 +40,7 @@ class OuterWallItem extends StatelessWidget {
     Navigator.of(ctx).push(
       MaterialPageRoute(
         builder: (_) {
-          return languageEnglish == true
+          return languageEnglish
               ? ExteriorWallItemsScreen(
                   name,
                   description,
@@ -52,19 +54,46 @@ class OuterWallItem extends StatelessWidget {
                   material2,
                   totalPrice,
                 )
-              : NorwExteriorWallItemsScreen(
-                  name,
-                  description,
-                  unit,
-                  quantity,
-                  materialQuantity,
-                  laborHours1,
-                  laborHours2,
-                  laborCost,
-                  material1,
-                  material2,
-                  totalPrice,
-                );
+              : languageNorwegian
+                  ? NorwExteriorWallItemsScreen(
+                      name,
+                      description,
+                      unit,
+                      quantity,
+                      materialQuantity,
+                      laborHours1,
+                      laborHours2,
+                      laborCost,
+                      material1,
+                      material2,
+                      totalPrice,
+                    )
+                  : languagePolish
+                      ? PolExteriorWallItemsScreen(
+                          name,
+                          description,
+                          unit,
+                          quantity,
+                          materialQuantity,
+                          laborHours1,
+                          laborHours2,
+                          laborCost,
+                          material1,
+                          material2,
+                          totalPrice,
+                        )
+                      : LitExteriorWallItemsScreen(
+                          name,
+                          description,
+                          unit,
+                          quantity,
+                          materialQuantity,
+                          laborHours1,
+                          laborHours2,
+                          laborCost,
+                          material1,
+                          material2,
+                          totalPrice);
         },
       ),
     );

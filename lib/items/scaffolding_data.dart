@@ -1,6 +1,8 @@
 import 'package:cost_calculator/pages/item_screen/scaffolding_item_screen.dart';
 import 'package:cost_calculator/pages/item_sections/scaffolding_sections.dart';
+import 'package:cost_calculator/pages/lit_item_screen/lit_scaffolding_item_screen.dart';
 import 'package:cost_calculator/pages/norw_item_screen/norw_scaffolding_item_screen.dart';
+import 'package:cost_calculator/pages/pol_item_screen/pol_scaffolding_item_screen.dart';
 import 'package:flutter/material.dart';
 import '../constants/language.dart';
 
@@ -35,7 +37,7 @@ class ScaffoldingItem extends StatelessWidget {
     Navigator.of(ctx).push(
       MaterialPageRoute(
         builder: (_) {
-          return languageEnglish == true
+          return languageEnglish
               ? ScaffoldingItemScreen(
                   name,
                   description,
@@ -48,18 +50,43 @@ class ScaffoldingItem extends StatelessWidget {
                   material2,
                   totalPrice,
                 )
-              : NorwScaffoldingItemScreen(
-                  name,
-                  description,
-                  unit,
-                  quantity,
-                  laborHours1,
-                  laborHours2,
-                  laborCost,
-                  material1,
-                  material2,
-                  totalPrice,
-                );
+              : languageNorwegian
+                  ? NorwScaffoldingItemScreen(
+                      name,
+                      description,
+                      unit,
+                      quantity,
+                      laborHours1,
+                      laborHours2,
+                      laborCost,
+                      material1,
+                      material2,
+                      totalPrice,
+                    )
+                  : languagePolish
+                      ? PolScaffoldingItemScreen(
+                          name,
+                          description,
+                          unit,
+                          quantity,
+                          laborHours1,
+                          laborHours2,
+                          laborCost,
+                          material1,
+                          material2,
+                          totalPrice,
+                        )
+                      : LitScaffoldingItemScreen(
+                          name,
+                          description,
+                          unit,
+                          quantity,
+                          laborHours1,
+                          laborHours2,
+                          laborCost,
+                          material1,
+                          material2,
+                          totalPrice);
         },
       ),
     );

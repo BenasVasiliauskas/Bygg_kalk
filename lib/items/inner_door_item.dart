@@ -1,6 +1,8 @@
 import 'package:cost_calculator/pages/item_screen/inner_door_items_screen.dart';
 import 'package:cost_calculator/pages/item_sections/inner_door_sections.dart';
+import 'package:cost_calculator/pages/lit_item_screen/lit_inner_door_items_screen.dart';
 import 'package:cost_calculator/pages/norw_item_screen/norw_inner_door_items_screen.dart';
+import 'package:cost_calculator/pages/pol_item_screen/pol_inner_door_items_screen.dart';
 
 import 'package:flutter/material.dart';
 import '../constants/language.dart';
@@ -36,7 +38,7 @@ class InnerDoorItem extends StatelessWidget {
     Navigator.of(ctx).push(
       MaterialPageRoute(
         builder: (_) {
-          return languageEnglish == true
+          return languageEnglish
               ? InnerDoorItemScreen(
                   name,
                   description,
@@ -49,18 +51,42 @@ class InnerDoorItem extends StatelessWidget {
                   material2,
                   totalPrice,
                 )
-              : NorwInnerDoorItemScreenScreen(
-                  name,
-                  description,
-                  unit,
-                  quantity,
-                  laborHours1,
-                  laborHours2,
-                  laborCost,
-                  material1,
-                  material2,
-                  totalPrice,
-                );
+              : languageNorwegian
+                  ? NorwInnerDoorItemScreenScreen(
+                      name,
+                      description,
+                      unit,
+                      quantity,
+                      laborHours1,
+                      laborHours2,
+                      laborCost,
+                      material1,
+                      material2,
+                      totalPrice,
+                    )
+                  : languagePolish
+                      ? PolInnerDoorItemScreenScreen(
+                          name,
+                          description,
+                          unit,
+                          quantity,
+                          laborHours1,
+                          laborHours2,
+                          laborCost,
+                          material1,
+                          material2,
+                          totalPrice)
+                      : LitInnerDoorItemScreenScreen(
+                          name,
+                          description,
+                          unit,
+                          quantity,
+                          laborHours1,
+                          laborHours2,
+                          laborCost,
+                          material1,
+                          material2,
+                          totalPrice);
         },
       ),
     );

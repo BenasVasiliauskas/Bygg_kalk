@@ -1,6 +1,8 @@
 import 'package:cost_calculator/pages/item_screen/windows_exterior_door_items_screen.dart';
 import 'package:cost_calculator/pages/item_sections/windows_exterior_door_sections.dart';
+import 'package:cost_calculator/pages/lit_item_screen/lit_windows_exterior_door_items_screen.dart';
 import 'package:cost_calculator/pages/norw_item_screen/norw_windows_exterior_door_items_screen.dart';
+import 'package:cost_calculator/pages/pol_item_screen/pol_windows_exterior_door_items_screen.dart';
 
 import 'package:flutter/material.dart';
 import '../constants/language.dart';
@@ -37,7 +39,7 @@ class WindowExteriorDoorItem extends StatelessWidget {
     Navigator.of(ctx).push(
       MaterialPageRoute(
         builder: (_) {
-          return languageEnglish == true
+          return languageEnglish
               ? WindowsExteriorDoorItemsScreen(
                   name,
                   description,
@@ -50,18 +52,42 @@ class WindowExteriorDoorItem extends StatelessWidget {
                   material2,
                   totalPrice,
                 )
-              : NorwWindowsExteriorDoorItemsScreen(
-                  name,
-                  description,
-                  unit,
-                  quantity,
-                  laborHours1,
-                  laborHours2,
-                  laborCost,
-                  material1,
-                  material2,
-                  totalPrice,
-                );
+              : languageNorwegian
+                  ? NorwWindowsExteriorDoorItemsScreen(
+                      name,
+                      description,
+                      unit,
+                      quantity,
+                      laborHours1,
+                      laborHours2,
+                      laborCost,
+                      material1,
+                      material2,
+                      totalPrice,
+                    )
+                  : languagePolish
+                      ? PolWindowsExteriorDoorItemsScreen(
+                          name,
+                          description,
+                          unit,
+                          quantity,
+                          laborHours1,
+                          laborHours2,
+                          laborCost,
+                          material1,
+                          material2,
+                          totalPrice)
+                      : LitWindowsExteriorDoorItemsScreen(
+                          name,
+                          description,
+                          unit,
+                          quantity,
+                          laborHours1,
+                          laborHours2,
+                          laborCost,
+                          material1,
+                          material2,
+                          totalPrice);
         },
       ),
     );
