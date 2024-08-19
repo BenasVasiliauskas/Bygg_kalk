@@ -198,15 +198,15 @@ class _PolWasteItemScreenState extends State<PolWasteItemScreen> {
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
-          title: const Text("Vil du spare?"),
-          content: const Text(
-              "Er du sikker på at du vil forlate siden uten å lagre?"),
+          title: const Text("Czy chcesz oszczędzać?"),
+          content:
+              const Text("Czy na pewno chcesz opuścić stronę bez zapisywania?"),
           actions: <Widget>[
             TextButton(
               style: TextButton.styleFrom(
                 textStyle: Theme.of(context).textTheme.labelLarge,
               ),
-              child: const Text('Lagre og gå'),
+              child: const Text('Zapisz i idź'),
               onPressed: () {
                 markAsClean();
                 Navigator.pop(context, true);
@@ -216,7 +216,7 @@ class _PolWasteItemScreenState extends State<PolWasteItemScreen> {
               style: TextButton.styleFrom(
                 textStyle: Theme.of(context).textTheme.labelLarge,
               ),
-              child: const Text('Gå'),
+              child: const Text('Przejdź do'),
               onPressed: () {
                 _updateLaborHours();
                 markAsClean();
@@ -305,18 +305,18 @@ class _PolWasteItemScreenState extends State<PolWasteItemScreen> {
   @override
   Widget build(BuildContext context) {
     List<DataColumn> columns = [
-      createDataColumn("Beskrivelse", 98, () {}),
-      createDataColumn("Enhet", 55, () {}),
-      createDataColumn("Mengde", 80, () {}),
-      createDataColumn("Enh. tid.", 65, () {
+      createDataColumn("Opis", 98, () {}),
+      createDataColumn("Jednostka", 55, () {}),
+      createDataColumn("MeIlośćngde", 80, () {}),
+      createDataColumn("Enh. czasu.", 65, () {
         updateTotalSum();
         rebuildDataTable();
       }),
-      createDataColumn("Sum. tid.", 75, () {}),
-      createDataColumn("Arb.pris ", 55, () {}),
-      createDataColumn("Enh. mater.", 85, () {}),
-      createDataColumn("Sum. material", 85, () {}),
-      createDataColumn("Total pris'", 75, () {}),
+      createDataColumn("Suma czasu.", 75, () {}),
+      createDataColumn("Koszt pracy", 55, () {}),
+      createDataColumn("Wzmocnienie.", 85, () {}),
+      createDataColumn("Suma. materiał", 85, () {}),
+      createDataColumn("Cena całkowita", 75, () {}),
     ];
     List<DataRow> rows = [];
 
@@ -601,11 +601,11 @@ class _PolWasteItemScreenState extends State<PolWasteItemScreen> {
 
                   writeJson(context, wasteModel, fileName);
                 },
-                child: Text("Lagre til JSON"),
+                child: Text("Zapisz do JSON"),
                 heroTag: "btn1",
               ),
               FloatingActionButton(
-                  child: Text("Last inn data"),
+                  child: Text("Dane ładowania"),
                   heroTag: "btn2",
                   onPressed: () {
                     openLoadingDialog().then((fileName) {
@@ -648,12 +648,12 @@ class _PolWasteItemScreenState extends State<PolWasteItemScreen> {
   Future<String?> openLoadingDialog() => showDialog<String>(
         context: context,
         builder: (context) => AlertDialog(
-          title: Text("Navnet på filen du vil laste inn"),
+          title: Text("Nazwa pliku, który ma zostać załadowany"),
           content: TextField(
             controller: loadingController,
             autofocus: true,
             decoration: InputDecoration(
-              hintText: "Skriv inn navnet på filen",
+              hintText: "Wprowadź nazwę pliku",
             ),
           ),
           actions: [
@@ -661,7 +661,7 @@ class _PolWasteItemScreenState extends State<PolWasteItemScreen> {
                 onPressed: () {
                   submitLoading();
                 },
-                child: Text("Last")),
+                child: Text("Obciążenie")),
           ],
         ),
       );
@@ -674,12 +674,12 @@ class _PolWasteItemScreenState extends State<PolWasteItemScreen> {
   Future<String?> openDialog() => showDialog<String>(
         context: context,
         builder: (context) => AlertDialog(
-          title: Text("Gi filen et navn"),
+          title: Text("Nadaj plikowi nazwę"),
           content: TextField(
             controller: savingController,
             autofocus: true,
             decoration: InputDecoration(
-              hintText: "Skriv inn navnet på filen",
+              hintText: "Wprowadź nazwę pliku",
             ),
           ),
           actions: [

@@ -94,7 +94,7 @@ class _LitWasteItemScreenState extends State<LitWasteItemScreen> {
     addBudgetSum(widget.name, totalTotalPrice);
 
     // Create the "Total Sum" row
-    DataRow totalSumRow = totalSumRowEng(totalLaborHours1, totalLaborHours2,
+    DataRow totalSumRow = totalSumRowLit(totalLaborHours1, totalLaborHours2,
         totalLaborCost, totalMaterial1, totalMaterial2, totalTotalPrice);
 
     // Add the "Total Sum" row to the updated rows
@@ -305,7 +305,7 @@ class _LitWasteItemScreenState extends State<LitWasteItemScreen> {
   @override
   Widget build(BuildContext context) {
     List<DataColumn> columns = [
-      createDataColumn("Beskrivelse", 98, () {}),
+      createDataColumn("Aprašymas", 98, () {}),
       createDataColumn("Enhet", 55, () {}),
       createDataColumn("Mengde", 80, () {}),
       createDataColumn("Enh. tid.", 65, () {
@@ -488,7 +488,7 @@ class _LitWasteItemScreenState extends State<LitWasteItemScreen> {
     DataRow totalSumRow = DataRow(
       cells: [
         dataCellDisplaySingle(
-          "Total (eks. mva)",
+          "Galutinė suma",
           70,
           Theme.of(context).colorScheme.background,
         ),

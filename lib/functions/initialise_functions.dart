@@ -239,6 +239,79 @@ DataRow totalSumRowNorw(
   );
 }
 
+DataRow totalSumRowLit(
+    double totalLaborHours1,
+    double totalLaborHours2,
+    double totalLaborCost,
+    double totalMaterial1,
+    double totalMaterial2,
+    double totalTotalPrice) {
+  return DataRow(
+    cells: [
+      DataCell(
+        Container(
+          width: 200,
+          child: Text('Galutinė suma'), // child: Text('Sum (eks. mva):'),
+        ),
+      ),
+      DataCell(
+        Container(
+          width: 100,
+          child: Text(''),
+        ),
+      ),
+      DataCell(
+        Container(
+          width: 100,
+          child: Text(''),
+        ),
+      ),
+      DataCell(
+        Container(
+          width: 150,
+          child: Text(''),
+        ),
+      ),
+      DataCell(
+        Container(
+          width: 100,
+          child: Text(totalLaborHours1.toStringAsFixed(2)),
+        ),
+      ),
+      DataCell(
+        Container(
+          width: 100,
+          child: Text(totalLaborHours2.toStringAsFixed(2)),
+        ),
+      ),
+      DataCell(
+        Container(
+          width: 100,
+          child: Text(totalLaborCost.toStringAsFixed(2)),
+        ),
+      ),
+      DataCell(
+        Container(
+          width: 100,
+          child: Text(totalMaterial1.toStringAsFixed(2)),
+        ),
+      ),
+      DataCell(
+        Container(
+          width: 100,
+          child: Text(totalMaterial2.toStringAsFixed(2)),
+        ),
+      ),
+      DataCell(
+        Container(
+          width: 100,
+          child: Text(totalTotalPrice.toStringAsFixed(2)),
+        ),
+      ),
+    ],
+  );
+}
+
 DataRow totalSumRowEng(
     double totalLaborHours1,
     double totalLaborHours2,

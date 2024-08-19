@@ -50,7 +50,7 @@ class _WasteScreenState extends State<WasteScreen> {
       ),
       body: GridView.count(
         padding: const EdgeInsets.all(25),
-        children: languageEnglish == true
+        children: languageEnglish
             ? wasteData.map(
                 (catData) {
                   return Row(

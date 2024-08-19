@@ -96,7 +96,7 @@ class _LitSupportSystemItemScreenState
     addBudgetSum(widget.name, totalTotalPrice);
 
     // Create the "Total Sum" row
-    DataRow totalSumRow = totalSumRowEng(totalLaborHours1, totalLaborHours2,
+    DataRow totalSumRow = totalSumRowLit(totalLaborHours1, totalLaborHours2,
         totalLaborCost, totalMaterial1, totalMaterial2, totalTotalPrice);
 
     // Add the "Total Sum" row to the updated rows
@@ -198,15 +198,15 @@ class _LitSupportSystemItemScreenState
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
-          title: const Text("Vil du spare?"),
-          content: const Text(
-              "Er du sikker på at du vil forlate siden uten å lagre?"),
+          title: const Text("Ar norite išsaugoti?"),
+          content:
+              const Text("Ar tikrai norite palikti puslapį jo neišsaugoję?"),
           actions: <Widget>[
             TextButton(
               style: TextButton.styleFrom(
                 textStyle: Theme.of(context).textTheme.labelLarge,
               ),
-              child: const Text('Lagre og gå'),
+              child: const Text('Išsaugoti ir išeiti'),
               onPressed: () {
                 markAsClean();
                 Navigator.pop(context, true);
@@ -216,7 +216,7 @@ class _LitSupportSystemItemScreenState
               style: TextButton.styleFrom(
                 textStyle: Theme.of(context).textTheme.labelLarge,
               ),
-              child: const Text('Gå'),
+              child: const Text('Palikti'),
               onPressed: () {
                 _updateLaborHours();
                 markAsClean();
@@ -306,18 +306,18 @@ class _LitSupportSystemItemScreenState
   @override
   Widget build(BuildContext context) {
     List<DataColumn> columns = [
-      createDataColumn("Beskrivelse", 98, () {}),
-      createDataColumn("Enhet", 55, () {}),
-      createDataColumn("Mengde", 80, () {}),
-      createDataColumn("Enh. tid.", 65, () {
+      createDataColumn("Aprašymas", 98, () {}),
+      createDataColumn("Vienetas", 55, () {}),
+      createDataColumn("Kiekis", 80, () {}),
+      createDataColumn("Enh. laikas", 65, () {
         updateTotalSum();
         rebuildDataTable();
       }),
-      createDataColumn("Sum. tid.", 75, () {}),
-      createDataColumn("Arb.pris ", 55, () {}),
-      createDataColumn("Enh. mater.", 85, () {}),
-      createDataColumn("Sum. material", 85, () {}),
-      createDataColumn("Total pris'", 75, () {}),
+      createDataColumn("Sum. laikas.", 75, () {}),
+      createDataColumn("Darbo kaina", 55, () {}),
+      createDataColumn("Enh. medž.", 85, () {}),
+      createDataColumn("Medžiagų suma", 85, () {}),
+      createDataColumn("Bendra kaina", 75, () {}),
     ];
 
     List<DataRow> rows = [];
@@ -490,7 +490,7 @@ class _LitSupportSystemItemScreenState
     DataRow totalSumRow = DataRow(
       cells: [
         dataCellDisplaySingle(
-          "Total (eks. mva)",
+          "Iš viso (be PVM)",
           70,
           Theme.of(context).colorScheme.background,
         ),
@@ -603,11 +603,11 @@ class _LitSupportSystemItemScreenState
 
                   writeJson(context, supportSystemModel, fileName);
                 },
-                child: Text("Lagre til JSON"),
+                child: Text("Išsaugoti į JSON"),
                 heroTag: "btn1",
               ),
               FloatingActionButton(
-                  child: Text("Last inn data"),
+                  child: Text("Įkelti duomenis"),
                   heroTag: "btn2",
                   onPressed: () {
                     openLoadingDialog().then((fileName) {
@@ -654,12 +654,12 @@ class _LitSupportSystemItemScreenState
   Future<String?> openLoadingDialog() => showDialog<String>(
         context: context,
         builder: (context) => AlertDialog(
-          title: Text("Navnet på filen du vil laste inn"),
+          title: Text("Failo, kurį norite įkelti, pavadinimas"),
           content: TextField(
             controller: loadingController,
             autofocus: true,
             decoration: InputDecoration(
-              hintText: "Skriv inn navnet på filen",
+              hintText: "Įveskite failo pavadinimą",
             ),
           ),
           actions: [
@@ -667,7 +667,7 @@ class _LitSupportSystemItemScreenState
                 onPressed: () {
                   submitLoading();
                 },
-                child: Text("Last")),
+                child: Text("Įkelti")),
           ],
         ),
       );
@@ -680,12 +680,12 @@ class _LitSupportSystemItemScreenState
   Future<String?> openDialog() => showDialog<String>(
         context: context,
         builder: (context) => AlertDialog(
-          title: Text("Gi filen et navn"),
+          title: Text("Suteikite failui pavadinimą"),
           content: TextField(
             controller: savingController,
             autofocus: true,
             decoration: InputDecoration(
-              hintText: "Skriv inn navnet på filen",
+              hintText: "Įveskite failo pavadinimą",
             ),
           ),
           actions: [
@@ -693,7 +693,7 @@ class _LitSupportSystemItemScreenState
                 onPressed: () {
                   submit();
                 },
-                child: Text("Spar")),
+                child: Text("Išsaugoti")),
           ],
         ),
       );

@@ -198,15 +198,15 @@ class _PolSupportSystemItemScreenState
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
-          title: const Text("Vil du spare?"),
-          content: const Text(
-              "Er du sikker på at du vil forlate siden uten å lagre?"),
+          title: const Text("Czy chcesz zapisać?"),
+          content:
+              const Text("Czy na pewno chcesz opuścić stronę bez zapisywania?"),
           actions: <Widget>[
             TextButton(
               style: TextButton.styleFrom(
                 textStyle: Theme.of(context).textTheme.labelLarge,
               ),
-              child: const Text('Lagre og gå'),
+              child: const Text('Zapisz i wyjdź'),
               onPressed: () {
                 markAsClean();
                 Navigator.pop(context, true);
@@ -216,7 +216,7 @@ class _PolSupportSystemItemScreenState
               style: TextButton.styleFrom(
                 textStyle: Theme.of(context).textTheme.labelLarge,
               ),
-              child: const Text('Gå'),
+              child: const Text('Opuść'),
               onPressed: () {
                 _updateLaborHours();
                 markAsClean();
@@ -306,18 +306,18 @@ class _PolSupportSystemItemScreenState
   @override
   Widget build(BuildContext context) {
     List<DataColumn> columns = [
-      createDataColumn("Beskrivelse", 98, () {}),
-      createDataColumn("Enhet", 55, () {}),
-      createDataColumn("Mengde", 80, () {}),
-      createDataColumn("Enh. tid.", 65, () {
+      createDataColumn("Opis urządzenia", 98, () {}),
+      createDataColumn("Jednostka miary", 55, () {}),
+      createDataColumn("Ilość", 80, () {}),
+      createDataColumn("Zwiększ. czas.", 65, () {
         updateTotalSum();
         rebuildDataTable();
       }),
-      createDataColumn("Sum. tid.", 75, () {}),
-      createDataColumn("Arb.pris ", 55, () {}),
-      createDataColumn("Enh. mater.", 85, () {}),
-      createDataColumn("Sum. material", 85, () {}),
-      createDataColumn("Total pris'", 75, () {}),
+      createDataColumn("Suma czasu.", 75, () {}),
+      createDataColumn("Cena pracy", 55, () {}),
+      createDataColumn("Zwiększ. mater.", 85, () {}),
+      createDataColumn("Suma materiałów", 85, () {}),
+      createDataColumn("Cena całkowita", 75, () {}),
     ];
 
     List<DataRow> rows = [];
@@ -490,7 +490,7 @@ class _PolSupportSystemItemScreenState
     DataRow totalSumRow = DataRow(
       cells: [
         dataCellDisplaySingle(
-          "Total (eks. mva)",
+          "Razem (bez VAT)",
           70,
           Theme.of(context).colorScheme.background,
         ),
@@ -603,11 +603,11 @@ class _PolSupportSystemItemScreenState
 
                   writeJson(context, supportSystemModel, fileName);
                 },
-                child: Text("Lagre til JSON"),
+                child: Text("Zapisz do JSON"),
                 heroTag: "btn1",
               ),
               FloatingActionButton(
-                  child: Text("Last inn data"),
+                  child: Text("Załaduj dane"),
                   heroTag: "btn2",
                   onPressed: () {
                     openLoadingDialog().then((fileName) {
@@ -654,12 +654,12 @@ class _PolSupportSystemItemScreenState
   Future<String?> openLoadingDialog() => showDialog<String>(
         context: context,
         builder: (context) => AlertDialog(
-          title: Text("Navnet på filen du vil laste inn"),
+          title: Text("Nazwa pliku, który chcesz załadować"),
           content: TextField(
             controller: loadingController,
             autofocus: true,
             decoration: InputDecoration(
-              hintText: "Skriv inn navnet på filen",
+              hintText: "Wprowadź nazwę pliku",
             ),
           ),
           actions: [
@@ -667,7 +667,7 @@ class _PolSupportSystemItemScreenState
                 onPressed: () {
                   submitLoading();
                 },
-                child: Text("Last")),
+                child: Text("Załaduj")),
           ],
         ),
       );
@@ -680,12 +680,12 @@ class _PolSupportSystemItemScreenState
   Future<String?> openDialog() => showDialog<String>(
         context: context,
         builder: (context) => AlertDialog(
-          title: Text("Gi filen et navn"),
+          title: Text("Nadaj plikowi nazwę"),
           content: TextField(
             controller: savingController,
             autofocus: true,
             decoration: InputDecoration(
-              hintText: "Skriv inn navnet på filen",
+              hintText: "Wprowadź nazwę pliku",
             ),
           ),
           actions: [

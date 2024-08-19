@@ -1,6 +1,8 @@
 import 'package:cost_calculator/pages/item_screen/support_system_screen.dart';
 import 'package:cost_calculator/pages/item_sections/support_system_sections.dart';
+import 'package:cost_calculator/pages/lit_item_screen/lit_support_system_item_screen.dart';
 import 'package:cost_calculator/pages/norw_item_screen/norw_support_system_item_screen.dart';
+import 'package:cost_calculator/pages/pol_item_screen/pol_support_system_item_screen.dart';
 
 import 'package:flutter/material.dart';
 import '../constants/language.dart';
@@ -36,7 +38,7 @@ class SupportSystemItem extends StatelessWidget {
     Navigator.of(ctx).push(
       MaterialPageRoute(
         builder: (_) {
-          return languageEnglish == true
+          return languageEnglish
               ? SupportSystemItemScreen(
                   name,
                   description,
@@ -49,18 +51,43 @@ class SupportSystemItem extends StatelessWidget {
                   material2,
                   totalPrice,
                 )
-              : NorwSupportSystemItemScreen(
-                  name,
-                  description,
-                  unit,
-                  quantity,
-                  laborHours1,
-                  laborHours2,
-                  laborCost,
-                  material1,
-                  material2,
-                  totalPrice,
-                );
+              : languageNorwegian
+                  ? NorwSupportSystemItemScreen(
+                      name,
+                      description,
+                      unit,
+                      quantity,
+                      laborHours1,
+                      laborHours2,
+                      laborCost,
+                      material1,
+                      material2,
+                      totalPrice,
+                    )
+                  : languagePolish
+                      ? PolSupportSystemItemScreen(
+                          name,
+                          description,
+                          unit,
+                          quantity,
+                          laborHours1,
+                          laborHours2,
+                          laborCost,
+                          material1,
+                          material2,
+                          totalPrice)
+                      : LitSupportSystemItemScreen(
+                          name,
+                          description,
+                          unit,
+                          quantity,
+                          laborHours1,
+                          laborHours2,
+                          laborCost,
+                          material1,
+                          material2,
+                          totalPrice,
+                        );
         },
       ),
     );
