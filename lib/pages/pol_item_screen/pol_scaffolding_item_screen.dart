@@ -1,7 +1,7 @@
 // ignore_for_file: must_be_immutable
 
 import 'package:cost_calculator/constants/budget_constants.dart';
-import 'package:cost_calculator/data/data.dart';
+import 'package:cost_calculator/data/polish_data_original.dart';
 import 'package:cost_calculator/functions/initialise_functions.dart';
 import 'package:cost_calculator/functions/save_to_json.dart';
 import 'package:cost_calculator/models/scaffolding_data_model.dart';
@@ -183,11 +183,11 @@ class _PolScaffoldingItemScreenState extends State<PolScaffoldingItemScreen> {
   void _updateLaborHours() {
     if (!mounted) return; // Ensure the widget is still mounted
 
-    for (int i = 0; i < innerDoor.length; i++) {
-      if (innerDoor[i].name == widget.name) {
+    for (int i = 0; i < polScaffodlingData.length; i++) {
+      if (polScaffodlingData[i].name == widget.name) {
         setState(() {
-          for (int j = 0; j < innerDoor[i].laborHours1.length; j++) {
-            widget.laborHours1[j] = innerDoor[i].laborHours1[j];
+          for (int j = 0; j < polScaffodlingData[i].laborHours1.length; j++) {
+            widget.laborHours1[j] = polScaffodlingData[i].laborHours1[j];
           }
         });
         return;
