@@ -616,9 +616,6 @@ class _SupportSystemItemScreenState extends State<SupportSystemItemScreen> {
                           for (int i = 0; i < value.length; i++) {
                             SupportSystemModel supportSystemModel =
                                 SupportSystemModel.fromJson(value[i]);
-                            print(supportSystemModel.name);
-                            print(widget.name);
-                            print(widget.name == supportSystemModel.name);
                             if (supportSystemModel.name == widget.name) {
                               setState(() {
                                 widget.description =

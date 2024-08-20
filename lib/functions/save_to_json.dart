@@ -1,7 +1,6 @@
 import 'dart:convert';
 import 'dart:io';
 import 'package:cost_calculator/constants/language.dart';
-import 'package:cost_calculator/data/data.dart';
 import 'package:flutter/material.dart';
 import 'package:path_provider/path_provider.dart';
 
@@ -71,9 +70,9 @@ Future<File> writeJsonArrayEnd(String name) async {
 Future<File> writeProjectToJson(var name, int lengthOfModel) async {
   final file = await readJsonFile(name);
 
-  for (int i = 0; i < lengthOfModel; i++) {
-    print(exteriorWallData[i].name);
-  }
+  // for (int i = 0; i < lengthOfModel; i++) {
+  //   print(exteriorWallData[i].name);
+  // }
 
   return file;
 }
@@ -174,7 +173,6 @@ Future<bool> _showOverwriteDialog(BuildContext context, String fileName) async {
 
 Future<File> writeJsonOriginal(var model, String name) async {
   final file = await localFile(name);
-
   // Convert list of objects to a list of maps
   Map<String, dynamic> jsonData = model.toJson();
   // Write the JSON string to the file
