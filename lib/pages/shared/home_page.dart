@@ -1,7 +1,9 @@
 import 'package:cost_calculator/constants/language.dart';
 import 'package:cost_calculator/pages/item_screen/file_picker.dart';
 import 'package:cost_calculator/pages/item_screen/budget_screen.dart';
+import 'package:cost_calculator/pages/lit_item_screen/lit_budget_screen.dart';
 import 'package:cost_calculator/pages/norw_item_screen/norw_budget_screen.dart';
+import 'package:cost_calculator/pages/pol_item_screen/pol_budget_screen.dart';
 import 'package:cost_calculator/pages/shared/help_page.dart';
 import 'package:cost_calculator/pages/shared/item_screens/building_components_screen.dart';
 import 'package:cost_calculator/pages/shared/options.dart';
@@ -176,11 +178,17 @@ class _homePageState extends State<homePage> {
                                           MaterialPageRoute(
                                               builder: ((context) =>
                                                   NorwBudgetScreen())))
-                                      : Navigator.pushReplacement(
-                                          context,
-                                          MaterialPageRoute(
-                                              builder: ((context) =>
-                                                  BudgetScreen())));
+                                      : languagePolish
+                                          ? Navigator.pushReplacement(
+                                              context,
+                                              MaterialPageRoute(
+                                                  builder: ((context) =>
+                                                      PolBudgetScreen())))
+                                          : Navigator.pushReplacement(
+                                              context,
+                                              MaterialPageRoute(
+                                                  builder: ((context) =>
+                                                      LitBudgetScreen())));
                             },
                             icon: FaIcon(FontAwesomeIcons.dollarSign)),
                         Text(

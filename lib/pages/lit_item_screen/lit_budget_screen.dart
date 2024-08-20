@@ -1,5 +1,5 @@
 import 'package:cost_calculator/constants/empty_models.dart';
-import 'package:cost_calculator/functions/norw_load_project_from_json.dart';
+import 'package:cost_calculator/functions/lit_load_project_from_json.dart';
 import 'package:cost_calculator/functions/save_to_json.dart';
 import 'package:cost_calculator/pages/shared/globals/calculation_variables.dart';
 import 'package:cost_calculator/pages/shared/home_page.dart';
@@ -8,12 +8,12 @@ import 'package:flutter/material.dart';
 import 'package:cost_calculator/constants/lit_budget_constants.dart';
 import 'package:cost_calculator/widgets/custom_drawer.dart';
 
-class NorwBudgetScreen extends StatefulWidget {
+class LitBudgetScreen extends StatefulWidget {
   @override
-  State<NorwBudgetScreen> createState() => _NorwBudgetScreenState();
+  State<LitBudgetScreen> createState() => _LitBudgetScreenState();
 }
 
-class _NorwBudgetScreenState extends State<NorwBudgetScreen> {
+class _LitBudgetScreenState extends State<LitBudgetScreen> {
   final ScrollController _scrollController = ScrollController();
 
   double sumMaterialCosts =
@@ -54,26 +54,22 @@ class _NorwBudgetScreenState extends State<NorwBudgetScreen> {
 
                       var data = await readJsonFileSelected(fileName);
 
-                      await norwLoadProject(fileName, data, emptyDeckModel);
-                      await norwLoadProject(fileName, data, emptyFlooringModel);
-                      await norwLoadProject(
-                          fileName, data, emptyInnerDoorModel);
-                      await norwLoadProject(
+                      await litLoadProject(fileName, data, emptyDeckModel);
+                      await litLoadProject(fileName, data, emptyFlooringModel);
+                      await litLoadProject(fileName, data, emptyInnerDoorModel);
+                      await litLoadProject(
                           fileName, data, emptyInnerStairsModel);
-                      await norwLoadProject(
-                          fileName, data, emptyInnerWallModel);
-                      await norwLoadProject(
-                          fileName, data, emptyOuterRoofModel);
-                      await norwLoadProject(
-                          fileName, data, emptyOuterWallModel);
-                      await norwLoadProject(
+                      await litLoadProject(fileName, data, emptyInnerWallModel);
+                      await litLoadProject(fileName, data, emptyOuterRoofModel);
+                      await litLoadProject(fileName, data, emptyOuterWallModel);
+                      await litLoadProject(
                           fileName, data, emptyParquetAndLaminateModel);
-                      await norwLoadProject(
+                      await litLoadProject(
                           fileName, data, emptyScaffoldingModel);
-                      await norwLoadProject(
+                      await litLoadProject(
                           fileName, data, emptySupportSystemModel);
-                      await norwLoadProject(fileName, data, emptyTerraceModel);
-                      await norwLoadProject(
+                      await litLoadProject(fileName, data, emptyTerraceModel);
+                      await litLoadProject(
                           fileName, data, emptyWindowsExteriorDoorsModel);
                     } else {
                       // User canceled the picker

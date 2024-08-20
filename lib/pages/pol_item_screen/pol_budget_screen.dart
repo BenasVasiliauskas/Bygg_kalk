@@ -8,12 +8,12 @@ import 'package:flutter/material.dart';
 import 'package:cost_calculator/constants/norw_budget_constants.dart';
 import 'package:cost_calculator/widgets/custom_drawer.dart';
 
-class NorwBudgetScreen extends StatefulWidget {
+class PolBudgetScreen extends StatefulWidget {
   @override
-  State<NorwBudgetScreen> createState() => _NorwBudgetScreenState();
+  State<PolBudgetScreen> createState() => _PolBudgetScreenState();
 }
 
-class _NorwBudgetScreenState extends State<NorwBudgetScreen> {
+class _PolBudgetScreenState extends State<PolBudgetScreen> {
   final ScrollController _scrollController = ScrollController();
 
   double sumMaterialCosts =
