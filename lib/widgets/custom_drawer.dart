@@ -1,5 +1,7 @@
 import 'package:cost_calculator/constants/language.dart';
 import 'package:cost_calculator/pages/item_screen/file_picker.dart';
+import 'package:cost_calculator/pages/lit_item_screen/lit_budget_screen.dart';
+import 'package:cost_calculator/pages/pol_item_screen/pol_budget_screen.dart';
 import 'package:cost_calculator/pages/shared/help_page.dart';
 import 'package:cost_calculator/pages/shared/home_page.dart';
 import 'package:cost_calculator/pages/shared/options.dart';
@@ -226,7 +228,11 @@ class CustomDrawer extends StatelessWidget {
                   builder: (context) {
                     return languageEnglish
                         ? BudgetScreen()
-                        : NorwBudgetScreen();
+                        : languageNorwegian
+                            ? NorwBudgetScreen()
+                            : languagePolish
+                                ? PolBudgetScreen()
+                                : LitBudgetScreen();
                   },
                 ),
               );
