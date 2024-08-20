@@ -38,7 +38,7 @@ class _PolBudgetScreenState extends State<PolBudgetScreen> {
         appBar: AppBar(
           title: Row(
             children: [
-              Text('Budsjettskjermen'),
+              Text('Ekran budżetu'),
               Padding(
                 padding: const EdgeInsets.all(12.0),
                 child: TextButton(
@@ -75,7 +75,7 @@ class _PolBudgetScreenState extends State<PolBudgetScreen> {
                       // User canceled the picker
                     }
                   },
-                  child: Text("Last inn et prosjekt"),
+                  child: Text("Załaduj projekt"),
                 ),
               ),
             ],
@@ -95,7 +95,7 @@ class _PolBudgetScreenState extends State<PolBudgetScreen> {
                       label: SizedBox(
                         width: 70,
                         child: Text(
-                          'Kostnadsart',
+                          'Rodzaj kosztu',
                         ),
                       ),
                     ),
@@ -103,7 +103,7 @@ class _PolBudgetScreenState extends State<PolBudgetScreen> {
                       label: SizedBox(
                         width: 80,
                         child: Text(
-                          'Totalt antall timer',
+                          'Całkowita liczba godzin',
                           softWrap: true,
                         ),
                       ),
@@ -112,7 +112,7 @@ class _PolBudgetScreenState extends State<PolBudgetScreen> {
                       label: SizedBox(
                         width: 80,
                         child: Text(
-                          'Arbeidskostnader',
+                          'Koszty pracy',
                           softWrap: true,
                         ),
                       ),
@@ -121,7 +121,7 @@ class _PolBudgetScreenState extends State<PolBudgetScreen> {
                       label: SizedBox(
                         width: 80,
                         child: Text(
-                          'Materialkostnade',
+                          'Koszty materiałów',
                           softWrap: true,
                         ),
                       ),
@@ -130,7 +130,7 @@ class _PolBudgetScreenState extends State<PolBudgetScreen> {
                       label: SizedBox(
                         width: 85,
                         child: Text(
-                          'Budsjettsum',
+                          'Suma budżetu',
                           softWrap: true,
                         ),
                       ),
@@ -231,7 +231,7 @@ class _PolBudgetScreenState extends State<PolBudgetScreen> {
                       cells: [
                         DataCell(
                           Text(
-                            "Rigg og drift av byggeplass",
+                            "Olinowanie i operacje na miejscu",
                           ),
                         ),
                         DataCell(
@@ -250,7 +250,7 @@ class _PolBudgetScreenState extends State<PolBudgetScreen> {
                       cells: [
                         DataCell(
                           Text(
-                            "Sum materialkostnad",
+                            "Całkowity koszt materiałów",
                           ),
                         ),
                         DataCell(
@@ -267,7 +267,7 @@ class _PolBudgetScreenState extends State<PolBudgetScreen> {
                       cells: [
                         DataCell(
                           Text(
-                            "Avfall flytting",
+                            "Usuwanie odpadów",
                           ),
                         ),
                         DataCell(
@@ -284,7 +284,7 @@ class _PolBudgetScreenState extends State<PolBudgetScreen> {
                       cells: [
                         DataCell(
                           Text(
-                            "Materialer frakt",
+                            "Wysyłka materiałów",
                           ),
                         ),
                         DataCell(
@@ -303,7 +303,7 @@ class _PolBudgetScreenState extends State<PolBudgetScreen> {
                       cells: [
                         DataCell(
                           Text(
-                            "Totale kostnader, (eksl. mva)",
+                            "Koszty całkowite (bez VAT)",
                           ),
                         ),
                         DataCell(
@@ -325,7 +325,7 @@ class _PolBudgetScreenState extends State<PolBudgetScreen> {
                       cells: [
                         DataCell(
                           Text(
-                            "Mva",
+                            "VAT",
                           ),
                         ),
                         DataCell(
@@ -351,7 +351,7 @@ class _PolBudgetScreenState extends State<PolBudgetScreen> {
                       cells: [
                         DataCell(
                           Text(
-                            "Totale kostnader, (inkl. mva)",
+                            "Koszty całkowite (z VAT)",
                           ),
                         ),
                         DataCell(
