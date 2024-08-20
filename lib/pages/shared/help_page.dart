@@ -1,3 +1,4 @@
+import 'package:cost_calculator/constants/language.dart';
 import 'package:cost_calculator/widgets/custom_drawer.dart';
 import 'package:flutter/material.dart';
 
@@ -9,7 +10,13 @@ class helpPage extends StatelessWidget {
     return Scaffold(
       drawer: CustomDrawer(),
       appBar: AppBar(
-        title: Text("Help page"),
+        title: Text(languageEnglish
+            ? "Help page"
+            : languageNorwegian
+                ? "Hjelpeside"
+                : languagePolish
+                    ? "Strona pomocy"
+                    : "Pagalbos puslapis"),
       ),
     );
   }

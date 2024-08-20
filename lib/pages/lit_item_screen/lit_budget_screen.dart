@@ -89,7 +89,7 @@ class _LitBudgetScreenState extends State<LitBudgetScreen> {
             child: Column(
               children: [
                 DataTable(
-                  columnSpacing: 10,
+                  columnSpacing: 56,
                   columns: [
                     DataColumn(
                       label: SizedBox(
@@ -199,7 +199,6 @@ class _LitBudgetScreenState extends State<LitBudgetScreen> {
                   }),
                 ),
                 DataTable(
-                  columnSpacing: 10,
                   columns: [
                     DataColumn(
                       label: SizedBox(
