@@ -717,7 +717,7 @@ class _PolWindowsExteriorDoorItemsScreenState
   Future<String?> openDialog() => showDialog<String>(
         context: context,
         builder: (context) => AlertDialog(
-          title: Text("Gi filen et navn"),
+          title: Text("Nadaj plikowi nazwęnavn"),
           content: TextField(
             controller: savingController,
             autofocus: true,

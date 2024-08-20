@@ -680,7 +680,7 @@ class _LitScaffoldingItemScreenState extends State<LitScaffoldingItemScreen> {
   Future<String?> openDialog() => showDialog<String>(
         context: context,
         builder: (context) => AlertDialog(
-          title: Text("Gi filen et navn"),
+          title: Text("Suteikite failo pavadinimąnavn"),
           content: TextField(
             controller: savingController,
             autofocus: true,

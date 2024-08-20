@@ -674,7 +674,7 @@ class _LitWasteItemScreenState extends State<LitWasteItemScreen> {
   Future<String?> openDialog() => showDialog<String>(
         context: context,
         builder: (context) => AlertDialog(
-          title: Text("Gi filen et navn"),
+          title: Text("Suteikite failo pavadinimąnavn"),
           content: TextField(
             controller: savingController,
             autofocus: true,

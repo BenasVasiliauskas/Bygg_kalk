@@ -285,12 +285,24 @@ class _FilePickerScreenState extends State<FilePickerScreen> {
   Future<String?> openLoadingDialog() => showDialog<String>(
         context: context,
         builder: (context) => AlertDialog(
-          title: Text("Name of the file you want to load"),
+          title: Text(languageEnglish
+              ? "Name of the file you want to load"
+              : languageNorwegian
+                  ? "Navnet på filen du vil laste inn"
+                  : languagePolish
+                      ? "Nazwa pliku, który chcesz załadować"
+                      : "Failo pavadinimas, kurį norite įkelti"),
           content: TextField(
             controller: loadingController,
             autofocus: true,
             decoration: InputDecoration(
-              hintText: "Enter the name of the file",
+              hintText: languageEnglish
+                  ? "Enter the name of the file"
+                  : languageNorwegian
+                      ? "Skriv inn navnet på filen"
+                      : languagePolish
+                          ? "Wprowadź nazwę pliku"
+                          : "Įveskite",
             ),
           ),
           actions: [
@@ -298,7 +310,13 @@ class _FilePickerScreenState extends State<FilePickerScreen> {
                 onPressed: () {
                   submitLoading();
                 },
-                child: Text("Load")),
+                child: Text(languageEnglish
+                    ? "Load"
+                    : languageNorwegian
+                        ? "Last inn"
+                        : languagePolish
+                            ? "Załaduj"
+                            : "Įkelti")),
           ],
         ),
       );
@@ -311,7 +329,13 @@ class _FilePickerScreenState extends State<FilePickerScreen> {
   Future<String?> openDialog() => showDialog<String>(
         context: context,
         builder: (context) => AlertDialog(
-          title: Text(languageEnglish ? "Name the file" : "Gi filen et navn"),
+          title: Text(languageEnglish
+              ? "Name the file"
+              : languageNorwegian
+                  ? "Gi filen et navn"
+                  : languagePolish
+                      ? "Nadaj plikowi nazwę"
+                      : "Suteikite failo pavadinimą"),
           content: Column(
             children: [
               TextField(
@@ -320,7 +344,11 @@ class _FilePickerScreenState extends State<FilePickerScreen> {
                 decoration: InputDecoration(
                   hintText: languageEnglish
                       ? "Enter the name of the file"
-                      : "Skriv inn navnet på filen",
+                      : languageNorwegian
+                          ? "Skriv inn navnet på filen"
+                          : languagePolish
+                              ? "Wprowadź nazwę pliku"
+                              : "Įveskite failo pavadinimą",
                 ),
               ),
             ],
@@ -330,17 +358,26 @@ class _FilePickerScreenState extends State<FilePickerScreen> {
               onPressed: () {
                 Navigator.of(context).pop();
               },
-              child: Text(languageEnglish ? "Cancel" : "Avbryt"),
+              child: Text(languageEnglish
+                  ? "Cancel"
+                  : languageNorwegian
+                      ? "Avbryt"
+                      : languagePolish
+                          ? "Anuluj"
+                          : "Atšaukti"),
             ),
             TextButton(
-                onPressed: () {
-                  submit();
-                },
-                child: Text(languageEnglish
-                    ? "Save"
-                    : languageNorwegian
-                        ? "Lagre"
-                        : "SaveOtherLang")),
+              onPressed: () {
+                submit();
+              },
+              child: Text(languageEnglish
+                  ? "Save"
+                  : languageNorwegian
+                      ? "Lagre"
+                      : languagePolish
+                          ? "Zapisz"
+                          : "Išsaugoti"),
+            ),
           ],
         ),
       );
