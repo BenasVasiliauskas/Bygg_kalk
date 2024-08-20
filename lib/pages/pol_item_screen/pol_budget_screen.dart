@@ -1,11 +1,11 @@
 import 'package:cost_calculator/constants/empty_models.dart';
-import 'package:cost_calculator/functions/norw_load_project_from_json.dart';
+import 'package:cost_calculator/constants/pol_budget_constants.dart';
+import 'package:cost_calculator/functions/pol_load_project_from_json.dart';
 import 'package:cost_calculator/functions/save_to_json.dart';
 import 'package:cost_calculator/pages/shared/globals/calculation_variables.dart';
 import 'package:cost_calculator/pages/shared/home_page.dart';
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
-import 'package:cost_calculator/constants/norw_budget_constants.dart';
 import 'package:cost_calculator/widgets/custom_drawer.dart';
 
 class PolBudgetScreen extends StatefulWidget {
@@ -54,26 +54,22 @@ class _PolBudgetScreenState extends State<PolBudgetScreen> {
 
                       var data = await readJsonFileSelected(fileName);
 
-                      await norwLoadProject(fileName, data, emptyDeckModel);
-                      await norwLoadProject(fileName, data, emptyFlooringModel);
-                      await norwLoadProject(
-                          fileName, data, emptyInnerDoorModel);
-                      await norwLoadProject(
+                      await polLoadProject(fileName, data, emptyDeckModel);
+                      await polLoadProject(fileName, data, emptyFlooringModel);
+                      await polLoadProject(fileName, data, emptyInnerDoorModel);
+                      await polLoadProject(
                           fileName, data, emptyInnerStairsModel);
-                      await norwLoadProject(
-                          fileName, data, emptyInnerWallModel);
-                      await norwLoadProject(
-                          fileName, data, emptyOuterRoofModel);
-                      await norwLoadProject(
-                          fileName, data, emptyOuterWallModel);
-                      await norwLoadProject(
+                      await polLoadProject(fileName, data, emptyInnerWallModel);
+                      await polLoadProject(fileName, data, emptyOuterRoofModel);
+                      await polLoadProject(fileName, data, emptyOuterWallModel);
+                      await polLoadProject(
                           fileName, data, emptyParquetAndLaminateModel);
-                      await norwLoadProject(
+                      await polLoadProject(
                           fileName, data, emptyScaffoldingModel);
-                      await norwLoadProject(
+                      await polLoadProject(
                           fileName, data, emptySupportSystemModel);
-                      await norwLoadProject(fileName, data, emptyTerraceModel);
-                      await norwLoadProject(
+                      await polLoadProject(fileName, data, emptyTerraceModel);
+                      await polLoadProject(
                           fileName, data, emptyWindowsExteriorDoorsModel);
                     } else {
                       // User canceled the picker

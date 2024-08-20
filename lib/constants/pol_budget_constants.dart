@@ -1,10 +1,10 @@
 List<String> calculatedNamesOrder = [
-  "Langai ir išorinės durys",
-  "Išorės sienos",
-  "Vidaus sienos",
-  "Vidaus durys",
-  "Parketas ir laminatas",
-  "Iš viso",
+  "Okna i drzwi zewnętrzne",
+  "Ściany zewnętrzne",
+  "Ściany wewnętrzne",
+  "Drzwi wewnętrzne",
+  "Parkiet i laminat",
+  "Razem",
 ];
 
 List<double> totalHours = [0, 0, 0, 0, 0, 0];
@@ -16,103 +16,103 @@ List<double> totalMaterialCosts = [0, 0, 0, 0, 0, 0];
 List<double> budgetSums = [0, 0, 0, 0, 0, 0];
 
 Map<String, double> innerWallHours = {
-  "Medinė santvara 48x98, dviguba garso siena, dvigubas tinkas": 0,
-  "Medinis medinis karkasas 48x98, apšiltintas, lygus apkalimas": 0,
-  "Medinis karkasas 48x98, pjautas h=2400, tinkas": 0,
-  "Plieninė santvara 2x75 mm, dviguba, apšiltinta, gipso kartonas": 0,
-  "Plieninė santvara 2x100 mm, dviguba, apšiltinta, gipskartonio plokštė": 0,
-  "Plieninė santvara 2x75 mm, dviguba, apšiltinta, dvigubas tinkas": 0,
+  "Drewniana kratownica 48x98, podwójna ściana akustyczna, podwójny tynk": 0,
+  "Więźba drewniana 48x98, ocieplona, boazeria gładka": 0,
+  "Więźba drewniana 48x98, ścięta h=2400, tynk": 0,
+  "Kratownica stalowa 2x75mm, podwójna, ocieplona, suche tynki": 0,
+  "Kratownica stalowa 2x100mm, podwójna, izolowana, płyta gipsowo-kartonowa": 0,
+  "Kratownica stalowa 2x75mm, podwójna, izolowana, podwójny tynk": 0,
 };
 
 Map<String, double> innerWallLaborCosts = {
-  "Medinė santvara 48x98, dviguba garso siena, dvigubas tinkas": 0,
-  "Medinis medinis karkasas 48x98, apšiltintas, lygus apkalimas": 0,
-  "Medinis karkasas 48x98, pjautas h=2400, tinkas": 0,
-  "Plieninė santvara 2x75 mm, dviguba, apšiltinta, gipso kartonas": 0,
-  "Plieninė santvara 2x100 mm, dviguba, apšiltinta, gipskartonio plokštė": 0,
-  "Plieninė santvara 2x75 mm, dviguba, apšiltinta, dvigubas tinkas": 0,
+  "Drewniana kratownica 48x98, podwójna ściana akustyczna, podwójny tynk": 0,
+  "Więźba drewniana 48x98, ocieplona, boazeria gładka": 0,
+  "Więźba drewniana 48x98, ścięta h=2400, tynk": 0,
+  "Kratownica stalowa 2x75mm, podwójna, ocieplona, suche tynki": 0,
+  "Kratownica stalowa 2x100mm, podwójna, izolowana, płyta gipsowo-kartonowa": 0,
+  "Kratownica stalowa 2x75mm, podwójna, izolowana, podwójny tynk": 0,
 };
 
 Map<String, double> innerWallMaterialCosts = {
-  "Medinė santvara 48x98, dviguba garso siena, dvigubas tinkas": 0,
-  "Medinis medinis karkasas 48x98, apšiltintas, lygus apkalimas": 0,
-  "Medinis karkasas 48x98, pjautas h=2400, tinkas": 0,
-  "Plieninė santvara 2x75 mm, dviguba, apšiltinta, gipso kartonas": 0,
-  "Plieninė santvara 2x100 mm, dviguba, apšiltinta, gipskartonio plokštė": 0,
-  "Plieninė santvara 2x75 mm, dviguba, apšiltinta, dvigubas tinkas": 0,
+  "Drewniana kratownica 48x98, podwójna ściana akustyczna, podwójny tynk": 0,
+  "Więźba drewniana 48x98, ocieplona, boazeria gładka": 0,
+  "Więźba drewniana 48x98, ścięta h=2400, tynk": 0,
+  "Kratownica stalowa 2x75mm, podwójna, ocieplona, suche tynki": 0,
+  "Kratownica stalowa 2x100mm, podwójna, izolowana, płyta gipsowo-kartonowa": 0,
+  "Kratownica stalowa 2x75mm, podwójna, izolowana, podwójny tynk": 0,
 };
 
 Map<String, double> innerWallBudgetSum = {
-  "Medinė santvara 48x98, dviguba garso siena, dvigubas tinkas": 0,
-  "Medinis medinis karkasas 48x98, apšiltintas, lygus apkalimas": 0,
-  "Medinis karkasas 48x98, pjautas h=2400, tinkas": 0,
-  "Plieninė santvara 2x75 mm, dviguba, apšiltinta, gipso kartonas": 0,
-  "Plieninė santvara 2x100 mm, dviguba, apšiltinta, gipskartonio plokštė": 0,
-  "Plieninė santvara 2x75 mm, dviguba, apšiltinta, dvigubas tinkas": 0,
+  "Drewniana kratownica 48x98, podwójna ściana akustyczna, podwójny tynk": 0,
+  "Więźba drewniana 48x98, ocieplona, boazeria gładka": 0,
+  "Więźba drewniana 48x98, ścięta h=2400, tynk": 0,
+  "Kratownica stalowa 2x75mm, podwójna, ocieplona, suche tynki": 0,
+  "Kratownica stalowa 2x100mm, podwójna, izolowana, płyta gipsowo-kartonowa": 0,
+  "Kratownica stalowa 2x75mm, podwójna, izolowana, podwójny tynk": 0,
 };
 /////////////////////////////////////////////////////////////////////////////////////
 Map<String, double> outerWallHours = {
-  "Medinė santvara 48x198, 50 mm pamušalas, stovinti siūlė, tinkas": 0,
+  "Więźba drewniana 48x198, okładzina 50 mm, rąbek stojący, tynk": 0,
 };
 
 Map<String, double> outerWallLaborCosts = {
-  "Medinė santvara 48x198, 50 mm pamušalas, stovinti siūlė, tinkas": 0,
+  "Więźba drewniana 48x198, okładzina 50 mm, rąbek stojący, tynk": 0,
 };
 
 Map<String, double> outerWallMaterialCosts = {
-  "Medinė santvara 48x198, 50 mm pamušalas, stovinti siūlė, tinkas": 0,
+  "Więźba drewniana 48x198, okładzina 50 mm, rąbek stojący, tynk": 0,
 };
 
 Map<String, double> outerWallBudgetSum = {
-  "Medinė santvara 48x198, 50 mm pamušalas, stovinti siūlė, tinkas": 0,
+  "Więźba drewniana 48x198, okładzina 50 mm, rąbek stojący, tynk": 0,
 };
 /////////////////////////////////////////////////////////////////////////////////////
 Map<String, double> innerDoorHours = {
-  "Vidaus durys, pušies 9x21": 0,
+  "Drzwi wewnętrzne sosnowe 9x21": 0,
 };
 Map<String, double> innerDoorLaborCosts = {
-  "Vidaus durys, pušies 9x21": 0,
+  "Drzwi wewnętrzne sosnowe 9x21": 0,
 };
 Map<String, double> innerDoorMaterialCosts = {
-  "Vidaus durys, pušies 9x21": 0,
+  "Drzwi wewnętrzne sosnowe 9x21": 0,
 };
 Map<String, double> innerDoorBudgetSum = {
-  "Vidaus durys, pušies 9x21": 0,
+  "Drzwi wewnętrzne sosnowe 9x21": 0,
 };
 /////////////////////////////////////////////////////////////////////////////////////
 Map<String, double> parquetAndLaminateHours = {
-  "Paviršiaus dangos parketas": 0,
-  "Laminuota grindų danga, ąžuolas": 0,
+  "Parkiet powierzchniowy": 0,
+  "Podłoga laminowana, dąb": 0,
 };
 Map<String, double> parquetAndLaminateLaborCosts = {
-  "Paviršiaus dangos parketas": 0,
-  "Laminuota grindų danga, ąžuolas": 0,
+  "Parkiet powierzchniowy": 0,
+  "Podłoga laminowana, dąb": 0,
 };
 Map<String, double> parquetAndLaminateMaterialCosts = {
-  "Paviršiaus dangos parketas": 0,
-  "Laminuota grindų danga, ąžuolas": 0,
+  "Parkiet powierzchniowy": 0,
+  "Podłoga laminowana, dąb": 0,
 };
 Map<String, double> parquetAndLaminateBudgetSum = {
-  "Paviršiaus dangos parketas": 0,
-  "Laminuota grindų danga, ąžuolas": 0,
+  "Parkiet powierzchniowy": 0,
+  "Podłoga laminowana, dąb": 0,
 };
 /////////////////////////////////////////////////////////////////////////////////////
 
 Map<String, double> windowsAndExteriorDoorHours = {
-  "Langas, medinės sienos viršus 12x10": 0,
-  "Medinės lauko durys, medinio karkaso sienoje, baltos, 10x21": 0,
+  "Okno, górna część drewnianej ściany 12x10": 0,
+  "Drewniane drzwi tarasowe, ściana z drewnianą ramą, białe, 10x21": 0,
 };
 Map<String, double> windowsAndExteriorDoorLaborCosts = {
-  "Langas, medinės sienos viršus 12x10": 0,
-  "Medinės lauko durys, medinio karkaso sienoje, baltos, 10x21": 0,
+  "Okno, górna część drewnianej ściany 12x10": 0,
+  "Drewniane drzwi tarasowe, ściana z drewnianą ramą, białe, 10x21": 0,
 };
 Map<String, double> windowsAndExteriorDoorMaterialCosts = {
-  "Langas, medinės sienos viršus 12x10": 0,
-  "Medinės lauko durys, medinio karkaso sienoje, baltos, 10x21": 0,
+  "Okno, górna część drewnianej ściany 12x10": 0,
+  "Drewniane drzwi tarasowe, ściana z drewnianą ramą, białe, 10x21": 0,
 };
 Map<String, double> windowsAndExteriorDoorBudgetSum = {
-  "Langas, medinės sienos viršus 12x10": 0,
-  "Medinės lauko durys, medinio karkaso sienoje, baltos, 10x21": 0,
+  "Okno, górna część drewnianej ściany 12x10": 0,
+  "Drewniane drzwi tarasowe, ściana z drewnianą ramą, białe, 10x21": 0,
 };
 
 void reCalculate() {
