@@ -96,7 +96,7 @@ class _LitWindowsExteriorDoorItemsScreenState
     addBudgetSum(widget.name, totalTotalPrice);
 
     // Create the "Total Sum" row
-    DataRow totalSumRow = totalSumRowNorw(totalLaborHours1, totalLaborHours2,
+    DataRow totalSumRow = totalSumRowLit(totalLaborHours1, totalLaborHours2,
         totalLaborCost, totalMaterial1, totalMaterial2, totalTotalPrice);
 
     // Add the "Total Sum" row to the updated rows

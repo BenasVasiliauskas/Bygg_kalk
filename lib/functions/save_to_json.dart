@@ -90,8 +90,12 @@ Future<File> writeJson(BuildContext context, var model, String name) async {
               SnackBar(content: Text('Data saving has been canceled')))
           : languageNorwegian
               ? ScaffoldMessenger.of(context).showSnackBar(
-                  SnackBar(content: Text('Dataene er lagret som $name.json')))
-              : null;
+                  SnackBar(content: Text('Lagring av data har blitt avbrutt')))
+              : languagePolish
+                  ? ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                      content: Text('Zapisywanie danych zostało anulowane')))
+                  : ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                      content: Text('Duomenų saugojimas buvo atšauktas')));
       // User chose to cancel, so return early and do not overwrite the file
       return file;
     }
@@ -109,7 +113,11 @@ Future<File> writeJson(BuildContext context, var model, String name) async {
       : languageNorwegian
           ? ScaffoldMessenger.of(context).showSnackBar(
               SnackBar(content: Text('Dataene er lagret som $name.json')))
-          : null;
+          : languagePolish
+              ? ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                  content: Text('Dane zostały zapisane jako $name.json')))
+              : ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                  content: Text('Duomenys išsaugoti kaip $name.json')));
   return file;
 }
 
@@ -121,13 +129,17 @@ Future<bool> _showOverwriteDialog(BuildContext context, String fileName) async {
               ? "File Already Exists"
               : languageNorwegian
                   ? "Fil eksisterer allerede"
-                  : ""),
+                  : languagePolish
+                      ? "Plik już istnieje"
+                      : "Failas jau egzistuoja"),
           content: Text(
             languageEnglish
                 ? "A file named '$fileName.json' already exists. Do you want to overwrite it?"
                 : languageNorwegian
                     ? "En fil med navnet '$fileName.json' eksisterer allerede. Vil du overskrive den?"
-                    : "",
+                    : languagePolish
+                        ? "Plik o nazwie '$fileName.json' już istnieje. Czy chcesz go nadpisać?"
+                        : "Failas pavadinimu '$fileName.json' jau egzistuoja. Ar norite jį perrašyti?",
           ),
           actions: [
             TextButton(
@@ -138,7 +150,9 @@ Future<bool> _showOverwriteDialog(BuildContext context, String fileName) async {
                   ? "Cancel"
                   : languageNorwegian
                       ? "Avbryt"
-                      : ""),
+                      : languagePolish
+                          ? "Anuluj"
+                          : "Atšaukti"),
             ),
             TextButton(
               onPressed: () {
@@ -148,7 +162,9 @@ Future<bool> _showOverwriteDialog(BuildContext context, String fileName) async {
                   ? "Overwrite"
                   : languageNorwegian
                       ? "Overskriv"
-                      : ""),
+                      : languagePolish
+                          ? "Nadpisać"
+                          : "Perrašyti"),
             ),
           ],
         ),

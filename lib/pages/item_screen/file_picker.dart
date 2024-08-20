@@ -10,7 +10,6 @@ import 'package:cost_calculator/functions/load_project_from_json.dart';
 import 'package:cost_calculator/functions/norw_load_project_from_json.dart';
 import 'package:cost_calculator/functions/save_project_to_json.dart';
 import 'package:cost_calculator/functions/save_to_json.dart';
-import 'package:cost_calculator/pages/shared/globals/file_picker_variables.dart';
 import 'package:cost_calculator/pages/shared/home_page.dart';
 import 'package:cost_calculator/widgets/custom_drawer.dart';
 
