@@ -69,6 +69,7 @@ class _InnerStairsScreen extends State<InnerStairsScreen> {
                           catData.materials,
                           catData.totalPrice,
                           catData.color,
+                          catData.constructionType,
                         ),
                       ),
                       Padding(
@@ -112,6 +113,7 @@ class _InnerStairsScreen extends State<InnerStairsScreen> {
                               catData.materials,
                               catData.totalPrice,
                               catData.color,
+                              catData.constructionType,
                             ),
                           ),
                           Padding(
@@ -156,6 +158,7 @@ class _InnerStairsScreen extends State<InnerStairsScreen> {
                                   catData.materials,
                                   catData.totalPrice,
                                   catData.color,
+                                  catData.constructionType,
                                 ),
                               ),
                               Padding(
@@ -199,6 +202,7 @@ class _InnerStairsScreen extends State<InnerStairsScreen> {
                                   catData.materials,
                                   catData.totalPrice,
                                   catData.color,
+                                  catData.constructionType,
                                 ),
                               ),
                               Padding(
