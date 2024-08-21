@@ -69,6 +69,7 @@ class _FlooringSectionsState extends State<FlooringScreen> {
                           catData.materials,
                           catData.totalPrice,
                           catData.color,
+                          catData.constructionType,
                         ),
                       ),
                       Padding(
@@ -111,6 +112,7 @@ class _FlooringSectionsState extends State<FlooringScreen> {
                               catData.materials,
                               catData.totalPrice,
                               catData.color,
+                              catData.constructionType,
                             ),
                           ),
                           Padding(
@@ -155,6 +157,7 @@ class _FlooringSectionsState extends State<FlooringScreen> {
                                   catData.materials,
                                   catData.totalPrice,
                                   catData.color,
+                                  catData.constructionType,
                                 ),
                               ),
                               Padding(
@@ -198,6 +201,7 @@ class _FlooringSectionsState extends State<FlooringScreen> {
                                   catData.materials,
                                   catData.totalPrice,
                                   catData.color,
+                                  catData.constructionType,
                                 ),
                               ),
                               Padding(

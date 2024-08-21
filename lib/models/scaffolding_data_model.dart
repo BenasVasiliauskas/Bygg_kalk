@@ -12,6 +12,7 @@ class ScaffoldingModel {
   List<double> materials;
   List<double> totalPrice;
   final Color color;
+  final String constructionType;
 
   ScaffoldingModel({
     required this.name,
@@ -25,7 +26,9 @@ class ScaffoldingModel {
     required this.materials,
     required this.totalPrice,
     Color? color, // Change to nullable Color
-  }) : color = color ?? Color.fromARGB(255, 99, 105, 128); // Initialize color
+    String? constructionType,
+  })  : constructionType = constructionType ?? "Nan",
+        color = color ?? Color.fromARGB(255, 99, 105, 128); // Initialize color
   Map<String, dynamic> toJson() {
     return {
       'name': name,
@@ -70,5 +73,6 @@ class ScaffoldingModel {
         totalPrice = json['totalPrice'] is List
             ? json['totalPrice'].cast<double>().toList()
             : [],
-        color = Color.fromARGB(255, 99, 105, 128);
+        color = Color.fromARGB(255, 99, 105, 128),
+        constructionType = json['constructionType'];
 }

@@ -12,6 +12,7 @@ class WindowsAndExteriorDoorsModel {
   List<double> materials;
   List<double> totalPrice;
   final Color color;
+  final String constructionType;
 
   WindowsAndExteriorDoorsModel({
     required this.name,
@@ -25,7 +26,9 @@ class WindowsAndExteriorDoorsModel {
     required this.materials,
     required this.totalPrice,
     Color? color, // Change to nullable Color
-  }) : color = color ??
+    String? constructionType,
+  })  : constructionType = constructionType ?? "Nan",
+        color = color ??
             const Color.fromARGB(255, 104, 192, 32); // Initialize color
 
   Map<String, dynamic> toJson() {
@@ -72,6 +75,6 @@ class WindowsAndExteriorDoorsModel {
         totalPrice = json['totalPrice'] is List
             ? json['totalPrice'].cast<double>().toList()
             : [],
-        color = Color.fromARGB(
-            255, 174, 228, 75); // Initialize color with Colors.orange
+        color = Color.fromARGB(255, 174, 228, 75),
+        constructionType = json['constructionType'];
 }

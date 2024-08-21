@@ -70,6 +70,7 @@ class _OuterRoofScreenState extends State<OuterRoofScreen> {
                           catData.materials,
                           catData.totalPrice,
                           catData.color,
+                          catData.constructionType,
                         ),
                       ),
                       Padding(
@@ -113,6 +114,7 @@ class _OuterRoofScreenState extends State<OuterRoofScreen> {
                               catData.materials,
                               catData.totalPrice,
                               catData.color,
+                              catData.constructionType,
                             ),
                           ),
                           Padding(
@@ -158,6 +160,7 @@ class _OuterRoofScreenState extends State<OuterRoofScreen> {
                                   catData.materials,
                                   catData.totalPrice,
                                   catData.color,
+                                  catData.constructionType,
                                 ),
                               ),
                               Padding(
@@ -202,6 +205,7 @@ class _OuterRoofScreenState extends State<OuterRoofScreen> {
                                   catData.materials,
                                   catData.totalPrice,
                                   catData.color,
+                                  catData.constructionType,
                                 ),
                               ),
                               Padding(

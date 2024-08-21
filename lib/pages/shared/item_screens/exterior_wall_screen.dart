@@ -71,6 +71,7 @@ class _ExteriorWallScreenState extends State<ExteriorWallScreen> {
                           wallItem.materials,
                           wallItem.totalPrice,
                           wallItem.color,
+                          wallItem.constructionType,
                         ),
                       ),
                       Padding(
@@ -114,6 +115,7 @@ class _ExteriorWallScreenState extends State<ExteriorWallScreen> {
                             wallItem.materials,
                             wallItem.totalPrice,
                             wallItem.color,
+                            wallItem.constructionType,
                           ),
                         ),
                         Padding(
@@ -157,6 +159,7 @@ class _ExteriorWallScreenState extends State<ExteriorWallScreen> {
                                 wallItem.materials,
                                 wallItem.totalPrice,
                                 wallItem.color,
+                                wallItem.constructionType,
                               ),
                             ),
                             Padding(
@@ -199,6 +202,7 @@ class _ExteriorWallScreenState extends State<ExteriorWallScreen> {
                                 wallItem.materials,
                                 wallItem.totalPrice,
                                 wallItem.color,
+                                wallItem.constructionType,
                               ),
                             ),
                             Padding(

@@ -70,6 +70,7 @@ class _SupportSystemScreenState extends State<SupportSystemScreen> {
                           catData.materials,
                           catData.totalPrice,
                           catData.color,
+                          catData.constructionType,
                         ),
                       ),
                       Padding(
@@ -113,6 +114,7 @@ class _SupportSystemScreenState extends State<SupportSystemScreen> {
                             catData.materials,
                             catData.totalPrice,
                             catData.color,
+                            catData.constructionType,
                           ),
                         ),
                         Padding(
@@ -155,6 +157,7 @@ class _SupportSystemScreenState extends State<SupportSystemScreen> {
                                 catData.materials,
                                 catData.totalPrice,
                                 catData.color,
+                                catData.constructionType,
                               ),
                             ),
                             Padding(
@@ -196,6 +199,7 @@ class _SupportSystemScreenState extends State<SupportSystemScreen> {
                                 catData.materials,
                                 catData.totalPrice,
                                 catData.color,
+                                catData.constructionType,
                               ),
                             ),
                             Padding(

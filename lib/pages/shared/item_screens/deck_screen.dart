@@ -69,6 +69,7 @@ class _DeckScreenState extends State<DeckScreen> {
                           catData.materials,
                           catData.totalPrice,
                           catData.color,
+                          catData.constructionType,
                         ),
                       ),
                       Padding(
@@ -111,6 +112,7 @@ class _DeckScreenState extends State<DeckScreen> {
                               catData.materials,
                               catData.totalPrice,
                               catData.color,
+                              catData.constructionType,
                             ),
                           ),
                           Padding(
@@ -154,6 +156,7 @@ class _DeckScreenState extends State<DeckScreen> {
                                   catData.materials,
                                   catData.totalPrice,
                                   catData.color,
+                                  catData.constructionType,
                                 ),
                               ),
                               Padding(
@@ -197,6 +200,7 @@ class _DeckScreenState extends State<DeckScreen> {
                                       catData.materials,
                                       catData.totalPrice,
                                       catData.color,
+                                      catData.constructionType,
                                     ),
                                   ),
                                   Padding(
@@ -240,6 +244,7 @@ class _DeckScreenState extends State<DeckScreen> {
                                       catData.materials,
                                       catData.totalPrice,
                                       catData.color,
+                                      catData.constructionType,
                                     ),
                                   ),
                                   Padding(
