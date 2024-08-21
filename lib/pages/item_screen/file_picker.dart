@@ -6,8 +6,10 @@ import 'package:cost_calculator/constants/empty_models.dart';
 import 'package:cost_calculator/constants/language.dart';
 import 'package:cost_calculator/data/data.dart';
 import 'package:cost_calculator/data/norw_data.dart';
+import 'package:cost_calculator/functions/lit_load_project_from_json.dart';
 import 'package:cost_calculator/functions/load_project_from_json.dart';
 import 'package:cost_calculator/functions/norw_load_project_from_json.dart';
+import 'package:cost_calculator/functions/pol_load_project_from_json.dart';
 import 'package:cost_calculator/functions/save_project_to_json.dart';
 import 'package:cost_calculator/functions/save_to_json.dart';
 import 'package:cost_calculator/pages/shared/home_page.dart';
@@ -232,9 +234,59 @@ class _FilePickerScreenState extends State<FilePickerScreen> {
                               fileName, data, emptyTerraceModel);
                           await norwLoadProject(
                               fileName, data, emptyWindowsExteriorDoorsModel);
+                        } else if (languagePolish)
+                        // if its polish load polish doc
+                        {
+                          await polLoadProject(fileName, data, emptyDeckModel);
+                          await polLoadProject(
+                              fileName, data, emptyFlooringModel);
+                          await polLoadProject(
+                              fileName, data, emptyInnerDoorModel);
+                          await polLoadProject(
+                              fileName, data, emptyInnerStairsModel);
+                          await polLoadProject(
+                              fileName, data, emptyInnerWallModel);
+                          await polLoadProject(
+                              fileName, data, emptyOuterRoofModel);
+                          await polLoadProject(
+                              fileName, data, emptyOuterWallModel);
+                          await polLoadProject(
+                              fileName, data, emptyParquetAndLaminateModel);
+                          await polLoadProject(
+                              fileName, data, emptyScaffoldingModel);
+                          await polLoadProject(
+                              fileName, data, emptySupportSystemModel);
+                          await polLoadProject(
+                              fileName, data, emptyTerraceModel);
+                          await polLoadProject(
+                              fileName, data, emptyWindowsExteriorDoorsModel);
+                        } else if (languageLithuanian)
+                        // if its lithuanian load lithuanian doc
+                        {
+                          await litLoadProject(fileName, data, emptyDeckModel);
+                          await litLoadProject(
+                              fileName, data, emptyFlooringModel);
+                          await litLoadProject(
+                              fileName, data, emptyInnerDoorModel);
+                          await litLoadProject(
+                              fileName, data, emptyInnerStairsModel);
+                          await litLoadProject(
+                              fileName, data, emptyInnerWallModel);
+                          await litLoadProject(
+                              fileName, data, emptyOuterRoofModel);
+                          await litLoadProject(
+                              fileName, data, emptyOuterWallModel);
+                          await litLoadProject(
+                              fileName, data, emptyParquetAndLaminateModel);
+                          await litLoadProject(
+                              fileName, data, emptyScaffoldingModel);
+                          await litLoadProject(
+                              fileName, data, emptySupportSystemModel);
+                          await litLoadProject(
+                              fileName, data, emptyTerraceModel);
+                          await litLoadProject(
+                              fileName, data, emptyWindowsExteriorDoorsModel);
                         }
-                      } else {
-                        // User canceled the picker
                       }
                     },
                     child: Text(
