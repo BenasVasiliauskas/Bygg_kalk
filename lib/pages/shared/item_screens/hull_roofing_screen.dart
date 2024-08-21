@@ -69,6 +69,7 @@ class _HullRoofingScreenState extends State<HullRoofingScreen> {
                           catData.materials,
                           catData.totalPrice,
                           catData.color,
+                          catData.constructionType,
                         ),
                       ),
                       Padding(
@@ -111,6 +112,7 @@ class _HullRoofingScreenState extends State<HullRoofingScreen> {
                               catData.materials,
                               catData.totalPrice,
                               catData.color,
+                              catData.constructionType,
                             ),
                           ),
                           Padding(
@@ -154,6 +156,7 @@ class _HullRoofingScreenState extends State<HullRoofingScreen> {
                                   catData.materials,
                                   catData.totalPrice,
                                   catData.color,
+                                  catData.constructionType,
                                 ),
                               ),
                               Padding(
@@ -196,6 +199,7 @@ class _HullRoofingScreenState extends State<HullRoofingScreen> {
                                   catData.materials,
                                   catData.totalPrice,
                                   catData.color,
+                                  catData.constructionType,
                                 ),
                               ),
                               Padding(
