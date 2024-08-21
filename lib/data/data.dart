@@ -841,61 +841,73 @@ final dataInnerWallData = [
   ),
 ];
 final deckData = [
-  DeckModel(name: "Floor on ground, poured, insulated, screeded", description: [
-    "Screed and steel trowel of concrete surface",
-    "Reinforcement with mesh, K 131 (2.1 kg per m²)",
-    "Concrete B30 in floor on ground",
-    "Radon stop on ground",
-    "Polystyrene w/seam, EPS, 150 kPa",
-  ], unit: [
-    "m²",
-    "kg",
-    "m³",
-    "m²",
-    "m²",
-  ], quantity: [
-    1.00,
-    2.50,
-    0.12,
-    1.00,
-    1.00,
-  ], laborHours1: [
-    0.21,
-    0.16,
-    0.09,
-    0.12,
-    0.23,
-  ], laborHours2: [
-    0,
-    0,
-    0,
-    0,
-    0,
-  ], laborCost: [
-    0,
-    0,
-    0,
-    0,
-    0,
-  ], material: [
-    45.12,
-    68.88,
-    222.95,
-    74.66,
-    406.71,
-  ], materials: [
-    0,
-    0,
-    0,
-    0,
-    0,
-  ], totalPrice: [
-    0,
-    0,
-    0,
-    0,
-    0,
-  ])
+  DeckModel(
+    name: "Floor on ground, poured, insulated, screeded",
+    description: [
+      "Screed and steel trowel of concrete surface",
+      "Reinforcement with mesh, K 131 (2.1 kg per m²)",
+      "Concrete B30 in floor on ground",
+      "Radon stop on ground",
+      "Polystyrene w/seam, EPS, 150 kPa",
+    ],
+    unit: [
+      "m²",
+      "kg",
+      "m³",
+      "m²",
+      "m²",
+    ],
+    quantity: [
+      1.00,
+      2.50,
+      0.12,
+      1.00,
+      1.00,
+    ],
+    laborHours1: [
+      0.21,
+      0.16,
+      0.09,
+      0.12,
+      0.23,
+    ],
+    laborHours2: [
+      0,
+      0,
+      0,
+      0,
+      0,
+    ],
+    laborCost: [
+      0,
+      0,
+      0,
+      0,
+      0,
+    ],
+    material: [
+      45.12,
+      68.88,
+      222.95,
+      74.66,
+      406.71,
+    ],
+    materials: [
+      0,
+      0,
+      0,
+      0,
+      0,
+    ],
+    totalPrice: [
+      0,
+      0,
+      0,
+      0,
+      0,
+    ],
+    constructionType: "Renovation",
+  ),
 ];
 
 final innerDoor = [
