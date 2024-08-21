@@ -71,6 +71,7 @@ class _WindowsExteriorDoorScreenState extends State<WindowsExteriorDoorScreen> {
                           wallItem.materials,
                           wallItem.totalPrice,
                           wallItem.color,
+                          wallItem.constructionType,
                         ),
                       ),
                       Padding(
@@ -115,6 +116,7 @@ class _WindowsExteriorDoorScreenState extends State<WindowsExteriorDoorScreen> {
                               catData.materials,
                               catData.totalPrice,
                               catData.color,
+                              catData.constructionType,
                             ),
                           ),
                           Padding(
@@ -159,6 +161,7 @@ class _WindowsExteriorDoorScreenState extends State<WindowsExteriorDoorScreen> {
                                   catData.materials,
                                   catData.totalPrice,
                                   catData.color,
+                                  catData.constructionType,
                                 ),
                               ),
                               Padding(
@@ -202,6 +205,7 @@ class _WindowsExteriorDoorScreenState extends State<WindowsExteriorDoorScreen> {
                                   catData.materials,
                                   catData.totalPrice,
                                   catData.color,
+                                  catData.constructionType,
                                 ),
                               ),
                               Padding(

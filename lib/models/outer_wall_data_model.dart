@@ -13,6 +13,7 @@ class OuterWallModel {
   List<double> materials;
   List<double> totalPrice;
   final Color color;
+  final String constructionType;
 
   OuterWallModel({
     required this.name,
@@ -27,7 +28,9 @@ class OuterWallModel {
     required this.materials,
     required this.totalPrice,
     Color? color, // Change to nullable Color
-  }) : color = color ?? Color.fromARGB(255, 174, 228, 75); // Initialize color
+    String? constructionType,
+  })  : constructionType = constructionType ?? "Nan",
+        color = color ?? Color.fromARGB(255, 174, 228, 75); // Initialize color
 
   Map<String, dynamic> toJson() {
     return {
@@ -77,6 +80,6 @@ class OuterWallModel {
         totalPrice = json['totalPrice'] is List
             ? json['totalPrice'].cast<double>().toList()
             : [],
-        color = Color.fromARGB(
-            255, 174, 228, 75); // Initialize color with Colors.orange
+        color = Color.fromARGB(255, 174, 228, 75),
+        constructionType = json['constructionType'];
 }

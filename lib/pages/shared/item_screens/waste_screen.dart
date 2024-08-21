@@ -68,6 +68,7 @@ class _WasteScreenState extends State<WasteScreen> {
                           catData.materials,
                           catData.totalPrice,
                           catData.color,
+                          catData.constructionType,
                         ),
                       ),
                       Padding(
@@ -110,6 +111,7 @@ class _WasteScreenState extends State<WasteScreen> {
                               catData.materials,
                               catData.totalPrice,
                               catData.color,
+                              catData.constructionType,
                             ),
                           ),
                           Padding(
@@ -153,6 +155,7 @@ class _WasteScreenState extends State<WasteScreen> {
                                   catData.materials,
                                   catData.totalPrice,
                                   catData.color,
+                                  catData.constructionType,
                                 ),
                               ),
                               Padding(
@@ -195,6 +198,7 @@ class _WasteScreenState extends State<WasteScreen> {
                                 catData.materials,
                                 catData.totalPrice,
                                 catData.color,
+                                catData.constructionType,
                               ),
                             )
                           ]);

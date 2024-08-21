@@ -70,6 +70,7 @@ class _ParquetLaminateScreenState extends State<ParquetLaminateScreen> {
                           catData.materials,
                           catData.totalPrice,
                           catData.color,
+                          catData.constructionType,
                         ),
                       ),
                       Padding(
@@ -114,6 +115,7 @@ class _ParquetLaminateScreenState extends State<ParquetLaminateScreen> {
                               catData.materials,
                               catData.totalPrice,
                               catData.color,
+                              catData.constructionType,
                             ),
                           ),
                           Padding(
@@ -158,6 +160,7 @@ class _ParquetLaminateScreenState extends State<ParquetLaminateScreen> {
                                   catData.materials,
                                   catData.totalPrice,
                                   catData.color,
+                                  catData.constructionType,
                                 ),
                               ),
                               Padding(
@@ -201,6 +204,7 @@ class _ParquetLaminateScreenState extends State<ParquetLaminateScreen> {
                                   catData.materials,
                                   catData.totalPrice,
                                   catData.color,
+                                  catData.constructionType,
                                 ),
                               ),
                               Padding(

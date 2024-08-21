@@ -18,7 +18,7 @@ class HullRoofingItem extends StatelessWidget {
   final List<double> material2;
   final List<double> totalPrice;
   final Color color;
-  final constructionType;
+  final String constructionType;
 
   HullRoofingItem(
     this.name,
