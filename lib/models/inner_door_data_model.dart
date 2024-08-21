@@ -12,6 +12,7 @@ class InnerDoorModel {
   List<double> materials;
   List<double> totalPrice;
   final Color color;
+  final String constructionType;
 
   InnerDoorModel({
     required this.name,
@@ -25,7 +26,9 @@ class InnerDoorModel {
     required this.materials,
     required this.totalPrice,
     Color? color, // Change to nullable Color
-  }) : color = color ??
+    String? constructionType,
+  })  : constructionType = constructionType ?? "Nan",
+        color = color ??
             const Color.fromARGB(255, 65, 207, 136); // Initialize color
   Map<String, dynamic> toJson() {
     return {
@@ -72,5 +75,6 @@ class InnerDoorModel {
             ? json['totalPrice'].cast<double>().toList()
             : [],
         color = Color.fromARGB(
-            255, 174, 228, 75); // Initialize color with Colors.orange
+            255, 174, 228, 75), // Initialize color with Colors.orange
+        constructionType = json['constructionType'];
 }
