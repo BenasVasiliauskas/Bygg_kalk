@@ -13,6 +13,7 @@ class InnerWallModel {
   List<double> material2;
   List<double> totalPrice;
   final Color color;
+  final String constructionType;
 
   InnerWallModel({
     required this.name,
@@ -27,7 +28,9 @@ class InnerWallModel {
     required this.material2,
     required this.totalPrice,
     Color? color, // Change to nullable Color
-  }) : color = color ??
+    String? constructionType,
+  })  : constructionType = constructionType ?? "Nan",
+        color = color ??
             Colors.orange; // Initialize color with Colors.orange if null
 
   Map<String, dynamic> toJson() {
@@ -78,5 +81,6 @@ class InnerWallModel {
         totalPrice = json['totalPrice'] is List
             ? json['totalPrice'].cast<double>().toList()
             : [],
-        color = Colors.orange; // Initialize color with Colors.orange
+        color = Colors.orange,
+        constructionType = json['constructionType'];
 }

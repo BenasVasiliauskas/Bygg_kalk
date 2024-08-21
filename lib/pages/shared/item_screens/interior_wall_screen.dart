@@ -70,6 +70,7 @@ class _InnerWallScreenState extends State<InnerWallScreen> {
                           catData.material2,
                           catData.totalPrice,
                           catData.color,
+                          catData.constructionType,
                         ),
                       ),
                       Padding(
@@ -115,6 +116,7 @@ class _InnerWallScreenState extends State<InnerWallScreen> {
                               catData.material2,
                               catData.totalPrice,
                               catData.color,
+                              catData.constructionType,
                             ),
                           ),
                           Padding(
@@ -160,6 +162,7 @@ class _InnerWallScreenState extends State<InnerWallScreen> {
                                   catData.material2,
                                   catData.totalPrice,
                                   catData.color,
+                                  catData.constructionType,
                                 ),
                               ),
                               Padding(
@@ -204,6 +207,7 @@ class _InnerWallScreenState extends State<InnerWallScreen> {
                                   catData.material2,
                                   catData.totalPrice,
                                   catData.color,
+                                  catData.constructionType,
                                 ),
                               ),
                               Padding(
