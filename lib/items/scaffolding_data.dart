@@ -65,6 +65,7 @@ class ScaffoldingItem extends StatelessWidget {
                       material1,
                       material2,
                       totalPrice,
+                      constructionType,
                     )
                   : languagePolish
                       ? PolScaffoldingItemScreen(
@@ -78,6 +79,7 @@ class ScaffoldingItem extends StatelessWidget {
                           material1,
                           material2,
                           totalPrice,
+                          constructionType,
                         )
                       : LitScaffoldingItemScreen(
                           name,
@@ -89,7 +91,9 @@ class ScaffoldingItem extends StatelessWidget {
                           laborCost,
                           material1,
                           material2,
-                          totalPrice);
+                          totalPrice,
+                          constructionType,
+                        );
         },
       ),
     );

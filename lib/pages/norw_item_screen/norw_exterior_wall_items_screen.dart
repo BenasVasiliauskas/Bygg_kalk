@@ -20,6 +20,7 @@ class NorwExteriorWallItemsScreen extends StatefulWidget {
   List<double> material1;
   List<double> material2;
   List<double> totalPrice;
+  String constructionType;
 
   NorwExteriorWallItemsScreen(
     this.name,
@@ -33,6 +34,7 @@ class NorwExteriorWallItemsScreen extends StatefulWidget {
     this.material1,
     this.material2,
     this.totalPrice,
+    this.constructionType,
   );
 
   @override

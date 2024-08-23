@@ -69,6 +69,7 @@ class OuterRoofItem extends StatelessWidget {
                       material1,
                       material2,
                       totalPrice,
+                      constructionType,
                     )
                   : languagePolish
                       ? PolOuterRoofItemScreen(
@@ -83,6 +84,7 @@ class OuterRoofItem extends StatelessWidget {
                           material1,
                           material2,
                           totalPrice,
+                          constructionType,
                         )
                       : LitOuterRoofItemScreen(
                           name,
@@ -95,7 +97,9 @@ class OuterRoofItem extends StatelessWidget {
                           laborCost,
                           material1,
                           material2,
-                          totalPrice);
+                          totalPrice,
+                          constructionType,
+                        );
         },
       ),
     );

@@ -65,6 +65,7 @@ class WasteItem extends StatelessWidget {
                       material1,
                       material2,
                       totalPrice,
+                      constructionType,
                     )
                   : languagePolish
                       ? PolWasteItemScreen(
@@ -77,7 +78,9 @@ class WasteItem extends StatelessWidget {
                           laborCost,
                           material1,
                           material2,
-                          totalPrice)
+                          totalPrice,
+                          constructionType,
+                        )
                       : LitWasteItemScreen(
                           name,
                           description,
@@ -88,7 +91,9 @@ class WasteItem extends StatelessWidget {
                           laborCost,
                           material1,
                           material2,
-                          totalPrice);
+                          totalPrice,
+                          constructionType,
+                        );
         },
       ),
     );

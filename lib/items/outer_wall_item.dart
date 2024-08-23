@@ -70,6 +70,7 @@ class OuterWallItem extends StatelessWidget {
                       material1,
                       material2,
                       totalPrice,
+                      constructionType,
                     )
                   : languagePolish
                       ? PolExteriorWallItemsScreen(
@@ -84,6 +85,7 @@ class OuterWallItem extends StatelessWidget {
                           material1,
                           material2,
                           totalPrice,
+                          constructionType,
                         )
                       : LitExteriorWallItemsScreen(
                           name,
@@ -96,7 +98,9 @@ class OuterWallItem extends StatelessWidget {
                           laborCost,
                           material1,
                           material2,
-                          totalPrice);
+                          totalPrice,
+                          constructionType,
+                        );
         },
       ),
     );

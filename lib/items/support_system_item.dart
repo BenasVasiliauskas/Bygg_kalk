@@ -66,6 +66,7 @@ class SupportSystemItem extends StatelessWidget {
                       material1,
                       material2,
                       totalPrice,
+                      constructionType,
                     )
                   : languagePolish
                       ? PolSupportSystemItemScreen(
@@ -78,7 +79,9 @@ class SupportSystemItem extends StatelessWidget {
                           laborCost,
                           material1,
                           material2,
-                          totalPrice)
+                          totalPrice,
+                          constructionType,
+                        )
                       : LitSupportSystemItemScreen(
                           name,
                           description,
@@ -90,6 +93,7 @@ class SupportSystemItem extends StatelessWidget {
                           material1,
                           material2,
                           totalPrice,
+                          constructionType,
                         );
         },
       ),
