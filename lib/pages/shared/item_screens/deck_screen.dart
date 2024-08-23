@@ -4,6 +4,7 @@ import 'package:cost_calculator/data/norw_data.dart';
 import 'package:cost_calculator/data/polish_data.dart';
 import 'package:cost_calculator/items/deck_item.dart';
 import 'package:cost_calculator/pages/shared/home_page.dart';
+import 'package:cost_calculator/pages/shared/item_screens/building_components_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import '../../../constants/language.dart';
@@ -40,89 +41,102 @@ class _DeckScreenState extends State<DeckScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      drawer: CustomDrawer(),
-      appBar: AppBar(
-        actions: [
-          IconButton(
-            icon: const Icon(
-              FontAwesomeIcons.houseChimney,
-            ),
-            tooltip: languageEnglish
-                ? 'Return to main menu'
-                : languageLithuanian
-                    ? "Grįžti į pagrindinį meniu"
-                    : languageNorwegian
-                        ? "Gå tilbake til hovedmenyen"
-                        : "Powrót do menu głównego",
-            onPressed: () {
-              Navigator.of(context).pushReplacement(
-                MaterialPageRoute(
-                  builder: (context) {
-                    return homePage();
-                  },
-                ),
-              );
-            },
-          ),
-        ],
-        title: const Text('Bygg Kalk'),
-      ),
-      body: GridView.count(
-        padding: const EdgeInsets.all(25),
-        children: List.generate(deckData.length, (index) {
-          var catData = languageEnglish
-              ? deckData[index]
-              : languageNorwegian
-                  ? norwDeckData[index]
-                  : languagePolish
-                      ? polDeckData[index]
-                      : litDeckData[index];
-          var controller = deckCalculationControllers[index];
-
-          return Row(
-            children: [
-              Expanded(
-                child: DeckItem(
-                  catData.name,
-                  catData.description,
-                  catData.unit,
-                  catData.quantity,
-                  catData.laborHours1,
-                  catData.laborHours2,
-                  catData.laborCost,
-                  catData.material,
-                  catData.materials,
-                  catData.totalPrice,
-                  catData.color,
-                  catData.constructionType,
-                  catData.calculationQuantity,
-                ),
+    return PopScope(
+      canPop: false,
+      onPopInvoked: (bool didPop) async {
+        if (didPop) {
+          return;
+        }
+        Navigator.of(context).pushReplacement(
+          MaterialPageRoute(builder: (context) {
+            return buildingComponentsScreen();
+          }),
+        );
+      },
+      child: Scaffold(
+        drawer: CustomDrawer(),
+        appBar: AppBar(
+          actions: [
+            IconButton(
+              icon: const Icon(
+                FontAwesomeIcons.houseChimney,
               ),
-              Padding(
-                padding: const EdgeInsets.all(8),
-                child: Container(
-                  width: 100,
-                  height: double.infinity,
-                  child: Center(
-                    child: TextField(
-                      controller: controller,
-                      onChanged: (value) {
-                        setState(() {
-                          catData.calculationQuantity = double.parse(value);
-                        });
-                      },
+              tooltip: languageEnglish
+                  ? 'Return to main menu'
+                  : languageLithuanian
+                      ? "Grįžti į pagrindinį meniu"
+                      : languageNorwegian
+                          ? "Gå tilbake til hovedmenyen"
+                          : "Powrót do menu głównego",
+              onPressed: () {
+                Navigator.of(context).pushReplacement(
+                  MaterialPageRoute(
+                    builder: (context) {
+                      return homePage();
+                    },
+                  ),
+                );
+              },
+            ),
+          ],
+          title: const Text('Bygg Kalk'),
+        ),
+        body: GridView.count(
+          padding: const EdgeInsets.all(25),
+          children: List.generate(deckData.length, (index) {
+            var catData = languageEnglish
+                ? deckData[index]
+                : languageNorwegian
+                    ? norwDeckData[index]
+                    : languagePolish
+                        ? polDeckData[index]
+                        : litDeckData[index];
+            var controller = deckCalculationControllers[index];
+
+            return Row(
+              children: [
+                Expanded(
+                  child: DeckItem(
+                    catData.name,
+                    catData.description,
+                    catData.unit,
+                    catData.quantity,
+                    catData.laborHours1,
+                    catData.laborHours2,
+                    catData.laborCost,
+                    catData.material,
+                    catData.materials,
+                    catData.totalPrice,
+                    catData.color,
+                    catData.constructionType,
+                    catData.calculationQuantity,
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(8),
+                  child: Container(
+                    width: 100,
+                    height: double.infinity,
+                    child: Center(
+                      child: TextField(
+                        controller: controller,
+                        onChanged: (value) {
+                          setState(() {
+                            catData.calculationQuantity = double.parse(value);
+                          });
+                        },
+                      ),
                     ),
                   ),
                 ),
-              ),
-              Text("m²"),
-            ],
-          );
-        }),
-        crossAxisCount: 1,
-        mainAxisSpacing: 20,
-        childAspectRatio: 7 / 2,
+                Text("m²"),
+              ],
+            );
+          }),
+          crossAxisCount: 1,
+          mainAxisSpacing: 20,
+          childAspectRatio: 7 / 2,
+        ),
       ),
     );
   }

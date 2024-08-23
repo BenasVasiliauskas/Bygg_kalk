@@ -13,7 +13,6 @@ import 'package:cost_calculator/models/support_system_data_model.dart';
 import 'package:cost_calculator/models/terrace_model.dart';
 import 'package:cost_calculator/models/waste_data_model.dart';
 import 'package:cost_calculator/models/windows_exterior_doors_model.dart';
-import 'package:cost_calculator/pages/item_screen/exterior_wall_items_screen.dart';
 import 'package:cost_calculator/pages/item_screen/flooring_item_screen.dart';
 import 'package:cost_calculator/pages/item_screen/hull_roofing_item_screen.dart';
 import 'package:cost_calculator/pages/item_screen/inner_door_items_screen.dart';
@@ -520,9 +519,9 @@ Future<void> loadDeckModel(var model) async {
 }
 
 Future<void> loadOuterWallModel(var model) async {
-  double mat2Total = 0;
-  double mat1Total = 0;
-  double calculationQuantity = 0;
+  // double mat2Total = 0;
+  // double mat1Total = 0;
+  // double calculationQuantity = 0;
   for (int i = 0; i < exteriorWallData.length; i++) {
     if (model.name == exteriorWallData[i].name) {
       exteriorWallData[i].name = model.name;
@@ -536,17 +535,17 @@ Future<void> loadOuterWallModel(var model) async {
       exteriorWallData[i].material = model.material;
       exteriorWallData[i].materials = model.materials;
       exteriorWallData[i].totalPrice = model.totalPrice;
-      mat2Total = exteriorWallData[i]
-          .materials
-          .fold(0, (previousValue, element) => previousValue + element);
-      mat1Total = exteriorWallData[i]
-          .material
-          .fold(0, (previousValue, element) => previousValue + element);
-      if (calculationQuantity == 0 && mat2Total != 0 && mat1Total != 0) {
-        double calculationQuantity = mat2Total / mat1Total;
-        exteriorWallCalculationControllers.text =
-            calculationQuantity.toStringAsFixed(2);
-      }
+      // mat2Total = exteriorWallData[i]
+      //     .materials
+      //     .fold(0, (previousValue, element) => previousValue + element);
+      // mat1Total = exteriorWallData[i]
+      //     .material
+      //     .fold(0, (previousValue, element) => previousValue + element);
+      // if (calculationQuantity == 0 && mat2Total != 0 && mat1Total != 0) {
+      //   double calculationQuantity = mat2Total / mat1Total;
+      //   exteriorWallCalculationControllers.text =
+      //       calculationQuantity.toStringAsFixed(2);
+      // }
     }
     continue;
   }

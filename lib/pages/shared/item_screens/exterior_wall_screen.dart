@@ -1,18 +1,14 @@
+import 'package:cost_calculator/constants/language.dart';
 import 'package:cost_calculator/data/data.dart';
 import 'package:cost_calculator/data/lith_data.dart';
 import 'package:cost_calculator/data/norw_data.dart';
 import 'package:cost_calculator/data/polish_data.dart';
 import 'package:cost_calculator/items/outer_wall_item.dart';
-import 'package:cost_calculator/pages/item_screen/exterior_wall_items_screen.dart';
-import 'package:cost_calculator/pages/lit_item_screen/lit_exterior_wall_items_screen.dart';
-import 'package:cost_calculator/pages/norw_item_screen/norw_exterior_wall_items_screen.dart';
-import 'package:cost_calculator/pages/pol_item_screen/pol_exterior_wall_items_screen.dart';
 import 'package:cost_calculator/pages/shared/home_page.dart';
-
+import 'package:cost_calculator/pages/shared/item_screens/building_components_screen.dart';
+import 'package:cost_calculator/widgets/custom_drawer.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import '../../../constants/language.dart';
-import '../../../widgets/custom_drawer.dart';
 
 class ExteriorWallScreen extends StatefulWidget {
   @override
@@ -20,217 +16,136 @@ class ExteriorWallScreen extends StatefulWidget {
 }
 
 class _ExteriorWallScreenState extends State<ExteriorWallScreen> {
+  List<TextEditingController> outerWallCalculationControllers = [];
+
+  @override
+  void initState() {
+    super.initState();
+    // Initialize controllers for each item in deckData
+    outerWallCalculationControllers = List.generate(
+      exteriorWallData.length,
+      (index) => TextEditingController(
+        text: exteriorWallData[index].calculationQuantity.toString(),
+      ),
+    );
+  }
+
+  @override
+  void dispose() {
+    // Dispose of controllers when the widget is destroyed
+    for (var controller in outerWallCalculationControllers) {
+      controller.dispose();
+    }
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      drawer: CustomDrawer(),
-      appBar: AppBar(
-        actions: [
-          IconButton(
-            icon: const Icon(
-              FontAwesomeIcons.houseChimney,
+    return PopScope(
+      canPop: false,
+      onPopInvoked: (bool didPop) async {
+        if (didPop) {
+          return;
+        }
+        Navigator.of(context).pushReplacement(
+          MaterialPageRoute(builder: (context) {
+            return buildingComponentsScreen();
+          }),
+        );
+      },
+      child: Scaffold(
+        drawer: CustomDrawer(),
+        appBar: AppBar(
+          actions: [
+            IconButton(
+              icon: const Icon(
+                FontAwesomeIcons.houseChimney,
+              ),
+              tooltip: languageEnglish
+                  ? 'Return to main menu'
+                  : languageLithuanian
+                      ? "Grįžti į pagrindinį meniu"
+                      : languageNorwegian
+                          ? "Gå tilbake til hovedmenyen"
+                          : "Powrót do menu głównego",
+              onPressed: () {
+                Navigator.of(context).pushReplacement(
+                  MaterialPageRoute(
+                    builder: (context) {
+                      return homePage();
+                    },
+                  ),
+                );
+              },
             ),
-            tooltip: languageEnglish
-                ? 'Return to main menu'
+          ],
+          title: Text(
+            languageEnglish
+                ? "Outer wall"
                 : languageLithuanian
-                    ? "Grįžti į pagrindinį meniu"
+                    ? "Išorinės sienos"
                     : languageNorwegian
-                        ? "Gå tilbake til hovedmenyen"
-                        : "Powrót do menu głównego",
-            onPressed: () {
-              Navigator.of(context).pushReplacement(
-                MaterialPageRoute(
-                  builder: (context) {
-                    return homePage();
-                  },
-                ),
-              );
-            },
+                        ? "Innvendige vegger"
+                        : "Ściany wewnętrzne",
           ),
-        ],
-        title: const Text('Bygg Kalk'),
-      ),
-      body: GridView.count(
-        padding: const EdgeInsets.all(25),
-        children: languageEnglish
-            ? exteriorWallData.map(
-                (wallItem) {
-                  return Row(
-                    children: [
-                      Expanded(
-                        child: OuterWallItem(
-                          wallItem.name,
-                          wallItem.description,
-                          wallItem.unit,
-                          wallItem.quantity,
-                          wallItem.materialQuantity,
-                          wallItem.laborHours1,
-                          wallItem.laborHours2,
-                          wallItem.laborCost,
-                          wallItem.material,
-                          wallItem.materials,
-                          wallItem.totalPrice,
-                          wallItem.color,
-                          wallItem.constructionType,
-                        ),
+        ),
+        body: GridView.count(
+          padding: const EdgeInsets.all(25),
+          children: List.generate(deckData.length, (index) {
+            var catData = languageEnglish
+                ? exteriorWallData[index]
+                : languageNorwegian
+                    ? norwExteriorWallData[index]
+                    : languagePolish
+                        ? polExteriorWallData[index]
+                        : litExteriorWallData[index];
+            var controller = outerWallCalculationControllers[index];
+
+            return Row(
+              children: [
+                Expanded(
+                  child: OuterWallItem(
+                    catData.name,
+                    catData.description,
+                    catData.unit,
+                    catData.quantity,
+                    catData.materialQuantity,
+                    catData.laborHours1,
+                    catData.laborHours2,
+                    catData.laborCost,
+                    catData.material,
+                    catData.materials,
+                    catData.totalPrice,
+                    catData.color,
+                    catData.constructionType,
+                    catData.calculationQuantity,
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(8),
+                  child: Container(
+                    width: 100,
+                    height: double.infinity,
+                    child: Center(
+                      child: TextField(
+                        controller: controller,
+                        onChanged: (value) {
+                          setState(() {
+                            catData.calculationQuantity = double.parse(value);
+                          });
+                        },
                       ),
-                      Padding(
-                        padding: const EdgeInsets.all(8),
-                        child: Container(
-                          width: 100,
-                          height: double.infinity,
-                          child: Center(
-                            child: TextField(
-                              controller: exteriorWallCalculationControllers,
-                              onChanged: (value) {
-                                setState(() {
-                                  exteriorWallCalculationControllers.text =
-                                      value;
-                                });
-                              },
-                            ),
-                          ),
-                        ),
-                      ),
-                      Text("m²"),
-                    ],
-                  );
-                },
-              ).toList()
-            : languageNorwegian
-                ? norwExteriorWallData.map((wallItem) {
-                    return Row(
-                      children: [
-                        Expanded(
-                          child: OuterWallItem(
-                            wallItem.name,
-                            wallItem.description,
-                            wallItem.unit,
-                            wallItem.quantity,
-                            wallItem.materialQuantity,
-                            wallItem.laborHours1,
-                            wallItem.laborHours2,
-                            wallItem.laborCost,
-                            wallItem.material,
-                            wallItem.materials,
-                            wallItem.totalPrice,
-                            wallItem.color,
-                            wallItem.constructionType,
-                          ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.all(8),
-                          child: Container(
-                            width: 100,
-                            height: double.infinity,
-                            child: Center(
-                              child: TextField(
-                                controller:
-                                    norwExteriorWallCalculationControllers,
-                                onChanged: (value) {
-                                  setState(() {
-                                    norwExteriorWallCalculationControllers
-                                        .text = value;
-                                  });
-                                },
-                              ),
-                            ),
-                          ),
-                        ),
-                        Text("m²"),
-                      ],
-                    );
-                  }).toList()
-                : languagePolish
-                    ? polExteriorWallData.map((wallItem) {
-                        return Row(
-                          children: [
-                            Expanded(
-                              child: OuterWallItem(
-                                wallItem.name,
-                                wallItem.description,
-                                wallItem.unit,
-                                wallItem.quantity,
-                                wallItem.materialQuantity,
-                                wallItem.laborHours1,
-                                wallItem.laborHours2,
-                                wallItem.laborCost,
-                                wallItem.material,
-                                wallItem.materials,
-                                wallItem.totalPrice,
-                                wallItem.color,
-                                wallItem.constructionType,
-                              ),
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.all(8),
-                              child: Container(
-                                width: 100,
-                                height: double.infinity,
-                                child: Center(
-                                  child: TextField(
-                                    controller:
-                                        polExteriorWallCalculationControllers,
-                                    onChanged: (value) {
-                                      setState(() {
-                                        polExteriorWallCalculationControllers
-                                            .text = value;
-                                      });
-                                    },
-                                  ),
-                                ),
-                              ),
-                            ),
-                            Text("m²"),
-                          ],
-                        );
-                      }).toList()
-                    : litExteriorWallData.map((wallItem) {
-                        return Row(
-                          children: [
-                            Expanded(
-                              child: OuterWallItem(
-                                wallItem.name,
-                                wallItem.description,
-                                wallItem.unit,
-                                wallItem.quantity,
-                                wallItem.materialQuantity,
-                                wallItem.laborHours1,
-                                wallItem.laborHours2,
-                                wallItem.laborCost,
-                                wallItem.material,
-                                wallItem.materials,
-                                wallItem.totalPrice,
-                                wallItem.color,
-                                wallItem.constructionType,
-                              ),
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.all(8),
-                              child: Container(
-                                width: 100,
-                                height: double.infinity,
-                                child: Center(
-                                  child: TextField(
-                                    controller:
-                                        litExteriorWallCalculationControllers,
-                                    onChanged: (value) {
-                                      setState(() {
-                                        litExteriorWallCalculationControllers
-                                            .text = value;
-                                      });
-                                    },
-                                  ),
-                                ),
-                              ),
-                            ),
-                            Text("m²"),
-                          ],
-                        );
-                      }).toList(),
-        crossAxisCount: 1,
-        mainAxisSpacing: 20,
-        childAspectRatio: 7 / 2,
+                    ),
+                  ),
+                ),
+                Text("m²"),
+              ],
+            );
+          }),
+          crossAxisCount: 1,
+          mainAxisSpacing: 20,
+          childAspectRatio: 7 / 2,
+        ),
       ),
     );
   }
