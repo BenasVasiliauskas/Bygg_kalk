@@ -13,7 +13,7 @@ class DeckModel {
   List<double> totalPrice;
   final Color color;
   final String constructionType;
-
+  final double calculationQuantity;
   DeckModel({
     required this.name,
     required this.description,
@@ -27,6 +27,7 @@ class DeckModel {
     required this.totalPrice,
     Color? color, // Change to nullable Color
     String? constructionType,
+    this.calculationQuantity = 10.0,
   })  : constructionType =
             constructionType ?? "Nan", // Initialize constructionType
         color = color ?? Color.fromARGB(255, 99, 105, 128); // Initialize color
@@ -75,5 +76,6 @@ class DeckModel {
             ? json['totalPrice'].cast<double>().toList()
             : [],
         color = Color.fromARGB(255, 99, 105, 128),
-        constructionType = json['constructionType'];
+        constructionType = json['constructionType'],
+        calculationQuantity = json['calculationQuantity'];
 }

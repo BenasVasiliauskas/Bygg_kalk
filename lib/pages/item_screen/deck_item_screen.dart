@@ -20,6 +20,7 @@ class DeckItemScreen extends StatefulWidget {
   List<double> material2;
   List<double> totalPrice;
   String constructionType;
+  double calculationQuantity;
 
   DeckItemScreen(
     this.name,
@@ -33,6 +34,7 @@ class DeckItemScreen extends StatefulWidget {
     this.material2,
     this.totalPrice,
     this.constructionType,
+    this.calculationQuantity,
   );
 
   @override

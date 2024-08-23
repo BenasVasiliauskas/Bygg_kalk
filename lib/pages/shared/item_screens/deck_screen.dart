@@ -51,7 +51,7 @@ class _DeckScreenState extends State<DeckScreen> {
       ),
       body: GridView.count(
         padding: const EdgeInsets.all(25),
-        children: languageEnglish == true
+        children: languageEnglish
             ? deckData.map(
                 (catData) {
                   return Row(
@@ -70,6 +70,7 @@ class _DeckScreenState extends State<DeckScreen> {
                           catData.totalPrice,
                           catData.color,
                           catData.constructionType,
+                          catData.calculationQuantity,
                         ),
                       ),
                       Padding(
@@ -89,7 +90,7 @@ class _DeckScreenState extends State<DeckScreen> {
                           ),
                         ),
                       ),
-                      Text("m²")
+                      Text("m²"),
                     ],
                   );
                 },
@@ -113,6 +114,7 @@ class _DeckScreenState extends State<DeckScreen> {
                               catData.totalPrice,
                               catData.color,
                               catData.constructionType,
+                              catData.calculationQuantity,
                             ),
                           ),
                           Padding(
@@ -157,6 +159,7 @@ class _DeckScreenState extends State<DeckScreen> {
                                   catData.totalPrice,
                                   catData.color,
                                   catData.constructionType,
+                                  catData.calculationQuantity,
                                 ),
                               ),
                               Padding(
@@ -182,95 +185,50 @@ class _DeckScreenState extends State<DeckScreen> {
                           );
                         },
                       ).toList()
-                    : languageLithuanian
-                        ? litDeckData.map(
-                            (catData) {
-                              return Row(
-                                children: [
-                                  Expanded(
-                                    child: DeckItem(
-                                      catData.name,
-                                      catData.description,
-                                      catData.unit,
-                                      catData.quantity,
-                                      catData.laborHours1,
-                                      catData.laborHours2,
-                                      catData.laborCost,
-                                      catData.material,
-                                      catData.materials,
-                                      catData.totalPrice,
-                                      catData.color,
-                                      catData.constructionType,
+                    : litDeckData.map(
+                        (catData) {
+                          return Row(
+                            children: [
+                              Expanded(
+                                child: DeckItem(
+                                  catData.name,
+                                  catData.description,
+                                  catData.unit,
+                                  catData.quantity,
+                                  catData.laborHours1,
+                                  catData.laborHours2,
+                                  catData.laborCost,
+                                  catData.material,
+                                  catData.materials,
+                                  catData.totalPrice,
+                                  catData.color,
+                                  catData.constructionType,
+                                  catData.calculationQuantity,
+                                ),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.all(8),
+                                child: Container(
+                                  width: 100,
+                                  height: double.infinity,
+                                  child: Center(
+                                    child: TextField(
+                                      controller: litDeckCalculationControllers,
+                                      onChanged: (value) {
+                                        setState(() {
+                                          litDeckCalculationControllers.text =
+                                              value;
+                                        });
+                                      },
                                     ),
                                   ),
-                                  Padding(
-                                    padding: const EdgeInsets.all(8),
-                                    child: Container(
-                                      width: 100,
-                                      height: double.infinity,
-                                      child: Center(
-                                        child: TextField(
-                                          controller:
-                                              litDeckCalculationControllers,
-                                          onChanged: (value) {
-                                            setState(() {
-                                              litDeckCalculationControllers
-                                                  .text = value;
-                                            });
-                                          },
-                                        ),
-                                      ),
-                                    ),
-                                  ),
-                                  Text("m²")
-                                ],
-                              );
-                            },
-                          ).toList()
-                        : litDeckData.map(
-                            (catData) {
-                              return Row(
-                                children: [
-                                  Expanded(
-                                    child: DeckItem(
-                                      catData.name,
-                                      catData.description,
-                                      catData.unit,
-                                      catData.quantity,
-                                      catData.laborHours1,
-                                      catData.laborHours2,
-                                      catData.laborCost,
-                                      catData.material,
-                                      catData.materials,
-                                      catData.totalPrice,
-                                      catData.color,
-                                      catData.constructionType,
-                                    ),
-                                  ),
-                                  Padding(
-                                    padding: const EdgeInsets.all(8),
-                                    child: Container(
-                                      width: 100,
-                                      height: double.infinity,
-                                      child: Center(
-                                        child: TextField(
-                                          controller:
-                                              deckCalculationControllers,
-                                          onChanged: (value) {
-                                            setState(() {
-                                              deckCalculationControllers.text =
-                                                  value;
-                                            });
-                                          },
-                                        ),
-                                      ),
-                                    ),
-                                  ),
-                                  Text("m²")
-                                ],
-                              );
-                            },
-                          ).toList(),
+                                ),
+                              ),
+                              Text("m²")
+                            ],
+                          );
+                        },
+                      ).toList(),
         crossAxisCount: 1,
         mainAxisSpacing: 20,
         childAspectRatio: 7 / 2,
