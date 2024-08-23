@@ -41,9 +41,6 @@ class DeckItemScreen extends StatefulWidget {
   State<DeckItemScreen> createState() => _DeckItemScreenState();
 }
 
-TextEditingController deckCalculationControllers =
-    TextEditingController(text: calculationQuantity.toStringAsFixed(2));
-
 class _DeckItemScreenState extends State<DeckItemScreen> {
   List<DataRow> rows = [];
   List<TextEditingController> descriptionControllers = [];
@@ -57,9 +54,16 @@ class _DeckItemScreenState extends State<DeckItemScreen> {
   List<TextEditingController> totalPriceControllers = [];
   late TextEditingController savingController;
   late TextEditingController loadingController;
-//
 
-  //
+  @override
+  void didUpdateWidget(covariant DeckItemScreen oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    // Check if the calculationQuantity has changed
+    if (widget.calculationQuantity != oldWidget.calculationQuantity) {
+      setInitialValues(); // Re-initialize values if there's an update
+      recalculateValues(); // Recalculate based on the new calculationQuantity
+    }
+  }
 
   void rebuildDataTable() {
     List<DataRow> updatedRows =
@@ -164,8 +168,6 @@ class _DeckItemScreenState extends State<DeckItemScreen> {
 
     savingController = TextEditingController();
     loadingController = TextEditingController();
-    if (deckCalculationControllers.text != "")
-      calculationQuantity = double.parse(deckCalculationControllers.text);
   }
 
   void calculateCalculationQuantity() {
@@ -175,8 +177,7 @@ class _DeckItemScreenState extends State<DeckItemScreen> {
         .fold(0, (previousValue, element) => previousValue + element);
 
     calculationQuantity = mat2Total / mat1Total;
-
-    deckCalculationControllers.text = calculationQuantity.toStringAsFixed(2);
+    widget.calculationQuantity = calculationQuantity;
   }
 
   void _updateLaborHours() {
@@ -242,7 +243,6 @@ class _DeckItemScreenState extends State<DeckItemScreen> {
       material2Controllers[i].text = widget.material2[i].toStringAsFixed(2);
       totalPriceControllers[i].text = widget.totalPrice[i].toStringAsFixed(2);
     }
-    calculationQuantity.toStringAsFixed(2);
     recalculateValues();
   }
 
@@ -252,7 +252,7 @@ class _DeckItemScreenState extends State<DeckItemScreen> {
       widget.laborHours2[i] = calculateWorkHours2(
         i,
         widget.laborHours1,
-        calculationQuantity,
+        widget.calculationQuantity,
       );
       laborHours2Controllers[i].text = widget.laborHours2[i].toStringAsFixed(2);
 
@@ -260,7 +260,7 @@ class _DeckItemScreenState extends State<DeckItemScreen> {
       widget.laborCost[i] = calculateJobCost(
         i,
         widget.laborHours2,
-        calculationQuantity,
+        widget.calculationQuantity,
       );
       laborCostControllers[i].text = widget.laborCost[i].toStringAsFixed(2);
 
@@ -268,7 +268,7 @@ class _DeckItemScreenState extends State<DeckItemScreen> {
       widget.material2[i] = calculateMaterialCost(
         i,
         widget.material1,
-        calculationQuantity,
+        widget.calculationQuantity,
       );
       material2Controllers[i].text = widget.material2[i].toStringAsFixed(2);
 
@@ -277,7 +277,7 @@ class _DeckItemScreenState extends State<DeckItemScreen> {
         i,
         widget.laborCost,
         widget.material1,
-        calculationQuantity,
+        widget.calculationQuantity,
       );
       totalPriceControllers[i].text = widget.totalPrice[i].toStringAsFixed(2);
     }
@@ -289,17 +289,24 @@ class _DeckItemScreenState extends State<DeckItemScreen> {
   @override
   void initState() {
     super.initState();
-    // Initialize controllers with empty controllers
-    initialiseStates();
-
-    // Set the initial values from widget data to controllers
-    setInitialValues();
+    initialiseStates(); // Initialize controllers
+    setInitialValues(); // Set initial values from widget data to controllers
+    recalculateValues(); // Recalculate based on initial values
   }
 
   @override
   void dispose() {
     savingController.dispose();
     loadingController.dispose();
+    descriptionControllers.forEach((controller) => controller.dispose());
+    unitControllers.forEach((controller) => controller.dispose());
+    quantityControllers.forEach((controller) => controller.dispose());
+    laborHours1Controllers.forEach((controller) => controller.dispose());
+    laborHours2Controllers.forEach((controller) => controller.dispose());
+    laborCostControllers.forEach((controller) => controller.dispose());
+    material1Controllers.forEach((controller) => controller.dispose());
+    material2Controllers.forEach((controller) => controller.dispose());
+    totalPriceControllers.forEach((controller) => controller.dispose());
     super.dispose();
   }
 
@@ -351,54 +358,54 @@ class _DeckItemScreenState extends State<DeckItemScreen> {
                       );
                       //
                       widget.laborHours2[i] = calculateWorkHours2(
-                          i, widget.laborHours1, calculationQuantity);
+                          i, widget.laborHours1, widget.calculationQuantity);
                       laborHours2Controllers[i].text = calculateWorkHours2(
-                              i, widget.laborHours1, calculationQuantity)
+                              i, widget.laborHours1, widget.calculationQuantity)
                           .toStringAsFixed(2);
                       //
                       widget.laborCost[i] = calculateJobCost(
                         i,
                         widget.laborHours1,
-                        calculationQuantity,
+                        widget.calculationQuantity,
                       );
                       laborCostControllers[i].text = calculateJobCost(
                         i,
                         widget.laborHours1,
-                        calculationQuantity,
+                        widget.calculationQuantity,
                       ).toStringAsFixed(2);
                       //
                       widget.laborCost[i] = calculateJobCost(
                         i,
                         widget.laborHours2,
-                        calculationQuantity,
+                        widget.calculationQuantity,
                       );
                       laborCostControllers[i].text = calculateJobCost(
                         i,
                         widget.laborHours2,
-                        calculationQuantity,
+                        widget.calculationQuantity,
                       ).toStringAsFixed(2);
                       // Recalculate and update the material 2 when quantity changes
                       widget.material2[i] = calculateMaterialCost(
                         i,
                         widget.material1,
-                        calculationQuantity,
+                        widget.calculationQuantity,
                       );
                       material2Controllers[i].text = calculateMaterialCost(
                         i,
                         widget.material1,
-                        calculationQuantity,
+                        widget.calculationQuantity,
                       ).toStringAsFixed(2);
                       // Recalculate and update the total price when quantity changes
                       widget.totalPrice[i] = calculateTotalPrice(
                           i,
                           widget.laborCost,
                           widget.material1,
-                          calculationQuantity);
+                          widget.calculationQuantity);
                       totalPriceControllers[i].text = calculateTotalPrice(
                               i,
                               widget.laborCost,
                               widget.material1,
-                              calculationQuantity)
+                              widget.calculationQuantity)
                           .toStringAsFixed(2);
                       rebuildDataTable();
                     },
@@ -417,7 +424,7 @@ class _DeckItemScreenState extends State<DeckItemScreen> {
               double updatedLaborCost = calculateJobCost(
                 i,
                 widget.laborHours2,
-                calculationQuantity,
+                widget.calculationQuantity,
               ); // Calculate the labor cost
               widget.laborCost[i] =
                   double.parse(updatedLaborCost.toStringAsFixed(2));
@@ -437,7 +444,7 @@ class _DeckItemScreenState extends State<DeckItemScreen> {
               double updatedMaterial2 = calculateMaterialCost(
                 i,
                 widget.material1,
-                calculationQuantity,
+                widget.calculationQuantity,
               );
               widget.material2[i] = updatedMaterial2;
               material2Controllers[i].text =
@@ -445,7 +452,10 @@ class _DeckItemScreenState extends State<DeckItemScreen> {
 
               // Recalculate total price
               double updatedTotalPrice = calculateTotalPrice(
-                  i, widget.laborCost, widget.material1, calculationQuantity);
+                  i,
+                  widget.laborCost,
+                  widget.material1,
+                  widget.calculationQuantity);
               widget.totalPrice[i] = updatedTotalPrice;
               totalPriceControllers[i].text =
                   updatedTotalPrice.toStringAsFixed(2);

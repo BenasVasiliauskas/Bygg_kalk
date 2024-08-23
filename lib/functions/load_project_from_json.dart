@@ -13,7 +13,6 @@ import 'package:cost_calculator/models/support_system_data_model.dart';
 import 'package:cost_calculator/models/terrace_model.dart';
 import 'package:cost_calculator/models/waste_data_model.dart';
 import 'package:cost_calculator/models/windows_exterior_doors_model.dart';
-import 'package:cost_calculator/pages/item_screen/deck_item_screen.dart';
 import 'package:cost_calculator/pages/item_screen/exterior_wall_items_screen.dart';
 import 'package:cost_calculator/pages/item_screen/flooring_item_screen.dart';
 import 'package:cost_calculator/pages/item_screen/hull_roofing_item_screen.dart';
@@ -489,9 +488,9 @@ Future<void> loadInnerDoorModel(var model) async {
 }
 
 Future<void> loadDeckModel(var model) async {
-  double mat2Total = 0;
-  double mat1Total = 0;
-  double calculationQuantity = 0;
+  // double mat2Total = 0;
+  // double mat1Total = 0;
+  // double calculationQuantity = 0;
   for (int i = 0; i < deckData.length; i++) {
     if (model.name == deckData[i].name) {
       deckData[i].name = model.name;
@@ -504,17 +503,17 @@ Future<void> loadDeckModel(var model) async {
       deckData[i].material = model.material;
       deckData[i].materials = model.materials;
       deckData[i].totalPrice = model.totalPrice;
-      mat2Total = deckData[i]
-          .materials
-          .fold(0, (previousValue, element) => previousValue + element);
-      mat1Total = deckData[i]
-          .material
-          .fold(0, (previousValue, element) => previousValue + element);
-      if (calculationQuantity == 0 && mat2Total != 0 && mat1Total != 0) {
-        double calculationQuantity = mat2Total / mat1Total;
-        deckCalculationControllers.text =
-            calculationQuantity.toStringAsFixed(2);
-      }
+      // mat2Total = deckData[i]
+      //     .materials
+      //     .fold(0, (previousValue, element) => previousValue + element);
+      // mat1Total = deckData[i]
+      //     .material
+      //     .fold(0, (previousValue, element) => previousValue + element);
+      // if (calculationQuantity == 0 && mat2Total != 0 && mat1Total != 0) {
+      //   double calculationQuantity = mat2Total / mat1Total;
+      //   deckCalculationControllers.text =
+      //       calculationQuantity.toStringAsFixed(2);
+      // } dont think i can set a calculation quantity for deck as it is a local var in the deck screen
     }
     continue;
   }

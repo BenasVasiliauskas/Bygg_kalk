@@ -13,7 +13,7 @@ class DeckModel {
   List<double> totalPrice;
   final Color color;
   final String constructionType;
-  final double calculationQuantity;
+  double calculationQuantity;
   DeckModel({
     required this.name,
     required this.description,
