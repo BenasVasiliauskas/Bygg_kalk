@@ -73,6 +73,8 @@ class InnerWallItem extends StatelessWidget {
                       material1,
                       material2,
                       totalPrice,
+                      constructionType,
+                      calculationQuantity,
                     )
                   : languagePolish
                       ? PolInteriorWallItemsScreen(
@@ -86,7 +88,10 @@ class InnerWallItem extends StatelessWidget {
                           laborCost,
                           material1,
                           material2,
-                          totalPrice)
+                          totalPrice,
+                          constructionType,
+                          calculationQuantity,
+                        )
                       : LitInteriorWallItemsScreen(
                           name,
                           description,
@@ -98,7 +103,10 @@ class InnerWallItem extends StatelessWidget {
                           laborCost,
                           material1,
                           material2,
-                          totalPrice);
+                          totalPrice,
+                          constructionType,
+                          calculationQuantity,
+                        );
         },
       ),
     );

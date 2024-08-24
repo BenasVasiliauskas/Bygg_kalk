@@ -20,6 +20,8 @@ class LitInteriorWallItemsScreen extends StatefulWidget {
   List<double> material1;
   List<double> material2;
   List<double> totalPrice;
+  String constructionType;
+  double calculationQuantity;
 
   LitInteriorWallItemsScreen(
     this.name,
@@ -33,17 +35,14 @@ class LitInteriorWallItemsScreen extends StatefulWidget {
     this.material1,
     this.material2,
     this.totalPrice,
+    this.constructionType,
+    this.calculationQuantity,
   );
 
   @override
   _LitInteriorWallItemsScreenState createState() =>
       _LitInteriorWallItemsScreenState();
 }
-
-TextEditingController litInnerWallCalculationControllers =
-    TextEditingController(text: calculationQuantity.toStringAsFixed(2));
-
-double calculationQuantity = 0;
 
 class _LitInteriorWallItemsScreenState
     extends State<LitInteriorWallItemsScreen> {
@@ -71,8 +70,7 @@ class _LitInteriorWallItemsScreenState
 
     calculationQuantity = mat2Total / mat1Total;
 
-    litInnerWallCalculationControllers.text =
-        calculationQuantity.toStringAsFixed(2);
+    widget.calculationQuantity = calculationQuantity;
   }
 
   void rebuildDataTable() {
@@ -180,9 +178,6 @@ class _LitInteriorWallItemsScreenState
 
     savingController = TextEditingController();
     loadingController = TextEditingController();
-    if (litInnerWallCalculationControllers.text != "")
-      calculationQuantity =
-          double.parse(litInnerWallCalculationControllers.text);
   }
 
   void setInitialValues() {
@@ -256,8 +251,8 @@ class _LitInteriorWallItemsScreenState
 
   void recalculateValues() {
     for (int i = 0; i < widget.description.length; i++) {
-      widget.materialQuantity[i] =
-          calculateMaterialQuantity(i, widget.quantity, calculationQuantity);
+      widget.materialQuantity[i] = calculateMaterialQuantity(
+          i, widget.quantity, widget.calculationQuantity);
       materialQuantityControllers[i].text =
           widget.materialQuantity[i].toStringAsFixed(2);
 
@@ -265,21 +260,21 @@ class _LitInteriorWallItemsScreenState
       widget.laborHours2[i] = calculateWorkHours2(
         i,
         widget.laborHours1,
-        calculationQuantity,
+        widget.calculationQuantity,
       );
       laborHours2Controllers[i].text = widget.laborHours2[i].toStringAsFixed(2);
       // Recalculate labor cost
       widget.laborCost[i] = calculateJobCost(
         i,
         widget.laborHours2,
-        calculationQuantity,
+        widget.calculationQuantity,
       );
       laborCostControllers[i].text = widget.laborCost[i].toStringAsFixed(2);
       // Recalculate material 2
       widget.material2[i] = calculateMaterialCost(
         i,
         widget.material1,
-        calculationQuantity,
+        widget.calculationQuantity,
       );
       material2Controllers[i].text = widget.material2[i].toStringAsFixed(2);
       // Recalculate total price
@@ -287,7 +282,7 @@ class _LitInteriorWallItemsScreenState
         i,
         widget.laborCost,
         widget.material1,
-        calculationQuantity,
+        widget.calculationQuantity,
       );
       totalPriceControllers[i].text = widget.totalPrice[i].toStringAsFixed(2);
     }
@@ -368,33 +363,33 @@ class _LitInteriorWallItemsScreenState
                     );
                     //
                     widget.laborHours2[i] = calculateWorkHours2(
-                        i, widget.laborHours1, calculationQuantity);
+                        i, widget.laborHours1, widget.calculationQuantity);
                     laborHours2Controllers[i].text = calculateWorkHours2(
-                            i, widget.laborHours1, calculationQuantity)
+                            i, widget.laborHours1, widget.calculationQuantity)
                         .toStringAsFixed(2);
                     //
                     widget.laborCost[i] = calculateJobCost(
-                        i, widget.laborHours1, calculationQuantity);
+                        i, widget.laborHours1, widget.calculationQuantity);
                     laborCostControllers[i].text = calculateJobCost(
-                            i, widget.laborHours1, calculationQuantity)
+                            i, widget.laborHours1, widget.calculationQuantity)
                         .toStringAsFixed(2);
                     //
                     widget.laborCost[i] = calculateJobCost(
-                        i, widget.laborHours2, calculationQuantity);
+                        i, widget.laborHours2, widget.calculationQuantity);
                     laborCostControllers[i].text = calculateJobCost(
-                            i, widget.laborHours2, calculationQuantity)
+                            i, widget.laborHours2, widget.calculationQuantity)
                         .toStringAsFixed(2);
 
                     // Recalculate and update the material 2 when quantity changes
                     widget.material2[i] = calculateMaterialCost(
                       i,
                       widget.material1,
-                      calculationQuantity,
+                      widget.calculationQuantity,
                     );
                     material2Controllers[i].text = calculateMaterialCost(
                       i,
                       widget.material1,
-                      calculationQuantity,
+                      widget.calculationQuantity,
                     ).toStringAsFixed(2);
 
                     // Recalculate and update the total price when quantity changes
@@ -402,12 +397,12 @@ class _LitInteriorWallItemsScreenState
                         i,
                         widget.laborCost,
                         widget.material1,
-                        calculationQuantity);
+                        widget.calculationQuantity);
                     totalPriceControllers[i].text = calculateTotalPrice(
                             i,
                             widget.laborCost,
                             widget.material1,
-                            calculationQuantity)
+                            widget.calculationQuantity)
                         .toStringAsFixed(2);
                     rebuildDataTable();
                   },
@@ -429,7 +424,7 @@ class _LitInteriorWallItemsScreenState
                 double updatedLaborCost = calculateJobCost(
                     i,
                     widget.laborHours2,
-                    calculationQuantity); // Calculate the labor cost
+                    widget.calculationQuantity); // Calculate the labor cost
                 widget.laborCost[i] =
                     double.parse(updatedLaborCost.toStringAsFixed(2));
               },
@@ -460,7 +455,7 @@ class _LitInteriorWallItemsScreenState
                 double updatedMaterial2 = calculateMaterialCost(
                   i,
                   widget.material1,
-                  calculationQuantity,
+                  widget.calculationQuantity,
                 );
                 widget.material2[i] = updatedMaterial2;
                 material2Controllers[i].text =
@@ -468,7 +463,10 @@ class _LitInteriorWallItemsScreenState
 
                 // Recalculate total price
                 double updatedTotalPrice = calculateTotalPrice(
-                    i, widget.laborCost, widget.material1, calculationQuantity);
+                    i,
+                    widget.laborCost,
+                    widget.material1,
+                    widget.calculationQuantity);
                 widget.totalPrice[i] = updatedTotalPrice;
                 totalPriceControllers[i].text =
                     updatedTotalPrice.toStringAsFixed(2);
