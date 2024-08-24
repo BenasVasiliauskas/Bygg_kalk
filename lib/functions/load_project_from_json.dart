@@ -13,7 +13,6 @@ import 'package:cost_calculator/models/support_system_data_model.dart';
 import 'package:cost_calculator/models/terrace_model.dart';
 import 'package:cost_calculator/models/waste_data_model.dart';
 import 'package:cost_calculator/models/windows_exterior_doors_model.dart';
-import 'package:cost_calculator/pages/item_screen/terrace_item_screen.dart';
 import 'package:cost_calculator/pages/item_screen/waste_item_screen.dart';
 import 'package:cost_calculator/pages/item_screen/windows_exterior_door_items_screen.dart';
 
@@ -286,9 +285,9 @@ Future<void> loadOuterRoofModel(var model) async {
 }
 
 Future<void> loadTerraceModel(var model) async {
-  double mat2Total = 0;
-  double mat1Total = 0;
-  double calculationQuantity = 0;
+  // double mat2Total = 0;
+  // double mat1Total = 0;
+  // double calculationQuantity = 0;
   for (int i = 0; i < terraceData.length; i++) {
     if (model.name == terraceData[i].name) {
       terraceData[i].name = model.name;
@@ -301,17 +300,17 @@ Future<void> loadTerraceModel(var model) async {
       terraceData[i].material = model.material;
       terraceData[i].materials = model.materials;
       terraceData[i].totalPrice = model.totalPrice;
-      mat2Total = terraceData[i]
-          .materials
-          .fold(0, (previousValue, element) => previousValue + element);
-      mat1Total = terraceData[i]
-          .material
-          .fold(0, (previousValue, element) => previousValue + element);
-      if (calculationQuantity == 0 && mat2Total != 0 && mat1Total != 0) {
-        double calculationQuantity = mat2Total / mat1Total;
-        terraceCalculationControllers.text =
-            calculationQuantity.toStringAsFixed(2);
-      }
+      // mat2Total = terraceData[i]
+      //     .materials
+      //     .fold(0, (previousValue, element) => previousValue + element);
+      // mat1Total = terraceData[i]
+      //     .material
+      //     .fold(0, (previousValue, element) => previousValue + element);
+      // if (calculationQuantity == 0 && mat2Total != 0 && mat1Total != 0) {
+      //   double calculationQuantity = mat2Total / mat1Total;
+      //   terraceCalculationControllers.text =
+      //       calculationQuantity.toStringAsFixed(2);
+      // }
     }
     continue;
   }

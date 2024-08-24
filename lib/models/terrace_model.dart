@@ -13,6 +13,7 @@ class TerraceModel {
   List<double> totalPrice;
   final Color color;
   final String constructionType;
+  double calculationQuantity;
 
   TerraceModel({
     required this.name,
@@ -27,6 +28,7 @@ class TerraceModel {
     required this.totalPrice,
     Color? color, // Change to nullable Color
     String? constructionType,
+    this.calculationQuantity = 1.0,
   })  : constructionType = constructionType ?? "Nan",
         color = color ?? Color.fromARGB(255, 166, 116, 212);
   Map<String, dynamic> toJson() {
@@ -74,5 +76,6 @@ class TerraceModel {
             ? json['totalPrice'].cast<double>().toList()
             : [],
         color = Color.fromARGB(255, 166, 116, 212),
-        constructionType = json['constructionType'];
+        constructionType = json['constructionType'],
+        calculationQuantity = json['calculationQuantity'];
 }
