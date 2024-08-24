@@ -13,7 +13,6 @@ import 'package:cost_calculator/models/support_system_data_model.dart';
 import 'package:cost_calculator/models/terrace_model.dart';
 import 'package:cost_calculator/models/waste_data_model.dart';
 import 'package:cost_calculator/models/windows_exterior_doors_model.dart';
-import 'package:cost_calculator/pages/item_screen/inner_stairs_item_screen.dart';
 import 'package:cost_calculator/pages/item_screen/interior_wall_items_screen.dart';
 import 'package:cost_calculator/pages/item_screen/outer_roof_item_screen.dart';
 import 'package:cost_calculator/pages/item_screen/parquet_laminate_items_screen.dart';
@@ -163,9 +162,9 @@ Future<void> loadWasteModel(var model) async {
 }
 
 Future<void> loadInnerStairsModel(var model) async {
-  double mat2Total = 0;
-  double mat1Total = 0;
-  double calculationQuantity = 0;
+  // double mat2Total = 0;
+  // double mat1Total = 0;
+  // double calculationQuantity = 0;
   for (int i = 0; i < innerStairsData.length; i++) {
     if (model.name == innerStairsData[i].name) {
       innerStairsData[i].name = model.name;
@@ -178,17 +177,17 @@ Future<void> loadInnerStairsModel(var model) async {
       innerStairsData[i].material = model.material;
       innerStairsData[i].materials = model.materials;
       innerStairsData[i].totalPrice = model.totalPrice;
-      mat2Total = innerStairsData[i]
-          .materials
-          .fold(0, (previousValue, element) => previousValue + element);
-      mat1Total = innerStairsData[i]
-          .material
-          .fold(0, (previousValue, element) => previousValue + element);
-      if (calculationQuantity == 0 && mat2Total != 0 && mat1Total != 0) {
-        double calculationQuantity = mat2Total / mat1Total;
-        innerStairsCalculationControllers.text =
-            calculationQuantity.toStringAsFixed(2);
-      }
+      // mat2Total = innerStairsData[i]
+      //     .materials
+      //     .fold(0, (previousValue, element) => previousValue + element);
+      // mat1Total = innerStairsData[i]
+      //     .material
+      //     .fold(0, (previousValue, element) => previousValue + element);
+      // if (calculationQuantity == 0 && mat2Total != 0 && mat1Total != 0) {
+      //   double calculationQuantity = mat2Total / mat1Total;
+      //   innerStairsCalculationControllers.text =
+      //       calculationQuantity.toStringAsFixed(2);
+      // }
     }
     continue;
   }
