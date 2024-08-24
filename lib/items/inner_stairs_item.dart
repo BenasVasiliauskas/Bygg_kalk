@@ -68,6 +68,8 @@ class InnerStairsItem extends StatelessWidget {
                       material1,
                       material2,
                       totalPrice,
+                      constructionType,
+                      calculationQuantity,
                     )
                   : languagePolish
                       ? PolInnerStairsItemScreen(
@@ -80,7 +82,10 @@ class InnerStairsItem extends StatelessWidget {
                           laborCost,
                           material1,
                           material2,
-                          totalPrice)
+                          totalPrice,
+                          constructionType,
+                          calculationQuantity,
+                        )
                       : LitInnerStairsItemScreen(
                           name,
                           description,
@@ -91,7 +96,10 @@ class InnerStairsItem extends StatelessWidget {
                           laborCost,
                           material1,
                           material2,
-                          totalPrice);
+                          totalPrice,
+                          constructionType,
+                          calculationQuantity,
+                        );
         },
       ),
     );
