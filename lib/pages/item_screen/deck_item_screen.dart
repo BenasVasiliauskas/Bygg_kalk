@@ -55,16 +55,6 @@ class _DeckItemScreenState extends State<DeckItemScreen> {
   late TextEditingController savingController;
   late TextEditingController loadingController;
 
-  @override
-  void didUpdateWidget(covariant DeckItemScreen oldWidget) {
-    super.didUpdateWidget(oldWidget);
-    // Check if the calculationQuantity has changed
-    if (widget.calculationQuantity != oldWidget.calculationQuantity) {
-      setInitialValues(); // Re-initialize values if there's an update
-      recalculateValues(); // Recalculate based on the new calculationQuantity
-    }
-  }
-
   void rebuildDataTable() {
     List<DataRow> updatedRows =
         List.from(rows); // Create a copy of the existing rows

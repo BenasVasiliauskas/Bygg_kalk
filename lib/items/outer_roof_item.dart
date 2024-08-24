@@ -20,6 +20,7 @@ class OuterRoofItem extends StatelessWidget {
   final List<double> totalPrice;
   final Color color;
   final String constructionType;
+  final double calculationQuantity;
 
   OuterRoofItem(
     this.name,
@@ -35,6 +36,7 @@ class OuterRoofItem extends StatelessWidget {
     this.totalPrice,
     this.color,
     this.constructionType,
+    this.calculationQuantity,
   );
 
   void selectCategory(BuildContext ctx) {
@@ -55,6 +57,7 @@ class OuterRoofItem extends StatelessWidget {
                   material2,
                   totalPrice,
                   constructionType,
+                  calculationQuantity,
                 )
               : languageNorwegian
                   ? NorwOuterRoofItemScreen(
