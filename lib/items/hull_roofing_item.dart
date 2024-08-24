@@ -68,6 +68,8 @@ class HullRoofingItem extends StatelessWidget {
                       material1,
                       material2,
                       totalPrice,
+                      constructionType,
+                      calculationQuantity,
                     )
                   : languagePolish
                       ? PolHullRoofingItemScreen(
@@ -80,7 +82,10 @@ class HullRoofingItem extends StatelessWidget {
                           laborCost,
                           material1,
                           material2,
-                          totalPrice)
+                          totalPrice,
+                          constructionType,
+                          calculationQuantity,
+                        )
                       : LitHullRoofingItemScreen(
                           name,
                           description,
@@ -91,7 +96,10 @@ class HullRoofingItem extends StatelessWidget {
                           laborCost,
                           material1,
                           material2,
-                          totalPrice);
+                          totalPrice,
+                          constructionType,
+                          calculationQuantity,
+                        );
         },
       ),
     );
