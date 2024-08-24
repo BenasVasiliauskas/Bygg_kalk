@@ -13,7 +13,6 @@ import 'package:cost_calculator/models/support_system_data_model.dart';
 import 'package:cost_calculator/models/terrace_model.dart';
 import 'package:cost_calculator/models/waste_data_model.dart';
 import 'package:cost_calculator/models/windows_exterior_doors_model.dart';
-import 'package:cost_calculator/pages/item_screen/parquet_laminate_items_screen.dart';
 import 'package:cost_calculator/pages/item_screen/scaffolding_item_screen.dart';
 import 'package:cost_calculator/pages/item_screen/support_system_screen.dart';
 import 'package:cost_calculator/pages/item_screen/terrace_item_screen.dart';
@@ -417,9 +416,9 @@ Future<void> loadWindowsAndExteriorDoorsModel(var model) async {
 }
 
 Future<void> loadParquetAndLaminateModel(var model) async {
-  double mat2Total = 0;
-  double mat1Total = 0;
-  double calculationQuantity = 0;
+  // double mat2Total = 0;
+  // double mat1Total = 0;
+  // double calculationQuantity = 0;
   for (int i = 0; i < parquetAndLaminate.length; i++) {
     if (model.name == parquetAndLaminate[i].name) {
       parquetAndLaminate[i].name = model.name;
@@ -432,17 +431,17 @@ Future<void> loadParquetAndLaminateModel(var model) async {
       parquetAndLaminate[i].material = model.material;
       parquetAndLaminate[i].materials = model.materials;
       parquetAndLaminate[i].totalPrice = model.totalPrice;
-      mat2Total = parquetAndLaminate[i]
-          .materials
-          .fold(0, (previousValue, element) => previousValue + element);
-      mat1Total = parquetAndLaminate[i]
-          .material
-          .fold(0, (previousValue, element) => previousValue + element);
-      if (calculationQuantity == 0 && mat2Total != 0 && mat1Total != 0) {
-        double calculationQuantity = mat2Total / mat1Total;
-        parquetAndLaminateCalculationControllers.text =
-            calculationQuantity.toStringAsFixed(2);
-      }
+      // mat2Total = parquetAndLaminate[i]
+      //     .materials
+      //     .fold(0, (previousValue, element) => previousValue + element);
+      // mat1Total = parquetAndLaminate[i]
+      //     .material
+      //     .fold(0, (previousValue, element) => previousValue + element);
+      // if (calculationQuantity == 0 && mat2Total != 0 && mat1Total != 0) {
+      //   double calculationQuantity = mat2Total / mat1Total;
+      //   parquetAndLaminateCalculationControllers.text =
+      //       calculationQuantity.toStringAsFixed(2);
+      //}
     }
     continue;
   }
