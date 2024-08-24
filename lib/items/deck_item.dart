@@ -68,6 +68,7 @@ class DeckItem extends StatelessWidget {
                       material2,
                       totalPrice,
                       constructionType,
+                      calculationQuantity,
                     )
                   : languagePolish
                       ? PolDeckItemScreen(
@@ -82,6 +83,7 @@ class DeckItem extends StatelessWidget {
                           material2,
                           totalPrice,
                           constructionType,
+                          calculationQuantity,
                         )
                       : LitDeckItemScreen(
                           name,
@@ -95,6 +97,7 @@ class DeckItem extends StatelessWidget {
                           material2,
                           totalPrice,
                           constructionType,
+                          calculationQuantity,
                         );
         },
       ),
