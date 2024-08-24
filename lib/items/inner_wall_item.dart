@@ -21,6 +21,7 @@ class InnerWallItem extends StatelessWidget {
   final List<double> totalPrice;
   final Color color;
   final String constructionType;
+  final double calculationQuantity;
 
   InnerWallItem(
     this.name,
@@ -36,6 +37,7 @@ class InnerWallItem extends StatelessWidget {
     this.totalPrice,
     this.color,
     this.constructionType,
+    this.calculationQuantity,
   );
 
   void selectCategory(BuildContext ctx) {
@@ -56,6 +58,7 @@ class InnerWallItem extends StatelessWidget {
                   material2,
                   totalPrice,
                   constructionType,
+                  calculationQuantity,
                 )
               : languageNorwegian
                   ? NorwInteriorWallItemsScreen(

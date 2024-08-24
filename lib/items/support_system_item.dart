@@ -20,6 +20,7 @@ class SupportSystemItem extends StatelessWidget {
   final List<double> totalPrice;
   final Color color;
   final String constructionType;
+  final double calculationQuantity;
 
   SupportSystemItem(
     this.name,
@@ -34,6 +35,7 @@ class SupportSystemItem extends StatelessWidget {
     this.totalPrice,
     this.color,
     this.constructionType,
+    this.calculationQuantity,
   );
 
   void selectCategory(BuildContext ctx) {
@@ -53,6 +55,7 @@ class SupportSystemItem extends StatelessWidget {
                   material2,
                   totalPrice,
                   constructionType,
+                  calculationQuantity,
                 )
               : languageNorwegian
                   ? NorwSupportSystemItemScreen(
@@ -66,6 +69,7 @@ class SupportSystemItem extends StatelessWidget {
                       material1,
                       material2,
                       totalPrice,
+                      constructionType,
                     )
                   : languagePolish
                       ? PolSupportSystemItemScreen(
@@ -78,7 +82,9 @@ class SupportSystemItem extends StatelessWidget {
                           laborCost,
                           material1,
                           material2,
-                          totalPrice)
+                          totalPrice,
+                          constructionType,
+                        )
                       : LitSupportSystemItemScreen(
                           name,
                           description,
@@ -90,6 +96,7 @@ class SupportSystemItem extends StatelessWidget {
                           material1,
                           material2,
                           totalPrice,
+                          constructionType,
                         );
         },
       ),

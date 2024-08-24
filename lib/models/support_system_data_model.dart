@@ -13,6 +13,7 @@ class SupportSystemModel {
   List<double> totalPrice;
   final Color color;
   final String constructionType;
+  double calculationQuantity;
 
   SupportSystemModel({
     required this.name,
@@ -27,6 +28,7 @@ class SupportSystemModel {
     required this.totalPrice,
     Color? color, // Change to nullable Color
     String? constructionType,
+    this.calculationQuantity = 1.0,
   })  : constructionType = constructionType ?? "Nan",
         color = color ?? Color.fromARGB(255, 108, 135, 224); // Initialize color
   Map<String, dynamic> toJson() {
@@ -74,5 +76,6 @@ class SupportSystemModel {
             ? json['totalPrice'].cast<double>().toList()
             : [],
         color = Color.fromARGB(255, 108, 135, 224),
-        constructionType = json['constructionType'];
+        constructionType = json['constructionType'],
+        calculationQuantity = json['calculationQuantity'];
 }

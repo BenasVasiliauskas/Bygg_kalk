@@ -14,11 +14,12 @@ class TerraceItem extends StatelessWidget {
   final List<double> laborHours1;
   final List<double> laborHours2;
   final List<double> laborCost;
-  final List<double> material1;
-  final List<double> material2;
+  final List<double> material;
+  final List<double> materials;
   final List<double> totalPrice;
   final Color color;
   final String constructionType;
+  final double calculationQuantity;
 
   TerraceItem(
     this.name,
@@ -28,11 +29,12 @@ class TerraceItem extends StatelessWidget {
     this.laborHours1,
     this.laborHours2,
     this.laborCost,
-    this.material1,
-    this.material2,
+    this.material,
+    this.materials,
     this.totalPrice,
     this.color,
     this.constructionType,
+    this.calculationQuantity,
   );
 
   void selectCategory(BuildContext ctx) {
@@ -48,10 +50,11 @@ class TerraceItem extends StatelessWidget {
                   laborHours1,
                   laborHours2,
                   laborCost,
-                  material1,
-                  material2,
+                  material,
+                  materials,
                   totalPrice,
                   constructionType,
+                  calculationQuantity,
                 )
               : languageNorwegian
                   ? NorwTerraceItemScreen(
@@ -62,9 +65,10 @@ class TerraceItem extends StatelessWidget {
                       laborHours1,
                       laborHours2,
                       laborCost,
-                      material1,
-                      material2,
+                      material,
+                      materials,
                       totalPrice,
+                      constructionType,
                     )
                   : languagePolish
                       ? PolTerraceItemScreen(
@@ -75,9 +79,11 @@ class TerraceItem extends StatelessWidget {
                           laborHours1,
                           laborHours2,
                           laborCost,
-                          material1,
-                          material2,
-                          totalPrice)
+                          material,
+                          materials,
+                          totalPrice,
+                          constructionType,
+                        )
                       : LitTerraceItemScreen(
                           name,
                           description,
@@ -86,9 +92,11 @@ class TerraceItem extends StatelessWidget {
                           laborHours1,
                           laborHours2,
                           laborCost,
-                          material1,
-                          material2,
-                          totalPrice);
+                          material,
+                          materials,
+                          totalPrice,
+                          constructionType,
+                        );
         },
       ),
     );

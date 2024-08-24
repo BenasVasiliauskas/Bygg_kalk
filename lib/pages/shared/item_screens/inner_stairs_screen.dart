@@ -1,13 +1,7 @@
 import 'package:cost_calculator/data/data.dart';
-import 'package:cost_calculator/data/lith_data.dart';
-import 'package:cost_calculator/data/norw_data.dart';
-import 'package:cost_calculator/data/polish_data.dart';
 import 'package:cost_calculator/items/inner_stairs_item.dart';
-import 'package:cost_calculator/pages/item_screen/inner_stairs_item_screen.dart';
-import 'package:cost_calculator/pages/lit_item_screen/lit_inner_stairs_item_screen.dart';
-import 'package:cost_calculator/pages/norw_item_screen/norw_inner_stairs_item_screen.dart';
-import 'package:cost_calculator/pages/pol_item_screen/pol_inner_stairs_item_screen.dart';
 import 'package:cost_calculator/pages/shared/home_page.dart';
+import 'package:cost_calculator/pages/shared/item_screens/building_components_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import '../../../constants/language.dart';
@@ -19,219 +13,128 @@ class InnerStairsScreen extends StatefulWidget {
 }
 
 class _InnerStairsScreen extends State<InnerStairsScreen> {
+  List<TextEditingController> innerStairsCalculationControllers = [];
+  List<dynamic> currentInnerStairsData = [];
+
+  @override
+  void initState() {
+    super.initState();
+    // Initialize controllers for each item
+    innerStairsCalculationControllers = List.generate(
+      currentInnerStairsData.length,
+      (index) => TextEditingController(
+        text: currentInnerStairsData[index].calculationQuantity.toString(),
+      ),
+    );
+  }
+
+  @override
+  void dispose() {
+    // Dispose of controllers when the widget is destroyed
+    for (var controller in innerStairsCalculationControllers) {
+      controller.dispose();
+    }
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      drawer: CustomDrawer(),
-      appBar: AppBar(
-        actions: [
-          IconButton(
-            icon: const Icon(
-              FontAwesomeIcons.houseChimney,
-            ),
-            tooltip: languageEnglish
-                ? 'Return to main menu'
-                : languageLithuanian
-                    ? "Grįžti į pagrindinį meniu"
-                    : languageNorwegian
-                        ? "Gå tilbake til hovedmenyen"
-                        : "Powrót do menu głównego",
-            onPressed: () {
-              Navigator.of(context).pushReplacement(
-                MaterialPageRoute(
-                  builder: (context) {
-                    return homePage();
-                  },
-                ),
-              );
-            },
-          ),
-        ],
-        title: const Text('Bygg Kalk'),
-      ),
-      body: GridView.count(
-        padding: const EdgeInsets.all(25),
-        children: languageEnglish == true
-            ? innerStairsData.map(
-                (catData) {
-                  return Row(
-                    children: [
-                      Expanded(
-                        child: InnerStairsItem(
-                          catData.name,
-                          catData.description,
-                          catData.unit,
-                          catData.quantity,
-                          catData.laborHours1,
-                          catData.laborHours2,
-                          catData.laborCost,
-                          catData.material,
-                          catData.materials,
-                          catData.totalPrice,
-                          catData.color,
-                          catData.constructionType,
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.all(8),
-                        child: Container(
-                          width: 100,
-                          height: double.infinity,
-                          child: Center(
-                            child: TextField(
-                              controller: innerStairsCalculationControllers,
-                              onChanged: (value) {
-                                setState(() {
-                                  innerStairsCalculationControllers.text =
-                                      value;
-                                });
-                              },
-                            ),
-                          ),
-                        ),
-                      ),
-                      Text("Units")
-                    ],
-                  );
-                },
-              ).toList()
-            : languageNorwegian
-                ? norwInnerStairsData.map(
-                    (catData) {
-                      return Row(
-                        children: [
-                          Expanded(
-                            child: InnerStairsItem(
-                              catData.name,
-                              catData.description,
-                              catData.unit,
-                              catData.quantity,
-                              catData.laborHours1,
-                              catData.laborHours2,
-                              catData.laborCost,
-                              catData.material,
-                              catData.materials,
-                              catData.totalPrice,
-                              catData.color,
-                              catData.constructionType,
-                            ),
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.all(8),
-                            child: Container(
-                              width: 100,
-                              height: double.infinity,
-                              child: Center(
-                                child: TextField(
-                                  controller:
-                                      norwInnerStairsCalculationControllers,
-                                  onChanged: (value) {
-                                    setState(() {
-                                      norwInnerStairsCalculationControllers
-                                          .text = value;
-                                    });
-                                  },
-                                ),
-                              ),
-                            ),
-                          ),
-                          Text("stk")
-                        ],
-                      );
+    return PopScope(
+      canPop: false,
+      onPopInvoked: (bool didPop) async {
+        if (didPop) {
+          return;
+        }
+        Navigator.of(context).pushReplacement(
+          MaterialPageRoute(builder: (context) {
+            return buildingComponentsScreen();
+          }),
+        );
+      },
+      child: Scaffold(
+        drawer: CustomDrawer(),
+        appBar: AppBar(
+          actions: [
+            IconButton(
+              icon: const Icon(
+                FontAwesomeIcons.houseChimney,
+              ),
+              tooltip: languageEnglish
+                  ? 'Return to main menu'
+                  : languageLithuanian
+                      ? "Grįžti į pagrindinį meniu"
+                      : languageNorwegian
+                          ? "Gå tilbake til hovedmenyen"
+                          : "Powrót do menu głównego",
+              onPressed: () {
+                Navigator.of(context).pushReplacement(
+                  MaterialPageRoute(
+                    builder: (context) {
+                      return homePage();
                     },
-                  ).toList()
-                : languagePolish
-                    ? polInnerStairsData.map(
-                        (catData) {
-                          return Row(
-                            children: [
-                              Expanded(
-                                child: InnerStairsItem(
-                                  catData.name,
-                                  catData.description,
-                                  catData.unit,
-                                  catData.quantity,
-                                  catData.laborHours1,
-                                  catData.laborHours2,
-                                  catData.laborCost,
-                                  catData.material,
-                                  catData.materials,
-                                  catData.totalPrice,
-                                  catData.color,
-                                  catData.constructionType,
-                                ),
-                              ),
-                              Padding(
-                                padding: const EdgeInsets.all(8),
-                                child: Container(
-                                  width: 100,
-                                  height: double.infinity,
-                                  child: Center(
-                                    child: TextField(
-                                      controller:
-                                          polInnerStairsCalculationControllers,
-                                      onChanged: (value) {
-                                        setState(() {
-                                          polInnerStairsCalculationControllers
-                                              .text = value;
-                                        });
-                                      },
-                                    ),
-                                  ),
-                                ),
-                              ),
-                              Text("szt")
-                            ],
-                          );
+                  ),
+                );
+              },
+            ),
+          ],
+          title: const Text('Bygg Kalk'),
+        ),
+        body: GridView.count(
+          padding: const EdgeInsets.all(25),
+          children: List.generate(innerStairsData.length, (index) {
+            var catData = currentInnerStairsData[index];
+            var controller = innerStairsCalculationControllers[index];
+
+            return Row(
+              children: [
+                Expanded(
+                  child: InnerStairsItem(
+                    catData.name,
+                    catData.description,
+                    catData.unit,
+                    catData.quantity,
+                    catData.laborHours1,
+                    catData.laborHours2,
+                    catData.laborCost,
+                    catData.material,
+                    catData.materials,
+                    catData.totalPrice,
+                    catData.color,
+                    catData.constructionType,
+                    catData.calculationQuantity,
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(8),
+                  child: Container(
+                    width: 100,
+                    height: double.infinity,
+                    child: Center(
+                      child: TextField(
+                        controller: controller,
+                        onChanged: (value) {
+                          setState(() {
+                            catData.calculationQuantity = double.parse(value);
+                          });
                         },
-                      ).toList()
-                    : litInnerStairsData.map(
-                        (catData) {
-                          return Row(
-                            children: [
-                              Expanded(
-                                child: InnerStairsItem(
-                                  catData.name,
-                                  catData.description,
-                                  catData.unit,
-                                  catData.quantity,
-                                  catData.laborHours1,
-                                  catData.laborHours2,
-                                  catData.laborCost,
-                                  catData.material,
-                                  catData.materials,
-                                  catData.totalPrice,
-                                  catData.color,
-                                  catData.constructionType,
-                                ),
-                              ),
-                              Padding(
-                                padding: const EdgeInsets.all(8),
-                                child: Container(
-                                  width: 100,
-                                  height: double.infinity,
-                                  child: Center(
-                                    child: TextField(
-                                      controller:
-                                          litInnerStairsCalculationControllers,
-                                      onChanged: (value) {
-                                        setState(() {
-                                          litInnerStairsCalculationControllers
-                                              .text = value;
-                                        });
-                                      },
-                                    ),
-                                  ),
-                                ),
-                              ),
-                              Text("vnt")
-                            ],
-                          );
-                        },
-                      ).toList(),
-        crossAxisCount: 1,
-        mainAxisSpacing: 20,
-        childAspectRatio: 7 / 2,
+                      ),
+                    ),
+                  ),
+                ),
+                Text(languageEnglish
+                    ? "Units"
+                    : languageNorwegian
+                        ? "stk"
+                        : languagePolish
+                            ? "szt."
+                            : "vnt."),
+              ],
+            );
+          }),
+          crossAxisCount: 1,
+          mainAxisSpacing: 20,
+          childAspectRatio: 7 / 2,
+        ),
       ),
     );
   }

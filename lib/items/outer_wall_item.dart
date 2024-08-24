@@ -21,6 +21,7 @@ class OuterWallItem extends StatelessWidget {
   final List<double> totalPrice;
   final Color color;
   final String constructionType;
+  final double calculationQuantity;
 
   OuterWallItem(
     this.name,
@@ -36,6 +37,7 @@ class OuterWallItem extends StatelessWidget {
     this.totalPrice,
     this.color,
     this.constructionType,
+    this.calculationQuantity,
   );
 
   void selectCategory(BuildContext ctx) {
@@ -56,6 +58,7 @@ class OuterWallItem extends StatelessWidget {
                   material2,
                   totalPrice,
                   constructionType,
+                  calculationQuantity,
                 )
               : languageNorwegian
                   ? NorwExteriorWallItemsScreen(
@@ -70,6 +73,7 @@ class OuterWallItem extends StatelessWidget {
                       material1,
                       material2,
                       totalPrice,
+                      constructionType,
                     )
                   : languagePolish
                       ? PolExteriorWallItemsScreen(
@@ -84,6 +88,7 @@ class OuterWallItem extends StatelessWidget {
                           material1,
                           material2,
                           totalPrice,
+                          constructionType,
                         )
                       : LitExteriorWallItemsScreen(
                           name,
@@ -96,7 +101,9 @@ class OuterWallItem extends StatelessWidget {
                           laborCost,
                           material1,
                           material2,
-                          totalPrice);
+                          totalPrice,
+                          constructionType,
+                        );
         },
       ),
     );

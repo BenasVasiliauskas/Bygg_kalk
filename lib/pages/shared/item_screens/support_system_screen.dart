@@ -3,11 +3,8 @@ import 'package:cost_calculator/data/lith_data.dart';
 import 'package:cost_calculator/data/norw_data.dart';
 import 'package:cost_calculator/data/polish_data.dart';
 import 'package:cost_calculator/items/support_system_item.dart';
-import 'package:cost_calculator/pages/item_screen/support_system_screen.dart';
-import 'package:cost_calculator/pages/lit_item_screen/lit_support_system_item_screen.dart';
-import 'package:cost_calculator/pages/norw_item_screen/norw_support_system_item_screen.dart';
-import 'package:cost_calculator/pages/pol_item_screen/pol_support_system_item_screen.dart';
 import 'package:cost_calculator/pages/shared/home_page.dart';
+import 'package:cost_calculator/pages/shared/item_screens/building_components_screen.dart';
 
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -20,214 +17,130 @@ class SupportSystemScreen extends StatefulWidget {
 }
 
 class _SupportSystemScreenState extends State<SupportSystemScreen> {
+  List<TextEditingController> supportSystemCalculationQuantityController = [];
+  List<dynamic> currentSupportSystemData = [];
+
+  @override
+  void initState() {
+    super.initState();
+    currentSupportSystemData = languageEnglish
+        ? supportSystem
+        : languageNorwegian
+            ? norwSupportSystem
+            : languagePolish
+                ? polSupportSystem
+                : litSupportSystem;
+
+    // Initialize controllers for each item
+    supportSystemCalculationQuantityController = List.generate(
+      currentSupportSystemData.length,
+      (index) => TextEditingController(
+        text: currentSupportSystemData[index].calculationQuantity.toString(),
+      ),
+    );
+  }
+
+  @override
+  void dispose() {
+    // Dispose of controllers when the widget is destroyed
+    for (var controller in supportSystemCalculationQuantityController) {
+      controller.dispose();
+    }
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      drawer: CustomDrawer(),
-      appBar: AppBar(
-        actions: [
-          IconButton(
-            icon: const Icon(
-              FontAwesomeIcons.houseChimney,
+    return PopScope(
+      canPop: false,
+      onPopInvoked: (bool didPop) async {
+        if (didPop) {
+          return;
+        }
+        Navigator.of(context).pushReplacement(
+          MaterialPageRoute(builder: (context) {
+            return buildingComponentsScreen();
+          }),
+        );
+      },
+      child: Scaffold(
+        drawer: CustomDrawer(),
+        appBar: AppBar(
+          actions: [
+            IconButton(
+              icon: const Icon(
+                FontAwesomeIcons.houseChimney,
+              ),
+              tooltip: languageEnglish
+                  ? 'Return to main menu'
+                  : languageLithuanian
+                      ? "Grįžti į pagrindinį meniu"
+                      : languageNorwegian
+                          ? "Gå tilbake til hovedmenyen"
+                          : "Powrót do menu głównego",
+              onPressed: () {
+                Navigator.of(context).pushReplacement(
+                  MaterialPageRoute(
+                    builder: (context) {
+                      return homePage();
+                    },
+                  ),
+                );
+              },
             ),
-            tooltip: languageEnglish
-                ? 'Return to main menu'
-                : languageLithuanian
-                    ? "Grįžti į pagrindinį meniu"
-                    : languageNorwegian
-                        ? "Gå tilbake til hovedmenyen"
-                        : "Powrót do menu głównego",
-            onPressed: () {
-              Navigator.of(context).pushReplacement(
-                MaterialPageRoute(
-                  builder: (context) {
-                    return homePage();
-                  },
+          ],
+          title: const Text('Bygg Kalk'),
+        ),
+        body: GridView.count(
+          padding: const EdgeInsets.all(25),
+          children: List.generate(currentSupportSystemData.length, (index) {
+            var catData = currentSupportSystemData[index];
+            var controller = supportSystemCalculationQuantityController[index];
+
+            return Row(
+              children: [
+                Expanded(
+                  child: SupportSystemItem(
+                    catData.name,
+                    catData.description,
+                    catData.unit,
+                    catData.quantity,
+                    catData.laborHours1,
+                    catData.laborHours2,
+                    catData.laborCost,
+                    catData.material,
+                    catData.materials,
+                    catData.totalPrice,
+                    catData.color,
+                    catData.constructionType,
+                    catData.calculationQuantity,
+                  ),
                 ),
-              );
-            },
-          ),
-        ],
-        title: const Text('Bygg Kalk'),
-      ),
-      body: GridView.count(
-        padding: const EdgeInsets.all(25),
-        children: languageEnglish
-            ? supportSystem.map(
-                (catData) {
-                  return Row(
-                    children: [
-                      Expanded(
-                        child: SupportSystemItem(
-                          catData.name,
-                          catData.description,
-                          catData.unit,
-                          catData.quantity,
-                          catData.laborHours1,
-                          catData.laborHours2,
-                          catData.laborCost,
-                          catData.material,
-                          catData.materials,
-                          catData.totalPrice,
-                          catData.color,
-                          catData.constructionType,
-                        ),
+                Padding(
+                  padding: const EdgeInsets.all(8),
+                  child: Container(
+                    width: 100,
+                    height: double.infinity,
+                    child: Center(
+                      child: TextField(
+                        controller: controller,
+                        onChanged: (value) {
+                          setState(() {
+                            catData.calculationQuantity = double.parse(value);
+                          });
+                        },
                       ),
-                      Padding(
-                        padding: const EdgeInsets.all(8),
-                        child: Container(
-                          width: 100,
-                          height: double.infinity,
-                          child: Center(
-                            child: TextField(
-                              controller:
-                                  supportSystemCalculationQuantityController,
-                              onChanged: (value) {
-                                setState(() {
-                                  supportSystemCalculationQuantityController
-                                      .text = value;
-                                });
-                              },
-                            ),
-                          ),
-                        ),
-                      ),
-                      Text("Units")
-                    ],
-                  );
-                },
-              ).toList()
-            : languageNorwegian
-                ? norwSupportSystem.map((catData) {
-                    return Row(
-                      children: [
-                        Expanded(
-                          child: SupportSystemItem(
-                            catData.name,
-                            catData.description,
-                            catData.unit,
-                            catData.quantity,
-                            catData.laborHours1,
-                            catData.laborHours2,
-                            catData.laborCost,
-                            catData.material,
-                            catData.materials,
-                            catData.totalPrice,
-                            catData.color,
-                            catData.constructionType,
-                          ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.all(8),
-                          child: Container(
-                            width: 100,
-                            height: double.infinity,
-                            child: Center(
-                              child: TextField(
-                                controller:
-                                    norwSupportSystemCalculationControllers,
-                                onChanged: (value) {
-                                  setState(() {
-                                    norwSupportSystemCalculationControllers
-                                        .text = value;
-                                  });
-                                },
-                              ),
-                            ),
-                          ),
-                        ),
-                        Text("stk")
-                      ],
-                    );
-                  }).toList()
-                : languagePolish
-                    ? polSupportSystem.map((catData) {
-                        return Row(
-                          children: [
-                            Expanded(
-                              child: SupportSystemItem(
-                                catData.name,
-                                catData.description,
-                                catData.unit,
-                                catData.quantity,
-                                catData.laborHours1,
-                                catData.laborHours2,
-                                catData.laborCost,
-                                catData.material,
-                                catData.materials,
-                                catData.totalPrice,
-                                catData.color,
-                                catData.constructionType,
-                              ),
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.all(8),
-                              child: Container(
-                                width: 100,
-                                height: double.infinity,
-                                child: Center(
-                                  child: TextField(
-                                    controller:
-                                        polSupportSystemCalculationControllers,
-                                    onChanged: (value) {
-                                      setState(() {
-                                        polSupportSystemCalculationControllers
-                                            .text = value;
-                                      });
-                                    },
-                                  ),
-                                ),
-                              ),
-                            ),
-                            Text("szt")
-                          ],
-                        );
-                      }).toList()
-                    : litSupportSystem.map((catData) {
-                        return Row(
-                          children: [
-                            Expanded(
-                              child: SupportSystemItem(
-                                catData.name,
-                                catData.description,
-                                catData.unit,
-                                catData.quantity,
-                                catData.laborHours1,
-                                catData.laborHours2,
-                                catData.laborCost,
-                                catData.material,
-                                catData.materials,
-                                catData.totalPrice,
-                                catData.color,
-                                catData.constructionType,
-                              ),
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.all(8),
-                              child: Container(
-                                width: 100,
-                                height: double.infinity,
-                                child: Center(
-                                  child: TextField(
-                                    controller:
-                                        litSupportSystemCalculationControllers,
-                                    onChanged: (value) {
-                                      setState(() {
-                                        litSupportSystemCalculationControllers
-                                            .text = value;
-                                      });
-                                    },
-                                  ),
-                                ),
-                              ),
-                            ),
-                            Text("vnt")
-                          ],
-                        );
-                      }).toList(),
-        crossAxisCount: 1,
-        mainAxisSpacing: 20,
-        childAspectRatio: 7 / 2,
+                    ),
+                  ),
+                ),
+                Text("m²"),
+              ],
+            );
+          }),
+          crossAxisCount: 1,
+          mainAxisSpacing: 20,
+          childAspectRatio: 7 / 2,
+        ),
       ),
     );
   }

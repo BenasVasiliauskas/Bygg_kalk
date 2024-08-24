@@ -19,6 +19,7 @@ class ScaffoldingItem extends StatelessWidget {
   final List<double> totalPrice;
   final Color color;
   final String constructionType;
+  final double calculationQuantity;
 
   ScaffoldingItem(
     this.name,
@@ -33,6 +34,7 @@ class ScaffoldingItem extends StatelessWidget {
     this.totalPrice,
     this.color,
     this.constructionType,
+    this.calculationQuantity,
   );
 
   void selectCategory(BuildContext ctx) {
@@ -52,6 +54,7 @@ class ScaffoldingItem extends StatelessWidget {
                   material2,
                   totalPrice,
                   constructionType,
+                  calculationQuantity,
                 )
               : languageNorwegian
                   ? NorwScaffoldingItemScreen(
@@ -65,6 +68,7 @@ class ScaffoldingItem extends StatelessWidget {
                       material1,
                       material2,
                       totalPrice,
+                      constructionType,
                     )
                   : languagePolish
                       ? PolScaffoldingItemScreen(
@@ -78,6 +82,7 @@ class ScaffoldingItem extends StatelessWidget {
                           material1,
                           material2,
                           totalPrice,
+                          constructionType,
                         )
                       : LitScaffoldingItemScreen(
                           name,
@@ -89,7 +94,9 @@ class ScaffoldingItem extends StatelessWidget {
                           laborCost,
                           material1,
                           material2,
-                          totalPrice);
+                          totalPrice,
+                          constructionType,
+                        );
         },
       ),
     );

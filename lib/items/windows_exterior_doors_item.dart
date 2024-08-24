@@ -21,6 +21,7 @@ class WindowExteriorDoorItem extends StatelessWidget {
   final List<double> totalPrice;
   final Color color;
   final String constructionType;
+  final double calculationQuantity;
 
   WindowExteriorDoorItem(
     this.name,
@@ -35,6 +36,7 @@ class WindowExteriorDoorItem extends StatelessWidget {
     this.totalPrice,
     this.color,
     this.constructionType,
+    this.calculationQuantity,
   );
 
   void selectCategory(BuildContext ctx) {
@@ -54,6 +56,7 @@ class WindowExteriorDoorItem extends StatelessWidget {
                   material2,
                   totalPrice,
                   constructionType,
+                  calculationQuantity,
                 )
               : languageNorwegian
                   ? NorwWindowsExteriorDoorItemsScreen(
@@ -67,6 +70,7 @@ class WindowExteriorDoorItem extends StatelessWidget {
                       material1,
                       material2,
                       totalPrice,
+                      constructionType,
                     )
                   : languagePolish
                       ? PolWindowsExteriorDoorItemsScreen(
@@ -79,7 +83,9 @@ class WindowExteriorDoorItem extends StatelessWidget {
                           laborCost,
                           material1,
                           material2,
-                          totalPrice)
+                          totalPrice,
+                          constructionType,
+                        )
                       : LitWindowsExteriorDoorItemsScreen(
                           name,
                           description,
@@ -90,7 +96,9 @@ class WindowExteriorDoorItem extends StatelessWidget {
                           laborCost,
                           material1,
                           material2,
-                          totalPrice);
+                          totalPrice,
+                          constructionType,
+                        );
         },
       ),
     );

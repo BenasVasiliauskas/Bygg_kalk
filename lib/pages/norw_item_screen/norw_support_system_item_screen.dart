@@ -19,6 +19,7 @@ class NorwSupportSystemItemScreen extends StatefulWidget {
   List<double> material1;
   List<double> material2;
   List<double> totalPrice;
+  String constructionType;
 
   NorwSupportSystemItemScreen(
     this.name,
@@ -31,6 +32,7 @@ class NorwSupportSystemItemScreen extends StatefulWidget {
     this.material1,
     this.material2,
     this.totalPrice,
+    this.constructionType,
   );
 
   @override

@@ -13,6 +13,7 @@ class WasteModel {
   List<double> totalPrice;
   final Color color;
   final String constructionType;
+  double calculationQuantity;
 
   WasteModel({
     required this.name,
@@ -27,6 +28,7 @@ class WasteModel {
     required this.totalPrice,
     Color? color, // Change to nullable Color
     String? constructionType,
+    this.calculationQuantity = 1.0,
   })  : constructionType = constructionType ?? "Nan",
         color = color ?? Color.fromARGB(255, 99, 105, 128); // Initialize color
   Map<String, dynamic> toJson() {
@@ -74,5 +76,6 @@ class WasteModel {
             ? json['totalPrice'].cast<double>().toList()
             : [],
         color = Color.fromARGB(255, 99, 105, 128),
-        constructionType = json['constructionType'];
+        constructionType = json['constructionType'],
+        calculationQuantity = json['calculationQuantity'];
 }

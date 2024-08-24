@@ -19,6 +19,7 @@ class NorwWasteItemScreen extends StatefulWidget {
   List<double> material1;
   List<double> material2;
   List<double> totalPrice;
+  String constructionType;
 
   NorwWasteItemScreen(
     this.name,
@@ -31,6 +32,7 @@ class NorwWasteItemScreen extends StatefulWidget {
     this.material1,
     this.material2,
     this.totalPrice,
+    this.constructionType,
   );
 
   @override

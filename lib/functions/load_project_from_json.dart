@@ -13,20 +13,6 @@ import 'package:cost_calculator/models/support_system_data_model.dart';
 import 'package:cost_calculator/models/terrace_model.dart';
 import 'package:cost_calculator/models/waste_data_model.dart';
 import 'package:cost_calculator/models/windows_exterior_doors_model.dart';
-import 'package:cost_calculator/pages/item_screen/deck_item_screen.dart';
-import 'package:cost_calculator/pages/item_screen/exterior_wall_items_screen.dart';
-import 'package:cost_calculator/pages/item_screen/flooring_item_screen.dart';
-import 'package:cost_calculator/pages/item_screen/hull_roofing_item_screen.dart';
-import 'package:cost_calculator/pages/item_screen/inner_door_items_screen.dart';
-import 'package:cost_calculator/pages/item_screen/inner_stairs_item_screen.dart';
-import 'package:cost_calculator/pages/item_screen/interior_wall_items_screen.dart';
-import 'package:cost_calculator/pages/item_screen/outer_roof_item_screen.dart';
-import 'package:cost_calculator/pages/item_screen/parquet_laminate_items_screen.dart';
-import 'package:cost_calculator/pages/item_screen/scaffolding_item_screen.dart';
-import 'package:cost_calculator/pages/item_screen/support_system_screen.dart';
-import 'package:cost_calculator/pages/item_screen/terrace_item_screen.dart';
-import 'package:cost_calculator/pages/item_screen/waste_item_screen.dart';
-import 'package:cost_calculator/pages/item_screen/windows_exterior_door_items_screen.dart';
 
 Future<void> loadProject(String fileName, var data, var model) async {
   for (int i = 0; i < data.length; i++) {
@@ -136,13 +122,13 @@ Future<void> loadProject(String fileName, var data, var model) async {
 }
 
 Future<void> loadWasteModel(var model) async {
-  double mat2Total = 0;
-  double mat1Total = 0;
-  double calculationQuantity = 0;
+  // double mat2Total = 0;
+  // double mat1Total = 0;
+  // double calculationQuantity = 0;
   for (int i = 0; i < wasteData.length; i++) {
     if (model.name == wasteData[i].name) {
-      // wasteData[i].name = model.name;
-      // wasteData[i].description = model.description;
+      wasteData[i].name = model.name;
+      wasteData[i].description = model.description;
       wasteData[i].unit = model.unit;
       wasteData[i].quantity = model.quantity;
       wasteData[i].laborHours1 = model.laborHours1;
@@ -151,26 +137,26 @@ Future<void> loadWasteModel(var model) async {
       wasteData[i].material = model.material;
       wasteData[i].materials = model.materials;
       wasteData[i].totalPrice = model.totalPrice;
-      mat2Total = wasteData[i]
-          .materials
-          .fold(0, (previousValue, element) => previousValue + element);
-      mat1Total = wasteData[i]
-          .material
-          .fold(0, (previousValue, element) => previousValue + element);
-      if (calculationQuantity == 0 && mat2Total != 0 && mat1Total != 0) {
-        double calculationQuantity = mat2Total / mat1Total;
-        wasteCalculationControllers.text =
-            calculationQuantity.toStringAsFixed(2);
-      }
+      // mat2Total = wasteData[i]
+      //     .materials
+      //     .fold(0, (previousValue, element) => previousValue + element);
+      // mat1Total = wasteData[i]
+      //     .material
+      //     .fold(0, (previousValue, element) => previousValue + element);
+      // if (calculationQuantity == 0 && mat2Total != 0 && mat1Total != 0) {
+      //   double calculationQuantity = mat2Total / mat1Total;
+      //   wasteCalculationControllers.text =
+      //       calculationQuantity.toStringAsFixed(2);
+      // }
     }
     continue;
   }
 }
 
 Future<void> loadInnerStairsModel(var model) async {
-  double mat2Total = 0;
-  double mat1Total = 0;
-  double calculationQuantity = 0;
+  // double mat2Total = 0;
+  // double mat1Total = 0;
+  // double calculationQuantity = 0;
   for (int i = 0; i < innerStairsData.length; i++) {
     if (model.name == innerStairsData[i].name) {
       innerStairsData[i].name = model.name;
@@ -183,26 +169,26 @@ Future<void> loadInnerStairsModel(var model) async {
       innerStairsData[i].material = model.material;
       innerStairsData[i].materials = model.materials;
       innerStairsData[i].totalPrice = model.totalPrice;
-      mat2Total = innerStairsData[i]
-          .materials
-          .fold(0, (previousValue, element) => previousValue + element);
-      mat1Total = innerStairsData[i]
-          .material
-          .fold(0, (previousValue, element) => previousValue + element);
-      if (calculationQuantity == 0 && mat2Total != 0 && mat1Total != 0) {
-        double calculationQuantity = mat2Total / mat1Total;
-        innerStairsCalculationControllers.text =
-            calculationQuantity.toStringAsFixed(2);
-      }
+      // mat2Total = innerStairsData[i]
+      //     .materials
+      //     .fold(0, (previousValue, element) => previousValue + element);
+      // mat1Total = innerStairsData[i]
+      //     .material
+      //     .fold(0, (previousValue, element) => previousValue + element);
+      // if (calculationQuantity == 0 && mat2Total != 0 && mat1Total != 0) {
+      //   double calculationQuantity = mat2Total / mat1Total;
+      //   innerStairsCalculationControllers.text =
+      //       calculationQuantity.toStringAsFixed(2);
+      // }
     }
     continue;
   }
 }
 
 Future<void> loadScaffoldingModel(var model) async {
-  double mat2Total = 0;
-  double mat1Total = 0;
-  double calculationQuantity = 0;
+  // double mat2Total = 0;
+  // double mat1Total = 0;
+  // double calculationQuantity = 0;
   for (int i = 0; i < scaffoldingData.length; i++) {
     if (model.name == scaffoldingData[i].name) {
       scaffoldingData[i].name = model.name;
@@ -215,26 +201,26 @@ Future<void> loadScaffoldingModel(var model) async {
       scaffoldingData[i].material = model.material;
       scaffoldingData[i].materials = model.materials;
       scaffoldingData[i].totalPrice = model.totalPrice;
-      mat2Total = scaffoldingData[i]
-          .materials
-          .fold(0, (previousValue, element) => previousValue + element);
-      mat1Total = scaffoldingData[i]
-          .material
-          .fold(0, (previousValue, element) => previousValue + element);
-      if (calculationQuantity == 0 && mat2Total != 0 && mat1Total != 0) {
-        double calculationQuantity = mat2Total / mat1Total;
-        scaffoldingCalculationControllers.text =
-            calculationQuantity.toStringAsFixed(2);
-      }
+      // mat2Total = scaffoldingData[i]
+      //     .materials
+      //     .fold(0, (previousValue, element) => previousValue + element);
+      // mat1Total = scaffoldingData[i]
+      //     .material
+      //     .fold(0, (previousValue, element) => previousValue + element);
+      // if (calculationQuantity == 0 && mat2Total != 0 && mat1Total != 0) {
+      //   double calculationQuantity = mat2Total / mat1Total;
+      //   scaffoldingCalculationControllers.text =
+      //       calculationQuantity.toStringAsFixed(2);
+      // }
     }
     continue;
   }
 }
 
 Future<void> loadHullRoofingModel(var model) async {
-  double mat2Total = 0;
-  double mat1Total = 0;
-  double calculationQuantity = 0;
+  // double mat2Total = 0;
+  // double mat1Total = 0;
+  // double calculationQuantity = 0;
   for (int i = 0; i < hullRoofingData.length; i++) {
     if (model.name == hullRoofingData[i].name) {
       hullRoofingData[i].name = model.name;
@@ -247,26 +233,26 @@ Future<void> loadHullRoofingModel(var model) async {
       hullRoofingData[i].material = model.material;
       hullRoofingData[i].materials = model.materials;
       hullRoofingData[i].totalPrice = model.totalPrice;
-      mat2Total = hullRoofingData[i]
-          .materials
-          .fold(0, (previousValue, element) => previousValue + element);
-      mat1Total = hullRoofingData[i]
-          .material
-          .fold(0, (previousValue, element) => previousValue + element);
-      if (calculationQuantity == 0 && mat2Total != 0 && mat1Total != 0) {
-        double calculationQuantity = mat2Total / mat1Total;
-        hullCalculationControllers.text =
-            calculationQuantity.toStringAsFixed(2);
-      }
+      // mat2Total = hullRoofingData[i]
+      //     .materials
+      //     .fold(0, (previousValue, element) => previousValue + element);
+      // mat1Total = hullRoofingData[i]
+      //     .material
+      //     .fold(0, (previousValue, element) => previousValue + element);
+      // if (calculationQuantity == 0 && mat2Total != 0 && mat1Total != 0) {
+      //   double calculationQuantity = mat2Total / mat1Total;
+      //   hullCalculationControllers.text =
+      //       calculationQuantity.toStringAsFixed(2);
+      // }
     }
     continue;
   }
 }
 
 Future<void> loadOuterRoofModel(var model) async {
-  double mat2Total = 0;
-  double mat1Total = 0;
-  double calculationQuantity = 0;
+  // double mat2Total = 0;
+  // double mat1Total = 0;
+  // double calculationQuantity = 0;
   for (int i = 0; i < outerRoofData.length; i++) {
     if (model.name == outerRoofData[i].name) {
       outerRoofData[i].name = model.name;
@@ -280,26 +266,26 @@ Future<void> loadOuterRoofModel(var model) async {
       outerRoofData[i].material = model.material;
       outerRoofData[i].materials = model.materials;
       outerRoofData[i].totalPrice = model.totalPrice;
-      mat2Total = outerRoofData[i]
-          .materials
-          .fold(0, (previousValue, element) => previousValue + element);
-      mat1Total = outerRoofData[i]
-          .material
-          .fold(0, (previousValue, element) => previousValue + element);
-      if (calculationQuantity == 0 && mat2Total != 0 && mat1Total != 0) {
-        double calculationQuantity = mat2Total / mat1Total;
-        outerRoofCalculationControllers.text =
-            calculationQuantity.toStringAsFixed(2);
-      }
+      // mat2Total = outerRoofData[i]
+      //     .materials
+      //     .fold(0, (previousValue, element) => previousValue + element);
+      // mat1Total = outerRoofData[i]
+      //     .material
+      //     .fold(0, (previousValue, element) => previousValue + element);
+      // if (calculationQuantity == 0 && mat2Total != 0 && mat1Total != 0) {
+      //   double calculationQuantity = mat2Total / mat1Total;
+      //   outerRoofCalculationControllers.text =
+      //       calculationQuantity.toStringAsFixed(2);
+      // }
     }
     continue;
   }
 }
 
 Future<void> loadTerraceModel(var model) async {
-  double mat2Total = 0;
-  double mat1Total = 0;
-  double calculationQuantity = 0;
+  // double mat2Total = 0;
+  // double mat1Total = 0;
+  // double calculationQuantity = 0;
   for (int i = 0; i < terraceData.length; i++) {
     if (model.name == terraceData[i].name) {
       terraceData[i].name = model.name;
@@ -312,26 +298,26 @@ Future<void> loadTerraceModel(var model) async {
       terraceData[i].material = model.material;
       terraceData[i].materials = model.materials;
       terraceData[i].totalPrice = model.totalPrice;
-      mat2Total = terraceData[i]
-          .materials
-          .fold(0, (previousValue, element) => previousValue + element);
-      mat1Total = terraceData[i]
-          .material
-          .fold(0, (previousValue, element) => previousValue + element);
-      if (calculationQuantity == 0 && mat2Total != 0 && mat1Total != 0) {
-        double calculationQuantity = mat2Total / mat1Total;
-        terraceCalculationControllers.text =
-            calculationQuantity.toStringAsFixed(2);
-      }
+      // mat2Total = terraceData[i]
+      //     .materials
+      //     .fold(0, (previousValue, element) => previousValue + element);
+      // mat1Total = terraceData[i]
+      //     .material
+      //     .fold(0, (previousValue, element) => previousValue + element);
+      // if (calculationQuantity == 0 && mat2Total != 0 && mat1Total != 0) {
+      //   double calculationQuantity = mat2Total / mat1Total;
+      //   terraceCalculationControllers.text =
+      //       calculationQuantity.toStringAsFixed(2);
+      // }
     }
     continue;
   }
 }
 
 Future<void> loadFlooringModel(var model) async {
-  double mat2Total = 0;
-  double mat1Total = 0;
-  double calculationQuantity = 0;
+  // double mat2Total = 0;
+  // double mat1Total = 0;
+  // double calculationQuantity = 0;
   for (int i = 0; i < flooringData.length; i++) {
     if (model.name == flooringData[i].name) {
       flooringData[i].name = model.name;
@@ -344,26 +330,26 @@ Future<void> loadFlooringModel(var model) async {
       flooringData[i].material = model.material;
       flooringData[i].materials = model.materials;
       flooringData[i].totalPrice = model.totalPrice;
-      mat2Total = flooringData[i]
-          .materials
-          .fold(0, (previousValue, element) => previousValue + element);
-      mat1Total = flooringData[i]
-          .material
-          .fold(0, (previousValue, element) => previousValue + element);
-      if (calculationQuantity == 0 && mat2Total != 0 && mat1Total != 0) {
-        double calculationQuantity = mat2Total / mat1Total;
-        flooringCalculationControllers.text =
-            calculationQuantity.toStringAsFixed(2);
-      }
+      // mat2Total = flooringData[i]
+      //     .materials
+      //     .fold(0, (previousValue, element) => previousValue + element);
+      // mat1Total = flooringData[i]
+      //     .material
+      //     .fold(0, (previousValue, element) => previousValue + element);
+      // if (calculationQuantity == 0 && mat2Total != 0 && mat1Total != 0) {
+      //   double calculationQuantity = mat2Total / mat1Total;
+      //   flooringCalculationControllers.text =
+      //       calculationQuantity.toStringAsFixed(2);
+      // }
     }
     continue;
   }
 }
 
 Future<void> loadSupportSystemModel(var model) async {
-  double mat2Total = 0;
-  double mat1Total = 0;
-  double calculationQuantity = 0;
+  // double mat2Total = 0;
+  // double mat1Total = 0;
+  // double calculationQuantity = 0;
   for (int i = 0; i < supportSystem.length; i++) {
     if (model.name == supportSystem[i].name) {
       supportSystem[i].name = model.name;
@@ -376,26 +362,26 @@ Future<void> loadSupportSystemModel(var model) async {
       supportSystem[i].material = model.material;
       supportSystem[i].materials = model.materials;
       supportSystem[i].totalPrice = model.totalPrice;
-      mat2Total = supportSystem[i]
-          .materials
-          .fold(0, (previousValue, element) => previousValue + element);
-      mat1Total = supportSystem[i]
-          .material
-          .fold(0, (previousValue, element) => previousValue + element);
-      if (calculationQuantity == 0 && mat2Total != 0 && mat1Total != 0) {
-        double calculationQuantity = mat2Total / mat1Total;
-        supportSystemCalculationQuantityController.text =
-            calculationQuantity.toStringAsFixed(2);
-      }
+      // mat2Total = supportSystem[i]
+      //     .materials
+      //     .fold(0, (previousValue, element) => previousValue + element);
+      // mat1Total = supportSystem[i]
+      //     .material
+      //     .fold(0, (previousValue, element) => previousValue + element);
+      // if (calculationQuantity == 0 && mat2Total != 0 && mat1Total != 0) {
+      //   double calculationQuantity = mat2Total / mat1Total;
+      //   supportSystemCalculationQuantityController.text =
+      //       calculationQuantity.toStringAsFixed(2);
+      // }
     }
     continue;
   }
 }
 
 Future<void> loadWindowsAndExteriorDoorsModel(var model) async {
-  double mat2Total = 0;
-  double mat1Total = 0;
-  double calculationQuantity = 0;
+  // double mat2Total = 0;
+  // double mat1Total = 0;
+  // double calculationQuantity = 0;
   for (int i = 0; i < windowsExteriorDoors.length; i++) {
     if (model.name == windowsExteriorDoors[i].name) {
       windowsExteriorDoors[i].name = model.name;
@@ -408,26 +394,26 @@ Future<void> loadWindowsAndExteriorDoorsModel(var model) async {
       windowsExteriorDoors[i].material = model.material;
       windowsExteriorDoors[i].materials = model.materials;
       windowsExteriorDoors[i].totalPrice = model.totalPrice;
-      mat2Total = windowsExteriorDoors[i]
-          .materials
-          .fold(0, (previousValue, element) => previousValue + element);
-      mat1Total = windowsExteriorDoors[i]
-          .material
-          .fold(0, (previousValue, element) => previousValue + element);
-      if (calculationQuantity == 0 && mat2Total != 0 && mat1Total != 0) {
-        double calculationQuantity = mat2Total / mat1Total;
-        windowsExteriorDoorsCalculationControllers.text =
-            calculationQuantity.toStringAsFixed(2);
-      }
+      // mat2Total = windowsExteriorDoors[i]
+      //     .materials
+      //     .fold(0, (previousValue, element) => previousValue + element);
+      // mat1Total = windowsExteriorDoors[i]
+      //     .material
+      //     .fold(0, (previousValue, element) => previousValue + element);
+      // if (calculationQuantity == 0 && mat2Total != 0 && mat1Total != 0) {
+      //   double calculationQuantity = mat2Total / mat1Total;
+      //   windowsExteriorDoorsCalculationControllers.text =
+      //       calculationQuantity.toStringAsFixed(2);
+      // }
     }
     continue;
   }
 }
 
 Future<void> loadParquetAndLaminateModel(var model) async {
-  double mat2Total = 0;
-  double mat1Total = 0;
-  double calculationQuantity = 0;
+  // double mat2Total = 0;
+  // double mat1Total = 0;
+  // double calculationQuantity = 0;
   for (int i = 0; i < parquetAndLaminate.length; i++) {
     if (model.name == parquetAndLaminate[i].name) {
       parquetAndLaminate[i].name = model.name;
@@ -440,26 +426,26 @@ Future<void> loadParquetAndLaminateModel(var model) async {
       parquetAndLaminate[i].material = model.material;
       parquetAndLaminate[i].materials = model.materials;
       parquetAndLaminate[i].totalPrice = model.totalPrice;
-      mat2Total = parquetAndLaminate[i]
-          .materials
-          .fold(0, (previousValue, element) => previousValue + element);
-      mat1Total = parquetAndLaminate[i]
-          .material
-          .fold(0, (previousValue, element) => previousValue + element);
-      if (calculationQuantity == 0 && mat2Total != 0 && mat1Total != 0) {
-        double calculationQuantity = mat2Total / mat1Total;
-        parquetAndLaminateCalculationControllers.text =
-            calculationQuantity.toStringAsFixed(2);
-      }
+      // mat2Total = parquetAndLaminate[i]
+      //     .materials
+      //     .fold(0, (previousValue, element) => previousValue + element);
+      // mat1Total = parquetAndLaminate[i]
+      //     .material
+      //     .fold(0, (previousValue, element) => previousValue + element);
+      // if (calculationQuantity == 0 && mat2Total != 0 && mat1Total != 0) {
+      //   double calculationQuantity = mat2Total / mat1Total;
+      //   parquetAndLaminateCalculationControllers.text =
+      //       calculationQuantity.toStringAsFixed(2);
+      //}
     }
     continue;
   }
 }
 
 Future<void> loadInnerDoorModel(var model) async {
-  double mat2Total = 0;
-  double mat1Total = 0;
-  double calculationQuantity = 0;
+  // double mat2Total = 0;
+  // double mat1Total = 0;
+  // double calculationQuantity = 0;
   for (int i = 0; i < innerDoor.length; i++) {
     if (model.name == innerDoor[i].name) {
       innerDoor[i].name = model.name;
@@ -472,26 +458,26 @@ Future<void> loadInnerDoorModel(var model) async {
       innerDoor[i].material = model.material;
       innerDoor[i].materials = model.materials;
       innerDoor[i].totalPrice = model.totalPrice;
-      mat2Total = innerDoor[i]
-          .materials
-          .fold(0, (previousValue, element) => previousValue + element);
-      mat1Total = innerDoor[i]
-          .material
-          .fold(0, (previousValue, element) => previousValue + element);
-      if (calculationQuantity == 0 && mat2Total != 0 && mat1Total != 0) {
-        double calculationQuantity = mat2Total / mat1Total;
-        innerDoorCalculationControllers.text =
-            calculationQuantity.toStringAsFixed(2);
-      }
+      // mat2Total = innerDoor[i]
+      //     .materials
+      //     .fold(0, (previousValue, element) => previousValue + element);
+      // mat1Total = innerDoor[i]
+      //     .material
+      //     .fold(0, (previousValue, element) => previousValue + element);
+      // if (calculationQuantity == 0 && mat2Total != 0 && mat1Total != 0) {
+      //   double calculationQuantity = mat2Total / mat1Total;
+      //   innerDoorCalculationControllers.text =
+      //       calculationQuantity.toStringAsFixed(2);
+      // }
     }
     continue;
   }
 }
 
 Future<void> loadDeckModel(var model) async {
-  double mat2Total = 0;
-  double mat1Total = 0;
-  double calculationQuantity = 0;
+  // double mat2Total = 0;
+  // double mat1Total = 0;
+  // double calculationQuantity = 0;
   for (int i = 0; i < deckData.length; i++) {
     if (model.name == deckData[i].name) {
       deckData[i].name = model.name;
@@ -504,26 +490,26 @@ Future<void> loadDeckModel(var model) async {
       deckData[i].material = model.material;
       deckData[i].materials = model.materials;
       deckData[i].totalPrice = model.totalPrice;
-      mat2Total = deckData[i]
-          .materials
-          .fold(0, (previousValue, element) => previousValue + element);
-      mat1Total = deckData[i]
-          .material
-          .fold(0, (previousValue, element) => previousValue + element);
-      if (calculationQuantity == 0 && mat2Total != 0 && mat1Total != 0) {
-        double calculationQuantity = mat2Total / mat1Total;
-        deckCalculationControllers.text =
-            calculationQuantity.toStringAsFixed(2);
-      }
+      // mat2Total = deckData[i]
+      //     .materials
+      //     .fold(0, (previousValue, element) => previousValue + element);
+      // mat1Total = deckData[i]
+      //     .material
+      //     .fold(0, (previousValue, element) => previousValue + element);
+      // if (calculationQuantity == 0 && mat2Total != 0 && mat1Total != 0) {
+      //   double calculationQuantity = mat2Total / mat1Total;
+      //   deckCalculationControllers.text =
+      //       calculationQuantity.toStringAsFixed(2);
+      // } dont think i can set a calculation quantity for deck as it is a local var in the deck screen
     }
     continue;
   }
 }
 
 Future<void> loadOuterWallModel(var model) async {
-  double mat2Total = 0;
-  double mat1Total = 0;
-  double calculationQuantity = 0;
+  // double mat2Total = 0;
+  // double mat1Total = 0;
+  // double calculationQuantity = 0;
   for (int i = 0; i < exteriorWallData.length; i++) {
     if (model.name == exteriorWallData[i].name) {
       exteriorWallData[i].name = model.name;
@@ -537,26 +523,26 @@ Future<void> loadOuterWallModel(var model) async {
       exteriorWallData[i].material = model.material;
       exteriorWallData[i].materials = model.materials;
       exteriorWallData[i].totalPrice = model.totalPrice;
-      mat2Total = exteriorWallData[i]
-          .materials
-          .fold(0, (previousValue, element) => previousValue + element);
-      mat1Total = exteriorWallData[i]
-          .material
-          .fold(0, (previousValue, element) => previousValue + element);
-      if (calculationQuantity == 0 && mat2Total != 0 && mat1Total != 0) {
-        double calculationQuantity = mat2Total / mat1Total;
-        exteriorWallCalculationControllers.text =
-            calculationQuantity.toStringAsFixed(2);
-      }
+      // mat2Total = exteriorWallData[i]
+      //     .materials
+      //     .fold(0, (previousValue, element) => previousValue + element);
+      // mat1Total = exteriorWallData[i]
+      //     .material
+      //     .fold(0, (previousValue, element) => previousValue + element);
+      // if (calculationQuantity == 0 && mat2Total != 0 && mat1Total != 0) {
+      //   double calculationQuantity = mat2Total / mat1Total;
+      //   exteriorWallCalculationControllers.text =
+      //       calculationQuantity.toStringAsFixed(2);
+      // }
     }
     continue;
   }
 }
 
 Future<void> loadInnerWallModel(var model) async {
-  double mat2Total = 0;
-  double mat1Total = 0;
-  double calculationQuantity = 0;
+  // double mat2Total = 0;
+  // double mat1Total = 0;
+  // double calculationQuantity = 0;
   for (int i = 0; i < dataInnerWallData.length; i++) {
     if (model.name == dataInnerWallData[i].name) {
       dataInnerWallData[i].name = model.name;
@@ -570,17 +556,17 @@ Future<void> loadInnerWallModel(var model) async {
       dataInnerWallData[i].material1 = model.material1;
       dataInnerWallData[i].material2 = model.material2;
       dataInnerWallData[i].totalPrice = model.totalPrice;
-      mat2Total = dataInnerWallData[i]
-          .material2
-          .fold(0, (previousValue, element) => previousValue + element);
-      mat1Total = dataInnerWallData[i]
-          .material1
-          .fold(0, (previousValue, element) => previousValue + element);
-      if (calculationQuantity == 0 && mat2Total != 0 && mat1Total != 0) {
-        double calculationQuantity = mat2Total / mat1Total;
-        innerWallCalculationQuantityController.text =
-            calculationQuantity.toStringAsFixed(2);
-      }
+      // mat2Total = dataInnerWallData[i]
+      //     .material2
+      //     .fold(0, (previousValue, element) => previousValue + element);
+      // mat1Total = dataInnerWallData[i]
+      //     .material1
+      //     .fold(0, (previousValue, element) => previousValue + element);
+      // if (calculationQuantity == 0 && mat2Total != 0 && mat1Total != 0) {
+      //   double calculationQuantity = mat2Total / mat1Total;
+      //   innerWallCalculationQuantityController.text =
+      //       calculationQuantity.toStringAsFixed(2);
+      // }
     }
     continue;
   }

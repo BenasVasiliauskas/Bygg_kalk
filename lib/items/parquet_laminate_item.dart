@@ -20,6 +20,7 @@ class ParquetLaminateItem extends StatelessWidget {
   final List<double> totalPrice;
   final Color color;
   final String constructionType;
+  final double calculationQuantity;
 
   ParquetLaminateItem(
     this.name,
@@ -34,6 +35,7 @@ class ParquetLaminateItem extends StatelessWidget {
     this.totalPrice,
     this.color,
     this.constructionType,
+    this.calculationQuantity,
   );
 
   void selectCategory(BuildContext ctx) {
@@ -53,6 +55,7 @@ class ParquetLaminateItem extends StatelessWidget {
                   material2,
                   totalPrice,
                   constructionType,
+                  calculationQuantity,
                 )
               : languageNorwegian
                   ? NorwParquetLaminatetemsScreen(
@@ -66,6 +69,7 @@ class ParquetLaminateItem extends StatelessWidget {
                       material1,
                       material2,
                       totalPrice,
+                      constructionType,
                     )
                   : languagePolish
                       ? PolParquetLaminatetemsScreen(
@@ -79,6 +83,7 @@ class ParquetLaminateItem extends StatelessWidget {
                           material1,
                           material2,
                           totalPrice,
+                          constructionType,
                         )
                       : LitParquetLaminatetemsScreen(
                           name,
@@ -90,7 +95,9 @@ class ParquetLaminateItem extends StatelessWidget {
                           laborCost,
                           material1,
                           material2,
-                          totalPrice);
+                          totalPrice,
+                          constructionType,
+                        );
         },
       ),
     );
