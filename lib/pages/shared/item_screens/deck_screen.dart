@@ -17,15 +17,24 @@ class DeckScreen extends StatefulWidget {
 
 class _DeckScreenState extends State<DeckScreen> {
   List<TextEditingController> deckCalculationControllers = [];
+  List<dynamic> currentDeckData = [];
 
   @override
   void initState() {
     super.initState();
+    currentDeckData = languageEnglish
+        ? deckData
+        : languageNorwegian
+            ? norwDeckData
+            : languagePolish
+                ? polDeckData
+                : litDeckData;
+
     // Initialize controllers for each item in deckData
     deckCalculationControllers = List.generate(
-      deckData.length,
+      currentDeckData.length,
       (index) => TextEditingController(
-        text: deckData[index].calculationQuantity.toString(),
+        text: currentDeckData[index].calculationQuantity.toString(),
       ),
     );
   }
@@ -84,13 +93,7 @@ class _DeckScreenState extends State<DeckScreen> {
         body: GridView.count(
           padding: const EdgeInsets.all(25),
           children: List.generate(deckData.length, (index) {
-            var catData = languageEnglish
-                ? deckData[index]
-                : languageNorwegian
-                    ? norwDeckData[index]
-                    : languagePolish
-                        ? polDeckData[index]
-                        : litDeckData[index];
+            var catData = currentDeckData[index];
             var controller = deckCalculationControllers[index];
 
             return Row(

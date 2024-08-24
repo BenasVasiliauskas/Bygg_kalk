@@ -17,15 +17,24 @@ class FlooringScreen extends StatefulWidget {
 
 class _FlooringSectionsState extends State<FlooringScreen> {
   List<TextEditingController> flooringCalculationControllers = [];
+  List<dynamic> currentFlooringData = [];
 
   @override
   void initState() {
     super.initState();
+
+    currentFlooringData = languageEnglish
+        ? flooringData
+        : languageNorwegian
+            ? norwFlooringData
+            : languagePolish
+                ? polFlooringData
+                : litFlooringData;
     // Initialize controllers for each item in deckData
     flooringCalculationControllers = List.generate(
-      deckData.length,
+      currentFlooringData.length,
       (index) => TextEditingController(
-        text: deckData[index].calculationQuantity.toString(),
+        text: currentFlooringData[index].calculationQuantity.toString(),
       ),
     );
   }
@@ -84,13 +93,7 @@ class _FlooringSectionsState extends State<FlooringScreen> {
         body: GridView.count(
           padding: const EdgeInsets.all(25),
           children: List.generate(flooringData.length, (index) {
-            var catData = languageEnglish
-                ? flooringData[index]
-                : languageNorwegian
-                    ? norwFlooringData[index]
-                    : languagePolish
-                        ? polFlooringData[index]
-                        : litFlooringData[index];
+            var catData = currentFlooringData[index];
             var controller = flooringCalculationControllers[index];
             return Row(
               children: [

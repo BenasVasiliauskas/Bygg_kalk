@@ -17,15 +17,24 @@ class ExteriorWallScreen extends StatefulWidget {
 
 class _ExteriorWallScreenState extends State<ExteriorWallScreen> {
   List<TextEditingController> outerWallCalculationControllers = [];
+  List<dynamic> currentExteriorWallData = [];
 
   @override
   void initState() {
     super.initState();
+
+    currentExteriorWallData = languageEnglish
+        ? exteriorWallData
+        : languageNorwegian
+            ? norwExteriorWallData
+            : languagePolish
+                ? polExteriorWallData
+                : litExteriorWallData;
     // Initialize controllers for each item in deckData
     outerWallCalculationControllers = List.generate(
-      exteriorWallData.length,
+      currentExteriorWallData.length,
       (index) => TextEditingController(
-        text: exteriorWallData[index].calculationQuantity.toString(),
+        text: currentExteriorWallData[index].calculationQuantity.toString(),
       ),
     );
   }
@@ -92,13 +101,7 @@ class _ExteriorWallScreenState extends State<ExteriorWallScreen> {
         body: GridView.count(
           padding: const EdgeInsets.all(25),
           children: List.generate(deckData.length, (index) {
-            var catData = languageEnglish
-                ? exteriorWallData[index]
-                : languageNorwegian
-                    ? norwExteriorWallData[index]
-                    : languagePolish
-                        ? polExteriorWallData[index]
-                        : litExteriorWallData[index];
+            var catData = currentExteriorWallData[index];
             var controller = outerWallCalculationControllers[index];
 
             return Row(

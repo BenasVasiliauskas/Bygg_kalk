@@ -17,15 +17,16 @@ class HullRoofingScreen extends StatefulWidget {
 
 class _HullRoofingScreenState extends State<HullRoofingScreen> {
   List<TextEditingController> hullCalculationControllers = [];
+  List<dynamic> currentHullRoofingData = [];
 
   @override
   void initState() {
     super.initState();
     // Initialize controllers for each item in deckData
     hullCalculationControllers = List.generate(
-      deckData.length,
+      currentHullRoofingData.length,
       (index) => TextEditingController(
-        text: deckData[index].calculationQuantity.toString(),
+        text: currentHullRoofingData[index].calculationQuantity.toString(),
       ),
     );
   }
@@ -89,13 +90,7 @@ class _HullRoofingScreenState extends State<HullRoofingScreen> {
           children: List.generate(
             hullRoofingData.length,
             (index) {
-              var catData = languageEnglish
-                  ? hullRoofingData[index]
-                  : languageNorwegian
-                      ? norwHullRoofingData[index]
-                      : languagePolish
-                          ? polHullRoofingData[index]
-                          : litHullRoofingData[index];
+              var catData = currentHullRoofingData[index];
               var controller = hullCalculationControllers[index];
 
               return Row(

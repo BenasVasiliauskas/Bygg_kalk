@@ -17,15 +17,16 @@ class InnerStairsScreen extends StatefulWidget {
 
 class _InnerStairsScreen extends State<InnerStairsScreen> {
   List<TextEditingController> innerStairsCalculationControllers = [];
+  List<dynamic> currentInnerStairsData = [];
 
   @override
   void initState() {
     super.initState();
     // Initialize controllers for each item in deckData
     innerStairsCalculationControllers = List.generate(
-      deckData.length,
+      currentInnerStairsData.length,
       (index) => TextEditingController(
-        text: deckData[index].calculationQuantity.toString(),
+        text: currentInnerStairsData[index].calculationQuantity.toString(),
       ),
     );
   }
@@ -84,13 +85,7 @@ class _InnerStairsScreen extends State<InnerStairsScreen> {
         body: GridView.count(
           padding: const EdgeInsets.all(25),
           children: List.generate(innerStairsData.length, (index) {
-            var catData = languageEnglish
-                ? innerStairsData[index]
-                : languageNorwegian
-                    ? norwInnerStairsData[index]
-                    : languagePolish
-                        ? polInnerStairsData[index]
-                        : litInnerStairsData[index];
+            var catData = currentInnerStairsData[index];
             var controller = innerStairsCalculationControllers[index];
 
             return Row(

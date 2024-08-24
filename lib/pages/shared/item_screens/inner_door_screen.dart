@@ -18,15 +18,24 @@ class InnerDoorScreen extends StatefulWidget {
 
 class _InnerDoorScreenState extends State<InnerDoorScreen> {
   List<TextEditingController> innerDoorCalculationControllers = [];
+  List<dynamic> currentInnerDoorData = [];
 
   @override
   void initState() {
     super.initState();
+    currentInnerDoorData = languageEnglish
+        ? innerDoor
+        : languageNorwegian
+            ? norwInnerDoor
+            : languagePolish
+                ? polInnerDoor
+                : litInnerDoor;
+
     // Initialize controllers for each item in deckData
     innerDoorCalculationControllers = List.generate(
-      deckData.length,
+      currentInnerDoorData.length,
       (index) => TextEditingController(
-        text: deckData[index].calculationQuantity.toString(),
+        text: currentInnerDoorData[index].calculationQuantity.toString(),
       ),
     );
   }
@@ -87,13 +96,7 @@ class _InnerDoorScreenState extends State<InnerDoorScreen> {
           children: List.generate(
             innerDoor.length,
             (index) {
-              var catData = languageEnglish
-                  ? innerDoor[index]
-                  : languageNorwegian
-                      ? norwInnerDoor[index]
-                      : languagePolish
-                          ? polInnerDoor[index]
-                          : litInnerDoor[index];
+              var catData = currentInnerDoorData[index];
               var controller = innerDoorCalculationControllers[index];
 
               return Row(
