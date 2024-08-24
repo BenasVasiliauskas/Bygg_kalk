@@ -19,6 +19,8 @@ class PolInnerDoorItemScreenScreen extends StatefulWidget {
   List<double> material1;
   List<double> material2;
   List<double> totalPrice;
+  String constructionType;
+  double calculationQuantity;
 
   PolInnerDoorItemScreenScreen(
     this.name,
@@ -31,18 +33,14 @@ class PolInnerDoorItemScreenScreen extends StatefulWidget {
     this.material1,
     this.material2,
     this.totalPrice,
+    this.constructionType,
+    this.calculationQuantity,
   );
 
   @override
   _PolInnerDoorItemScreenScreenState createState() =>
       _PolInnerDoorItemScreenScreenState();
 }
-
-//
-TextEditingController polInnerDoorCalculationControllers =
-    TextEditingController(text: calculationQuantity.toStringAsFixed(2));
-
-double calculationQuantity = 0;
 
 class _PolInnerDoorItemScreenScreenState
     extends State<PolInnerDoorItemScreenScreen> {
@@ -164,9 +162,6 @@ class _PolInnerDoorItemScreenScreenState
 
     savingController = TextEditingController();
     loadingController = TextEditingController();
-    if (polInnerDoorCalculationControllers.text != "")
-      calculationQuantity =
-          double.parse(polInnerDoorCalculationControllers.text);
   }
 
   void recalculateValues() {
@@ -175,21 +170,21 @@ class _PolInnerDoorItemScreenScreenState
       widget.laborHours2[i] = calculateWorkHours2(
         i,
         widget.laborHours1,
-        calculationQuantity,
+        widget.calculationQuantity,
       );
       laborHours2Controllers[i].text = widget.laborHours2[i].toStringAsFixed(2);
       // Recalculate labor cost
       widget.laborCost[i] = calculateJobCost(
         i,
         widget.laborHours2,
-        calculationQuantity,
+        widget.calculationQuantity,
       );
       laborCostControllers[i].text = widget.laborCost[i].toStringAsFixed(2);
       // Recalculate material 2
       widget.material2[i] = calculateMaterialCost(
         i,
         widget.material1,
-        calculationQuantity,
+        widget.calculationQuantity,
       );
       material2Controllers[i].text = widget.material2[i].toStringAsFixed(2);
       // Recalculate total price
@@ -197,7 +192,7 @@ class _PolInnerDoorItemScreenScreenState
         i,
         widget.laborCost,
         widget.material1,
-        calculationQuantity,
+        widget.calculationQuantity,
       );
       totalPriceControllers[i].text = widget.totalPrice[i].toStringAsFixed(2);
     }
@@ -213,8 +208,7 @@ class _PolInnerDoorItemScreenScreenState
 
     calculationQuantity = mat2Total / mat1Total;
 
-    polInnerDoorCalculationControllers.text =
-        calculationQuantity.toStringAsFixed(2);
+    widget.calculationQuantity = calculationQuantity;
   }
 
   void _updateLaborHours() {
@@ -346,33 +340,33 @@ class _PolInnerDoorItemScreenScreenState
                     );
                     //
                     widget.laborHours2[i] = calculateWorkHours2(
-                        i, widget.laborHours1, calculationQuantity);
+                        i, widget.laborHours1, widget.calculationQuantity);
                     laborHours2Controllers[i].text = calculateWorkHours2(
-                            i, widget.laborHours1, calculationQuantity)
+                            i, widget.laborHours1, widget.calculationQuantity)
                         .toStringAsFixed(2);
                     //
                     widget.laborCost[i] = calculateJobCost(
-                        i, widget.laborHours1, calculationQuantity);
+                        i, widget.laborHours1, widget.calculationQuantity);
                     laborCostControllers[i].text = calculateJobCost(
-                            i, widget.laborHours1, calculationQuantity)
+                            i, widget.laborHours1, widget.calculationQuantity)
                         .toStringAsFixed(2);
                     //
                     widget.laborCost[i] = calculateJobCost(
-                        i, widget.laborHours2, calculationQuantity);
+                        i, widget.laborHours2, widget.calculationQuantity);
                     laborCostControllers[i].text = calculateJobCost(
-                            i, widget.laborHours2, calculationQuantity)
+                            i, widget.laborHours2, widget.calculationQuantity)
                         .toStringAsFixed(2);
 
                     // Recalculate and update the material 2 when quantity changes
                     widget.material2[i] = calculateMaterialCost(
                       i,
                       widget.material1,
-                      calculationQuantity,
+                      widget.calculationQuantity,
                     );
                     material2Controllers[i].text = calculateMaterialCost(
                       i,
                       widget.material1,
-                      calculationQuantity,
+                      widget.calculationQuantity,
                     ).toStringAsFixed(2);
 
                     // Recalculate and update the total price when quantity changes
@@ -380,12 +374,12 @@ class _PolInnerDoorItemScreenScreenState
                         i,
                         widget.laborCost,
                         widget.material1,
-                        calculationQuantity);
+                        widget.calculationQuantity);
                     totalPriceControllers[i].text = calculateTotalPrice(
                             i,
                             widget.laborCost,
                             widget.material1,
-                            calculationQuantity)
+                            widget.calculationQuantity)
                         .toStringAsFixed(2);
                     rebuildDataTable();
                   },
@@ -401,7 +395,7 @@ class _PolInnerDoorItemScreenScreenState
                   double.parse(parsedValue.toStringAsFixed(2));
               // Recalculate the labor cost when labor hours 2 changes
               double updatedLaborCost = calculateJobCost(i, widget.laborHours2,
-                  calculationQuantity); // Calculate the labor cost
+                  widget.calculationQuantity); // Calculate the labor cost
               widget.laborCost[i] =
                   double.parse(updatedLaborCost.toStringAsFixed(2));
             }, Theme.of(context).colorScheme.background, true,
@@ -423,7 +417,7 @@ class _PolInnerDoorItemScreenScreenState
                 double updatedMaterial2 = calculateMaterialCost(
                   i,
                   widget.material1,
-                  calculationQuantity,
+                  widget.calculationQuantity,
                 );
                 widget.material2[i] = updatedMaterial2;
                 material2Controllers[i].text =
@@ -431,7 +425,10 @@ class _PolInnerDoorItemScreenScreenState
 
                 // Recalculate total price
                 double updatedTotalPrice = calculateTotalPrice(
-                    i, widget.laborCost, widget.material1, calculationQuantity);
+                    i,
+                    widget.laborCost,
+                    widget.material1,
+                    widget.calculationQuantity);
                 widget.totalPrice[i] = updatedTotalPrice;
                 totalPriceControllers[i].text =
                     updatedTotalPrice.toStringAsFixed(2);

@@ -69,6 +69,8 @@ class InnerDoorItem extends StatelessWidget {
                       material1,
                       material2,
                       totalPrice,
+                      constructionType,
+                      calculationQuantity,
                     )
                   : languagePolish
                       ? PolInnerDoorItemScreenScreen(
@@ -81,7 +83,10 @@ class InnerDoorItem extends StatelessWidget {
                           laborCost,
                           material1,
                           material2,
-                          totalPrice)
+                          totalPrice,
+                          constructionType,
+                          calculationQuantity,
+                        )
                       : LitInnerDoorItemScreenScreen(
                           name,
                           description,
@@ -92,7 +97,10 @@ class InnerDoorItem extends StatelessWidget {
                           laborCost,
                           material1,
                           material2,
-                          totalPrice);
+                          totalPrice,
+                          constructionType,
+                          calculationQuantity,
+                        );
         },
       ),
     );
