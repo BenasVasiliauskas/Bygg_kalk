@@ -31,7 +31,7 @@ class _InnerDoorScreenState extends State<InnerDoorScreen> {
                 ? polInnerDoor
                 : litInnerDoor;
 
-    // Initialize controllers for each item in deckData
+    // Initialize controllers for each item
     innerDoorCalculationControllers = List.generate(
       currentInnerDoorData.length,
       (index) => TextEditingController(

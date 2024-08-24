@@ -19,7 +19,7 @@ class _InnerStairsScreen extends State<InnerStairsScreen> {
   @override
   void initState() {
     super.initState();
-    // Initialize controllers for each item in deckData
+    // Initialize controllers for each item
     innerStairsCalculationControllers = List.generate(
       currentInnerStairsData.length,
       (index) => TextEditingController(

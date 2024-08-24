@@ -29,7 +29,7 @@ class _OuterRoofScreenState extends State<OuterRoofScreen> {
                 ? polOuterRoofData
                 : litOuterRoofData;
 
-    // Initialize controllers for each item in deckData
+    // Initialize controllers for each item
     outerRoofCalculationControllers = List.generate(
       currentOuterRoofData.length,
       (index) => TextEditingController(

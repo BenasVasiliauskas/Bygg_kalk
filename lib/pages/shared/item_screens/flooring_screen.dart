@@ -30,7 +30,7 @@ class _FlooringSectionsState extends State<FlooringScreen> {
             : languagePolish
                 ? polFlooringData
                 : litFlooringData;
-    // Initialize controllers for each item in deckData
+    // Initialize controllers for each item
     flooringCalculationControllers = List.generate(
       currentFlooringData.length,
       (index) => TextEditingController(

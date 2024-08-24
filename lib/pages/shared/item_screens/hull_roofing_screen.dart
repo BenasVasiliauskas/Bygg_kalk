@@ -19,7 +19,7 @@ class _HullRoofingScreenState extends State<HullRoofingScreen> {
   @override
   void initState() {
     super.initState();
-    // Initialize controllers for each item in deckData
+    // Initialize controllers for each item
     hullCalculationControllers = List.generate(
       currentHullRoofingData.length,
       (index) => TextEditingController(

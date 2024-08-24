@@ -30,7 +30,7 @@ class _DeckScreenState extends State<DeckScreen> {
                 ? polDeckData
                 : litDeckData;
 
-    // Initialize controllers for each item in deckData
+    // Initialize controllers for each item
     deckCalculationControllers = List.generate(
       currentDeckData.length,
       (index) => TextEditingController(

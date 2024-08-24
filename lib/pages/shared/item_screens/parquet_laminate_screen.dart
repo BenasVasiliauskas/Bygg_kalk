@@ -29,7 +29,7 @@ class _ParquetLaminateScreenState extends State<ParquetLaminateScreen> {
                 ? polParquetAndLaminate
                 : litParquetAndLaminate;
 
-    // Initialize controllers for each item in deckData
+    // Initialize controllers for each item
     parquetAndLaminateCalculationControllers = List.generate(
       currentParquetAndLaminateData.length,
       (index) => TextEditingController(

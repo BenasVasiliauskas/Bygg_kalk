@@ -30,7 +30,7 @@ class _ExteriorWallScreenState extends State<ExteriorWallScreen> {
             : languagePolish
                 ? polExteriorWallData
                 : litExteriorWallData;
-    // Initialize controllers for each item in deckData
+    // Initialize controllers for each item
     outerWallCalculationControllers = List.generate(
       currentExteriorWallData.length,
       (index) => TextEditingController(

@@ -29,7 +29,7 @@ class _ScaffoldingScreenState extends State<ScaffoldingScreen> {
                 ? polScaffoldingData
                 : litScaffoldingData;
 
-    // Initialize controllers for each item in deckData
+    // Initialize controllers for each item
     scaffoldingCalculationControllers = List.generate(
       currentScaffoldingData.length,
       (index) => TextEditingController(
