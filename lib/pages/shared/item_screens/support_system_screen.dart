@@ -4,6 +4,7 @@ import 'package:cost_calculator/data/norw_data.dart';
 import 'package:cost_calculator/data/polish_data.dart';
 import 'package:cost_calculator/items/support_system_item.dart';
 import 'package:cost_calculator/pages/shared/home_page.dart';
+import 'package:cost_calculator/pages/shared/item_screens/building_components_screen.dart';
 
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -58,7 +59,7 @@ class _SupportSystemScreenState extends State<SupportSystemScreen> {
         }
         Navigator.of(context).pushReplacement(
           MaterialPageRoute(builder: (context) {
-            return homePage();
+            return buildingComponentsScreen();
           }),
         );
       },

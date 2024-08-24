@@ -13,7 +13,6 @@ import 'package:cost_calculator/models/support_system_data_model.dart';
 import 'package:cost_calculator/models/terrace_model.dart';
 import 'package:cost_calculator/models/waste_data_model.dart';
 import 'package:cost_calculator/models/windows_exterior_doors_model.dart';
-import 'package:cost_calculator/pages/item_screen/windows_exterior_door_items_screen.dart';
 
 Future<void> loadProject(String fileName, var data, var model) async {
   for (int i = 0; i < data.length; i++) {
@@ -380,9 +379,9 @@ Future<void> loadSupportSystemModel(var model) async {
 }
 
 Future<void> loadWindowsAndExteriorDoorsModel(var model) async {
-  double mat2Total = 0;
-  double mat1Total = 0;
-  double calculationQuantity = 0;
+  // double mat2Total = 0;
+  // double mat1Total = 0;
+  // double calculationQuantity = 0;
   for (int i = 0; i < windowsExteriorDoors.length; i++) {
     if (model.name == windowsExteriorDoors[i].name) {
       windowsExteriorDoors[i].name = model.name;
@@ -395,17 +394,17 @@ Future<void> loadWindowsAndExteriorDoorsModel(var model) async {
       windowsExteriorDoors[i].material = model.material;
       windowsExteriorDoors[i].materials = model.materials;
       windowsExteriorDoors[i].totalPrice = model.totalPrice;
-      mat2Total = windowsExteriorDoors[i]
-          .materials
-          .fold(0, (previousValue, element) => previousValue + element);
-      mat1Total = windowsExteriorDoors[i]
-          .material
-          .fold(0, (previousValue, element) => previousValue + element);
-      if (calculationQuantity == 0 && mat2Total != 0 && mat1Total != 0) {
-        double calculationQuantity = mat2Total / mat1Total;
-        windowsExteriorDoorsCalculationControllers.text =
-            calculationQuantity.toStringAsFixed(2);
-      }
+      // mat2Total = windowsExteriorDoors[i]
+      //     .materials
+      //     .fold(0, (previousValue, element) => previousValue + element);
+      // mat1Total = windowsExteriorDoors[i]
+      //     .material
+      //     .fold(0, (previousValue, element) => previousValue + element);
+      // if (calculationQuantity == 0 && mat2Total != 0 && mat1Total != 0) {
+      //   double calculationQuantity = mat2Total / mat1Total;
+      //   windowsExteriorDoorsCalculationControllers.text =
+      //       calculationQuantity.toStringAsFixed(2);
+      // }
     }
     continue;
   }
