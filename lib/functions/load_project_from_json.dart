@@ -13,7 +13,6 @@ import 'package:cost_calculator/models/support_system_data_model.dart';
 import 'package:cost_calculator/models/terrace_model.dart';
 import 'package:cost_calculator/models/waste_data_model.dart';
 import 'package:cost_calculator/models/windows_exterior_doors_model.dart';
-import 'package:cost_calculator/pages/item_screen/hull_roofing_item_screen.dart';
 import 'package:cost_calculator/pages/item_screen/inner_door_items_screen.dart';
 import 'package:cost_calculator/pages/item_screen/inner_stairs_item_screen.dart';
 import 'package:cost_calculator/pages/item_screen/interior_wall_items_screen.dart';
@@ -229,9 +228,9 @@ Future<void> loadScaffoldingModel(var model) async {
 }
 
 Future<void> loadHullRoofingModel(var model) async {
-  double mat2Total = 0;
-  double mat1Total = 0;
-  double calculationQuantity = 0;
+  // double mat2Total = 0;
+  // double mat1Total = 0;
+  // double calculationQuantity = 0;
   for (int i = 0; i < hullRoofingData.length; i++) {
     if (model.name == hullRoofingData[i].name) {
       hullRoofingData[i].name = model.name;
@@ -244,17 +243,17 @@ Future<void> loadHullRoofingModel(var model) async {
       hullRoofingData[i].material = model.material;
       hullRoofingData[i].materials = model.materials;
       hullRoofingData[i].totalPrice = model.totalPrice;
-      mat2Total = hullRoofingData[i]
-          .materials
-          .fold(0, (previousValue, element) => previousValue + element);
-      mat1Total = hullRoofingData[i]
-          .material
-          .fold(0, (previousValue, element) => previousValue + element);
-      if (calculationQuantity == 0 && mat2Total != 0 && mat1Total != 0) {
-        double calculationQuantity = mat2Total / mat1Total;
-        hullCalculationControllers.text =
-            calculationQuantity.toStringAsFixed(2);
-      }
+      // mat2Total = hullRoofingData[i]
+      //     .materials
+      //     .fold(0, (previousValue, element) => previousValue + element);
+      // mat1Total = hullRoofingData[i]
+      //     .material
+      //     .fold(0, (previousValue, element) => previousValue + element);
+      // if (calculationQuantity == 0 && mat2Total != 0 && mat1Total != 0) {
+      //   double calculationQuantity = mat2Total / mat1Total;
+      //   hullCalculationControllers.text =
+      //       calculationQuantity.toStringAsFixed(2);
+      // }
     }
     continue;
   }

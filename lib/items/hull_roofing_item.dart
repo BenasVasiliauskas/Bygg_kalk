@@ -19,6 +19,7 @@ class HullRoofingItem extends StatelessWidget {
   final List<double> totalPrice;
   final Color color;
   final String constructionType;
+  final double calculationQuantity;
 
   HullRoofingItem(
     this.name,
@@ -33,6 +34,7 @@ class HullRoofingItem extends StatelessWidget {
     this.totalPrice,
     this.color,
     this.constructionType,
+    this.calculationQuantity,
   );
 
   void selectCategory(BuildContext ctx) {
@@ -52,6 +54,7 @@ class HullRoofingItem extends StatelessWidget {
                   material2,
                   totalPrice,
                   constructionType,
+                  calculationQuantity,
                 )
               : languageNorwegian
                   ? NorwHullRoofingItemScreen(
