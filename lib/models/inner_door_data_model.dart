@@ -13,6 +13,7 @@ class InnerDoorModel {
   List<double> totalPrice;
   final Color color;
   final String constructionType;
+  double calculationQuantity;
 
   InnerDoorModel({
     required this.name,
@@ -27,6 +28,7 @@ class InnerDoorModel {
     required this.totalPrice,
     Color? color, // Change to nullable Color
     String? constructionType,
+    this.calculationQuantity = 1.0,
   })  : constructionType = constructionType ?? "Nan",
         color = color ??
             const Color.fromARGB(255, 65, 207, 136); // Initialize color
@@ -76,5 +78,6 @@ class InnerDoorModel {
             : [],
         color = Color.fromARGB(
             255, 174, 228, 75), // Initialize color with Colors.orange
-        constructionType = json['constructionType'];
+        constructionType = json['constructionType'],
+        calculationQuantity = json['calculationQuantity'];
 }

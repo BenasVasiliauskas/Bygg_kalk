@@ -19,6 +19,7 @@ class InnerDoorItemScreen extends StatefulWidget {
   List<double> material2;
   List<double> totalPrice;
   String constructionType;
+  double calculationQuantity;
 
   InnerDoorItemScreen(
     this.name,
@@ -32,14 +33,12 @@ class InnerDoorItemScreen extends StatefulWidget {
     this.material2,
     this.totalPrice,
     this.constructionType,
+    this.calculationQuantity,
   );
 
   @override
   _InnerDoorItemScreenState createState() => _InnerDoorItemScreenState();
 }
-
-TextEditingController innerDoorCalculationControllers =
-    TextEditingController(text: calculationQuantity.toStringAsFixed(2));
 
 class _InnerDoorItemScreenState extends State<InnerDoorItemScreen> {
   List<DataRow> rows = [];
@@ -161,8 +160,6 @@ class _InnerDoorItemScreenState extends State<InnerDoorItemScreen> {
 
     savingController = TextEditingController();
     loadingController = TextEditingController();
-    if (innerDoorCalculationControllers.text != "")
-      calculationQuantity = double.parse(innerDoorCalculationControllers.text);
   }
 
   void calculateCalculationQuantity() {
@@ -173,8 +170,7 @@ class _InnerDoorItemScreenState extends State<InnerDoorItemScreen> {
 
     calculationQuantity = mat2Total / mat1Total;
 
-    innerDoorCalculationControllers.text =
-        calculationQuantity.toStringAsFixed(2);
+    widget.calculationQuantity = calculationQuantity;
   }
 
   void _updateLaborHours() {
@@ -250,7 +246,7 @@ class _InnerDoorItemScreenState extends State<InnerDoorItemScreen> {
       widget.laborHours2[i] = calculateWorkHours2(
         i,
         widget.laborHours1,
-        calculationQuantity,
+        widget.calculationQuantity,
       );
       laborHours2Controllers[i].text = widget.laborHours2[i].toStringAsFixed(2);
 
@@ -258,7 +254,7 @@ class _InnerDoorItemScreenState extends State<InnerDoorItemScreen> {
       widget.laborCost[i] = calculateJobCost(
         i,
         widget.laborHours2,
-        calculationQuantity,
+        widget.calculationQuantity,
       );
       laborCostControllers[i].text = widget.laborCost[i].toStringAsFixed(2);
 
@@ -266,7 +262,7 @@ class _InnerDoorItemScreenState extends State<InnerDoorItemScreen> {
       widget.material2[i] = calculateMaterialCost(
         i,
         widget.material1,
-        calculationQuantity,
+        widget.calculationQuantity,
       );
       material2Controllers[i].text = widget.material2[i].toStringAsFixed(2);
 
@@ -275,7 +271,7 @@ class _InnerDoorItemScreenState extends State<InnerDoorItemScreen> {
         i,
         widget.laborCost,
         widget.material1,
-        calculationQuantity,
+        widget.calculationQuantity,
       );
       totalPriceControllers[i].text = widget.totalPrice[i].toStringAsFixed(2);
     }
@@ -349,54 +345,54 @@ class _InnerDoorItemScreenState extends State<InnerDoorItemScreen> {
                       );
                       //
                       widget.laborHours2[i] = calculateWorkHours2(
-                          i, widget.laborHours1, calculationQuantity);
+                          i, widget.laborHours1, widget.calculationQuantity);
                       laborHours2Controllers[i].text = calculateWorkHours2(
-                              i, widget.laborHours1, calculationQuantity)
+                              i, widget.laborHours1, widget.calculationQuantity)
                           .toStringAsFixed(2);
                       //
                       widget.laborCost[i] = calculateJobCost(
                         i,
                         widget.laborHours1,
-                        calculationQuantity,
+                        widget.calculationQuantity,
                       );
                       laborCostControllers[i].text = calculateJobCost(
                         i,
                         widget.laborHours1,
-                        calculationQuantity,
+                        widget.calculationQuantity,
                       ).toStringAsFixed(2);
                       //
                       widget.laborCost[i] = calculateJobCost(
                         i,
                         widget.laborHours2,
-                        calculationQuantity,
+                        widget.calculationQuantity,
                       );
                       laborCostControllers[i].text = calculateJobCost(
                         i,
                         widget.laborHours2,
-                        calculationQuantity,
+                        widget.calculationQuantity,
                       ).toStringAsFixed(2);
                       // Recalculate and update the material 2 when quantity changes
                       widget.material2[i] = calculateMaterialCost(
                         i,
                         widget.material1,
-                        calculationQuantity,
+                        widget.calculationQuantity,
                       );
                       material2Controllers[i].text = calculateMaterialCost(
                         i,
                         widget.material1,
-                        calculationQuantity,
+                        widget.calculationQuantity,
                       ).toStringAsFixed(2);
                       // Recalculate and update the total price when quantity changes
                       widget.totalPrice[i] = calculateTotalPrice(
                           i,
                           widget.laborCost,
                           widget.material1,
-                          calculationQuantity);
+                          widget.calculationQuantity);
                       totalPriceControllers[i].text = calculateTotalPrice(
                               i,
                               widget.laborCost,
                               widget.material1,
-                              calculationQuantity)
+                              widget.calculationQuantity)
                           .toStringAsFixed(2);
                       rebuildDataTable();
                     },
@@ -415,7 +411,7 @@ class _InnerDoorItemScreenState extends State<InnerDoorItemScreen> {
               double updatedLaborCost = calculateJobCost(
                 i,
                 widget.laborHours2,
-                calculationQuantity,
+                widget.calculationQuantity,
               ); // Calculate the labor cost
               widget.laborCost[i] =
                   double.parse(updatedLaborCost.toStringAsFixed(2));
@@ -435,7 +431,7 @@ class _InnerDoorItemScreenState extends State<InnerDoorItemScreen> {
               double updatedMaterial2 = calculateMaterialCost(
                 i,
                 widget.material1,
-                calculationQuantity,
+                widget.calculationQuantity,
               );
               widget.material2[i] = updatedMaterial2;
               material2Controllers[i].text =
@@ -443,7 +439,10 @@ class _InnerDoorItemScreenState extends State<InnerDoorItemScreen> {
 
               // Recalculate total price
               double updatedTotalPrice = calculateTotalPrice(
-                  i, widget.laborCost, widget.material1, calculationQuantity);
+                  i,
+                  widget.laborCost,
+                  widget.material1,
+                  widget.calculationQuantity);
               widget.totalPrice[i] = updatedTotalPrice;
               totalPriceControllers[i].text =
                   updatedTotalPrice.toStringAsFixed(2);
