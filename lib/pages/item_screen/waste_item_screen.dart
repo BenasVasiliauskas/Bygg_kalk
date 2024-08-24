@@ -20,6 +20,7 @@ class WasteItemScreen extends StatefulWidget {
   List<double> material2;
   List<double> totalPrice;
   String constructionType;
+  double calculationQuantity;
 
   WasteItemScreen(
     this.name,
@@ -33,14 +34,12 @@ class WasteItemScreen extends StatefulWidget {
     this.material2,
     this.totalPrice,
     this.constructionType,
+    this.calculationQuantity,
   );
 
   @override
   State<WasteItemScreen> createState() => _WasteItemScreenState();
 }
-
-TextEditingController wasteCalculationControllers =
-    TextEditingController(text: calculationQuantity.toStringAsFixed(2));
 
 class _WasteItemScreenState extends State<WasteItemScreen> {
   List<DataRow> rows = [];
@@ -162,8 +161,6 @@ class _WasteItemScreenState extends State<WasteItemScreen> {
 
     savingController = TextEditingController();
     loadingController = TextEditingController();
-    if (wasteCalculationControllers.text != "")
-      calculationQuantity = double.parse(wasteCalculationControllers.text);
   }
 
   void calculateCalculationQuantity() {
@@ -174,7 +171,7 @@ class _WasteItemScreenState extends State<WasteItemScreen> {
 
     calculationQuantity = mat2Total / mat1Total;
 
-    wasteCalculationControllers.text = calculationQuantity.toStringAsFixed(2);
+    widget.calculationQuantity = calculationQuantity;
   }
 
   void _updateLaborHours() {
@@ -249,7 +246,7 @@ class _WasteItemScreenState extends State<WasteItemScreen> {
       widget.laborHours2[i] = calculateWorkHours2(
         i,
         widget.laborHours1,
-        calculationQuantity,
+        widget.calculationQuantity,
       );
       laborHours2Controllers[i].text = widget.laborHours2[i].toStringAsFixed(2);
 
@@ -257,7 +254,7 @@ class _WasteItemScreenState extends State<WasteItemScreen> {
       widget.laborCost[i] = calculateJobCost(
         i,
         widget.laborHours2,
-        calculationQuantity,
+        widget.calculationQuantity,
       );
       laborCostControllers[i].text = widget.laborCost[i].toStringAsFixed(2);
 
@@ -265,7 +262,7 @@ class _WasteItemScreenState extends State<WasteItemScreen> {
       widget.material2[i] = calculateMaterialCost(
         i,
         widget.material1,
-        calculationQuantity,
+        widget.calculationQuantity,
       );
       material2Controllers[i].text = widget.material2[i].toStringAsFixed(2);
 
@@ -274,7 +271,7 @@ class _WasteItemScreenState extends State<WasteItemScreen> {
         i,
         widget.laborCost,
         widget.material1,
-        calculationQuantity,
+        widget.calculationQuantity,
       );
       totalPriceControllers[i].text = widget.totalPrice[i].toStringAsFixed(2);
     }
@@ -348,54 +345,54 @@ class _WasteItemScreenState extends State<WasteItemScreen> {
                       );
                       //
                       widget.laborHours2[i] = calculateWorkHours2(
-                          i, widget.laborHours1, calculationQuantity);
+                          i, widget.laborHours1, widget.calculationQuantity);
                       laborHours2Controllers[i].text = calculateWorkHours2(
-                              i, widget.laborHours1, calculationQuantity)
+                              i, widget.laborHours1, widget.calculationQuantity)
                           .toStringAsFixed(2);
                       //
                       widget.laborCost[i] = calculateJobCost(
                         i,
                         widget.laborHours1,
-                        calculationQuantity,
+                        widget.calculationQuantity,
                       );
                       laborCostControllers[i].text = calculateJobCost(
                         i,
                         widget.laborHours1,
-                        calculationQuantity,
+                        widget.calculationQuantity,
                       ).toStringAsFixed(2);
                       //
                       widget.laborCost[i] = calculateJobCost(
                         i,
                         widget.laborHours2,
-                        calculationQuantity,
+                        widget.calculationQuantity,
                       );
                       laborCostControllers[i].text = calculateJobCost(
                         i,
                         widget.laborHours2,
-                        calculationQuantity,
+                        widget.calculationQuantity,
                       ).toStringAsFixed(2);
                       // Recalculate and update the material 2 when quantity changes
                       widget.material2[i] = calculateMaterialCost(
                         i,
                         widget.material1,
-                        calculationQuantity,
+                        widget.calculationQuantity,
                       );
                       material2Controllers[i].text = calculateMaterialCost(
                         i,
                         widget.material1,
-                        calculationQuantity,
+                        widget.calculationQuantity,
                       ).toStringAsFixed(2);
                       // Recalculate and update the total price when quantity changes
                       widget.totalPrice[i] = calculateTotalPrice(
                           i,
                           widget.laborCost,
                           widget.material1,
-                          calculationQuantity);
+                          widget.calculationQuantity);
                       totalPriceControllers[i].text = calculateTotalPrice(
                               i,
                               widget.laborCost,
                               widget.material1,
-                              calculationQuantity)
+                              widget.calculationQuantity)
                           .toStringAsFixed(2);
                       rebuildDataTable();
                     },
@@ -414,7 +411,7 @@ class _WasteItemScreenState extends State<WasteItemScreen> {
               double updatedLaborCost = calculateJobCost(
                 i,
                 widget.laborHours2,
-                calculationQuantity,
+                widget.calculationQuantity,
               ); // Calculate the labor cost
               widget.laborCost[i] =
                   double.parse(updatedLaborCost.toStringAsFixed(2));
@@ -434,7 +431,7 @@ class _WasteItemScreenState extends State<WasteItemScreen> {
               double updatedMaterial2 = calculateMaterialCost(
                 i,
                 widget.material1,
-                calculationQuantity,
+                widget.calculationQuantity,
               );
               widget.material2[i] = updatedMaterial2;
               material2Controllers[i].text =
@@ -442,7 +439,10 @@ class _WasteItemScreenState extends State<WasteItemScreen> {
 
               // Recalculate total price
               double updatedTotalPrice = calculateTotalPrice(
-                  i, widget.laborCost, widget.material1, calculationQuantity);
+                  i,
+                  widget.laborCost,
+                  widget.material1,
+                  widget.calculationQuantity);
               widget.totalPrice[i] = updatedTotalPrice;
               totalPriceControllers[i].text =
                   updatedTotalPrice.toStringAsFixed(2);

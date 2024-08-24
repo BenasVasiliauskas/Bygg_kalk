@@ -92,7 +92,7 @@ class _DeckScreenState extends State<DeckScreen> {
         ),
         body: GridView.count(
           padding: const EdgeInsets.all(25),
-          children: List.generate(deckData.length, (index) {
+          children: List.generate(currentDeckData.length, (index) {
             var catData = currentDeckData[index];
             var controller = deckCalculationControllers[index];
 
