@@ -68,6 +68,8 @@ class FlooringItem extends StatelessWidget {
                       material1,
                       material2,
                       totalPrice,
+                      constructionType,
+                      calculationQuantity,
                     )
                   : languagePolish
                       ? PolFlooringItemScreen(
@@ -80,7 +82,10 @@ class FlooringItem extends StatelessWidget {
                           laborCost,
                           material1,
                           material2,
-                          totalPrice)
+                          totalPrice,
+                          constructionType,
+                          calculationQuantity,
+                        )
                       : LitFlooringItemScreen(
                           name,
                           description,
@@ -91,7 +96,10 @@ class FlooringItem extends StatelessWidget {
                           laborCost,
                           material1,
                           material2,
-                          totalPrice);
+                          totalPrice,
+                          constructionType,
+                          calculationQuantity,
+                        );
         },
       ),
     );
