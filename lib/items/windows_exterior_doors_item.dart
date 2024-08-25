@@ -71,6 +71,7 @@ class WindowExteriorDoorItem extends StatelessWidget {
                       material2,
                       totalPrice,
                       constructionType,
+                      calculationQuantity,
                     )
                   : languagePolish
                       ? PolWindowsExteriorDoorItemsScreen(
@@ -85,6 +86,7 @@ class WindowExteriorDoorItem extends StatelessWidget {
                           material2,
                           totalPrice,
                           constructionType,
+                          calculationQuantity,
                         )
                       : LitWindowsExteriorDoorItemsScreen(
                           name,
@@ -98,6 +100,7 @@ class WindowExteriorDoorItem extends StatelessWidget {
                           material2,
                           totalPrice,
                           constructionType,
+                          calculationQuantity,
                         );
         },
       ),
