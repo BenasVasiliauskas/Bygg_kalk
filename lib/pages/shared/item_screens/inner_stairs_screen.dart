@@ -1,4 +1,7 @@
 import 'package:cost_calculator/data/data.dart';
+import 'package:cost_calculator/data/lith_data.dart';
+import 'package:cost_calculator/data/norw_data.dart';
+import 'package:cost_calculator/data/polish_data.dart';
 import 'package:cost_calculator/items/inner_stairs_item.dart';
 import 'package:cost_calculator/pages/shared/home_page.dart';
 import 'package:cost_calculator/pages/shared/item_screens/building_components_screen.dart';
@@ -19,6 +22,13 @@ class _InnerStairsScreen extends State<InnerStairsScreen> {
   @override
   void initState() {
     super.initState();
+    currentInnerStairsData = languageEnglish
+        ? innerStairsData
+        : languageNorwegian
+            ? norwInnerStairsData
+            : languagePolish
+                ? polInnerStairsData
+                : litInnerStairsData;
     // Initialize controllers for each item
     innerStairsCalculationControllers = List.generate(
       currentInnerStairsData.length,
