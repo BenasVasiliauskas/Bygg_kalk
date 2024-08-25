@@ -20,6 +20,7 @@ class PolParquetLaminatetemsScreen extends StatefulWidget {
   List<double> material2;
   List<double> totalPrice;
   String constructionType;
+  double calculationQuantity;
 
   PolParquetLaminatetemsScreen(
     this.name,
@@ -33,16 +34,13 @@ class PolParquetLaminatetemsScreen extends StatefulWidget {
     this.material2,
     this.totalPrice,
     this.constructionType,
+    this.calculationQuantity,
   );
 
   @override
   _PolParquetLaminatetemsScreenState createState() =>
       _PolParquetLaminatetemsScreenState();
 }
-
-double calculationQuantity = 0;
-TextEditingController polParquetAndLaminateCalculationControllers =
-    TextEditingController(text: calculationQuantity.toStringAsFixed(2));
 
 class _PolParquetLaminatetemsScreenState
     extends State<PolParquetLaminatetemsScreen> {
@@ -163,9 +161,6 @@ class _PolParquetLaminatetemsScreenState
 
     savingController = TextEditingController();
     loadingController = TextEditingController();
-    if (polParquetAndLaminateCalculationControllers.text != "")
-      calculationQuantity =
-          double.parse(polParquetAndLaminateCalculationControllers.text);
   }
 
   void _updateLaborHours() {
@@ -227,21 +222,21 @@ class _PolParquetLaminatetemsScreenState
       widget.laborHours2[i] = calculateWorkHours2(
         i,
         widget.laborHours1,
-        calculationQuantity,
+        widget.calculationQuantity,
       );
       laborHours2Controllers[i].text = widget.laborHours2[i].toStringAsFixed(2);
       // Recalculate labor cost
       widget.laborCost[i] = calculateJobCost(
         i,
         widget.laborHours2,
-        calculationQuantity,
+        widget.calculationQuantity,
       );
       laborCostControllers[i].text = widget.laborCost[i].toStringAsFixed(2);
       // Recalculate material 2
       widget.material2[i] = calculateMaterialCost(
         i,
         widget.material1,
-        calculationQuantity,
+        widget.calculationQuantity,
       );
       material2Controllers[i].text = widget.material2[i].toStringAsFixed(2);
       // Recalculate total price
@@ -249,7 +244,7 @@ class _PolParquetLaminatetemsScreenState
         i,
         widget.laborCost,
         widget.material1,
-        calculationQuantity,
+        widget.calculationQuantity,
       );
       totalPriceControllers[i].text = widget.totalPrice[i].toStringAsFixed(2);
     }
@@ -265,8 +260,7 @@ class _PolParquetLaminatetemsScreenState
 
     calculationQuantity = mat2Total / mat1Total;
 
-    polParquetAndLaminateCalculationControllers.text =
-        calculationQuantity.toStringAsFixed(2);
+    widget.calculationQuantity = calculationQuantity;
   }
 
   void setInitialValues() {
@@ -347,33 +341,33 @@ class _PolParquetLaminatetemsScreenState
                     );
                     //
                     widget.laborHours2[i] = calculateWorkHours2(
-                        i, widget.laborHours1, calculationQuantity);
+                        i, widget.laborHours1, widget.calculationQuantity);
                     laborHours2Controllers[i].text = calculateWorkHours2(
-                            i, widget.laborHours1, calculationQuantity)
+                            i, widget.laborHours1, widget.calculationQuantity)
                         .toStringAsFixed(2);
                     //
                     widget.laborCost[i] = calculateJobCost(
-                        i, widget.laborHours1, calculationQuantity);
+                        i, widget.laborHours1, widget.calculationQuantity);
                     laborCostControllers[i].text = calculateJobCost(
-                            i, widget.laborHours1, calculationQuantity)
+                            i, widget.laborHours1, widget.calculationQuantity)
                         .toStringAsFixed(2);
                     //
                     widget.laborCost[i] = calculateJobCost(
-                        i, widget.laborHours2, calculationQuantity);
+                        i, widget.laborHours2, widget.calculationQuantity);
                     laborCostControllers[i].text = calculateJobCost(
-                            i, widget.laborHours2, calculationQuantity)
+                            i, widget.laborHours2, widget.calculationQuantity)
                         .toStringAsFixed(2);
 
                     // Recalculate and update the material 2 when quantity changes
                     widget.material2[i] = calculateMaterialCost(
                       i,
                       widget.material1,
-                      calculationQuantity,
+                      widget.calculationQuantity,
                     );
                     material2Controllers[i].text = calculateMaterialCost(
                       i,
                       widget.material1,
-                      calculationQuantity,
+                      widget.calculationQuantity,
                     ).toStringAsFixed(2);
 
                     // Recalculate and update the total price when quantity changes
@@ -381,12 +375,12 @@ class _PolParquetLaminatetemsScreenState
                         i,
                         widget.laborCost,
                         widget.material1,
-                        calculationQuantity);
+                        widget.calculationQuantity);
                     totalPriceControllers[i].text = calculateTotalPrice(
                             i,
                             widget.laborCost,
                             widget.material1,
-                            calculationQuantity)
+                            widget.calculationQuantity)
                         .toStringAsFixed(2);
                     rebuildDataTable();
                   },
@@ -407,7 +401,7 @@ class _PolParquetLaminatetemsScreenState
                 double updatedLaborCost = calculateJobCost(
                     i,
                     widget.laborHours2,
-                    calculationQuantity); // Calculate the labor cost
+                    widget.calculationQuantity); // Calculate the labor cost
                 widget.laborCost[i] =
                     double.parse(updatedLaborCost.toStringAsFixed(2));
               },
@@ -438,7 +432,7 @@ class _PolParquetLaminatetemsScreenState
                 double updatedMaterial2 = calculateMaterialCost(
                   i,
                   widget.material1,
-                  calculationQuantity,
+                  widget.calculationQuantity,
                 );
                 widget.material2[i] = updatedMaterial2;
                 material2Controllers[i].text =
@@ -446,7 +440,10 @@ class _PolParquetLaminatetemsScreenState
 
                 // Recalculate total price
                 double updatedTotalPrice = calculateTotalPrice(
-                    i, widget.laborCost, widget.material1, calculationQuantity);
+                    i,
+                    widget.laborCost,
+                    widget.material1,
+                    widget.calculationQuantity);
                 widget.totalPrice[i] = updatedTotalPrice;
                 totalPriceControllers[i].text =
                     updatedTotalPrice.toStringAsFixed(2);

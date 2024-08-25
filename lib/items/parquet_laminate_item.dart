@@ -70,6 +70,7 @@ class ParquetLaminateItem extends StatelessWidget {
                       material2,
                       totalPrice,
                       constructionType,
+                      calculationQuantity,
                     )
                   : languagePolish
                       ? PolParquetLaminatetemsScreen(
@@ -84,6 +85,7 @@ class ParquetLaminateItem extends StatelessWidget {
                           material2,
                           totalPrice,
                           constructionType,
+                          calculationQuantity,
                         )
                       : LitParquetLaminatetemsScreen(
                           name,
@@ -97,6 +99,7 @@ class ParquetLaminateItem extends StatelessWidget {
                           material2,
                           totalPrice,
                           constructionType,
+                          calculationQuantity,
                         );
         },
       ),
