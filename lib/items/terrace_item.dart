@@ -69,6 +69,7 @@ class TerraceItem extends StatelessWidget {
                       materials,
                       totalPrice,
                       constructionType,
+                      calculationQuantity,
                     )
                   : languagePolish
                       ? PolTerraceItemScreen(
@@ -83,6 +84,7 @@ class TerraceItem extends StatelessWidget {
                           materials,
                           totalPrice,
                           constructionType,
+                          calculationQuantity,
                         )
                       : LitTerraceItemScreen(
                           name,
@@ -96,6 +98,7 @@ class TerraceItem extends StatelessWidget {
                           materials,
                           totalPrice,
                           constructionType,
+                          calculationQuantity,
                         );
         },
       ),
