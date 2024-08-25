@@ -1,4 +1,5 @@
 import 'package:cost_calculator/constants/language.dart';
+import 'package:cost_calculator/data/data.dart';
 import 'package:cost_calculator/pages/shared/home_page.dart';
 import 'package:cost_calculator/pages/shared/item_screens/building_components_screen.dart';
 import 'package:cost_calculator/pages/shared/item_screens/deck_screen.dart';
@@ -74,7 +75,8 @@ class _DeckSectionsState extends State<DeckSections> {
                     Navigator.of(context).pushReplacement(
                       MaterialPageRoute(
                         builder: (context) {
-                          return DeckScreen();
+                          return DeckScreen(
+                              constructionType: "New Construction");
                         },
                       ),
                     );
@@ -91,7 +93,11 @@ class _DeckSectionsState extends State<DeckSections> {
                 ),
                 Padding(
                   padding: const EdgeInsets.all(8.0),
-                  child: const Text("1"),
+                  child: Text(deckData
+                      .where(
+                          (deck) => deck.constructionType == "New Construction")
+                      .length
+                      .toString()),
                 ),
               ],
             ),
@@ -103,7 +109,7 @@ class _DeckSectionsState extends State<DeckSections> {
                     Navigator.of(context).pushReplacement(
                       MaterialPageRoute(
                         builder: (context) {
-                          return DeckScreen();
+                          return DeckScreen(constructionType: "Reconstruction");
                         },
                       ),
                     );
@@ -120,7 +126,11 @@ class _DeckSectionsState extends State<DeckSections> {
                 ),
                 Padding(
                   padding: const EdgeInsets.all(8.0),
-                  child: const Text("1"),
+                  child: Text(deckData
+                      .where(
+                          (deck) => deck.constructionType == "Reconstruction")
+                      .length
+                      .toString()),
                 ),
               ],
             ),
@@ -132,7 +142,7 @@ class _DeckSectionsState extends State<DeckSections> {
                     Navigator.of(context).pushReplacement(
                       MaterialPageRoute(
                         builder: (context) {
-                          return DeckScreen();
+                          return DeckScreen(constructionType: "Demolition");
                         },
                       ),
                     );
@@ -149,7 +159,10 @@ class _DeckSectionsState extends State<DeckSections> {
                 ),
                 Padding(
                   padding: const EdgeInsets.all(8.0),
-                  child: const Text("1"),
+                  child: Text(deckData
+                      .where((deck) => deck.constructionType == "Demolition")
+                      .length
+                      .toString()),
                 ),
               ],
             ),

@@ -1,4 +1,5 @@
 import 'package:cost_calculator/constants/language.dart';
+import 'package:cost_calculator/data/data.dart';
 import 'package:cost_calculator/pages/item_sections/deck_sections.dart';
 import 'package:cost_calculator/pages/item_sections/flooring_sections.dart';
 import 'package:cost_calculator/pages/item_sections/hull_roofing_sections.dart';
@@ -270,7 +271,7 @@ class _buildingComponentsScreenState extends State<buildingComponentsScreen> {
                       ],
                     ),
                   ),
-                  Text("1"),
+                  Text(deckData.length.toString()),
                 ],
               ),
               Row(

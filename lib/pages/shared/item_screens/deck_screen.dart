@@ -11,18 +11,22 @@ import '../../../constants/language.dart';
 import '../../../widgets/custom_drawer.dart';
 
 class DeckScreen extends StatefulWidget {
-  @override
+  final String constructionType;
+
+  const DeckScreen({Key? key, required this.constructionType})
+      : super(key: key);
+
   State<DeckScreen> createState() => _DeckScreenState();
 }
 
 class _DeckScreenState extends State<DeckScreen> {
   List<TextEditingController> deckCalculationControllers = [];
-  List<dynamic> currentDeckData = [];
+  List<dynamic> filteredDeckData = [];
 
   @override
   void initState() {
     super.initState();
-    currentDeckData = languageEnglish
+    List<dynamic> currentDeckData = languageEnglish
         ? deckData
         : languageNorwegian
             ? norwDeckData
@@ -30,11 +34,16 @@ class _DeckScreenState extends State<DeckScreen> {
                 ? polDeckData
                 : litDeckData;
 
+    // Filter data based on the selected construction type
+    filteredDeckData = currentDeckData
+        .where((deck) => deck.constructionType == widget.constructionType)
+        .toList();
+
     // Initialize controllers for each item
     deckCalculationControllers = List.generate(
-      currentDeckData.length,
+      filteredDeckData.length,
       (index) => TextEditingController(
-        text: currentDeckData[index].calculationQuantity.toString(),
+        text: filteredDeckData[index].calculationQuantity.toString(),
       ),
     );
   }
@@ -92,8 +101,8 @@ class _DeckScreenState extends State<DeckScreen> {
         ),
         body: GridView.count(
           padding: const EdgeInsets.all(25),
-          children: List.generate(currentDeckData.length, (index) {
-            var catData = currentDeckData[index];
+          children: List.generate(filteredDeckData.length, (index) {
+            var catData = filteredDeckData[index];
             var controller = deckCalculationControllers[index];
 
             return Row(

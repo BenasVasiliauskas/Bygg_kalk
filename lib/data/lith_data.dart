@@ -1079,7 +1079,123 @@ final litDeckData = [
       0,
       0,
     ],
-  )
+  ),
+  DeckModel(
+    name: "Medinės sijos, izoliacija po jomis",
+    description: [
+      "Esama statyba",
+      "Mineralinė vata 50 mm",
+      "Lubų perdanga c/c 600 48x48",
+      "Vėjo barjerinis sluoksnis ant sijų / lubų, kartonas 1,25x16 m",
+      "Gipso kartonas lubose, paprastas",
+      "Kibirkščiuojanti juosta, flekksp.1, skjøtsp. 2, helsp.1, gruntas. 2 sluoksniai dažų",
+    ],
+    unit: [
+      "m²",
+      "m²",
+      "m²",
+      "m²",
+      "m²",
+      "m²",
+    ],
+    quantity: [
+      1.00,
+      1.00,
+      1.00,
+      1.00,
+      1.00,
+      1.00,
+    ],
+    laborHours1: [
+      0.00,
+      0.08,
+      0.18,
+      0.06,
+      0.27,
+      0.55,
+    ],
+    laborHours2: [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+    ],
+    laborCost: [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+    ],
+    material: [
+      0.00,
+      28.81,
+      69.26,
+      51.79,
+      50.58,
+      153.21,
+    ],
+    materials: [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+    ],
+    totalPrice: [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+    ],
+    constructionType: "Reconstruction",
+  ),
+  DeckModel(
+    name: "Grindys ant žemės, išlyginamojo sluoksnio, linoleumo pašalinimas",
+    description: [
+      "Ardymo linoleumas",
+      "Griovimo grindinys T=40",
+    ],
+    unit: [
+      "m²",
+      "m²",
+    ],
+    quantity: [
+      1.00,
+      1.00,
+    ],
+    laborHours1: [
+      0.14,
+      0.60,
+    ],
+    laborHours2: [
+      0.00,
+      0.00,
+    ],
+    laborCost: [
+      0.00,
+      0.00,
+    ],
+    material: [
+      0.00,
+      0.00,
+    ],
+    materials: [
+      0.00,
+      0.00,
+    ],
+    totalPrice: [
+      0.00,
+      0.00,
+    ],
+    constructionType: "Demolition",
+  ),
 ];
 
 final litInnerDoor = [
