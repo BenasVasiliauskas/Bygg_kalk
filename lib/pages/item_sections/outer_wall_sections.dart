@@ -1,4 +1,5 @@
 import 'package:cost_calculator/constants/language.dart';
+import 'package:cost_calculator/data/data.dart';
 import 'package:cost_calculator/pages/shared/home_page.dart';
 import 'package:cost_calculator/pages/shared/item_screens/building_components_screen.dart';
 import 'package:cost_calculator/pages/shared/item_screens/exterior_wall_screen.dart';
@@ -74,7 +75,9 @@ class _OuterWallSectionsState extends State<OuterWallSections> {
                     Navigator.of(context).pushReplacement(
                       MaterialPageRoute(
                         builder: (context) {
-                          return ExteriorWallScreen();
+                          return ExteriorWallScreen(
+                            constructionType: "New Construction",
+                          );
                         },
                       ),
                     );
@@ -91,7 +94,10 @@ class _OuterWallSectionsState extends State<OuterWallSections> {
                 ),
                 Padding(
                   padding: const EdgeInsets.all(8.0),
-                  child: Text("1"),
+                  child: Text(exteriorWallData
+                      .where((e) => e.constructionType == "New Construction")
+                      .length
+                      .toString()),
                 )
               ],
             ),
@@ -103,7 +109,9 @@ class _OuterWallSectionsState extends State<OuterWallSections> {
                     Navigator.of(context).pushReplacement(
                       MaterialPageRoute(
                         builder: (context) {
-                          return ExteriorWallScreen();
+                          return ExteriorWallScreen(
+                            constructionType: "Reconstruction",
+                          );
                         },
                       ),
                     );
@@ -120,7 +128,10 @@ class _OuterWallSectionsState extends State<OuterWallSections> {
                 ),
                 Padding(
                   padding: const EdgeInsets.all(8.0),
-                  child: Text("1"),
+                  child: Text(exteriorWallData
+                      .where((e) => e.constructionType == "Reconstruction")
+                      .length
+                      .toString()),
                 )
               ],
             ),
@@ -132,7 +143,9 @@ class _OuterWallSectionsState extends State<OuterWallSections> {
                     Navigator.of(context).pushReplacement(
                       MaterialPageRoute(
                         builder: (context) {
-                          return ExteriorWallScreen();
+                          return ExteriorWallScreen(
+                            constructionType: "Demolition",
+                          );
                         },
                       ),
                     );
@@ -149,7 +162,10 @@ class _OuterWallSectionsState extends State<OuterWallSections> {
                 ),
                 Padding(
                   padding: const EdgeInsets.all(8.0),
-                  child: Text("1"),
+                  child: Text(exteriorWallData
+                      .where((e) => e.constructionType == "Demolition")
+                      .length
+                      .toString()),
                 )
               ],
             ),

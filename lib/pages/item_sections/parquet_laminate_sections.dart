@@ -1,4 +1,5 @@
 import 'package:cost_calculator/constants/language.dart';
+import 'package:cost_calculator/data/data.dart';
 import 'package:cost_calculator/pages/shared/home_page.dart';
 import 'package:cost_calculator/pages/shared/item_screens/building_components_screen.dart';
 import 'package:cost_calculator/pages/shared/item_screens/parquet_laminate_screen.dart';
@@ -92,7 +93,7 @@ class _ParquetLaminateSectionsState extends State<ParquetLaminateSections> {
                 ),
                 Padding(
                   padding: const EdgeInsets.all(8.0),
-                  child: Text("1"),
+                  child: Text(parquetAndLaminate.length.toString()),
                 )
               ],
             )

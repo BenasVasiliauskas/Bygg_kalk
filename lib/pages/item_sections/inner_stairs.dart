@@ -1,4 +1,5 @@
 import 'package:cost_calculator/constants/language.dart';
+import 'package:cost_calculator/data/data.dart';
 import 'package:cost_calculator/pages/shared/home_page.dart';
 import 'package:cost_calculator/pages/shared/item_screens/building_components_screen.dart';
 import 'package:cost_calculator/pages/shared/item_screens/inner_stairs_screen.dart';
@@ -81,17 +82,17 @@ class _InnerStairsSectionsState extends State<InnerStairsSections> {
                   },
                   child: Text(
                     languageEnglish
-                        ? "Inner stairs"
+                        ? "New building"
                         : languageLithuanian
-                            ? "Vidaus laiptai"
+                            ? "Naujas pastatas"
                             : languageNorwegian
-                                ? "Innvendige trapper"
-                                : "Schody wewnętrzne",
+                                ? "Ny bygning"
+                                : "ŚNowy budynek",
                   ),
                 ),
                 Padding(
                   padding: const EdgeInsets.all(8.0),
-                  child: const Text("1"),
+                  child: Text(innerStairsData.length.toString()),
                 ),
               ],
             ),

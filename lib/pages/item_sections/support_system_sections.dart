@@ -1,4 +1,5 @@
 import 'package:cost_calculator/constants/language.dart';
+import 'package:cost_calculator/data/data.dart';
 import 'package:cost_calculator/pages/shared/home_page.dart';
 import 'package:cost_calculator/pages/shared/item_screens/building_components_screen.dart';
 import 'package:cost_calculator/pages/shared/item_screens/support_system_screen.dart';
@@ -91,65 +92,7 @@ class _SupportSystemSectionsState extends State<SupportSystemSections> {
                 ),
                 Padding(
                   padding: const EdgeInsets.all(8.0),
-                  child: const Text("1"),
-                ),
-              ],
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                TextButton(
-                  onPressed: () {
-                    Navigator.of(context).pushReplacement(
-                      MaterialPageRoute(
-                        builder: (context) {
-                          return SupportSystemScreen();
-                        },
-                      ),
-                    );
-                  },
-                  child: Text(
-                    languageEnglish
-                        ? "Reconstruction"
-                        : languageLithuanian
-                            ? "Rekonstrukcija"
-                            : languageNorwegian
-                                ? "Ombygging"
-                                : "Rekonstrukcja",
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: const Text("1"),
-                ),
-              ],
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                TextButton(
-                  onPressed: () {
-                    Navigator.of(context).pushReplacement(
-                      MaterialPageRoute(
-                        builder: (context) {
-                          return SupportSystemScreen();
-                        },
-                      ),
-                    );
-                  },
-                  child: Text(
-                    languageEnglish
-                        ? "Demolition"
-                        : languageLithuanian
-                            ? "Griovimas"
-                            : languageNorwegian
-                                ? "Riving"
-                                : "Rozbiórka",
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: const Text("1"),
+                  child: Text(supportSystem.length.toString()),
                 ),
               ],
             ),

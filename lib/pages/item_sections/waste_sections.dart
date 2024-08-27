@@ -1,4 +1,5 @@
 import 'package:cost_calculator/constants/language.dart';
+import 'package:cost_calculator/data/data.dart';
 import 'package:cost_calculator/pages/shared/home_page.dart';
 import 'package:cost_calculator/pages/shared/item_screens/building_components_screen.dart';
 import 'package:cost_calculator/pages/shared/item_screens/waste_screen.dart';
@@ -81,17 +82,17 @@ class _WasteSectionsState extends State<WasteSections> {
                   },
                   child: Text(
                     languageEnglish
-                        ? "Waste management"
+                        ? "New building"
                         : languageLithuanian
-                            ? "Atliekų išvežimas"
+                            ? "Naujas pastatas"
                             : languageNorwegian
-                                ? "Avfall flytting"
-                                : "Usuwanie odpadów",
+                                ? "Ny bygning"
+                                : "ŚNowy budynek",
                   ),
                 ),
                 Padding(
                   padding: const EdgeInsets.all(8.0),
-                  child: Text("1"),
+                  child: Text(wasteData.length.toString()),
                 )
               ],
             ),

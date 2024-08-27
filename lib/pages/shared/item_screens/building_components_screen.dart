@@ -261,13 +261,15 @@ class _buildingComponentsScreenState extends State<buildingComponentsScreen> {
                                 child: Image.asset("assets/Deck.png")),
                           ),
                         ),
-                        Text(languageEnglish
-                            ? "Deck"
-                            : languageNorwegian
-                                ? "Dekke"
-                                : languagePolish
-                                    ? "Pokład"
-                                    : "Palubė"),
+                        Text(
+                          languageEnglish
+                              ? "Covers"
+                              : languageLithuanian
+                                  ? "Padangos"
+                                  : languageNorwegian
+                                      ? "Dekker"
+                                      : "Opona",
+                        ),
                       ],
                     ),
                   ),

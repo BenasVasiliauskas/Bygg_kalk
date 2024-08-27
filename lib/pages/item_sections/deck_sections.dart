@@ -57,12 +57,12 @@ class _DeckSectionsState extends State<DeckSections> {
           ],
           title: Text(
             languageEnglish
-                ? "Deck"
+                ? "Covers"
                 : languageLithuanian
-                    ? "Denis"
+                    ? "Padangos"
                     : languageNorwegian
-                        ? "Dekk"
-                        : "Pokład",
+                        ? "Dekker"
+                        : "Opona",
           ),
         ),
         body: Column(

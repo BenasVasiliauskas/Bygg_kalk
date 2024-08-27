@@ -112,42 +112,6 @@ class _InnerDoorSectionsState extends State<InnerDoorSections> {
                       MaterialPageRoute(
                         builder: (context) {
                           return InnerDoorScreen(
-                              constructionType: "Reconstruction");
-                        },
-                      ),
-                    );
-                  },
-                  child: Text(
-                    languageEnglish
-                        ? "Reconstruction"
-                        : languageLithuanian
-                            ? "Rekonstrukcija"
-                            : languageNorwegian
-                                ? "Ombygging"
-                                : "Rekonstrukcja",
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Text(
-                    innerDoor
-                        .where((innerDoor) =>
-                            innerDoor.constructionType == "Reconstruction")
-                        .length
-                        .toString(),
-                  ),
-                ),
-              ],
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                TextButton(
-                  onPressed: () {
-                    Navigator.of(context).pushReplacement(
-                      MaterialPageRoute(
-                        builder: (context) {
-                          return InnerDoorScreen(
                               constructionType: "Demolition");
                         },
                       ),

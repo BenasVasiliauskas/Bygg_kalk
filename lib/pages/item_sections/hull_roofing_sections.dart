@@ -1,4 +1,5 @@
 import 'package:cost_calculator/constants/language.dart';
+import 'package:cost_calculator/data/data.dart';
 import 'package:cost_calculator/pages/shared/home_page.dart';
 import 'package:cost_calculator/pages/shared/item_screens/building_components_screen.dart';
 import 'package:cost_calculator/pages/shared/item_screens/hull_roofing_screen.dart';
@@ -81,17 +82,17 @@ class _HullRoofingSectionsState extends State<HullRoofingSections> {
                   },
                   child: Text(
                     languageEnglish
-                        ? "Hull roofing"
+                        ? "New building"
                         : languageLithuanian
-                            ? "Korpuso stogo danga"
+                            ? "Naujas pastatas"
                             : languageNorwegian
-                                ? "Hultaking"
-                                : "Pokrycia dachowe Hull",
+                                ? "Ny bygning"
+                                : "ŚNowy budynek",
                   ),
                 ),
                 Padding(
                   padding: const EdgeInsets.all(8.0),
-                  child: const Text("1"),
+                  child: Text(hullRoofingData.length.toString()),
                 ),
               ],
             ),

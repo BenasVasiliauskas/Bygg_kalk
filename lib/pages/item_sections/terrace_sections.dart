@@ -1,4 +1,5 @@
 import 'package:cost_calculator/constants/language.dart';
+import 'package:cost_calculator/data/data.dart';
 import 'package:cost_calculator/pages/shared/home_page.dart';
 import 'package:cost_calculator/pages/shared/item_screens/building_components_screen.dart';
 import 'package:cost_calculator/pages/shared/item_screens/terrace_screen.dart';
@@ -56,12 +57,12 @@ class _TerraceSectionsState extends State<TerraceSections> {
           ],
           title: Text(
             languageEnglish
-                ? "Terrace"
+                ? "New building"
                 : languageLithuanian
-                    ? "Terasa"
+                    ? "Naujas pastatas"
                     : languageNorwegian
-                        ? "Terrasse/rekkverk"
-                        : "Taras",
+                        ? "Ny bygning"
+                        : "ŚNowy budynek",
           ),
         ),
         body: Column(
@@ -91,7 +92,7 @@ class _TerraceSectionsState extends State<TerraceSections> {
                 ),
                 Padding(
                   padding: const EdgeInsets.all(8.0),
-                  child: Text("1"),
+                  child: Text(terraceData.length.toString()),
                 )
               ],
             ),

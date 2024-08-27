@@ -11,30 +11,39 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class ExteriorWallScreen extends StatefulWidget {
-  @override
+  final String constructionType;
+
+  const ExteriorWallScreen({Key? key, required this.constructionType})
+      : super(key: key);
+
   State<ExteriorWallScreen> createState() => _ExteriorWallScreenState();
 }
 
 class _ExteriorWallScreenState extends State<ExteriorWallScreen> {
   List<TextEditingController> outerWallCalculationControllers = [];
-  List<dynamic> currentExteriorWallData = [];
+  List<dynamic> filteredExteriorWallData = [];
 
   @override
   void initState() {
     super.initState();
 
-    currentExteriorWallData = languageEnglish
+    List<dynamic> currentExteriorWallData = languageEnglish
         ? exteriorWallData
         : languageNorwegian
             ? norwExteriorWallData
             : languagePolish
                 ? polExteriorWallData
                 : litExteriorWallData;
+
+    filteredExteriorWallData = currentExteriorWallData
+        .where((e) => e.constructionType == widget.constructionType)
+        .toList();
+
     // Initialize controllers for each item
     outerWallCalculationControllers = List.generate(
-      currentExteriorWallData.length,
+      filteredExteriorWallData.length,
       (index) => TextEditingController(
-        text: currentExteriorWallData[index].calculationQuantity.toString(),
+        text: filteredExteriorWallData[index].calculationQuantity.toString(),
       ),
     );
   }
@@ -100,8 +109,8 @@ class _ExteriorWallScreenState extends State<ExteriorWallScreen> {
         ),
         body: GridView.count(
           padding: const EdgeInsets.all(25),
-          children: List.generate(deckData.length, (index) {
-            var catData = currentExteriorWallData[index];
+          children: List.generate(filteredExteriorWallData.length, (index) {
+            var catData = filteredExteriorWallData[index];
             var controller = outerWallCalculationControllers[index];
 
             return Row(

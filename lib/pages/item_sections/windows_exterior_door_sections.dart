@@ -58,12 +58,12 @@ class _WindowsExteriorDoorSectionsState
           ],
           title: Text(
             languageEnglish
-                ? "Windows and exterior doors"
+                ? "New building"
                 : languageLithuanian
-                    ? "Langai ir išorinės durys"
+                    ? "Naujas pastatas"
                     : languageNorwegian
-                        ? "Vinduer og ytterdører"
-                        : "Okna i drzwi zewnętrzne",
+                        ? "Ny bygning"
+                        : "ŚNowy budynek",
           ),
         ),
         body: Column(
@@ -83,12 +83,12 @@ class _WindowsExteriorDoorSectionsState
                   },
                   child: Text(
                     languageEnglish
-                        ? "Windows and exterior doors"
+                        ? "Demolition"
                         : languageLithuanian
-                            ? "Langai ir išorinės durys"
+                            ? "Griovimas"
                             : languageNorwegian
-                                ? "Vinduer og ytterdører"
-                                : "Okna i drzwi zewnętrzne",
+                                ? "Riving"
+                                : "Rozbiórka",
                   ),
                 ),
                 Padding(

@@ -110,40 +110,6 @@ class _FlooringSectionsState extends State<FlooringSections> {
                     Navigator.of(context).pushReplacement(
                       MaterialPageRoute(
                         builder: (context) {
-                          return FlooringScreen(
-                              constructionType: "Reconstruction");
-                        },
-                      ),
-                    );
-                  },
-                  child: Text(
-                    languageEnglish
-                        ? "Reconstruction"
-                        : languageLithuanian
-                            ? "Rekonstrukcija"
-                            : languageNorwegian
-                                ? "Ombygging"
-                                : "Rekonstrukcja",
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Text(
-                    flooringData
-                        .where((e) => e.constructionType == "Reconstruction")
-                        .toString(),
-                  ),
-                ),
-              ],
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                TextButton(
-                  onPressed: () {
-                    Navigator.of(context).pushReplacement(
-                      MaterialPageRoute(
-                        builder: (context) {
                           return FlooringScreen(constructionType: "Demolition");
                         },
                       ),
