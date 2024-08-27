@@ -1,4 +1,5 @@
 import 'package:cost_calculator/constants/language.dart';
+import 'package:cost_calculator/data/data.dart';
 import 'package:cost_calculator/pages/shared/home_page.dart';
 import 'package:cost_calculator/pages/shared/item_screens/building_components_screen.dart';
 import 'package:cost_calculator/pages/shared/item_screens/windows_exterior_door_screen.dart';
@@ -93,7 +94,7 @@ class _WindowsExteriorDoorSectionsState
                 ),
                 Padding(
                   padding: const EdgeInsets.all(8.0),
-                  child: Text("2"),
+                  child: Text(windowsExteriorDoors.length.toString()),
                 )
               ],
             )

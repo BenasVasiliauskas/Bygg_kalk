@@ -87,7 +87,7 @@ class _TerraceSectionsState extends State<TerraceSections> {
                             ? "Terasa"
                             : languageNorwegian
                                 ? "Terrasse/rekkverk"
-                                : "Taras",
+                                : "Taras", // change
                   ),
                 ),
                 Padding(

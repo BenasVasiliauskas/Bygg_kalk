@@ -88,7 +88,7 @@ class _ParquetLaminateSectionsState extends State<ParquetLaminateSections> {
                             ? "Parketas ir laminatas"
                             : languageNorwegian
                                 ? "Parkett og laminat"
-                                : "Parkiet i laminat",
+                                : "Parkiet i laminat", // change
                   ),
                 ),
                 Padding(
