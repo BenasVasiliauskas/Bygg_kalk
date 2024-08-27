@@ -1024,7 +1024,7 @@ final polInnerWallData = [
 
 final polSupportSystem = [
   SupportSystemModel(
-    name: "Belki i słupy, drewno klejone / stal - Dom wolnostojący",
+    name: "Belki i słupy, drewno klejone / stal - Dom jednorodzinny",
     description: [
       "Belka z drewna klejonego 115x315",
       "Belka z drewna klejonego 90x225",

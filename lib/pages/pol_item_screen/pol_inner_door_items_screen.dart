@@ -6,7 +6,7 @@ import 'package:cost_calculator/functions/save_to_json.dart';
 import 'package:cost_calculator/models/inner_door_data_model.dart';
 import 'package:cost_calculator/pages/shared/globals/calculation_variables.dart';
 import 'package:flutter/material.dart';
-import '../../constants/norw_budget_constants.dart';
+import 'package:cost_calculator/constants/pol_budget_constants.dart';
 
 class PolInnerDoorItemScreenScreen extends StatefulWidget {
   String name;
