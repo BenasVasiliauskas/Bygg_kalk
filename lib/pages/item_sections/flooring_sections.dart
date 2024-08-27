@@ -1,4 +1,5 @@
 import 'package:cost_calculator/constants/language.dart';
+import 'package:cost_calculator/data/data.dart';
 import 'package:cost_calculator/pages/shared/home_page.dart';
 import 'package:cost_calculator/pages/shared/item_screens/building_components_screen.dart';
 import 'package:cost_calculator/pages/shared/item_screens/flooring_screen.dart';
@@ -74,7 +75,8 @@ class _FlooringSectionsState extends State<FlooringSections> {
                     Navigator.of(context).pushReplacement(
                       MaterialPageRoute(
                         builder: (context) {
-                          return FlooringScreen();
+                          return FlooringScreen(
+                              constructionType: "New Construction");
                         },
                       ),
                     );
@@ -91,7 +93,12 @@ class _FlooringSectionsState extends State<FlooringSections> {
                 ),
                 Padding(
                   padding: const EdgeInsets.all(8.0),
-                  child: const Text("1"),
+                  child: Text(
+                    flooringData
+                        .where((e) => e.constructionType == "New Construction")
+                        .length
+                        .toString(),
+                  ),
                 ),
               ],
             ),
@@ -103,7 +110,8 @@ class _FlooringSectionsState extends State<FlooringSections> {
                     Navigator.of(context).pushReplacement(
                       MaterialPageRoute(
                         builder: (context) {
-                          return FlooringScreen();
+                          return FlooringScreen(
+                              constructionType: "Reconstruction");
                         },
                       ),
                     );
@@ -120,7 +128,11 @@ class _FlooringSectionsState extends State<FlooringSections> {
                 ),
                 Padding(
                   padding: const EdgeInsets.all(8.0),
-                  child: const Text("1"),
+                  child: Text(
+                    flooringData
+                        .where((e) => e.constructionType == "Reconstruction")
+                        .toString(),
+                  ),
                 ),
               ],
             ),
@@ -132,7 +144,7 @@ class _FlooringSectionsState extends State<FlooringSections> {
                     Navigator.of(context).pushReplacement(
                       MaterialPageRoute(
                         builder: (context) {
-                          return FlooringScreen();
+                          return FlooringScreen(constructionType: "Demolition");
                         },
                       ),
                     );
@@ -149,7 +161,11 @@ class _FlooringSectionsState extends State<FlooringSections> {
                 ),
                 Padding(
                   padding: const EdgeInsets.all(8.0),
-                  child: const Text("1"),
+                  child: Text(
+                    flooringData
+                        .where((e) => e.constructionType == "Demolition")
+                        .toString(),
+                  ),
                 ),
               ],
             ),

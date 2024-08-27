@@ -30,7 +30,7 @@ class _WindowsExteriorDoorScreenState extends State<WindowsExteriorDoorScreen> {
             ? norwWindowsExteriorDoors
             : languagePolish
                 ? polWindowsExteriorDoors
-                : litWindowsExteriorDOors;
+                : litWindowsExteriorDoors;
 
     // Initialize controllers for each item
     windowsExteriorDoorsCalculationControllers = List.generate(

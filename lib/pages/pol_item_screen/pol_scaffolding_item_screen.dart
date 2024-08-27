@@ -178,11 +178,11 @@ class _PolScaffoldingItemScreenState extends State<PolScaffoldingItemScreen> {
   void _updateLaborHours() {
     if (!mounted) return; // Ensure the widget is still mounted
 
-    for (int i = 0; i < polScaffodlingData.length; i++) {
-      if (polScaffodlingData[i].name == widget.name) {
+    for (int i = 0; i < polScaffoldingData.length; i++) {
+      if (polScaffoldingData[i].name == widget.name) {
         setState(() {
-          for (int j = 0; j < polScaffodlingData[i].laborHours1.length; j++) {
-            widget.laborHours1[j] = polScaffodlingData[i].laborHours1[j];
+          for (int j = 0; j < polScaffoldingData[i].laborHours1.length; j++) {
+            widget.laborHours1[j] = polScaffoldingData[i].laborHours1[j];
           }
         });
         return;

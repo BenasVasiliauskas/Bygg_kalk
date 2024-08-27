@@ -107,7 +107,7 @@ class _buildingComponentsScreenState extends State<buildingComponentsScreen> {
                       ],
                     ),
                   ),
-                  Text("1"),
+                  Text(supportSystem.length.toString()),
                 ],
               ),
               Row(
@@ -138,7 +138,7 @@ class _buildingComponentsScreenState extends State<buildingComponentsScreen> {
                       ],
                     ),
                   ),
-                  Text("1"),
+                  Text(exteriorWallData.length.toString()),
                 ],
               ),
               Row(
@@ -171,7 +171,7 @@ class _buildingComponentsScreenState extends State<buildingComponentsScreen> {
                       ],
                     ),
                   ),
-                  Text("2"),
+                  Text(windowsExteriorDoors.length.toString()),
                 ],
               ),
               Row(
@@ -204,7 +204,7 @@ class _buildingComponentsScreenState extends State<buildingComponentsScreen> {
                       ],
                     ),
                   ),
-                  Text("6"),
+                  Text(dataInnerWallData.length.toString()),
                 ],
               ),
               Row(
@@ -237,7 +237,7 @@ class _buildingComponentsScreenState extends State<buildingComponentsScreen> {
                       ],
                     ),
                   ),
-                  Text("1"),
+                  Text(innerDoor.length.toString()),
                 ],
               ),
               Row(
@@ -302,7 +302,7 @@ class _buildingComponentsScreenState extends State<buildingComponentsScreen> {
                       ],
                     ),
                   ),
-                  Text("1"),
+                  Text(flooringData.length.toString()),
                 ],
               ),
               Row(
@@ -333,7 +333,7 @@ class _buildingComponentsScreenState extends State<buildingComponentsScreen> {
                       ],
                     ),
                   ),
-                  Text("1"),
+                  Text(outerRoofData.length.toString()),
                 ],
               ),
               Row(
@@ -364,7 +364,7 @@ class _buildingComponentsScreenState extends State<buildingComponentsScreen> {
                       ],
                     ),
                   ),
-                  Text("1"),
+                  Text(terraceData.length.toString()),
                 ],
               ),
               Row(
@@ -395,7 +395,7 @@ class _buildingComponentsScreenState extends State<buildingComponentsScreen> {
                       ],
                     ),
                   ),
-                  Text("1"),
+                  Text(innerStairsData.length.toString()),
                 ],
               ),
               Row(
@@ -426,7 +426,7 @@ class _buildingComponentsScreenState extends State<buildingComponentsScreen> {
                       ],
                     ),
                   ),
-                  Text("1"),
+                  Text(hullRoofingData.length.toString()),
                 ],
               ),
               Row(
@@ -457,7 +457,7 @@ class _buildingComponentsScreenState extends State<buildingComponentsScreen> {
                       ],
                     ),
                   ),
-                  Text("1"),
+                  Text(scaffoldingData.length.toString()),
                 ],
               ),
               Row(
@@ -488,7 +488,7 @@ class _buildingComponentsScreenState extends State<buildingComponentsScreen> {
                       ],
                     ),
                   ),
-                  Text("1"),
+                  Text(wasteData.length.toString()),
                 ],
               ),
               Row(
@@ -521,7 +521,7 @@ class _buildingComponentsScreenState extends State<buildingComponentsScreen> {
                       ],
                     ),
                   ),
-                  Text("1"),
+                  Text(parquetAndLaminate.length.toString()),
                 ],
               ),
             ],

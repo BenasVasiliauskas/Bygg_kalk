@@ -1,4 +1,5 @@
 import 'package:cost_calculator/constants/language.dart';
+import 'package:cost_calculator/data/data.dart';
 import 'package:cost_calculator/pages/shared/home_page.dart';
 import 'package:cost_calculator/pages/shared/item_screens/building_components_screen.dart';
 import 'package:cost_calculator/pages/shared/item_screens/inner_door_screen.dart';
@@ -74,24 +75,103 @@ class _InnerDoorSectionsState extends State<InnerDoorSections> {
                     Navigator.of(context).pushReplacement(
                       MaterialPageRoute(
                         builder: (context) {
-                          return InnerDoorScreen();
+                          return InnerDoorScreen(
+                              constructionType: "New Construction");
                         },
                       ),
                     );
                   },
                   child: Text(
                     languageEnglish
-                        ? "Inner doors"
+                        ? "New building"
                         : languageLithuanian
-                            ? "Vidinės durys"
+                            ? "Naujas pastatas"
                             : languageNorwegian
-                                ? "Innvendige dører"
-                                : "Drzwi wewnętrzne",
+                                ? "Ny bygning"
+                                : "ŚNowy budynek",
                   ),
                 ),
                 Padding(
                   padding: const EdgeInsets.all(8.0),
-                  child: const Text("1"),
+                  child: Text(
+                    innerDoor
+                        .where((innerDoor) =>
+                            innerDoor.constructionType == "New Construction")
+                        .length
+                        .toString(),
+                  ),
+                ),
+              ],
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                TextButton(
+                  onPressed: () {
+                    Navigator.of(context).pushReplacement(
+                      MaterialPageRoute(
+                        builder: (context) {
+                          return InnerDoorScreen(
+                              constructionType: "Reconstruction");
+                        },
+                      ),
+                    );
+                  },
+                  child: Text(
+                    languageEnglish
+                        ? "Reconstruction"
+                        : languageLithuanian
+                            ? "Rekonstrukcija"
+                            : languageNorwegian
+                                ? "Rekonstruksjon"
+                                : "Rekonstrukcja",
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Text(
+                    innerDoor
+                        .where((innerDoor) =>
+                            innerDoor.constructionType == "Reconstruction")
+                        .length
+                        .toString(),
+                  ),
+                ),
+              ],
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                TextButton(
+                  onPressed: () {
+                    Navigator.of(context).pushReplacement(
+                      MaterialPageRoute(
+                        builder: (context) {
+                          return InnerDoorScreen(
+                              constructionType: "Demolition");
+                        },
+                      ),
+                    );
+                  },
+                  child: Text(
+                    languageEnglish
+                        ? "Demolition"
+                        : languageLithuanian
+                            ? "Griovimas"
+                            : languageNorwegian
+                                ? "Riving"
+                                : "Rozbiórka",
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Text(
+                    innerDoor
+                        .where((innerDoor) =>
+                            innerDoor.constructionType == "Demolition")
+                        .length
+                        .toString(),
+                  ),
                 ),
               ],
             ),

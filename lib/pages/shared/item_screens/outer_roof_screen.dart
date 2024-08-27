@@ -10,18 +10,22 @@ import '../../../constants/language.dart';
 import '../../../widgets/custom_drawer.dart';
 
 class OuterRoofScreen extends StatefulWidget {
-  @override
+  final String constructionType;
+
+  const OuterRoofScreen({Key? key, required this.constructionType})
+      : super(key: key);
+
   State<OuterRoofScreen> createState() => _OuterRoofScreenState();
 }
 
 class _OuterRoofScreenState extends State<OuterRoofScreen> {
   List<TextEditingController> outerRoofCalculationControllers = [];
-  List<dynamic> currentOuterRoofData = [];
+  List<dynamic> filteredOuterRoofData = [];
 
   @override
   void initState() {
     super.initState();
-    currentOuterRoofData = languageEnglish
+    List<dynamic> currentOuterRoofData = languageEnglish
         ? outerRoofData
         : languageNorwegian
             ? norwOuterRoofData
@@ -29,11 +33,15 @@ class _OuterRoofScreenState extends State<OuterRoofScreen> {
                 ? polOuterRoofData
                 : litOuterRoofData;
 
+    filteredOuterRoofData = currentOuterRoofData
+        .where((e) => e.constructionType == widget.constructionType)
+        .toList();
+
     // Initialize controllers for each item
     outerRoofCalculationControllers = List.generate(
-      currentOuterRoofData.length,
+      filteredOuterRoofData.length,
       (index) => TextEditingController(
-        text: currentOuterRoofData[index].calculationQuantity.toString(),
+        text: filteredOuterRoofData[index].calculationQuantity.toString(),
       ),
     );
   }
@@ -57,7 +65,7 @@ class _OuterRoofScreenState extends State<OuterRoofScreen> {
         }
         Navigator.of(context).pushReplacement(
           MaterialPageRoute(builder: (context) {
-            return OuterRoofScreen();
+            return homePage();
           }),
         );
       },
@@ -91,8 +99,8 @@ class _OuterRoofScreenState extends State<OuterRoofScreen> {
         ),
         body: GridView.count(
           padding: const EdgeInsets.all(25),
-          children: List.generate(currentOuterRoofData.length, (index) {
-            var catData = currentOuterRoofData[index];
+          children: List.generate(filteredOuterRoofData.length, (index) {
+            var catData = filteredOuterRoofData[index];
             var controller = outerRoofCalculationControllers[index];
 
             return Row(

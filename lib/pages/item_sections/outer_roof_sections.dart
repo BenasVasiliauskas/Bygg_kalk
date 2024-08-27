@@ -1,4 +1,5 @@
 import 'package:cost_calculator/constants/language.dart';
+import 'package:cost_calculator/data/data.dart';
 import 'package:cost_calculator/pages/shared/home_page.dart';
 import 'package:cost_calculator/pages/shared/item_screens/building_components_screen.dart';
 import 'package:cost_calculator/pages/shared/item_screens/outer_roof_screen.dart';
@@ -74,24 +75,94 @@ class _OuterRoofSectionsState extends State<OuterRoofSections> {
                     Navigator.of(context).pushReplacement(
                       MaterialPageRoute(
                         builder: (context) {
-                          return OuterRoofScreen();
+                          return OuterRoofScreen(
+                              constructionType: "New Construction");
                         },
                       ),
                     );
                   },
                   child: Text(
                     languageEnglish
-                        ? "Outer roof"
+                        ? "New building"
                         : languageLithuanian
-                            ? "Išorinis stogas"
+                            ? "Naujas pastatas"
                             : languageNorwegian
-                                ? "Yttertak"
-                                : "Dach zewnętrzny",
+                                ? "Ny bygning"
+                                : "ŚNowy budynek",
                   ),
                 ),
                 Padding(
                   padding: const EdgeInsets.all(8.0),
-                  child: const Text("1"),
+                  child: Text(outerRoofData
+                      .where((e) => e.constructionType == "New Construction")
+                      .length
+                      .toString()),
+                ),
+              ],
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                TextButton(
+                  onPressed: () {
+                    Navigator.of(context).pushReplacement(
+                      MaterialPageRoute(
+                        builder: (context) {
+                          return OuterRoofScreen(
+                              constructionType: "Reconstruction");
+                        },
+                      ),
+                    );
+                  },
+                  child: Text(
+                    languageEnglish
+                        ? "Reconstruction"
+                        : languageLithuanian
+                            ? "Rekonstrukcija"
+                            : languageNorwegian
+                                ? "Rekonstruksjon"
+                                : "Rekonstrukcja",
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Text(outerRoofData
+                      .where((e) => e.constructionType == "Reconstruction")
+                      .length
+                      .toString()),
+                ),
+              ],
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                TextButton(
+                  onPressed: () {
+                    Navigator.of(context).pushReplacement(
+                      MaterialPageRoute(
+                        builder: (context) {
+                          return OuterRoofScreen(
+                              constructionType: "Demolition");
+                        },
+                      ),
+                    );
+                  },
+                  child: Text(
+                    languageEnglish
+                        ? "Demolition"
+                        : languageLithuanian
+                            ? "Griovimas"
+                            : languageNorwegian
+                                ? "Riving"
+                                : "Rozbiórka",
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Text(outerRoofData
+                      .where((e) => e.constructionType == "Demolition")
+                      .length
+                      .toString()),
                 ),
               ],
             ),

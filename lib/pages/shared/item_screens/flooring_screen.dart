@@ -11,30 +11,39 @@ import '../../../constants/language.dart';
 import '../../../widgets/custom_drawer.dart';
 
 class FlooringScreen extends StatefulWidget {
-  @override
+  final String constructionType;
+
+  const FlooringScreen({Key? key, required this.constructionType})
+      : super(key: key);
+
   State<FlooringScreen> createState() => _FlooringSectionsState();
 }
 
 class _FlooringSectionsState extends State<FlooringScreen> {
   List<TextEditingController> flooringCalculationControllers = [];
-  List<dynamic> currentFlooringData = [];
+  List<dynamic> filteredFlooringData = [];
 
   @override
   void initState() {
     super.initState();
 
-    currentFlooringData = languageEnglish
+    List<dynamic> currentFlooringData = languageEnglish
         ? flooringData
         : languageNorwegian
             ? norwFlooringData
             : languagePolish
                 ? polFlooringData
                 : litFlooringData;
+
+    filteredFlooringData = currentFlooringData
+        .where((e) => e.constructionType == widget.constructionType)
+        .toList();
+
     // Initialize controllers for each item
     flooringCalculationControllers = List.generate(
-      currentFlooringData.length,
+      filteredFlooringData.length,
       (index) => TextEditingController(
-        text: currentFlooringData[index].calculationQuantity.toString(),
+        text: filteredFlooringData[index].calculationQuantity.toString(),
       ),
     );
   }
@@ -92,8 +101,8 @@ class _FlooringSectionsState extends State<FlooringScreen> {
         ),
         body: GridView.count(
           padding: const EdgeInsets.all(25),
-          children: List.generate(flooringData.length, (index) {
-            var catData = currentFlooringData[index];
+          children: List.generate(filteredFlooringData.length, (index) {
+            var catData = filteredFlooringData[index];
             var controller = flooringCalculationControllers[index];
             return Row(
               children: [

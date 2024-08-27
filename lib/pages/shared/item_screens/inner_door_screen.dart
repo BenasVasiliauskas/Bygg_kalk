@@ -12,18 +12,22 @@ import '../../../constants/language.dart';
 import '../../../widgets/custom_drawer.dart';
 
 class InnerDoorScreen extends StatefulWidget {
-  @override
+  final String constructionType;
+
+  const InnerDoorScreen({Key? key, required this.constructionType})
+      : super(key: key);
+
   State<InnerDoorScreen> createState() => _InnerDoorScreenState();
 }
 
 class _InnerDoorScreenState extends State<InnerDoorScreen> {
   List<TextEditingController> innerDoorCalculationControllers = [];
-  List<dynamic> currentInnerDoorData = [];
+  List<dynamic> filteredInnerDoorData = [];
 
   @override
   void initState() {
     super.initState();
-    currentInnerDoorData = languageEnglish
+    List<dynamic> currentInnerDoorData = languageEnglish
         ? innerDoor
         : languageNorwegian
             ? norwInnerDoor
@@ -31,11 +35,15 @@ class _InnerDoorScreenState extends State<InnerDoorScreen> {
                 ? polInnerDoor
                 : litInnerDoor;
 
+    filteredInnerDoorData = currentInnerDoorData
+        .where((e) => e.constructionType == widget.constructionType)
+        .toList();
+
     // Initialize controllers for each item
     innerDoorCalculationControllers = List.generate(
-      currentInnerDoorData.length,
+      filteredInnerDoorData.length,
       (index) => TextEditingController(
-        text: currentInnerDoorData[index].calculationQuantity.toString(),
+        text: filteredInnerDoorData[index].calculationQuantity.toString(),
       ),
     );
   }
@@ -94,9 +102,9 @@ class _InnerDoorScreenState extends State<InnerDoorScreen> {
         body: GridView.count(
           padding: const EdgeInsets.all(25),
           children: List.generate(
-            innerDoor.length,
+            filteredInnerDoorData.length,
             (index) {
-              var catData = currentInnerDoorData[index];
+              var catData = filteredInnerDoorData[index];
               var controller = innerDoorCalculationControllers[index];
 
               return Row(

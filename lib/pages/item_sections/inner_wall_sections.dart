@@ -1,4 +1,5 @@
 import 'package:cost_calculator/constants/language.dart';
+import 'package:cost_calculator/data/data.dart';
 import 'package:cost_calculator/pages/shared/home_page.dart';
 import 'package:cost_calculator/pages/shared/item_screens/building_components_screen.dart';
 import 'package:cost_calculator/pages/shared/item_screens/interior_wall_screen.dart';
@@ -74,7 +75,8 @@ class _InnerWallSectionsState extends State<InnerWallSections> {
                     Navigator.of(context).pushReplacement(
                       MaterialPageRoute(
                         builder: (context) {
-                          return InnerWallScreen();
+                          return InnerWallScreen(
+                              constructionType: "New Construction");
                         },
                       ),
                     );
@@ -91,7 +93,11 @@ class _InnerWallSectionsState extends State<InnerWallSections> {
                 ),
                 Padding(
                   padding: const EdgeInsets.all(8.0),
-                  child: const Text("6"),
+                  child: Text(dataInnerWallData
+                      .where((innerWall) =>
+                          innerWall.constructionType == "New Construction")
+                      .length
+                      .toString()),
                 ),
               ],
             ),
@@ -103,7 +109,8 @@ class _InnerWallSectionsState extends State<InnerWallSections> {
                     Navigator.of(context).pushReplacement(
                       MaterialPageRoute(
                         builder: (context) {
-                          return InnerWallScreen();
+                          return InnerWallScreen(
+                              constructionType: "Reconstruction");
                         },
                       ),
                     );
@@ -120,7 +127,11 @@ class _InnerWallSectionsState extends State<InnerWallSections> {
                 ),
                 Padding(
                   padding: const EdgeInsets.all(8.0),
-                  child: const Text("6"),
+                  child: Text(dataInnerWallData
+                      .where((innerWall) =>
+                          innerWall.constructionType == "Reconstruction")
+                      .length
+                      .toString()),
                 ),
               ],
             ),
@@ -132,7 +143,8 @@ class _InnerWallSectionsState extends State<InnerWallSections> {
                     Navigator.of(context).pushReplacement(
                       MaterialPageRoute(
                         builder: (context) {
-                          return InnerWallScreen();
+                          return InnerWallScreen(
+                              constructionType: "Demolition");
                         },
                       ),
                     );
@@ -149,7 +161,11 @@ class _InnerWallSectionsState extends State<InnerWallSections> {
                 ),
                 Padding(
                   padding: const EdgeInsets.all(8.0),
-                  child: const Text("6"),
+                  child: Text(dataInnerWallData
+                      .where((innerWall) =>
+                          innerWall.constructionType == "Demolition")
+                      .length
+                      .toString()),
                 ),
               ],
             ),

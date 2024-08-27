@@ -11,13 +11,17 @@ import '../../../constants/language.dart';
 import '../../../widgets/custom_drawer.dart';
 
 class InnerWallScreen extends StatefulWidget {
-  @override
+  final String constructionType;
+
+  const InnerWallScreen({Key? key, required this.constructionType})
+      : super(key: key);
+
   State<InnerWallScreen> createState() => _InnerWallScreenState();
 }
 
 class _InnerWallScreenState extends State<InnerWallScreen> {
   List<TextEditingController> innerWallCalculationQuantityController = [];
-  List<dynamic> currentDataInnerWallData =
+  List<dynamic> filteredDeckData =
       []; // Assuming dataInnerWallData type is dynamic
 
   @override
@@ -25,7 +29,7 @@ class _InnerWallScreenState extends State<InnerWallScreen> {
     super.initState();
 
     // Select the appropriate data list based on the current language
-    currentDataInnerWallData = languageEnglish
+    List<dynamic> currentDataInnerWallData = languageEnglish
         ? dataInnerWallData
         : languageNorwegian
             ? norwInnerWallData
@@ -33,11 +37,15 @@ class _InnerWallScreenState extends State<InnerWallScreen> {
                 ? polInnerWallData
                 : litInnerWallData;
 
+    filteredDeckData = currentDataInnerWallData
+        .where((e) => e.constructionType == widget.constructionType)
+        .toList();
+
     // Initialize controllers for each item in the selected data list
     innerWallCalculationQuantityController = List.generate(
-      currentDataInnerWallData.length,
+      filteredDeckData.length,
       (index) => TextEditingController(
-        text: currentDataInnerWallData[index].calculationQuantity.toString(),
+        text: filteredDeckData[index].calculationQuantity.toString(),
       ),
     );
   }
@@ -95,8 +103,8 @@ class _InnerWallScreenState extends State<InnerWallScreen> {
         ),
         body: GridView.count(
           padding: const EdgeInsets.all(25),
-          children: List.generate(currentDataInnerWallData.length, (index) {
-            var catData = currentDataInnerWallData[index];
+          children: List.generate(filteredDeckData.length, (index) {
+            var catData = filteredDeckData[index];
             var controller = innerWallCalculationQuantityController[index];
             return Row(
               children: [
