@@ -1,6 +1,6 @@
 // ignore_for_file: must_be_immutable
 
-import 'package:cost_calculator/constants/budget_constants.dart';
+import 'package:cost_calculator/constants/norw_budget_constants.dart';
 import 'package:cost_calculator/data/data.dart';
 import 'package:cost_calculator/functions/initialise_functions.dart';
 import 'package:cost_calculator/functions/save_to_json.dart';

@@ -1,19 +1,19 @@
 List<String> calculatedNamesOrder = [
-  'Windows and exterior doors',
-  'Exterior walls',
-  'Interior walls',
-  'Interior door',
-  'Parquet and laminate',
-  "Covers",
-  "Flooring",
-  "Exterior roof",
-  "Terrace/Railings",
-  "Inner stairs",
-  "Hull roofing",
-  "Scaffolding",
-  "Waste Management",
-  "Support system",
-  "Totals"
+  'Windows and exterior doors', //1
+  'Exterior walls', //2
+  'Interior walls', //3
+  'Interior door', //4
+  'Parquet and laminate', //5
+  "Covers", //6
+  "Flooring", //7
+  "Exterior roof", //8
+  "Terrace/Railings", //9
+  "Inner stairs", //10
+  "Hull roofing", //11
+  "Scaffolding", //12
+  "Waste Management", //13
+  "Support system", //14
+  "Totals" //15
 ];
 
 List<double> totalHours = [
