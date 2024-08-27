@@ -1024,7 +1024,7 @@ final litInnerWallData = [
 
 final litSupportSystem = [
   SupportSystemModel(
-    name: "Sijos ir kolonos, klijuotos medienos ir plieno - Individualus namas",
+    name: "Sijos ir kolonos, klijuotosios medienos / plieno - Vienbutis namas",
     description: [
       "Gluamo sija 115x315",
       "Gluamo sija 90x225",

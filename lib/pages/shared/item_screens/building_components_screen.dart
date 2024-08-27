@@ -103,7 +103,7 @@ class _buildingComponentsScreenState extends State<buildingComponentsScreen> {
                                 ? "Bæresystemet"
                                 : languagePolish
                                     ? "System nośny"
-                                    : "Transporterio sistema"),
+                                    : "Atraminė sistema"),
                       ],
                     ),
                   ),
