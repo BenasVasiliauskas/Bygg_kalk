@@ -30,7 +30,7 @@ class InnerWallModel {
     required this.totalPrice,
     Color? color, // Change to nullable Color
     String? constructionType,
-    this.calculationQuantity = 1.0,
+    this.calculationQuantity = 0.0,
   })  : constructionType = constructionType ?? "Nan",
         color = color ??
             Colors.orange; // Initialize color with Colors.orange if null

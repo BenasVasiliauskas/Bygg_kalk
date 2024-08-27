@@ -30,7 +30,7 @@ class OuterWallModel {
     required this.totalPrice,
     Color? color, // Change to nullable Color
     String? constructionType,
-    this.calculationQuantity = 1.0,
+    this.calculationQuantity = 0.0,
   })  : constructionType = constructionType ?? "Nan",
         color = color ?? Color.fromARGB(255, 174, 228, 75); // Initialize color
 

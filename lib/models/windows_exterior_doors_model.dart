@@ -28,7 +28,7 @@ class WindowsAndExteriorDoorsModel {
     required this.totalPrice,
     Color? color, // Change to nullable Color
     String? constructionType,
-    this.calculationQuantity = 1.0,
+    this.calculationQuantity = 0.0,
   })  : constructionType = constructionType ?? "Nan",
         color = color ??
             const Color.fromARGB(255, 104, 192, 32); // Initialize color
