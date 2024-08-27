@@ -123,7 +123,7 @@ class _InnerDoorSectionsState extends State<InnerDoorSections> {
                         : languageLithuanian
                             ? "Rekonstrukcija"
                             : languageNorwegian
-                                ? "Rekonstruksjon"
+                                ? "Ombygging"
                                 : "Rekonstrukcja",
                   ),
                 ),

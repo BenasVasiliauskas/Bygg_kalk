@@ -120,7 +120,7 @@ class _DeckSectionsState extends State<DeckSections> {
                         : languageLithuanian
                             ? "Rekonstrukcija"
                             : languageNorwegian
-                                ? "Rekonstruksjon"
+                                ? "Ombygging"
                                 : "Rekonstrukcja",
                   ),
                 ),

@@ -122,7 +122,7 @@ class _FlooringSectionsState extends State<FlooringSections> {
                         : languageLithuanian
                             ? "Rekonstrukcija"
                             : languageNorwegian
-                                ? "Rekonstruksjon"
+                                ? "Ombygging"
                                 : "Rekonstrukcja",
                   ),
                 ),
