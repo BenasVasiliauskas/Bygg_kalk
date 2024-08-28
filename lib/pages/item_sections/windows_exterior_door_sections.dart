@@ -59,12 +59,12 @@ class _WindowsExteriorDoorSectionsState
           ],
           title: Text(
             languageEnglish
-                ? "New building"
+                ? "Windows and exterior doors"
                 : languageLithuanian
-                    ? "Naujas pastatas"
+                    ? "Langai ir išorinės durys"
                     : languageNorwegian
-                        ? "Ny bygning"
-                        : "ŚNowy budynek",
+                        ? "Vinduer og ytterdører"
+                        : "Okna i drzwi zewnętrzne",
           ),
         ),
         body: Column(
@@ -77,7 +77,42 @@ class _WindowsExteriorDoorSectionsState
                     Navigator.of(context).pushReplacement(
                       MaterialPageRoute(
                         builder: (context) {
-                          return WindowsExteriorDoorScreen();
+                          return WindowsExteriorDoorScreen(
+                            constructionType: "New Construction",
+                          );
+                        },
+                      ),
+                    );
+                  },
+                  child: Text(
+                    languageEnglish
+                        ? "New Construction"
+                        : languageLithuanian
+                            ? "Nauja statyba"
+                            : languageNorwegian
+                                ? "Nybygg"
+                                : "Nowy budynek",
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Text(windowsExteriorDoors
+                      .where((e) => e.constructionType == "New Construction")
+                      .length
+                      .toString()),
+                )
+              ],
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                TextButton(
+                  onPressed: () {
+                    Navigator.of(context).pushReplacement(
+                      MaterialPageRoute(
+                        builder: (context) {
+                          return WindowsExteriorDoorScreen(
+                              constructionType: "Demolition");
                         },
                       ),
                     );
@@ -94,7 +129,10 @@ class _WindowsExteriorDoorSectionsState
                 ),
                 Padding(
                   padding: const EdgeInsets.all(8.0),
-                  child: Text(windowsExteriorDoors.length.toString()),
+                  child: Text(windowsExteriorDoors
+                      .where((e) => e.constructionType == "Demolition")
+                      .length
+                      .toString()),
                 )
               ],
             )

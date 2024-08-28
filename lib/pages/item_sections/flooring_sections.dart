@@ -83,12 +83,12 @@ class _FlooringSectionsState extends State<FlooringSections> {
                   },
                   child: Text(
                     languageEnglish
-                        ? "New flooring"
+                        ? "New Construction"
                         : languageLithuanian
-                            ? "Naujos grindys"
+                            ? "Naujos statybos"
                             : languageNorwegian
-                                ? "Nytt gulvbelegg"
-                                : "Nowa wykładzina podłogowa",
+                                ? "Nytt bygg"
+                                : "Nowa konstrukcja",
                   ),
                 ),
                 Padding(
@@ -130,6 +130,7 @@ class _FlooringSectionsState extends State<FlooringSections> {
                   child: Text(
                     flooringData
                         .where((e) => e.constructionType == "Demolition")
+                        .length
                         .toString(),
                   ),
                 ),

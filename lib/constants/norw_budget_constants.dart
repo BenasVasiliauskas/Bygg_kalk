@@ -233,18 +233,22 @@ Map<String, double> deckBudgetSum = {
 
 Map<String, double> flooringHours = {
   "Våtromsvegg m/panel - våtromsfliser + fliser 25x33": 0,
+  "Våtromsvegg m/panel/gips + flis 20x30": 0,
 };
 
 Map<String, double> flooringLaborCosts = {
   "Våtromsvegg m/panel - våtromsfliser + fliser 25x33": 0,
+  "Våtromsvegg m/panel/gips + flis 20x30": 0,
 };
 
 Map<String, double> flooringMaterialCosts = {
   "Våtromsvegg m/panel - våtromsfliser + fliser 25x33": 0,
+  "Våtromsvegg m/panel/gips + flis 20x30": 0,
 };
 
 Map<String, double> flooringBudgetSum = {
   "Våtromsvegg m/panel - våtromsfliser + fliser 25x33": 0,
+  "Våtromsvegg m/panel/gips + flis 20x30": 0,
 };
 
 /////////////////////////////////////////////////////////////////////////////////////

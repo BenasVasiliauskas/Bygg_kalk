@@ -232,18 +232,22 @@ Map<String, double> deckBudgetSum = {
 Map<String, double> flooringHours = {
   "Drėgno kambario siena su plokštėmis - drėgno kambario plytelės + 25x33 plytelės":
       0,
+  "Drėgno kambario siena su plokšte, tinku ir plytelėmis 20x30": 0,
 };
 Map<String, double> flooringLaborCosts = {
   "Drėgno kambario siena su plokštėmis - drėgno kambario plytelės + 25x33 plytelės":
       0,
+  "Drėgno kambario siena su plokšte, tinku ir plytelėmis 20x30": 0,
 };
 Map<String, double> flooringMaterialCosts = {
   "Drėgno kambario siena su plokštėmis - drėgno kambario plytelės + 25x33 plytelės":
       0,
+  "Drėgno kambario siena su plokšte, tinku ir plytelėmis 20x30": 0,
 };
 Map<String, double> flooringBudgetSum = {
   "Drėgno kambario siena su plokštėmis - drėgno kambario plytelės + 25x33 plytelės":
       0,
+  "Drėgno kambario siena su plokšte, tinku ir plytelėmis 20x30": 0,
 };
 
 /////////////////////////////////////////////////////////////////////////////////////

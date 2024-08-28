@@ -12,19 +12,23 @@ import '../../../items/windows_exterior_doors_item.dart';
 import '../../../widgets/custom_drawer.dart';
 
 class WindowsExteriorDoorScreen extends StatefulWidget {
-  @override
+  final String constructionType;
+
+  const WindowsExteriorDoorScreen({Key? key, required this.constructionType})
+      : super(key: key);
+
   State<WindowsExteriorDoorScreen> createState() =>
       _WindowsExteriorDoorScreenState();
 }
 
 class _WindowsExteriorDoorScreenState extends State<WindowsExteriorDoorScreen> {
   List<TextEditingController> windowsExteriorDoorsCalculationControllers = [];
-  List<dynamic> currentWindowsExteriorDoors = [];
+  List<dynamic> filteredWindowsExteriorDoors = [];
 
   @override
   void initState() {
     super.initState();
-    currentWindowsExteriorDoors = languageEnglish
+    List<dynamic> currentWindowsExteriorDoors = languageEnglish
         ? windowsExteriorDoors
         : languageNorwegian
             ? norwWindowsExteriorDoors
@@ -32,11 +36,16 @@ class _WindowsExteriorDoorScreenState extends State<WindowsExteriorDoorScreen> {
                 ? polWindowsExteriorDoors
                 : litWindowsExteriorDoors;
 
+    filteredWindowsExteriorDoors = currentWindowsExteriorDoors
+        .where((e) => e.constructionType == widget.constructionType)
+        .toList();
+
     // Initialize controllers for each item
     windowsExteriorDoorsCalculationControllers = List.generate(
-      currentWindowsExteriorDoors.length,
+      filteredWindowsExteriorDoors.length,
       (index) => TextEditingController(
-        text: currentWindowsExteriorDoors[index].calculationQuantity.toString(),
+        text:
+            filteredWindowsExteriorDoors[index].calculationQuantity.toString(),
       ),
     );
   }
@@ -94,8 +103,8 @@ class _WindowsExteriorDoorScreenState extends State<WindowsExteriorDoorScreen> {
         ),
         body: GridView.count(
           padding: const EdgeInsets.all(25),
-          children: List.generate(currentWindowsExteriorDoors.length, (index) {
-            var catData = currentWindowsExteriorDoors[index];
+          children: List.generate(filteredWindowsExteriorDoors.length, (index) {
+            var catData = filteredWindowsExteriorDoors[index];
             var controller = windowsExteriorDoorsCalculationControllers[index];
 
             return Row(

@@ -1478,6 +1478,7 @@ final windowsExteriorDoors = [
       0.00,
       0.00,
     ],
+    constructionType: "New Construction",
   ),
   WindowsAndExteriorDoorsModel(
     name: "Exterior door of wood, in timber frame wall, white, 10x21",
@@ -1625,6 +1626,7 @@ final windowsExteriorDoors = [
       0.00,
       0.00,
     ],
+    constructionType: "Demolition",
   ),
 ];
 final supportSystem = [
@@ -1807,7 +1809,82 @@ final flooringData = [
       0.00,
     ],
     constructionType: "New Construction",
-  )
+  ),
+  FlooringModel(
+      name: "Wet room wall w/panel/plaster + tile 20x30",
+      description: [
+        "Nail punch for membrane in wet rooms",
+        "Plasterboard on rupanel 2 x 13 mm wet room",
+        "Tile, ceramic on wall, white",
+        "Lubricating membrane in wet areas, wall",
+        "Filling with sealant in corners",
+        "Bottom panel, spruce, screwed",
+      ],
+      unit: [
+        "m²",
+        "m²",
+        "m²",
+        "m²",
+        "m",
+        "m²",
+      ],
+      quantity: [
+        1.00,
+        1.00,
+        1.00,
+        1.00,
+        0.30,
+        1.00,
+      ],
+      laborHours1: [
+        0.17,
+        0.92,
+        1.21,
+        0.46,
+        0.03,
+        0.30,
+      ],
+      laborHours2: [
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+      ],
+      laborCost: [
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+      ],
+      material: [
+        17.21,
+        133.14,
+        308.26,
+        400.52,
+        3.71,
+        144.28,
+      ],
+      materials: [
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+      ],
+      totalPrice: [
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+      ],
+      constructionType: "Demolition"),
 ];
 final terraceData = [
   TerraceModel(
