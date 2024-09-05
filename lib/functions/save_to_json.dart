@@ -78,7 +78,7 @@ Future<File> writeProjectToJson(var name, int lengthOfModel) async {
 }
 
 Future<File> writeJson(BuildContext context, var model, String name) async {
-  final file = await localFile(name);
+  var file = await localFile(name);
   if (await file.exists()) {
     // Show a dialog to ask the user if they want to overwrite the file
     bool shouldOverwrite = await _showOverwriteDialog(context, name);
@@ -97,6 +97,9 @@ Future<File> writeJson(BuildContext context, var model, String name) async {
                       content: Text('Duomenų saugojimas buvo atšauktas')));
       // User chose to cancel, so return early and do not overwrite the file
       return file;
+    } else {
+      await file.delete();
+      file = await localFile(name);
     }
   }
   // Convert list of objects to a list of maps
@@ -155,6 +158,8 @@ Future<bool> _showOverwriteDialog(BuildContext context, String fileName) async {
             ),
             TextButton(
               onPressed: () {
+                //localFile(fileName).then((file) => file.delete());
+
                 Navigator.of(context).pop(true);
               },
               child: Text(languageEnglish
