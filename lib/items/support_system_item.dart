@@ -1,3 +1,4 @@
+import 'package:cost_calculator/data/data.dart';
 import 'package:cost_calculator/pages/item_screen/support_system_screen.dart';
 import 'package:cost_calculator/pages/item_sections/support_system_sections.dart';
 import 'package:cost_calculator/pages/lit_item_screen/lit_support_system_item_screen.dart';
@@ -7,20 +8,21 @@ import 'package:cost_calculator/pages/pol_item_screen/pol_support_system_item_sc
 import 'package:flutter/material.dart';
 import '../constants/language.dart';
 
+// ignore: must_be_immutable
 class SupportSystemItem extends StatelessWidget {
-  final String name;
-  final List<String> description;
-  final List<String> unit;
-  final List<double> quantity;
-  final List<double> laborHours1;
-  final List<double> laborHours2;
-  final List<double> laborCost;
-  final List<double> material1;
-  final List<double> material2;
-  final List<double> totalPrice;
-  final Color color;
-  final String constructionType;
-  final double calculationQuantity;
+  String name;
+  List<String> description;
+  List<String> unit;
+  List<double> quantity;
+  List<double> laborHours1;
+  List<double> laborHours2;
+  List<double> laborCost;
+  List<double> material1;
+  List<double> material2;
+  List<double> totalPrice;
+  Color color;
+  String constructionType;
+  double calculationQuantity;
 
   SupportSystemItem(
     this.name,
@@ -103,7 +105,11 @@ class SupportSystemItem extends StatelessWidget {
                         );
         },
       ),
-    );
+    ).then((shouldSave) {
+      print("shouldSave: $shouldSave");
+
+      calculationQuantity = supportSystem[0].calculationQuantity;
+    });
   }
 
   @override

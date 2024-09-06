@@ -173,7 +173,7 @@ class _PolTerraceItemScreenState extends State<PolTerraceItemScreen> {
     widget.calculationQuantity = calculationQuantity;
   }
 
-  void _updateLaborHours() {
+  void _resetLaborHours() {
     if (!mounted) return; // Ensure the widget is still mounted
 
     for (int i = 0; i < polTerraceData.length; i++) {
@@ -213,7 +213,7 @@ class _PolTerraceItemScreenState extends State<PolTerraceItemScreen> {
               ),
               child: const Text('Gå'),
               onPressed: () {
-                _updateLaborHours();
+                _resetLaborHours();
                 markAsClean();
                 Navigator.pop(context, true);
               },

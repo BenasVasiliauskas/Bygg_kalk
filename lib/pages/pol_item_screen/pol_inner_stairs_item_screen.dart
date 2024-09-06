@@ -174,7 +174,7 @@ class _PolInnerStairsItemScreenState extends State<PolInnerStairsItemScreen> {
     widget.calculationQuantity = calculationQuantity;
   }
 
-  void _updateLaborHours() {
+  void _resetLaborHours() {
     if (!mounted) return; // Ensure the widget is still mounted
 
     for (int i = 0; i < polInnerStairsData.length; i++) {
@@ -214,7 +214,7 @@ class _PolInnerStairsItemScreenState extends State<PolInnerStairsItemScreen> {
               ),
               child: const Text('Gå'),
               onPressed: () {
-                _updateLaborHours();
+                _resetLaborHours();
                 markAsClean();
                 Navigator.pop(context, true);
               },

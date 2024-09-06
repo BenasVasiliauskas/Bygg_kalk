@@ -173,7 +173,7 @@ class _NorwTerraceItemScreenState extends State<NorwTerraceItemScreen> {
     widget.calculationQuantity = calculationQuantity;
   }
 
-  void _updateLaborHours() {
+  void _resetLaborHours() {
     if (!mounted) return; // Ensure the widget is still mounted
 
     for (int i = 0; i < innerDoor.length; i++) {
@@ -213,7 +213,7 @@ class _NorwTerraceItemScreenState extends State<NorwTerraceItemScreen> {
               ),
               child: const Text('Gå'),
               onPressed: () {
-                _updateLaborHours();
+                _resetLaborHours();
                 markAsClean();
                 Navigator.pop(context, true);
               },

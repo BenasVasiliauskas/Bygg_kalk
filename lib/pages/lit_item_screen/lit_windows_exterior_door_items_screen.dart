@@ -164,7 +164,7 @@ class _LitWindowsExteriorDoorItemsScreenState
     loadingController = TextEditingController();
   }
 
-  void _updateLaborHours() {
+  void _resetLaborHours() {
     if (!mounted) return; // Ensure the widget is still mounted
 
     for (int i = 0; i < litWindowsExteriorDoors.length; i++) {
@@ -206,7 +206,7 @@ class _LitWindowsExteriorDoorItemsScreenState
               ),
               child: const Text('Palikti'),
               onPressed: () {
-                _updateLaborHours();
+                _resetLaborHours();
                 markAsClean();
                 Navigator.pop(context, true);
               },

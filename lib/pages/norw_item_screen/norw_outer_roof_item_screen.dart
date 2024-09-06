@@ -167,7 +167,7 @@ class _NorwOuterRoofItemScreenState extends State<NorwOuterRoofItemScreen> {
     loadingController = TextEditingController();
   }
 
-  void _updateLaborHours() {
+  void _resetLaborHours() {
     if (!mounted) return; // Ensure the widget is still mounted
 
     for (int i = 0; i < exteriorWallData.length; i++) {
@@ -207,7 +207,7 @@ class _NorwOuterRoofItemScreenState extends State<NorwOuterRoofItemScreen> {
               ),
               child: const Text('Gå'),
               onPressed: () {
-                _updateLaborHours();
+                _resetLaborHours();
                 markAsClean();
                 Navigator.pop(context, true);
               },

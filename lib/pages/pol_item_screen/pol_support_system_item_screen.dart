@@ -175,7 +175,7 @@ class _PolSupportSystemItemScreenState
     widget.calculationQuantity = calculationQuantity;
   }
 
-  void _updateLaborHours() {
+  void _resetLaborHours() {
     if (!mounted) return; // Ensure the widget is still mounted
 
     for (int i = 0; i < polSupportSystem.length; i++) {
@@ -215,7 +215,7 @@ class _PolSupportSystemItemScreenState
               ),
               child: const Text('Opuść'),
               onPressed: () {
-                _updateLaborHours();
+                _resetLaborHours();
                 markAsClean();
                 Navigator.pop(context, true);
               },

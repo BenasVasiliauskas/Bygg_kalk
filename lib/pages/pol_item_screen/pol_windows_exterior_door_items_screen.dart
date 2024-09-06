@@ -164,7 +164,7 @@ class _PolWindowsExteriorDoorItemsScreenState
     loadingController = TextEditingController();
   }
 
-  void _updateLaborHours() {
+  void _resetLaborHours() {
     if (!mounted) return; // Ensure the widget is still mounted
 
     for (int i = 0; i < polWindowsExteriorDoors.length; i++) {
@@ -206,7 +206,7 @@ class _PolWindowsExteriorDoorItemsScreenState
               ),
               child: const Text('Gå'),
               onPressed: () {
-                _updateLaborHours();
+                _resetLaborHours();
                 markAsClean();
                 Navigator.pop(context, true);
               },

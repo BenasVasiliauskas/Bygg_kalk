@@ -174,7 +174,7 @@ class _PolWasteItemScreenState extends State<PolWasteItemScreen> {
     widget.calculationQuantity = calculationQuantity;
   }
 
-  void _updateLaborHours() {
+  void _resetLaborHours() {
     if (!mounted) return; // Ensure the widget is still mounted
 
     for (int i = 0; i < polWasteData.length; i++) {
@@ -214,7 +214,7 @@ class _PolWasteItemScreenState extends State<PolWasteItemScreen> {
               ),
               child: const Text('Przejdź do'),
               onPressed: () {
-                _updateLaborHours();
+                _resetLaborHours();
                 markAsClean();
                 Navigator.pop(context, true);
               },

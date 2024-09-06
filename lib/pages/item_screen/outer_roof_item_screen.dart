@@ -2,8 +2,6 @@
 
 import 'package:cost_calculator/data/original_data.dart';
 import 'package:cost_calculator/functions/initialise_functions.dart';
-import 'package:cost_calculator/functions/save_to_json.dart';
-import 'package:cost_calculator/models/outer_roof_model.dart';
 import 'package:cost_calculator/pages/shared/globals/calculation_variables.dart';
 import 'package:flutter/material.dart';
 import '../../constants/budget_constants.dart';
@@ -167,7 +165,7 @@ class _OuterRoofItemScreenState extends State<OuterRoofItemScreen> {
     loadingController = TextEditingController();
   }
 
-  void _updateLaborHours() {
+  void _resetLaborHours() {
     if (!mounted) return; // Ensure the widget is still mounted
 
     for (int i = 0; i < exteriorWallData.length; i++) {
@@ -207,7 +205,7 @@ class _OuterRoofItemScreenState extends State<OuterRoofItemScreen> {
               ),
               child: const Text('Leave'),
               onPressed: () {
-                _updateLaborHours();
+                _resetLaborHours();
                 markAsClean();
                 Navigator.pop(context, true);
               },
@@ -614,125 +612,10 @@ class _OuterRoofItemScreenState extends State<OuterRoofItemScreen> {
                   rows: rows,
                 ),
               ),
-              FloatingActionButton(
-                onPressed: () async {
-                  final fileName = await openDialog();
-                  if (fileName == null || fileName.isEmpty) return;
-
-                  OuterRoofModel outerRoofModel = OuterRoofModel(
-                    name: widget.name,
-                    description: widget.description,
-                    unit: widget.unit,
-                    quantity: widget.quantity,
-                    materialQuantity: widget.materialQuantity,
-                    laborHours1: widget.laborHours1,
-                    laborHours2: widget.laborHours2,
-                    laborCost: widget.laborCost,
-                    material: widget.material1,
-                    materials: widget.material2,
-                    totalPrice: widget.totalPrice,
-                  );
-                  writeJson(context, outerRoofModel, fileName);
-                },
-                child: Text("Save to JSON"),
-                heroTag: "btn1",
-              ),
-              FloatingActionButton(
-                  child: Text("Load data"),
-                  heroTag: "btn2",
-                  onPressed: () {
-                    openLoadingDialog().then(
-                      (fileName) {
-                        if (fileName == null || fileName.isEmpty) return;
-
-                        readJsonFile(fileName).then(
-                          (value) {
-                            for (int i = 0; i < value.length; i++) {
-                              OuterRoofModel outerRoofModel =
-                                  OuterRoofModel.fromJson(value[i]);
-                              if (outerRoofModel.name == widget.name) {
-                                setState(() {
-                                  widget.description =
-                                      outerRoofModel.description;
-                                  widget.unit = outerRoofModel.unit;
-                                  widget.quantity = outerRoofModel.quantity;
-                                  widget.materialQuantity =
-                                      outerRoofModel.materialQuantity;
-                                  widget.laborHours1 =
-                                      outerRoofModel.laborHours1;
-                                  widget.laborHours2 =
-                                      outerRoofModel.laborHours2;
-                                  widget.laborCost = outerRoofModel.laborCost;
-                                  widget.material1 = outerRoofModel.material;
-                                  widget.material2 = outerRoofModel.materials;
-                                  widget.totalPrice = outerRoofModel.totalPrice;
-                                  setInitialValues();
-                                  calculateCalculationQuantity();
-                                  updateTotalSum();
-                                  isDirty = true;
-                                });
-                              }
-                            }
-                          },
-                        );
-                      },
-                    );
-                  }),
             ],
           ),
         ),
       ),
     );
-  }
-
-  Future<String?> openLoadingDialog() => showDialog<String>(
-        context: context,
-        builder: (context) => AlertDialog(
-          title: Text("Name of the file you want to load"),
-          content: TextField(
-            controller: loadingController,
-            autofocus: true,
-            decoration: InputDecoration(
-              hintText: "Enter the name of the file",
-            ),
-          ),
-          actions: [
-            TextButton(
-                onPressed: () {
-                  submitLoading();
-                },
-                child: Text("Load")),
-          ],
-        ),
-      );
-
-  void submitLoading() {
-    Navigator.of(context).pop(loadingController.text);
-    loadingController.clear();
-  }
-
-  Future<String?> openDialog() => showDialog<String>(
-        context: context,
-        builder: (context) => AlertDialog(
-          title: Text("Name the file"),
-          content: TextField(
-            controller: savingController,
-            autofocus: true,
-            decoration: InputDecoration(
-              hintText: "Enter the name of the file",
-            ),
-          ),
-          actions: [
-            TextButton(
-                onPressed: () {
-                  submit();
-                },
-                child: Text("Save")),
-          ],
-        ),
-      );
-  void submit() {
-    Navigator.of(context).pop(savingController.text);
-    savingController.clear();
   }
 }

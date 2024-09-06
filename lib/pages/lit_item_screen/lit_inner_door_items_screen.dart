@@ -211,7 +211,7 @@ class _LitInnerDoorItemScreenScreenState
     widget.calculationQuantity = calculationQuantity;
   }
 
-  void _updateLaborHours() {
+  void _resetLaborHours() {
     if (!mounted) return; // Ensure the widget is still mounted
 
     for (int i = 0; i < litInnerDoor.length; i++) {
@@ -251,7 +251,7 @@ class _LitInnerDoorItemScreenScreenState
               ),
               child: const Text('Palikti'),
               onPressed: () {
-                _updateLaborHours();
+                _resetLaborHours();
                 markAsClean();
                 Navigator.pop(context, true);
               },

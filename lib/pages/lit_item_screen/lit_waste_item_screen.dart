@@ -174,7 +174,7 @@ class _LitWasteItemScreenState extends State<LitWasteItemScreen> {
     widget.calculationQuantity = calculationQuantity;
   }
 
-  void _updateLaborHours() {
+  void _resetLaborHours() {
     if (!mounted) return; // Ensure the widget is still mounted
 
     for (int i = 0; i < litWasteData.length; i++) {
@@ -214,7 +214,7 @@ class _LitWasteItemScreenState extends State<LitWasteItemScreen> {
               ),
               child: const Text('Palikti'),
               onPressed: () {
-                _updateLaborHours();
+                _resetLaborHours();
                 markAsClean();
                 Navigator.pop(context, true);
               },

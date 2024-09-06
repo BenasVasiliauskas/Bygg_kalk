@@ -3,8 +3,6 @@
 import 'package:cost_calculator/constants/budget_constants.dart';
 import 'package:cost_calculator/data/data.dart';
 import 'package:cost_calculator/functions/initialise_functions.dart';
-import 'package:cost_calculator/functions/save_to_json.dart';
-import 'package:cost_calculator/models/support_system_data_model.dart';
 import 'package:cost_calculator/pages/shared/globals/calculation_variables.dart';
 import 'package:flutter/material.dart';
 
@@ -163,7 +161,27 @@ class _SupportSystemItemScreenState extends State<SupportSystemItemScreen> {
     loadingController = TextEditingController();
   }
 
-  void _updateLaborHours() {
+  void _updateData() {
+    for (int i = 0; i < supportSystem.length; i++) {
+      if (supportSystem[i].name == widget.name) {
+        setState(() {
+          supportSystem[i].description = widget.description;
+          supportSystem[i].unit = widget.unit;
+          supportSystem[i].quantity = widget.quantity;
+          supportSystem[i].laborHours1 = widget.laborHours1;
+          supportSystem[i].laborHours2 = widget.laborHours2;
+          supportSystem[i].laborCost = widget.laborCost;
+          supportSystem[i].material = widget.material1;
+          supportSystem[i].materials = widget.material2;
+          supportSystem[i].totalPrice = widget.totalPrice;
+          supportSystem[i].calculationQuantity = widget.calculationQuantity;
+        });
+        return;
+      }
+    }
+  }
+
+  void _resetLaborHours() {
     if (!mounted) return; // Ensure the widget is still mounted
 
     for (int i = 0; i < supportSystem.length; i++) {
@@ -193,6 +211,7 @@ class _SupportSystemItemScreenState extends State<SupportSystemItemScreen> {
               ),
               child: const Text('Save and leave'),
               onPressed: () {
+                _updateData();
                 markAsClean();
                 Navigator.pop(context, true);
               },
@@ -203,26 +222,15 @@ class _SupportSystemItemScreenState extends State<SupportSystemItemScreen> {
               ),
               child: const Text('Leave'),
               onPressed: () {
-                _updateLaborHours();
+                _resetLaborHours();
                 markAsClean();
-                Navigator.pop(context, true);
+                Navigator.pop(context, false);
               },
             ),
           ],
         );
       },
     );
-  }
-
-  void calculateCalculationQuantity() {
-    double mat2Total = widget.material2
-        .fold(0, (previousValue, element) => previousValue + element);
-    double mat1Total = widget.material1
-        .fold(0, (previousValue, element) => previousValue + element);
-
-    calculationQuantity = mat2Total / mat1Total;
-
-    widget.calculationQuantity = calculationQuantity;
   }
 
   void setInitialValues() {
@@ -581,122 +589,10 @@ class _SupportSystemItemScreenState extends State<SupportSystemItemScreen> {
                   rows: rows,
                 ),
               ),
-              FloatingActionButton(
-                onPressed: () async {
-                  final fileName = await openDialog();
-                  if (fileName == null || fileName.isEmpty) return;
-
-                  SupportSystemModel supportSystemModel = SupportSystemModel(
-                    name: widget.name,
-                    description: widget.description,
-                    unit: widget.unit,
-                    quantity: widget.quantity,
-                    laborHours1: widget.laborHours1,
-                    laborHours2: widget.laborHours2,
-                    laborCost: widget.laborCost,
-                    material: widget.material1,
-                    materials: widget.material2,
-                    totalPrice: widget.totalPrice,
-                  );
-
-                  writeJson(context, supportSystemModel, fileName);
-                },
-                child: Text("Save to JSON"),
-                heroTag: "btn1",
-              ),
-              FloatingActionButton(
-                  child: Text("Load data"),
-                  heroTag: "btn2",
-                  onPressed: () {
-                    openLoadingDialog().then((fileName) {
-                      if (fileName == null || fileName.isEmpty) return;
-
-                      readJsonFile(fileName).then(
-                        (value) {
-                          for (int i = 0; i < value.length; i++) {
-                            SupportSystemModel supportSystemModel =
-                                SupportSystemModel.fromJson(value[i]);
-                            if (supportSystemModel.name == widget.name) {
-                              setState(() {
-                                widget.description =
-                                    supportSystemModel.description;
-                                widget.unit = supportSystemModel.unit;
-                                widget.quantity = supportSystemModel.quantity;
-                                widget.laborHours1 =
-                                    supportSystemModel.laborHours1;
-                                widget.laborHours2 =
-                                    supportSystemModel.laborHours2;
-                                widget.laborCost = supportSystemModel.laborCost;
-                                widget.material1 = supportSystemModel.material;
-                                widget.material2 = supportSystemModel.materials;
-                                widget.totalPrice =
-                                    supportSystemModel.totalPrice;
-                                setInitialValues();
-                                calculateCalculationQuantity();
-                                updateTotalSum();
-                                isDirty = true;
-                              });
-                            }
-                          }
-                        },
-                      );
-                    });
-                  }),
             ],
           ),
         ),
       ),
     );
-  }
-
-  Future<String?> openLoadingDialog() => showDialog<String>(
-        context: context,
-        builder: (context) => AlertDialog(
-          title: Text("Name of the file you want to load"),
-          content: TextField(
-            controller: loadingController,
-            autofocus: true,
-            decoration: InputDecoration(
-              hintText: "Enter the name of the file",
-            ),
-          ),
-          actions: [
-            TextButton(
-                onPressed: () {
-                  submitLoading();
-                },
-                child: Text("Load")),
-          ],
-        ),
-      );
-
-  void submitLoading() {
-    Navigator.of(context).pop(loadingController.text);
-    loadingController.clear();
-  }
-
-  Future<String?> openDialog() => showDialog<String>(
-        context: context,
-        builder: (context) => AlertDialog(
-          title: Text("Name the file"),
-          content: TextField(
-            controller: savingController,
-            autofocus: true,
-            decoration: InputDecoration(
-              hintText: "Enter the name of the file",
-            ),
-          ),
-          actions: [
-            TextButton(
-                onPressed: () {
-                  submit();
-                },
-                child: Text("Save")),
-          ],
-        ),
-      );
-  void submit() {
-    Navigator.of(context).pop(savingController.text);
-    savingController.clear();
   }
 }

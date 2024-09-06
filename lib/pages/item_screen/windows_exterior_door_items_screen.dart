@@ -2,8 +2,6 @@
 
 import 'package:cost_calculator/data/original_data.dart';
 import 'package:cost_calculator/functions/initialise_functions.dart';
-import 'package:cost_calculator/functions/save_to_json.dart';
-import 'package:cost_calculator/models/windows_exterior_doors_model.dart';
 import 'package:flutter/material.dart';
 import '../../constants/budget_constants.dart';
 import '../shared/globals/calculation_variables.dart';
@@ -164,7 +162,7 @@ class _WindowsExteriorDoorItemsScreen
     loadingController = TextEditingController();
   }
 
-  void _updateLaborHours() {
+  void _resetLaborHours() {
     if (!mounted) return; // Ensure the widget is still mounted
 
     for (int i = 0; i < windowsExteriorDoors.length; i++) {
@@ -204,7 +202,7 @@ class _WindowsExteriorDoorItemsScreen
               ),
               child: const Text('Leave'),
               onPressed: () {
-                _updateLaborHours();
+                _resetLaborHours();
                 markAsClean();
                 Navigator.pop(context, true);
               },
@@ -569,131 +567,10 @@ class _WindowsExteriorDoorItemsScreen
                   rows: rows,
                 ),
               ),
-              FloatingActionButton(
-                onPressed: () async {
-                  final fileName = await openDialog();
-                  if (fileName == null || fileName.isEmpty) return;
-
-                  WindowsAndExteriorDoorsModel windowsAndExteriorDoorsModel =
-                      WindowsAndExteriorDoorsModel(
-                    name: widget.name,
-                    description: widget.description,
-                    unit: widget.unit,
-                    quantity: widget.quantity,
-                    laborHours1: widget.laborHours1,
-                    laborHours2: widget.laborHours2,
-                    laborCost: widget.laborCost,
-                    material: widget.material1,
-                    materials: widget.material2,
-                    totalPrice: widget.totalPrice,
-                  );
-                  writeJson(context, windowsAndExteriorDoorsModel, fileName);
-                },
-                child: Text("Save to JSON"),
-                heroTag: "btn1",
-              ),
-              FloatingActionButton(
-                  child: Text("Load data"),
-                  heroTag: "btn2",
-                  onPressed: () {
-                    openLoadingDialog().then((fileName) {
-                      if (fileName == null || fileName.isEmpty) return;
-
-                      readJsonFile(fileName).then(
-                        (value) {
-                          for (int i = 0; i < value.length; i++) {
-                            WindowsAndExteriorDoorsModel
-                                windowsAndExteriorDoorsModel =
-                                WindowsAndExteriorDoorsModel.fromJson(value[i]);
-                            if (windowsAndExteriorDoorsModel.name ==
-                                widget.name) {
-                              setState(
-                                () {
-                                  widget.description =
-                                      windowsAndExteriorDoorsModel.description;
-                                  widget.unit =
-                                      windowsAndExteriorDoorsModel.unit;
-                                  widget.quantity =
-                                      windowsAndExteriorDoorsModel.quantity;
-                                  widget.laborHours1 =
-                                      windowsAndExteriorDoorsModel.laborHours1;
-                                  widget.laborHours2 =
-                                      windowsAndExteriorDoorsModel.laborHours2;
-                                  widget.laborCost =
-                                      windowsAndExteriorDoorsModel.laborCost;
-                                  widget.material1 =
-                                      windowsAndExteriorDoorsModel.material;
-                                  widget.material2 =
-                                      windowsAndExteriorDoorsModel.materials;
-                                  widget.totalPrice =
-                                      windowsAndExteriorDoorsModel.totalPrice;
-                                  setInitialValues();
-                                  calculateCalculationQuantity();
-                                  updateTotalSum();
-                                  isDirty = true;
-                                },
-                              );
-                            }
-                          }
-                        },
-                      );
-                    });
-                  }),
             ],
           ),
         ),
       ),
     );
-  }
-
-  Future<String?> openLoadingDialog() => showDialog<String>(
-        context: context,
-        builder: (context) => AlertDialog(
-          title: Text("Name of the file you want to load"),
-          content: TextField(
-            controller: loadingController,
-            autofocus: true,
-            decoration: InputDecoration(
-              hintText: "Enter the name of the file",
-            ),
-          ),
-          actions: [
-            TextButton(
-                onPressed: () {
-                  submitLoading();
-                },
-                child: Text("Load")),
-          ],
-        ),
-      );
-
-  void submitLoading() {
-    Navigator.of(context).pop(loadingController.text);
-    loadingController.clear();
-  }
-
-  Future<String?> openDialog() => showDialog<String>(
-        context: context,
-        builder: (context) => AlertDialog(
-          title: Text("Name the file"),
-          content: TextField(
-            controller: savingController,
-            autofocus: true,
-            decoration: InputDecoration(
-              hintText: "Enter the name of the file",
-            ),
-          ),
-          actions: [
-            TextButton(
-                onPressed: () {
-                  submit();
-                },
-                child: Text("Save")),
-          ],
-        ),
-      );
-  void submit() {
-    Navigator.of(context).pop(savingController.text);
-    savingController.clear();
   }
 }

@@ -201,7 +201,7 @@ class _LitExteriorWallItemsScreenState
     recalculateValues();
   }
 
-  void _updateLaborHours() {
+  void _resetLaborHours() {
     if (!mounted) return; // Ensure the widget is still mounted
 
     for (int i = 0; i < litExteriorWallData.length; i++) {
@@ -241,7 +241,7 @@ class _LitExteriorWallItemsScreenState
               ),
               child: const Text('Palikti'),
               onPressed: () {
-                _updateLaborHours();
+                _resetLaborHours();
                 markAsClean();
                 Navigator.pop(context, true);
               },
