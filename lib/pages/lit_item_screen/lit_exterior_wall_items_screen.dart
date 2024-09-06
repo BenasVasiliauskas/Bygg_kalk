@@ -2,8 +2,6 @@
 
 import 'package:cost_calculator/data/lith_data.dart';
 import 'package:cost_calculator/functions/initialise_functions.dart';
-import 'package:cost_calculator/functions/save_to_json.dart';
-import 'package:cost_calculator/models/outer_wall_data_model.dart';
 import 'package:cost_calculator/pages/shared/globals/calculation_variables.dart';
 import 'package:flutter/material.dart';
 import 'package:cost_calculator/constants/lit_budget_constants.dart';
@@ -635,125 +633,10 @@ class _LitExteriorWallItemsScreenState
                   rows: rows,
                 ),
               ),
-              FloatingActionButton(
-                onPressed: () async {
-                  final fileName = await openDialog();
-                  if (fileName == null || fileName.isEmpty) return;
-
-                  OuterWallModel outerwallModel = OuterWallModel(
-                    name: widget.name,
-                    description: widget.description,
-                    unit: widget.unit,
-                    quantity: widget.quantity,
-                    materialQuantity: widget.materialQuantity,
-                    laborHours1: widget.laborHours1,
-                    laborHours2: widget.laborHours2,
-                    laborCost: widget.laborCost,
-                    material: widget.material1,
-                    materials: widget.material2,
-                    totalPrice: widget.totalPrice,
-                  );
-                  writeJson(context, outerwallModel, fileName);
-                },
-                child: Text("Išsaugoti į JSON" ""),
-                heroTag: "btn1",
-              ),
-              FloatingActionButton(
-                  child: Text("Įkelti duomenis"),
-                  heroTag: "btn2",
-                  onPressed: () {
-                    openLoadingDialog().then(
-                      (fileName) {
-                        if (fileName == null || fileName.isEmpty) return;
-
-                        readJsonFile(fileName).then(
-                          (value) {
-                            for (int i = 0; i < value.length; i++) {
-                              OuterWallModel outerwallModel =
-                                  OuterWallModel.fromJson(value[i]);
-                              if (outerwallModel.name == widget.name) {
-                                setState(() {
-                                  widget.description =
-                                      outerwallModel.description;
-                                  widget.unit = outerwallModel.unit;
-                                  widget.quantity = outerwallModel.quantity;
-                                  widget.materialQuantity =
-                                      outerwallModel.materialQuantity;
-                                  widget.laborHours1 =
-                                      outerwallModel.laborHours1;
-                                  widget.laborHours2 =
-                                      outerwallModel.laborHours2;
-                                  widget.laborCost = outerwallModel.laborCost;
-                                  widget.material1 = outerwallModel.material;
-                                  widget.material2 = outerwallModel.materials;
-                                  widget.totalPrice = outerwallModel.totalPrice;
-                                  setInitialValues();
-                                  calculateCalculationQuantity();
-                                  updateTotalSum();
-                                  isDirty = true;
-                                });
-                              }
-                            }
-                          },
-                        );
-                      },
-                    );
-                  }),
             ],
           ),
         ),
       ),
     );
-  }
-
-  Future<String?> openLoadingDialog() => showDialog<String>(
-        context: context,
-        builder: (context) => AlertDialog(
-          title: Text("Failo, kurį norite įkelti, pavadinimas"),
-          content: TextField(
-            controller: loadingController,
-            autofocus: true,
-            decoration: InputDecoration(
-              hintText: "Įveskite failo pavadinimą",
-            ),
-          ),
-          actions: [
-            TextButton(
-                onPressed: () {
-                  submitLoading();
-                },
-                child: Text("Įkelti")),
-          ],
-        ),
-      );
-
-  void submitLoading() {
-    Navigator.of(context).pop(loadingController.text);
-    loadingController.clear();
-  }
-
-  Future<String?> openDialog() => showDialog<String>(
-        context: context,
-        builder: (context) => AlertDialog(
-          title: Text("Suteikite failo pavadinimą"),
-          content: TextField(
-            controller: savingController,
-            autofocus: true,
-            decoration: InputDecoration(
-              hintText: "Įveskite failo pavadinimą",
-            ),
-          ),
-          actions: [
-            TextButton(
-                onPressed: () {
-                  submit();
-                },
-                child: Text("Spar")),
-          ],
-        ),
-      );
-  void submit() {
-    Navigator.of(context).pop(savingController.text);
-    savingController.clear();
   }
 }
