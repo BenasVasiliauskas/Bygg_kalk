@@ -3,8 +3,6 @@
 import 'package:cost_calculator/constants/pol_budget_constants.dart';
 import 'package:cost_calculator/data/polish_data.dart';
 import 'package:cost_calculator/functions/initialise_functions.dart';
-import 'package:cost_calculator/functions/save_to_json.dart';
-import 'package:cost_calculator/models/support_system_data_model.dart';
 import 'package:cost_calculator/pages/shared/globals/calculation_variables.dart';
 import 'package:flutter/material.dart';
 
@@ -581,122 +579,10 @@ class _PolSupportSystemItemScreenState
                   rows: rows,
                 ),
               ),
-              FloatingActionButton(
-                onPressed: () async {
-                  final fileName = await openDialog();
-                  if (fileName == null || fileName.isEmpty) return;
-
-                  SupportSystemModel supportSystemModel = SupportSystemModel(
-                    name: widget.name,
-                    description: widget.description,
-                    unit: widget.unit,
-                    quantity: widget.quantity,
-                    laborHours1: widget.laborHours1,
-                    laborHours2: widget.laborHours2,
-                    laborCost: widget.laborCost,
-                    material: widget.material1,
-                    materials: widget.material2,
-                    totalPrice: widget.totalPrice,
-                  );
-
-                  writeJson(context, supportSystemModel, fileName);
-                },
-                child: Text("Zapisz do JSON"),
-                heroTag: "btn1",
-              ),
-              FloatingActionButton(
-                  child: Text("Załaduj dane"),
-                  heroTag: "btn2",
-                  onPressed: () {
-                    openLoadingDialog().then((fileName) {
-                      if (fileName == null || fileName.isEmpty) return;
-
-                      readJsonFile(fileName).then(
-                        (value) {
-                          for (int i = 0; i < value.length; i++) {
-                            SupportSystemModel supportSystemModel =
-                                SupportSystemModel.fromJson(value[i]);
-                            if (supportSystemModel.name == widget.name) {
-                              setState(() {
-                                widget.description =
-                                    supportSystemModel.description;
-                                widget.unit = supportSystemModel.unit;
-                                widget.quantity = supportSystemModel.quantity;
-                                widget.laborHours1 =
-                                    supportSystemModel.laborHours1;
-                                widget.laborHours2 =
-                                    supportSystemModel.laborHours2;
-                                widget.laborCost = supportSystemModel.laborCost;
-                                widget.material1 = supportSystemModel.material;
-                                widget.material2 = supportSystemModel.materials;
-                                widget.totalPrice =
-                                    supportSystemModel.totalPrice;
-                                setInitialValues();
-                                calculateCalculationQuantity();
-                                updateTotalSum();
-                                isDirty = true;
-                              });
-                            }
-                          }
-                        },
-                      );
-                    });
-                  }),
             ],
           ),
         ),
       ),
     );
-  }
-
-  Future<String?> openLoadingDialog() => showDialog<String>(
-        context: context,
-        builder: (context) => AlertDialog(
-          title: Text("Nazwa pliku, który chcesz załadować"),
-          content: TextField(
-            controller: loadingController,
-            autofocus: true,
-            decoration: InputDecoration(
-              hintText: "Wprowadź nazwę pliku",
-            ),
-          ),
-          actions: [
-            TextButton(
-                onPressed: () {
-                  submitLoading();
-                },
-                child: Text("Załaduj")),
-          ],
-        ),
-      );
-
-  void submitLoading() {
-    Navigator.of(context).pop(loadingController.text);
-    loadingController.clear();
-  }
-
-  Future<String?> openDialog() => showDialog<String>(
-        context: context,
-        builder: (context) => AlertDialog(
-          title: Text("Nadaj plikowi nazwę"),
-          content: TextField(
-            controller: savingController,
-            autofocus: true,
-            decoration: InputDecoration(
-              hintText: "Wprowadź nazwę pliku",
-            ),
-          ),
-          actions: [
-            TextButton(
-                onPressed: () {
-                  submit();
-                },
-                child: Text("Spar")),
-          ],
-        ),
-      );
-  void submit() {
-    Navigator.of(context).pop(savingController.text);
-    savingController.clear();
   }
 }

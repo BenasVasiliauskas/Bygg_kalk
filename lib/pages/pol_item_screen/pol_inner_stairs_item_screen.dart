@@ -3,8 +3,6 @@
 import 'package:cost_calculator/constants/pol_budget_constants.dart';
 import 'package:cost_calculator/data/polish_data.dart';
 import 'package:cost_calculator/functions/initialise_functions.dart';
-import 'package:cost_calculator/functions/save_to_json.dart';
-import 'package:cost_calculator/models/inner_stairs_model.dart';
 import 'package:cost_calculator/pages/shared/globals/calculation_variables.dart';
 import 'package:flutter/material.dart';
 
@@ -581,121 +579,10 @@ class _PolInnerStairsItemScreenState extends State<PolInnerStairsItemScreen> {
                   rows: rows,
                 ),
               ),
-              FloatingActionButton(
-                onPressed: () async {
-                  final fileName = await openDialog();
-                  if (fileName == null || fileName.isEmpty) return;
-
-                  InnerStairsModel innerStairsModel = InnerStairsModel(
-                    name: widget.name,
-                    description: widget.description,
-                    unit: widget.unit,
-                    quantity: widget.quantity,
-                    laborHours1: widget.laborHours1,
-                    laborHours2: widget.laborHours2,
-                    laborCost: widget.laborCost,
-                    material: widget.material1,
-                    materials: widget.material2,
-                    totalPrice: widget.totalPrice,
-                  );
-
-                  writeJson(context, innerStairsModel, fileName);
-                },
-                child: Text("Lagre til JSON"),
-                heroTag: "btn1",
-              ),
-              FloatingActionButton(
-                  child: Text("Last inn data"),
-                  heroTag: "btn2",
-                  onPressed: () {
-                    openLoadingDialog().then((fileName) {
-                      if (fileName == null || fileName.isEmpty) return;
-
-                      readJsonFile(fileName).then(
-                        (value) {
-                          for (int i = 0; i < value.length; i++) {
-                            InnerStairsModel innerStairsModel =
-                                InnerStairsModel.fromJson(value[i]);
-                            if (innerStairsModel.name == widget.name) {
-                              setState(() {
-                                widget.description =
-                                    innerStairsModel.description;
-                                widget.unit = innerStairsModel.unit;
-                                widget.quantity = innerStairsModel.quantity;
-                                widget.laborHours1 =
-                                    innerStairsModel.laborHours1;
-                                widget.laborHours2 =
-                                    innerStairsModel.laborHours2;
-                                widget.laborCost = innerStairsModel.laborCost;
-                                widget.material1 = innerStairsModel.material;
-                                widget.material2 = innerStairsModel.materials;
-                                widget.totalPrice = innerStairsModel.totalPrice;
-                                setInitialValues();
-                                calculateCalculationQuantity();
-                                updateTotalSum();
-                                isDirty = true;
-                              });
-                            }
-                          }
-                        },
-                      );
-                    });
-                  }),
             ],
           ),
         ),
       ),
     );
-  }
-
-  Future<String?> openLoadingDialog() => showDialog<String>(
-        context: context,
-        builder: (context) => AlertDialog(
-          title: Text("Navnet på filen du vil laste inn"),
-          content: TextField(
-            controller: loadingController,
-            autofocus: true,
-            decoration: InputDecoration(
-              hintText: "Skriv inn navnet på filen",
-            ),
-          ),
-          actions: [
-            TextButton(
-                onPressed: () {
-                  submitLoading();
-                },
-                child: Text("Last")),
-          ],
-        ),
-      );
-
-  void submitLoading() {
-    Navigator.of(context).pop(loadingController.text);
-    loadingController.clear();
-  }
-
-  Future<String?> openDialog() => showDialog<String>(
-        context: context,
-        builder: (context) => AlertDialog(
-          title: Text("Navnet på filen du vil laste inn"),
-          content: TextField(
-            controller: savingController,
-            autofocus: true,
-            decoration: InputDecoration(
-              hintText: "Skriv inn navnet på filen",
-            ),
-          ),
-          actions: [
-            TextButton(
-                onPressed: () {
-                  submit();
-                },
-                child: Text("Last")),
-          ],
-        ),
-      );
-  void submit() {
-    Navigator.of(context).pop(savingController.text);
-    savingController.clear();
   }
 }
