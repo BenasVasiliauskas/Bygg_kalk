@@ -1754,7 +1754,7 @@ final litWindowsExteriorDoors = [
       0.00,
       0.00,
     ],
-    //need a construction type here add here
+    constructionType: "New Construction",
   ),
   //
   WindowsAndExteriorDoorsModel(
@@ -1903,6 +1903,7 @@ final litWindowsExteriorDoors = [
       0.00,
       0.00,
     ],
+    constructionType: "Demolition",
   ),
 ];
 

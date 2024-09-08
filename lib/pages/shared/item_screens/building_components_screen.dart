@@ -342,7 +342,7 @@ Nowa konstrukcja, Przebudowa, Wyburzenie''',
                             languageEnglish
                                 ? "Covers"
                                 : languageLithuanian
-                                    ? "Padangos"
+                                    ? "Apdanga"
                                     : languageNorwegian
                                         ? "Dekker"
                                         : "Opona",

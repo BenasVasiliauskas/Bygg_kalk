@@ -345,74 +345,62 @@ class _NorwExteriorWallItemsScreenState
               true,
               optionalWidth: 45,
             ),
-            DataCell(
-              SizedBox(
-                width: 35,
-                child: TextField(
-                  decoration: InputDecoration(
-                      border: InputBorder.none,
-                      contentPadding: EdgeInsets.zero),
-                  style:
-                      TextStyle(color: Theme.of(context).colorScheme.secondary),
-                  controller: laborHours1Controllers[i],
-                  onChanged: (value) {
-                    isDirty = true;
-                    //
-                    double parsedValue = double.parse(value);
-                    widget.laborHours1[i] = double.parse(
-                      parsedValue.toStringAsFixed(2),
-                    );
-                    //
-                    widget.laborHours2[i] = calculateWorkHours2(
-                        i, widget.laborHours1, widget.calculationQuantity);
-                    laborHours2Controllers[i].text = calculateWorkHours2(
-                            i, widget.laborHours1, widget.calculationQuantity)
-                        .toStringAsFixed(2);
-                    //
-                    widget.laborCost[i] = calculateJobCost(
-                        i, widget.laborHours1, widget.calculationQuantity);
-                    laborCostControllers[i].text = calculateJobCost(
-                            i, widget.laborHours1, widget.calculationQuantity)
-                        .toStringAsFixed(2);
-                    //
-                    widget.laborCost[i] = calculateJobCost(
-                        i, widget.laborHours2, widget.calculationQuantity);
-                    laborCostControllers[i].text = calculateJobCost(
-                            i, widget.laborHours2, widget.calculationQuantity)
-                        .toStringAsFixed(2);
+            dataCellDo(
+              laborHours1Controllers,
+              i,
+              (value) {
+                isDirty = true;
+                //
+                double parsedValue = double.parse(value);
+                widget.laborHours1[i] = double.parse(
+                  parsedValue.toStringAsFixed(2),
+                );
+                //
+                widget.laborHours2[i] = calculateWorkHours2(
+                    i, widget.laborHours1, widget.calculationQuantity);
+                laborHours2Controllers[i].text = calculateWorkHours2(
+                        i, widget.laborHours1, widget.calculationQuantity)
+                    .toStringAsFixed(2);
+                //
+                widget.laborCost[i] = calculateJobCost(
+                    i, widget.laborHours1, widget.calculationQuantity);
+                laborCostControllers[i].text = calculateJobCost(
+                        i, widget.laborHours1, widget.calculationQuantity)
+                    .toStringAsFixed(2);
+                //
+                widget.laborCost[i] = calculateJobCost(
+                    i, widget.laborHours2, widget.calculationQuantity);
+                laborCostControllers[i].text = calculateJobCost(
+                        i, widget.laborHours2, widget.calculationQuantity)
+                    .toStringAsFixed(2);
 
-                    // Recalculate and update the material 2 when quantity changes
-                    widget.material2[i] = calculateMaterialCost(
-                      i,
-                      widget.material1,
-                      widget.calculationQuantity,
-                    );
-                    material2Controllers[i].text = calculateMaterialCost(
-                      i,
-                      widget.material1,
-                      widget.calculationQuantity,
-                    ).toStringAsFixed(2);
+                // Recalculate and update the material 2 when quantity changes
+                widget.material2[i] = calculateMaterialCost(
+                  i,
+                  widget.material1,
+                  widget.calculationQuantity,
+                );
+                material2Controllers[i].text = calculateMaterialCost(
+                  i,
+                  widget.material1,
+                  widget.calculationQuantity,
+                ).toStringAsFixed(2);
 
-                    // Recalculate and update the total price when quantity changes
-                    widget.totalPrice[i] = calculateTotalPrice(
+                // Recalculate and update the total price when quantity changes
+                widget.totalPrice[i] = calculateTotalPrice(i, widget.laborCost,
+                    widget.material1, widget.calculationQuantity);
+                totalPriceControllers[i].text = calculateTotalPrice(
                         i,
                         widget.laborCost,
                         widget.material1,
-                        widget.calculationQuantity);
-                    totalPriceControllers[i].text = calculateTotalPrice(
-                            i,
-                            widget.laborCost,
-                            widget.material1,
-                            widget.calculationQuantity)
-                        .toStringAsFixed(2);
-                    rebuildDataTable();
-                  },
-                  keyboardType: TextInputType.numberWithOptions(
-                      decimal: true), // Allow decimal numbers
-                ),
-              ),
-            ), // custom column cell
-
+                        widget.calculationQuantity)
+                    .toStringAsFixed(2);
+                rebuildDataTable();
+              },
+              Color.fromARGB(255, 218, 128, 122),
+              false,
+              optionalWidth: 55,
+            ),
             dataCellDo(
               laborHours2Controllers,
               i,
@@ -549,10 +537,20 @@ class _NorwExteriorWallItemsScreenState
           0,
           Theme.of(context).colorScheme.background,
         ),
-        dataCellDisplaySingle(
-          totalLaborHours1.toStringAsFixed(2),
-          65,
-          Theme.of(context).colorScheme.background,
+        DataCell(
+          SizedBox(
+            width: 55,
+            child: TextField(
+              decoration: InputDecoration(
+                  border: InputBorder.none,
+                  contentPadding: EdgeInsets.only(left: 8),
+                  fillColor: const Color.fromARGB(255, 218, 128, 122),
+                  filled: true),
+              controller: TextEditingController(
+                  text: totalLaborHours1.toStringAsFixed(2)),
+              readOnly: true,
+            ),
+          ),
         ),
         dataCellDisplaySingle(
           totalLaborHours2.toStringAsFixed(2),

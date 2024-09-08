@@ -1754,6 +1754,7 @@ final polWindowsExteriorDoors = [
       0.00,
       0.00,
     ],
+    constructionType: "New Construction",
   ),
   //
   WindowsAndExteriorDoorsModel(
@@ -1902,6 +1903,7 @@ final polWindowsExteriorDoors = [
       0.00,
       0.00,
     ],
+    constructionType: "Demolition",
   ),
 ];
 

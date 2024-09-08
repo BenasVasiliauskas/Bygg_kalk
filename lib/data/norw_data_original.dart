@@ -1760,6 +1760,7 @@ final norwWindowsExteriorDoors = [
       0.00,
       0.00,
     ],
+    constructionType: "New Construction",
   ),
   WindowsAndExteriorDoorsModel(
     name: "Ytterdør av tre, i bindingsverksvegg, hvit, 10x21",
@@ -1907,6 +1908,7 @@ final norwWindowsExteriorDoors = [
       0.00,
       0.00,
     ],
+    constructionType: "Demolition",
   ),
 ];
 

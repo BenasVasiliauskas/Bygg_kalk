@@ -59,7 +59,7 @@ class _DeckSectionsState extends State<DeckSections> {
             languageEnglish
                 ? "Covers"
                 : languageLithuanian
-                    ? "Padangos"
+                    ? "Apdanga"
                     : languageNorwegian
                         ? "Dekker"
                         : "Opona",
