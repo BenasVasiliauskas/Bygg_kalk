@@ -63,8 +63,6 @@ class _PolBudgetScreenState extends State<PolBudgetScreen> {
                       await polLoadProject(fileName, data, emptyOuterRoofModel);
                       await polLoadProject(fileName, data, emptyOuterWallModel);
                       await polLoadProject(
-                          fileName, data, emptyParquetAndLaminateModel);
-                      await polLoadProject(
                           fileName, data, emptyScaffoldingModel);
                       await polLoadProject(
                           fileName, data, emptySupportSystemModel);

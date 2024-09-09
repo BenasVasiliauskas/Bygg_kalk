@@ -6,7 +6,6 @@ import 'package:cost_calculator/models/inner_stairs_model.dart';
 import 'package:cost_calculator/models/inner_wall_data_model.dart';
 import 'package:cost_calculator/models/outer_roof_model.dart';
 import 'package:cost_calculator/models/outer_wall_data_model.dart';
-import 'package:cost_calculator/models/parquet_laminate_data_model.dart';
 import 'package:cost_calculator/models/scaffolding_data_model.dart';
 import 'package:cost_calculator/models/support_system_data_model.dart';
 import 'package:cost_calculator/models/terrace_model.dart';
@@ -111,19 +110,6 @@ OuterWallModel emptyOuterWallModel = OuterWallModel(
   description: [""],
   unit: [],
   materialQuantity: [],
-  quantity: [],
-  laborHours1: [],
-  laborHours2: [],
-  laborCost: [],
-  material: [],
-  materials: [],
-  totalPrice: [],
-);
-
-ParquetAndLaminateModel emptyParquetAndLaminateModel = ParquetAndLaminateModel(
-  name: "",
-  description: [""],
-  unit: [],
   quantity: [],
   laborHours1: [],
   laborHours2: [],

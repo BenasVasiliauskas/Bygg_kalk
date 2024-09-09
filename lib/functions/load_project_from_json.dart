@@ -7,7 +7,6 @@ import 'package:cost_calculator/models/inner_stairs_model.dart';
 import 'package:cost_calculator/models/inner_wall_data_model.dart';
 import 'package:cost_calculator/models/outer_roof_model.dart';
 import 'package:cost_calculator/models/outer_wall_data_model.dart';
-import 'package:cost_calculator/models/parquet_laminate_data_model.dart';
 import 'package:cost_calculator/models/scaffolding_data_model.dart';
 import 'package:cost_calculator/models/support_system_data_model.dart';
 import 'package:cost_calculator/models/terrace_model.dart';
@@ -40,84 +39,74 @@ Future<void> loadProject(String fileName, var data, var model) async {
                         await loadInnerDoorModel(model),
                       }
                     //4
-                    : model.runtimeType == ParquetAndLaminateModel
+
+                    : model.runtimeType == WindowsAndExteriorDoorsModel
                         ? {
-                            model = ParquetAndLaminateModel.fromJson(data[i]),
-                            await loadParquetAndLaminateModel(model),
+                            model =
+                                WindowsAndExteriorDoorsModel.fromJson(data[i]),
+                            await loadWindowsAndExteriorDoorsModel(model),
                           }
                         //5
-                        : model.runtimeType == WindowsAndExteriorDoorsModel
+                        : model.runtimeType == SupportSystemModel
                             ? {
-                                model = WindowsAndExteriorDoorsModel.fromJson(
-                                    data[i]),
-                                await loadWindowsAndExteriorDoorsModel(model),
+                                model = SupportSystemModel.fromJson(data[i]),
+                                await loadSupportSystemModel(model),
                               }
                             //6
-                            : model.runtimeType == SupportSystemModel
+                            : model.runtimeType == FlooringModel
                                 ? {
-                                    model =
-                                        SupportSystemModel.fromJson(data[i]),
-                                    await loadSupportSystemModel(model),
+                                    model = FlooringModel.fromJson(data[i]),
+                                    await loadFlooringModel(model),
                                   }
                                 //7
-                                : model.runtimeType == FlooringModel
+                                : model.runtimeType == TerraceModel
                                     ? {
-                                        model = FlooringModel.fromJson(data[i]),
-                                        await loadFlooringModel(model),
+                                        model = TerraceModel.fromJson(data[i]),
+                                        await loadTerraceModel(model),
                                       }
                                     //8
-                                    : model.runtimeType == TerraceModel
+                                    : model.runtimeType == OuterRoofModel
                                         ? {
-                                            model =
-                                                TerraceModel.fromJson(data[i]),
-                                            await loadTerraceModel(model),
+                                            model = OuterRoofModel.fromJson(
+                                                data[i]),
+                                            await loadOuterRoofModel(model),
                                           }
                                         //9
-                                        : model.runtimeType == OuterRoofModel
+                                        : model.runtimeType == HullRoofingModel
                                             ? {
-                                                model = OuterRoofModel.fromJson(
-                                                    data[i]),
-                                                await loadOuterRoofModel(model),
+                                                model =
+                                                    HullRoofingModel.fromJson(
+                                                        data[i]),
+                                                await loadHullRoofingModel(
+                                                    model),
                                               }
                                             //10
                                             : model.runtimeType ==
-                                                    HullRoofingModel
+                                                    ScaffoldingModel
                                                 ? {
-                                                    model = HullRoofingModel
+                                                    model = ScaffoldingModel
                                                         .fromJson(data[i]),
-                                                    await loadHullRoofingModel(
+                                                    await loadScaffoldingModel(
                                                         model),
                                                   }
-                                                //11
+                                                //1
                                                 : model.runtimeType ==
-                                                        ScaffoldingModel
+                                                        InnerStairsModel
                                                     ? {
-                                                        model = ScaffoldingModel
+                                                        model = InnerStairsModel
                                                             .fromJson(data[i]),
-                                                        await loadScaffoldingModel(
+                                                        await loadInnerStairsModel(
                                                             model),
                                                       }
-                                                    //12
-                                                    : model.runtimeType ==
-                                                            InnerStairsModel
-                                                        ? {
-                                                            model =
-                                                                InnerStairsModel
-                                                                    .fromJson(
-                                                                        data[
-                                                                            i]),
-                                                            await loadInnerStairsModel(
-                                                                model),
-                                                          }
 
-                                                        //13
-                                                        : {
-                                                            model = WasteModel
-                                                                .fromJson(
-                                                                    data[i]),
-                                                            await loadWasteModel(
-                                                                model),
-                                                          };
+                                                    //12
+                                                    : {
+                                                        model =
+                                                            WasteModel.fromJson(
+                                                                data[i]),
+                                                        await loadWasteModel(
+                                                            model),
+                                                      };
   }
 }
 
@@ -405,38 +394,6 @@ Future<void> loadWindowsAndExteriorDoorsModel(var model) async {
       //   windowsExteriorDoorsCalculationControllers.text =
       //       calculationQuantity.toStringAsFixed(2);
       // }
-    }
-    continue;
-  }
-}
-
-Future<void> loadParquetAndLaminateModel(var model) async {
-  // double mat2Total = 0;
-  // double mat1Total = 0;
-  // double calculationQuantity = 0;
-  for (int i = 0; i < parquetAndLaminate.length; i++) {
-    if (model.name == parquetAndLaminate[i].name) {
-      parquetAndLaminate[i].name = model.name;
-      parquetAndLaminate[i].description = model.description;
-      parquetAndLaminate[i].unit = model.unit;
-      parquetAndLaminate[i].quantity = model.quantity;
-      parquetAndLaminate[i].laborHours1 = model.laborHours1;
-      parquetAndLaminate[i].laborHours2 = model.laborHours2;
-      parquetAndLaminate[i].laborCost = model.laborCost;
-      parquetAndLaminate[i].material = model.material;
-      parquetAndLaminate[i].materials = model.materials;
-      parquetAndLaminate[i].totalPrice = model.totalPrice;
-      // mat2Total = parquetAndLaminate[i]
-      //     .materials
-      //     .fold(0, (previousValue, element) => previousValue + element);
-      // mat1Total = parquetAndLaminate[i]
-      //     .material
-      //     .fold(0, (previousValue, element) => previousValue + element);
-      // if (calculationQuantity == 0 && mat2Total != 0 && mat1Total != 0) {
-      //   double calculationQuantity = mat2Total / mat1Total;
-      //   parquetAndLaminateCalculationControllers.text =
-      //       calculationQuantity.toStringAsFixed(2);
-      //}
     }
     continue;
   }

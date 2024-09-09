@@ -67,8 +67,6 @@ class _NorwBudgetScreenState extends State<NorwBudgetScreen> {
                       await norwLoadProject(
                           fileName, data, emptyOuterWallModel);
                       await norwLoadProject(
-                          fileName, data, emptyParquetAndLaminateModel);
-                      await norwLoadProject(
                           fileName, data, emptyScaffoldingModel);
                       await norwLoadProject(
                           fileName, data, emptySupportSystemModel);

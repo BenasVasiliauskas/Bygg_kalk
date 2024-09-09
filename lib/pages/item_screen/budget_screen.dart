@@ -61,8 +61,7 @@ class _BudgetScreenState extends State<BudgetScreen> {
                       await loadProject(fileName, data, emptyInnerWallModel);
                       await loadProject(fileName, data, emptyOuterRoofModel);
                       await loadProject(fileName, data, emptyOuterWallModel);
-                      await loadProject(
-                          fileName, data, emptyParquetAndLaminateModel);
+
                       await loadProject(fileName, data, emptyScaffoldingModel);
                       await loadProject(
                           fileName, data, emptySupportSystemModel);

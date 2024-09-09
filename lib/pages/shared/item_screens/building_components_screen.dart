@@ -13,7 +13,6 @@ import 'package:cost_calculator/pages/shared/home_page.dart';
 import 'package:cost_calculator/pages/item_sections/inner_door_sections.dart';
 import 'package:cost_calculator/pages/item_sections/inner_wall_sections.dart';
 import 'package:cost_calculator/pages/item_sections/outer_wall_sections.dart';
-import 'package:cost_calculator/pages/item_sections/parquet_laminate_sections.dart';
 import 'package:cost_calculator/pages/item_sections/windows_exterior_door_sections.dart';
 import 'package:cost_calculator/widgets/custom_drawer.dart';
 import 'package:flutter/material.dart';
@@ -660,52 +659,6 @@ Nowa konstrukcja''',
                     ),
                   ),
                   Text(wasteData.length.toString()),
-                ],
-              ),
-              Row(
-                children: [
-                  Tooltip(
-                    message: languageEnglish
-                        ? '''View Parquet and laminate. Contained elements:
-New building'''
-                        : languageLithuanian
-                            ? '''Peržiūrėti parketą ir laminatą. Sudaryti elementai: 
-Nauja statyba'''
-                            : languageNorwegian
-                                ? '''Vis parkett og laminat. Inneholdte elementer:
-Nybygg'''
-                                : '''Zobacz parkiet i laminat. Elementy uzupełniające:
-Nowa konstrukcja''',
-                    child: TextButton(
-                      onPressed: () {
-                        Navigator.of(context).pushReplacement(
-                          MaterialPageRoute(
-                            builder: (context) {
-                              return ParquetLaminateSections();
-                            },
-                          ),
-                        );
-                      },
-                      child: Row(
-                        children: [
-                          Padding(
-                            padding: const EdgeInsets.fromLTRB(0, 0, 8, 0),
-                            child: SizedBox(
-                                width: 50,
-                                child: Image.asset("assets/Parquet.png")),
-                          ),
-                          Text(languageEnglish
-                              ? "Parquet and laminate"
-                              : languageNorwegian
-                                  ? "Parquet og laminat"
-                                  : languagePolish
-                                      ? "Parkiet i laminat"
-                                      : "Parketas ir laminatas"),
-                        ],
-                      ),
-                    ),
-                  ),
-                  Text(parquetAndLaminate.length.toString()),
                 ],
               ),
             ],

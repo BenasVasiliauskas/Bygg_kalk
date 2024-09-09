@@ -110,8 +110,6 @@ class _FilePickerScreenState extends State<FilePickerScreen> {
                         await writeJsonComma(fileName);
                         await saveProject(fileName, innerDoor);
                         await writeJsonComma(fileName);
-                        await saveProject(fileName, parquetAndLaminate);
-                        await writeJsonComma(fileName);
                         await saveProject(fileName, windowsExteriorDoors);
                         await writeJsonComma(fileName);
                         await saveProject(fileName, supportSystem);
@@ -138,8 +136,7 @@ class _FilePickerScreenState extends State<FilePickerScreen> {
                         await writeJsonComma(fileName);
                         await saveProject(fileName, norwInnerDoor);
                         await writeJsonComma(fileName);
-                        await saveProject(fileName, norwParquetAndLaminate);
-                        await writeJsonComma(fileName);
+
                         await saveProject(fileName, norwWindowsExteriorDoors);
                         await writeJsonComma(fileName);
                         await saveProject(fileName, norwSupportSystem);
@@ -201,8 +198,6 @@ class _FilePickerScreenState extends State<FilePickerScreen> {
                           await loadProject(
                               fileName, data, emptyOuterWallModel);
                           await loadProject(
-                              fileName, data, emptyParquetAndLaminateModel);
-                          await loadProject(
                               fileName, data, emptyScaffoldingModel);
                           await loadProject(
                               fileName, data, emptySupportSystemModel);
@@ -224,8 +219,6 @@ class _FilePickerScreenState extends State<FilePickerScreen> {
                               fileName, data, emptyOuterRoofModel);
                           await norwLoadProject(
                               fileName, data, emptyOuterWallModel);
-                          await norwLoadProject(
-                              fileName, data, emptyParquetAndLaminateModel);
                           await norwLoadProject(
                               fileName, data, emptyScaffoldingModel);
                           await norwLoadProject(
@@ -251,8 +244,6 @@ class _FilePickerScreenState extends State<FilePickerScreen> {
                           await polLoadProject(
                               fileName, data, emptyOuterWallModel);
                           await polLoadProject(
-                              fileName, data, emptyParquetAndLaminateModel);
-                          await polLoadProject(
                               fileName, data, emptyScaffoldingModel);
                           await polLoadProject(
                               fileName, data, emptySupportSystemModel);
@@ -276,8 +267,6 @@ class _FilePickerScreenState extends State<FilePickerScreen> {
                               fileName, data, emptyOuterRoofModel);
                           await litLoadProject(
                               fileName, data, emptyOuterWallModel);
-                          await litLoadProject(
-                              fileName, data, emptyParquetAndLaminateModel);
                           await litLoadProject(
                               fileName, data, emptyScaffoldingModel);
                           await litLoadProject(

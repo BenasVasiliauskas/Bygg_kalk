@@ -6,7 +6,6 @@ import 'package:cost_calculator/models/inner_stairs_model.dart';
 import 'package:cost_calculator/models/inner_wall_data_model.dart';
 import 'package:cost_calculator/models/outer_roof_model.dart';
 import 'package:cost_calculator/models/outer_wall_data_model.dart';
-import 'package:cost_calculator/models/parquet_laminate_data_model.dart';
 import 'package:cost_calculator/models/scaffolding_data_model.dart';
 import 'package:cost_calculator/models/support_system_data_model.dart';
 import 'package:cost_calculator/models/terrace_model.dart';
@@ -1280,6 +1279,45 @@ final polFlooringData = [
         0.00,
       ],
       constructionType: "Demolition"),
+  FlooringModel(
+    name: "Powierzchnia pokrywająca parkiet",
+    description: [
+      "Parkett på undergulv, eik",
+      "Laminat gulv på undergulv, eik",
+    ],
+    unit: [
+      "m²",
+      "m²",
+    ],
+    quantity: [
+      1.00,
+      1.00,
+    ],
+    laborHours1: [
+      0.36,
+      0.25,
+    ],
+    laborHours2: [
+      0.00,
+      0.00,
+    ],
+    laborCost: [
+      0.00,
+      0.00,
+    ],
+    material: [
+      528.30,
+      528.30,
+    ],
+    materials: [
+      0.00,
+      0.00,
+    ],
+    totalPrice: [
+      0.00,
+      0.00,
+    ],
+  )
 ];
 
 final polDeckData = [
@@ -1563,48 +1601,6 @@ final polInnerDoor = [
     ],
     constructionType: "New Construction",
   )
-];
-
-final polParquetAndLaminate = [
-  ParquetAndLaminateModel(
-    name: "Powierzchnia pokrywająca parkiet",
-    description: [
-      "Parkett på undergulv, eik",
-      "Laminat gulv på undergulv, eik",
-    ],
-    unit: [
-      "m²",
-      "m²",
-    ],
-    quantity: [
-      1.00,
-      1.00,
-    ],
-    laborHours1: [
-      0.36,
-      0.25,
-    ],
-    laborHours2: [
-      0.00,
-      0.00,
-    ],
-    laborCost: [
-      0.00,
-      0.00,
-    ],
-    material: [
-      528.30,
-      528.30,
-    ],
-    materials: [
-      0.00,
-      0.00,
-    ],
-    totalPrice: [
-      0.00,
-      0.00,
-    ],
-  ),
 ];
 
 final polWindowsExteriorDoors = [

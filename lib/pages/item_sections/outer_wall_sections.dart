@@ -88,7 +88,7 @@ class _OuterWallSectionsState extends State<OuterWallSections> {
                         : languageLithuanian
                             ? "Naujas pastatas"
                             : languageNorwegian
-                                ? "Ny bygning"
+                                ? "Ny Bygg"
                                 : "ŚNowy budynek",
                   ),
                 ),

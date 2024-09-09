@@ -6,7 +6,6 @@ import 'package:cost_calculator/models/inner_stairs_model.dart';
 import 'package:cost_calculator/models/inner_wall_data_model.dart';
 import 'package:cost_calculator/models/outer_roof_model.dart';
 import 'package:cost_calculator/models/outer_wall_data_model.dart';
-import 'package:cost_calculator/models/parquet_laminate_data_model.dart';
 import 'package:cost_calculator/models/scaffolding_data_model.dart';
 import 'package:cost_calculator/models/support_system_data_model.dart';
 import 'package:cost_calculator/models/terrace_model.dart';
@@ -1280,6 +1279,45 @@ final litFlooringData = [
         0.00,
       ],
       constructionType: "Demolition"),
+  FlooringModel(
+    name: "Parketo grindų danga",
+    description: [
+      "Ąžuolinis parketas ant grindų pagrindo",
+      "Laminuotos grindys ant grindų pagrindo, ąžuolas",
+    ],
+    unit: [
+      "m²",
+      "m²",
+    ],
+    quantity: [
+      1.00,
+      1.00,
+    ],
+    laborHours1: [
+      0.36,
+      0.25,
+    ],
+    laborHours2: [
+      0.00,
+      0.00,
+    ],
+    laborCost: [
+      0.00,
+      0.00,
+    ],
+    material: [
+      528.30,
+      528.30,
+    ],
+    materials: [
+      0.00,
+      0.00,
+    ],
+    totalPrice: [
+      0.00,
+      0.00,
+    ],
+  ),
 ];
 
 final litDeckData = [
@@ -1564,49 +1602,6 @@ final litInnerDoor = [
     constructionType: "New Construction",
   ),
 ];
-
-final litParquetAndLaminate = [
-  ParquetAndLaminateModel(
-    name: "Parketo grindų danga",
-    description: [
-      "Ąžuolinis parketas ant grindų pagrindo",
-      "Laminuotos grindys ant grindų pagrindo, ąžuolas",
-    ],
-    unit: [
-      "m²",
-      "m²",
-    ],
-    quantity: [
-      1.00,
-      1.00,
-    ],
-    laborHours1: [
-      0.36,
-      0.25,
-    ],
-    laborHours2: [
-      0.00,
-      0.00,
-    ],
-    laborCost: [
-      0.00,
-      0.00,
-    ],
-    material: [
-      528.30,
-      528.30,
-    ],
-    materials: [
-      0.00,
-      0.00,
-    ],
-    totalPrice: [
-      0.00,
-      0.00,
-    ],
-  ),
-];
-
 final litWindowsExteriorDoors = [
   WindowsAndExteriorDoorsModel(
     name: "Langas, medinė viršutinė siena 12x10 posūkis",

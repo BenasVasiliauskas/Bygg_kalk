@@ -43,8 +43,6 @@ class _homePageState extends State<homePage> {
           await writeJsonComma(fileName);
           await saveProject(fileName, innerDoor);
           await writeJsonComma(fileName);
-          await saveProject(fileName, parquetAndLaminate);
-          await writeJsonComma(fileName);
           await saveProject(fileName, windowsExteriorDoors);
           await writeJsonComma(fileName);
           await saveProject(fileName, supportSystem);
@@ -70,8 +68,6 @@ class _homePageState extends State<homePage> {
           await saveProject(fileName, norwDeckData);
           await writeJsonComma(fileName);
           await saveProject(fileName, norwInnerDoor);
-          await writeJsonComma(fileName);
-          await saveProject(fileName, norwParquetAndLaminate);
           await writeJsonComma(fileName);
           await saveProject(fileName, norwWindowsExteriorDoors);
           await writeJsonComma(fileName);
@@ -143,6 +139,23 @@ class _homePageState extends State<homePage> {
                                     : languageLithuanian
                                         ? "Statybinės dalys"
                                         : "Komponenty budynku",
+                            style: TextStyle(color: Colors.white),
+                          ),
+                          Text(
+                            (dataInnerWallData.length +
+                                    deckData.length +
+                                    innerDoor.length +
+                                    windowsExteriorDoors.length +
+                                    supportSystem.length +
+                                    flooringData.length +
+                                    terraceData.length +
+                                    outerRoofData.length +
+                                    exteriorWallData.length +
+                                    hullRoofingData.length +
+                                    scaffoldingData.length +
+                                    innerStairsData.length +
+                                    wasteData.length)
+                                .toString(),
                             style: TextStyle(color: Colors.white),
                           ),
                         ],

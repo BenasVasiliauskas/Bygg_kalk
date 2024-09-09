@@ -86,7 +86,7 @@ class _InnerStairsSectionsState extends State<InnerStairsSections> {
                         : languageLithuanian
                             ? "Naujas pastatas"
                             : languageNorwegian
-                                ? "Ny bygning"
+                                ? "Ny Bygg"
                                 : "ŚNowy budynek",
                   ),
                 ),

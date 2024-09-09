@@ -63,8 +63,6 @@ class _LitBudgetScreenState extends State<LitBudgetScreen> {
                       await litLoadProject(fileName, data, emptyOuterRoofModel);
                       await litLoadProject(fileName, data, emptyOuterWallModel);
                       await litLoadProject(
-                          fileName, data, emptyParquetAndLaminateModel);
-                      await litLoadProject(
                           fileName, data, emptyScaffoldingModel);
                       await litLoadProject(
                           fileName, data, emptySupportSystemModel);
