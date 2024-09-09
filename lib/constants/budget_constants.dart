@@ -98,45 +98,45 @@ List<double> budgetSums = [
 ];
 
 Map<String, double> innerWallHours = {
-  "Wooden truss 47x87, double sound wall, double plaster": 0,
-  "Wooden trusses 47x87, insulated, smooth panel": 0,
-  "Wooden truss 47x87, precut h=2400, plaster": 0,
-  "Steel trusses 2x64mm, double, insulated, plaster": 0,
-  "Steel trusses 2x90mm, double, insulated, plaster": 0,
-  "Steel trusses 2x64mm, double, insulated, double plaster": 0,
+  "Wooden truss 48x98, double sound wall, double plaster": 0,
+  "Wooden trusses 48x98, insulated, smooth panel": 0,
+  "Wooden truss 48x98, precut h=2400, plaster": 0,
+  "Steel trusses 2x75mm, double, insulated, plaster": 0,
+  "Steel trusses 2x100mm, double, insulated, plaster": 0,
+  "Steel trusses 2x75mm, double, insulated, double plaster": 0,
   "Masonry walls, rendered cladding duplex": 0,
   "Demolition of door in inner wall complete": 0,
 };
 
 Map<String, double> innerWallLaborCosts = {
-  "Wooden truss 47x87, double sound wall, double plaster": 0,
-  "Wooden trusses 47x87, insulated, smooth panel": 0,
-  "Wooden truss 47x87, precut h=2400, plaster": 0,
-  "Steel trusses 2x64mm, double, insulated, plaster": 0,
-  "Steel trusses 2x90mm, double, insulated, plaster": 0,
-  "Steel trusses 2x64mm, double, insulated, double plaster": 0,
+  "Wooden truss 48x98, double sound wall, double plaster": 0,
+  "Wooden trusses 48x98, insulated, smooth panel": 0,
+  "Wooden truss 48x98, precut h=2400, plaster": 0,
+  "Steel trusses 2x75mm, double, insulated, plaster": 0,
+  "Steel trusses 2x100mm, double, insulated, plaster": 0,
+  "Steel trusses 2x75mm, double, insulated, double plaster": 0,
   "Masonry walls, rendered cladding duplex": 0,
   "Demolition of door in inner wall complete": 0,
 };
 
 Map<String, double> innerWallMaterialCosts = {
-  "Wooden truss 47x87, double sound wall, double plaster": 0,
-  "Wooden trusses 47x87, insulated, smooth panel": 0,
-  "Wooden truss 47x87, precut h=2400, plaster": 0,
-  "Steel trusses 2x64mm, double, insulated, plaster": 0,
-  "Steel trusses 2x90mm, double, insulated, plaster": 0,
-  "Steel trusses 2x64mm, double, insulated, double plaster": 0,
+  "Wooden truss 48x98, double sound wall, double plaster": 0,
+  "Wooden trusses 48x98, insulated, smooth panel": 0,
+  "Wooden truss 48x98, precut h=2400, plaster": 0,
+  "Steel trusses 2x75mm, double, insulated, plaster": 0,
+  "Steel trusses 2x100mm, double, insulated, plaster": 0,
+  "Steel trusses 2x75mm, double, insulated, double plaster": 0,
   "Masonry walls, rendered cladding duplex": 0,
   "Demolition of door in inner wall complete": 0,
 };
 
 Map<String, double> innerWallBudgetSum = {
-  "Wooden truss 47x87, double sound wall, double plaster": 0,
-  "Wooden trusses 47x87, insulated, smooth panel": 0,
-  "Wooden truss 47x87, precut h=2400, plaster": 0,
-  "Steel trusses 2x64mm, double, insulated, plaster": 0,
-  "Steel trusses 2x90mm, double, insulated, plaster": 0,
-  "Steel trusses 2x64mm, double, insulated, double plaster": 0,
+  "Wooden truss 48x98, double sound wall, double plaster": 0,
+  "Wooden trusses 48x98, insulated, smooth panel": 0,
+  "Wooden truss 48x98, precut h=2400, plaster": 0,
+  "Steel trusses 2x75mm, double, insulated, plaster": 0,
+  "Steel trusses 2x100mm, double, insulated, plaster": 0,
+  "Steel trusses 2x75mm, double, insulated, double plaster": 0,
   "Masonry walls, rendered cladding duplex": 0,
   "Demolition of door in inner wall complete": 0,
 };
@@ -166,35 +166,35 @@ Map<String, double> outerWallBudgetSum = {
 };
 /////////////////////////////////////////////////////////////////////////////////////
 Map<String, double> innerDoorHours = {
-  "Interior door, pine 8x21": 0,
+  "Interior door, pine 9x21": 0,
 };
 Map<String, double> innerDoorLaborCosts = {
-  "Interior door, pine 8x21": 0,
+  "Interior door, pine 9x21": 0,
 };
 Map<String, double> innerDoorMaterialCosts = {
-  "Interior door, pine 8x21": 0,
+  "Interior door, pine 9x21": 0,
 };
 Map<String, double> innerDoorBudgetSum = {
-  "Interior door, pine 8x21": 0,
+  "Interior door, pine 9x21": 0,
 };
 
 /////////////////////////////////////////////////////////////////////////////////////
 
 Map<String, double> windowsAndExteriorDoorHours = {
-  "Window, wooden wall top swing 11x9": 0,
-  "Exterior door of wood, in timber frame wall, white, 9x21": 0,
+  "Window, wooden wall top swing 12x10": 0,
+  "Exterior door of wood, in timber frame wall, white, 10x21": 0,
 };
 Map<String, double> windowsAndExteriorDoorLaborCosts = {
-  "Window, wooden wall top swing 11x9": 0,
-  "Exterior door of wood, in timber frame wall, white, 9x21": 0,
+  "Window, wooden wall top swing 12x10": 0,
+  "Exterior door of wood, in timber frame wall, white, 10x21": 0,
 };
 Map<String, double> windowsAndExteriorDoorMaterialCosts = {
-  "Window, wooden wall top swing 11x9": 0,
-  "Exterior door of wood, in timber frame wall, white, 9x21": 0,
+  "Window, wooden wall top swing 12x10": 0,
+  "Exterior door of wood, in timber frame wall, white, 10x21": 0,
 };
 Map<String, double> windowsAndExteriorDoorBudgetSum = {
-  "Window, wooden wall top swing 11x9": 0,
-  "Exterior door of wood, in timber frame wall, white, 9x21": 0,
+  "Window, wooden wall top swing 12x10": 0,
+  "Exterior door of wood, in timber frame wall, white, 10x21": 0,
 };
 
 /////////////////////////////////////////////////////////////////////////////////////
@@ -310,22 +310,22 @@ Map<String, double> innerStairsBudgetSum = {
 /////////////////////////////////////////////////////////////////////////////////////
 
 Map<String, double> hullRoofingHours = {
-  "Punched roofing single-family house 244m² GFA - 2 floors (Calculate quantity and select material type),":
+  "Punched roofing single-family house 245m² GFA - 2 floors (Calculate quantity and select material type),":
       0,
 };
 
 Map<String, double> hullRoofingLaborCosts = {
-  "Punched roofing single-family house 244m² GFA - 2 floors (Calculate quantity and select material type),":
+  "Punched roofing single-family house 245m² GFA - 2 floors (Calculate quantity and select material type),":
       0,
 };
 
 Map<String, double> hullRoofingMaterialCosts = {
-  "Punched roofing single-family house 244m² GFA - 2 floors (Calculate quantity and select material type),":
+  "Punched roofing single-family house 245m² GFA - 2 floors (Calculate quantity and select material type),":
       0,
 };
 
 Map<String, double> hullRoofingBudgetSum = {
-  "Punched roofing single-family house 244m² GFA - 2 floors (Calculate quantity and select material type),":
+  "Punched roofing single-family house 245m² GFA - 2 floors (Calculate quantity and select material type),":
       0,
 };
 /////////////////////////////////////////////////////////////////////////////////////

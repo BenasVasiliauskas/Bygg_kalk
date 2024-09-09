@@ -84,45 +84,45 @@ List<double> budgetSums = [
 ];
 
 Map<String, double> innerWallHours = {
-  "47x87 medinis karkasas, dviguba akustinė siena, dvigubas tinkas": 0,
-  "Medinės santvaros 47x87, apšiltintos, paprastos plokštės": 0,
-  "Medinis rėmas 47x87, pjūvis h=2400, gipso kartonas": 0,
-  "2x64 mm plieninė santvara, dviguba, apšiltinta, gipsinė": 0,
-  "2x90 mm plieninė santvara, dviguba, apšiltinta, gipsinė": 0,
-  "2x64 mm plieninė santvara, dvigubai apšiltinta, dvigubai tinkuota": 0,
+  "48x98 medinis karkasas, dviguba akustinė siena, dvigubas tinkas": 0,
+  "Medinės santvaros 48x98, apšiltintos, paprastos plokštės": 0,
+  "Medinis rėmas 48x98, pjūvis h=2400, gipso kartonas": 0,
+  "2x75 mm plieninė santvara, dviguba, apšiltinta, gipsinė": 0,
+  "2x100 mm plieninė santvara, dviguba, apšiltinta, gipsinė": 0,
+  "2x75 mm plieninė santvara, dvigubai apšiltinta, dvigubai tinkuota": 0,
   "Mūrinės sienos, tinkuota apdaila, dvibutis": 0,
   "Durų vidinėje sienoje griovimas baigtas": 0,
 };
 
 Map<String, double> innerWallLaborCosts = {
-  "47x87 medinis karkasas, dviguba akustinė siena, dvigubas tinkas": 0,
-  "Medinės santvaros 47x87, apšiltintos, paprastos plokštės": 0,
-  "Medinis rėmas 47x87, pjūvis h=2400, gipso kartonas": 0,
-  "2x64 mm plieninė santvara, dviguba, apšiltinta, gipsinė": 0,
-  "2x90 mm plieninė santvara, dviguba, apšiltinta, gipsinė": 0,
-  "2x64 mm plieninė santvara, dvigubai apšiltinta, dvigubai tinkuota": 0,
+  "48x98 medinis karkasas, dviguba akustinė siena, dvigubas tinkas": 0,
+  "Medinės santvaros 48x98, apšiltintos, paprastos plokštės": 0,
+  "Medinis rėmas 48x98, pjūvis h=2400, gipso kartonas": 0,
+  "2x75 mm plieninė santvara, dviguba, apšiltinta, gipsinė": 0,
+  "2x100 mm plieninė santvara, dviguba, apšiltinta, gipsinė": 0,
+  "2x75 mm plieninė santvara, dvigubai apšiltinta, dvigubai tinkuota": 0,
   "Mūrinės sienos, tinkuota apdaila, dvibutis": 0,
   "Durų vidinėje sienoje griovimas baigtas": 0,
 };
 
 Map<String, double> innerWallMaterialCosts = {
-  "47x87 medinis karkasas, dviguba akustinė siena, dvigubas tinkas": 0,
-  "Medinės santvaros 47x87, apšiltintos, paprastos plokštės": 0,
-  "Medinis rėmas 47x87, pjūvis h=2400, gipso kartonas": 0,
-  "2x64 mm plieninė santvara, dviguba, apšiltinta, gipsinė": 0,
-  "2x90 mm plieninė santvara, dviguba, apšiltinta, gipsinė": 0,
-  "2x64 mm plieninė santvara, dvigubai apšiltinta, dvigubai tinkuota": 0,
+  "48x98 medinis karkasas, dviguba akustinė siena, dvigubas tinkas": 0,
+  "Medinės santvaros 48x98, apšiltintos, paprastos plokštės": 0,
+  "Medinis rėmas 48x98, pjūvis h=2400, gipso kartonas": 0,
+  "2x75 mm plieninė santvara, dviguba, apšiltinta, gipsinė": 0,
+  "2x100 mm plieninė santvara, dviguba, apšiltinta, gipsinė": 0,
+  "2x75 mm plieninė santvara, dvigubai apšiltinta, dvigubai tinkuota": 0,
   "Mūrinės sienos, tinkuota apdaila, dvibutis": 0,
   "Durų vidinėje sienoje griovimas baigtas": 0,
 };
 
 Map<String, double> innerWallBudgetSum = {
-  "47x87 medinis karkasas, dviguba akustinė siena, dvigubas tinkas": 0,
-  "Medinės santvaros 47x87, apšiltintos, paprastos plokštės": 0,
-  "Medinis rėmas 47x87, pjūvis h=2400, gipso kartonas": 0,
-  "2x64 mm plieninė santvara, dviguba, apšiltinta, gipsinė": 0,
-  "2x90 mm plieninė santvara, dviguba, apšiltinta, gipsinė": 0,
-  "2x64 mm plieninė santvara, dvigubai apšiltinta, dvigubai tinkuota": 0,
+  "48x98 medinis karkasas, dviguba akustinė siena, dvigubas tinkas": 0,
+  "Medinės santvaros 48x98, apšiltintos, paprastos plokštės": 0,
+  "Medinis rėmas 48x98, pjūvis h=2400, gipso kartonas": 0,
+  "2x75 mm plieninė santvara, dviguba, apšiltinta, gipsinė": 0,
+  "2x100 mm plieninė santvara, dviguba, apšiltinta, gipsinė": 0,
+  "2x75 mm plieninė santvara, dvigubai apšiltinta, dvigubai tinkuota": 0,
   "Mūrinės sienos, tinkuota apdaila, dvibutis": 0,
   "Durų vidinėje sienoje griovimas baigtas": 0,
 };
@@ -152,33 +152,33 @@ Map<String, double> outerWallBudgetSum = {
 };
 /////////////////////////////////////////////////////////////////////////////////////
 Map<String, double> innerDoorHours = {
-  "Vidaus durys, pušies 8x21": 0,
+  "Vidaus durys, pušies 9x21": 0,
 };
 Map<String, double> innerDoorLaborCosts = {
-  "Vidaus durys, pušies 8x21": 0,
+  "Vidaus durys, pušies 9x21": 0,
 };
 Map<String, double> innerDoorMaterialCosts = {
-  "Vidaus durys, pušies 8x21": 0,
+  "Vidaus durys, pušies 9x21": 0,
 };
 Map<String, double> innerDoorBudgetSum = {
-  "Vidaus durys, pušies 8x21": 0,
+  "Vidaus durys, pušies 9x21": 0,
 };
 /////////////////////////////////////////////////////////////////////////////////////
 
 Map<String, double> windowsAndExteriorDoorHours = {
-  "Langas, medinė viršutinė siena 10x9 posūkis": 0,
+  "Langas, medinė viršutinė siena 12x10 posūkis": 0,
   "Medinės lauko durys pusrūsio sienoje, baltos, 9x21": 0,
 };
 Map<String, double> windowsAndExteriorDoorLaborCosts = {
-  "Langas, medinė viršutinė siena 10x9 posūkis": 0,
+  "Langas, medinė viršutinė siena 12x10 posūkis": 0,
   "Medinės lauko durys pusrūsio sienoje, baltos, 9x21": 0,
 };
 Map<String, double> windowsAndExteriorDoorMaterialCosts = {
-  "Langas, medinė viršutinė siena 10x9 posūkis": 0,
+  "Langas, medinė viršutinė siena 12x10 posūkis": 0,
   "Medinės lauko durys pusrūsio sienoje, baltos, 9x21": 0,
 };
 Map<String, double> windowsAndExteriorDoorBudgetSum = {
-  "Langas, medinė viršutinė siena 10x9 posūkis": 0,
+  "Langas, medinė viršutinė siena 12x10 posūkis": 0,
   "Medinės lauko durys pusrūsio sienoje, baltos, 9x21": 0,
 };
 
@@ -286,19 +286,19 @@ Map<String, double> innerStairsBudgetSum = {
 /////////////////////////////////////////////////////////////////////////////////////
 
 Map<String, double> hullRoofingHours = {
-  "244 m² ploto vienbučio namo - 2 aukštų - denginio stogo danga (apskaičiuokite kiekį ir pasirinkite medžiagos tipą)":
+  "245 m² ploto vienbučio namo - 2 aukštų - denginio stogo danga (apskaičiuokite kiekį ir pasirinkite medžiagos tipą)":
       0,
 };
 Map<String, double> hullRoofingLaborCosts = {
-  "244 m² ploto vienbučio namo - 2 aukštų - denginio stogo danga (apskaičiuokite kiekį ir pasirinkite medžiagos tipą)":
+  "245 m² ploto vienbučio namo - 2 aukštų - denginio stogo danga (apskaičiuokite kiekį ir pasirinkite medžiagos tipą)":
       0,
 };
 Map<String, double> hullRoofingMaterialCosts = {
-  "244 m² ploto vienbučio namo - 2 aukštų - denginio stogo danga (apskaičiuokite kiekį ir pasirinkite medžiagos tipą)":
+  "245 m² ploto vienbučio namo - 2 aukštų - denginio stogo danga (apskaičiuokite kiekį ir pasirinkite medžiagos tipą)":
       0,
 };
 Map<String, double> hullRoofingBudgetSum = {
-  "244 m² ploto vienbučio namo - 2 aukštų - denginio stogo danga (apskaičiuokite kiekį ir pasirinkite medžiagos tipą)":
+  "245 m² ploto vienbučio namo - 2 aukštų - denginio stogo danga (apskaičiuokite kiekį ir pasirinkite medžiagos tipą)":
       0,
 };
 /////////////////////////////////////////////////////////////////////////////////////
