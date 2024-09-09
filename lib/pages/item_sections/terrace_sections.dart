@@ -57,12 +57,12 @@ class _TerraceSectionsState extends State<TerraceSections> {
           ],
           title: Text(
             languageEnglish
-                ? "New building"
+                ? "Terrace"
                 : languageLithuanian
-                    ? "Naujas pastatas"
+                    ? "Terasa"
                     : languageNorwegian
-                        ? "Ny Bygg"
-                        : "ŚNowy budynek",
+                        ? "Terrasse/rekkverk"
+                        : "Taras",
           ),
         ),
         body: Column(
@@ -82,12 +82,12 @@ class _TerraceSectionsState extends State<TerraceSections> {
                   },
                   child: Text(
                     languageEnglish
-                        ? "Terrace"
+                        ? "New building"
                         : languageLithuanian
-                            ? "Terasa"
+                            ? "Naujas pastatas"
                             : languageNorwegian
-                                ? "Terrasse/rekkverk"
-                                : "Taras", // change
+                                ? "Ny Bygg"
+                                : "ŚNowy budynek",
                   ),
                 ),
                 Padding(

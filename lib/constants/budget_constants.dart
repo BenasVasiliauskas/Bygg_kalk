@@ -3,21 +3,19 @@ List<String> calculatedNamesOrder = [
   'Exterior walls', //2
   'Interior walls', //3
   'Interior door', //4
-  'Parquet and laminate', //5
-  "Covers", //6
-  "Flooring", //7
-  "Exterior roof", //8
-  "Terrace/Railings", //9
-  "Inner stairs", //10
-  "Hull roofing", //11
-  "Scaffolding", //12
-  "Waste Management", //13
-  "Support system", //14
-  "Totals" //15
+  "Covers", //4
+  "Flooring", //5
+  "Exterior roof", //6
+  "Terrace/Railings", //7
+  "Inner stairs", //8
+  "Hull roofing", //9
+  "Scaffolding", //10
+  "Waste Management", //11
+  "Support system", //12
+  "Totals" //14
 ];
 
 List<double> totalHours = [
-  0,
   0,
   0,
   0,
@@ -49,11 +47,9 @@ List<double> totalLaborCosts = [
   0,
   0,
   0,
-  0,
 ];
 
 List<double> totalMaterialCosts = [
-  0,
   0,
   0,
   0,
@@ -85,124 +81,106 @@ List<double> budgetSums = [
   0,
   0,
   0,
-  0,
 ];
 
 Map<String, double> innerWallHours = {
-  "Wooden truss 48x98, double sound wall, double plaster": 0,
-  "Wooden trusses 48x98, insulated, smooth panel": 0,
-  "Wooden truss 48x98, precut h=2400, plaster": 0,
-  "Steel trusses 2x75mm, double, insulated, plaster": 0,
-  "Steel trusses 2x100mm, double, insulated, plaster": 0,
-  "Steel trusses 2x75mm, double, insulated, double plaster": 0,
+  "Wooden truss 47x87, double sound wall, double plaster": 0,
+  "Wooden trusses 47x87, insulated, smooth panel": 0,
+  "Wooden truss 47x87, precut h=2400, plaster": 0,
+  "Steel trusses 2x64mm, double, insulated, plaster": 0,
+  "Steel trusses 2x90mm, double, insulated, plaster": 0,
+  "Steel trusses 2x64mm, double, insulated, double plaster": 0,
   "Masonry walls, rendered cladding duplex": 0,
   "Demolition of door in inner wall complete": 0,
 };
 
 Map<String, double> innerWallLaborCosts = {
-  "Wooden truss 48x98, double sound wall, double plaster": 0,
-  "Wooden trusses 48x98, insulated, smooth panel": 0,
-  "Wooden truss 48x98, precut h=2400, plaster": 0,
-  "Steel trusses 2x75mm, double, insulated, plaster": 0,
-  "Steel trusses 2x100mm, double, insulated, plaster": 0,
-  "Steel trusses 2x75mm, double, insulated, double plaster": 0,
+  "Wooden truss 47x87, double sound wall, double plaster": 0,
+  "Wooden trusses 47x87, insulated, smooth panel": 0,
+  "Wooden truss 47x87, precut h=2400, plaster": 0,
+  "Steel trusses 2x64mm, double, insulated, plaster": 0,
+  "Steel trusses 2x90mm, double, insulated, plaster": 0,
+  "Steel trusses 2x64mm, double, insulated, double plaster": 0,
   "Masonry walls, rendered cladding duplex": 0,
   "Demolition of door in inner wall complete": 0,
 };
 
 Map<String, double> innerWallMaterialCosts = {
-  "Wooden truss 48x98, double sound wall, double plaster": 0,
-  "Wooden trusses 48x98, insulated, smooth panel": 0,
-  "Wooden truss 48x98, precut h=2400, plaster": 0,
-  "Steel trusses 2x75mm, double, insulated, plaster": 0,
-  "Steel trusses 2x100mm, double, insulated, plaster": 0,
-  "Steel trusses 2x75mm, double, insulated, double plaster": 0,
+  "Wooden truss 47x87, double sound wall, double plaster": 0,
+  "Wooden trusses 47x87, insulated, smooth panel": 0,
+  "Wooden truss 47x87, precut h=2400, plaster": 0,
+  "Steel trusses 2x64mm, double, insulated, plaster": 0,
+  "Steel trusses 2x90mm, double, insulated, plaster": 0,
+  "Steel trusses 2x64mm, double, insulated, double plaster": 0,
   "Masonry walls, rendered cladding duplex": 0,
   "Demolition of door in inner wall complete": 0,
 };
 
 Map<String, double> innerWallBudgetSum = {
-  "Wooden truss 48x98, double sound wall, double plaster": 0,
-  "Wooden trusses 48x98, insulated, smooth panel": 0,
-  "Wooden truss 48x98, precut h=2400, plaster": 0,
-  "Steel trusses 2x75mm, double, insulated, plaster": 0,
-  "Steel trusses 2x100mm, double, insulated, plaster": 0,
-  "Steel trusses 2x75mm, double, insulated, double plaster": 0,
+  "Wooden truss 47x87, double sound wall, double plaster": 0,
+  "Wooden trusses 47x87, insulated, smooth panel": 0,
+  "Wooden truss 47x87, precut h=2400, plaster": 0,
+  "Steel trusses 2x64mm, double, insulated, plaster": 0,
+  "Steel trusses 2x90mm, double, insulated, plaster": 0,
+  "Steel trusses 2x64mm, double, insulated, double plaster": 0,
   "Masonry walls, rendered cladding duplex": 0,
   "Demolition of door in inner wall complete": 0,
 };
 /////////////////////////////////////////////////////////////////////////////////////
 Map<String, double> outerWallHours = {
-  "Timber truss 48x198, 50mm liner, standing double seam, plaster": 0,
+  "Timber truss 47x187, 40mm liner, standing double seam, plaster": 0,
   "Wooden timber frame, post-insulation. new panel": 0,
   "Demolition of door in external wall complete": 0,
 };
 
 Map<String, double> outerWallLaborCosts = {
-  "Timber truss 48x198, 50mm liner, standing double seam, plaster": 0,
+  "Timber truss 47x187, 40mm liner, standing double seam, plaster": 0,
   "Wooden timber frame, post-insulation. new panel": 0,
   "Demolition of door in external wall complete": 0,
 };
 
 Map<String, double> outerWallMaterialCosts = {
-  "Timber truss 48x198, 50mm liner, standing double seam, plaster": 0,
+  "Timber truss 47x187, 40mm liner, standing double seam, plaster": 0,
   "Wooden timber frame, post-insulation. new panel": 0,
   "Demolition of door in external wall complete": 0,
 };
 
 Map<String, double> outerWallBudgetSum = {
-  "Timber truss 48x198, 50mm liner, standing double seam, plaster": 0,
+  "Timber truss 47x187, 40mm liner, standing double seam, plaster": 0,
   "Wooden timber frame, post-insulation. new panel": 0,
   "Demolition of door in external wall complete": 0,
 };
 /////////////////////////////////////////////////////////////////////////////////////
 Map<String, double> innerDoorHours = {
-  "Interior door, pine 9x21": 0,
+  "Interior door, pine 8x21": 0,
 };
 Map<String, double> innerDoorLaborCosts = {
-  "Interior door, pine 9x21": 0,
+  "Interior door, pine 8x21": 0,
 };
 Map<String, double> innerDoorMaterialCosts = {
-  "Interior door, pine 9x21": 0,
+  "Interior door, pine 8x21": 0,
 };
 Map<String, double> innerDoorBudgetSum = {
-  "Interior door, pine 9x21": 0,
+  "Interior door, pine 8x21": 0,
 };
 
-/////////////////////////////////////////////////////////////////////////////////////
-Map<String, double> parquetAndLaminateHours = {
-  "Surface covering parquet": 0,
-  "Laminate flooring, oak": 0,
-};
-Map<String, double> parquetAndLaminateLaborCosts = {
-  "Surface covering parquet": 0,
-  "Laminate flooring, oak": 0,
-};
-Map<String, double> parquetAndLaminateMaterialCosts = {
-  "Surface covering parquet": 0,
-  "Laminate flooring, oak": 0,
-};
-Map<String, double> parquetAndLaminateBudgetSum = {
-  "Surface covering parquet": 0,
-  "Laminate flooring, oak": 0,
-};
 /////////////////////////////////////////////////////////////////////////////////////
 
 Map<String, double> windowsAndExteriorDoorHours = {
-  "Window, wooden wall top swing 12x10": 0,
-  "Exterior door of wood, in timber frame wall, white, 10x21": 0,
+  "Window, wooden wall top swing 11x9": 0,
+  "Exterior door of wood, in timber frame wall, white, 9x21": 0,
 };
 Map<String, double> windowsAndExteriorDoorLaborCosts = {
-  "Window, wooden wall top swing 12x10": 0,
-  "Exterior door of wood, in timber frame wall, white, 10x21": 0,
+  "Window, wooden wall top swing 11x9": 0,
+  "Exterior door of wood, in timber frame wall, white, 9x21": 0,
 };
 Map<String, double> windowsAndExteriorDoorMaterialCosts = {
-  "Window, wooden wall top swing 12x10": 0,
-  "Exterior door of wood, in timber frame wall, white, 10x21": 0,
+  "Window, wooden wall top swing 11x9": 0,
+  "Exterior door of wood, in timber frame wall, white, 9x21": 0,
 };
 Map<String, double> windowsAndExteriorDoorBudgetSum = {
-  "Window, wooden wall top swing 12x10": 0,
-  "Exterior door of wood, in timber frame wall, white, 10x21": 0,
+  "Window, wooden wall top swing 11x9": 0,
+  "Exterior door of wood, in timber frame wall, white, 9x21": 0,
 };
 
 /////////////////////////////////////////////////////////////////////////////////////
@@ -234,19 +212,19 @@ Map<String, double> deckBudgetSum = {
 /////////////////////////////////////////////////////////////////////////////////////
 
 Map<String, double> flooringHours = {
-  "Wet room wall w/panel - wet room tile + tile 25x33": 0,
+  "Wet room wall w/panel - wet room tile + tile 24x33": 0,
   "Wet room wall w/panel/plaster + tile 20x30": 0,
 };
 Map<String, double> flooringLaborCosts = {
-  "Wet room wall w/panel - wet room tile + tile 25x33": 0,
+  "Wet room wall w/panel - wet room tile + tile 24x33": 0,
   "Wet room wall w/panel/plaster + tile 20x30": 0,
 };
 Map<String, double> flooringMaterialCosts = {
-  "Wet room wall w/panel - wet room tile + tile 25x33": 0,
+  "Wet room wall w/panel - wet room tile + tile 24x33": 0,
   "Wet room wall w/panel/plaster + tile 20x30": 0,
 };
 Map<String, double> flooringBudgetSum = {
-  "Wet room wall w/panel - wet room tile + tile 25x33": 0,
+  "Wet room wall w/panel - wet room tile + tile 24x33": 0,
   "Wet room wall w/panel/plaster + tile 20x30": 0,
 };
 
@@ -318,22 +296,22 @@ Map<String, double> innerStairsBudgetSum = {
 /////////////////////////////////////////////////////////////////////////////////////
 
 Map<String, double> hullRoofingHours = {
-  "Punched roofing single-family house 245m² GFA - 2 floors (Calculate quantity and select material type),":
+  "Punched roofing single-family house 244m² GFA - 2 floors (Calculate quantity and select material type),":
       0,
 };
 
 Map<String, double> hullRoofingLaborCosts = {
-  "Punched roofing single-family house 245m² GFA - 2 floors (Calculate quantity and select material type),":
+  "Punched roofing single-family house 244m² GFA - 2 floors (Calculate quantity and select material type),":
       0,
 };
 
 Map<String, double> hullRoofingMaterialCosts = {
-  "Punched roofing single-family house 245m² GFA - 2 floors (Calculate quantity and select material type),":
+  "Punched roofing single-family house 244m² GFA - 2 floors (Calculate quantity and select material type),":
       0,
 };
 
 Map<String, double> hullRoofingBudgetSum = {
-  "Punched roofing single-family house 245m² GFA - 2 floors (Calculate quantity and select material type),":
+  "Punched roofing single-family house 244m² GFA - 2 floors (Calculate quantity and select material type),":
       0,
 };
 /////////////////////////////////////////////////////////////////////////////////////
@@ -416,61 +394,54 @@ void reCalculate() {
   totalMaterialCosts[3] = innerDoorMaterialCosts.values.reduce((s, e) => s + e);
   budgetSums[3] = innerDoorBudgetSum.values.reduce((s, e) => s + e);
   //
-  totalHours[4] = parquetAndLaminateHours.values.reduce((s, e) => s + e);
-  totalLaborCosts[4] =
-      parquetAndLaminateLaborCosts.values.reduce((s, e) => s + e);
-  totalMaterialCosts[4] =
-      parquetAndLaminateMaterialCosts.values.reduce((s, e) => s + e);
-  budgetSums[4] = parquetAndLaminateBudgetSum.values.reduce((s, e) => s + e);
+  totalHours[4] = deckHours.values.reduce((s, e) => s + e);
+  totalLaborCosts[4] = deckLaborCosts.values.reduce((s, e) => s + e);
+  totalMaterialCosts[4] = deckMaterialCosts.values.reduce((s, e) => s + e);
+  budgetSums[4] = deckBudgetSum.values.reduce((s, e) => s + e);
   //
-  totalHours[5] = deckHours.values.reduce((s, e) => s + e);
-  totalLaborCosts[5] = deckLaborCosts.values.reduce((s, e) => s + e);
-  totalMaterialCosts[5] = deckMaterialCosts.values.reduce((s, e) => s + e);
-  budgetSums[5] = deckBudgetSum.values.reduce((s, e) => s + e);
+  totalHours[5] = flooringHours.values.reduce((s, e) => s + e);
+  totalLaborCosts[5] = flooringLaborCosts.values.reduce((s, e) => s + e);
+  totalMaterialCosts[5] = flooringMaterialCosts.values.reduce((s, e) => s + e);
+  budgetSums[5] = flooringBudgetSum.values.reduce((s, e) => s + e);
   //
-  totalHours[6] = flooringHours.values.reduce((s, e) => s + e);
-  totalLaborCosts[6] = flooringLaborCosts.values.reduce((s, e) => s + e);
-  totalMaterialCosts[6] = flooringMaterialCosts.values.reduce((s, e) => s + e);
-  budgetSums[6] = flooringBudgetSum.values.reduce((s, e) => s + e);
+  totalHours[6] = roofHours.values.reduce((s, e) => s + e);
+  totalLaborCosts[6] = roofLaborCosts.values.reduce((s, e) => s + e);
+  totalMaterialCosts[6] = roofMaterialCosts.values.reduce((s, e) => s + e);
+  budgetSums[6] = roofBudgetSum.values.reduce((s, e) => s + e);
   //
-  totalHours[7] = roofHours.values.reduce((s, e) => s + e);
-  totalLaborCosts[7] = roofLaborCosts.values.reduce((s, e) => s + e);
-  totalMaterialCosts[7] = roofMaterialCosts.values.reduce((s, e) => s + e);
-  budgetSums[7] = roofBudgetSum.values.reduce((s, e) => s + e);
+  totalHours[7] = terraceHours.values.reduce((s, e) => s + e);
+  totalLaborCosts[7] = terraceLaborCosts.values.reduce((s, e) => s + e);
+  totalMaterialCosts[7] = terraceMaterialCosts.values.reduce((s, e) => s + e);
+  budgetSums[7] = terraceBudgetSum.values.reduce((s, e) => s + e);
   //
-  totalHours[8] = terraceHours.values.reduce((s, e) => s + e);
-  totalLaborCosts[8] = terraceLaborCosts.values.reduce((s, e) => s + e);
-  totalMaterialCosts[8] = terraceMaterialCosts.values.reduce((s, e) => s + e);
-  budgetSums[8] = terraceBudgetSum.values.reduce((s, e) => s + e);
-  //
-  totalHours[9] = innerStairsHours.values.reduce((s, e) => s + e);
-  totalLaborCosts[9] = innerStairsLaborCosts.values.reduce((s, e) => s + e);
-  totalMaterialCosts[9] =
+  totalHours[8] = innerStairsHours.values.reduce((s, e) => s + e);
+  totalLaborCosts[8] = innerStairsLaborCosts.values.reduce((s, e) => s + e);
+  totalMaterialCosts[8] =
       innerStairsMaterialCosts.values.reduce((s, e) => s + e);
-  budgetSums[9] = innerStairsBudgetSum.values.reduce((s, e) => s + e);
+  budgetSums[8] = innerStairsBudgetSum.values.reduce((s, e) => s + e);
   //
-  totalHours[10] = hullRoofingHours.values.reduce((s, e) => s + e);
-  totalLaborCosts[10] = hullRoofingLaborCosts.values.reduce((s, e) => s + e);
-  totalMaterialCosts[10] =
+  totalHours[9] = hullRoofingHours.values.reduce((s, e) => s + e);
+  totalLaborCosts[9] = hullRoofingLaborCosts.values.reduce((s, e) => s + e);
+  totalMaterialCosts[9] =
       hullRoofingMaterialCosts.values.reduce((s, e) => s + e);
-  budgetSums[10] = hullRoofingBudgetSum.values.reduce((s, e) => s + e);
+  budgetSums[9] = hullRoofingBudgetSum.values.reduce((s, e) => s + e);
   //
-  totalHours[11] = scaffoldingHours.values.reduce((s, e) => s + e);
-  totalLaborCosts[11] = scaffoldingLaborCosts.values.reduce((s, e) => s + e);
-  totalMaterialCosts[11] =
+  totalHours[10] = scaffoldingHours.values.reduce((s, e) => s + e);
+  totalLaborCosts[10] = scaffoldingLaborCosts.values.reduce((s, e) => s + e);
+  totalMaterialCosts[10] =
       scaffoldingMaterialCosts.values.reduce((s, e) => s + e);
-  budgetSums[11] = scaffoldingBudgetSum.values.reduce((s, e) => s + e);
+  budgetSums[10] = scaffoldingBudgetSum.values.reduce((s, e) => s + e);
   //
-  totalHours[12] = wasteHours.values.reduce((s, e) => s + e);
-  totalLaborCosts[12] = wasteLaborCosts.values.reduce((s, e) => s + e);
-  totalMaterialCosts[12] = wasteMaterialCosts.values.reduce((s, e) => s + e);
-  budgetSums[12] = wasteBudgetSum.values.reduce((s, e) => s + e);
+  totalHours[11] = wasteHours.values.reduce((s, e) => s + e);
+  totalLaborCosts[11] = wasteLaborCosts.values.reduce((s, e) => s + e);
+  totalMaterialCosts[11] = wasteMaterialCosts.values.reduce((s, e) => s + e);
+  budgetSums[11] = wasteBudgetSum.values.reduce((s, e) => s + e);
   //
-  totalHours[13] = supportSystemHours.values.reduce((s, e) => s + e);
-  totalLaborCosts[13] = supportSystemLaborCosts.values.reduce((s, e) => s + e);
-  totalMaterialCosts[13] =
+  totalHours[12] = supportSystemHours.values.reduce((s, e) => s + e);
+  totalLaborCosts[12] = supportSystemLaborCosts.values.reduce((s, e) => s + e);
+  totalMaterialCosts[12] =
       supportSystemMaterialCosts.values.reduce((s, e) => s + e);
-  budgetSums[13] = supportSystemBudgetSum.values.reduce((s, e) => s + e);
+  budgetSums[12] = supportSystemBudgetSum.values.reduce((s, e) => s + e);
 }
 
 void addHours(String name, double hours) {
@@ -480,8 +451,6 @@ void addHours(String name, double hours) {
     outerWallHours[name] = hours;
   } else if (innerDoorHours.containsKey(name)) {
     innerDoorHours[name] = hours;
-  } else if (parquetAndLaminateHours.containsKey(name)) {
-    parquetAndLaminateHours[name] = hours;
   } else if (windowsAndExteriorDoorHours.containsKey(name)) {
     windowsAndExteriorDoorHours[name] = hours;
   } else if (deckHours.containsKey(name)) {
@@ -513,8 +482,6 @@ void addLaborCosts(String name, double laborCosts) {
     outerWallLaborCosts[name] = laborCosts;
   } else if (innerDoorLaborCosts.containsKey(name)) {
     innerDoorLaborCosts[name] = laborCosts;
-  } else if (parquetAndLaminateLaborCosts.containsKey(name)) {
-    parquetAndLaminateLaborCosts[name] = laborCosts;
   } else if (windowsAndExteriorDoorLaborCosts.containsKey(name)) {
     windowsAndExteriorDoorLaborCosts[name] = laborCosts;
   } else if (deckLaborCosts.containsKey(name)) {
@@ -546,8 +513,6 @@ void addMaterialCosts(String name, double materialCosts) {
     outerWallMaterialCosts[name] = materialCosts;
   } else if (innerDoorMaterialCosts.containsKey(name)) {
     innerDoorMaterialCosts[name] = materialCosts;
-  } else if (parquetAndLaminateMaterialCosts.containsKey(name)) {
-    parquetAndLaminateMaterialCosts[name] = materialCosts;
   } else if (windowsAndExteriorDoorMaterialCosts.containsKey(name)) {
     windowsAndExteriorDoorMaterialCosts[name] = materialCosts;
   } else if (deckMaterialCosts.containsKey(name)) {
@@ -579,8 +544,6 @@ void addBudgetSum(String name, double budgetSum) {
     outerWallBudgetSum[name] = budgetSum;
   } else if (innerDoorBudgetSum.containsKey(name)) {
     innerDoorBudgetSum[name] = budgetSum;
-  } else if (parquetAndLaminateBudgetSum.containsKey(name)) {
-    parquetAndLaminateBudgetSum[name] = budgetSum;
   } else if (windowsAndExteriorDoorBudgetSum.containsKey(name)) {
     windowsAndExteriorDoorBudgetSum[name] = budgetSum;
   } else if (deckBudgetSum.containsKey(name)) {
