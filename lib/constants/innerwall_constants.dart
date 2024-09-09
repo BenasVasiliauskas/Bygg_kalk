@@ -32,8 +32,5 @@ Workbook norwKitchenWorkbook = new Workbook();
 Workbook outerWallWorkbook = new Workbook();
 Workbook norwOuterWallWorkbook = new Workbook();
 
-Workbook parquetAndLaminateWorkbook = new Workbook();
-Workbook norwParquetAndLaminateWorkbook = new Workbook();
-
 Workbook windowsExteriorDoorsWorkbook = new Workbook();
 Workbook norwWindowsExteriorDoorsWorkbook = new Workbook();

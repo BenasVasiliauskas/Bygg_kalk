@@ -5,21 +5,19 @@ List<String> calculatedNamesOrder = [
   "Ściany zewnętrzne", //2
   "Ściany wewnętrzne", //3
   "Drzwi wewnętrzne", //4
-  "Parkiet i laminat", //5
-  "Pokrycia", //6
-  "Podłogi", //7
-  "Dach zewnętrzny", //8
-  "Taras/Railings", //9
-  "Schody wewnętrzne", //10
-  "Zadaszenie kadłuba", //11
-  "Rusztowania", //12
-  "Gospodarka odpadami", //13
-  "System wsparcia", //14
-  "Razem" //15
+  "Pokrycia", //5
+  "Podłogi", //6
+  "Dach zewnętrzny", //7
+  "Taras/Railings", //8
+  "Schody wewnętrzne", //9
+  "Zadaszenie kadłuba", //10
+  "Rusztowania", //11
+  "Gospodarka odpadami", //12
+  "System wsparcia", //13
+  "Razem" //14
 ];
 
 List<double> totalHours = [
-  0,
   0,
   0,
   0,
@@ -51,7 +49,6 @@ List<double> totalLaborCosts = [
   0,
   0,
   0,
-  0,
 ];
 
 List<double> totalMaterialCosts = [
@@ -69,11 +66,9 @@ List<double> totalMaterialCosts = [
   0,
   0,
   0,
-  0,
 ];
 
 List<double> budgetSums = [
-  0,
   0,
   0,
   0,
@@ -169,23 +164,6 @@ Map<String, double> innerDoorMaterialCosts = {
 };
 Map<String, double> innerDoorBudgetSum = {
   "Drzwi wewnętrzne, sosna 9x21": 0,
-};
-/////////////////////////////////////////////////////////////////////////////////////
-Map<String, double> parquetAndLaminateHours = {
-  "Powierzchnia pokrywająca parkiet": 0,
-  "Podłoga laminowana, dąb": 0,
-};
-Map<String, double> parquetAndLaminateLaborCosts = {
-  "Powierzchnia pokrywająca parkiet": 0,
-  "Podłoga laminowana, dąb": 0,
-};
-Map<String, double> parquetAndLaminateMaterialCosts = {
-  "Powierzchnia pokrywająca parkiet": 0,
-  "Podłoga laminowana, dąb": 0,
-};
-Map<String, double> parquetAndLaminateBudgetSum = {
-  "Powierzchnia pokrywająca parkiet": 0,
-  "Podłoga laminowana, dąb": 0,
 };
 
 /////////////////////////////////////////////////////////////////////////////////////
@@ -423,61 +401,54 @@ void reCalculate() {
   totalMaterialCosts[3] = innerDoorMaterialCosts.values.reduce((s, e) => s + e);
   budgetSums[3] = innerDoorBudgetSum.values.reduce((s, e) => s + e);
 
-  totalHours[4] = parquetAndLaminateHours.values.reduce((s, e) => s + e);
-  totalLaborCosts[4] =
-      parquetAndLaminateLaborCosts.values.reduce((s, e) => s + e);
-  totalMaterialCosts[4] =
-      parquetAndLaminateMaterialCosts.values.reduce((s, e) => s + e);
-  budgetSums[4] = parquetAndLaminateBudgetSum.values.reduce((s, e) => s + e);
+  totalHours[4] = deckHours.values.reduce((s, e) => s + e);
+  totalLaborCosts[4] = deckLaborCosts.values.reduce((s, e) => s + e);
+  totalMaterialCosts[4] = deckMaterialCosts.values.reduce((s, e) => s + e);
+  budgetSums[4] = deckBudgetSum.values.reduce((s, e) => s + e);
   //
-  totalHours[5] = deckHours.values.reduce((s, e) => s + e);
-  totalLaborCosts[5] = deckLaborCosts.values.reduce((s, e) => s + e);
-  totalMaterialCosts[5] = deckMaterialCosts.values.reduce((s, e) => s + e);
-  budgetSums[5] = deckBudgetSum.values.reduce((s, e) => s + e);
+  totalHours[5] = flooringHours.values.reduce((s, e) => s + e);
+  totalLaborCosts[5] = flooringLaborCosts.values.reduce((s, e) => s + e);
+  totalMaterialCosts[5] = flooringMaterialCosts.values.reduce((s, e) => s + e);
+  budgetSums[5] = flooringBudgetSum.values.reduce((s, e) => s + e);
   //
-  totalHours[6] = flooringHours.values.reduce((s, e) => s + e);
-  totalLaborCosts[6] = flooringLaborCosts.values.reduce((s, e) => s + e);
-  totalMaterialCosts[6] = flooringMaterialCosts.values.reduce((s, e) => s + e);
-  budgetSums[6] = flooringBudgetSum.values.reduce((s, e) => s + e);
+  totalHours[6] = roofHours.values.reduce((s, e) => s + e);
+  totalLaborCosts[6] = roofLaborCosts.values.reduce((s, e) => s + e);
+  totalMaterialCosts[6] = roofMaterialCosts.values.reduce((s, e) => s + e);
+  budgetSums[6] = roofBudgetSum.values.reduce((s, e) => s + e);
   //
-  totalHours[7] = roofHours.values.reduce((s, e) => s + e);
-  totalLaborCosts[7] = roofLaborCosts.values.reduce((s, e) => s + e);
-  totalMaterialCosts[7] = roofMaterialCosts.values.reduce((s, e) => s + e);
-  budgetSums[7] = roofBudgetSum.values.reduce((s, e) => s + e);
+  totalHours[7] = terraceHours.values.reduce((s, e) => s + e);
+  totalLaborCosts[7] = terraceLaborCosts.values.reduce((s, e) => s + e);
+  totalMaterialCosts[7] = terraceMaterialCosts.values.reduce((s, e) => s + e);
+  budgetSums[7] = terraceBudgetSum.values.reduce((s, e) => s + e);
   //
-  totalHours[8] = terraceHours.values.reduce((s, e) => s + e);
-  totalLaborCosts[8] = terraceLaborCosts.values.reduce((s, e) => s + e);
-  totalMaterialCosts[8] = terraceMaterialCosts.values.reduce((s, e) => s + e);
-  budgetSums[8] = terraceBudgetSum.values.reduce((s, e) => s + e);
-  //
-  totalHours[9] = innerStairsHours.values.reduce((s, e) => s + e);
-  totalLaborCosts[9] = innerStairsLaborCosts.values.reduce((s, e) => s + e);
-  totalMaterialCosts[9] =
+  totalHours[8] = innerStairsHours.values.reduce((s, e) => s + e);
+  totalLaborCosts[8] = innerStairsLaborCosts.values.reduce((s, e) => s + e);
+  totalMaterialCosts[8] =
       innerStairsMaterialCosts.values.reduce((s, e) => s + e);
-  budgetSums[9] = innerStairsBudgetSum.values.reduce((s, e) => s + e);
+  budgetSums[8] = innerStairsBudgetSum.values.reduce((s, e) => s + e);
   //
-  totalHours[10] = hullRoofingHours.values.reduce((s, e) => s + e);
-  totalLaborCosts[10] = hullRoofingLaborCosts.values.reduce((s, e) => s + e);
-  totalMaterialCosts[10] =
+  totalHours[9] = hullRoofingHours.values.reduce((s, e) => s + e);
+  totalLaborCosts[9] = hullRoofingLaborCosts.values.reduce((s, e) => s + e);
+  totalMaterialCosts[9] =
       hullRoofingMaterialCosts.values.reduce((s, e) => s + e);
-  budgetSums[10] = hullRoofingBudgetSum.values.reduce((s, e) => s + e);
+  budgetSums[9] = hullRoofingBudgetSum.values.reduce((s, e) => s + e);
   //
-  totalHours[11] = scaffoldingHours.values.reduce((s, e) => s + e);
-  totalLaborCosts[11] = scaffoldingLaborCosts.values.reduce((s, e) => s + e);
-  totalMaterialCosts[11] =
+  totalHours[10] = scaffoldingHours.values.reduce((s, e) => s + e);
+  totalLaborCosts[10] = scaffoldingLaborCosts.values.reduce((s, e) => s + e);
+  totalMaterialCosts[10] =
       scaffoldingMaterialCosts.values.reduce((s, e) => s + e);
-  budgetSums[11] = scaffoldingBudgetSum.values.reduce((s, e) => s + e);
+  budgetSums[10] = scaffoldingBudgetSum.values.reduce((s, e) => s + e);
   //
-  totalHours[12] = wasteHours.values.reduce((s, e) => s + e);
-  totalLaborCosts[12] = wasteLaborCosts.values.reduce((s, e) => s + e);
-  totalMaterialCosts[12] = wasteMaterialCosts.values.reduce((s, e) => s + e);
-  budgetSums[12] = wasteBudgetSum.values.reduce((s, e) => s + e);
+  totalHours[11] = wasteHours.values.reduce((s, e) => s + e);
+  totalLaborCosts[11] = wasteLaborCosts.values.reduce((s, e) => s + e);
+  totalMaterialCosts[11] = wasteMaterialCosts.values.reduce((s, e) => s + e);
+  budgetSums[11] = wasteBudgetSum.values.reduce((s, e) => s + e);
   //
-  totalHours[13] = supportSystemHours.values.reduce((s, e) => s + e);
-  totalLaborCosts[13] = supportSystemLaborCosts.values.reduce((s, e) => s + e);
-  totalMaterialCosts[13] =
+  totalHours[12] = supportSystemHours.values.reduce((s, e) => s + e);
+  totalLaborCosts[12] = supportSystemLaborCosts.values.reduce((s, e) => s + e);
+  totalMaterialCosts[12] =
       supportSystemMaterialCosts.values.reduce((s, e) => s + e);
-  budgetSums[13] = supportSystemBudgetSum.values.reduce((s, e) => s + e);
+  budgetSums[12] = supportSystemBudgetSum.values.reduce((s, e) => s + e);
 }
 
 void addHours(String name, double hours) {
@@ -487,8 +458,6 @@ void addHours(String name, double hours) {
     outerWallHours[name] = hours;
   } else if (innerDoorHours.containsKey(name)) {
     innerDoorHours[name] = hours;
-  } else if (parquetAndLaminateHours.containsKey(name)) {
-    parquetAndLaminateHours[name] = hours;
   } else if (windowsAndExteriorDoorHours.containsKey(name)) {
     windowsAndExteriorDoorHours[name] = hours;
   } else if (deckHours.containsKey(name)) {
@@ -520,8 +489,6 @@ void addLaborCosts(String name, double laborCosts) {
     outerWallLaborCosts[name] = laborCosts;
   } else if (innerDoorLaborCosts.containsKey(name)) {
     innerDoorLaborCosts[name] = laborCosts;
-  } else if (parquetAndLaminateLaborCosts.containsKey(name)) {
-    parquetAndLaminateLaborCosts[name] = laborCosts;
   } else if (windowsAndExteriorDoorLaborCosts.containsKey(name)) {
     windowsAndExteriorDoorLaborCosts[name] = laborCosts;
   } else if (deckLaborCosts.containsKey(name)) {
@@ -553,8 +520,6 @@ void addMaterialCosts(String name, double materialCosts) {
     outerWallMaterialCosts[name] = materialCosts;
   } else if (innerDoorMaterialCosts.containsKey(name)) {
     innerDoorMaterialCosts[name] = materialCosts;
-  } else if (parquetAndLaminateMaterialCosts.containsKey(name)) {
-    parquetAndLaminateMaterialCosts[name] = materialCosts;
   } else if (windowsAndExteriorDoorMaterialCosts.containsKey(name)) {
     windowsAndExteriorDoorMaterialCosts[name] = materialCosts;
   } else if (deckMaterialCosts.containsKey(name)) {
@@ -586,8 +551,6 @@ void addBudgetSum(String name, double budgetSum) {
     outerWallBudgetSum[name] = budgetSum;
   } else if (innerDoorBudgetSum.containsKey(name)) {
     innerDoorBudgetSum[name] = budgetSum;
-  } else if (parquetAndLaminateBudgetSum.containsKey(name)) {
-    parquetAndLaminateBudgetSum[name] = budgetSum;
   } else if (windowsAndExteriorDoorBudgetSum.containsKey(name)) {
     windowsAndExteriorDoorBudgetSum[name] = budgetSum;
   } else if (deckBudgetSum.containsKey(name)) {

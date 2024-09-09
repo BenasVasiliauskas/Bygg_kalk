@@ -212,19 +212,19 @@ Map<String, double> deckBudgetSum = {
 /////////////////////////////////////////////////////////////////////////////////////
 
 Map<String, double> flooringHours = {
-  "Wet room wall w/panel - wet room tile + tile 24x33": 0,
+  "Wet room wall w/panel - wet room tile + tile 25x33": 0,
   "Wet room wall w/panel/plaster + tile 20x30": 0,
 };
 Map<String, double> flooringLaborCosts = {
-  "Wet room wall w/panel - wet room tile + tile 24x33": 0,
+  "Wet room wall w/panel - wet room tile + tile 25x33": 0,
   "Wet room wall w/panel/plaster + tile 20x30": 0,
 };
 Map<String, double> flooringMaterialCosts = {
-  "Wet room wall w/panel - wet room tile + tile 24x33": 0,
+  "Wet room wall w/panel - wet room tile + tile 25x33": 0,
   "Wet room wall w/panel/plaster + tile 20x30": 0,
 };
 Map<String, double> flooringBudgetSum = {
-  "Wet room wall w/panel - wet room tile + tile 24x33": 0,
+  "Wet room wall w/panel - wet room tile + tile 25x33": 0,
   "Wet room wall w/panel/plaster + tile 20x30": 0,
 };
 
