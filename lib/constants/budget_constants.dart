@@ -17,16 +17,16 @@ List<String> calculatedNamesOrder = [
   // 'Exterior walls', //2 moved to 2
   // 'Interior walls', //3 moved to 4
   // 'Interior door', //4 moved to 5
-  // "Covers", //4 moved to 6
-  // "Flooring", //5 moved to 7
-  // "Exterior roof", //6 moved to 8
-  // "Terrace/Railings", //7 moved to 9
-  // "Inner stairs", //8 moved to 10
-  // "Hull roofing", //9  moved to 11
-  // "Scaffolding", //10 moved to 12
-  // "Waste Management", //11 moved to 13
-  // "Support system", //12 moved to 1
-  // "Totals" //13 moved to 14
+  // "Covers", //5 moved to 6
+  // "Flooring", //6 moved to 7
+  // "Exterior roof", //7 moved to 8
+  // "Terrace/Railings", //8 moved to 9
+  // "Inner stairs", //9 moved to 10
+  // "Hull roofing", //10  moved to 11
+  // "Scaffolding", //11 moved to 12
+  // "Waste Management", //12 moved to 13
+  // "Support system", //13 moved to 1
+  // "Totals" //14 moved to 14
 ];
 
 List<double> totalHours = [
