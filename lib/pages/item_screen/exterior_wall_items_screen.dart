@@ -86,7 +86,6 @@ class _ExteriorWallItemsScreenState extends State<ExteriorWallItemsScreen> {
       totalMaterial2 += widget.material2[i];
       totalTotalPrice += widget.totalPrice[i];
     }
-
     addHours(widget.name, totalLaborHours2);
     addLaborCosts(widget.name, totalLaborCost);
     addMaterialCosts(widget.name, totalMaterial2);

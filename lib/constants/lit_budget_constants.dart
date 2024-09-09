@@ -128,25 +128,25 @@ Map<String, double> innerWallBudgetSum = {
 };
 /////////////////////////////////////////////////////////////////////////////////////
 Map<String, double> outerWallHours = {
-  "47x187 medinis karkasas, 40 mm dailylentės, stovinčios siūlės, tinkas": 0,
+  "48x198 medinis karkasas, 50 mm dailylentės, stovinčios siūlės, tinkas": 0,
   "Medinis karkasas, po apšiltinimo. nauja plokštė": 0,
   "Išorinėje sienoje esančių durų griovimas baigtas": 0,
 };
 
 Map<String, double> outerWallLaborCosts = {
-  "47x187 medinis karkasas, 40 mm dailylentės, stovinčios siūlės, tinkas": 0,
+  "48x198 medinis karkasas, 50 mm dailylentės, stovinčios siūlės, tinkas": 0,
   "Medinis karkasas, po apšiltinimo. nauja plokštė": 0,
   "Išorinėje sienoje esančių durų griovimas baigtas": 0,
 };
 
 Map<String, double> outerWallMaterialCosts = {
-  "47x187 medinis karkasas, 40 mm dailylentės, stovinčios siūlės, tinkas": 0,
+  "48x198 medinis karkasas, 50 mm dailylentės, stovinčios siūlės, tinkas": 0,
   "Medinis karkasas, po apšiltinimo. nauja plokštė": 0,
   "Išorinėje sienoje esančių durų griovimas baigtas": 0,
 };
 
 Map<String, double> outerWallBudgetSum = {
-  "47x187 medinis karkasas, 40 mm dailylentės, stovinčios siūlės, tinkas": 0,
+  "48x198 medinis karkasas, 50 mm dailylentės, stovinčios siūlės, tinkas": 0,
   "Medinis karkasas, po apšiltinimo. nauja plokštė": 0,
   "Išorinėje sienoje esančių durų griovimas baigtas": 0,
 };
