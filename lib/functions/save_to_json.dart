@@ -70,10 +70,6 @@ Future<File> writeJsonArrayEnd(String name) async {
 Future<File> writeProjectToJson(var name, int lengthOfModel) async {
   final file = await readJsonFile(name);
 
-  // for (int i = 0; i < lengthOfModel; i++) {
-  //   print(exteriorWallData[i].name);
-  // }
-
   return file;
 }
 

@@ -106,8 +106,6 @@ class SupportSystemItem extends StatelessWidget {
         },
       ),
     ).then((shouldSave) {
-      print("shouldSave: $shouldSave");
-
       calculationQuantity = supportSystem[0].calculationQuantity;
     });
   }
