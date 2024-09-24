@@ -2,6 +2,7 @@ import 'package:cost_calculator/data/data.dart';
 import 'package:cost_calculator/data/lith_data.dart';
 import 'package:cost_calculator/data/norw_data.dart';
 import 'package:cost_calculator/data/polish_data.dart';
+import 'package:cost_calculator/observer/app_life_cycle_observer.dart';
 import 'package:cost_calculator/pages/shared/home_page.dart';
 import 'package:cost_calculator/pages/shared/item_screens/building_components_screen.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -20,12 +21,15 @@ class InnerWallScreen extends StatefulWidget {
 }
 
 class _InnerWallScreenState extends State<InnerWallScreen> {
+  final AppLifecycleObserver _observer = AppLifecycleObserver();
+
   List<TextEditingController> innerWallCalculationQuantityController = [];
   List<dynamic> filteredDeckData =
       []; // Assuming dataInnerWallData type is dynamic
 
   @override
   void initState() {
+    WidgetsBinding.instance.addObserver(_observer);
     super.initState();
 
     // Select the appropriate data list based on the current language
@@ -52,6 +56,7 @@ class _InnerWallScreenState extends State<InnerWallScreen> {
 
   @override
   void dispose() {
+    WidgetsBinding.instance.removeObserver(_observer);
     // Dispose of controllers when the widget is destroyed
     for (var controller in innerWallCalculationQuantityController) {
       controller.dispose();

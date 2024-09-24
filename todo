@@ -1,13 +1,40 @@
-dalintis project file
+1. Parketas ir laminatas perkelti i gulvbelegg + 09/09
+2. Pasalinti parketa perkelus + 09/09
+3. Viduje objektu pasalinti save to json ir load from json ( mažas load ir save) + 08/09
+4. Nauja konstrukcija norwegiskai Ny Bygg is Ny bigning + 09/09
+5. terrasa pakeisti i Ny bygg is terrase selection screen + 09/09
+6. Timepris nustatymuose pakeisti i default value 550 + 09/09
+7. Paslag nustatymuose pakeisti i default value 0 + 09/09
+8. Rigg og drift irgi pakeisti i 0 + 09/09
+9. Tiddsfaktor irgi pakeisti default value i 0 + 09/09
+10. Atidarius tiddskoeficient jis vadinamas tiddsfaktor, pakeisti faktor i coefficient + 09/09
+11. Budget screen eilės tvarką palaikyti + 09/09
+Baeresystem
+Yttervegger
+Vinduer og ytterdorer
+Innervegger
+Innerdorer
+Dekker
+Gulvbelegg
+Yttertak
+Terrase
+Trapper
+Hulltaking
+Stillas
+Avfall
 
-timepris paaiskinimas kaina be pvm
-paslag on hover show information
+HULL ROOFING INTERIOR WALLS WINDOWS EXTEIOR DOORS AND EXTERIOR WALLS DOESNT WORK
+WHEN CALCING BUDGET IN ENG
 
-//
-saved data to be able to be loaded on diff language
-// maybe dont save descriptions and just save the numbers?
-
-jusu prenumerators in custom drawer
-
-
-//check comment named change 
+12. Prideti vienetus i budget screen antrą lentelę
+13. Prideti visa objektu skaičių (2 skaidrė 5.1 punktas) + 09/09
+14. Side bar pervadinti Bygningsdeler i Dokumneter in norw
+15. Pridėti jūsų prenumeratos in sidebar zemiau negu personverklaering
+16. Enh. tid perspalvinti irgi i raudoną spalvą, kaip ir enh mater + 09/09
+17. Nustaymuose paaiskinimai pahoverinus pele virs hourly rate etc.. (skaidre 6)
+18. Dokumentuose project failus pagrazinti, prideti share funkcija
+19. Prie budget prideti projekto issaugojima 
+20. Partial saving, excel saving (21, 20 skaidres) 
+21. Issaugojima padarus pause (middle button) 
+22. ivedus pakeitimus ikainyje(calculationQuantity) padarytu skaiciavimus
+23. pakeitus nustatymuose 4 funkcijas kad pagal jas perskaiciuotu 

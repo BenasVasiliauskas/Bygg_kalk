@@ -3,6 +3,7 @@
 import 'package:cost_calculator/constants/lit_budget_constants.dart';
 import 'package:cost_calculator/data/lith_data.dart';
 import 'package:cost_calculator/functions/initialise_functions.dart';
+import 'package:cost_calculator/observer/app_life_cycle_observer.dart';
 import 'package:cost_calculator/pages/shared/globals/calculation_variables.dart';
 import 'package:flutter/material.dart';
 
@@ -42,6 +43,8 @@ class LitOuterRoofItemScreen extends StatefulWidget {
 }
 
 class _LitOuterRoofItemScreenState extends State<LitOuterRoofItemScreen> {
+  final AppLifecycleObserver _observer = AppLifecycleObserver();
+
   List<DataRow> rows = [];
   List<TextEditingController> descriptionControllers = [];
   List<TextEditingController> unitControllers = [];
@@ -291,6 +294,7 @@ class _LitOuterRoofItemScreenState extends State<LitOuterRoofItemScreen> {
 
   @override
   void initState() {
+    WidgetsBinding.instance.addObserver(_observer);
     super.initState();
     // Initialize controllers with empty controllers
     initialiseStates();
@@ -302,6 +306,7 @@ class _LitOuterRoofItemScreenState extends State<LitOuterRoofItemScreen> {
 
   @override
   void dispose() {
+    WidgetsBinding.instance.removeObserver(_observer);
     savingController.dispose();
     loadingController.dispose();
     super.dispose();

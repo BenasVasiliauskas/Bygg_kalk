@@ -12,6 +12,7 @@ import 'package:cost_calculator/functions/norw_load_project_from_json.dart';
 import 'package:cost_calculator/functions/pol_load_project_from_json.dart';
 import 'package:cost_calculator/functions/save_project_to_json.dart';
 import 'package:cost_calculator/functions/save_to_json.dart';
+import 'package:cost_calculator/observer/app_life_cycle_observer.dart';
 import 'package:cost_calculator/pages/shared/home_page.dart';
 import 'package:cost_calculator/widgets/custom_drawer.dart';
 
@@ -44,12 +45,20 @@ bool? isTotalMaterialsCostChecked = false;
 bool? isTotalPriceChecked = false;
 
 class _FilePickerScreenState extends State<FilePickerScreen> {
+  final AppLifecycleObserver _observer = AppLifecycleObserver();
   TextEditingController savingController = TextEditingController(text: "");
   List<io.FileSystemEntity> file = [];
   @override
   void initState() {
+    WidgetsBinding.instance.addObserver(_observer);
     super.initState();
     _listofFiles();
+  }
+
+  @override
+  void dispose() {
+    WidgetsBinding.instance.removeObserver(_observer);
+    super.dispose();
   }
 
   Widget build(BuildContext context) {

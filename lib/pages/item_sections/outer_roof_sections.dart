@@ -1,5 +1,6 @@
 import 'package:cost_calculator/constants/language.dart';
 import 'package:cost_calculator/data/data.dart';
+import 'package:cost_calculator/observer/app_life_cycle_observer.dart';
 import 'package:cost_calculator/pages/shared/home_page.dart';
 import 'package:cost_calculator/pages/shared/item_screens/building_components_screen.dart';
 import 'package:cost_calculator/pages/shared/item_screens/outer_roof_screen.dart';
@@ -15,6 +16,19 @@ class OuterRoofSections extends StatefulWidget {
 }
 
 class _OuterRoofSectionsState extends State<OuterRoofSections> {
+  final AppLifecycleObserver _observer = AppLifecycleObserver();
+  @override
+  void initState() {
+    WidgetsBinding.instance.addObserver(_observer);
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    WidgetsBinding.instance.removeObserver(_observer);
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return PopScope(

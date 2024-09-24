@@ -3,6 +3,7 @@ import 'package:cost_calculator/data/lith_data.dart';
 import 'package:cost_calculator/data/norw_data.dart';
 import 'package:cost_calculator/data/polish_data.dart';
 import 'package:cost_calculator/items/terrace_item.dart';
+import 'package:cost_calculator/observer/app_life_cycle_observer.dart';
 import 'package:cost_calculator/pages/shared/home_page.dart';
 import 'package:cost_calculator/pages/shared/item_screens/building_components_screen.dart';
 import 'package:flutter/material.dart';
@@ -16,11 +17,14 @@ class TerraceScreen extends StatefulWidget {
 }
 
 class _TerraceScreenState extends State<TerraceScreen> {
+  final AppLifecycleObserver _observer = AppLifecycleObserver();
+
   List<TextEditingController> terraceCalculationControllers = [];
   List<dynamic> currentTerraceData = [];
 
   @override
   void initState() {
+    WidgetsBinding.instance.addObserver(_observer);
     super.initState();
     currentTerraceData = languageEnglish
         ? terraceData
@@ -41,6 +45,7 @@ class _TerraceScreenState extends State<TerraceScreen> {
 
   @override
   void dispose() {
+    WidgetsBinding.instance.removeObserver(_observer);
     // Dispose of controllers when the widget is destroyed
     for (var controller in terraceCalculationControllers) {
       controller.dispose();

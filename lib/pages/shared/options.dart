@@ -1,4 +1,5 @@
 import 'package:cost_calculator/constants/language.dart';
+import 'package:cost_calculator/observer/app_life_cycle_observer.dart';
 import 'package:cost_calculator/pages/shared/globals/calculation_variables.dart';
 import 'package:cost_calculator/pages/shared/globals/selected_language.dart';
 import 'package:cost_calculator/pages/shared/home_page.dart';
@@ -17,8 +18,11 @@ class optionsScreen extends StatefulWidget {
 }
 
 class _optionsScreenState extends State<optionsScreen> {
+  final AppLifecycleObserver _observer = AppLifecycleObserver();
+
   @override
   void initState() {
+    WidgetsBinding.instance.addObserver(_observer);
     super.initState();
     _loadLanguage();
   }

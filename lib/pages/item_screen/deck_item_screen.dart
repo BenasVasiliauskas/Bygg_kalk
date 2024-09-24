@@ -3,6 +3,7 @@
 import 'package:cost_calculator/constants/budget_constants.dart';
 import 'package:cost_calculator/data/data.dart';
 import 'package:cost_calculator/functions/initialise_functions.dart';
+import 'package:cost_calculator/observer/app_life_cycle_observer.dart';
 import 'package:cost_calculator/pages/shared/globals/calculation_variables.dart';
 import 'package:flutter/material.dart';
 
@@ -40,6 +41,8 @@ class DeckItemScreen extends StatefulWidget {
 }
 
 class _DeckItemScreenState extends State<DeckItemScreen> {
+  final AppLifecycleObserver _observer = AppLifecycleObserver();
+
   List<DataRow> rows = [];
   List<TextEditingController> descriptionControllers = [];
   List<TextEditingController> unitControllers = [];
@@ -276,6 +279,7 @@ class _DeckItemScreenState extends State<DeckItemScreen> {
 
   @override
   void initState() {
+    WidgetsBinding.instance.addObserver(_observer);
     super.initState();
     initialiseStates(); // Initialize controllers
     setInitialValues(); // Set initial values from widget data to controllers
@@ -284,6 +288,7 @@ class _DeckItemScreenState extends State<DeckItemScreen> {
 
   @override
   void dispose() {
+    WidgetsBinding.instance.removeObserver(_observer);
     savingController.dispose();
     loadingController.dispose();
     descriptionControllers.forEach((controller) => controller.dispose());

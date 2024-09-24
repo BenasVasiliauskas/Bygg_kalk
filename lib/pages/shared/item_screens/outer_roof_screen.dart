@@ -3,6 +3,7 @@ import 'package:cost_calculator/data/lith_data.dart';
 import 'package:cost_calculator/data/norw_data.dart';
 import 'package:cost_calculator/data/polish_data.dart';
 import 'package:cost_calculator/items/outer_roof_item.dart';
+import 'package:cost_calculator/observer/app_life_cycle_observer.dart';
 import 'package:cost_calculator/pages/shared/home_page.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -19,11 +20,14 @@ class OuterRoofScreen extends StatefulWidget {
 }
 
 class _OuterRoofScreenState extends State<OuterRoofScreen> {
+  final AppLifecycleObserver _observer = AppLifecycleObserver();
+
   List<TextEditingController> outerRoofCalculationControllers = [];
   List<dynamic> filteredOuterRoofData = [];
 
   @override
   void initState() {
+    WidgetsBinding.instance.addObserver(_observer);
     super.initState();
     List<dynamic> currentOuterRoofData = languageEnglish
         ? outerRoofData
@@ -48,6 +52,7 @@ class _OuterRoofScreenState extends State<OuterRoofScreen> {
 
   @override
   void dispose() {
+    WidgetsBinding.instance.removeObserver(_observer);
     // Dispose of controllers when the widget is destroyed
     for (var controller in outerRoofCalculationControllers) {
       controller.dispose();

@@ -2,6 +2,7 @@
 
 import 'package:cost_calculator/data/original_data.dart';
 import 'package:cost_calculator/functions/initialise_functions.dart';
+import 'package:cost_calculator/observer/app_life_cycle_observer.dart';
 import 'package:cost_calculator/pages/shared/globals/calculation_variables.dart';
 import 'package:flutter/material.dart';
 import '../../constants/budget_constants.dart';
@@ -43,6 +44,8 @@ class ExteriorWallItemsScreen extends StatefulWidget {
 }
 
 class _ExteriorWallItemsScreenState extends State<ExteriorWallItemsScreen> {
+  final AppLifecycleObserver _observer = AppLifecycleObserver();
+
   List<DataRow> rows = [];
   List<TextEditingController> descriptionControllers = [];
   List<TextEditingController> unitControllers = [];
@@ -292,6 +295,7 @@ class _ExteriorWallItemsScreenState extends State<ExteriorWallItemsScreen> {
 
   @override
   void initState() {
+    WidgetsBinding.instance.addObserver(_observer);
     super.initState();
     // Initialize controllers with empty controllers
     initialiseStates();
@@ -299,10 +303,12 @@ class _ExteriorWallItemsScreenState extends State<ExteriorWallItemsScreen> {
     // Set the initial values from widget data to controllers
     setInitialValues();
     // Initialize variables only once
+    recalculateValues();
   }
 
   @override
   void dispose() {
+    WidgetsBinding.instance.removeObserver(_observer);
     savingController.dispose();
     loadingController.dispose();
     super.dispose();

@@ -3,6 +3,7 @@ import 'package:cost_calculator/data/lith_data.dart';
 import 'package:cost_calculator/data/norw_data.dart';
 import 'package:cost_calculator/data/polish_data.dart';
 import 'package:cost_calculator/items/support_system_item.dart';
+import 'package:cost_calculator/observer/app_life_cycle_observer.dart';
 import 'package:cost_calculator/pages/shared/home_page.dart';
 import 'package:cost_calculator/pages/shared/item_screens/building_components_screen.dart';
 
@@ -17,11 +18,14 @@ class SupportSystemScreen extends StatefulWidget {
 }
 
 class _SupportSystemScreenState extends State<SupportSystemScreen> {
+  final AppLifecycleObserver _observer = AppLifecycleObserver();
+
   List<TextEditingController> supportSystemCalculationQuantityController = [];
   List<dynamic> currentSupportSystemData = [];
 
   @override
   void initState() {
+    WidgetsBinding.instance.addObserver(_observer);
     super.initState();
     currentSupportSystemData = languageEnglish
         ? supportSystem
@@ -42,6 +46,7 @@ class _SupportSystemScreenState extends State<SupportSystemScreen> {
 
   @override
   void dispose() {
+    WidgetsBinding.instance.removeObserver(_observer);
     // Dispose of controllers when the widget is destroyed
     for (var controller in supportSystemCalculationQuantityController) {
       controller.dispose();

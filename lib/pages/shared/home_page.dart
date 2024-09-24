@@ -1,8 +1,8 @@
 import 'package:cost_calculator/constants/language.dart';
 import 'package:cost_calculator/data/data.dart';
-import 'package:cost_calculator/data/norw_data.dart';
 import 'package:cost_calculator/functions/save_project_to_json.dart';
 import 'package:cost_calculator/functions/save_to_json.dart';
+import 'package:cost_calculator/observer/app_life_cycle_observer.dart';
 import 'package:cost_calculator/pages/item_screen/file_picker.dart';
 import 'package:cost_calculator/pages/item_screen/budget_screen.dart';
 import 'package:cost_calculator/pages/lit_item_screen/lit_budget_screen.dart';
@@ -25,6 +25,20 @@ class homePage extends StatefulWidget {
 }
 
 class _homePageState extends State<homePage> {
+  final AppLifecycleObserver _observer = AppLifecycleObserver();
+
+  @override
+  void initState() {
+    WidgetsBinding.instance.addObserver(_observer);
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    WidgetsBinding.instance.removeObserver(_observer);
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return PopScope(
@@ -37,57 +51,9 @@ class _homePageState extends State<homePage> {
         await fileDeleteIfExists(fileName!);
         await writeJsonArrayStart(fileName);
         if (languageEnglish) {
-          await saveProject(fileName, dataInnerWallData);
-          await writeJsonComma(fileName);
-          await saveProject(fileName, deckData);
-          await writeJsonComma(fileName);
-          await saveProject(fileName, innerDoor);
-          await writeJsonComma(fileName);
-          await saveProject(fileName, windowsExteriorDoors);
-          await writeJsonComma(fileName);
-          await saveProject(fileName, supportSystem);
-          await writeJsonComma(fileName);
-          await saveProject(fileName, flooringData);
-          await writeJsonComma(fileName);
-          await saveProject(fileName, terraceData);
-          await writeJsonComma(fileName);
-          await saveProject(fileName, outerRoofData);
-          await writeJsonComma(fileName);
-          await saveProject(fileName, exteriorWallData);
-          await writeJsonComma(fileName);
-          await saveProject(fileName, hullRoofingData);
-          await writeJsonComma(fileName);
-          await saveProject(fileName, scaffoldingData);
-          await writeJsonComma(fileName);
-          await saveProject(fileName, innerStairsData);
-          await writeJsonComma(fileName);
-          await saveProject(fileName, wasteData);
+          saveEngProjectToJSON(fileName);
         } else if (languageNorwegian) {
-          await saveProject(fileName, norwInnerWallData);
-          await writeJsonComma(fileName);
-          await saveProject(fileName, norwDeckData);
-          await writeJsonComma(fileName);
-          await saveProject(fileName, norwInnerDoor);
-          await writeJsonComma(fileName);
-          await saveProject(fileName, norwWindowsExteriorDoors);
-          await writeJsonComma(fileName);
-          await saveProject(fileName, norwSupportSystem);
-          await writeJsonComma(fileName);
-          await saveProject(fileName, norwFlooringData);
-          await writeJsonComma(fileName);
-          await saveProject(fileName, norwTerraceData);
-          await writeJsonComma(fileName);
-          await saveProject(fileName, norwOuterRoofData);
-          await writeJsonComma(fileName);
-          await saveProject(fileName, norwExteriorWallData);
-          await writeJsonComma(fileName);
-          await saveProject(fileName, norwHullRoofingData);
-          await writeJsonComma(fileName);
-          await saveProject(fileName, norwScaffoldingData);
-          await writeJsonComma(fileName);
-          await saveProject(fileName, norwInnerStairsData);
-          await writeJsonComma(fileName);
-          await saveProject(fileName, norwWasteData);
+          saveNorwProjectToJson(fileName);
         }
 
         await writeJsonArrayEnd(fileName);

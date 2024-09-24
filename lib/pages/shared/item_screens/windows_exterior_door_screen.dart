@@ -2,6 +2,7 @@ import 'package:cost_calculator/data/data.dart';
 import 'package:cost_calculator/data/lith_data_original.dart';
 import 'package:cost_calculator/data/norw_data.dart';
 import 'package:cost_calculator/data/polish_data.dart';
+import 'package:cost_calculator/observer/app_life_cycle_observer.dart';
 import 'package:cost_calculator/pages/shared/home_page.dart';
 import 'package:cost_calculator/pages/shared/item_screens/building_components_screen.dart';
 
@@ -22,11 +23,14 @@ class WindowsExteriorDoorScreen extends StatefulWidget {
 }
 
 class _WindowsExteriorDoorScreenState extends State<WindowsExteriorDoorScreen> {
+  final AppLifecycleObserver _observer = AppLifecycleObserver();
+
   List<TextEditingController> windowsExteriorDoorsCalculationControllers = [];
   List<dynamic> filteredWindowsExteriorDoors = [];
 
   @override
   void initState() {
+    WidgetsBinding.instance.addObserver(_observer);
     super.initState();
     List<dynamic> currentWindowsExteriorDoors = languageEnglish
         ? windowsExteriorDoors
@@ -52,6 +56,7 @@ class _WindowsExteriorDoorScreenState extends State<WindowsExteriorDoorScreen> {
 
   @override
   void dispose() {
+    WidgetsBinding.instance.removeObserver(_observer);
     // Dispose of controllers when the widget is destroyed
     for (var controller in windowsExteriorDoorsCalculationControllers) {
       controller.dispose();

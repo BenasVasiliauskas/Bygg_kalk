@@ -3,6 +3,7 @@ import 'package:cost_calculator/data/lith_data.dart';
 import 'package:cost_calculator/data/norw_data.dart';
 import 'package:cost_calculator/data/polish_data.dart';
 import 'package:cost_calculator/items/scaffolding_data.dart';
+import 'package:cost_calculator/observer/app_life_cycle_observer.dart';
 import 'package:cost_calculator/pages/shared/home_page.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -15,11 +16,14 @@ class ScaffoldingScreen extends StatefulWidget {
 }
 
 class _ScaffoldingScreenState extends State<ScaffoldingScreen> {
+  final AppLifecycleObserver _observer = AppLifecycleObserver();
+
   List<TextEditingController> scaffoldingCalculationControllers = [];
   List<dynamic> currentScaffoldingData = [];
 
   @override
   void initState() {
+    WidgetsBinding.instance.addObserver(_observer);
     super.initState();
     currentScaffoldingData = languageEnglish
         ? scaffoldingData
@@ -40,6 +44,7 @@ class _ScaffoldingScreenState extends State<ScaffoldingScreen> {
 
   @override
   void dispose() {
+    WidgetsBinding.instance.removeObserver(_observer);
     // Dispose of controllers when the widget is destroyed
     for (var controller in scaffoldingCalculationControllers) {
       controller.dispose();

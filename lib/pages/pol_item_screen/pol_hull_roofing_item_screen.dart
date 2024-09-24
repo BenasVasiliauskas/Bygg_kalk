@@ -3,6 +3,7 @@
 import 'package:cost_calculator/constants/pol_budget_constants.dart';
 import 'package:cost_calculator/data/polish_data.dart';
 import 'package:cost_calculator/functions/initialise_functions.dart';
+import 'package:cost_calculator/observer/app_life_cycle_observer.dart';
 import 'package:cost_calculator/pages/shared/globals/calculation_variables.dart';
 import 'package:flutter/material.dart';
 
@@ -41,6 +42,7 @@ class PolHullRoofingItemScreen extends StatefulWidget {
 }
 
 class _PolHullRoofingItemScreenState extends State<PolHullRoofingItemScreen> {
+  final AppLifecycleObserver _observer = AppLifecycleObserver();
   List<DataRow> rows = [];
   List<TextEditingController> descriptionControllers = [];
   List<TextEditingController> unitControllers = [];
@@ -281,6 +283,7 @@ class _PolHullRoofingItemScreenState extends State<PolHullRoofingItemScreen> {
 
   @override
   void initState() {
+    WidgetsBinding.instance.addObserver(_observer);
     super.initState();
     // Initialize controllers with empty controllers
     initialiseStates();
@@ -291,6 +294,8 @@ class _PolHullRoofingItemScreenState extends State<PolHullRoofingItemScreen> {
 
   @override
   void dispose() {
+    WidgetsBinding.instance.removeObserver(_observer);
+
     savingController.dispose();
     loadingController.dispose();
     super.dispose();

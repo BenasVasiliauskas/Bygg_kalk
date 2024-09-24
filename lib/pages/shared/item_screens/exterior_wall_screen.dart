@@ -4,6 +4,7 @@ import 'package:cost_calculator/data/lith_data.dart';
 import 'package:cost_calculator/data/norw_data.dart';
 import 'package:cost_calculator/data/polish_data.dart';
 import 'package:cost_calculator/items/outer_wall_item.dart';
+import 'package:cost_calculator/observer/app_life_cycle_observer.dart';
 import 'package:cost_calculator/pages/shared/home_page.dart';
 import 'package:cost_calculator/pages/shared/item_screens/building_components_screen.dart';
 import 'package:cost_calculator/widgets/custom_drawer.dart';
@@ -20,11 +21,14 @@ class ExteriorWallScreen extends StatefulWidget {
 }
 
 class _ExteriorWallScreenState extends State<ExteriorWallScreen> {
+  final AppLifecycleObserver _observer = AppLifecycleObserver();
   List<TextEditingController> outerWallCalculationControllers = [];
   List<dynamic> filteredExteriorWallData = [];
 
   @override
   void initState() {
+    WidgetsBinding.instance.addObserver(_observer);
+
     super.initState();
 
     List<dynamic> currentExteriorWallData = languageEnglish
@@ -50,6 +54,7 @@ class _ExteriorWallScreenState extends State<ExteriorWallScreen> {
 
   @override
   void dispose() {
+    WidgetsBinding.instance.removeObserver(_observer);
     // Dispose of controllers when the widget is destroyed
     for (var controller in outerWallCalculationControllers) {
       controller.dispose();

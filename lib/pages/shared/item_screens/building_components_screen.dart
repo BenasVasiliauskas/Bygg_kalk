@@ -1,5 +1,6 @@
 import 'package:cost_calculator/constants/language.dart';
 import 'package:cost_calculator/data/data.dart';
+import 'package:cost_calculator/observer/app_life_cycle_observer.dart';
 import 'package:cost_calculator/pages/item_sections/deck_sections.dart';
 import 'package:cost_calculator/pages/item_sections/flooring_sections.dart';
 import 'package:cost_calculator/pages/item_sections/hull_roofing_sections.dart';
@@ -27,6 +28,20 @@ class buildingComponentsScreen extends StatefulWidget {
 }
 
 class _buildingComponentsScreenState extends State<buildingComponentsScreen> {
+  final AppLifecycleObserver _observer = AppLifecycleObserver();
+
+  @override
+  void initState() {
+    WidgetsBinding.instance.addObserver(_observer);
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    WidgetsBinding.instance.removeObserver(_observer);
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return PopScope(

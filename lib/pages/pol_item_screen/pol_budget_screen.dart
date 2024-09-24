@@ -2,6 +2,7 @@ import 'package:cost_calculator/constants/empty_models.dart';
 import 'package:cost_calculator/constants/pol_budget_constants.dart';
 import 'package:cost_calculator/functions/pol_load_project_from_json.dart';
 import 'package:cost_calculator/functions/save_to_json.dart';
+import 'package:cost_calculator/observer/app_life_cycle_observer.dart';
 import 'package:cost_calculator/pages/shared/globals/calculation_variables.dart';
 import 'package:cost_calculator/pages/shared/home_page.dart';
 import 'package:file_picker/file_picker.dart';
@@ -14,7 +15,20 @@ class PolBudgetScreen extends StatefulWidget {
 }
 
 class _PolBudgetScreenState extends State<PolBudgetScreen> {
+  final AppLifecycleObserver _observer = AppLifecycleObserver();
   final ScrollController _scrollController = ScrollController();
+
+  @override
+  void initState() {
+    WidgetsBinding.instance.addObserver(_observer);
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    WidgetsBinding.instance.removeObserver(_observer);
+    super.dispose();
+  }
 
   double sumMaterialCosts =
       totalMaterialCosts.reduce((value, element) => value + element);

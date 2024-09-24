@@ -2,6 +2,7 @@
 
 import 'package:cost_calculator/data/polish_data.dart';
 import 'package:cost_calculator/functions/initialise_functions.dart';
+import 'package:cost_calculator/observer/app_life_cycle_observer.dart';
 import 'package:cost_calculator/pages/shared/globals/calculation_variables.dart';
 import 'package:flutter/material.dart';
 import 'package:cost_calculator/constants/pol_budget_constants.dart';
@@ -44,6 +45,7 @@ class PolInteriorWallItemsScreen extends StatefulWidget {
 
 class _PolInteriorWallItemsScreenState
     extends State<PolInteriorWallItemsScreen> {
+  final AppLifecycleObserver _observer = AppLifecycleObserver();
   List<DataRow> rows = [];
   List<TextEditingController> descriptionControllers = [];
   List<TextEditingController> unitControllers = [];
@@ -290,6 +292,7 @@ class _PolInteriorWallItemsScreenState
 
   @override
   void initState() {
+    WidgetsBinding.instance.addObserver(_observer);
     super.initState();
     // Initialize controllers with empty controllers
     initialiseStates();
@@ -300,6 +303,8 @@ class _PolInteriorWallItemsScreenState
 
   @override
   void dispose() {
+    WidgetsBinding.instance.removeObserver(_observer);
+
     savingController.dispose();
     loadingController.dispose();
     super.dispose();
