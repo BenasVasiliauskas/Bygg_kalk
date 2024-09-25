@@ -469,53 +469,91 @@ class _optionsScreenState extends State<optionsScreen> {
                 ),
                 Row(
                   children: [
-                    Icon(FontAwesomeIcons.gear),
-                    TextButton(
-                      child: languageEnglish
-                          ? Text("General")
+                    Tooltip(
+                        message: languageEnglish
+                            ? "Change language"
+                            : languageNorwegian
+                                ? "Endre språk"
+                                : languageLithuanian
+                                    ? "Pakeisti kalbą"
+                                    : "Zmień język",
+                        child: Row(
+                          children: [
+                            Icon(FontAwesomeIcons.gear),
+                            TextButton(
+                              child: languageEnglish
+                                  ? Text("General")
+                                  : languageNorwegian
+                                      ? Text('Generelt')
+                                      : languageLithuanian
+                                          ? Text("Bendri")
+                                          : Text("Ogólne"),
+                              onPressed: () {
+                                showGeneralDialog(context);
+                              },
+                            )
+                          ],
+                        )),
+                  ],
+                ),
+                Row(
+                  children: [
+                    Tooltip(
+                      message: languageEnglish
+                          ? "Change the apps theme (dark/light)"
                           : languageNorwegian
-                              ? Text('Generelt')
+                              ? "Endre appens tema (mørk/lys)"
                               : languageLithuanian
-                                  ? Text("Bendri")
-                                  : Text("Ogólne"),
-                      onPressed: () {
-                        showGeneralDialog(context);
-                      },
+                                  ? "Pakeisti programos temą (tamsią/šviesią)"
+                                  : "Zmień motyw aplikacji (ciemny/jasny)",
+                      child: Row(
+                        children: [
+                          Icon(FontAwesomeIcons.folderPlus),
+                          TextButton(
+                            child: languageEnglish
+                                ? Text("Display")
+                                : languageNorwegian
+                                    ? Text('Visning')
+                                    : languageLithuanian
+                                        ? Text("Ekrano")
+                                        : Text("Wyświetlacz"),
+                            onPressed: () {
+                              showDisplayDialog(context);
+                            },
+                          )
+                        ],
+                      ),
                     )
                   ],
                 ),
                 Row(
                   children: [
-                    Icon(FontAwesomeIcons.folderPlus),
-                    TextButton(
-                      child: languageEnglish
-                          ? Text("Display")
+                    Tooltip(
+                      message: languageEnglish
+                          ? "Change the hourly rate"
                           : languageNorwegian
-                              ? Text('Visning')
+                              ? "Endre timepris"
                               : languageLithuanian
-                                  ? Text("Ekrano")
-                                  : Text("Wyświetlacz"),
-                      onPressed: () {
-                        showDisplayDialog(context);
-                      },
-                    )
-                  ],
-                ),
-                Row(
-                  children: [
-                    Icon(FontAwesomeIcons.boxArchive),
-                    TextButton(
-                      child: languageEnglish
-                          ? Text("Hourly rate")
-                          : languageNorwegian
-                              ? Text('Time pris')
-                              : languageLithuanian
-                                  ? Text("Val. įkainis")
-                                  : Text("Stawka godzinowa"),
-                      onPressed: () {
-                        showHourlyRateDialog(context);
-                      },
-                    )
+                                  ? "Pakeisti valandinį įkainį"
+                                  : "Zmień stawkę godzinową",
+                      child: Row(
+                        children: [
+                          Icon(FontAwesomeIcons.boxArchive),
+                          TextButton(
+                            child: languageEnglish
+                                ? Text("Hourly rate")
+                                : languageNorwegian
+                                    ? Text('Time pris')
+                                    : languageLithuanian
+                                        ? Text("Val. įkainis")
+                                        : Text("Stawka godzinowa"),
+                            onPressed: () {
+                              showHourlyRateDialog(context);
+                            },
+                          )
+                        ],
+                      ),
+                    ),
                   ],
                 ),
                 Row(
@@ -537,36 +575,62 @@ class _optionsScreenState extends State<optionsScreen> {
                 ),
                 Row(
                   children: [
-                    Icon(FontAwesomeIcons.fileExcel),
-                    TextButton(
-                      child: languageEnglish
-                          ? Text("Site costs")
+                    Tooltip(
+                      message: languageEnglish
+                          ? "Change the costs of the site"
                           : languageNorwegian
-                              ? Text('Rigg og Drift')
+                              ? "Endre kostnadene på byggeplassen"
                               : languageLithuanian
-                                  ? Text("Statybvietes išlaidos")
-                                  : Text("Koszty witryny"),
-                      onPressed: () {
-                        showCostsDialog(context);
-                      },
-                    )
+                                  ? "Pakeisti statybvietės išlaidas"
+                                  : "Zmień koszty witryny",
+                      child: Row(
+                        children: [
+                          Icon(FontAwesomeIcons.fileExcel),
+                          TextButton(
+                            child: languageEnglish
+                                ? Text("Site costs")
+                                : languageNorwegian
+                                    ? Text('Rigg og Drift')
+                                    : languageLithuanian
+                                        ? Text("Statybvietes išlaidos")
+                                        : Text("Koszty witryny"),
+                            onPressed: () {
+                              showCostsDialog(context);
+                            },
+                          )
+                        ],
+                      ),
+                    ),
                   ],
                 ),
                 Row(
                   children: [
-                    Icon(FontAwesomeIcons.tag),
-                    TextButton(
-                      child: languageEnglish
-                          ? Text("Time coefficient")
+                    Tooltip(
+                      message: languageEnglish
+                          ? "Change the time factor"
                           : languageNorwegian
-                              ? Text('Tidskoeffisient')
+                              ? "Endre tidsfaktoren"
                               : languageLithuanian
-                                  ? Text("Laiko koeficientas")
-                                  : Text("Współczynnik czasu"),
-                      onPressed: () {
-                        showTimeCoefficientDialog(context);
-                      },
-                    )
+                                  ? "Pakeisti laiko faktorių"
+                                  : "Zmień czynnik czasu",
+                      child: Row(
+                        children: [
+                          Icon(FontAwesomeIcons.tag),
+                          TextButton(
+                            child: languageEnglish
+                                ? Text("Time coefficient")
+                                : languageNorwegian
+                                    ? Text('Tidskoeffisient')
+                                    : languageLithuanian
+                                        ? Text("Laiko koeficientas")
+                                        : Text("Współczynnik czasu"),
+                            onPressed: () {
+                              showTimeCoefficientDialog(context);
+                            },
+                          )
+                        ],
+                      ),
+                    ),
                   ],
                 ),
               ],

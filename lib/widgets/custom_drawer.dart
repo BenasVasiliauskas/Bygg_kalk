@@ -6,6 +6,7 @@ import 'package:cost_calculator/pages/shared/help_page.dart';
 import 'package:cost_calculator/pages/shared/home_page.dart';
 import 'package:cost_calculator/pages/shared/options.dart';
 import 'package:cost_calculator/pages/shared/privacy_policy.dart';
+import 'package:cost_calculator/pages/shared/subscriptions_page.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import '../pages/item_screen/budget_screen.dart';
@@ -174,7 +175,7 @@ class CustomDrawer extends StatelessWidget {
             title: languageEnglish
                 ? Text('Documents')
                 : languageNorwegian
-                    ? Text('Bygningsdeler')
+                    ? Text('Dokumenter')
                     : languageLithuanian
                         ? Text("Dokumentai")
                         : Text("Dokumenty"),
@@ -260,6 +261,28 @@ class CustomDrawer extends StatelessWidget {
               }));
             },
           ),
+          ListTile(
+            leading: Icon(
+              FontAwesomeIcons.moneyBill1,
+              color: Colors.blue,
+            ),
+            title: Text(
+              languageEnglish
+                  ? "Your subscriptions"
+                  : languageNorwegian
+                      ? "Dine abonnementer"
+                      : languageLithuanian
+                          ? "Jūsų prenumeratos"
+                          : "Twoje subskrypcje",
+            ),
+            onTap: () {
+              Navigator.of(context)
+                  .pushReplacement(MaterialPageRoute(builder: (context) {
+                return SubscriptionsPage();
+              }));
+            },
+          ),
+
           ListTile(
               leading: FaIcon(
                 (FontAwesomeIcons.question),
