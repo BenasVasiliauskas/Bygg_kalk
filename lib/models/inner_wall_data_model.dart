@@ -48,6 +48,8 @@ class InnerWallModel {
       'material1': material1,
       'material2': material2,
       'totalPrice': totalPrice,
+      'constructionType': constructionType,
+      'calculationQuantity': calculationQuantity,
     };
   }
 

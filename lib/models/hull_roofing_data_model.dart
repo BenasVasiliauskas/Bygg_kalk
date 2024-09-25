@@ -43,6 +43,8 @@ class HullRoofingModel {
       'material': material,
       'materials': materials,
       'totalPrice': totalPrice,
+      'constructionType': constructionType,
+      'calculationQuantity': calculationQuantity,
     };
   }
 
