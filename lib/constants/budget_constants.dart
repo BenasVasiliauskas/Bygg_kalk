@@ -1,3 +1,5 @@
+import 'package:cost_calculator/models/waste_data_model.dart';
+
 List<String> calculatedNamesOrder = [
   "Support system",
   "Exterior walls",
@@ -566,4 +568,15 @@ void addBudgetSum(String name, double budgetSum) {
     supportSystemBudgetSum[name] = budgetSum;
   }
   reCalculate();
+}
+
+double calculateTotalWaste(List<WasteModel> wasteList) {
+  double totalSum = 0.0;
+
+  for (var wasteModel in wasteList) {
+    totalSum +=
+        wasteModel.totalPrice.fold(0.0, (prev, element) => prev + element);
+  }
+
+  return totalSum;
 }

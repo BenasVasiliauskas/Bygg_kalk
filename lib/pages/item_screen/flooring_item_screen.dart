@@ -159,7 +159,6 @@ class _FlooringItemScreenState extends State<FlooringItemScreen> {
         ),
       );
     }
-
     savingController = TextEditingController();
     loadingController = TextEditingController();
   }
@@ -169,15 +168,12 @@ class _FlooringItemScreenState extends State<FlooringItemScreen> {
         .fold(0, (previousValue, element) => previousValue + element);
     double mat1Total = widget.material1
         .fold(0, (previousValue, element) => previousValue + element);
-
     calculationQuantity = mat2Total / mat1Total;
-
     widget.calculationQuantity = calculationQuantity;
   }
 
   void _resetLaborHours() {
     if (!mounted) return; // Ensure the widget is still mounted
-
     for (int i = 0; i < innerDoor.length; i++) {
       if (innerDoor[i].name == widget.name) {
         setState(() {

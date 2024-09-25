@@ -1,5 +1,6 @@
 import 'package:cost_calculator/constants/empty_models.dart';
 import 'package:cost_calculator/constants/pol_budget_constants.dart';
+import 'package:cost_calculator/data/polish_data.dart';
 import 'package:cost_calculator/functions/pol_load_project_from_json.dart';
 import 'package:cost_calculator/functions/save_to_json.dart';
 import 'package:cost_calculator/observer/app_life_cycle_observer.dart';
@@ -29,6 +30,8 @@ class _PolBudgetScreenState extends State<PolBudgetScreen> {
     WidgetsBinding.instance.removeObserver(_observer);
     super.dispose();
   }
+
+  double sumWasteRemoval = calculateTotalWaste(polWasteData);
 
   double sumMaterialCosts =
       totalMaterialCosts.reduce((value, element) => value + element);
@@ -270,7 +273,7 @@ class _PolBudgetScreenState extends State<PolBudgetScreen> {
                           ),
                         ),
                         DataCell(
-                          Text(sumMaterialCosts.toStringAsFixed(2)),
+                          Text(sumMaterialCosts.toStringAsFixed(2) + "\$"),
                         ),
                       ],
                     ),
@@ -287,7 +290,9 @@ class _PolBudgetScreenState extends State<PolBudgetScreen> {
                           ),
                         ),
                         DataCell(
-                          Text("-"),
+                          Text((sumWasteRemoval + sumWasteRemoval * costs)
+                                  .toStringAsFixed(2) +
+                              "\$"),
                         ),
                       ],
                     ),
@@ -305,7 +310,7 @@ class _PolBudgetScreenState extends State<PolBudgetScreen> {
                         ),
                         DataCell(
                           Text(
-                            (sumMaterialCosts * 0.05).toStringAsFixed(2),
+                            (sumMaterialCosts * 0.05).toStringAsFixed(2) + "\$",
                           ),
                         ),
                       ],
@@ -325,9 +330,10 @@ class _PolBudgetScreenState extends State<PolBudgetScreen> {
                         DataCell(
                           Text(
                             (sumLaborCosts +
-                                    sumMaterialCosts +
-                                    (costs * sumLaborCosts))
-                                .toStringAsFixed(2),
+                                        sumMaterialCosts +
+                                        (costs * sumLaborCosts))
+                                    .toStringAsFixed(2) +
+                                "\$",
                           ),
                         ),
                       ],
@@ -347,13 +353,14 @@ class _PolBudgetScreenState extends State<PolBudgetScreen> {
                         DataCell(
                           Text(
                             (((sumLaborCosts +
+                                                sumMaterialCosts +
+                                                (costs * sumLaborCosts)) *
+                                            1.25) -
+                                        (sumLaborCosts +
                                             sumMaterialCosts +
-                                            (costs * sumLaborCosts)) *
-                                        1.25) -
-                                    (sumLaborCosts +
-                                        sumMaterialCosts +
-                                        (costs * sumLaborCosts)))
-                                .toStringAsFixed(2),
+                                            (costs * sumLaborCosts)))
+                                    .toStringAsFixed(2) +
+                                "\$",
                           ),
                         ),
                       ],
@@ -373,10 +380,11 @@ class _PolBudgetScreenState extends State<PolBudgetScreen> {
                         DataCell(
                           Text(
                             ((sumLaborCosts +
-                                        sumMaterialCosts +
-                                        (costs * sumLaborCosts)) *
-                                    1.25)
-                                .toStringAsFixed(2),
+                                            sumMaterialCosts +
+                                            (costs * sumLaborCosts)) *
+                                        1.25)
+                                    .toStringAsFixed(2) +
+                                "\$",
                           ),
                         ),
                       ],
