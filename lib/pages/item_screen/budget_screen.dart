@@ -6,7 +6,6 @@ import 'package:cost_calculator/functions/load_project_from_json.dart';
 import 'package:cost_calculator/functions/save_project_to_json.dart';
 import 'package:cost_calculator/functions/save_to_json.dart';
 import 'package:cost_calculator/observer/app_life_cycle_observer.dart';
-import 'package:cost_calculator/pages/shared/globals/calculation_variables.dart';
 import 'package:cost_calculator/pages/shared/home_page.dart';
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
@@ -65,12 +64,14 @@ class _BudgetScreenState extends State<BudgetScreen> {
                     padding: const EdgeInsets.all(12.0),
                     child: TextButton(
                       onPressed: () async {
-                        if (File("a.json").existsSync()) {
-                          File("a.json").deleteSync();
+                        DateTime now = DateTime.now();
+                        String fileName = "${now.year}-${now.month}-${now.day}";
+                        if (File("${fileName}.json").existsSync()) {
+                          File("${fileName}.json").deleteSync();
                         }
-                        await writeJsonArrayStart("a");
-                        await saveEngProjectToJSON("a");
-                        await writeJsonArrayEnd("a");
+                        await writeJsonArrayStart(fileName);
+                        await saveEngProjectToJSON(fileName);
+                        await writeJsonArrayEnd(fileName);
                       },
                       child: Text("Save project"),
                     ),
@@ -88,8 +89,13 @@ class _BudgetScreenState extends State<BudgetScreen> {
                           PlatformFile file = result.files.first;
                           final fileName = file.name;
                           var data = await readJsonFileSelected(fileName);
+
                           await loadProject(fileName, data, emptyDeckModel);
+                          await loadProject(
+                              fileName, data, emptyOuterWallModel);
                           await loadProject(fileName, data, emptyFlooringModel);
+                          await loadProject(
+                              fileName, data, emptyHullRoofingModel);
                           await loadProject(
                               fileName, data, emptyInnerDoorModel);
                           await loadProject(
@@ -99,15 +105,38 @@ class _BudgetScreenState extends State<BudgetScreen> {
                           await loadProject(
                               fileName, data, emptyOuterRoofModel);
                           await loadProject(
-                              fileName, data, emptyOuterWallModel);
-
-                          await loadProject(
                               fileName, data, emptyScaffoldingModel);
                           await loadProject(
                               fileName, data, emptySupportSystemModel);
                           await loadProject(fileName, data, emptyTerraceModel);
+                          await loadProject(fileName, data, emptyWasteModel);
                           await loadProject(
                               fileName, data, emptyWindowsExteriorDoorsModel);
+
+                          setState(() {
+                            sumWasteRemoval = calculateTotalWaste(wasteData);
+                            sumMaterialCosts = totalMaterialCosts
+                                .reduce((value, element) => value + element);
+                            sumLaborCosts = totalLaborCosts
+                                .reduce((value, element) => value + element);
+
+                            // double totalLaborHours2 = 0.0;
+                            // double totalLaborCost = 0.0;
+                            // double totalMaterial2 = 0.0;
+
+                            // for (int i = 0;
+                            //     i < widget.description.length;
+                            //     i++) {
+                            //   totalLaborHours2 += widget.laborHours2[i];
+                            //   totalLaborCost += widget.laborCost[i];
+                            //   totalMaterial2 += widget.material2[i];
+                            // }
+
+                            // addHours(name, hours);
+                            // addLaborCosts(name, laborCosts);
+                            // addMaterialCosts(name, materialCosts);
+                            // addBudgetSum(name, budgetSum);
+                          });
                         } else {
                           // User canceled the picker
                         }
@@ -127,295 +156,9 @@ class _BudgetScreenState extends State<BudgetScreen> {
           child: SingleChildScrollView(
             child: Column(
               children: [
-                DataTable(
-                  columnSpacing: 10,
-                  columns: [
-                    DataColumn(
-                      label: SizedBox(
-                        width: 70,
-                        child: Text(
-                          'Cost type',
-                        ),
-                      ),
-                    ),
-                    DataColumn(
-                      label: SizedBox(
-                        width: 50,
-                        child: Text(
-                          'Total Hours',
-                          softWrap: true,
-                        ),
-                      ),
-                    ),
-                    DataColumn(
-                      label: SizedBox(
-                        width: 50,
-                        child: Text(
-                          'Labor Costs',
-                          softWrap: true,
-                        ),
-                      ),
-                    ),
-                    DataColumn(
-                      label: SizedBox(
-                        width: 55,
-                        child: Text(
-                          'Material Costs',
-                          softWrap: true,
-                        ),
-                      ),
-                    ),
-                    DataColumn(
-                      label: SizedBox(
-                        width: 50,
-                        child: Text(
-                          'Budget Sum',
-                          softWrap: true,
-                        ),
-                      ),
-                    ),
-                  ],
-                  rows: List.generate(calculatedNamesOrder.length, (index) {
-                    return DataRow(
-                      cells: [
-                        DataCell(
-                          SizedBox(
-                            width: 100,
-                            child: Text(
-                              calculatedNamesOrder[index],
-                            ),
-                          ),
-                        ),
-                        DataCell(
-                          SizedBox(
-                            width: 70,
-                            child: Text(
-                              index == calculatedNamesOrder.length - 1
-                                  ? totalHours
-                                      .reduce(
-                                          (value, element) => value + element)
-                                      .toStringAsFixed(2)
-                                  : totalHours[index].toStringAsFixed(2),
-                            ),
-                          ),
-                        ),
-                        DataCell(
-                          SizedBox(
-                            width: 70,
-                            child: Text(
-                              index == calculatedNamesOrder.length - 1
-                                  ? sumLaborCosts.toStringAsFixed(2)
-                                  : totalLaborCosts[index].toStringAsFixed(2),
-                            ),
-                          ),
-                        ),
-                        DataCell(
-                          SizedBox(
-                            width: 70,
-                            child: Text(
-                              index == calculatedNamesOrder.length - 1
-                                  ? sumMaterialCosts.toStringAsFixed(2)
-                                  : totalMaterialCosts[index]
-                                      .toStringAsFixed(2),
-                            ),
-                          ),
-                        ),
-                        DataCell(
-                          SizedBox(
-                            width: 100,
-                            child: Text(
-                              index == calculatedNamesOrder.length - 1
-                                  ? budgetSums
-                                      .reduce(
-                                          (value, element) => value + element)
-                                      .toStringAsFixed(2)
-                                  : budgetSums[index].toStringAsFixed(2),
-                            ),
-                          ),
-                        ),
-                      ],
-                    );
-                  }),
-                ),
-                DataTable(
-                  columnSpacing: 10,
-                  columns: [
-                    DataColumn(
-                      label: SizedBox(
-                        width: 70,
-                        child: Text(
-                          '',
-                        ),
-                      ),
-                    ),
-                    DataColumn(
-                      label: SizedBox(
-                        width: 210,
-                        child: Text(
-                          '',
-                        ),
-                      ),
-                    ),
-                    DataColumn(
-                      label: SizedBox(
-                        width: 70,
-                        child: Text(
-                          '',
-                        ),
-                      ),
-                    ),
-                  ],
-                  rows: [
-                    DataRow(
-                      cells: [
-                        DataCell(
-                          Text(
-                            "Site setup and operation",
-                          ),
-                        ),
-                        DataCell(
-                          Text(
-                            "",
-                          ),
-                        ),
-                        DataCell(
-                          Text(
-                            (costs * sumLaborCosts).toStringAsFixed(2) + "\$",
-                          ),
-                        ),
-                      ],
-                    ),
-                    DataRow(
-                      cells: [
-                        DataCell(
-                          Text(
-                            "Total material cost",
-                          ),
-                        ),
-                        DataCell(
-                          Text(
-                            "",
-                          ),
-                        ),
-                        DataCell(
-                          Text(sumMaterialCosts.toStringAsFixed(2) + "\$"),
-                        ),
-                      ],
-                    ),
-                    DataRow(
-                      cells: [
-                        DataCell(
-                          Text(
-                            "Waste removal",
-                          ),
-                        ),
-                        DataCell(
-                          Text(
-                            "",
-                          ),
-                        ),
-                        DataCell(
-                          Text((sumWasteRemoval + sumWasteRemoval * costs)
-                                  .toStringAsFixed(2) +
-                              "\$"),
-                        ),
-                      ],
-                    ),
-                    DataRow(
-                      cells: [
-                        DataCell(
-                          Text(
-                            "Materials transport",
-                          ),
-                        ),
-                        DataCell(
-                          Text(
-                            "",
-                          ),
-                        ),
-                        DataCell(
-                          Text(
-                            (sumMaterialCosts * 0.05).toStringAsFixed(2) + "\$",
-                          ),
-                        ),
-                      ],
-                    ),
-                    DataRow(
-                      cells: [
-                        DataCell(
-                          Text(
-                            "Total costs (excluding VAT)",
-                          ),
-                        ),
-                        DataCell(
-                          Text(
-                            "",
-                          ),
-                        ),
-                        DataCell(
-                          Text(
-                            (sumLaborCosts +
-                                        sumMaterialCosts +
-                                        (costs * sumLaborCosts))
-                                    .toStringAsFixed(2) +
-                                "\$",
-                          ),
-                        ),
-                      ],
-                    ),
-                    DataRow(
-                      cells: [
-                        DataCell(
-                          Text(
-                            "VAT",
-                          ),
-                        ),
-                        DataCell(
-                          Text(
-                            "",
-                          ),
-                        ),
-                        DataCell(
-                          Text(
-                            (((sumLaborCosts +
-                                                sumMaterialCosts +
-                                                (costs * sumLaborCosts)) *
-                                            1.25) -
-                                        (sumLaborCosts +
-                                            sumMaterialCosts +
-                                            (costs * sumLaborCosts)))
-                                    .toStringAsFixed(2) +
-                                "\$",
-                          ),
-                        ),
-                      ],
-                    ),
-                    DataRow(
-                      cells: [
-                        DataCell(
-                          Text(
-                            "Total costs (including VAT)",
-                          ),
-                        ),
-                        DataCell(
-                          Text(
-                            "",
-                          ),
-                        ),
-                        DataCell(
-                          Text(
-                            ((sumLaborCosts +
-                                            sumMaterialCosts +
-                                            (costs * sumLaborCosts)) *
-                                        1.25)
-                                    .toStringAsFixed(2) +
-                                "\$",
-                          ),
-                        ),
-                      ],
-                    ),
-                  ],
-                ),
+                buildFirstTable(sumLaborCosts, sumMaterialCosts, totalHours),
+                buildSecondTable(
+                    sumLaborCosts, sumMaterialCosts, sumWasteRemoval),
               ],
             ),
           ),

@@ -1,0 +1,901 @@
+[
+  {
+    "name": "Wooden truss 48x98, double sound wall, double plaster",
+    "description": [
+      "Skirting board pine, pre-painted",
+      "Pine ceiling molding, pre-painted",
+      "Grouting in front of sound wall/ceiling with grout",
+      "Plasterboard interior cladding, double plaster",
+      "Single timber frame solid wood without nails",
+      "Mineral wool A-plate",
+      "Single truss solid wood without nails",
+      "Mineral wool A-plate",
+      "Grouting in front of sound wall/ceiling w/grout",
+      "Plasterboard interior cladding, double plaster",
+      "Sparkling strip, stain sp.1, joint sp. 2, full sp.1, primer. 2 coats of paint",
+      "Pine ceiling molding, pre-painted",
+      "Pine skirting board, pre-painted"
+    ],
+    "unit": [
+      "lm",
+      "lm",
+      "lm",
+      "m²",
+      "m²",
+      "m²",
+      "m²",
+      "m²",
+      "lm",
+      "m²",
+      "m²",
+      "lm",
+      "lm"
+    ],
+    "quantity": [
+      0.42, 0.42, 1.2, 1.0, 1.0, 1.0, 1.0, 1.0, 1.2, 1.0, 1.0, 0.42, 0.42
+    ],
+    "materialQuantity": [
+      0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0
+    ],
+    "laborHours1": [
+      0.05, 0.05, 0.18, 0.36, 0.32, 0.09, 0.32, 0.09, 0.18, 0.36, 0.55, 0.05,
+      0.05
+    ],
+    "laborHours2": [
+      0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0
+    ],
+    "laborCost": [
+      0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0
+    ],
+    "material1": [
+      15.82, 16.71, 52.56, 102.25, 85.04, 76.4, 85.04, 76.4, 52.56, 102.25,
+      135.63, 16.71, 15.82
+    ],
+    "material2": [
+      0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0
+    ],
+    "totalPrice": [
+      0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0
+    ],
+    "constructionType": "New Construction",
+    "calculationQuantity": 0.0
+  },
+  {
+    "name": "Wooden trusses 48x98, insulated, smooth panel",
+    "description": [
+      "Skirting board pine, pre-painted",
+      "Roof moulding pine, pre-painted",
+      "Smooth panel spruce, standing",
+      "Mineral wool A-plate",
+      "Single timber frame solid wood w/3 nails",
+      "Smooth panel spruce, vertical",
+      "Cornice pine, pre-painted",
+      "Skirting board pine, pre-painted"
+    ],
+    "unit": ["lm", "lm", "m²", "m²", "m²", "m²", "lm", "lm"],
+    "quantity": [0.42, 0.42, 1.0, 1.0, 1.0, 1.0, 0.42, 0.42],
+    "materialQuantity": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+    "laborHours1": [0.05, 0.05, 0.33, 0.09, 0.46, 0.33, 0.05, 0.05],
+    "laborHours2": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+    "laborCost": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+    "material1": [15.82, 16.71, 293.3, 76.4, 126.8, 293.3, 16.71, 15.82],
+    "material2": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+    "totalPrice": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+    "constructionType": "New Construction",
+    "calculationQuantity": 0.0
+  },
+  {
+    "name": "Wooden truss 48x98, precut h=2400, plaster",
+    "description": [
+      "Skirting board pine, pre-painted",
+      "Cornice pine, pre-painted",
+      "Sparkling strip, stain sp.1, joint sp. 2, full sp.1, primer. 2 coats of paint",
+      "Plasterboard interior cladding, simple plaster",
+      "Mineral wool A-plate",
+      "Single timber frame solid wood precut h=2.4m, 3 sleepers",
+      "Plasterboard interior cladding, simple plaster",
+      "Sparkling strip, stain sp.1, joint sp. 2, full sp.1, primer. 2 coats of paint",
+      "Cornice pine, pre-painted",
+      "Skirting board pine, pre-painted"
+    ],
+    "unit": ["lm", "lm", "m²", "m²", "m²", "m²", "m²", "m²", "lm", "lm"],
+    "quantity": [1.0, 1.0, 2.4, 2.4, 2.4, 1.0, 2.4, 2.4, 1.0, 1.0],
+    "materialQuantity": [1.0, 1.0, 2.4, 2.4, 2.4, 1.0, 2.4, 2.4, 1.0, 1.0],
+    "laborHours1": [0.12, 0.13, 1.32, 0.55, 0.22, 0.4, 0.55, 1.32, 0.13, 0.12],
+    "laborHours2": [0.12, 0.13, 1.32, 0.55, 0.22, 0.4, 0.55, 1.32, 0.13, 0.12],
+    "laborCost": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+    "material1": [
+      37.66, 39.79, 325.51, 123.34, 183.36, 280.45, 123.34, 325.51, 39.79, 37.66
+    ],
+    "material2": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+    "totalPrice": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+    "constructionType": "New Construction",
+    "calculationQuantity": 0.0
+  },
+  {
+    "name": "Steel trusses 2x75mm, double, insulated, plaster",
+    "description": [
+      "Skirting board pine, pre-painted",
+      "Cornice pine, pre-painted",
+      "Filler fermacell plasterboard",
+      "Grouting in front of sound wall/ceiling w/grout.",
+      "Plasterboard interior cladding, single plaster",
+      "Double timber frame, steel c/c 60",
+      "Mineral wool in steel studs",
+      "Plasterboard interior cladding, single plaster",
+      "Jointing at sound wall/ceiling w/jointing mat.",
+      "Filler fermacell plasterboard",
+      "Pine cornice, pre-painted",
+      "Skirting board pine, pre-painted"
+    ],
+    "unit": [
+      "lm",
+      "lm",
+      "m²",
+      "lm",
+      "m²",
+      "m²",
+      "m²",
+      "m²",
+      "lm",
+      "m²",
+      "lm",
+      "lm"
+    ],
+    "quantity": [
+      0.42, 0.42, 1.0, 1.2, 1.0, 1.0, 2.0, 1.0, 1.2, 1.0, 0.42, 0.42
+    ],
+    "materialQuantity": [
+      0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0
+    ],
+    "laborHours1": [
+      0.12, 0.13, 1.32, 0.55, 0.22, 0.4, 0.55, 1.32, 0.13, 0.12, 0.05, 0.05
+    ],
+    "laborHours2": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+    "laborCost": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+    "material1": [
+      15.82, 16.71, 135.63, 52.56, 102.25, 209.03, 124.0, 102.25, 52.56, 135.63,
+      16.71, 15.82
+    ],
+    "material2": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+    "totalPrice": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+    "constructionType": "New Construction",
+    "calculationQuantity": 0.0
+  },
+  {
+    "name": "Steel trusses 2x100mm, double, insulated, plaster",
+    "description": [
+      "Skirting board pine, pre-painted",
+      "Cornice pine, pre-painted",
+      "Sparkling strip, stain sp.1, joint sp. 2, full sp.1, primer. 2 coats of paint",
+      "Grouting w/ sound wall/ceiling w/ grout.",
+      "Plasterboard interior cladding, simple plaster",
+      "Double timber frame, steel c/c 60",
+      "Mineral wool in steel studs",
+      "Plasterboard interior cladding, single plaster",
+      "Grouting at sound wall/ceiling w/jointing tape.",
+      "Sparkling strip, stain sp.1, joint sp. 2, full sp.1, primer. 2 coats of paint",
+      "Pine cornice, pre-painted",
+      "Skirting board pine, pre-painted"
+    ],
+    "unit": [
+      "lm",
+      "lm",
+      "m²",
+      "lm",
+      "m²",
+      "m²",
+      "m²",
+      "m²",
+      "lm",
+      "m²",
+      "lm",
+      "lm"
+    ],
+    "quantity": [
+      0.42, 0.42, 1.0, 1.2, 1.0, 1.0, 2.0, 1.0, 1.2, 1.0, 0.42, 0.42
+    ],
+    "materialQuantity": [
+      0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0
+    ],
+    "laborHours1": [
+      0.12, 0.13, 1.32, 0.55, 0.22, 0.4, 0.55, 1.32, 0.13, 0.12, 0.05, 0.05
+    ],
+    "laborHours2": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+    "laborCost": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+    "material1": [
+      15.82, 16.71, 135.63, 52.56, 102.25, 209.03, 124.0, 102.25, 52.56, 135.63,
+      16.71, 15.82
+    ],
+    "material2": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+    "totalPrice": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+    "constructionType": "New Construction",
+    "calculationQuantity": 0.0
+  },
+  {
+    "name": "Steel trusses 2x75mm, double, insulated, double plaster",
+    "description": [
+      "Skirting board pine, pre-painted",
+      "Cornice pine, pre-painted",
+      "Sparkling strip, stain sp.1, joint sp. 2, full sp.1, primer. 2 coats of paint",
+      "Grouting w/ sound wall/ceiling w/ grout.",
+      "Plasterboard interior cladding, double plaster",
+      "Double timber frame, steel c/c 60",
+      "Mineral wool in steel studs",
+      "Plasterboard interior cladding, double plaster",
+      "Grouting at sound wall/ceiling w/jointing tape.",
+      "Sparkling strip, stain sp.1, joint sp. 2, full sp.1, primer. 2 coats of paint",
+      "Pine cornice, pre-painted",
+      "Skirting board pine, pre-painted"
+    ],
+    "unit": [
+      "lm",
+      "lm",
+      "m²",
+      "lm",
+      "m²",
+      "m²",
+      "m²",
+      "m²",
+      "lm",
+      "m²",
+      "lm",
+      "lm"
+    ],
+    "quantity": [
+      0.42, 0.42, 1.0, 1.2, 1.0, 1.0, 2.0, 1.0, 1.2, 1.0, 0.42, 0.42
+    ],
+    "materialQuantity": [
+      0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0
+    ],
+    "laborHours1": [
+      0.12, 0.13, 1.32, 0.55, 0.22, 0.4, 0.55, 1.32, 0.13, 0.12, 0.05, 0.05
+    ],
+    "laborHours2": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+    "laborCost": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+    "material1": [
+      15.82, 16.71, 135.63, 52.56, 102.25, 209.03, 124.0, 102.25, 52.56, 135.63,
+      16.71, 15.82
+    ],
+    "material2": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+    "totalPrice": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+    "constructionType": "New Construction",
+    "calculationQuantity": 0.0
+  },
+  {
+    "name": "Masonry walls, rendered cladding duplex",
+    "description": [
+      "Skirting board pine, pre-painted 12x58",
+      "Ceiling strip pine, pre-painted 21x45",
+      "Sparkling strip, flekksp.1, skjøtsp. 2, helsp.1, primer. 2 coats of paint",
+      "Plasterboard interior cladding, simple plaster",
+      "Nail punch 23x48",
+      "Existing timber frame wall",
+      "Spikerlag 23x48",
+      "Plasterboard interior cladding, simple plaster",
+      "Sparkling strip, flekksp.1, skjøtsp. 2, helsp.1, primer. 2 coats of paint",
+      "Ceiling cornice pine, pre-painted 12x58",
+      "Skirting board pine, pre-painted 21x45"
+    ],
+    "unit": ["lm", "lm", "m²", "m²", "m²", "", "m²", "m²", "m²", "lm", "lm"],
+    "quantity": [0.42, 0.42, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0.42, 0.42],
+    "materialQuantity": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+    "laborHours1": [
+      0.04, 0.05, 0.55, 0.2, 0.11, 0.0, 0.11, 0.2, 0.55, 0.05, 0.04
+    ],
+    "laborHours2": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+    "laborCost": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+    "material1": [
+      18.29, 21.29, 153.21, 40.02, 14.29, 0.0, 14.29, 40.02, 153.21, 21.29,
+      18.29
+    ],
+    "material2": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+    "totalPrice": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+    "constructionType": "Reconstruction",
+    "calculationQuantity": 0.0
+  },
+  {
+    "name": "Demolition of door in inner wall complete",
+    "description": [
+      "Demolition of slopes < 150mm",
+      "Demolition of frame strips",
+      "Demolition of interior door"
+    ],
+    "unit": ["m", "m", "stk"],
+    "quantity": [5.5, 11.0, 1.0],
+    "materialQuantity": [0.0, 0.0, 0.0],
+    "laborHours1": [0.41, 0.17, 0.74],
+    "laborHours2": [0.0, 0.0, 0.0],
+    "laborCost": [0.0, 0.0, 0.0],
+    "material1": [0.0, 0.0, 0.0],
+    "material2": [0.0, 0.0, 0.0],
+    "totalPrice": [0.0, 0.0, 0.0],
+    "constructionType": "Demolition",
+    "calculationQuantity": 0.0
+  },
+  {
+    "name": "Floor on ground, poured, insulated, screeded",
+    "description": [
+      "Screed and steel trowel of concrete surface",
+      "Reinforcement with mesh, K 131 (2.1 kg per m²)",
+      "Concrete B30 in floor on ground",
+      "Radon stop on ground",
+      "Polystyrene w/seam, EPS, 150 kPa"
+    ],
+    "unit": ["m²", "kg", "m³", "m²", "m²"],
+    "quantity": [1.0, 2.5, 0.12, 1.0, 1.0],
+    "laborHours1": [0.21, 0.16, 0.09, 0.12, 0.23],
+    "laborHours2": [0.0, 0.0, 0.0, 0.0, 0.0],
+    "laborCost": [0.0, 0.0, 0.0, 0.0, 0.0],
+    "material": [45.12, 68.88, 222.95, 74.66, 406.71],
+    "materials": [0.0, 0.0, 0.0, 0.0, 0.0],
+    "totalPrice": [0.0, 0.0, 0.0, 0.0, 0.0],
+    "constructionType": "New Construction",
+    "calculationQuantity": 0.0
+  },
+  {
+    "name": "Wooden beams, insulation underneath",
+    "description": [
+      "Existing construction",
+      "Mineral wool 50 mm",
+      "Ceiling overlay c/c 600 48x48",
+      "Wind barrier layer on beams/ceiling, cardboard 1,25x16 m",
+      "Plasterboard in ceiling, plain",
+      "Sparking tape, flekksp.1, skjøtsp. 2, helsp.1, primer. 2 coats of paint"
+    ],
+    "unit": ["m²", "m²", "m²", "m²", "m²", "m²"],
+    "quantity": [1.0, 1.0, 1.0, 1.0, 1.0, 1.0],
+    "laborHours1": [0.0, 0.08, 0.18, 0.06, 0.27, 0.55],
+    "laborHours2": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+    "laborCost": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+    "material": [0.0, 28.81, 69.26, 51.79, 50.58, 153.21],
+    "materials": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+    "totalPrice": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+    "constructionType": "Reconstruction",
+    "calculationQuantity": 0.0
+  },
+  {
+    "name": "Flooring on the ground, removal of screed, linoleum",
+    "description": ["Disruptive linoleum", "Demolition paving T=40"],
+    "unit": ["m²", "m²"],
+    "quantity": [1.0, 1.0],
+    "laborHours1": [0.14, 0.6],
+    "laborHours2": [0.0, 0.0],
+    "laborCost": [0.0, 0.0],
+    "material": [0.0, 0.0],
+    "materials": [0.0, 0.0],
+    "totalPrice": [0.0, 0.0],
+    "constructionType": "Demolition",
+    "calculationQuantity": 0.0
+  },
+  {
+    "name": "Interior door, pine 9x21",
+    "description": [
+      "Interior door Pine",
+      "Openings in timber frame, 1-2 m²",
+      "Lining pine door/window",
+      "Dytteremse around door",
+      "Feielist, oak lacquered, 9x20mm",
+      "Feielist, oak lacquered, 9x30mm",
+      "Door winder inner door",
+      "Frame strip pine, pre-painted"
+    ],
+    "unit": ["stk", "stk", "m", "lm", "lm", "lm", "stk", "lm"],
+    "quantity": [1.0, 1.0, 5.1, 11.0, 0.9, 0.9, 1.0, 10.6],
+    "laborHours1": [1.0, 0.35, 0.51, 0.11, 0.09, 0.09, 0.3, 1.06],
+    "laborHours2": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+    "laborCost": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+    "material": [1685.42, 162.05, 299.07, 78.32, 41.7, 62.56, 391.2, 507.85],
+    "materials": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+    "totalPrice": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+    "constructionType": "New Construction",
+    "calculationQuantity": 0.0
+  },
+  {
+    "name": "Window, wooden wall top swing 12x10",
+    "description": [
+      "External frame strip door/window",
+      "Water tray fittings, galvanized steel, below",
+      "Water tray fittings, galvanized steel, above",
+      "Water tray spruce for fittings",
+      "Water tray spruce for fittings",
+      "Clamping strip",
+      "Wind barrier strip, tape",
+      "Openings in timber frame, 1-2 m²",
+      "Membrane sneak window-door",
+      "Pine window, top white",
+      "Lining pine door/window",
+      "Dytteremse around window",
+      "Grouting, bottom filler strip, window + door",
+      "Pine frame molding, pre-painted"
+    ],
+    "unit": [
+      "m",
+      "lm",
+      "lm",
+      "m",
+      "m",
+      "m",
+      "lm",
+      "stk",
+      "m²",
+      "stk",
+      "m",
+      "lm",
+      "lm",
+      "lm"
+    ],
+    "quantity": [
+      4.8, 0.56, 0.56, 1.3, 1.4, 4.4, 4.8, 1.0, 1.4, 1.0, 4.4, 13.2, 4.4, 4.8
+    ],
+    "laborHours1": [
+      0.44, 0.12, 0.12, 0.15, 0.16, 0.25, 0.11, 0.4, 0.12, 1.06, 0.51, 0.15,
+      0.66, 0.55
+    ],
+    "laborHours2": [
+      0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0
+    ],
+    "laborCost": [
+      0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0
+    ],
+    "material": [
+      92.36, 54.66, 72.58, 39.4, 144.86, 19.76, 86.78, 392.32, 205.25, 12327.33,
+      684.9, 93.98, 298.85, 229.96
+    ],
+    "materials": [
+      0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0
+    ],
+    "totalPrice": [
+      0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0
+    ],
+    "constructionType": "New Construction",
+    "calculationQuantity": 0.0
+  },
+  {
+    "name": "Exterior door of wood, in timber frame wall, white, 10x21",
+    "description": [
+      "Exterior frame strip door/window",
+      "Water tray spruce for fittings",
+      "Water tray fittings, galvanized steel, above",
+      "Clamping strip",
+      "Wind barrier strip, tape",
+      "Threshold fitting 1 kink, plasticized steel",
+      "Exterior door, white",
+      "Door winder, exterior door",
+      "Openings in timber frame, 2-3 m²",
+      "Lining pine door/window",
+      "Dytteremse around door",
+      "Grouting, bottom filling strip, window + door",
+      "Feielist, oak lacquered, 9x50mm",
+      "Pine frame molding, pre-painted"
+    ],
+    "unit": [
+      "m",
+      "m",
+      "lm",
+      "m",
+      "lm",
+      "stk",
+      "stk",
+      "stk",
+      "stk",
+      "m",
+      "lm",
+      "lm",
+      "lm",
+      "lm"
+    ],
+    "quantity": [
+      5.6, 1.2, 0.48, 5.2, 5.6, 1.1, 1.0, 1.0, 1.0, 5.2, 15.6, 5.2, 1.0, 5.2
+    ],
+    "laborHours1": [
+      0.52, 0.14, 0.1, 0.3, 0.13, 0.23, 1.15, 0.35, 0.4, 0.6, 0.18, 0.78, 0.12,
+      0.6
+    ],
+    "laborHours2": [
+      0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0
+    ],
+    "laborCost": [
+      0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0
+    ],
+    "material": [
+      107.74, 124.17, 62.21, 23.34, 101.25, 66.11, 13102.99, 463.2, 559.17,
+      809.43, 111.07, 353.18, 88.12, 249.14
+    ],
+    "materials": [
+      0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0
+    ],
+    "totalPrice": [
+      0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0
+    ],
+    "constructionType": "Demolition",
+    "calculationQuantity": 0.0
+  },
+  {
+    "name": "Beams and columns, glulam / steel - Single-family house",
+    "description": [
+      "Glulam beam 115x315",
+      "Glulam beam 90x225",
+      "Glulam beam impr 90x300",
+      "Glulam beam impr 90x270",
+      "Glulam post impr 90x90",
+      "Glulam post 115x115",
+      "Glulam post 90x90",
+      "Steel beam, HEB 220 (73.63 kg/lm) 220mm",
+      "Steel column HUP (14.63 kg/lm) 100x100x5"
+    ],
+    "unit": ["lm", "lm", "lm", "lm", "lm", "lm", "lm", "kg", "kg"],
+    "quantity": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+    "laborHours1": [0.4, 0.4, 0.4, 0.4, 0.17, 0.17, 0.17, 0.02, 0.02],
+    "laborHours2": [0.8, 0.8, 0.8, 0.8, 0.34, 0.34, 0.34, 0.04, 0.04],
+    "laborCost": [1.6, 1.6, 1.6, 1.6, 0.68, 0.68, 0.68, 0.08, 0.08],
+    "material": [
+      841.76, 503.34, 839.34, 538.54, 350.56, 358.56, 230.56, 27.84, 12.5
+    ],
+    "materials": [
+      1683.52, 1006.68, 1678.68, 1077.08, 701.12, 717.12, 461.12, 55.68, 25.0
+    ],
+    "totalPrice": [
+      1685.12, 1008.28, 1680.28, 1078.6799999999998, 701.8, 717.8, 461.8, 55.76,
+      25.08
+    ],
+    "constructionType": "Nan",
+    "calculationQuantity": 2.0
+  },
+  {
+    "name": "Wet room wall w/panel - wet room tile + tile 25x33",
+    "description": [
+      "Wet room tiles Litex on walls",
+      "Tile, ceramic on wall, white",
+      "Nail punch for membrane in wet room",
+      "Bottom panel, spruce, screwed",
+      "Filling with sealant in corners",
+      "Lubricating membrane for sealing panels, wall"
+    ],
+    "unit": ["m²", "m²", "m²", "m²", "m²", "m²"],
+    "quantity": [1.0, 1.0, 1.0, 1.0, 0.3, 1.0],
+    "laborHours1": [0.23, 1.21, 0.17, 0.3, 0.03, 0.35],
+    "laborHours2": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+    "laborCost": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+    "material": [637.68, 374.56, 17.21, 144.28, 3.71, 329.52],
+    "materials": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+    "totalPrice": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+    "constructionType": "New Construction",
+    "calculationQuantity": 0.0
+  },
+  {
+    "name": "Wet room wall w/panel/plaster + tile 20x30",
+    "description": [
+      "Nail punch for membrane in wet rooms",
+      "Plasterboard on rupanel 2 x 13 mm wet room",
+      "Tile, ceramic on wall, white",
+      "Lubricating membrane in wet areas, wall",
+      "Filling with sealant in corners",
+      "Bottom panel, spruce, screwed"
+    ],
+    "unit": ["m²", "m²", "m²", "m²", "m", "m²"],
+    "quantity": [1.0, 1.0, 1.0, 1.0, 0.3, 1.0],
+    "laborHours1": [0.17, 0.92, 1.21, 0.46, 0.03, 0.3],
+    "laborHours2": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+    "laborCost": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+    "material": [17.21, 133.14, 308.26, 400.52, 3.71, 144.28],
+    "materials": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+    "totalPrice": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+    "constructionType": "Demolition",
+    "calculationQuantity": 0.0
+  },
+  {
+    "name": "Surface covering parquet",
+    "description": ["Parquet on subfloor, oak", "Laminate flooring, oak"],
+    "unit": ["m²", "m²"],
+    "quantity": [1.0, 1.0],
+    "laborHours1": [0.36, 0.25],
+    "laborHours2": [0.0, 0.0],
+    "laborCost": [0.0, 0.0],
+    "material": [528.3, 528.3],
+    "materials": [0.0, 0.0],
+    "totalPrice": [0.0, 0.0],
+    "constructionType": "Nan",
+    "calculationQuantity": 0.0
+  },
+  {
+    "name": "Railings in stainless steel and glass",
+    "description": ["Railing, glass / Stainless steel - Icopal"],
+    "unit": ["m"],
+    "quantity": [1.0],
+    "laborHours1": [1.32],
+    "laborHours2": [0.0],
+    "laborCost": [0.0],
+    "material": [1.0, 145.22],
+    "materials": [0.0],
+    "totalPrice": [0.0],
+    "constructionType": "Nan",
+    "calculationQuantity": 0.0
+  },
+  {
+    "name": "Barrier roof of wood, shingles, plasterboard,",
+    "description": [
+      "Roofing shingle ridge board",
+      "Roofing shingle eaves board",
+      "Roofing shingle charcoal black",
+      "Roofing of waterproof veneer",
+      "Roof lining for air gap c/c 600",
+      "Roof underlay roof foil",
+      "Barrier roof of solid wood, c/c 600",
+      "Mineral wool A-plate, with paper",
+      "Diffusion-tight plastic (Ceiling)",
+      "Ceiling lining c/c 600",
+      "Mineral wool A-plate in joists",
+      "Plasterboard in ceiling, simple"
+    ],
+    "unit": [
+      "m",
+      "m",
+      "m²",
+      "m²",
+      "m²",
+      "m²",
+      "m²",
+      "m²",
+      "m²",
+      "m²",
+      "m²",
+      "m²"
+    ],
+    "quantity": [0.5, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0],
+    "materialQuantity": [
+      0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0
+    ],
+    "laborHours1": [
+      0.06, 0.03, 0.13, 0.23, 0.14, 0.08, 0.24, 0.12, 0.06, 0.21, 0.12, 0.31
+    ],
+    "laborHours2": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+    "laborCost": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+    "material": [
+      85.24, 86.07, 273.23, 218.57, 33.6, 163.83, 148.5, 175.2, 11.04, 85.69,
+      76.4, 117.29
+    ],
+    "materials": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+    "totalPrice": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+    "constructionType": "New Construction",
+    "calculationQuantity": 0.0
+  },
+  {
+    "name": "Wooden joists, post-insulation outside + cardboard covering",
+    "description": [
+      "Roofing cardboard 2 layers",
+      "Mineral wool heavy plate 150, 50mm",
+      "Rock wool roof insulation 50mm",
+      "Rock wool roof board 100mm",
+      "Existing roof structure"
+    ],
+    "unit": ["m²", "m²", "m²", "m²", ""],
+    "quantity": [1.0, 1.0, 2.0, 1.0, 1.0],
+    "materialQuantity": [0.0, 0.0, 0.0, 0.0, 0.0],
+    "laborHours1": [0.2, 0.1, 0.06, 0.04, 0.0],
+    "laborHours2": [0.0, 0.0, 0.0, 0.0, 0.0],
+    "laborCost": [0.0, 0.0, 0.0, 0.0, 0.0],
+    "material": [352.32, 54.72, 109.44, 109.44, 0.0],
+    "materials": [0.0, 0.0, 0.0, 0.0, 0.0],
+    "totalPrice": [0.0, 0.0, 0.0, 0.0, 0.0],
+    "constructionType": "Reconstruction",
+    "calculationQuantity": 0.0
+  },
+  {
+    "name": "Demolition flat rafter roof, insulated roofing, shingle/foil on flat roofs",
+    "description": [
+      "Demolition of wooden joists (flat roofs)",
+      "Demolition shingle/foil on flat roofs",
+      "Demolition of roof decking",
+      "Demolition of cardboard ceiling",
+      "Demolition of insulation in suspended ceiling",
+      "Demolition of suspended ceiling roof"
+    ],
+    "unit": ["m²", "m²", "m²", "m²", "m²", "m²"],
+    "quantity": [1.0, 1.0, 1.0, 1.0, 1.0, 1.0],
+    "materialQuantity": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+    "laborHours1": [0.23, 0.2, 0.1, 0.03, 0.08, 0.35],
+    "laborHours2": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+    "laborCost": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+    "material": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+    "materials": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+    "totalPrice": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+    "constructionType": "Demolition",
+    "calculationQuantity": 0.0
+  },
+  {
+    "name": "Timber truss 48x198, 50mm liner, standing double seam, plaster",
+    "description": [
+      "Plasterboard interior cladding, single plaster",
+      "2 coats stain, exterior",
+      "Simple timber frame, solid wood without nails",
+      "Mineral wool A-plate - wall",
+      "Standing panel with double rebate",
+      "Lathing on facade c/c 600",
+      "Loops, impregnated wall",
+      "Plasterboard exterior, 9.5 mm undercladding",
+      "Mouse tape",
+      "Wind barrier strip, tape",
+      "Diffusion-proof plastic (Wall)",
+      "Lathing for internal cladding c/c 600",
+      "Mineral wool A-plate - wall",
+      "Sparkling strip, stain sp.1, joint sp. 2, full sp.1, primer. 2 coats of paint",
+      "Pine cornice, pre-painted",
+      "Skirting board pine, pre-painted"
+    ],
+    "unit": [
+      "m²",
+      "m²",
+      "m²",
+      "m²",
+      "m²",
+      "m²",
+      "m²",
+      "m²",
+      "m",
+      "lm",
+      "m²",
+      "m²",
+      "m²",
+      "m²",
+      "lm",
+      "lm"
+    ],
+    "quantity": [
+      1.0, 1.13, 1.0, 1.0, 1.13, 1.13, 1.13, 1.13, 0.42, 0.06, 1.0, 1.0, 1.0,
+      1.0, 0.42, 0.42
+    ],
+    "materialQuantity": [
+      0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
+      0.0
+    ],
+    "laborHours1": [
+      0.23, 0.13, 0.32, 0.1, 0.32, 0.19, 0.05, 0.19, 0.01, 0.0, 0.05, 0.18,
+      0.09, 0.55, 0.05, 0.05
+    ],
+    "laborHours2": [
+      0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
+      0.0
+    ],
+    "laborCost": [
+      0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
+      0.0
+    ],
+    "material": [
+      51.39, 103.83, 204.29, 151.2, 502.96, 37.9, 24.33, 87.11, 10.21, 1.08,
+      13.82, 47.65, 40.4, 135.63, 16.71, 15.82
+    ],
+    "materials": [
+      0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
+      0.0
+    ],
+    "totalPrice": [
+      0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
+      0.0
+    ],
+    "constructionType": "New Construction",
+    "calculationQuantity": 0.0
+  },
+  {
+    "name": "Wooden timber frame, post-insulation. new panel",
+    "description": [
+      "2 coats of stain, exterior",
+      "Standing out, rectangular, Royalimp, black 19x148",
+      "Plastering on facade c/c 600 30x48",
+      "Plasterboard exterior, 9.5 mm underlay",
+      "Mineral wool A-plate - wall 50",
+      "Facade cladding c/c 600 48x48"
+    ],
+    "unit": ["m²", "m²", "m²", "m²", "m²", "m²"],
+    "quantity": [1.0, 1.0, 1.0, 1.0, 1.0, 1.0],
+    "materialQuantity": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+    "laborHours1": [0.1, 0.32, 0.15, 0.15, 0.08, 0.18],
+    "laborHours2": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+    "laborCost": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+    "material": [72.41, 412.21, 18.53, 76.82, 28.81, 56.36],
+    "materials": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+    "totalPrice": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+    "constructionType": "Reconstruction",
+    "calculationQuantity": 0.0
+  },
+  {
+    "name": "Demolition of door in external wall complete",
+    "description": [
+      "Demolition of recesses < 150mmH",
+      "Demolition of extended frame moldings",
+      "Demolition of external door/window trim",
+      "Demolition of interior moldings",
+      "Demolition of exterior door w/glass"
+    ],
+    "unit": ["m", "m", "m", "m", "stk"],
+    "quantity": [5.5, 5.5, 5.5, 5.5, 1.0],
+    "materialQuantity": [0.0, 0.0, 0.0, 0.0, 0.0],
+    "laborHours1": [0.41, 0.5, 0.55, 0.44, 0.65],
+    "laborHours2": [0.0, 0.0, 0.0, 0.0, 0.0],
+    "laborCost": [0.0, 0.0, 0.0, 0.0, 0.0],
+    "material": [0.0, 0.0, 0.0, 0.0, 0.0],
+    "materials": [0.0, 0.0, 0.0, 0.0, 0.0],
+    "totalPrice": [0.0, 0.0, 0.0, 0.0, 0.0],
+    "constructionType": "Demolition",
+    "calculationQuantity": 0.0
+  },
+  {
+    "name": "Punched roofing single-family house 245m² GFA - 2 floors (Calculate quantity and select material type),",
+    "description": [
+      "Punched ceiling box chipboard",
+      "Hollow roofing ceiling box plasterboard",
+      "Hull roofing ceiling box wood panel",
+      "Hull roofing wall - tiles",
+      "Punched roofing wall wood panel",
+      "Punched roofing wall chipboard",
+      "Punched roofing wall plasterboard",
+      "Punched roofing for ventilation"
+    ],
+    "unit": ["stk", "stk", "stk", "stk", "stk", "stk", "stk", "stk"],
+    "quantity": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+    "laborHours1": [0.18, 0.18, 0.18, 0.2, 0.15, 0.15, 0.15, 0.15],
+    "laborHours2": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+    "laborCost": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+    "material": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+    "materials": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+    "totalPrice": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+    "constructionType": "Nan",
+    "calculationQuantity": 0.0
+  },
+  {
+    "name": "Beams and columns, glulam/steel - Detached house",
+    "description": [
+      "Rental of scaffolding per m²/month. - 132m²",
+      "Assembly of light scaffolding",
+      "Dismantling of light scaffolding"
+    ],
+    "unit": ["stk", "m²", "m²"],
+    "quantity": [0.0, 0.0, 0.0],
+    "laborHours1": [0.0, 0.15, 0.15],
+    "laborHours2": [0.0, 0.0, 0.0],
+    "laborCost": [0.0, 0.0, 0.0],
+    "material": [10350.0, 0.0, 0.0],
+    "materials": [0.0, 0.0, 0.0],
+    "totalPrice": [0.0, 0.0, 0.0],
+    "constructionType": "Nan",
+    "calculationQuantity": 0.0
+  },
+  {
+    "name": "Stairs inside, three straight runs",
+    "description": [
+      "Openings in joists >4 m²",
+      "Staircase straight white gr. prefab., pine oak toning"
+    ],
+    "unit": ["stk", "stk"],
+    "quantity": [1.0, 1.0],
+    "laborHours1": [1.27, 20.14],
+    "laborHours2": [0.0, 0.0],
+    "laborCost": [0.0, 0.0],
+    "material": [838.42, 45000.0],
+    "materials": [0.0, 0.0],
+    "totalPrice": [0.0, 0.0],
+    "constructionType": "Nan",
+    "calculationQuantity": 0.0
+  },
+  {
+    "name": "Waste removal",
+    "description": [
+      "Container 10 m³: Collection. Tariff. and wall",
+      "Container 10 m³: Collection. Clean wood",
+      "Container 10 m³: Deployment",
+      "Container 10 m³: Rent per week",
+      "Container 10 m³: Emptying fee. Clean wood",
+      "Container 10 m³: Emptying fee. Takst. and masonry"
+    ],
+    "unit": ["RS", "RS", "RS", "RS", "RS", "RS"],
+    "quantity": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+    "laborHours1": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+    "laborHours2": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+    "laborCost": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+    "material": [5135.0, 3275.0, 491.0, 1500.0, 3264.0, 5124.0],
+    "materials": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+    "totalPrice": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+    "constructionType": "Nan",
+    "calculationQuantity": 0.0
+  }
+]
