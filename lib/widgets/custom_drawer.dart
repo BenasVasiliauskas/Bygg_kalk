@@ -300,7 +300,7 @@ class CustomDrawer extends StatelessWidget {
               onTap: () {
                 Navigator.of(context)
                     .pushReplacement(MaterialPageRoute(builder: (context) {
-                  return helpPage();
+                  return HelpPage();
                 }));
               }),
         ],

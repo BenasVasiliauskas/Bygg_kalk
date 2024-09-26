@@ -51,9 +51,9 @@ class _homePageState extends State<homePage> {
         await fileDeleteIfExists(fileName!);
         await writeJsonArrayStart(fileName);
         if (languageEnglish) {
-          saveEngProjectToJSON(fileName);
+          await saveEngProjectToJSON(fileName);
         } else if (languageNorwegian) {
-          saveNorwProjectToJson(fileName);
+          await saveNorwProjectToJson(fileName);
         }
 
         await writeJsonArrayEnd(fileName);
@@ -318,7 +318,7 @@ class _homePageState extends State<homePage> {
                               onPressed: () {
                                 Navigator.of(context).pushReplacement(
                                     MaterialPageRoute(builder: (context) {
-                                  return helpPage();
+                                  return HelpPage();
                                 }));
                               }),
                           Text(

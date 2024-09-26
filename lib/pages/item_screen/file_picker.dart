@@ -116,9 +116,9 @@ class _FilePickerScreenState extends State<FilePickerScreen> {
                   await fileDeleteIfExists(fileName!);
                   await writeJsonArrayStart(fileName);
                   if (languageEnglish) {
-                    saveEngProjectToJSON(fileName);
+                    await saveEngProjectToJSON(fileName);
                   } else if (languageNorwegian) {
-                    saveNorwProjectToJson(fileName);
+                    await saveNorwProjectToJson(fileName);
                   }
                   await writeJsonArrayEnd(fileName);
                 },
