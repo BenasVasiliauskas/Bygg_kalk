@@ -100,7 +100,6 @@ class _BudgetScreenState extends State<BudgetScreen> {
                               fileName, data, emptyOuterRoofModel);
                           await loadProject(
                               fileName, data, emptyOuterWallModel);
-
                           await loadProject(
                               fileName, data, emptyScaffoldingModel);
                           await loadProject(
@@ -191,9 +190,9 @@ class _BudgetScreenState extends State<BudgetScreen> {
                             width: 70,
                             child: Text(
                               index == calculatedNamesOrder.length - 1
-                                  ? totalHours
-                                      .reduce(
-                                          (value, element) => value + element)
+                                  ? (totalHours.reduce((value, element) =>
+                                              value + element) *
+                                          timeCoefficient)
                                       .toStringAsFixed(2)
                                   : totalHours[index].toStringAsFixed(2),
                             ),

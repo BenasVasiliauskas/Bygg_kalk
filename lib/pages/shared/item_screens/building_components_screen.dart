@@ -121,12 +121,12 @@ Nowa konstrukcja''',
                             padding: const EdgeInsets.fromLTRB(0, 0, 8, 0),
                             child: SizedBox(
                                 width: 50,
-                                child: Image.asset("assets/SupportSystem.png")),
+                                child: Image.asset("assets/SupportSystem.jpg")),
                           ),
                           Text(languageEnglish
                               ? "Support system"
                               : languageNorwegian
-                                  ? "Bæresystemet"
+                                  ? "Bæresystemer"
                                   : languagePolish
                                       ? "System nośny"
                                       : "Atraminė sistema"),
@@ -165,7 +165,7 @@ Nowa konstrukcja, Przebudowa, Wyburzenie''',
                             padding: const EdgeInsets.fromLTRB(0, 0, 8, 0),
                             child: SizedBox(
                                 width: 50,
-                                child: Image.asset("assets/ExteriorWalls.png")),
+                                child: Image.asset("assets/ExteriorWalls.jpg")),
                           ),
                           Text(languageEnglish
                               ? "Exterior walls"
@@ -211,12 +211,13 @@ Nowa konstrukcja, Wyburzenie''',
                             padding: const EdgeInsets.fromLTRB(0, 0, 8, 0),
                             child: SizedBox(
                                 width: 50,
-                                child: Image.asset("assets/Window.png")),
+                                child: Image.asset(
+                                    "assets/WindowExteriorDoor.jpg")),
                           ),
                           Text(languageEnglish
                               ? "Window/exterior door"
                               : languageNorwegian
-                                  ? "Vindu/ytterdør"
+                                  ? "Vindu/ytterdører"
                                   : languagePolish
                                       ? "Okno/drzwi zewnętrzne"
                                       : "Langas/išorinė durys"),
@@ -257,12 +258,12 @@ Nowa konstrukcja, Przebudowa, Wyburzenie''',
                             padding: const EdgeInsets.fromLTRB(0, 0, 8, 0),
                             child: SizedBox(
                                 width: 50,
-                                child: Image.asset("assets/InnerWall.png")),
+                                child: Image.asset("assets/InnerWall.jpg")),
                           ),
                           Text(languageEnglish
                               ? "Interior walls"
                               : languageNorwegian
-                                  ? "Innevegger"
+                                  ? "Innervegger"
                                   : languagePolish
                                       ? "Ściany wewnętrzne"
                                       : "Vidinės sienos"),
@@ -303,12 +304,12 @@ Nowa konstrukcja, Wyburzenie''',
                             padding: const EdgeInsets.fromLTRB(0, 0, 8, 0),
                             child: SizedBox(
                                 width: 50,
-                                child: Image.asset("assets/InnerDoor.png")),
+                                child: Image.asset("assets/InnerDoor.jpg")),
                           ),
                           Text(languageEnglish
                               ? "Interior door"
                               : languageNorwegian
-                                  ? "Innedør"
+                                  ? "Innedører"
                                   : languagePolish
                                       ? "Drzwi wewnętrzne"
                                       : "Vidinės durys"),
@@ -349,7 +350,7 @@ Nowa konstrukcja, Przebudowa, Wyburzenie''',
                               padding: const EdgeInsets.fromLTRB(0, 0, 8, 0),
                               child: SizedBox(
                                   width: 50,
-                                  child: Image.asset("assets/Deck.png")),
+                                  child: Image.asset("assets/Covers.jpg")),
                             ),
                           ),
                           Text(
@@ -396,7 +397,7 @@ Nowa konstrukcja, Wyburzenie''',
                             padding: const EdgeInsets.fromLTRB(0, 0, 8, 0),
                             child: SizedBox(
                                 width: 50,
-                                child: Image.asset("assets/Flooring.png")),
+                                child: Image.asset("assets/Flooring.jpg")),
                           ),
                           Text(languageEnglish
                               ? "Flooring"
@@ -440,7 +441,7 @@ Nowa konstrukcja, Przebudowa, Wyburzenie''',
                             padding: const EdgeInsets.fromLTRB(0, 0, 8, 0),
                             child: SizedBox(
                                 width: 50,
-                                child: Image.asset("assets/ExteriorRoof.png")),
+                                child: Image.asset("assets/OuterRoof.jpg")),
                           ),
                           Text(languageEnglish
                               ? "Exterior roof"
@@ -484,12 +485,12 @@ Nowa konstrukcja''',
                             padding: const EdgeInsets.fromLTRB(0, 0, 8, 0),
                             child: SizedBox(
                                 width: 50,
-                                child: Image.asset("assets/Terrace.png")),
+                                child: Image.asset("assets/Terrace.jpg")),
                           ),
                           Text(languageEnglish
                               ? "Terrace/railings"
                               : languageNorwegian
-                                  ? "Terrasse/rekkverk"
+                                  ? "Terrasser/rekkverk"
                                   : languagePolish
                                       ? "Taras/barierki"
                                       : "Terasa/turėklai"),
@@ -528,7 +529,7 @@ Nowa konstrukcja''',
                             padding: const EdgeInsets.fromLTRB(0, 0, 8, 0),
                             child: SizedBox(
                                 width: 50,
-                                child: Image.asset("assets/InnerStairs.png")),
+                                child: Image.asset("assets/Stairs.jpg")),
                           ),
                           Text(languageEnglish
                               ? "Inner stairs"
@@ -572,7 +573,7 @@ Nowa konstrukcja''',
                             padding: const EdgeInsets.fromLTRB(0, 0, 8, 0),
                             child: SizedBox(
                                 width: 50,
-                                child: Image.asset("assets/HullRoofing.png")),
+                                child: Image.asset("assets/Roofing.jpg")),
                           ),
                           Text(languageEnglish
                               ? "Hull roofing"
@@ -616,7 +617,7 @@ Nowa konstrukcja''',
                             padding: const EdgeInsets.fromLTRB(0, 0, 8, 0),
                             child: SizedBox(
                                 width: 50,
-                                child: Image.asset("assets/Scaffold.png")),
+                                child: Image.asset("assets/Scaffolding.jpg")),
                           ),
                           Text(languageEnglish
                               ? "Scaffolding"
@@ -660,7 +661,7 @@ Nowa konstrukcja''',
                             padding: const EdgeInsets.fromLTRB(0, 0, 8, 0),
                             child: SizedBox(
                                 width: 50,
-                                child: Image.asset("assets/Waste.png")),
+                                child: Image.asset("assets/Waste.jpg")),
                           ),
                           Text(languageEnglish
                               ? "Waste management"

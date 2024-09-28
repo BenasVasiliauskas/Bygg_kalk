@@ -108,7 +108,14 @@ class _FilePickerScreenState extends State<FilePickerScreen> {
                           );
                         },
                       )
-                    : Center(child: Text("No files found.")),
+                    : Center(
+                        child: Text(languageEnglish
+                            ? "No files found."
+                            : languageNorwegian
+                                ? "Ingen filer funnet."
+                                : languagePolish
+                                    ? "Nie znaleziono plików."
+                                    : "Failų nerasta.")),
               ),
               TextButton(
                 onPressed: () async {
@@ -273,7 +280,14 @@ class _FilePickerScreenState extends State<FilePickerScreen> {
 
   Future<void> _shareFile(String filePath) async {
     final file = XFile(filePath);
-    Share.shareXFiles([file], text: 'Sharing JSON file via Gmail');
+    Share.shareXFiles([file],
+        text: languageEnglish
+            ? 'Sharing JSON file via Gmail'
+            : languageNorwegian
+                ? 'Deling av JSON-fil via Gmail'
+                : languagePolish
+                    ? 'Udostępnianie pliku JSON za pośrednictwem Gmaila'
+                    : 'Bendrinimas JSON failo naudojant Gmailą');
   }
 
   Future<void> _deleteFile(String filePath) async {
