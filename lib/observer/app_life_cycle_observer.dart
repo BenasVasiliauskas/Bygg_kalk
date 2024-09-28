@@ -12,7 +12,6 @@ class AppLifecycleObserver extends WidgetsBindingObserver {
         print("App is in the foreground");
         break;
       case AppLifecycleState.inactive:
-        //save project to json
         final fileName = "autoSave";
         await fileDeleteIfExists(fileName);
         await writeJsonArrayStart(fileName);
@@ -22,10 +21,8 @@ class AppLifecycleObserver extends WidgetsBindingObserver {
           await saveNorwProjectToJson(fileName);
         }
         await writeJsonArrayEnd(fileName);
-        print("App is inactive");
         break;
       case AppLifecycleState.paused:
-        print("App is in the background");
         break;
       case AppLifecycleState.detached:
         print("App is detached from any view");

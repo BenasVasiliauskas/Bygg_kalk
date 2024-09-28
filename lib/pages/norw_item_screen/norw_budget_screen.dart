@@ -261,7 +261,7 @@ class _NorwBudgetScreenState extends State<NorwBudgetScreen> {
                         ),
                         DataCell(
                           Text(
-                            (costs * sumLaborCosts).toStringAsFixed(2),
+                            (costs * sumLaborCosts).toStringAsFixed(2) + "\$",
                           ),
                         ),
                       ],
