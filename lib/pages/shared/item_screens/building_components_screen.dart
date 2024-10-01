@@ -217,7 +217,7 @@ Nowa konstrukcja, Wyburzenie''',
                           Text(languageEnglish
                               ? "Window/exterior door"
                               : languageNorwegian
-                                  ? "Vindu/ytterdører"
+                                  ? "Vinduer/ytterdører"
                                   : languagePolish
                                       ? "Okno/drzwi zewnętrzne"
                                       : "Langas/išorinė durys"),

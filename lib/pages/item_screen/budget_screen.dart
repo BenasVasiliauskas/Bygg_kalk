@@ -40,6 +40,8 @@ class _BudgetScreenState extends State<BudgetScreen> {
       totalMaterialCosts.reduce((value, element) => value + element);
   double sumLaborCosts =
       totalLaborCosts.reduce((value, element) => value + element);
+  double sumTotalHours = totalHours.reduce((value, element) => value + element);
+
   @override
   Widget build(BuildContext context) {
     return PopScope(
@@ -190,9 +192,7 @@ class _BudgetScreenState extends State<BudgetScreen> {
                             width: 70,
                             child: Text(
                               index == calculatedNamesOrder.length - 1
-                                  ? (totalHours.reduce((value, element) =>
-                                              value + element) *
-                                          timeCoefficient)
+                                  ? (sumTotalHours * timeCoefficient)
                                       .toStringAsFixed(2)
                                   : totalHours[index].toStringAsFixed(2),
                             ),
@@ -203,7 +203,8 @@ class _BudgetScreenState extends State<BudgetScreen> {
                             width: 70,
                             child: Text(
                               index == calculatedNamesOrder.length - 1
-                                  ? sumLaborCosts.toStringAsFixed(2)
+                                  ? (sumLaborCosts * timeCoefficient)
+                                      .toStringAsFixed(2)
                                   : totalLaborCosts[index].toStringAsFixed(2),
                             ),
                           ),
@@ -213,7 +214,8 @@ class _BudgetScreenState extends State<BudgetScreen> {
                             width: 70,
                             child: Text(
                               index == calculatedNamesOrder.length - 1
-                                  ? sumMaterialCosts.toStringAsFixed(2)
+                                  ? (sumMaterialCosts * markup)
+                                      .toStringAsFixed(2)
                                   : totalMaterialCosts[index]
                                       .toStringAsFixed(2),
                             ),
@@ -224,9 +226,9 @@ class _BudgetScreenState extends State<BudgetScreen> {
                             width: 100,
                             child: Text(
                               index == calculatedNamesOrder.length - 1
-                                  ? budgetSums
-                                      .reduce(
-                                          (value, element) => value + element)
+                                  ? (sumTotalHours * timeCoefficient +
+                                          sumLaborCosts * timeCoefficient +
+                                          sumMaterialCosts * markup)
                                       .toStringAsFixed(2)
                                   : budgetSums[index].toStringAsFixed(2),
                             ),
@@ -314,7 +316,7 @@ class _BudgetScreenState extends State<BudgetScreen> {
                           ),
                         ),
                         DataCell(
-                          Text((sumWasteRemoval + sumWasteRemoval * costs)
+                          Text((sumWasteRemoval + sumWasteRemoval * markup)
                                   .toStringAsFixed(2) +
                               "\$"),
                         ),

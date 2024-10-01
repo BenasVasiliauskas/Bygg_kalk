@@ -313,19 +313,19 @@ class _LitInteriorWallItemsScreenState
   @override
   Widget build(BuildContext context) {
     List<DataColumn> columns = [
-      createDataColumn("Beskrivelse", 98, () {}),
-      createDataColumn("Enhet", 55, () {}),
-      createDataColumn("Mengde", 80, () {}),
-      createDataColumn("Mengde av material", 85, () {}),
-      createDataColumn("Enh. tid.", 65, () {
+      createDataColumn("Aprašymas", 98, () {}),
+      createDataColumn("Vienetas", 55, () {}),
+      createDataColumn("Kiekis", 80, () {}),
+      createDataColumn("Medžiagų kiekis", 85, () {}),
+      createDataColumn("Valandos", 65, () {
         updateTotalSum();
         rebuildDataTable();
       }),
-      createDataColumn("Sum. tid.", 75, () {}),
-      createDataColumn("Arb.pris ", 55, () {}),
-      createDataColumn("Enh. mater.", 85, () {}),
-      createDataColumn("Sum. material", 85, () {}),
-      createDataColumn("Total pris'", 75, () {}),
+      createDataColumn("Visos valandos", 75, () {}),
+      createDataColumn("Darbo kaina", 55, () {}),
+      createDataColumn("Medžiagos", 85, () {}),
+      createDataColumn("Medžiagų suma", 85, () {}),
+      createDataColumn("Bendra kaina", 75, () {}),
     ];
 
     List<DataRow> rows = [];

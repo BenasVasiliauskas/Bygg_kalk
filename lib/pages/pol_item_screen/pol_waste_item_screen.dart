@@ -306,16 +306,16 @@ class _PolWasteItemScreenState extends State<PolWasteItemScreen> {
     List<DataColumn> columns = [
       createDataColumn("Opis", 98, () {}),
       createDataColumn("Jednostka", 55, () {}),
-      createDataColumn("MeIlośćngde", 80, () {}),
-      createDataColumn("Enh. czasu.", 65, () {
+      createDataColumn("Ilość", 80, () {}),
+      createDataColumn("Zwiększ. czas.", 65, () {
         updateTotalSum();
         rebuildDataTable();
       }),
       createDataColumn("Suma czasu.", 75, () {}),
       createDataColumn("Koszt pracy", 55, () {}),
-      createDataColumn("Wzmocnienie.", 85, () {}),
-      createDataColumn("Suma. materiał", 85, () {}),
-      createDataColumn("Cena całkowita", 75, () {}),
+      createDataColumn("Wzmocnienie", 85, () {}),
+      createDataColumn("Suma materiałów", 85, () {}),
+      createDataColumn("Łączna cena", 75, () {}),
     ];
     List<DataRow> rows = [];
 

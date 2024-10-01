@@ -306,13 +306,13 @@ class _LitDeckItemScreenState extends State<LitDeckItemScreen> {
       createDataColumn("Aprašymas", 98, () {}),
       createDataColumn("Vienetas", 55, () {}),
       createDataColumn("Kiekis", 80, () {}),
-      createDataColumn("Enh. laikas", 65, () {
+      createDataColumn("Valandos", 65, () {
         updateTotalSum();
         rebuildDataTable();
       }),
-      createDataColumn("Sum. laikas.", 75, () {}),
+      createDataColumn("Visos valandos", 75, () {}),
       createDataColumn("Darbo kaina", 55, () {}),
-      createDataColumn("Enh. medž.", 85, () {}),
+      createDataColumn("Medžiagos", 85, () {}),
       createDataColumn("Medžiagų suma", 85, () {}),
       createDataColumn("Bendra kaina", 75, () {}),
     ];

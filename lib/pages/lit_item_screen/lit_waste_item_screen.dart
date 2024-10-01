@@ -305,17 +305,17 @@ class _LitWasteItemScreenState extends State<LitWasteItemScreen> {
   Widget build(BuildContext context) {
     List<DataColumn> columns = [
       createDataColumn("Aprašymas", 98, () {}),
-      createDataColumn("Enhet", 55, () {}),
-      createDataColumn("Mengde", 80, () {}),
-      createDataColumn("Enh. tid.", 65, () {
+      createDataColumn("Vienetas", 55, () {}),
+      createDataColumn("Kiekis", 80, () {}),
+      createDataColumn("Valandos", 65, () {
         updateTotalSum();
         rebuildDataTable();
       }),
-      createDataColumn("Sum. tid.", 75, () {}),
-      createDataColumn("Arb.pris ", 55, () {}),
-      createDataColumn("Enh. mater.", 85, () {}),
-      createDataColumn("Sum. material", 85, () {}),
-      createDataColumn("Total pris'", 75, () {}),
+      createDataColumn("Visos valandos", 75, () {}),
+      createDataColumn("Darbo kaina", 55, () {}),
+      createDataColumn("Medžiagos", 85, () {}),
+      createDataColumn("Medžiagų suma", 85, () {}),
+      createDataColumn("Bendra kaina", 75, () {}),
     ];
     List<DataRow> rows = [];
 

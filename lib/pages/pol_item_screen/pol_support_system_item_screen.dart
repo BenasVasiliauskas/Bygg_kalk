@@ -304,18 +304,18 @@ class _PolSupportSystemItemScreenState
   @override
   Widget build(BuildContext context) {
     List<DataColumn> columns = [
-      createDataColumn("Opis urządzenia", 98, () {}),
-      createDataColumn("Jednostka miary", 55, () {}),
+      createDataColumn("Opis", 98, () {}),
+      createDataColumn("Jednostka", 55, () {}),
       createDataColumn("Ilość", 80, () {}),
       createDataColumn("Zwiększ. czas.", 65, () {
         updateTotalSum();
         rebuildDataTable();
       }),
       createDataColumn("Suma czasu.", 75, () {}),
-      createDataColumn("Cena pracy", 55, () {}),
-      createDataColumn("Zwiększ. mater.", 85, () {}),
+      createDataColumn("Koszt pracy", 55, () {}),
+      createDataColumn("Wzmocnienie", 85, () {}),
       createDataColumn("Suma materiałów", 85, () {}),
-      createDataColumn("Cena całkowita", 75, () {}),
+      createDataColumn("Łączna cena", 75, () {}),
     ];
 
     List<DataRow> rows = [];

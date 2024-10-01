@@ -313,19 +313,19 @@ class _PolInteriorWallItemsScreenState
   @override
   Widget build(BuildContext context) {
     List<DataColumn> columns = [
-      createDataColumn("Beskrivelse", 98, () {}),
-      createDataColumn("Enhet", 55, () {}),
-      createDataColumn("Mengde", 80, () {}),
-      createDataColumn("Mengde av material", 85, () {}),
-      createDataColumn("Enh. tid.", 65, () {
+      createDataColumn("Opis", 98, () {}),
+      createDataColumn("Jednostka", 55, () {}),
+      createDataColumn("Ilość", 80, () {}),
+      createDataColumn("Ilość materiału", 85, () {}),
+      createDataColumn("Zwiększ. czas.", 65, () {
         updateTotalSum();
         rebuildDataTable();
       }),
-      createDataColumn("Sum. tid.", 75, () {}),
-      createDataColumn("Arb.pris ", 55, () {}),
-      createDataColumn("Enh. mater.", 85, () {}),
-      createDataColumn("Sum. material", 85, () {}),
-      createDataColumn("Total pris'", 75, () {}),
+      createDataColumn("Suma czasu.", 75, () {}),
+      createDataColumn("Koszt pracy", 55, () {}),
+      createDataColumn("Wzmocnienie", 85, () {}),
+      createDataColumn("Suma materiałów", 85, () {}),
+      createDataColumn("Łączna cena", 75, () {}),
     ];
 
     List<DataRow> rows = [];
