@@ -621,9 +621,6 @@ class _LitInteriorWallItemsScreenState
               SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
                 child: DataTable(
-                  border: TableBorder.all(
-                      width: 2,
-                      color: Theme.of(context).colorScheme.background),
                   horizontalMargin: 15,
                   columnSpacing: 0,
                   dataRowMaxHeight: double.infinity,
