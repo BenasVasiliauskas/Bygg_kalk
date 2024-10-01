@@ -1,5 +1,6 @@
 import 'package:cost_calculator/constants/language.dart';
 import 'package:cost_calculator/data/data.dart';
+import 'package:cost_calculator/data/norw_data.dart';
 import 'package:cost_calculator/observer/app_life_cycle_observer.dart';
 import 'package:cost_calculator/pages/item_sections/deck_sections.dart';
 import 'package:cost_calculator/pages/item_sections/flooring_sections.dart';
@@ -134,7 +135,8 @@ Nowa konstrukcja''',
                       ),
                     ),
                   ),
-                  Text(supportSystem.length.toString()),
+                  //change back to eng after adding eng data
+                  Text(norwSupportSystem.length.toString()),
                 ],
               ),
               Row(

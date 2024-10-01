@@ -1031,106 +1031,470 @@ final norwInnerWallData = [
 
 final norwSupportSystem = [
   SupportSystemModel(
-      name: "Bjelker og søyler, limtre / stål - Enebolig",
-      description: [
-        "Limtrebjelke 115x315",
-        "Limtrebjelke 90x225",
-        "Limtrebjelke impr 90x300",
-        "Limtrebjelke impr 90x270",
-        "Limtre stolpe impr 90x90",
-        "Limtre stolpe 115x115",
-        "Limtre stolpe 90x90",
-        "Stålbjelke, HEB 220 (73,63 kg/lm) 220 mm",
-        "Stålsøyle HUP (14,63 kg/lm) 100x100x5",
-      ],
-      unit: [
-        "lm",
-        "lm",
-        "lm",
-        "lm",
-        "lm",
-        "lm",
-        "lm",
-        "kg",
-        "kg",
-      ],
-      quantity: [
-        0.00,
-        0.00,
-        0.00,
-        0.00,
-        0.00,
-        0.00,
-        0.00,
-        0.00,
-        0.00,
-      ],
-      laborHours1: [
-        0.40,
-        0.40,
-        0.40,
-        0.40,
-        0.17,
-        0.17,
-        0.17,
-        0.02,
-        0.02,
-      ],
-      laborHours2: [
-        0.00,
-        0.00,
-        0.00,
-        0.00,
-        0.00,
-        0.00,
-        0.00,
-        0.00,
-        0.00,
-      ],
-      laborCost: [
-        0.00,
-        0.00,
-        0.00,
-        0.00,
-        0.00,
-        0.00,
-        0.00,
-        0.00,
-        0.00,
-      ],
-      material: [
-        841.76,
-        503.34,
-        839.34,
-        538.54,
-        350.56,
-        358.56,
-        230.56,
-        27.84,
-        12.50,
-      ],
-      materials: [
-        0.00,
-        0.00,
-        0.00,
-        0.00,
-        0.00,
-        0.00,
-        0.00,
-        0.00,
-        0.00,
-      ],
-      totalPrice: [
-        0.00,
-        0.00,
-        0.00,
-        0.00,
-        0.00,
-        0.00,
-        0.00,
-        0.00,
-        0.00,
-      ])
+    name: "Limtrebjelke 115x315",
+    description: [
+      "Limtrebjelke 115x315",
+    ],
+    unit: [
+      "lm",
+    ],
+    quantity: [
+      1,
+    ],
+    laborHours1: [
+      0.41,
+    ],
+    laborHours2: [
+      0.41,
+    ],
+    laborCost: [
+      225.00,
+    ],
+    material: [
+      842.76,
+    ],
+    materials: [
+      842.76,
+    ],
+    totalPrice: [
+      1068.26,
+    ],
+    constructionType: "New Construction",
+  ),
+  SupportSystemModel(
+    name: "Limtrebjelke 90x225",
+    description: [
+      "Limtrebjelke 90x225",
+    ],
+    unit: [
+      "lm",
+    ],
+    quantity: [
+      1,
+    ],
+    laborHours1: [
+      0.41,
+    ],
+    laborHours2: [
+      0.41,
+    ],
+    laborCost: [
+      225.00,
+    ],
+    material: [
+      504.34,
+    ],
+    materials: [
+      504.34,
+    ],
+    totalPrice: [
+      729.84,
+    ],
+    constructionType: "New Construction",
+  ),
+  SupportSystemModel(
+    name: "Limtrebjelke impr 90x300",
+    description: [
+      "Limtrebjelke impr 90x300",
+    ],
+    unit: [
+      "lm",
+    ],
+    quantity: [
+      1,
+    ],
+    laborHours1: [
+      0.41,
+    ],
+    laborHours2: [
+      0.41,
+    ],
+    laborCost: [
+      225.00,
+    ],
+    material: [
+      840.34,
+    ],
+    materials: [
+      840.34,
+    ],
+    totalPrice: [
+      1065.84,
+    ],
+    constructionType: "New Construction",
+  ),
+  SupportSystemModel(
+    name: "Limtrebjelke impr 90x270",
+    description: [
+      "Limtrebjelke impr 90x270",
+    ],
+    unit: [
+      "lm",
+    ],
+    quantity: [
+      1,
+    ],
+    laborHours1: [
+      0.41,
+    ],
+    laborHours2: [
+      0.41,
+    ],
+    laborCost: [
+      225.00,
+    ],
+    material: [
+      539.54,
+    ],
+    materials: [
+      539.54,
+    ],
+    totalPrice: [
+      765.04,
+    ],
+    constructionType: "New Construction",
+  ),
+  SupportSystemModel(
+    name: "Limtre stolpe impr 90x90",
+    description: [
+      "Limtre stolpe impr 90x90",
+    ],
+    unit: [
+      "lm",
+    ],
+    quantity: [
+      1,
+    ],
+    laborHours1: [
+      0.18,
+    ],
+    laborHours2: [
+      0.18,
+    ],
+    laborCost: [
+      99.00,
+    ],
+    material: [
+      351.56,
+    ],
+    materials: [
+      351.56,
+    ],
+    totalPrice: [
+      450.56,
+    ],
+    constructionType: "New Construction",
+  ),
+  SupportSystemModel(
+    name: "Limtre stolpe 115x115",
+    description: [
+      "Limtre stolpe 115x115",
+    ],
+    unit: [
+      "lm",
+    ],
+    quantity: [
+      1,
+    ],
+    laborHours1: [
+      0.18,
+    ],
+    laborHours2: [
+      0.18,
+    ],
+    laborCost: [
+      99.00,
+    ],
+    material: [
+      359.56,
+    ],
+    materials: [
+      359.56,
+    ],
+    totalPrice: [
+      458.56,
+    ],
+    constructionType: "New Construction",
+  ),
+  SupportSystemModel(
+    name: "Limtre stolpe 90x90",
+    description: [
+      "Limtre stolpe 90x90",
+    ],
+    unit: [
+      "lm",
+    ],
+    quantity: [
+      1,
+    ],
+    laborHours1: [
+      0.18,
+    ],
+    laborHours2: [
+      0.18,
+    ],
+    laborCost: [
+      99.00,
+    ],
+    material: [
+      231.56,
+    ],
+    materials: [
+      231.56,
+    ],
+    totalPrice: [
+      330.56,
+    ],
+    constructionType: "New Construction",
+  ),
+  SupportSystemModel(
+    name: "Stålbjelke, HEB 220 (73,63 kg/lm) 220mm",
+    description: [
+      "Stålbjelke, HEB 220 (73,63 kg/lm) 220mm",
+    ],
+    unit: [
+      "kg",
+    ],
+    quantity: [
+      1.00,
+    ],
+    laborHours1: [
+      0.03,
+    ],
+    laborHours2: [
+      0.03,
+    ],
+    laborCost: [
+      16.50,
+    ],
+    material: [
+      28.84,
+    ],
+    materials: [
+      28.84,
+    ],
+    totalPrice: [
+      45.34,
+    ],
+    constructionType: "New Construction",
+  ),
+  SupportSystemModel(
+    name: "Stålsøyle HUP (14,63 kg/lm) 100x100x5",
+    description: [
+      "Stålsøyle HUP (14,63 kg/lm) 100x100x5",
+    ],
+    unit: [
+      "kg",
+    ],
+    quantity: [
+      1.00,
+    ],
+    laborHours1: [
+      0.03,
+    ],
+    laborHours2: [
+      0.03,
+    ],
+    laborCost: [
+      16.50,
+    ],
+    material: [
+      13.50,
+    ],
+    materials: [
+      13.50,
+    ],
+    totalPrice: [
+      30.00,
+    ],
+    constructionType: "New Construction",
+  ),
+  SupportSystemModel(
+    name: "Montering stålsøyler HEA 200(43,53 kg/lm).",
+    description: [
+      "Montering stålsøyler HEA 200(43,53 kg/lm).",
+    ],
+    unit: [
+      "kg",
+    ],
+    quantity: [
+      1.00,
+    ],
+    laborHours1: [
+      0.03,
+    ],
+    laborHours2: [
+      0.03,
+    ],
+    laborCost: [
+      16.50,
+    ],
+    material: [
+      34.93,
+    ],
+    materials: [
+      34.93,
+    ],
+    totalPrice: [
+      51.43,
+    ],
+    constructionType: "New Construction",
+  ),
+  SupportSystemModel(
+    name: "Montering stål-konsoll IPE 160.",
+    description: [
+      "Montering stål-konsoll IPE 160.",
+    ],
+    unit: [
+      "stk",
+    ],
+    quantity: [
+      1.00,
+    ],
+    laborHours1: [
+      0.25,
+    ],
+    laborHours2: [
+      0.25,
+    ],
+    laborCost: [
+      137.50,
+    ],
+    material: [
+      541.80,
+    ],
+    materials: [
+      541.80,
+    ],
+    totalPrice: [
+      679.30,
+    ],
+    constructionType: "New Construction",
+  ),
+  SupportSystemModel(
+    name: "Montering vinkelstål L 50x50x3mm.",
+    description: [
+      "Montering vinkelstål L 50x50x3mm.",
+    ],
+    unit: [
+      "m",
+    ],
+    quantity: [
+      1.00,
+    ],
+    laborHours1: [
+      0.21,
+    ],
+    laborHours2: [
+      0.21,
+    ],
+    laborCost: [
+      115.50,
+    ],
+    material: [
+      21.99,
+    ],
+    materials: [
+      21.99,
+    ],
+    totalPrice: [
+      137.49,
+    ],
+    constructionType: "New Construction",
+  ),
+  SupportSystemModel(
+    name: "Montering stålbjelke, HEA 200 (43,53 kg/lm).",
+    description: [
+      "Montering stålbjelke, HEA 200 (43,53 kg/lm).",
+    ],
+    unit: [
+      "kg",
+    ],
+    quantity: [
+      1.00,
+    ],
+    laborHours1: [
+      0.03,
+    ],
+    laborHours2: [
+      0.03,
+    ],
+    laborCost: [
+      16.50,
+    ],
+    material: [
+      34.93,
+    ],
+    materials: [
+      34.93,
+    ],
+    totalPrice: [
+      51.43,
+    ],
+    constructionType: "New Construction",
+  ),
+  SupportSystemModel(
+    name: "Montering stålbjelke, HEB 260 (95,85 kg/lm).",
+    description: [
+      "Montering stålbjelke, HEB 260 (95,85 kg/lm).",
+    ],
+    unit: [
+      "kg",
+    ],
+    quantity: [
+      1.00,
+    ],
+    laborHours1: [
+      0.03,
+    ],
+    laborHours2: [
+      0.03,
+    ],
+    laborCost: [
+      16.50,
+    ],
+    material: [
+      36.93,
+    ],
+    materials: [
+      36.93,
+    ],
+    totalPrice: [
+      53.43,
+    ],
+    constructionType: "New Construction",
+  ),
+  SupportSystemModel(
+    name: "Montering stålbjelke IPE 180(19,39 kg/lm).",
+    description: [
+      "Montering stålbjelke IPE 180(19,39 kg/lm).",
+    ],
+    unit: [
+      "kg",
+    ],
+    quantity: [
+      1.00,
+    ],
+    laborHours1: [
+      0.03,
+    ],
+    laborHours2: [
+      0.03,
+    ],
+    laborCost: [
+      16.50,
+    ],
+    material: [
+      36.21,
+    ],
+    materials: [
+      36.21,
+    ],
+    totalPrice: [
+      52.71,
+    ],
+    constructionType: "New Construction",
+  ),
 ];
 
 final norwFlooringData = [

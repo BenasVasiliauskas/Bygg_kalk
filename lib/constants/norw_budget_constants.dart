@@ -355,19 +355,75 @@ Map<String, double> wasteBudgetSum = {
 /////////////////////////////////////////////////////////////////////////////////////
 
 Map<String, double> supportSystemHours = {
-  "Bjelker og søyler, limtre / stål - Enebolig": 0,
+  "Limtrebjelke 115x315": 0,
+  "Limtrebjelke 90x225": 0,
+  "Limtrebjelke impr 90x300": 0,
+  "Limtrebjelke impr 90x270": 0,
+  "Limtre stolpe impr 90x90": 0,
+  "Limtre stolpe 115x115": 0,
+  "Limtre stolpe 90x90": 0,
+  "Stålbjelke, HEB 220 (73,63 kg/lm) 220mm": 0,
+  "Stålsøyle HUP (14,63 kg/lm) 100x100x5": 0,
+  "Montering stålsøyler HEA 200(43,53 kg/lm).": 0,
+  "Montering stål-konsoll IPE 160.": 0,
+  "Montering vinkelstål L 50x50x3mm.": 0,
+  "Montering stålbjelke, HEA 200 (43,53 kg/lm).": 0,
+  "Montering stålbjelke, HEB 260 (95,85 kg/lm).": 0,
+  "Montering stålbjelke IPE 180(19,39 kg/lm).": 0,
 };
 
 Map<String, double> supportSystemLaborCosts = {
-  "Bjelker og søyler, limtre / stål - Enebolig": 0,
+  "Limtrebjelke 115x315": 0,
+  "Limtrebjelke 90x225": 0,
+  "Limtrebjelke impr 90x300": 0,
+  "Limtrebjelke impr 90x270": 0,
+  "Limtre stolpe impr 90x90": 0,
+  "Limtre stolpe 115x115": 0,
+  "Limtre stolpe 90x90": 0,
+  "Stålbjelke, HEB 220 (73,63 kg/lm) 220mm": 0,
+  "Stålsøyle HUP (14,63 kg/lm) 100x100x5": 0,
+  "Montering stålsøyler HEA 200(43,53 kg/lm).": 0,
+  "Montering stål-konsoll IPE 160.": 0,
+  "Montering vinkelstål L 50x50x3mm.": 0,
+  "Montering stålbjelke, HEA 200 (43,53 kg/lm).": 0,
+  "Montering stålbjelke, HEB 260 (95,85 kg/lm).": 0,
+  "Montering stålbjelke IPE 180(19,39 kg/lm).": 0,
 };
 
 Map<String, double> supportSystemMaterialCosts = {
-  "Bjelker og søyler, limtre / stål - Enebolig": 0,
+  "Limtrebjelke 115x315": 0,
+  "Limtrebjelke 90x225": 0,
+  "Limtrebjelke impr 90x300": 0,
+  "Limtrebjelke impr 90x270": 0,
+  "Limtre stolpe impr 90x90": 0,
+  "Limtre stolpe 115x115": 0,
+  "Limtre stolpe 90x90": 0,
+  "Stålbjelke, HEB 220 (73,63 kg/lm) 220mm": 0,
+  "Stålsøyle HUP (14,63 kg/lm) 100x100x5": 0,
+  "Montering stålsøyler HEA 200(43,53 kg/lm).": 0,
+  "Montering stål-konsoll IPE 160.": 0,
+  "Montering vinkelstål L 50x50x3mm.": 0,
+  "Montering stålbjelke, HEA 200 (43,53 kg/lm).": 0,
+  "Montering stålbjelke, HEB 260 (95,85 kg/lm).": 0,
+  "Montering stålbjelke IPE 180(19,39 kg/lm).": 0,
 };
 
 Map<String, double> supportSystemBudgetSum = {
-  "Bjelker og søyler, limtre / stål - Enebolig": 0,
+  "Limtrebjelke 115x315": 0,
+  "Limtrebjelke 90x225": 0,
+  "Limtrebjelke impr 90x300": 0,
+  "Limtrebjelke impr 90x270": 0,
+  "Limtre stolpe impr 90x90": 0,
+  "Limtre stolpe 115x115": 0,
+  "Limtre stolpe 90x90": 0,
+  "Stålbjelke, HEB 220 (73,63 kg/lm) 220mm": 0,
+  "Stålsøyle HUP (14,63 kg/lm) 100x100x5": 0,
+  "Montering stålsøyler HEA 200(43,53 kg/lm).": 0,
+  "Montering stål-konsoll IPE 160.": 0,
+  "Montering vinkelstål L 50x50x3mm.": 0,
+  "Montering stålbjelke, HEA 200 (43,53 kg/lm).": 0,
+  "Montering stålbjelke, HEB 260 (95,85 kg/lm).": 0,
+  "Montering stålbjelke IPE 180(19,39 kg/lm).": 0,
 };
 
 /////////////////////////////////////////////////////////////////////////////////////

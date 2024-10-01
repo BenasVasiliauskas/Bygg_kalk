@@ -1,5 +1,6 @@
 import 'package:cost_calculator/constants/language.dart';
 import 'package:cost_calculator/data/data.dart';
+import 'package:cost_calculator/data/norw_data.dart';
 import 'package:cost_calculator/functions/save_project_to_json.dart';
 import 'package:cost_calculator/functions/save_to_json.dart';
 import 'package:cost_calculator/observer/app_life_cycle_observer.dart';
@@ -108,11 +109,12 @@ class _homePageState extends State<homePage> {
                             style: TextStyle(color: Colors.white),
                           ),
                           Text(
+                            //change back to eng after adding eng data
                             (dataInnerWallData.length +
                                     deckData.length +
                                     innerDoor.length +
                                     windowsExteriorDoors.length +
-                                    supportSystem.length +
+                                    norwSupportSystem.length +
                                     flooringData.length +
                                     terraceData.length +
                                     outerRoofData.length +
