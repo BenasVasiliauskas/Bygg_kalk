@@ -92,7 +92,7 @@ class _LitOuterRoofItemScreenState extends State<LitOuterRoofItemScreen> {
     addLaborCosts(widget.name, totalLaborCost);
     addMaterialCosts(widget.name, totalMaterial2);
     addBudgetSum(widget.name, totalTotalPrice);
-    DataRow totalSumRow = totalSumRowEng(totalLaborHours1, totalLaborHours2,
+    DataRow totalSumRow = totalSumRowLit(totalLaborHours1, totalLaborHours2,
         totalLaborCost, totalMaterial1, totalMaterial2, totalTotalPrice);
 
     // Add the "Total Sum" row to the updated rows
