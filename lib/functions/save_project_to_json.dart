@@ -14,31 +14,59 @@ Future<void> saveProject(String projectName, var savingModel) async {
 Future<void> saveEngProjectToJSON(
   String fileName,
 ) async {
+  await writeJsonArrayStart(fileName);
   await saveProject(fileName, dataInnerWallData);
-  await writeJsonComma(fileName);
-  await saveProject(fileName, deckData);
-  await writeJsonComma(fileName);
-  await saveProject(fileName, innerDoor);
-  await writeJsonComma(fileName);
-  await saveProject(fileName, windowsExteriorDoors);
-  await writeJsonComma(fileName);
-  await saveProject(fileName, supportSystem);
-  await writeJsonComma(fileName);
-  await saveProject(fileName, flooringData);
-  await writeJsonComma(fileName);
-  await saveProject(fileName, terraceData);
-  await writeJsonComma(fileName);
-  await saveProject(fileName, outerRoofData);
-  await writeJsonComma(fileName);
-  await saveProject(fileName, exteriorWallData);
-  await writeJsonComma(fileName);
-  await saveProject(fileName, hullRoofingData);
-  await writeJsonComma(fileName);
-  await saveProject(fileName, scaffoldingData);
-  await writeJsonComma(fileName);
-  await saveProject(fileName, innerStairsData);
-  await writeJsonComma(fileName);
-  await saveProject(fileName, wasteData);
+
+  if (deckData.isNotEmpty) {
+    await writeJsonComma(fileName);
+    await saveProject(fileName, deckData);
+  }
+  if (innerDoor.isNotEmpty) {
+    await writeJsonComma(fileName);
+    await saveProject(fileName, innerDoor);
+  }
+  if (windowsExteriorDoors.isNotEmpty) {
+    await writeJsonComma(fileName);
+    await saveProject(fileName, windowsExteriorDoors);
+  }
+  if (supportSystem.isNotEmpty) {
+    await writeJsonComma(fileName);
+    await saveProject(fileName, supportSystem);
+  }
+  if (flooringData.isNotEmpty) {
+    await writeJsonComma(fileName);
+    await saveProject(fileName, flooringData);
+  }
+  if (terraceData.isNotEmpty) {
+    await writeJsonComma(fileName);
+    await saveProject(fileName, terraceData);
+  }
+  if (outerRoofData.isNotEmpty) {
+    await writeJsonComma(fileName);
+    await saveProject(fileName, outerRoofData);
+  }
+  if (exteriorWallData.isNotEmpty) {
+    await writeJsonComma(fileName);
+    await saveProject(fileName, exteriorWallData);
+  }
+  if (hullRoofingData.isNotEmpty) {
+    await writeJsonComma(fileName);
+    await saveProject(fileName, hullRoofingData);
+  }
+  if (scaffoldingData.isNotEmpty) {
+    await writeJsonComma(fileName);
+    await saveProject(fileName, scaffoldingData);
+  }
+  if (innerStairsData.isNotEmpty) {
+    await writeJsonComma(fileName);
+    await saveProject(fileName, innerStairsData);
+  }
+  if (wasteData.isNotEmpty) {
+    await writeJsonComma(fileName);
+    await saveProject(fileName, wasteData);
+  }
+
+  await writeJsonArrayEnd(fileName);
 }
 
 Future<void> saveNorwProjectToJson(String fileName) async {
