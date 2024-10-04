@@ -535,13 +535,13 @@
       "unit": ["lm"],
       "quantity": [1.0],
       "laborHours1": [0.41],
-      "laborHours2": [0.82],
-      "laborCost": [1.64],
+      "laborHours2": [0.41],
+      "laborCost": [225.0],
       "material": [842.76],
-      "materials": [1685.52],
-      "totalPrice": [1687.16],
+      "materials": [842.76],
+      "totalPrice": [1068.26],
       "constructionType": "New Construction",
-      "calculationQuantity": 2.0
+      "calculationQuantity": 0.0
     },
     {
       "name": "Limtrebjelke 90x225",

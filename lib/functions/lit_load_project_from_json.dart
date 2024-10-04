@@ -248,7 +248,6 @@ Future<void> loadOuterRoofModel(var model) async {
       litOuterRoofData[i].description = model.description;
       litOuterRoofData[i].unit = model.unit;
       litOuterRoofData[i].quantity = model.quantity;
-      litOuterRoofData[i].materialQuantity = model.materialQuantity;
       litOuterRoofData[i].laborHours1 = model.laborHours1;
       litOuterRoofData[i].laborHours2 = model.laborHours2;
       litOuterRoofData[i].laborCost = model.laborCost;
@@ -473,7 +472,6 @@ Future<void> loadOuterWallModel(var model) async {
       litExteriorWallData[i].description = model.description;
       litExteriorWallData[i].unit = model.unit;
       litExteriorWallData[i].quantity = model.quantity;
-      litExteriorWallData[i].materialQuantity = model.materialQuantity;
       litExteriorWallData[i].laborHours1 = model.laborHours1;
       litExteriorWallData[i].laborHours2 = model.laborHours2;
       litExteriorWallData[i].laborCost = model.laborCost;
@@ -506,7 +504,6 @@ Future<void> loadInnerWallModel(var model) async {
       litInnerWallData[i].description = model.description;
       litInnerWallData[i].unit = model.unit;
       litInnerWallData[i].quantity = model.quantity;
-      litInnerWallData[i].materialQuantity = model.materialQuantity;
       litInnerWallData[i].laborHours1 = model.laborHours1;
       litInnerWallData[i].laborHours2 = model.laborHours2;
       litInnerWallData[i].laborCost = model.laborCost;

@@ -247,7 +247,6 @@ Future<void> loadOuterRoofModel(var model) async {
       polOuterRoofData[i].description = model.description;
       polOuterRoofData[i].unit = model.unit;
       polOuterRoofData[i].quantity = model.quantity;
-      polOuterRoofData[i].materialQuantity = model.materialQuantity;
       polOuterRoofData[i].laborHours1 = model.laborHours1;
       polOuterRoofData[i].laborHours2 = model.laborHours2;
       polOuterRoofData[i].laborCost = model.laborCost;
@@ -472,7 +471,6 @@ Future<void> loadOuterWallModel(var model) async {
       polExteriorWallData[i].description = model.description;
       polExteriorWallData[i].unit = model.unit;
       polExteriorWallData[i].quantity = model.quantity;
-      polExteriorWallData[i].materialQuantity = model.materialQuantity;
       polExteriorWallData[i].laborHours1 = model.laborHours1;
       polExteriorWallData[i].laborHours2 = model.laborHours2;
       polExteriorWallData[i].laborCost = model.laborCost;
@@ -505,7 +503,6 @@ Future<void> loadInnerWallModel(var model) async {
       polInnerWallData[i].description = model.description;
       polInnerWallData[i].unit = model.unit;
       polInnerWallData[i].quantity = model.quantity;
-      polInnerWallData[i].materialQuantity = model.materialQuantity;
       polInnerWallData[i].laborHours1 = model.laborHours1;
       polInnerWallData[i].laborHours2 = model.laborHours2;
       polInnerWallData[i].laborCost = model.laborCost;

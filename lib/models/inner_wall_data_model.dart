@@ -5,7 +5,6 @@ class InnerWallModel {
   List<String> description;
   List<String> unit;
   List<double> quantity;
-  List<double> materialQuantity;
   List<double> laborHours1;
   List<double> laborHours2;
   List<double> laborCost;
@@ -21,7 +20,6 @@ class InnerWallModel {
     required this.description,
     required this.unit,
     required this.quantity,
-    required this.materialQuantity,
     required this.laborHours1,
     required this.laborHours2,
     required this.laborCost,
@@ -41,7 +39,6 @@ class InnerWallModel {
       'description': description,
       'unit': unit,
       'quantity': quantity,
-      'materialQuantity': materialQuantity,
       'laborHours1': laborHours1,
       'laborHours2': laborHours2,
       'laborCost': laborCost,
@@ -63,9 +60,6 @@ class InnerWallModel {
             .toList(),
         quantity = json['quantity'] is List
             ? json['quantity'].cast<double>().toList()
-            : [],
-        materialQuantity = json['materialQuantity'] is List
-            ? json['materialQuantity'].cast<double>().toList()
             : [],
         laborHours1 = json['laborHours1'] is List
             ? json['laborHours1'].cast<double>().toList()

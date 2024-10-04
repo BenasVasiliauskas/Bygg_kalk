@@ -247,7 +247,6 @@ Future<void> loadOuterRoofModel(var model) async {
       norwOuterRoofData[i].description = model.description;
       norwOuterRoofData[i].unit = model.unit;
       norwOuterRoofData[i].quantity = model.quantity;
-      norwOuterRoofData[i].materialQuantity = model.materialQuantity;
       norwOuterRoofData[i].laborHours1 = model.laborHours1;
       norwOuterRoofData[i].laborHours2 = model.laborHours2;
       norwOuterRoofData[i].laborCost = model.laborCost;
@@ -472,7 +471,6 @@ Future<void> loadOuterWallModel(var model) async {
       norwExteriorWallData[i].description = model.description;
       norwExteriorWallData[i].unit = model.unit;
       norwExteriorWallData[i].quantity = model.quantity;
-      norwExteriorWallData[i].materialQuantity = model.materialQuantity;
       norwExteriorWallData[i].laborHours1 = model.laborHours1;
       norwExteriorWallData[i].laborHours2 = model.laborHours2;
       norwExteriorWallData[i].laborCost = model.laborCost;
@@ -505,7 +503,6 @@ Future<void> loadInnerWallModel(var model) async {
       norwInnerWallData[i].description = model.description;
       norwInnerWallData[i].unit = model.unit;
       norwInnerWallData[i].quantity = model.quantity;
-      norwInnerWallData[i].materialQuantity = model.materialQuantity;
       norwInnerWallData[i].laborHours1 = model.laborHours1;
       norwInnerWallData[i].laborHours2 = model.laborHours2;
       norwInnerWallData[i].laborCost = model.laborCost;
