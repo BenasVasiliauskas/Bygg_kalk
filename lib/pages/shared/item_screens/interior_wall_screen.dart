@@ -119,7 +119,6 @@ class _InnerWallScreenState extends State<InnerWallScreen> {
                     catData.description,
                     catData.unit,
                     catData.quantity,
-                    catData.materialQuantity,
                     catData.laborHours1,
                     catData.laborHours2,
                     catData.laborCost,

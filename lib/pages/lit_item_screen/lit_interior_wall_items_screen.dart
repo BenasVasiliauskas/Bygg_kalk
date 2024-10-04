@@ -12,7 +12,6 @@ class LitInteriorWallItemsScreen extends StatefulWidget {
   List<String> description;
   List<String> unit;
   List<double> quantity;
-  List<double> materialQuantity;
   List<double> laborHours1;
   List<double> laborHours2;
   List<double> laborCost;
@@ -27,7 +26,6 @@ class LitInteriorWallItemsScreen extends StatefulWidget {
     this.description,
     this.unit,
     this.quantity,
-    this.materialQuantity,
     this.laborHours1,
     this.laborHours2,
     this.laborCost,
@@ -140,11 +138,7 @@ class _LitInteriorWallItemsScreenState
           text: widget.quantity[i].toStringAsFixed(2),
         ),
       );
-      materialQuantityControllers.add(
-        TextEditingController(
-          text: widget.materialQuantity[i].toStringAsFixed(2),
-        ),
-      );
+
       laborHours1Controllers.add(
         TextEditingController(
           text: widget.laborHours1[i].toStringAsFixed(2),
@@ -186,8 +180,7 @@ class _LitInteriorWallItemsScreenState
       descriptionControllers[i].text = widget.description[i];
       unitControllers[i].text = widget.unit[i];
       quantityControllers[i].text = widget.quantity[i].toStringAsFixed(2);
-      materialQuantityControllers[i].text =
-          widget.materialQuantity[i].toStringAsFixed(2);
+
       laborHours1Controllers[i].text = widget.laborHours1[i].toStringAsFixed(2);
       laborHours2Controllers[i].text = widget.laborHours2[i].toStringAsFixed(2);
       laborCostControllers[i].text = widget.laborCost[i].toStringAsFixed(2);
@@ -252,11 +245,6 @@ class _LitInteriorWallItemsScreenState
 
   void recalculateValues() {
     for (int i = 0; i < widget.description.length; i++) {
-      widget.materialQuantity[i] = calculateMaterialQuantity(
-          i, widget.quantity, widget.calculationQuantity);
-      materialQuantityControllers[i].text =
-          widget.materialQuantity[i].toStringAsFixed(2);
-
       // Recalculate labor hours 2
       widget.laborHours2[i] = calculateWorkHours2(
         i,
@@ -316,7 +304,6 @@ class _LitInteriorWallItemsScreenState
       createDataColumn("Aprašymas", 98, () {}),
       createDataColumn("Vienetas", 55, () {}),
       createDataColumn("Kiekis", 80, () {}),
-      createDataColumn("Medžiagų kiekis", 85, () {}),
       createDataColumn("Valandos", 65, () {
         updateTotalSum();
         rebuildDataTable();
@@ -337,16 +324,7 @@ class _LitInteriorWallItemsScreenState
             dataCellDisplay(widget.description, i, 120),
             dataCellDisplay(widget.unit, i, 40, optionalPadding: 12),
             dataCellDisplayController(quantityControllers, i),
-            dataCellDo(
-              materialQuantityControllers,
-              i,
-              (value) {
-                widget.materialQuantity[i] = double.parse(value);
-              },
-              Theme.of(context).colorScheme.background,
-              true,
-              optionalWidth: 45,
-            ),
+
             dataCellDo(
               laborHours1Controllers,
               i,
@@ -522,11 +500,6 @@ class _LitInteriorWallItemsScreenState
         dataCellDisplaySingle(
           "Iš viso (be PVM)",
           70,
-          Theme.of(context).colorScheme.background,
-        ),
-        dataCellDisplaySingle(
-          "",
-          0,
           Theme.of(context).colorScheme.background,
         ),
         dataCellDisplaySingle(

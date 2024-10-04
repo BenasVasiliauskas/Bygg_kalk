@@ -8,12 +8,6 @@ double calculateCostPainting(
   return laborCost * hourlyRatePainting;
 }
 
-double calculateMaterialQuantity(
-    int index, List<double> widgetQuantity, calculationQuantity) {
-  double quantity = widgetQuantity[index];
-  return quantity * calculationQuantity;
-}
-
 double calculateWorkHours2(
     int index, List<double> widgetLaborHours1, calculationQuantity) {
   double laborHours1 = widgetLaborHours1[index];

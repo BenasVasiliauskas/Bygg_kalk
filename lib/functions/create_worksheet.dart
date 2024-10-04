@@ -27,7 +27,6 @@ void addDataInnerWall(
   List<String> descriptionList,
   List<String> unitList,
   List<double> quantityLists,
-  List<double> materialQuantityList,
   List<double> laborHours1List,
   List<double> laborHours2List,
   List<double> laborCostList,
@@ -70,9 +69,7 @@ void addDataInnerWall(
       worksheet.getRangeByIndex(i + 2, 1).setText(descriptionList[i]);
       worksheet.getRangeByIndex(i + 2, 2).setText(unitList[i]);
       worksheet.getRangeByIndex(i + 2, 3).setText(quantityLists[i].toString());
-      worksheet
-          .getRangeByIndex(i + 2, 4)
-          .setText(materialQuantityList[i].toString());
+
       worksheet
           .getRangeByIndex(i + 2, 5)
           .setText(laborHours1List[i].toString());
@@ -105,7 +102,6 @@ void addDataExteriorWall(
   List<String> descriptionList,
   List<String> unitList,
   List<double> quantityLists,
-  List<double> materialQuantityList,
   List<double> laborHours1List,
   List<double> laborHours2List,
   List<double> laborCostList,
@@ -150,9 +146,6 @@ void addDataExteriorWall(
       worksheet.getRangeByIndex(i + 2, 2).setText(unitList[i]);
       worksheet.getRangeByIndex(i + 2, 3).setText(quantityLists[i].toString());
       worksheet
-          .getRangeByIndex(i + 2, 4)
-          .setText(materialQuantityList[i].toString());
-      worksheet
           .getRangeByIndex(i + 2, 5)
           .setText(laborHours1List[i].toString());
       sumOfHours1 += laborHours1List[i];
@@ -186,7 +179,6 @@ void addDataNorwExteriorWall(
   List<String> descriptionList,
   List<String> unitList,
   List<double> quantityLists,
-  List<double> materialQuantityList,
   List<double> laborHours1List,
   List<double> laborHours2List,
   List<double> laborCostList,
@@ -230,9 +222,6 @@ void addDataNorwExteriorWall(
       worksheet.getRangeByIndex(i + 2, 1).setText(descriptionList[i]);
       worksheet.getRangeByIndex(i + 2, 2).setText(unitList[i]);
       worksheet.getRangeByIndex(i + 2, 3).setText(quantityLists[i].toString());
-      worksheet
-          .getRangeByIndex(i + 2, 4)
-          .setText(materialQuantityList[i].toString());
       worksheet
           .getRangeByIndex(i + 2, 5)
           .setText(laborHours1List[i].toString());
@@ -414,7 +403,6 @@ Future<void> generateInnerWallExcelDocument(
   List<String> descriptionList,
   List<String> unitList,
   List<double> quantityLists,
-  List<double> materialQuantityList,
   List<double> laborHours1List,
   List<double> laborHours2List,
   List<double> laborCostList,
@@ -439,7 +427,6 @@ Future<void> generateInnerWallExcelDocument(
     descriptionList,
     unitList,
     quantityLists,
-    materialQuantityList,
     laborHours1List,
     laborHours2List,
     laborCostList,
@@ -461,7 +448,6 @@ Future<void> generateExteriorWallExcelDocument(
   List<String> descriptionList,
   List<String> unitList,
   List<double> quantityLists,
-  List<double> materialQuantityList,
   List<double> laborHours1List,
   List<double> customColumnList,
   List<double> laborHours2List,
@@ -482,7 +468,6 @@ Future<void> generateExteriorWallExcelDocument(
     descriptionList,
     unitList,
     quantityLists,
-    materialQuantityList,
     laborHours1List,
     laborHours2List,
     laborCostList,
@@ -615,7 +600,6 @@ Future<void> generateNorwExteriorWallExcelDocument(
   List<String> descriptionList,
   List<String> unitList,
   List<double> quantityLists,
-  List<double> materialQuantityList,
   List<double> laborHours1List,
   List<double> laborHours2List,
   List<double> laborCostList,
@@ -635,7 +619,6 @@ Future<void> generateNorwExteriorWallExcelDocument(
     descriptionList,
     unitList,
     quantityLists,
-    materialQuantityList,
     laborHours1List,
     laborHours2List,
     laborCostList,
@@ -729,7 +712,6 @@ Future<void> generateNorwInnerDoorExcelDocument(
   List<String> descriptionList,
   List<String> unitList,
   List<double> quantityLists,
-  List<double> materialQuantityList,
   List<double> laborHours1List,
   List<double> laborHours2List,
   List<double> laborCostList,
@@ -806,7 +788,6 @@ Future<void> generateOuterWallExcelDocument(
   List<String> descriptionList,
   List<String> unitList,
   List<double> quantityLists,
-  List<double> materialQuantityList,
   List<double> laborHours1List,
   List<double> laborHours2List,
   List<double> laborCostList,
@@ -826,7 +807,6 @@ Future<void> generateOuterWallExcelDocument(
     descriptionList,
     unitList,
     quantityLists,
-    materialQuantityList,
     laborHours1List,
     laborHours2List,
     laborCostList,
@@ -886,7 +866,6 @@ void addNorwData(
   List<String> descriptionList,
   List<String> unitList,
   List<double> quantityLists,
-  List<double> materialQuantityList,
   List<double> laborHours1List,
   List<double> laborHours2List,
   List<double> laborCostList,
@@ -931,9 +910,7 @@ void addNorwData(
       worksheet.getRangeByIndex(i + 2, 1).setText(descriptionList[i]);
       worksheet.getRangeByIndex(i + 2, 2).setText(unitList[i]);
       worksheet.getRangeByIndex(i + 2, 3).setText(quantityLists[i].toString());
-      worksheet
-          .getRangeByIndex(i + 2, 4)
-          .setText(materialQuantityList[i].toString());
+
       worksheet
           .getRangeByIndex(i + 2, 5)
           .setText(laborHours1List[i].toString());
@@ -968,7 +945,6 @@ Future<void> generateNorwInnerWallExcelDocument(
   List<String> descriptionList,
   List<String> unitList,
   List<double> quantityLists,
-  List<double> materialQuantityList,
   List<double> laborHours1List,
   List<double> laborHours2List,
   List<double> laborCostList,
@@ -998,7 +974,6 @@ Future<void> generateNorwInnerWallExcelDocument(
       descriptionList,
       unitList,
       quantityLists,
-      materialQuantityList,
       laborHours1List,
       laborHours2List,
       laborCostList,

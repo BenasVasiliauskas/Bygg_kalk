@@ -126,7 +126,6 @@ class _ExteriorWallScreenState extends State<ExteriorWallScreen> {
                     catData.description,
                     catData.unit,
                     catData.quantity,
-                    catData.materialQuantity,
                     catData.laborHours1,
                     catData.laborHours2,
                     catData.laborCost,

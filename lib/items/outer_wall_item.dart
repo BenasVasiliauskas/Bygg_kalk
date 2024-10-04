@@ -12,7 +12,6 @@ class OuterWallItem extends StatelessWidget {
   final List<String> description;
   final List<String> unit;
   final List<double> quantity;
-  final List<double> materialQuantity;
   final List<double> laborHours1;
   final List<double> laborHours2;
   final List<double> laborCost;
@@ -28,7 +27,6 @@ class OuterWallItem extends StatelessWidget {
     this.description,
     this.unit,
     this.quantity,
-    this.materialQuantity,
     this.laborHours1,
     this.laborHours2,
     this.laborCost,
@@ -50,7 +48,6 @@ class OuterWallItem extends StatelessWidget {
                   description,
                   unit,
                   quantity,
-                  materialQuantity,
                   laborHours1,
                   laborHours2,
                   laborCost,
@@ -66,7 +63,6 @@ class OuterWallItem extends StatelessWidget {
                       description,
                       unit,
                       quantity,
-                      materialQuantity,
                       laborHours1,
                       laborHours2,
                       laborCost,
@@ -82,7 +78,6 @@ class OuterWallItem extends StatelessWidget {
                           description,
                           unit,
                           quantity,
-                          materialQuantity,
                           laborHours1,
                           laborHours2,
                           laborCost,
@@ -97,7 +92,6 @@ class OuterWallItem extends StatelessWidget {
                           description,
                           unit,
                           quantity,
-                          materialQuantity,
                           laborHours1,
                           laborHours2,
                           laborCost,

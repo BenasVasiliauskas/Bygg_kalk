@@ -116,7 +116,6 @@ class _OuterRoofScreenState extends State<OuterRoofScreen> {
                     catData.description,
                     catData.unit,
                     catData.quantity,
-                    catData.materialQuantity,
                     catData.laborHours1,
                     catData.laborHours2,
                     catData.laborCost,
