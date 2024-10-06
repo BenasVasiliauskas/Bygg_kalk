@@ -276,7 +276,7 @@ class _PolBudgetScreenState extends State<PolBudgetScreen> {
                           ),
                         ),
                         DataCell(
-                          Text(sumMaterialCosts.toStringAsFixed(2) + "\$"),
+                          Text(sumMaterialCosts.toStringAsFixed(2) + "\zł"),
                         ),
                       ],
                     ),
@@ -295,7 +295,7 @@ class _PolBudgetScreenState extends State<PolBudgetScreen> {
                         DataCell(
                           Text((sumWasteRemoval + sumWasteRemoval * costs)
                                   .toStringAsFixed(2) +
-                              "\$"),
+                              "\zł"),
                         ),
                       ],
                     ),
@@ -313,7 +313,8 @@ class _PolBudgetScreenState extends State<PolBudgetScreen> {
                         ),
                         DataCell(
                           Text(
-                            (sumMaterialCosts * 0.05).toStringAsFixed(2) + "\$",
+                            (sumMaterialCosts * 0.05).toStringAsFixed(2) +
+                                "\zł",
                           ),
                         ),
                       ],
@@ -336,7 +337,7 @@ class _PolBudgetScreenState extends State<PolBudgetScreen> {
                                         sumMaterialCosts +
                                         (costs * sumLaborCosts))
                                     .toStringAsFixed(2) +
-                                "\$",
+                                "\zł",
                           ),
                         ),
                       ],
@@ -363,7 +364,7 @@ class _PolBudgetScreenState extends State<PolBudgetScreen> {
                                             sumMaterialCosts +
                                             (costs * sumLaborCosts)))
                                     .toStringAsFixed(2) +
-                                "\$",
+                                "\zł",
                           ),
                         ),
                       ],
@@ -387,7 +388,7 @@ class _PolBudgetScreenState extends State<PolBudgetScreen> {
                                             (costs * sumLaborCosts)) *
                                         1.25)
                                     .toStringAsFixed(2) +
-                                "\$",
+                                "\zł",
                           ),
                         ),
                       ],

@@ -265,7 +265,7 @@ class _NorwBudgetScreenState extends State<NorwBudgetScreen> {
                         ),
                         DataCell(
                           Text(
-                            (costs * sumLaborCosts).toStringAsFixed(2) + "\$",
+                            (costs * sumLaborCosts).toStringAsFixed(2) + "\kr",
                           ),
                         ),
                       ],
@@ -283,7 +283,7 @@ class _NorwBudgetScreenState extends State<NorwBudgetScreen> {
                           ),
                         ),
                         DataCell(
-                          Text(sumMaterialCosts.toStringAsFixed(2) + "\$"),
+                          Text(sumMaterialCosts.toStringAsFixed(2) + "\kr"),
                         ),
                       ],
                     ),
@@ -302,7 +302,7 @@ class _NorwBudgetScreenState extends State<NorwBudgetScreen> {
                         DataCell(
                           Text((sumWasteRemoval + sumWasteRemoval * costs)
                                   .toStringAsFixed(2) +
-                              "\$"),
+                              "\kr"),
                         ),
                       ],
                     ),
@@ -320,7 +320,8 @@ class _NorwBudgetScreenState extends State<NorwBudgetScreen> {
                         ),
                         DataCell(
                           Text(
-                            (sumMaterialCosts * 0.05).toStringAsFixed(2) + "\$",
+                            (sumMaterialCosts * 0.05).toStringAsFixed(2) +
+                                "\kr",
                           ),
                         ),
                       ],
@@ -343,7 +344,7 @@ class _NorwBudgetScreenState extends State<NorwBudgetScreen> {
                                         sumMaterialCosts +
                                         (costs * sumLaborCosts))
                                     .toStringAsFixed(2) +
-                                "\$",
+                                "\kr",
                           ),
                         ),
                       ],
@@ -370,7 +371,7 @@ class _NorwBudgetScreenState extends State<NorwBudgetScreen> {
                                             sumMaterialCosts +
                                             (costs * sumLaborCosts)))
                                     .toStringAsFixed(2) +
-                                "\$",
+                                "\kr",
                           ),
                         ),
                       ],
@@ -394,7 +395,7 @@ class _NorwBudgetScreenState extends State<NorwBudgetScreen> {
                                             (costs * sumLaborCosts)) *
                                         1.25)
                                     .toStringAsFixed(2) +
-                                "\$",
+                                "\kr",
                           ),
                         ),
                       ],
