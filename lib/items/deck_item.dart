@@ -108,7 +108,7 @@ class DeckItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return PopScope(
       canPop: false,
-      onPopInvoked: (bool didPop) async {
+      onPopInvokedWithResult: (bool didPop, Object? result) async {
         if (didPop) {
           return;
         }
@@ -132,7 +132,7 @@ class DeckItem extends StatelessWidget {
           decoration: BoxDecoration(
             gradient: LinearGradient(
               colors: [
-                color.withOpacity(0.7),
+                color.withValues(alpha: 0.7),
                 color,
               ],
               begin: Alignment.topLeft,

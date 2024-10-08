@@ -400,7 +400,7 @@ class _NorwWindowsExteriorDoorItemsScreenState
                 widget.laborCost[i] =
                     double.parse(updatedLaborCost.toStringAsFixed(2));
               },
-              Theme.of(context).colorScheme.background,
+              Theme.of(context).colorScheme.surface,
               true,
               optionalWidth: 55,
             ),
@@ -410,7 +410,7 @@ class _NorwWindowsExteriorDoorItemsScreenState
               (value) {
                 widget.laborCost[i] = double.parse(value);
               },
-              Theme.of(context).colorScheme.background,
+              Theme.of(context).colorScheme.surface,
               true,
               optionalWidth: 65,
             ),
@@ -458,7 +458,7 @@ class _NorwWindowsExteriorDoorItemsScreenState
                 material2Controllers[i].text =
                     widget.material2[i].toStringAsFixed(2);
               },
-              Theme.of(context).colorScheme.background,
+              Theme.of(context).colorScheme.surface,
               true,
               optionalWidth: 75,
             ),
@@ -503,17 +503,17 @@ class _NorwWindowsExteriorDoorItemsScreenState
         dataCellDisplaySingle(
           "Total (eks. mva)",
           70,
-          Theme.of(context).colorScheme.background,
+          Theme.of(context).colorScheme.surface,
         ),
         dataCellDisplaySingle(
           "",
           0,
-          Theme.of(context).colorScheme.background,
+          Theme.of(context).colorScheme.surface,
         ),
         dataCellDisplaySingle(
           "",
           0,
-          Theme.of(context).colorScheme.background,
+          Theme.of(context).colorScheme.surface,
         ),
         DataCell(
           SizedBox(
@@ -533,13 +533,13 @@ class _NorwWindowsExteriorDoorItemsScreenState
         dataCellDisplaySingle(
           totalLaborHours2.toStringAsFixed(2),
           70,
-          Theme.of(context).colorScheme.background,
+          Theme.of(context).colorScheme.surface,
           optionalPadding: 8,
         ),
         dataCellDisplaySingle(
           totalLaborCost.toStringAsFixed(2),
           70,
-          Theme.of(context).colorScheme.background,
+          Theme.of(context).colorScheme.surface,
           optionalPadding: 8,
         ),
         DataCell(
@@ -558,7 +558,7 @@ class _NorwWindowsExteriorDoorItemsScreenState
           ),
         ),
         dataCellDisplaySingle(totalMaterial2.toStringAsFixed(2), 70,
-            Theme.of(context).colorScheme.background,
+            Theme.of(context).colorScheme.surface,
             optionalPadding: 8),
         dataCellDoSingle(
             TextEditingController(text: totalTotalPrice.toStringAsFixed(2)),
@@ -574,7 +574,7 @@ class _NorwWindowsExteriorDoorItemsScreenState
 
     return PopScope(
       canPop: false,
-      onPopInvoked: (bool didPop) async {
+      onPopInvokedWithResult: (bool didPop, Object? result) async {
         if (didPop) {
           return;
         }

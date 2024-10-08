@@ -389,12 +389,10 @@ class _NorwInnerDoorItemScreenScreenState
                   widget.calculationQuantity); // Calculate the labor cost
               widget.laborCost[i] =
                   double.parse(updatedLaborCost.toStringAsFixed(2));
-            }, Theme.of(context).colorScheme.background, true,
-                optionalWidth: 55),
+            }, Theme.of(context).colorScheme.surface, true, optionalWidth: 55),
             dataCellDo(laborCostControllers, i, (value) {
               widget.laborCost[i] = double.parse(value);
-            }, Theme.of(context).colorScheme.background, true,
-                optionalWidth: 65),
+            }, Theme.of(context).colorScheme.surface, true, optionalWidth: 65),
             dataCellDo(
               material1Controllers,
               i,
@@ -439,7 +437,7 @@ class _NorwInnerDoorItemScreenScreenState
                 material2Controllers[i].text =
                     widget.material2[i].toStringAsFixed(2);
               },
-              Theme.of(context).colorScheme.background,
+              Theme.of(context).colorScheme.surface,
               true,
               optionalWidth: 75,
             ),
@@ -484,17 +482,17 @@ class _NorwInnerDoorItemScreenScreenState
         dataCellDisplaySingle(
           "Total (eks. mva)",
           70,
-          Theme.of(context).colorScheme.background,
+          Theme.of(context).colorScheme.surface,
         ),
         dataCellDisplaySingle(
           "",
           0,
-          Theme.of(context).colorScheme.background,
+          Theme.of(context).colorScheme.surface,
         ),
         dataCellDisplaySingle(
           "",
           0,
-          Theme.of(context).colorScheme.background,
+          Theme.of(context).colorScheme.surface,
         ),
         DataCell(
           SizedBox(
@@ -514,13 +512,13 @@ class _NorwInnerDoorItemScreenScreenState
         dataCellDisplaySingle(
           totalLaborHours2.toStringAsFixed(2),
           70,
-          Theme.of(context).colorScheme.background,
+          Theme.of(context).colorScheme.surface,
           optionalPadding: 8,
         ),
         dataCellDisplaySingle(
           totalLaborCost.toStringAsFixed(2),
           60,
-          Theme.of(context).colorScheme.background,
+          Theme.of(context).colorScheme.surface,
           optionalPadding: 8,
         ),
         DataCell(
@@ -539,7 +537,7 @@ class _NorwInnerDoorItemScreenScreenState
           ),
         ),
         dataCellDisplaySingle(totalMaterial2.toStringAsFixed(2), 70,
-            Theme.of(context).colorScheme.background,
+            Theme.of(context).colorScheme.surface,
             optionalPadding: 8),
         dataCellDoSingle(
             TextEditingController(text: totalTotalPrice.toStringAsFixed(2)),
@@ -555,7 +553,7 @@ class _NorwInnerDoorItemScreenScreenState
 
     return PopScope(
       canPop: false,
-      onPopInvoked: (bool didPop) async {
+      onPopInvokedWithResult: (bool didPop, Object? result) async {
         if (didPop) {
           return;
         }

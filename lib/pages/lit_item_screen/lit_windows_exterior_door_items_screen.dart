@@ -401,7 +401,7 @@ class _LitWindowsExteriorDoorItemsScreenState
                 widget.laborCost[i] =
                     double.parse(updatedLaborCost.toStringAsFixed(2));
               },
-              Theme.of(context).colorScheme.background,
+              Theme.of(context).colorScheme.surface,
               true,
               optionalWidth: 55,
             ),
@@ -411,7 +411,7 @@ class _LitWindowsExteriorDoorItemsScreenState
               (value) {
                 widget.laborCost[i] = double.parse(value);
               },
-              Theme.of(context).colorScheme.background,
+              Theme.of(context).colorScheme.surface,
               true,
               optionalWidth: 65,
             ),
@@ -459,7 +459,7 @@ class _LitWindowsExteriorDoorItemsScreenState
                 material2Controllers[i].text =
                     widget.material2[i].toStringAsFixed(2);
               },
-              Theme.of(context).colorScheme.background,
+              Theme.of(context).colorScheme.surface,
               true,
               optionalWidth: 75,
             ),
@@ -504,17 +504,17 @@ class _LitWindowsExteriorDoorItemsScreenState
         dataCellDisplaySingle(
           "Iš viso (be PVM)",
           70,
-          Theme.of(context).colorScheme.background,
+          Theme.of(context).colorScheme.surface,
         ),
         dataCellDisplaySingle(
           "",
           0,
-          Theme.of(context).colorScheme.background,
+          Theme.of(context).colorScheme.surface,
         ),
         dataCellDisplaySingle(
           "",
           0,
-          Theme.of(context).colorScheme.background,
+          Theme.of(context).colorScheme.surface,
         ),
         DataCell(
           SizedBox(
@@ -534,13 +534,13 @@ class _LitWindowsExteriorDoorItemsScreenState
         dataCellDisplaySingle(
           totalLaborHours2.toStringAsFixed(2),
           70,
-          Theme.of(context).colorScheme.background,
+          Theme.of(context).colorScheme.surface,
           optionalPadding: 8,
         ),
         dataCellDisplaySingle(
           totalLaborCost.toStringAsFixed(2),
           70,
-          Theme.of(context).colorScheme.background,
+          Theme.of(context).colorScheme.surface,
           optionalPadding: 8,
         ),
         DataCell(
@@ -559,7 +559,7 @@ class _LitWindowsExteriorDoorItemsScreenState
           ),
         ),
         dataCellDisplaySingle(totalMaterial2.toStringAsFixed(2), 70,
-            Theme.of(context).colorScheme.background,
+            Theme.of(context).colorScheme.surface,
             optionalPadding: 8),
         dataCellDoSingle(
             TextEditingController(text: totalTotalPrice.toStringAsFixed(2)),
@@ -575,7 +575,7 @@ class _LitWindowsExteriorDoorItemsScreenState
 
     return PopScope(
       canPop: false,
-      onPopInvoked: (bool didPop) async {
+      onPopInvokedWithResult: (bool didPop, Object? result) async {
         if (didPop) {
           return;
         }

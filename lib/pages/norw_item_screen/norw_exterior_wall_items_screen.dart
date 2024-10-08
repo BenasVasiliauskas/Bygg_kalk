@@ -397,7 +397,7 @@ class _NorwExteriorWallItemsScreenState
                 widget.laborCost[i] =
                     double.parse(updatedLaborCost.toStringAsFixed(2));
               },
-              Theme.of(context).colorScheme.background,
+              Theme.of(context).colorScheme.surface,
               true,
               optionalWidth: 55,
             ),
@@ -407,7 +407,7 @@ class _NorwExteriorWallItemsScreenState
               (value) {
                 widget.laborCost[i] = double.parse(value);
               },
-              Theme.of(context).colorScheme.background,
+              Theme.of(context).colorScheme.surface,
               true,
               optionalWidth: 65,
             ),
@@ -455,7 +455,7 @@ class _NorwExteriorWallItemsScreenState
                 material2Controllers[i].text =
                     widget.material2[i].toStringAsFixed(2);
               },
-              Theme.of(context).colorScheme.background,
+              Theme.of(context).colorScheme.surface,
               true,
               optionalWidth: 75,
             ),
@@ -500,17 +500,17 @@ class _NorwExteriorWallItemsScreenState
         dataCellDisplaySingle(
           "Total (eks. mva)",
           70,
-          Theme.of(context).colorScheme.background,
+          Theme.of(context).colorScheme.surface,
         ),
         dataCellDisplaySingle(
           "",
           0,
-          Theme.of(context).colorScheme.background,
+          Theme.of(context).colorScheme.surface,
         ),
         dataCellDisplaySingle(
           "",
           0,
-          Theme.of(context).colorScheme.background,
+          Theme.of(context).colorScheme.surface,
         ),
         DataCell(
           SizedBox(
@@ -530,13 +530,13 @@ class _NorwExteriorWallItemsScreenState
         dataCellDisplaySingle(
           totalLaborHours2.toStringAsFixed(2),
           70,
-          Theme.of(context).colorScheme.background,
+          Theme.of(context).colorScheme.surface,
           optionalPadding: 8,
         ),
         dataCellDisplaySingle(
           totalLaborCost.toStringAsFixed(2),
           70,
-          Theme.of(context).colorScheme.background,
+          Theme.of(context).colorScheme.surface,
           optionalPadding: 8,
         ),
         DataCell(
@@ -555,7 +555,7 @@ class _NorwExteriorWallItemsScreenState
           ),
         ),
         dataCellDisplaySingle(totalMaterial2.toStringAsFixed(2), 70,
-            Theme.of(context).colorScheme.background,
+            Theme.of(context).colorScheme.surface,
             optionalPadding: 8),
         dataCellDoSingle(
             TextEditingController(text: totalTotalPrice.toStringAsFixed(2)),
@@ -571,7 +571,7 @@ class _NorwExteriorWallItemsScreenState
 
     return PopScope(
       canPop: false,
-      onPopInvoked: (bool didPop) async {
+      onPopInvokedWithResult: (bool didPop, Object? result) async {
         if (didPop) {
           return;
         }

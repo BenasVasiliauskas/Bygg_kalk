@@ -44,7 +44,7 @@ class _homePageState extends State<homePage> {
   Widget build(BuildContext context) {
     return PopScope(
       canPop: false,
-      onPopInvoked: (bool didPop) async {
+      onPopInvokedWithResult: (bool didPop, Object? result) async {
         if (didPop) {
           return;
         }
@@ -61,7 +61,7 @@ class _homePageState extends State<homePage> {
       },
       child: Scaffold(
         resizeToAvoidBottomInset: false,
-        backgroundColor: Theme.of(context).colorScheme.background,
+        backgroundColor: Theme.of(context).colorScheme.surface,
         drawer: CustomDrawer(),
         appBar: AppBar(
           centerTitle: true,
