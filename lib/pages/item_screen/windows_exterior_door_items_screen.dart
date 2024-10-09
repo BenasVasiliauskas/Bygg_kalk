@@ -465,7 +465,7 @@ class _WindowsExteriorDoorItemsScreen
       cells: [
         dataCellDisplaySingle(
           "Total sum",
-          70,
+          115,
           Theme.of(context).colorScheme.surface,
         ),
         dataCellDisplaySingle(
@@ -493,10 +493,10 @@ class _WindowsExteriorDoorItemsScreen
             ),
           ),
         ),
-        dataCellDisplaySingle(totalLaborHours2.toStringAsFixed(2), 70,
+        dataCellDisplaySingle(totalLaborHours2.toStringAsFixed(2), 80,
             Theme.of(context).colorScheme.surface,
             optionalPadding: 8),
-        dataCellDisplaySingle(totalLaborCost.toStringAsFixed(2), 60,
+        dataCellDisplaySingle(totalLaborCost.toStringAsFixed(2), 55,
             Theme.of(context).colorScheme.surface,
             optionalPadding: 8),
         DataCell(
@@ -526,8 +526,8 @@ class _WindowsExteriorDoorItemsScreen
       ],
     );
 
-// Add the "Total Sum" row to the rows list
-    rows.add(totalSumRow);
+    List<DataRow> totalSumRows = [totalSumRow];
+
     return PopScope(
       canPop: false,
       onPopInvokedWithResult: (bool didPop, Object? result) async {
@@ -551,15 +551,31 @@ class _WindowsExteriorDoorItemsScreen
           scrollDirection: Axis.vertical,
           child: Column(
             children: [
-              SingleChildScrollView(
-                scrollDirection: Axis.horizontal,
+              SizedBox(
+                width: MediaQuery.of(context).size.width,
                 child: DataTable(
+                  border: TableBorder.all(
+                    color: Theme.of(context).colorScheme.surface,
+                    width: 2,
+                  ),
                   horizontalMargin: 15,
                   columnSpacing: 0,
                   dataRowMaxHeight: double.infinity,
                   dataRowMinHeight: 60,
                   columns: columns, // Define your columns here
                   rows: rows,
+                ),
+              ),
+              SizedBox(
+                width: MediaQuery.of(context).size.width,
+                child: DataTable(
+                  horizontalMargin: 15,
+                  columnSpacing: 0,
+                  dataRowMaxHeight: double.infinity,
+                  dataRowMinHeight: 60,
+                  headingRowHeight: 0,
+                  columns: columns, // Define your columns here
+                  rows: totalSumRows,
                 ),
               ),
             ],
