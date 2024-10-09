@@ -589,8 +589,6 @@ class _SupportSystemItemScreenState extends State<SupportSystemItemScreen> {
                   dataRowMaxHeight: double.infinity,
                   dataRowMinHeight: 60,
                   headingRowHeight: 0,
-                  dataRowColor: WidgetStatePropertyAll(
-                      const Color.fromARGB(60, 175, 135, 135)),
                   columns: columns,
                   rows: totalSumRows,
                 ),
