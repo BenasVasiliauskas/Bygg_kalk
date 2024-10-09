@@ -130,27 +130,571 @@ Map<String, double> innerWallBudgetSum = {
 };
 /////////////////////////////////////////////////////////////////////////////////////
 Map<String, double> outerWallHours = {
-  "Bindingsverk av tre 48x198, 50mm påforing, stående dobbelfals, gips": 0,
-  "Wooden timber frame, post-insulation. new panel": 0,
-  "Riving av dør i yttervegg komplett": 0,
+  "Svill tilbehør": 0,
+  "Hjørnekasser pø fasader to sider 22x98mm.": 0,
+  "Bindingsverk av tre 48x198mm.,Tømmermannspanel 19x148mm.,dobbel vindtetting, 50mm. pøforing, 1 lag gips.":
+      0,
+  "Bindingsverk av tre 48x198mm.,Tømmermannspanel 19x148mm.,dobbel vindtetting, 50mm. pøforing, MDF skyggepanel 11mm.":
+      0,
+  "Bindingsverk av tre 48x198mm.,Tømmermannspanel 19x148mm.,dobbel vindtetting, 50mm. pøforing, Walls2Paint 12mm .":
+      0,
+  "Bindingsverk av tre 48x198mm.,Tømmermannspanel 19x148mm.,dobbel vindtetting, 50mm. pøforing, skyggepanel 14x120mm.":
+      0,
+  "Bindingsverk av tre 48x198mm.,støende dobbelfals panel 19x148mm., 50mm. pøforing, 1 lag gips.":
+      0,
+  "Bindingsverk av tre 48x198mm.,støende dobbelfals panel 19x148mm., 50mm. pøforing, trefiberplater 11mm.":
+      0,
+  "Bindingsverk av tre 48x198mm.,støende dobbelfals panel 19x148mm., 50mm. pøforing, sponplater Walls2Paint 12mm.":
+      0,
+  "Bindingsverk av tre 48x198mm.,støende dobbelfals panel 19x148mm., 50mm. pøforing, skyggepanel 14x120mm.":
+      0,
+  "Bindingsverk av tre 48x198mm.,Tømmermannspanel 19x148mm., 50mm. pøforing, 1 lag gips.":
+      0,
+  "Bindingsverk av tre 48x198mm.,Tømmermannspanel 19x148mm., 50mm. pøforing, Walls2Paint.":
+      0,
+  "Bindingsverk av tre 48x198mm., Tømmermannspanel 19x148mm., 50mm. pøforing, fermacell gipsplate.":
+      0,
+  "Bindingsverk av tre 48x198mm., Tømmermannspanel 19x148mm., 50mm. pøforing, skyggepanel 14x120mm. hvitmalt.":
+      0,
+  "Precut bindingsverk av heltre 48x198mm., panel 19x148mm. støende, Gu gipsplate, 50mm. pøforing, 1 lag gips.":
+      0,
+  "Precut bindingsverk av heltre 48x198mm., panel 19x148mm. støende, Vindsperre , 50mm. pøforing, 1 lag gips.":
+      0,
+  "Precut bindingsverk av heltre 48x198mm., panel 19x148mm. støende, Trefiber asfaltplate, 50mm. pøforing, 1 lag gips.":
+      0,
+  "Precut bindingsverk av heltre 48x198mm., panel 19x148mm. støende, Brann gipsplate 15mm, 50mm. pøforing,1 lag gips.":
+      0,
+  "Precut bindingsverk av heltre 48x198mm., dobbelfals panel 19x148mm. liggende,Gu gipsplate, 50mm. pøforing,1 lag gips.":
+      0,
+  "Precut bindingsverk av heltre 48x198mm., dobbelfals panel 19x148mm. liggende,Vindsperre, 50mm. pøforing ,1 lag gips.":
+      0,
+  "Precut bindingsverk av heltre 48x198mm., dobbelfals panel 19x148mm. liggende, Trefiber asfaltplate, 50mm. pøforing ,1 lag gips.":
+      0,
+  "Precut bindingsverk av heltre 48x198mm., dobbelfals panel 19x148mm. liggende, Brann gipsplate 15mm, 50mm. pøforing,1 lag gips.":
+      0,
+  "Bindingsverk av heltre 48x198mm., dobbelfals panel 19x148mm. liggende,Gu gipsplate,uten pøforing,1 lag gips.":
+      0,
+  "Bindingsverk av heltre 48x198mm., dobbelfals panel 19x148mm. liggende,Gu gipsplate,uten pøforing, skyggepanel 14x120 liggende.":
+      0,
+  "Bindingsverk av heltre 48x198mm., dobbelfals panel 19x148mm. liggende,Gu gipsplate,uten pøforing, sponplate  Walls2Paint 12mm.":
+      0,
+  "Bindingsverk av heltre 48x198mm., dobbelfals panel 19x148mm. liggende,Gu gipsplate,uten pøforing, Skyggepanel 14x120mm. støende.":
+      0,
+  "Bindingsverk av tre 48x198mm., dobbelfals panel 19x148mm. liggende,dobbel vindtetting, 50mm. pøforing , 1 lag gips.":
+      0,
+  "Bindingsverk av tre 48x198mm., dobbelfals panel 19x148mm. liggende,dobbel vindtetting, 50mm. pøforing, MDF skygge 11mm.":
+      0,
+  "Bindingsverk av tre 48x198mm., dobbelfals panel 19x148mm. liggende,dobbel vindtetting, 50mm. pøforing, Walls2Paint, 12mm.":
+      0,
+  "Bindingsverk av tre 48x198mm., dobbelfals panel 19x148mm. liggende,dobbel vindtetting, 50mm. pøforing, fermacell gipsplate.":
+      0,
+  "Precut bindingsverk av I- profil 47x200 mm., dobbelfals panel 21x120mm. liggende,Gu gipsplate, 50mm. pøforing,1 lag gips.":
+      0,
+  "Precut bindingsverk av I- profil 47x200 mm., dobbelfals panel 21x120mm. liggende,Trefiber asfaltplate, 50mm. pøforing,1 lag gips.":
+      0,
+  "Precut bindingsverk av I- profil 47x200 mm., dobbelfals panel 21x120mm. støende,Gu gipsplate, 50mm. pøforing,1 lag gips.":
+      0,
+  "Precut bindingsverk av I- profil 47x200 mm., dobbelfals panel 21x120mm. støende,Trefiber asfaltplate, 50mm. pøforing,1 lag gips.":
+      0,
+  "Bindingsverk av I-profil 45x200mm., Fasadeplate Aqua, uten pøforing, Walls2Paint.":
+      0,
+  "Bindingsverk av stølprofil 200mm.,Profilerte fasadestølplater 20-105 PL70, pøforing utvendig, Trefiber asfaltplate, 1 lag gips.":
+      0,
+  "Bindingsverk av I- profil 45x250mm., Villmarkskledning 25x225mm. liggende, Perlestaffpanel furu 14x120mm. malt.":
+      0,
+  "Bindingsverk av I- profil 45x250mm., Villmarkskledning 25x225mm. liggende, Perlestaffpanel furu 14x120mm., støende.":
+      0,
+  "Bindingsverk av I- profil 45x250mm., Villmarkskledning 25x225mm. liggende, Skyggepanel 14x120mm., liggende.":
+      0,
+  "Bindingsverk av I- profil 45x250mm., Villmarkskledning 25x225mm. liggende, Skyggepanel 14x120mm., støende.":
+      0,
+  " Bindingsverk av I- profil 45x250mm.,Villmarkskledning 25x225mm. støende, Villmarkpanel 25x225mm., støende innvendig.":
+      0,
+  "Bindingsverk av I- profil 45x250mm.,Villmarkskledning 25x225mm. støende, Perlestaffpanel furu 14x120mm., støende.":
+      0,
+  "Bindingsverk av I- profil 45x250mm.,Villmarkskledning 25x225mm. støende, Skyggepanel 14x120mm., støende.":
+      0,
+  "Bindingsverk av tre 48x198mm.,fasadeplate 8mm. \"Steniplater Nature\": 0, vindsperre,1 lag gips.":
+      0,
+  "Bindingsverk av I- profil 45x250mm., fasadeplate 8mm. \"Steniplater Nature\": 0, vindsperre,1 lag gips.":
+      0,
+  "Bindingsverk av tre 48x198mm.,fasadeplate 8mm. \"Steniplater Nature\": 0, vindsperre,trefiberplater 11mm.":
+      0,
+  "Bindingsverk av I- profil 45x250mm.,fasadeplate 8mm. \"Steniplater Nature\": 0, vindsperre,trefiberplater 11mm.":
+      0,
+  "Bindingsverk av tre 48x198mm.,fasadeplate 8mm. \"Steniplater Nature\": 0, vindsperre,Walls2Paint 12mm.":
+      0,
+  "Bindingsverk av I- profil 45x250mm.,fasadeplate 8mm. \"Steniplater Nature\": 0, vindsperre,Walls2Paint 12mm.":
+      0,
+  "Bindingsverk av tre 48x198mm.,fasadeplate 8mm. \"Steniplater Nature\": 0, vindsperre,Skyggepanel 14x120mm., liggende.":
+      0,
+  "Bindingsverk av I- profil 45x250mm.,fasadeplate 8mm. \"Steniplater Nature\": 0, vindsperre,Skyggepanel 14x120mm., liggende.":
+      0,
+  "Bindingsverk av I-profil 45x250mm., dobbelfals panel 19x148mm. liggende,vindsperre, 1 lag gips.":
+      0,
+  "Bindingsverk av I-profil 45x250mm., dobbelfals panel 19x148mm. liggende,vindsperre,Skyggepanel 14x120mm., liggende.":
+      0,
+  "Bindingsverk av I-profil 45x250mm., dobbelfals panel 19x148mm. liggende,vindsperre, MDF skygge 11mm.":
+      0,
+  "Bindingsverk av I-profil 45x250mm., dobbelfals panel 19x148mm. liggende,vindsperre,sponplater Walls2Paint 12mm.":
+      0,
+  "Bindingsverk av I-profil 45x200mm.,støende dobbelfals Royal panel 19x148mm., 50mm. pøforing, 1 lag gips.":
+      0,
+  "Bindingsverk av I-profil 45x200mm.,støende dobbelfals Royal panel 19x148mm., 50mm. pøforing,Skyggepanel 14x120mm., liggende.":
+      0,
+  "Bindingsverk av I-profil 45x200mm.,støende dobbelfals Royal panel 19x148mm., 50mm. pøforing, MDF skygge 11mm.":
+      0,
+  "Bindingsverk av I-profil 45x200mm.,støende dobbelfals Royal panel 19x148mm., 50mm. pøforing, sponplater Walls2Paint 12mm.":
+      0,
+  "Bindingsverk av I-profil 45x250mm., Tømmermannspanel 19x148mm., 1 lag gips.":
+      0,
+  "Bindingsverk av I-profil 45x250mm., Tømmermannspanel 19x148mm.,Skyggepanel 14x120mm.,liggende.":
+      0,
+  "Bindingsverk av I-profil 45x250mm., Tømmermannspanel 19x148mm., MDF skygge 11mm.":
+      0,
+  "Bindingsverk av I-profil 45x250mm., Tømmermannspanel 19x148mm., sponplate  Walls2Paint 12mm.":
+      0,
+  "Bindingsverk av I-profil 45x200mm.,støende dobbelfals Royal panel 19x148mm.,trefiberisolasjon, 50mm. pøforing, fermacell gipsplate.":
+      0,
+  "Bindingsverk av I-profil 45x200, liggende dobbelfals Royal panel 19x123mm.,trefiberisolasjon, 50mm. pøforing, fermacell gipsplate.":
+      0,
+  "Bindingsverk av tre 48x198+48mm.,liggende impregnert Kebony panel 21x148mm, trefiberisolasjon, massivtre plater 88mm.":
+      0,
+  "Bindingsverk av tre 48x198+48mm.,liggende impregnert Kebony panel 21x148mm, trefiberisolasjon, massivtre plater 118mm.":
+      0,
+  "Bindingsverk av I-profil 45x200mm.,støende dobbelfals Royal panel 19x148mm.,trefiberisolasjon, 50mm. pøforing, spilevegg eik 20x45mm.":
+      0,
+  "Bindingsverk av I-profil 45x200mm.,støende dobbelfals Royal panel 19x148mm.,trefiberisolasjon, 50mm. pøforing, spilevegg furu 20x45mm.":
+      0,
+  "Bindingsverk av tre 48x98mm.,Tømmermannspanel 19x148mm.,uisolert.": 0,
+  "Bindingsverk av tre 48x98mm.,dobbelfals panel 19x148mm. liggende,uisolert.":
+      0,
 };
 
 Map<String, double> outerWallLaborCosts = {
-  "Bindingsverk av tre 48x198, 50mm påforing, stående dobbelfals, gips": 0,
-  "Wooden timber frame, post-insulation. new panel": 0,
-  "Riving av dør i yttervegg komplett": 0,
+  "Svill tilbehør": 0,
+  "Hjørnekasser pø fasader to sider 22x98mm.": 0,
+  "Bindingsverk av tre 48x198mm.,Tømmermannspanel 19x148mm.,dobbel vindtetting, 50mm. pøforing, 1 lag gips.":
+      0,
+  "Bindingsverk av tre 48x198mm.,Tømmermannspanel 19x148mm.,dobbel vindtetting, 50mm. pøforing, MDF skyggepanel 11mm.":
+      0,
+  "Bindingsverk av tre 48x198mm.,Tømmermannspanel 19x148mm.,dobbel vindtetting, 50mm. pøforing, Walls2Paint 12mm .":
+      0,
+  "Bindingsverk av tre 48x198mm.,Tømmermannspanel 19x148mm.,dobbel vindtetting, 50mm. pøforing, skyggepanel 14x120mm.":
+      0,
+  "Bindingsverk av tre 48x198mm.,støende dobbelfals panel 19x148mm., 50mm. pøforing, 1 lag gips.":
+      0,
+  "Bindingsverk av tre 48x198mm.,støende dobbelfals panel 19x148mm., 50mm. pøforing, trefiberplater 11mm.":
+      0,
+  "Bindingsverk av tre 48x198mm.,støende dobbelfals panel 19x148mm., 50mm. pøforing, sponplater Walls2Paint 12mm.":
+      0,
+  "Bindingsverk av tre 48x198mm.,støende dobbelfals panel 19x148mm., 50mm. pøforing, skyggepanel 14x120mm.":
+      0,
+  "Bindingsverk av tre 48x198mm.,Tømmermannspanel 19x148mm., 50mm. pøforing, 1 lag gips.":
+      0,
+  "Bindingsverk av tre 48x198mm.,Tømmermannspanel 19x148mm., 50mm. pøforing, Walls2Paint.":
+      0,
+  "Bindingsverk av tre 48x198mm., Tømmermannspanel 19x148mm., 50mm. pøforing, fermacell gipsplate.":
+      0,
+  "Bindingsverk av tre 48x198mm., Tømmermannspanel 19x148mm., 50mm. pøforing, skyggepanel 14x120mm. hvitmalt.":
+      0,
+  "Precut bindingsverk av heltre 48x198mm., panel 19x148mm. støende, Gu gipsplate, 50mm. pøforing, 1 lag gips.":
+      0,
+  "Precut bindingsverk av heltre 48x198mm., panel 19x148mm. støende, Vindsperre , 50mm. pøforing, 1 lag gips.":
+      0,
+  "Precut bindingsverk av heltre 48x198mm., panel 19x148mm. støende, Trefiber asfaltplate, 50mm. pøforing, 1 lag gips.":
+      0,
+  "Precut bindingsverk av heltre 48x198mm., panel 19x148mm. støende, Brann gipsplate 15mm, 50mm. pøforing,1 lag gips.":
+      0,
+  "Precut bindingsverk av heltre 48x198mm., dobbelfals panel 19x148mm. liggende,Gu gipsplate, 50mm. pøforing,1 lag gips.":
+      0,
+  "Precut bindingsverk av heltre 48x198mm., dobbelfals panel 19x148mm. liggende,Vindsperre, 50mm. pøforing ,1 lag gips.":
+      0,
+  "Precut bindingsverk av heltre 48x198mm., dobbelfals panel 19x148mm. liggende, Trefiber asfaltplate, 50mm. pøforing ,1 lag gips.":
+      0,
+  "Precut bindingsverk av heltre 48x198mm., dobbelfals panel 19x148mm. liggende, Brann gipsplate 15mm, 50mm. pøforing,1 lag gips.":
+      0,
+  "Bindingsverk av heltre 48x198mm., dobbelfals panel 19x148mm. liggende,Gu gipsplate,uten pøforing,1 lag gips.":
+      0,
+  "Bindingsverk av heltre 48x198mm., dobbelfals panel 19x148mm. liggende,Gu gipsplate,uten pøforing, skyggepanel 14x120 liggende.":
+      0,
+  "Bindingsverk av heltre 48x198mm., dobbelfals panel 19x148mm. liggende,Gu gipsplate,uten pøforing, sponplate  Walls2Paint 12mm.":
+      0,
+  "Bindingsverk av heltre 48x198mm., dobbelfals panel 19x148mm. liggende,Gu gipsplate,uten pøforing, Skyggepanel 14x120mm. støende.":
+      0,
+  "Bindingsverk av tre 48x198mm., dobbelfals panel 19x148mm. liggende,dobbel vindtetting, 50mm. pøforing , 1 lag gips.":
+      0,
+  "Bindingsverk av tre 48x198mm., dobbelfals panel 19x148mm. liggende,dobbel vindtetting, 50mm. pøforing, MDF skygge 11mm.":
+      0,
+  "Bindingsverk av tre 48x198mm., dobbelfals panel 19x148mm. liggende,dobbel vindtetting, 50mm. pøforing, Walls2Paint, 12mm.":
+      0,
+  "Bindingsverk av tre 48x198mm., dobbelfals panel 19x148mm. liggende,dobbel vindtetting, 50mm. pøforing, fermacell gipsplate.":
+      0,
+  "Precut bindingsverk av I- profil 47x200 mm., dobbelfals panel 21x120mm. liggende,Gu gipsplate, 50mm. pøforing,1 lag gips.":
+      0,
+  "Precut bindingsverk av I- profil 47x200 mm., dobbelfals panel 21x120mm. liggende,Trefiber asfaltplate, 50mm. pøforing,1 lag gips.":
+      0,
+  "Precut bindingsverk av I- profil 47x200 mm., dobbelfals panel 21x120mm. støende,Gu gipsplate, 50mm. pøforing,1 lag gips.":
+      0,
+  "Precut bindingsverk av I- profil 47x200 mm., dobbelfals panel 21x120mm. støende,Trefiber asfaltplate, 50mm. pøforing,1 lag gips.":
+      0,
+  "Bindingsverk av I-profil 45x200mm., Fasadeplate Aqua, uten pøforing, Walls2Paint.":
+      0,
+  "Bindingsverk av stølprofil 200mm.,Profilerte fasadestølplater 20-105 PL70, pøforing utvendig, Trefiber asfaltplate, 1 lag gips.":
+      0,
+  "Bindingsverk av I- profil 45x250mm., Villmarkskledning 25x225mm. liggende, Perlestaffpanel furu 14x120mm. malt.":
+      0,
+  "Bindingsverk av I- profil 45x250mm., Villmarkskledning 25x225mm. liggende, Perlestaffpanel furu 14x120mm., støende.":
+      0,
+  "Bindingsverk av I- profil 45x250mm., Villmarkskledning 25x225mm. liggende, Skyggepanel 14x120mm., liggende.":
+      0,
+  "Bindingsverk av I- profil 45x250mm., Villmarkskledning 25x225mm. liggende, Skyggepanel 14x120mm., støende.":
+      0,
+  " Bindingsverk av I- profil 45x250mm.,Villmarkskledning 25x225mm. støende, Villmarkpanel 25x225mm., støende innvendig.":
+      0,
+  "Bindingsverk av I- profil 45x250mm.,Villmarkskledning 25x225mm. støende, Perlestaffpanel furu 14x120mm., støende.":
+      0,
+  "Bindingsverk av I- profil 45x250mm.,Villmarkskledning 25x225mm. støende, Skyggepanel 14x120mm., støende.":
+      0,
+  "Bindingsverk av tre 48x198mm.,fasadeplate 8mm. \"Steniplater Nature\": 0, vindsperre,1 lag gips.":
+      0,
+  "Bindingsverk av I- profil 45x250mm., fasadeplate 8mm. \"Steniplater Nature\": 0, vindsperre,1 lag gips.":
+      0,
+  "Bindingsverk av tre 48x198mm.,fasadeplate 8mm. \"Steniplater Nature\": 0, vindsperre,trefiberplater 11mm.":
+      0,
+  "Bindingsverk av I- profil 45x250mm.,fasadeplate 8mm. \"Steniplater Nature\": 0, vindsperre,trefiberplater 11mm.":
+      0,
+  "Bindingsverk av tre 48x198mm.,fasadeplate 8mm. \"Steniplater Nature\": 0, vindsperre,Walls2Paint 12mm.":
+      0,
+  "Bindingsverk av I- profil 45x250mm.,fasadeplate 8mm. \"Steniplater Nature\": 0, vindsperre,Walls2Paint 12mm.":
+      0,
+  "Bindingsverk av tre 48x198mm.,fasadeplate 8mm. \"Steniplater Nature\": 0, vindsperre,Skyggepanel 14x120mm., liggende.":
+      0,
+  "Bindingsverk av I- profil 45x250mm.,fasadeplate 8mm. \"Steniplater Nature\": 0, vindsperre,Skyggepanel 14x120mm., liggende.":
+      0,
+  "Bindingsverk av I-profil 45x250mm., dobbelfals panel 19x148mm. liggende,vindsperre, 1 lag gips.":
+      0,
+  "Bindingsverk av I-profil 45x250mm., dobbelfals panel 19x148mm. liggende,vindsperre,Skyggepanel 14x120mm., liggende.":
+      0,
+  "Bindingsverk av I-profil 45x250mm., dobbelfals panel 19x148mm. liggende,vindsperre, MDF skygge 11mm.":
+      0,
+  "Bindingsverk av I-profil 45x250mm., dobbelfals panel 19x148mm. liggende,vindsperre,sponplater Walls2Paint 12mm.":
+      0,
+  "Bindingsverk av I-profil 45x200mm.,støende dobbelfals Royal panel 19x148mm., 50mm. pøforing, 1 lag gips.":
+      0,
+  "Bindingsverk av I-profil 45x200mm.,støende dobbelfals Royal panel 19x148mm., 50mm. pøforing,Skyggepanel 14x120mm., liggende.":
+      0,
+  "Bindingsverk av I-profil 45x200mm.,støende dobbelfals Royal panel 19x148mm., 50mm. pøforing, MDF skygge 11mm.":
+      0,
+  "Bindingsverk av I-profil 45x200mm.,støende dobbelfals Royal panel 19x148mm., 50mm. pøforing, sponplater Walls2Paint 12mm.":
+      0,
+  "Bindingsverk av I-profil 45x250mm., Tømmermannspanel 19x148mm., 1 lag gips.":
+      0,
+  "Bindingsverk av I-profil 45x250mm., Tømmermannspanel 19x148mm.,Skyggepanel 14x120mm.,liggende.":
+      0,
+  "Bindingsverk av I-profil 45x250mm., Tømmermannspanel 19x148mm., MDF skygge 11mm.":
+      0,
+  "Bindingsverk av I-profil 45x250mm., Tømmermannspanel 19x148mm., sponplate  Walls2Paint 12mm.":
+      0,
+  "Bindingsverk av I-profil 45x200mm.,støende dobbelfals Royal panel 19x148mm.,trefiberisolasjon, 50mm. pøforing, fermacell gipsplate.":
+      0,
+  "Bindingsverk av I-profil 45x200, liggende dobbelfals Royal panel 19x123mm.,trefiberisolasjon, 50mm. pøforing, fermacell gipsplate.":
+      0,
+  "Bindingsverk av tre 48x198+48mm.,liggende impregnert Kebony panel 21x148mm, trefiberisolasjon, massivtre plater 88mm.":
+      0,
+  "Bindingsverk av tre 48x198+48mm.,liggende impregnert Kebony panel 21x148mm, trefiberisolasjon, massivtre plater 118mm.":
+      0,
+  "Bindingsverk av I-profil 45x200mm.,støende dobbelfals Royal panel 19x148mm.,trefiberisolasjon, 50mm. pøforing, spilevegg eik 20x45mm.":
+      0,
+  "Bindingsverk av I-profil 45x200mm.,støende dobbelfals Royal panel 19x148mm.,trefiberisolasjon, 50mm. pøforing, spilevegg furu 20x45mm.":
+      0,
+  "Bindingsverk av tre 48x98mm.,Tømmermannspanel 19x148mm.,uisolert.": 0,
+  "Bindingsverk av tre 48x98mm.,dobbelfals panel 19x148mm. liggende,uisolert.":
+      0,
 };
 
 Map<String, double> outerWallMaterialCosts = {
-  "Bindingsverk av tre 48x198, 50mm påforing, stående dobbelfals, gips": 0,
-  "Wooden timber frame, post-insulation. new panel": 0,
-  "Riving av dør i yttervegg komplett": 0,
+  "Svill tilbehør": 0,
+  "Hjørnekasser pø fasader to sider 22x98mm.": 0,
+  "Bindingsverk av tre 48x198mm.,Tømmermannspanel 19x148mm.,dobbel vindtetting, 50mm. pøforing, 1 lag gips.":
+      0,
+  "Bindingsverk av tre 48x198mm.,Tømmermannspanel 19x148mm.,dobbel vindtetting, 50mm. pøforing, MDF skyggepanel 11mm.":
+      0,
+  "Bindingsverk av tre 48x198mm.,Tømmermannspanel 19x148mm.,dobbel vindtetting, 50mm. pøforing, Walls2Paint 12mm .":
+      0,
+  "Bindingsverk av tre 48x198mm.,Tømmermannspanel 19x148mm.,dobbel vindtetting, 50mm. pøforing, skyggepanel 14x120mm.":
+      0,
+  "Bindingsverk av tre 48x198mm.,støende dobbelfals panel 19x148mm., 50mm. pøforing, 1 lag gips.":
+      0,
+  "Bindingsverk av tre 48x198mm.,støende dobbelfals panel 19x148mm., 50mm. pøforing, trefiberplater 11mm.":
+      0,
+  "Bindingsverk av tre 48x198mm.,støende dobbelfals panel 19x148mm., 50mm. pøforing, sponplater Walls2Paint 12mm.":
+      0,
+  "Bindingsverk av tre 48x198mm.,støende dobbelfals panel 19x148mm., 50mm. pøforing, skyggepanel 14x120mm.":
+      0,
+  "Bindingsverk av tre 48x198mm.,Tømmermannspanel 19x148mm., 50mm. pøforing, 1 lag gips.":
+      0,
+  "Bindingsverk av tre 48x198mm.,Tømmermannspanel 19x148mm., 50mm. pøforing, Walls2Paint.":
+      0,
+  "Bindingsverk av tre 48x198mm., Tømmermannspanel 19x148mm., 50mm. pøforing, fermacell gipsplate.":
+      0,
+  "Bindingsverk av tre 48x198mm., Tømmermannspanel 19x148mm., 50mm. pøforing, skyggepanel 14x120mm. hvitmalt.":
+      0,
+  "Precut bindingsverk av heltre 48x198mm., panel 19x148mm. støende, Gu gipsplate, 50mm. pøforing, 1 lag gips.":
+      0,
+  "Precut bindingsverk av heltre 48x198mm., panel 19x148mm. støende, Vindsperre , 50mm. pøforing, 1 lag gips.":
+      0,
+  "Precut bindingsverk av heltre 48x198mm., panel 19x148mm. støende, Trefiber asfaltplate, 50mm. pøforing, 1 lag gips.":
+      0,
+  "Precut bindingsverk av heltre 48x198mm., panel 19x148mm. støende, Brann gipsplate 15mm, 50mm. pøforing,1 lag gips.":
+      0,
+  "Precut bindingsverk av heltre 48x198mm., dobbelfals panel 19x148mm. liggende,Gu gipsplate, 50mm. pøforing,1 lag gips.":
+      0,
+  "Precut bindingsverk av heltre 48x198mm., dobbelfals panel 19x148mm. liggende,Vindsperre, 50mm. pøforing ,1 lag gips.":
+      0,
+  "Precut bindingsverk av heltre 48x198mm., dobbelfals panel 19x148mm. liggende, Trefiber asfaltplate, 50mm. pøforing ,1 lag gips.":
+      0,
+  "Precut bindingsverk av heltre 48x198mm., dobbelfals panel 19x148mm. liggende, Brann gipsplate 15mm, 50mm. pøforing,1 lag gips.":
+      0,
+  "Bindingsverk av heltre 48x198mm., dobbelfals panel 19x148mm. liggende,Gu gipsplate,uten pøforing,1 lag gips.":
+      0,
+  "Bindingsverk av heltre 48x198mm., dobbelfals panel 19x148mm. liggende,Gu gipsplate,uten pøforing, skyggepanel 14x120 liggende.":
+      0,
+  "Bindingsverk av heltre 48x198mm., dobbelfals panel 19x148mm. liggende,Gu gipsplate,uten pøforing, sponplate  Walls2Paint 12mm.":
+      0,
+  "Bindingsverk av heltre 48x198mm., dobbelfals panel 19x148mm. liggende,Gu gipsplate,uten pøforing, Skyggepanel 14x120mm. støende.":
+      0,
+  "Bindingsverk av tre 48x198mm., dobbelfals panel 19x148mm. liggende,dobbel vindtetting, 50mm. pøforing , 1 lag gips.":
+      0,
+  "Bindingsverk av tre 48x198mm., dobbelfals panel 19x148mm. liggende,dobbel vindtetting, 50mm. pøforing, MDF skygge 11mm.":
+      0,
+  "Bindingsverk av tre 48x198mm., dobbelfals panel 19x148mm. liggende,dobbel vindtetting, 50mm. pøforing, Walls2Paint, 12mm.":
+      0,
+  "Bindingsverk av tre 48x198mm., dobbelfals panel 19x148mm. liggende,dobbel vindtetting, 50mm. pøforing, fermacell gipsplate.":
+      0,
+  "Precut bindingsverk av I- profil 47x200 mm., dobbelfals panel 21x120mm. liggende,Gu gipsplate, 50mm. pøforing,1 lag gips.":
+      0,
+  "Precut bindingsverk av I- profil 47x200 mm., dobbelfals panel 21x120mm. liggende,Trefiber asfaltplate, 50mm. pøforing,1 lag gips.":
+      0,
+  "Precut bindingsverk av I- profil 47x200 mm., dobbelfals panel 21x120mm. støende,Gu gipsplate, 50mm. pøforing,1 lag gips.":
+      0,
+  "Precut bindingsverk av I- profil 47x200 mm., dobbelfals panel 21x120mm. støende,Trefiber asfaltplate, 50mm. pøforing,1 lag gips.":
+      0,
+  "Bindingsverk av I-profil 45x200mm., Fasadeplate Aqua, uten pøforing, Walls2Paint.":
+      0,
+  "Bindingsverk av stølprofil 200mm.,Profilerte fasadestølplater 20-105 PL70, pøforing utvendig, Trefiber asfaltplate, 1 lag gips.":
+      0,
+  "Bindingsverk av I- profil 45x250mm., Villmarkskledning 25x225mm. liggende, Perlestaffpanel furu 14x120mm. malt.":
+      0,
+  "Bindingsverk av I- profil 45x250mm., Villmarkskledning 25x225mm. liggende, Perlestaffpanel furu 14x120mm., støende.":
+      0,
+  "Bindingsverk av I- profil 45x250mm., Villmarkskledning 25x225mm. liggende, Skyggepanel 14x120mm., liggende.":
+      0,
+  "Bindingsverk av I- profil 45x250mm., Villmarkskledning 25x225mm. liggende, Skyggepanel 14x120mm., støende.":
+      0,
+  " Bindingsverk av I- profil 45x250mm.,Villmarkskledning 25x225mm. støende, Villmarkpanel 25x225mm., støende innvendig.":
+      0,
+  "Bindingsverk av I- profil 45x250mm.,Villmarkskledning 25x225mm. støende, Perlestaffpanel furu 14x120mm., støende.":
+      0,
+  "Bindingsverk av I- profil 45x250mm.,Villmarkskledning 25x225mm. støende, Skyggepanel 14x120mm., støende.":
+      0,
+  "Bindingsverk av tre 48x198mm.,fasadeplate 8mm. \"Steniplater Nature\": 0, vindsperre,1 lag gips.":
+      0,
+  "Bindingsverk av I- profil 45x250mm., fasadeplate 8mm. \"Steniplater Nature\": 0, vindsperre,1 lag gips.":
+      0,
+  "Bindingsverk av tre 48x198mm.,fasadeplate 8mm. \"Steniplater Nature\": 0, vindsperre,trefiberplater 11mm.":
+      0,
+  "Bindingsverk av I- profil 45x250mm.,fasadeplate 8mm. \"Steniplater Nature\": 0, vindsperre,trefiberplater 11mm.":
+      0,
+  "Bindingsverk av tre 48x198mm.,fasadeplate 8mm. \"Steniplater Nature\": 0, vindsperre,Walls2Paint 12mm.":
+      0,
+  "Bindingsverk av I- profil 45x250mm.,fasadeplate 8mm. \"Steniplater Nature\": 0, vindsperre,Walls2Paint 12mm.":
+      0,
+  "Bindingsverk av tre 48x198mm.,fasadeplate 8mm. \"Steniplater Nature\": 0, vindsperre,Skyggepanel 14x120mm., liggende.":
+      0,
+  "Bindingsverk av I- profil 45x250mm.,fasadeplate 8mm. \"Steniplater Nature\": 0, vindsperre,Skyggepanel 14x120mm., liggende.":
+      0,
+  "Bindingsverk av I-profil 45x250mm., dobbelfals panel 19x148mm. liggende,vindsperre, 1 lag gips.":
+      0,
+  "Bindingsverk av I-profil 45x250mm., dobbelfals panel 19x148mm. liggende,vindsperre,Skyggepanel 14x120mm., liggende.":
+      0,
+  "Bindingsverk av I-profil 45x250mm., dobbelfals panel 19x148mm. liggende,vindsperre, MDF skygge 11mm.":
+      0,
+  "Bindingsverk av I-profil 45x250mm., dobbelfals panel 19x148mm. liggende,vindsperre,sponplater Walls2Paint 12mm.":
+      0,
+  "Bindingsverk av I-profil 45x200mm.,støende dobbelfals Royal panel 19x148mm., 50mm. pøforing, 1 lag gips.":
+      0,
+  "Bindingsverk av I-profil 45x200mm.,støende dobbelfals Royal panel 19x148mm., 50mm. pøforing,Skyggepanel 14x120mm., liggende.":
+      0,
+  "Bindingsverk av I-profil 45x200mm.,støende dobbelfals Royal panel 19x148mm., 50mm. pøforing, MDF skygge 11mm.":
+      0,
+  "Bindingsverk av I-profil 45x200mm.,støende dobbelfals Royal panel 19x148mm., 50mm. pøforing, sponplater Walls2Paint 12mm.":
+      0,
+  "Bindingsverk av I-profil 45x250mm., Tømmermannspanel 19x148mm., 1 lag gips.":
+      0,
+  "Bindingsverk av I-profil 45x250mm., Tømmermannspanel 19x148mm.,Skyggepanel 14x120mm.,liggende.":
+      0,
+  "Bindingsverk av I-profil 45x250mm., Tømmermannspanel 19x148mm., MDF skygge 11mm.":
+      0,
+  "Bindingsverk av I-profil 45x250mm., Tømmermannspanel 19x148mm., sponplate  Walls2Paint 12mm.":
+      0,
+  "Bindingsverk av I-profil 45x200mm.,støende dobbelfals Royal panel 19x148mm.,trefiberisolasjon, 50mm. pøforing, fermacell gipsplate.":
+      0,
+  "Bindingsverk av I-profil 45x200, liggende dobbelfals Royal panel 19x123mm.,trefiberisolasjon, 50mm. pøforing, fermacell gipsplate.":
+      0,
+  "Bindingsverk av tre 48x198+48mm.,liggende impregnert Kebony panel 21x148mm, trefiberisolasjon, massivtre plater 88mm.":
+      0,
+  "Bindingsverk av tre 48x198+48mm.,liggende impregnert Kebony panel 21x148mm, trefiberisolasjon, massivtre plater 118mm.":
+      0,
+  "Bindingsverk av I-profil 45x200mm.,støende dobbelfals Royal panel 19x148mm.,trefiberisolasjon, 50mm. pøforing, spilevegg eik 20x45mm.":
+      0,
+  "Bindingsverk av I-profil 45x200mm.,støende dobbelfals Royal panel 19x148mm.,trefiberisolasjon, 50mm. pøforing, spilevegg furu 20x45mm.":
+      0,
+  "Bindingsverk av tre 48x98mm.,Tømmermannspanel 19x148mm.,uisolert.": 0,
+  "Bindingsverk av tre 48x98mm.,dobbelfals panel 19x148mm. liggende,uisolert.":
+      0,
 };
 
 Map<String, double> outerWallBudgetSum = {
-  "Bindingsverk av tre 48x198, 50mm påforing, stående dobbelfals, gips": 0,
-  "Wooden timber frame, post-insulation. new panel": 0,
-  "Riving av dør i yttervegg komplett": 0,
+  "Svill tilbehør": 0,
+  "Hjørnekasser pø fasader to sider 22x98mm.": 0,
+  "Bindingsverk av tre 48x198mm.,Tømmermannspanel 19x148mm.,dobbel vindtetting, 50mm. pøforing, 1 lag gips.":
+      0,
+  "Bindingsverk av tre 48x198mm.,Tømmermannspanel 19x148mm.,dobbel vindtetting, 50mm. pøforing, MDF skyggepanel 11mm.":
+      0,
+  "Bindingsverk av tre 48x198mm.,Tømmermannspanel 19x148mm.,dobbel vindtetting, 50mm. pøforing, Walls2Paint 12mm .":
+      0,
+  "Bindingsverk av tre 48x198mm.,Tømmermannspanel 19x148mm.,dobbel vindtetting, 50mm. pøforing, skyggepanel 14x120mm.":
+      0,
+  "Bindingsverk av tre 48x198mm.,støende dobbelfals panel 19x148mm., 50mm. pøforing, 1 lag gips.":
+      0,
+  "Bindingsverk av tre 48x198mm.,støende dobbelfals panel 19x148mm., 50mm. pøforing, trefiberplater 11mm.":
+      0,
+  "Bindingsverk av tre 48x198mm.,støende dobbelfals panel 19x148mm., 50mm. pøforing, sponplater Walls2Paint 12mm.":
+      0,
+  "Bindingsverk av tre 48x198mm.,støende dobbelfals panel 19x148mm., 50mm. pøforing, skyggepanel 14x120mm.":
+      0,
+  "Bindingsverk av tre 48x198mm.,Tømmermannspanel 19x148mm., 50mm. pøforing, 1 lag gips.":
+      0,
+  "Bindingsverk av tre 48x198mm.,Tømmermannspanel 19x148mm., 50mm. pøforing, Walls2Paint.":
+      0,
+  "Bindingsverk av tre 48x198mm., Tømmermannspanel 19x148mm., 50mm. pøforing, fermacell gipsplate.":
+      0,
+  "Bindingsverk av tre 48x198mm., Tømmermannspanel 19x148mm., 50mm. pøforing, skyggepanel 14x120mm. hvitmalt.":
+      0,
+  "Precut bindingsverk av heltre 48x198mm., panel 19x148mm. støende, Gu gipsplate, 50mm. pøforing, 1 lag gips.":
+      0,
+  "Precut bindingsverk av heltre 48x198mm., panel 19x148mm. støende, Vindsperre , 50mm. pøforing, 1 lag gips.":
+      0,
+  "Precut bindingsverk av heltre 48x198mm., panel 19x148mm. støende, Trefiber asfaltplate, 50mm. pøforing, 1 lag gips.":
+      0,
+  "Precut bindingsverk av heltre 48x198mm., panel 19x148mm. støende, Brann gipsplate 15mm, 50mm. pøforing,1 lag gips.":
+      0,
+  "Precut bindingsverk av heltre 48x198mm., dobbelfals panel 19x148mm. liggende,Gu gipsplate, 50mm. pøforing,1 lag gips.":
+      0,
+  "Precut bindingsverk av heltre 48x198mm., dobbelfals panel 19x148mm. liggende,Vindsperre, 50mm. pøforing ,1 lag gips.":
+      0,
+  "Precut bindingsverk av heltre 48x198mm., dobbelfals panel 19x148mm. liggende, Trefiber asfaltplate, 50mm. pøforing ,1 lag gips.":
+      0,
+  "Precut bindingsverk av heltre 48x198mm., dobbelfals panel 19x148mm. liggende, Brann gipsplate 15mm, 50mm. pøforing,1 lag gips.":
+      0,
+  "Bindingsverk av heltre 48x198mm., dobbelfals panel 19x148mm. liggende,Gu gipsplate,uten pøforing,1 lag gips.":
+      0,
+  "Bindingsverk av heltre 48x198mm., dobbelfals panel 19x148mm. liggende,Gu gipsplate,uten pøforing, skyggepanel 14x120 liggende.":
+      0,
+  "Bindingsverk av heltre 48x198mm., dobbelfals panel 19x148mm. liggende,Gu gipsplate,uten pøforing, sponplate  Walls2Paint 12mm.":
+      0,
+  "Bindingsverk av heltre 48x198mm., dobbelfals panel 19x148mm. liggende,Gu gipsplate,uten pøforing, Skyggepanel 14x120mm. støende.":
+      0,
+  "Bindingsverk av tre 48x198mm., dobbelfals panel 19x148mm. liggende,dobbel vindtetting, 50mm. pøforing , 1 lag gips.":
+      0,
+  "Bindingsverk av tre 48x198mm., dobbelfals panel 19x148mm. liggende,dobbel vindtetting, 50mm. pøforing, MDF skygge 11mm.":
+      0,
+  "Bindingsverk av tre 48x198mm., dobbelfals panel 19x148mm. liggende,dobbel vindtetting, 50mm. pøforing, Walls2Paint, 12mm.":
+      0,
+  "Bindingsverk av tre 48x198mm., dobbelfals panel 19x148mm. liggende,dobbel vindtetting, 50mm. pøforing, fermacell gipsplate.":
+      0,
+  "Precut bindingsverk av I- profil 47x200 mm., dobbelfals panel 21x120mm. liggende,Gu gipsplate, 50mm. pøforing,1 lag gips.":
+      0,
+  "Precut bindingsverk av I- profil 47x200 mm., dobbelfals panel 21x120mm. liggende,Trefiber asfaltplate, 50mm. pøforing,1 lag gips.":
+      0,
+  "Precut bindingsverk av I- profil 47x200 mm., dobbelfals panel 21x120mm. støende,Gu gipsplate, 50mm. pøforing,1 lag gips.":
+      0,
+  "Precut bindingsverk av I- profil 47x200 mm., dobbelfals panel 21x120mm. støende,Trefiber asfaltplate, 50mm. pøforing,1 lag gips.":
+      0,
+  "Bindingsverk av I-profil 45x200mm., Fasadeplate Aqua, uten pøforing, Walls2Paint.":
+      0,
+  "Bindingsverk av stølprofil 200mm.,Profilerte fasadestølplater 20-105 PL70, pøforing utvendig, Trefiber asfaltplate, 1 lag gips.":
+      0,
+  "Bindingsverk av I- profil 45x250mm., Villmarkskledning 25x225mm. liggende, Perlestaffpanel furu 14x120mm. malt.":
+      0,
+  "Bindingsverk av I- profil 45x250mm., Villmarkskledning 25x225mm. liggende, Perlestaffpanel furu 14x120mm., støende.":
+      0,
+  "Bindingsverk av I- profil 45x250mm., Villmarkskledning 25x225mm. liggende, Skyggepanel 14x120mm., liggende.":
+      0,
+  "Bindingsverk av I- profil 45x250mm., Villmarkskledning 25x225mm. liggende, Skyggepanel 14x120mm., støende.":
+      0,
+  " Bindingsverk av I- profil 45x250mm.,Villmarkskledning 25x225mm. støende, Villmarkpanel 25x225mm., støende innvendig.":
+      0,
+  "Bindingsverk av I- profil 45x250mm.,Villmarkskledning 25x225mm. støende, Perlestaffpanel furu 14x120mm., støende.":
+      0,
+  "Bindingsverk av I- profil 45x250mm.,Villmarkskledning 25x225mm. støende, Skyggepanel 14x120mm., støende.":
+      0,
+  "Bindingsverk av tre 48x198mm.,fasadeplate 8mm. \"Steniplater Nature\": 0, vindsperre,1 lag gips.":
+      0,
+  "Bindingsverk av I- profil 45x250mm., fasadeplate 8mm. \"Steniplater Nature\": 0, vindsperre,1 lag gips.":
+      0,
+  "Bindingsverk av tre 48x198mm.,fasadeplate 8mm. \"Steniplater Nature\": 0, vindsperre,trefiberplater 11mm.":
+      0,
+  "Bindingsverk av I- profil 45x250mm.,fasadeplate 8mm. \"Steniplater Nature\": 0, vindsperre,trefiberplater 11mm.":
+      0,
+  "Bindingsverk av tre 48x198mm.,fasadeplate 8mm. \"Steniplater Nature\": 0, vindsperre,Walls2Paint 12mm.":
+      0,
+  "Bindingsverk av I- profil 45x250mm.,fasadeplate 8mm. \"Steniplater Nature\": 0, vindsperre,Walls2Paint 12mm.":
+      0,
+  "Bindingsverk av tre 48x198mm.,fasadeplate 8mm. \"Steniplater Nature\": 0, vindsperre,Skyggepanel 14x120mm., liggende.":
+      0,
+  "Bindingsverk av I- profil 45x250mm.,fasadeplate 8mm. \"Steniplater Nature\": 0, vindsperre,Skyggepanel 14x120mm., liggende.":
+      0,
+  "Bindingsverk av I-profil 45x250mm., dobbelfals panel 19x148mm. liggende,vindsperre, 1 lag gips.":
+      0,
+  "Bindingsverk av I-profil 45x250mm., dobbelfals panel 19x148mm. liggende,vindsperre,Skyggepanel 14x120mm., liggende.":
+      0,
+  "Bindingsverk av I-profil 45x250mm., dobbelfals panel 19x148mm. liggende,vindsperre, MDF skygge 11mm.":
+      0,
+  "Bindingsverk av I-profil 45x250mm., dobbelfals panel 19x148mm. liggende,vindsperre,sponplater Walls2Paint 12mm.":
+      0,
+  "Bindingsverk av I-profil 45x200mm.,støende dobbelfals Royal panel 19x148mm., 50mm. pøforing, 1 lag gips.":
+      0,
+  "Bindingsverk av I-profil 45x200mm.,støende dobbelfals Royal panel 19x148mm., 50mm. pøforing,Skyggepanel 14x120mm., liggende.":
+      0,
+  "Bindingsverk av I-profil 45x200mm.,støende dobbelfals Royal panel 19x148mm., 50mm. pøforing, MDF skygge 11mm.":
+      0,
+  "Bindingsverk av I-profil 45x200mm.,støende dobbelfals Royal panel 19x148mm., 50mm. pøforing, sponplater Walls2Paint 12mm.":
+      0,
+  "Bindingsverk av I-profil 45x250mm., Tømmermannspanel 19x148mm., 1 lag gips.":
+      0,
+  "Bindingsverk av I-profil 45x250mm., Tømmermannspanel 19x148mm.,Skyggepanel 14x120mm.,liggende.":
+      0,
+  "Bindingsverk av I-profil 45x250mm., Tømmermannspanel 19x148mm., MDF skygge 11mm.":
+      0,
+  "Bindingsverk av I-profil 45x250mm., Tømmermannspanel 19x148mm., sponplate  Walls2Paint 12mm.":
+      0,
+  "Bindingsverk av I-profil 45x200mm.,støende dobbelfals Royal panel 19x148mm.,trefiberisolasjon, 50mm. pøforing, fermacell gipsplate.":
+      0,
+  "Bindingsverk av I-profil 45x200, liggende dobbelfals Royal panel 19x123mm.,trefiberisolasjon, 50mm. pøforing, fermacell gipsplate.":
+      0,
+  "Bindingsverk av tre 48x198+48mm.,liggende impregnert Kebony panel 21x148mm, trefiberisolasjon, massivtre plater 88mm.":
+      0,
+  "Bindingsverk av tre 48x198+48mm.,liggende impregnert Kebony panel 21x148mm, trefiberisolasjon, massivtre plater 118mm.":
+      0,
+  "Bindingsverk av I-profil 45x200mm.,støende dobbelfals Royal panel 19x148mm.,trefiberisolasjon, 50mm. pøforing, spilevegg eik 20x45mm.":
+      0,
+  "Bindingsverk av I-profil 45x200mm.,støende dobbelfals Royal panel 19x148mm.,trefiberisolasjon, 50mm. pøforing, spilevegg furu 20x45mm.":
+      0,
+  "Bindingsverk av tre 48x98mm.,Tømmermannspanel 19x148mm.,uisolert.": 0,
+  "Bindingsverk av tre 48x98mm.,dobbelfals panel 19x148mm. liggende,uisolert.":
+      0,
 };
 /////////////////////////////////////////////////////////////////////////////////////
 Map<String, double> innerDoorHours = {

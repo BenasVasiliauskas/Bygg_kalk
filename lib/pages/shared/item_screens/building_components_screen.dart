@@ -180,7 +180,7 @@ Nowa konstrukcja, Przebudowa, Wyburzenie''',
                       ),
                     ),
                   ),
-                  Text(exteriorWallData.length.toString()),
+                  Text(norwExteriorWallData.length.toString()),
                 ],
               ),
               Row(

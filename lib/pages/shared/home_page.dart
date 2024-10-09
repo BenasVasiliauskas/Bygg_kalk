@@ -118,7 +118,7 @@ class _homePageState extends State<homePage> {
                                     flooringData.length +
                                     terraceData.length +
                                     outerRoofData.length +
-                                    exteriorWallData.length +
+                                    norwExteriorWallData.length +
                                     hullRoofingData.length +
                                     scaffoldingData.length +
                                     innerStairsData.length +
