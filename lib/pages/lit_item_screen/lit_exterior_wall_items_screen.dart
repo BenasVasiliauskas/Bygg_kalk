@@ -502,7 +502,7 @@ class _LitExteriorWallItemsScreenState
       cells: [
         dataCellDisplaySingle(
           "Iš viso (be PVM)",
-          70,
+          115,
           Theme.of(context).colorScheme.surface,
         ),
         dataCellDisplaySingle(
@@ -569,8 +569,7 @@ class _LitExteriorWallItemsScreenState
       ],
     );
 
-// Add the "Total Sum" row to the rows list
-    rows.add(totalSumRow);
+    List<DataRow> totalSumRows = [totalSumRow];
 
     return PopScope(
       canPop: false,
@@ -595,15 +594,31 @@ class _LitExteriorWallItemsScreenState
           scrollDirection: Axis.vertical,
           child: Column(
             children: [
-              SingleChildScrollView(
-                scrollDirection: Axis.horizontal,
+              SizedBox(
+                width: MediaQuery.of(context).size.width,
+                child: DataTable(
+                  border: TableBorder.all(
+                    color: Theme.of(context).colorScheme.surface,
+                    width: 2,
+                  ),
+                  horizontalMargin: 15,
+                  columnSpacing: 0,
+                  dataRowMaxHeight: double.infinity,
+                  dataRowMinHeight: 60,
+                  columns: columns,
+                  rows: rows,
+                ),
+              ),
+              SizedBox(
+                width: MediaQuery.of(context).size.width,
                 child: DataTable(
                   horizontalMargin: 15,
                   columnSpacing: 0,
                   dataRowMaxHeight: double.infinity,
                   dataRowMinHeight: 60,
-                  columns: columns, // Define your columns here
-                  rows: rows,
+                  headingRowHeight: 0,
+                  columns: columns,
+                  rows: totalSumRows,
                 ),
               ),
             ],
