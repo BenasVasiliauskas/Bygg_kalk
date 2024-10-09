@@ -322,7 +322,7 @@ class _InteriorWallItemsScreenState extends State<InteriorWallItemsScreen> {
       rows.add(
         DataRow(
           cells: [
-            dataCellDisplay(widget.description, i, 150),
+            dataCellDisplay(widget.description, i, 120),
             dataCellDisplay(widget.unit, i, 30, optionalPadding: 12),
             dataCellDisplayController(quantityControllers, i),
             dataCellDo(
@@ -458,7 +458,7 @@ class _InteriorWallItemsScreenState extends State<InteriorWallItemsScreen> {
       cells: [
         dataCellDisplaySingle(
           "Total sum",
-          70,
+          120,
           Theme.of(context).colorScheme.surface,
         ),
         dataCellDisplaySingle(
@@ -486,10 +486,10 @@ class _InteriorWallItemsScreenState extends State<InteriorWallItemsScreen> {
             ),
           ),
         ),
-        dataCellDisplaySingle(totalLaborHours2.toStringAsFixed(2), 70,
+        dataCellDisplaySingle(totalLaborHours2.toStringAsFixed(2), 80,
             Theme.of(context).colorScheme.surface,
             optionalPadding: 8),
-        dataCellDisplaySingle(totalLaborCost.toStringAsFixed(2), 60,
+        dataCellDisplaySingle(totalLaborCost.toStringAsFixed(2), 55,
             Theme.of(context).colorScheme.surface,
             optionalPadding: 8),
         DataCell(
@@ -507,7 +507,7 @@ class _InteriorWallItemsScreenState extends State<InteriorWallItemsScreen> {
             ),
           ),
         ),
-        dataCellDisplaySingle(totalMaterial2.toStringAsFixed(2), 70,
+        dataCellDisplaySingle(totalMaterial2.toStringAsFixed(2), 75,
             Theme.of(context).colorScheme.surface,
             optionalPadding: 8),
         dataCellDoSingle(
@@ -518,9 +518,8 @@ class _InteriorWallItemsScreenState extends State<InteriorWallItemsScreen> {
             75),
       ],
     );
+    List<DataRow> totalSumRows = [totalSumRow];
 
-// Add the "Total Sum" row to the rows list
-    rows.add(totalSumRow);
     return PopScope(
       canPop: false,
       onPopInvokedWithResult: (bool didPop, Object? result) async {
@@ -544,15 +543,31 @@ class _InteriorWallItemsScreenState extends State<InteriorWallItemsScreen> {
           scrollDirection: Axis.vertical,
           child: Column(
             children: [
-              SingleChildScrollView(
-                scrollDirection: Axis.horizontal,
+              SizedBox(
+                width: MediaQuery.of(context).size.width,
+                child: DataTable(
+                  border: TableBorder.all(
+                    color: Theme.of(context).colorScheme.surface,
+                    width: 2,
+                  ),
+                  horizontalMargin: 15,
+                  columnSpacing: 0,
+                  dataRowMaxHeight: double.infinity,
+                  dataRowMinHeight: 60,
+                  columns: columns,
+                  rows: rows,
+                ),
+              ),
+              SizedBox(
+                width: MediaQuery.of(context).size.width,
                 child: DataTable(
                   horizontalMargin: 15,
                   columnSpacing: 0,
                   dataRowMaxHeight: double.infinity,
-                  dataRowMinHeight: 20,
-                  columns: columns, // Define your columns here
-                  rows: rows,
+                  dataRowMinHeight: 60,
+                  headingRowHeight: 0,
+                  columns: columns,
+                  rows: totalSumRows,
                 ),
               ),
             ],
