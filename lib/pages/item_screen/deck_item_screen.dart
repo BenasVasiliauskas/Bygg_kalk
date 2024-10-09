@@ -532,8 +532,6 @@ class _DeckItemScreenState extends State<DeckItemScreen> {
       ],
     );
 
-// Add the "Total Sum" row to the rows list
-    //rows.add(totalSumRow);
     List<DataRow> totalSumRows = [totalSumRow];
 
     return PopScope(
