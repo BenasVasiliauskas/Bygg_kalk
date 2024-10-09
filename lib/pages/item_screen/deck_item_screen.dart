@@ -398,12 +398,10 @@ class _DeckItemScreenState extends State<DeckItemScreen> {
               ); // Calculate the labor cost
               widget.laborCost[i] =
                   double.parse(updatedLaborCost.toStringAsFixed(2));
-            }, Theme.of(context).colorScheme.surface, true,
-                optionalWidth: 45),
+            }, Theme.of(context).colorScheme.surface, true, optionalWidth: 45),
             dataCellDo(laborCostControllers, i, (value) {
               widget.laborCost[i] = double.parse(value);
-            }, Theme.of(context).colorScheme.surface, true,
-                optionalWidth: 65),
+            }, Theme.of(context).colorScheme.surface, true, optionalWidth: 65),
             dataCellDo(material1Controllers, i, (value) {
               // Handle changes to material 1
               double parsedValue = double.parse(value);
@@ -437,8 +435,7 @@ class _DeckItemScreenState extends State<DeckItemScreen> {
               widget.material2[i] = double.parse(value);
               material2Controllers[i].text =
                   widget.material2[i].toStringAsFixed(2);
-            }, Theme.of(context).colorScheme.surface, true,
-                optionalWidth: 75),
+            }, Theme.of(context).colorScheme.surface, true, optionalWidth: 75),
             dataCellDo(totalPriceControllers, i, (value) {
               widget.totalPrice[i] = double.parse(value);
               totalPriceControllers[i].text =
@@ -471,7 +468,7 @@ class _DeckItemScreenState extends State<DeckItemScreen> {
       cells: [
         dataCellDisplaySingle(
           "Total sum",
-          70,
+          115,
           Theme.of(context).colorScheme.surface,
         ),
         dataCellDisplaySingle(
@@ -501,11 +498,11 @@ class _DeckItemScreenState extends State<DeckItemScreen> {
         ),
         dataCellDisplaySingle(
           totalLaborHours2.toStringAsFixed(2),
-          70,
+          80,
           Theme.of(context).colorScheme.surface,
           optionalPadding: 8,
         ),
-        dataCellDisplaySingle(totalLaborCost.toStringAsFixed(2), 60,
+        dataCellDisplaySingle(totalLaborCost.toStringAsFixed(2), 55,
             Theme.of(context).colorScheme.surface,
             optionalPadding: 8),
         DataCell(
@@ -523,7 +520,7 @@ class _DeckItemScreenState extends State<DeckItemScreen> {
             ),
           ),
         ),
-        dataCellDisplaySingle(totalMaterial2.toStringAsFixed(2), 70,
+        dataCellDisplaySingle(totalMaterial2.toStringAsFixed(2), 75,
             Theme.of(context).colorScheme.surface,
             optionalPadding: 8),
         dataCellDoSingle(
@@ -536,7 +533,8 @@ class _DeckItemScreenState extends State<DeckItemScreen> {
     );
 
 // Add the "Total Sum" row to the rows list
-    rows.add(totalSumRow);
+    //rows.add(totalSumRow);
+    List<DataRow> totalSumRows = [totalSumRow];
 
     return PopScope(
       canPop: false,
@@ -561,15 +559,33 @@ class _DeckItemScreenState extends State<DeckItemScreen> {
           scrollDirection: Axis.vertical,
           child: Column(
             children: [
-              SingleChildScrollView(
-                scrollDirection: Axis.horizontal,
+              SizedBox(
+                width: MediaQuery.of(context).size.width,
+                child: DataTable(
+                  border: TableBorder.all(
+                    color: Theme.of(context).colorScheme.surface,
+                    width: 2,
+                  ),
+                  horizontalMargin: 15,
+                  columnSpacing: 0,
+                  dataRowMaxHeight: double.infinity,
+                  dataRowMinHeight: 60,
+                  columns: columns,
+                  rows: rows,
+                ),
+              ),
+              SizedBox(
+                width: MediaQuery.of(context).size.width,
                 child: DataTable(
                   horizontalMargin: 15,
                   columnSpacing: 0,
                   dataRowMaxHeight: double.infinity,
                   dataRowMinHeight: 60,
-                  columns: columns, // Define your columns here
-                  rows: rows,
+                  headingRowHeight: 0,
+                  dataRowColor: WidgetStatePropertyAll(
+                      const Color.fromARGB(60, 175, 135, 135)),
+                  columns: columns,
+                  rows: totalSumRows,
                 ),
               ),
             ],
