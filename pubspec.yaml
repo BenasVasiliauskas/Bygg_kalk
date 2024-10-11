@@ -40,10 +40,10 @@ dependencies:
   path_provider: ^2.1.2
   font_awesome_flutter: ^10.7.0
   provider: ^6.1.2
-  file_picker:
 
   collection: any
   shared_preferences: ^2.2.3
+  file_picker: ^8.0.7
 dev_dependencies:
   flutter_test:
     sdk: flutter

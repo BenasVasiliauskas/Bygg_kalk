@@ -29,19 +29,17 @@ class _optionsScreenState extends State<optionsScreen> {
 
   Future<void> _loadLanguage() async {
     String? language = await SharedPrefs.getLanguage();
-    if (language != null) {
-      setState(() {
-        if (language == 'English') {
-          languageChangedToEnglish();
-        } else if (language == 'Norwegian') {
-          languageChangedToNorwegian();
-        } else if (language == 'Lithuanian') {
-          languageChangedToLithuanian();
-        } else if (language == 'Polish') {
-          languageChangedToPolish();
-        }
-      });
-    }
+    setState(() {
+      if (language == 'English') {
+        languageChangedToEnglish();
+      } else if (language == 'Norwegian') {
+        languageChangedToNorwegian();
+      } else if (language == 'Lithuanian') {
+        languageChangedToLithuanian();
+      } else if (language == 'Polish') {
+        languageChangedToPolish();
+      }
+    });
   }
 
   void onLanguageChanged(bool newValue) {
