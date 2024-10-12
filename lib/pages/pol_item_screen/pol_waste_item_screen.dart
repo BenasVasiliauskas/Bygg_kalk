@@ -463,74 +463,86 @@ class _PolWasteItemScreenState extends State<PolWasteItemScreen> {
 // Create the "Total Sum" row
     DataRow totalSumRow = DataRow(
       cells: [
-        dataCellDisplaySingle(
+        dataCellDisplaySingleWithBorder(
           "Total (eks. mva)",
           115,
           Theme.of(context).colorScheme.surface,
+          backgroundColor: Colors.grey[300],
         ),
-        dataCellDisplaySingle(
+        dataCellDisplaySingleWithBorder(
           "",
-          0,
+          55,
           Theme.of(context).colorScheme.surface,
+          backgroundColor: Colors.grey[300],
         ),
-        dataCellDisplaySingle(
+        dataCellDisplaySingleWithBorder(
           "",
-          0,
+          45,
           Theme.of(context).colorScheme.surface,
+          backgroundColor: Colors.grey[300],
         ),
         DataCell(
           SizedBox(
             width: 55,
             child: TextField(
               decoration: InputDecoration(
-                  border: InputBorder.none,
-                  contentPadding: EdgeInsets.only(left: 8),
-                  fillColor: const Color.fromARGB(255, 218, 128, 122),
-                  filled: true),
+                contentPadding: EdgeInsets.only(left: 8),
+                fillColor: const Color.fromARGB(255, 218, 128, 122),
+                filled: true,
+              ),
               controller: TextEditingController(
-                  text: totalLaborHours1.toStringAsFixed(2)),
+                text: totalLaborHours1.toStringAsFixed(2),
+              ),
               readOnly: true,
             ),
           ),
         ),
-        dataCellDisplaySingle(
+        dataCellDisplaySingleWithBorder(
           totalLaborHours2.toStringAsFixed(2),
-          70,
+          80,
           Theme.of(context).colorScheme.surface,
-          optionalPadding: 8,
+          backgroundColor: Colors.grey[300],
         ),
-        dataCellDisplaySingle(totalLaborCost.toStringAsFixed(2), 60,
-            Theme.of(context).colorScheme.surface,
-            optionalPadding: 8),
+        dataCellDisplaySingleWithBorder(
+          totalLaborCost.toStringAsFixed(2),
+          55,
+          Theme.of(context).colorScheme.surface,
+          backgroundColor: Colors.grey[300],
+        ),
         DataCell(
           SizedBox(
             width: 75,
             child: TextField(
               decoration: InputDecoration(
-                  border: InputBorder.none,
-                  contentPadding: EdgeInsets.only(left: 8),
-                  fillColor: const Color.fromARGB(255, 218, 128, 122),
-                  filled: true),
+                border: InputBorder.none,
+                contentPadding: EdgeInsets.only(left: 8),
+                fillColor: const Color.fromARGB(255, 218, 128, 122),
+                filled: true,
+              ),
               controller: TextEditingController(
-                  text: totalMaterial1.toStringAsFixed(2)),
+                text: totalMaterial1.toStringAsFixed(2),
+              ),
               readOnly: true,
             ),
           ),
         ),
-        dataCellDisplaySingle(totalMaterial2.toStringAsFixed(2), 70,
-            Theme.of(context).colorScheme.surface,
-            optionalPadding: 8),
-        dataCellDoSingle(
-            TextEditingController(text: totalTotalPrice.toStringAsFixed(2)),
-            (value) {},
-            Color.fromARGB(255, 153, 240, 131),
-            true,
-            75),
+        dataCellDisplaySingleWithBorder(
+          totalMaterial2.toStringAsFixed(2),
+          75,
+          Theme.of(context).colorScheme.surface,
+          backgroundColor: Colors.grey[300],
+        ),
+        dataCellDoSingleWithBorder(
+          TextEditingController(text: totalTotalPrice.toStringAsFixed(2)),
+          (value) {},
+          Color.fromARGB(255, 153, 240, 131),
+          true,
+          75,
+          backgroundColor: Colors.grey[300],
+        ),
       ],
     );
-
-    List<DataRow> totalSumRows = [totalSumRow];
-
+    rows.add(totalSumRow);
     return PopScope(
       canPop: false,
       onPopInvokedWithResult: (bool didPop, Object? result) async {
@@ -551,41 +563,21 @@ class _PolWasteItemScreenState extends State<PolWasteItemScreen> {
           title: Text(widget.name),
         ),
         body: SingleChildScrollView(
-          scrollDirection: Axis.vertical,
-          child: Column(
-            children: [
-              SingleChildScrollView(
-                scrollDirection: Axis.vertical, // Enable vertical scrolling
-                child: SizedBox(
-                  width: MediaQuery.of(context).size.width *
-                      2, // Adjust width as needed
-                  child: DataTable(
-                    border: TableBorder.all(
-                      color: Theme.of(context).colorScheme.surface,
-                      width: 2,
-                    ),
-                    horizontalMargin: 15,
-                    columnSpacing: 0,
-                    dataRowMaxHeight: double.infinity,
-                    dataRowMinHeight: 60,
-                    columns: columns,
-                    rows: rows,
-                  ),
-                ),
+          scrollDirection: Axis.horizontal, // Enable horizontal scrolling
+          child: SingleChildScrollView(
+            scrollDirection: Axis.vertical, // Enable vertical scrolling
+            child: DataTable(
+              border: TableBorder.all(
+                color: Theme.of(context).colorScheme.surface,
+                width: 2,
               ),
-              SizedBox(
-                width: MediaQuery.of(context).size.width,
-                child: DataTable(
-                  horizontalMargin: 15,
-                  columnSpacing: 0,
-                  dataRowMaxHeight: double.infinity,
-                  dataRowMinHeight: 60,
-                  headingRowHeight: 0,
-                  columns: columns,
-                  rows: totalSumRows,
-                ),
-              ),
-            ],
+              horizontalMargin: 15,
+              columnSpacing: 0,
+              dataRowMaxHeight: double.infinity,
+              dataRowMinHeight: 60,
+              columns: columns,
+              rows: rows,
+            ),
           ),
         ),
       ),

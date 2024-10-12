@@ -533,8 +533,7 @@ class _LitOuterRoofItemScreenState extends State<LitOuterRoofItemScreen> {
       ],
     );
 
-    List<DataRow> totalSumRows = [totalSumRow];
-
+    rows.add(totalSumRow);
     return PopScope(
       canPop: false,
       onPopInvokedWithResult: (bool didPop, Object? result) async {
@@ -555,41 +554,21 @@ class _LitOuterRoofItemScreenState extends State<LitOuterRoofItemScreen> {
           title: Text(widget.name),
         ),
         body: SingleChildScrollView(
-          scrollDirection: Axis.vertical,
-          child: Column(
-            children: [
-              SingleChildScrollView(
-                scrollDirection: Axis.vertical, // Enable vertical scrolling
-                child: SizedBox(
-                  width: MediaQuery.of(context).size.width *
-                      2, // Adjust width as needed
-                  child: DataTable(
-                    border: TableBorder.all(
-                      color: Theme.of(context).colorScheme.surface,
-                      width: 2,
-                    ),
-                    horizontalMargin: 15,
-                    columnSpacing: 0,
-                    dataRowMaxHeight: double.infinity,
-                    dataRowMinHeight: 60,
-                    columns: columns,
-                    rows: rows,
-                  ),
-                ),
+          scrollDirection: Axis.horizontal, // Enable horizontal scrolling
+          child: SingleChildScrollView(
+            scrollDirection: Axis.vertical, // Enable vertical scrolling
+            child: DataTable(
+              border: TableBorder.all(
+                color: Theme.of(context).colorScheme.surface,
+                width: 2,
               ),
-              SizedBox(
-                width: MediaQuery.of(context).size.width,
-                child: DataTable(
-                  horizontalMargin: 15,
-                  columnSpacing: 0,
-                  dataRowMaxHeight: double.infinity,
-                  dataRowMinHeight: 60,
-                  headingRowHeight: 0,
-                  columns: columns,
-                  rows: totalSumRows,
-                ),
-              ),
-            ],
+              horizontalMargin: 15,
+              columnSpacing: 0,
+              dataRowMaxHeight: double.infinity,
+              dataRowMinHeight: 60,
+              columns: columns,
+              rows: rows,
+            ),
           ),
         ),
       ),
