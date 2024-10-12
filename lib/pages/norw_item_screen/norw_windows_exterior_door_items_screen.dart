@@ -500,29 +500,30 @@ class _NorwWindowsExteriorDoorItemsScreenState
 // Create the "Total Sum" row
     DataRow totalSumRow = DataRow(
       cells: [
-        dataCellDisplaySingleWithBorder(
+        dataCellDisplaySingleBoldText(
           "Total (eks. mva)",
           115,
           Theme.of(context).colorScheme.surface,
-          backgroundColor: Colors.grey[300],
         ),
-        dataCellDisplaySingleWithBorder(
+        dataCellDisplaySingleBoldText(
           "",
           55,
           Theme.of(context).colorScheme.surface,
-          backgroundColor: Colors.grey[300],
         ),
-        dataCellDisplaySingleWithBorder(
+        dataCellDisplaySingleBoldText(
           "",
           45,
           Theme.of(context).colorScheme.surface,
-          backgroundColor: Colors.grey[300],
         ),
         DataCell(
           SizedBox(
             width: 55,
             child: TextField(
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+              ),
               decoration: InputDecoration(
+                border: InputBorder.none,
                 contentPadding: EdgeInsets.only(left: 8),
                 fillColor: const Color.fromARGB(255, 218, 128, 122),
                 filled: true,
@@ -534,22 +535,23 @@ class _NorwWindowsExteriorDoorItemsScreenState
             ),
           ),
         ),
-        dataCellDisplaySingleWithBorder(
+        dataCellDisplaySingleBoldText(
           totalLaborHours2.toStringAsFixed(2),
           80,
           Theme.of(context).colorScheme.surface,
-          backgroundColor: Colors.grey[300],
         ),
-        dataCellDisplaySingleWithBorder(
+        dataCellDisplaySingleBoldText(
           totalLaborCost.toStringAsFixed(2),
           55,
           Theme.of(context).colorScheme.surface,
-          backgroundColor: Colors.grey[300],
         ),
         DataCell(
           SizedBox(
             width: 75,
             child: TextField(
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+              ),
               decoration: InputDecoration(
                 border: InputBorder.none,
                 contentPadding: EdgeInsets.only(left: 8),
@@ -563,19 +565,17 @@ class _NorwWindowsExteriorDoorItemsScreenState
             ),
           ),
         ),
-        dataCellDisplaySingleWithBorder(
+        dataCellDisplaySingleBoldText(
           totalMaterial2.toStringAsFixed(2),
           75,
           Theme.of(context).colorScheme.surface,
-          backgroundColor: Colors.grey[300],
         ),
-        dataCellDoSingleWithBorder(
+        dataCellDoSingleWithBoldText(
           TextEditingController(text: totalTotalPrice.toStringAsFixed(2)),
           (value) {},
           Color.fromARGB(255, 153, 240, 131),
           true,
           75,
-          backgroundColor: Colors.grey[300],
         ),
       ],
     );
