@@ -92,6 +92,7 @@ class _buildingComponentsScreenState extends State<buildingComponentsScreen> {
           ],
         ),
         body: SingleChildScrollView(
+          scrollDirection: Axis.vertical,
           child: Column(
             children: [
               Row(

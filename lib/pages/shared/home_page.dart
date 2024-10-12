@@ -67,281 +67,281 @@ class _homePageState extends State<homePage> {
           centerTitle: true,
           title: const Text('Bygg Kalk'),
         ),
-        body: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            Padding(
-              padding: const EdgeInsets.all(12.0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  ClipRRect(
-                    borderRadius: BorderRadius.all(Radius.circular(15)),
-                    child: Container(
-                      color: Theme.of(context).appBarTheme.backgroundColor,
-                      height: 120.0,
-                      width: 120.0,
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          IconButton(
-                            color: Colors.white,
-                            onPressed: () {
-                              Navigator.of(context).pushReplacement(
-                                MaterialPageRoute(
-                                  builder: (context) {
-                                    return buildingComponentsScreen();
-                                  },
-                                ),
-                              );
-                            },
-                            icon: FaIcon(FontAwesomeIcons.houseChimney),
-                          ),
-                          Text(
-                            textAlign: TextAlign.center,
-                            languageEnglish
-                                ? "Building components"
-                                : languageNorwegian
-                                    ? "Byggdeler"
-                                    : languageLithuanian
-                                        ? "Statybinės dalys"
-                                        : "Komponenty budynku",
-                            style: TextStyle(color: Colors.white),
-                          ),
-                          Text(
-                            //change back to eng after adding eng data
-                            (dataInnerWallData.length +
-                                    deckData.length +
-                                    innerDoor.length +
-                                    windowsExteriorDoors.length +
-                                    norwSupportSystem.length +
-                                    flooringData.length +
-                                    terraceData.length +
-                                    outerRoofData.length +
-                                    norwExteriorWallData.length +
-                                    hullRoofingData.length +
-                                    scaffoldingData.length +
-                                    innerStairsData.length +
-                                    wasteData.length)
-                                .toString(),
-                            style: TextStyle(color: Colors.white),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                  ClipRRect(
-                    borderRadius: BorderRadius.all(Radius.circular(15)),
-                    child: Container(
-                      color: Theme.of(context).appBarTheme.backgroundColor,
-                      height: 120.0,
-                      width: 120.0,
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          IconButton(
+        body: SingleChildScrollView(
+          // Added Scrollable view
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              Padding(
+                padding: const EdgeInsets.all(12.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    ClipRRect(
+                      borderRadius: BorderRadius.all(Radius.circular(15)),
+                      child: Container(
+                        color: Theme.of(context).appBarTheme.backgroundColor,
+                        height: 120.0,
+                        width: 120.0,
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            IconButton(
                               color: Colors.white,
                               onPressed: () {
                                 Navigator.of(context).pushReplacement(
                                   MaterialPageRoute(
                                     builder: (context) {
-                                      return FilePickerScreen();
+                                      return buildingComponentsScreen();
                                     },
                                   ),
                                 );
                               },
-                              icon: FaIcon(FontAwesomeIcons.book)),
-                          Text(
-                            textAlign: TextAlign.center,
-                            languageEnglish
-                                ? "Documents"
-                                : languageNorwegian
-                                    ? "Dokumenter"
-                                    : languageLithuanian
-                                        ? "Dokumentai"
-                                        : "Dokumenty",
-                            style: TextStyle(color: Colors.white),
-                          ),
-                        ],
+                              icon: FaIcon(FontAwesomeIcons.houseChimney),
+                            ),
+                            Text(
+                              textAlign: TextAlign.center,
+                              languageEnglish
+                                  ? "Building components"
+                                  : languageNorwegian
+                                      ? "Byggdeler"
+                                      : languageLithuanian
+                                          ? "Statybinės dalys"
+                                          : "Komponenty budynku",
+                              style: TextStyle(color: Colors.white),
+                            ),
+                            Text(
+                              (dataInnerWallData.length +
+                                      deckData.length +
+                                      innerDoor.length +
+                                      windowsExteriorDoors.length +
+                                      norwSupportSystem.length +
+                                      flooringData.length +
+                                      terraceData.length +
+                                      outerRoofData.length +
+                                      norwExteriorWallData.length +
+                                      hullRoofingData.length +
+                                      scaffoldingData.length +
+                                      innerStairsData.length +
+                                      wasteData.length)
+                                  .toString(),
+                              style: TextStyle(color: Colors.white),
+                            ),
+                          ],
+                        ),
                       ),
                     ),
-                  ),
-                ],
+                    ClipRRect(
+                      borderRadius: BorderRadius.all(Radius.circular(15)),
+                      child: Container(
+                        color: Theme.of(context).appBarTheme.backgroundColor,
+                        height: 120.0,
+                        width: 120.0,
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            IconButton(
+                                color: Colors.white,
+                                onPressed: () {
+                                  Navigator.of(context).pushReplacement(
+                                    MaterialPageRoute(
+                                      builder: (context) {
+                                        return FilePickerScreen();
+                                      },
+                                    ),
+                                  );
+                                },
+                                icon: FaIcon(FontAwesomeIcons.book)),
+                            Text(
+                              textAlign: TextAlign.center,
+                              languageEnglish
+                                  ? "Documents"
+                                  : languageNorwegian
+                                      ? "Dokumenter"
+                                      : languageLithuanian
+                                          ? "Dokumentai"
+                                          : "Dokumenty",
+                              style: TextStyle(color: Colors.white),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
               ),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(12.0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  ClipRRect(
-                    borderRadius: BorderRadius.all(Radius.circular(15)),
-                    child: Container(
-                      color: Theme.of(context).appBarTheme.backgroundColor,
-                      height: 120.0,
-                      width: 120.0,
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          IconButton(
-                              color: Colors.white,
-                              onPressed: () {
-                                Navigator.of(context).pushReplacement(
-                                  MaterialPageRoute(
-                                    builder: (context) {
-                                      return optionsScreen();
-                                    },
-                                  ),
-                                );
-                              },
-                              icon: FaIcon(FontAwesomeIcons.gear)),
-                          Text(
-                            textAlign: TextAlign.center,
-                            languageEnglish
-                                ? "Options"
-                                : languageNorwegian
-                                    ? "Alternativer"
-                                    : languageLithuanian
-                                        ? "Nustatymai"
-                                        : "Ustawienia",
-                            style: TextStyle(color: Colors.white),
-                          ),
-                        ],
+              Padding(
+                padding: const EdgeInsets.all(12.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    ClipRRect(
+                      borderRadius: BorderRadius.all(Radius.circular(15)),
+                      child: Container(
+                        color: Theme.of(context).appBarTheme.backgroundColor,
+                        height: 120.0,
+                        width: 120.0,
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            IconButton(
+                                color: Colors.white,
+                                onPressed: () {
+                                  Navigator.of(context).pushReplacement(
+                                    MaterialPageRoute(
+                                      builder: (context) {
+                                        return optionsScreen();
+                                      },
+                                    ),
+                                  );
+                                },
+                                icon: FaIcon(FontAwesomeIcons.gear)),
+                            Text(
+                              textAlign: TextAlign.center,
+                              languageEnglish
+                                  ? "Options"
+                                  : languageNorwegian
+                                      ? "Alternativer"
+                                      : languageLithuanian
+                                          ? "Nustatymai"
+                                          : "Ustawienia",
+                              style: TextStyle(color: Colors.white),
+                            ),
+                          ],
+                        ),
                       ),
                     ),
-                  ),
-                  ClipRRect(
-                    borderRadius: BorderRadius.all(Radius.circular(15)),
-                    child: Container(
-                      color: Theme.of(context).appBarTheme.backgroundColor,
-                      height: 120.0,
-                      width: 120.0,
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          IconButton(
-                              color: Colors.white,
-                              onPressed: () {
-                                languageEnglish
-                                    ? Navigator.pushReplacement(
-                                        context,
-                                        MaterialPageRoute(
-                                            builder: ((context) =>
-                                                BudgetScreen())))
-                                    : languageNorwegian
-                                        ? Navigator.pushReplacement(
-                                            context,
-                                            MaterialPageRoute(
-                                                builder: ((context) =>
-                                                    NorwBudgetScreen())))
-                                        : languagePolish
-                                            ? Navigator.pushReplacement(
-                                                context,
-                                                MaterialPageRoute(
-                                                    builder: ((context) =>
-                                                        PolBudgetScreen())))
-                                            : Navigator.pushReplacement(
-                                                context,
-                                                MaterialPageRoute(
-                                                    builder: ((context) =>
-                                                        LitBudgetScreen())));
-                              },
-                              icon: FaIcon(FontAwesomeIcons.dollarSign)),
-                          Text(
-                            textAlign: TextAlign.center,
-                            languageEnglish
-                                ? "Budget"
-                                : languageNorwegian
-                                    ? "Budsjett"
-                                    : languageLithuanian
-                                        ? "Biudžetas"
-                                        : "Budżet",
-                            style: TextStyle(color: Colors.white),
-                          ),
-                        ],
+                    ClipRRect(
+                      borderRadius: BorderRadius.all(Radius.circular(15)),
+                      child: Container(
+                        color: Theme.of(context).appBarTheme.backgroundColor,
+                        height: 120.0,
+                        width: 120.0,
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            IconButton(
+                                color: Colors.white,
+                                onPressed: () {
+                                  languageEnglish
+                                      ? Navigator.pushReplacement(
+                                          context,
+                                          MaterialPageRoute(
+                                              builder: ((context) =>
+                                                  BudgetScreen())))
+                                      : languageNorwegian
+                                          ? Navigator.pushReplacement(
+                                              context,
+                                              MaterialPageRoute(
+                                                  builder: ((context) =>
+                                                      NorwBudgetScreen())))
+                                          : languagePolish
+                                              ? Navigator.pushReplacement(
+                                                  context,
+                                                  MaterialPageRoute(
+                                                      builder: ((context) =>
+                                                          PolBudgetScreen())))
+                                              : Navigator.pushReplacement(
+                                                  context,
+                                                  MaterialPageRoute(
+                                                      builder: ((context) =>
+                                                          LitBudgetScreen())));
+                                },
+                                icon: FaIcon(FontAwesomeIcons.dollarSign)),
+                            Text(
+                              textAlign: TextAlign.center,
+                              languageEnglish
+                                  ? "Budget"
+                                  : languageNorwegian
+                                      ? "Budsjett"
+                                      : languageLithuanian
+                                          ? "Biudžetas"
+                                          : "Budżet",
+                              style: TextStyle(color: Colors.white),
+                            ),
+                          ],
+                        ),
                       ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
-            ),
-            //
-
-            Padding(
-              padding: EdgeInsets.all(12),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  ClipRRect(
-                    borderRadius: BorderRadius.all(Radius.circular(15)),
-                    child: Container(
-                      color: Theme.of(context).appBarTheme.backgroundColor,
-                      height: 120.0,
-                      width: 120.0,
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          IconButton(
-                              icon: Icon(FontAwesomeIcons.fileShield),
-                              color: Colors.white,
-                              onPressed: () {
-                                Navigator.of(context).pushReplacement(
-                                    MaterialPageRoute(builder: (context) {
-                                  return privacyPolicy();
-                                }));
-                              }),
-                          Text(
-                            textAlign: TextAlign.center,
-                            languageEnglish
-                                ? 'Privacy policy'
-                                : languageNorwegian
-                                    ? 'Personvernerklæring'
-                                    : languageLithuanian
-                                        ? "Privatumo politika"
-                                        : "Polityka prywatności",
-                            style: TextStyle(color: Colors.white),
-                          ),
-                        ],
+              Padding(
+                padding: EdgeInsets.all(12),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    ClipRRect(
+                      borderRadius: BorderRadius.all(Radius.circular(15)),
+                      child: Container(
+                        color: Theme.of(context).appBarTheme.backgroundColor,
+                        height: 120.0,
+                        width: 120.0,
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            IconButton(
+                                icon: Icon(FontAwesomeIcons.fileShield),
+                                color: Colors.white,
+                                onPressed: () {
+                                  Navigator.of(context).pushReplacement(
+                                      MaterialPageRoute(builder: (context) {
+                                    return privacyPolicy();
+                                  }));
+                                }),
+                            Text(
+                              textAlign: TextAlign.center,
+                              languageEnglish
+                                  ? 'Privacy policy'
+                                  : languageNorwegian
+                                      ? 'Personvernerklæring'
+                                      : languageLithuanian
+                                          ? "Privatumo politika"
+                                          : "Polityka prywatności",
+                              style: TextStyle(color: Colors.white),
+                            ),
+                          ],
+                        ),
                       ),
                     ),
-                  ),
-                  ClipRRect(
-                    borderRadius: BorderRadius.all(Radius.circular(15)),
-                    child: Container(
-                      color: Theme.of(context).appBarTheme.backgroundColor,
-                      height: 120.0,
-                      width: 120.0,
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          IconButton(
-                              icon: Icon(FontAwesomeIcons.question),
-                              color: Colors.white,
-                              onPressed: () {
-                                Navigator.of(context).pushReplacement(
-                                    MaterialPageRoute(builder: (context) {
-                                  return HelpPage();
-                                }));
-                              }),
-                          Text(
-                            textAlign: TextAlign.center,
-                            languageEnglish
-                                ? 'Need help?'
-                                : languageNorwegian
-                                    ? 'Trenger du hjelp?'
-                                    : languageLithuanian
-                                        ? "Ar reikia pagalbos"
-                                        : "Potrzebujesz pomocy?",
-                            style: TextStyle(color: Colors.white),
-                          ),
-                        ],
+                    ClipRRect(
+                      borderRadius: BorderRadius.all(Radius.circular(15)),
+                      child: Container(
+                        color: Theme.of(context).appBarTheme.backgroundColor,
+                        height: 120.0,
+                        width: 120.0,
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            IconButton(
+                                icon: Icon(FontAwesomeIcons.question),
+                                color: Colors.white,
+                                onPressed: () {
+                                  Navigator.of(context).pushReplacement(
+                                      MaterialPageRoute(builder: (context) {
+                                    return HelpPage();
+                                  }));
+                                }),
+                            Text(
+                              textAlign: TextAlign.center,
+                              languageEnglish
+                                  ? 'Need help?'
+                                  : languageNorwegian
+                                      ? 'Trenger du hjelp?'
+                                      : languageLithuanian
+                                          ? "Ar reikia pagalbos"
+                                          : "Potrzebujesz pomocy?",
+                              style: TextStyle(color: Colors.white),
+                            ),
+                          ],
+                        ),
                       ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
