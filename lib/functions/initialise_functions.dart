@@ -62,6 +62,23 @@ DataCell dataCellDisplay(List<String> text, int i, double width,
   );
 }
 
+DataCell dataCellDisplaySingleWithBorder(String text, double width, Color color,
+    {double? optionalPadding, Color? backgroundColor}) {
+  return DataCell(
+    Container(
+      padding: optionalPadding != null
+          ? EdgeInsets.only(left: optionalPadding)
+          : EdgeInsets.zero,
+      width: width,
+      child: Text(text),
+      decoration: BoxDecoration(
+        color: backgroundColor ??
+            color, // Use the passed background color if available
+      ),
+    ),
+  );
+}
+
 DataCell dataCellDisplaySingle(String text, double width, Color color,
     {double? optionalPadding}) {
   return DataCell(
@@ -92,6 +109,32 @@ DataCell dataCellDisplayController(
         ),
         readOnly: true,
         controller: controller[i],
+      ),
+    ),
+  );
+}
+
+DataCell dataCellDoSingleWithBorder(TextEditingController controller,
+    Function f, Color color, bool readOnly, double width,
+    {bool isLastRow = false,
+    bool isFirstCell = false,
+    bool isLastCell = false,
+    Color? backgroundColor}) {
+  return DataCell(
+    SizedBox(
+      width: width,
+      child: TextField(
+        readOnly: readOnly,
+        controller: controller,
+        onChanged: (value) => f(value),
+        decoration: InputDecoration(
+          border: InputBorder.none,
+          fillColor: backgroundColor ?? color, // Use custom color if provided
+          filled: true,
+          contentPadding: EdgeInsets.only(left: 8),
+        ),
+        keyboardType:
+            readOnly ? null : TextInputType.numberWithOptions(decimal: true),
       ),
     ),
   );

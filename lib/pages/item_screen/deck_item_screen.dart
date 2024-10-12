@@ -306,7 +306,7 @@ class _DeckItemScreenState extends State<DeckItemScreen> {
   @override
   Widget build(BuildContext context) {
     List<DataColumn> columns = [
-      createDataColumn("Description", 98, () {}),
+      createDataColumn("Description", 100, () {}),
       createDataColumn("Unit", 55, () {}),
       createDataColumn("Quantity", 80, () {}),
       createDataColumn("Hours", 65, () {
@@ -326,8 +326,8 @@ class _DeckItemScreenState extends State<DeckItemScreen> {
       rows.add(
         DataRow(
           cells: [
-            dataCellDisplay(widget.description, i, 120),
-            dataCellDisplay(widget.unit, i, 45, optionalPadding: 12),
+            dataCellDisplay(widget.description, i, 100),
+            dataCellDisplay(widget.unit, i, 55, optionalPadding: 12),
             dataCellDisplayController(quantityControllers, i),
             dataCellDo(
               laborHours1Controllers,
@@ -462,78 +462,90 @@ class _DeckItemScreenState extends State<DeckItemScreen> {
       totalMaterial2 += widget.material2[i];
       totalTotalPrice += widget.totalPrice[i];
     }
-
 // Create the "Total Sum" row
     DataRow totalSumRow = DataRow(
       cells: [
-        dataCellDisplaySingle(
+        dataCellDisplaySingleWithBorder(
           "Total sum",
           115,
           Theme.of(context).colorScheme.surface,
+          backgroundColor: Colors.grey[300],
         ),
-        dataCellDisplaySingle(
+        dataCellDisplaySingleWithBorder(
           "",
-          0,
+          55,
           Theme.of(context).colorScheme.surface,
+          backgroundColor: Colors.grey[300],
         ),
-        dataCellDisplaySingle(
+        dataCellDisplaySingleWithBorder(
           "",
-          0,
+          45,
           Theme.of(context).colorScheme.surface,
+          backgroundColor: Colors.grey[300],
         ),
         DataCell(
           SizedBox(
             width: 55,
             child: TextField(
               decoration: InputDecoration(
-                  border: InputBorder.none,
-                  contentPadding: EdgeInsets.only(left: 8),
-                  fillColor: const Color.fromARGB(255, 218, 128, 122),
-                  filled: true),
+                contentPadding: EdgeInsets.only(left: 8),
+                fillColor: const Color.fromARGB(255, 218, 128, 122),
+                filled: true,
+              ),
               controller: TextEditingController(
-                  text: totalLaborHours1.toStringAsFixed(2)),
+                text: totalLaborHours1.toStringAsFixed(2),
+              ),
               readOnly: true,
             ),
           ),
         ),
-        dataCellDisplaySingle(
+        dataCellDisplaySingleWithBorder(
           totalLaborHours2.toStringAsFixed(2),
           80,
           Theme.of(context).colorScheme.surface,
-          optionalPadding: 8,
+          backgroundColor: Colors.grey[300],
         ),
-        dataCellDisplaySingle(totalLaborCost.toStringAsFixed(2), 55,
-            Theme.of(context).colorScheme.surface,
-            optionalPadding: 8),
+        dataCellDisplaySingleWithBorder(
+          totalLaborCost.toStringAsFixed(2),
+          55,
+          Theme.of(context).colorScheme.surface,
+          backgroundColor: Colors.grey[300],
+        ),
         DataCell(
           SizedBox(
             width: 75,
             child: TextField(
               decoration: InputDecoration(
-                  border: InputBorder.none,
-                  contentPadding: EdgeInsets.only(left: 8),
-                  fillColor: const Color.fromARGB(255, 218, 128, 122),
-                  filled: true),
+                border: InputBorder.none,
+                contentPadding: EdgeInsets.only(left: 8),
+                fillColor: const Color.fromARGB(255, 218, 128, 122),
+                filled: true,
+              ),
               controller: TextEditingController(
-                  text: totalMaterial1.toStringAsFixed(2)),
+                text: totalMaterial1.toStringAsFixed(2),
+              ),
               readOnly: true,
             ),
           ),
         ),
-        dataCellDisplaySingle(totalMaterial2.toStringAsFixed(2), 75,
-            Theme.of(context).colorScheme.surface,
-            optionalPadding: 8),
-        dataCellDoSingle(
-            TextEditingController(text: totalTotalPrice.toStringAsFixed(2)),
-            (value) {},
-            Color.fromARGB(255, 153, 240, 131),
-            true,
-            75),
+        dataCellDisplaySingleWithBorder(
+          totalMaterial2.toStringAsFixed(2),
+          75,
+          Theme.of(context).colorScheme.surface,
+          backgroundColor: Colors.grey[300],
+        ),
+        dataCellDoSingleWithBorder(
+          TextEditingController(text: totalTotalPrice.toStringAsFixed(2)),
+          (value) {},
+          Color.fromARGB(255, 153, 240, 131),
+          true,
+          75,
+          backgroundColor: Colors.grey[300],
+        ),
       ],
     );
 
-    List<DataRow> totalSumRows = [totalSumRow];
-
+    rows.add(totalSumRow);
     return PopScope(
       canPop: false,
       onPopInvokedWithResult: (bool didPop, Object? result) async {
@@ -554,37 +566,21 @@ class _DeckItemScreenState extends State<DeckItemScreen> {
           title: Text(widget.name),
         ),
         body: SingleChildScrollView(
-          scrollDirection: Axis.vertical,
-          child: Column(
-            children: [
-              SizedBox(
-                width: MediaQuery.of(context).size.width,
-                child: DataTable(
-                  border: TableBorder.all(
-                    color: Theme.of(context).colorScheme.surface,
-                    width: 2,
-                  ),
-                  horizontalMargin: 15,
-                  columnSpacing: 0,
-                  dataRowMaxHeight: double.infinity,
-                  dataRowMinHeight: 60,
-                  columns: columns,
-                  rows: rows,
-                ),
+          scrollDirection: Axis.horizontal, // Enable horizontal scrolling
+          child: SingleChildScrollView(
+            scrollDirection: Axis.vertical, // Enable vertical scrolling
+            child: DataTable(
+              border: TableBorder.all(
+                color: Theme.of(context).colorScheme.surface,
+                width: 2,
               ),
-              SizedBox(
-                width: MediaQuery.of(context).size.width,
-                child: DataTable(
-                  horizontalMargin: 15,
-                  columnSpacing: 0,
-                  dataRowMaxHeight: double.infinity,
-                  dataRowMinHeight: 60,
-                  headingRowHeight: 0,
-                  columns: columns,
-                  rows: totalSumRows,
-                ),
-              ),
-            ],
+              horizontalMargin: 15,
+              columnSpacing: 0,
+              dataRowMaxHeight: double.infinity,
+              dataRowMinHeight: 60,
+              columns: columns,
+              rows: rows,
+            ),
           ),
         ),
       ),

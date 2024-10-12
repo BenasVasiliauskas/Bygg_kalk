@@ -555,19 +555,23 @@ class _PolInnerStairsItemScreenState extends State<PolInnerStairsItemScreen> {
           scrollDirection: Axis.vertical,
           child: Column(
             children: [
-              SizedBox(
-                width: MediaQuery.of(context).size.width,
-                child: DataTable(
-                  border: TableBorder.all(
-                    color: Theme.of(context).colorScheme.surface,
-                    width: 2,
+              SingleChildScrollView(
+                scrollDirection: Axis.vertical, // Enable vertical scrolling
+                child: SizedBox(
+                  width: MediaQuery.of(context).size.width *
+                      2, // Adjust width as needed
+                  child: DataTable(
+                    border: TableBorder.all(
+                      color: Theme.of(context).colorScheme.surface,
+                      width: 2,
+                    ),
+                    horizontalMargin: 15,
+                    columnSpacing: 0,
+                    dataRowMaxHeight: double.infinity,
+                    dataRowMinHeight: 60,
+                    columns: columns,
+                    rows: rows,
                   ),
-                  horizontalMargin: 15,
-                  columnSpacing: 0,
-                  dataRowMaxHeight: double.infinity,
-                  dataRowMinHeight: 60,
-                  columns: columns,
-                  rows: rows,
                 ),
               ),
               SizedBox(
