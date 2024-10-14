@@ -1,4 +1,7 @@
-import 'package:cost_calculator/constants/budget_constants.dart';
+import 'package:cost_calculator/constants/pol_budget_constants.dart' as pol;
+import 'package:cost_calculator/constants/norw_budget_constants.dart' as norw;
+import 'package:cost_calculator/constants/lit_budget_constants.dart' as lit;
+import 'package:cost_calculator/constants/budget_constants.dart' as eng;
 import 'package:cost_calculator/data/data.dart';
 import 'package:cost_calculator/data/lith_data.dart';
 import 'package:cost_calculator/data/norw_data.dart';
@@ -56,22 +59,22 @@ class _ScaffoldingScreenState extends State<ScaffoldingScreen> {
     totalPriceSum = 0.0;
 
     // Sum up the values for each item in filteredScaffoldingData
-    for (var deckItem in filteredScaffoldingData) {
+    for (var item in filteredScaffoldingData) {
       // Ensure the lists are not empty before calling reduce to avoid runtime errors
-      if (deckItem.laborHours2.isNotEmpty) {
-        totalLaborHours += deckItem.laborHours2
+      if (item.laborHours2.isNotEmpty) {
+        totalLaborHours += item.laborHours2
             .reduce((double value, double element) => value + element);
       }
-      if (deckItem.laborCost.isNotEmpty) {
-        totalLaborCost += deckItem.laborCost
+      if (item.laborCost.isNotEmpty) {
+        totalLaborCost += item.laborCost
             .reduce((double value, double element) => value + element);
       }
-      if (deckItem.materials.isNotEmpty) {
-        totalMaterialCost += deckItem.materials
+      if (item.materials.isNotEmpty) {
+        totalMaterialCost += item.materials
             .reduce((double value, double element) => value + element);
       }
-      if (deckItem.totalPrice.isNotEmpty) {
-        totalPriceSum += deckItem.totalPrice
+      if (item.totalPrice.isNotEmpty) {
+        totalPriceSum += item.totalPrice
             .reduce((double value, double element) => value + element);
       }
     }
@@ -192,10 +195,31 @@ class _ScaffoldingScreenState extends State<ScaffoldingScreen> {
                             // Calculate the total budget
                             _calculateTotals();
                             // Update the total budget
-                            addHours(catData.name, totalLaborHours);
-                            addLaborCosts(catData.name, totalLaborCost);
-                            addMaterialCosts(catData.name, totalMaterialCost);
-                            addBudgetSum(catData.name, totalPriceSum);
+                            if (languageEnglish) {
+                              eng.addHours(catData.name, totalLaborHours);
+                              eng.addLaborCosts(catData.name, totalLaborCost);
+                              eng.addMaterialCosts(
+                                  catData.name, totalMaterialCost);
+                              eng.addBudgetSum(catData.name, totalPriceSum);
+                            } else if (languageNorwegian) {
+                              norw.addHours(catData.name, totalLaborHours);
+                              norw.addLaborCosts(catData.name, totalLaborCost);
+                              norw.addMaterialCosts(
+                                  catData.name, totalMaterialCost);
+                              norw.addBudgetSum(catData.name, totalPriceSum);
+                            } else if (languagePolish) {
+                              pol.addHours(catData.name, totalLaborHours);
+                              pol.addLaborCosts(catData.name, totalLaborCost);
+                              pol.addMaterialCosts(
+                                  catData.name, totalMaterialCost);
+                              pol.addBudgetSum(catData.name, totalPriceSum);
+                            } else {
+                              lit.addHours(catData.name, totalLaborHours);
+                              lit.addLaborCosts(catData.name, totalLaborCost);
+                              lit.addMaterialCosts(
+                                  catData.name, totalMaterialCost);
+                              lit.addBudgetSum(catData.name, totalPriceSum);
+                            }
                           });
                         },
                       ),
