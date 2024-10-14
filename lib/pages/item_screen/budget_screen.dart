@@ -281,7 +281,7 @@ class _BudgetScreenState extends State<BudgetScreen> {
                         ),
                         DataCell(
                           Text(
-                            (costs * sumLaborCosts).toStringAsFixed(2) + "\$",
+                            (costs * sumLaborCosts).toStringAsFixed(2) + "kr.",
                           ),
                         ),
                       ],
@@ -299,7 +299,7 @@ class _BudgetScreenState extends State<BudgetScreen> {
                           ),
                         ),
                         DataCell(
-                          Text(sumMaterialCosts.toStringAsFixed(2) + "\$"),
+                          Text(sumMaterialCosts.toStringAsFixed(2) + "kr."),
                         ),
                       ],
                     ),
@@ -318,7 +318,7 @@ class _BudgetScreenState extends State<BudgetScreen> {
                         DataCell(
                           Text((sumWasteRemoval + sumWasteRemoval * markup)
                                   .toStringAsFixed(2) +
-                              "\$"),
+                              "kr."),
                         ),
                       ],
                     ),
@@ -336,7 +336,8 @@ class _BudgetScreenState extends State<BudgetScreen> {
                         ),
                         DataCell(
                           Text(
-                            (sumMaterialCosts * 0.05).toStringAsFixed(2) + "\$",
+                            (sumMaterialCosts * 0.05).toStringAsFixed(2) +
+                                "kr.",
                           ),
                         ),
                       ],
@@ -359,7 +360,7 @@ class _BudgetScreenState extends State<BudgetScreen> {
                                         sumMaterialCosts +
                                         (costs * sumLaborCosts))
                                     .toStringAsFixed(2) +
-                                "\$",
+                                "kr.",
                           ),
                         ),
                       ],
@@ -386,7 +387,7 @@ class _BudgetScreenState extends State<BudgetScreen> {
                                             sumMaterialCosts +
                                             (costs * sumLaborCosts)))
                                     .toStringAsFixed(2) +
-                                "\$",
+                                "kr.",
                           ),
                         ),
                       ],
@@ -410,7 +411,7 @@ class _BudgetScreenState extends State<BudgetScreen> {
                                             (costs * sumLaborCosts)) *
                                         1.25)
                                     .toStringAsFixed(2) +
-                                "\$",
+                                "kr.",
                           ),
                         ),
                       ],
