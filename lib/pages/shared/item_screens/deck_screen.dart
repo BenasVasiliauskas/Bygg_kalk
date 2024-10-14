@@ -1,3 +1,4 @@
+import 'package:cost_calculator/constants/budget_constants.dart';
 import 'package:cost_calculator/data/data.dart';
 import 'package:cost_calculator/data/lith_data.dart';
 import 'package:cost_calculator/data/norw_data.dart';
@@ -27,6 +28,12 @@ class _DeckScreenState extends State<DeckScreen> {
   List<TextEditingController> deckCalculationControllers = [];
   List<dynamic> filteredDeckData = [];
 
+  //Variables to hold the total sum of each field
+  double totalLaborHours = 0.0;
+  double totalLaborCost = 0.0;
+  double totalMaterialCost = 0.0;
+  double totalPriceSum = 0.0;
+
   @override
   void initState() {
     //WidgetsBinding.instance.addObserver(_observer);
@@ -51,6 +58,35 @@ class _DeckScreenState extends State<DeckScreen> {
         text: filteredDeckData[index].calculationQuantity.toString(),
       ),
     );
+  }
+
+  void _calculateTotals() {
+    // Reset total values
+    totalLaborHours = 0.0;
+    totalLaborCost = 0.0;
+    totalMaterialCost = 0.0;
+    totalPriceSum = 0.0;
+
+    // Sum up the values for each item in filteredDeckData
+    for (var deckItem in filteredDeckData) {
+      // Ensure the lists are not empty before calling reduce to avoid runtime errors
+      if (deckItem.laborHours2.isNotEmpty) {
+        totalLaborHours += deckItem.laborHours2
+            .reduce((double value, double element) => value + element);
+      }
+      if (deckItem.laborCost.isNotEmpty) {
+        totalLaborCost += deckItem.laborCost
+            .reduce((double value, double element) => value + element);
+      }
+      if (deckItem.materials.isNotEmpty) {
+        totalMaterialCost += deckItem.materials
+            .reduce((double value, double element) => value + element);
+      }
+      if (deckItem.totalPrice.isNotEmpty) {
+        totalPriceSum += deckItem.totalPrice
+            .reduce((double value, double element) => value + element);
+      }
+    }
   }
 
   @override
@@ -148,19 +184,16 @@ class _DeckScreenState extends State<DeckScreen> {
                                 i++) {
                               catData.laborHours2[i] = catData.laborHours1[i] *
                                   catData.calculationQuantity;
-                              print(catData.laborHours2[i]);
                             }
                             // Update labor cost
                             for (int i = 0; i < catData.laborCost.length; i++) {
                               catData.laborCost[i] =
                                   catData.laborHours2[i] * hourlyRate;
-                              print(catData.laborCost[i]);
                             }
                             // Update material costs
                             for (int i = 0; i < catData.materials.length; i++) {
                               catData.materials[i] = catData.material[i] *
                                   catData.calculationQuantity;
-                              print(catData.materials[i]);
                             }
                             // Update total price (labor + materials)
                             for (int i = 0;
@@ -168,8 +201,20 @@ class _DeckScreenState extends State<DeckScreen> {
                                 i++) {
                               catData.totalPrice[i] =
                                   catData.materials[i] + catData.laborCost[i];
-                              print(catData.totalPrice[i]);
                             }
+
+                            // Calculate the total budget
+                            _calculateTotals();
+
+                            print(totalLaborHours);
+                            print(totalLaborCost);
+                            print(totalMaterialCost);
+                            print(totalPriceSum);
+                            // Update the total budget
+                            addHours(catData.name, totalLaborHours);
+                            addLaborCosts(catData.name, totalLaborCost);
+                            addMaterialCosts(catData.name, totalMaterialCost);
+                            addBudgetSum(catData.name, totalPriceSum);
                           });
                         },
                       ),
