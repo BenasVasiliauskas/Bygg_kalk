@@ -4,6 +4,7 @@ import 'package:cost_calculator/data/norw_data.dart';
 import 'package:cost_calculator/data/polish_data.dart';
 import 'package:cost_calculator/items/deck_item.dart';
 import 'package:cost_calculator/observer/app_life_cycle_observer.dart';
+import 'package:cost_calculator/pages/shared/globals/calculation_variables.dart';
 import 'package:cost_calculator/pages/shared/home_page.dart';
 import 'package:cost_calculator/pages/shared/item_screens/building_components_screen.dart';
 import 'package:flutter/material.dart';
@@ -21,14 +22,14 @@ class DeckScreen extends StatefulWidget {
 }
 
 class _DeckScreenState extends State<DeckScreen> {
-  final AppLifecycleObserver _observer = AppLifecycleObserver();
+  //final AppLifecycleObserver _observer = AppLifecycleObserver();
 
   List<TextEditingController> deckCalculationControllers = [];
   List<dynamic> filteredDeckData = [];
 
   @override
   void initState() {
-    WidgetsBinding.instance.addObserver(_observer);
+    //WidgetsBinding.instance.addObserver(_observer);
     super.initState();
     List<dynamic> currentDeckData = languageEnglish
         ? deckData
@@ -54,7 +55,7 @@ class _DeckScreenState extends State<DeckScreen> {
 
   @override
   void dispose() {
-    WidgetsBinding.instance.removeObserver(_observer);
+    //WidgetsBinding.instance.removeObserver(_observer);
     // Dispose of controllers when the widget is destroyed
     for (var controller in deckCalculationControllers) {
       controller.dispose();
@@ -139,7 +140,36 @@ class _DeckScreenState extends State<DeckScreen> {
                         controller: controller,
                         onChanged: (value) {
                           setState(() {
-                            catData.calculationQuantity = double.parse(value);
+                            double parsedValue = double.tryParse(value) ?? 0.0;
+                            catData.calculationQuantity = parsedValue;
+                            //Update labor hours 2
+                            for (int i = 0;
+                                i < catData.laborHours2.length;
+                                i++) {
+                              catData.laborHours2[i] = catData.laborHours1[i] *
+                                  catData.calculationQuantity;
+                              print(catData.laborHours2[i]);
+                            }
+                            // Update labor cost
+                            for (int i = 0; i < catData.laborCost.length; i++) {
+                              catData.laborCost[i] =
+                                  catData.laborHours2[i] * hourlyRate;
+                              print(catData.laborCost[i]);
+                            }
+                            // Update material costs
+                            for (int i = 0; i < catData.materials.length; i++) {
+                              catData.materials[i] = catData.material[i] *
+                                  catData.calculationQuantity;
+                              print(catData.materials[i]);
+                            }
+                            // Update total price (labor + materials)
+                            for (int i = 0;
+                                i < catData.totalPrice.length;
+                                i++) {
+                              catData.totalPrice[i] =
+                                  catData.materials[i] + catData.laborCost[i];
+                              print(catData.totalPrice[i]);
+                            }
                           });
                         },
                       ),
