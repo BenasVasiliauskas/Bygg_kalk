@@ -129,6 +129,9 @@ class OuterWallItem extends StatelessWidget {
           child: Center(
             child: Text(
               name,
+              overflow: TextOverflow.ellipsis,
+              softWrap: true,
+              maxLines: 7,
             ),
           ),
           decoration: BoxDecoration(

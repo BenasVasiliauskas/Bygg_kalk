@@ -152,7 +152,6 @@ class _ExteriorWallScreenState extends State<ExteriorWallScreen> {
           children: List.generate(filteredExteriorWallData.length, (index) {
             var catData = filteredExteriorWallData[index];
             var controller = outerWallCalculationControllers[index];
-
             return Row(
               children: [
                 Expanded(

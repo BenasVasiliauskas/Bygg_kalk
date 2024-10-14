@@ -1,5 +1,5 @@
 import 'package:cost_calculator/constants/language.dart';
-import 'package:cost_calculator/data/data.dart';
+import 'package:cost_calculator/data/norw_data.dart';
 import 'package:cost_calculator/observer/app_life_cycle_observer.dart';
 import 'package:cost_calculator/pages/shared/home_page.dart';
 import 'package:cost_calculator/pages/shared/item_screens/building_components_screen.dart';
@@ -108,7 +108,7 @@ class _OuterWallSectionsState extends State<OuterWallSections> {
                 ),
                 Padding(
                   padding: const EdgeInsets.all(8.0),
-                  child: Text(exteriorWallData
+                  child: Text(norwExteriorWallData
                       .where((e) => e.constructionType == "New Construction")
                       .length
                       .toString()),
@@ -142,7 +142,7 @@ class _OuterWallSectionsState extends State<OuterWallSections> {
                 ),
                 Padding(
                   padding: const EdgeInsets.all(8.0),
-                  child: Text(exteriorWallData
+                  child: Text(norwExteriorWallData
                       .where((e) => e.constructionType == "Reconstruction")
                       .length
                       .toString()),
@@ -176,7 +176,7 @@ class _OuterWallSectionsState extends State<OuterWallSections> {
                 ),
                 Padding(
                   padding: const EdgeInsets.all(8.0),
-                  child: Text(exteriorWallData
+                  child: Text(norwExteriorWallData
                       .where((e) => e.constructionType == "Demolition")
                       .length
                       .toString()),
