@@ -23,7 +23,7 @@ class DeckScreen extends StatefulWidget {
 }
 
 class _DeckScreenState extends State<DeckScreen> {
-  //final AppLifecycleObserver _observer = AppLifecycleObserver();
+  final AppLifecycleObserver _observer = AppLifecycleObserver();
 
   List<TextEditingController> deckCalculationControllers = [];
   List<dynamic> filteredDeckData = [];
@@ -91,7 +91,7 @@ class _DeckScreenState extends State<DeckScreen> {
 
   @override
   void dispose() {
-    //WidgetsBinding.instance.removeObserver(_observer);
+    WidgetsBinding.instance.removeObserver(_observer);
     // Dispose of controllers when the widget is destroyed
     for (var controller in deckCalculationControllers) {
       controller.dispose();
@@ -202,14 +202,8 @@ class _DeckScreenState extends State<DeckScreen> {
                               catData.totalPrice[i] =
                                   catData.materials[i] + catData.laborCost[i];
                             }
-
                             // Calculate the total budget
                             _calculateTotals();
-
-                            print(totalLaborHours);
-                            print(totalLaborCost);
-                            print(totalMaterialCost);
-                            print(totalPriceSum);
                             // Update the total budget
                             addHours(catData.name, totalLaborHours);
                             addLaborCosts(catData.name, totalLaborCost);

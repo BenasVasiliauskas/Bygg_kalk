@@ -1,8 +1,10 @@
+import 'package:cost_calculator/constants/budget_constants.dart';
 import 'package:cost_calculator/data/data.dart';
 import 'package:cost_calculator/data/lith_data.dart';
 import 'package:cost_calculator/data/norw_data.dart';
 import 'package:cost_calculator/data/polish_data.dart';
 import 'package:cost_calculator/observer/app_life_cycle_observer.dart';
+import 'package:cost_calculator/pages/shared/globals/calculation_variables.dart';
 import 'package:cost_calculator/pages/shared/home_page.dart';
 import 'package:cost_calculator/pages/shared/item_screens/building_components_screen.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -24,8 +26,12 @@ class _InnerWallScreenState extends State<InnerWallScreen> {
   final AppLifecycleObserver _observer = AppLifecycleObserver();
 
   List<TextEditingController> innerWallCalculationQuantityController = [];
-  List<dynamic> filteredDeckData =
-      []; // Assuming dataInnerWallData type is dynamic
+  List<dynamic> filteredInnerWallData = [];
+  //Variables to hold the total sum of each field
+  double totalLaborHours = 0.0;
+  double totalLaborCost = 0.0;
+  double totalMaterialCost = 0.0;
+  double totalPriceSum = 0.0;
 
   @override
   void initState() {
@@ -41,17 +47,46 @@ class _InnerWallScreenState extends State<InnerWallScreen> {
                 ? polInnerWallData
                 : litInnerWallData;
 
-    filteredDeckData = currentDataInnerWallData
+    filteredInnerWallData = currentDataInnerWallData
         .where((e) => e.constructionType == widget.constructionType)
         .toList();
 
     // Initialize controllers for each item in the selected data list
     innerWallCalculationQuantityController = List.generate(
-      filteredDeckData.length,
+      filteredInnerWallData.length,
       (index) => TextEditingController(
-        text: filteredDeckData[index].calculationQuantity.toString(),
+        text: filteredInnerWallData[index].calculationQuantity.toString(),
       ),
     );
+  }
+
+  void _calculateTotals() {
+    // Reset total values
+    totalLaborHours = 0.0;
+    totalLaborCost = 0.0;
+    totalMaterialCost = 0.0;
+    totalPriceSum = 0.0;
+
+    // Sum up the values for each item in filteredInnerWallData
+    for (var deckItem in filteredInnerWallData) {
+      // Ensure the lists are not empty before calling reduce to avoid runtime errors
+      if (deckItem.laborHours2.isNotEmpty) {
+        totalLaborHours += deckItem.laborHours2
+            .reduce((double value, double element) => value + element);
+      }
+      if (deckItem.laborCost.isNotEmpty) {
+        totalLaborCost += deckItem.laborCost
+            .reduce((double value, double element) => value + element);
+      }
+      if (deckItem.materials.isNotEmpty) {
+        totalMaterialCost += deckItem.materials
+            .reduce((double value, double element) => value + element);
+      }
+      if (deckItem.totalPrice.isNotEmpty) {
+        totalPriceSum += deckItem.totalPrice
+            .reduce((double value, double element) => value + element);
+      }
+    }
   }
 
   @override
@@ -108,8 +143,8 @@ class _InnerWallScreenState extends State<InnerWallScreen> {
         ),
         body: GridView.count(
           padding: const EdgeInsets.all(25),
-          children: List.generate(filteredDeckData.length, (index) {
-            var catData = filteredDeckData[index];
+          children: List.generate(filteredInnerWallData.length, (index) {
+            var catData = filteredInnerWallData[index];
             var controller = innerWallCalculationQuantityController[index];
             return Row(
               children: [
@@ -140,7 +175,39 @@ class _InnerWallScreenState extends State<InnerWallScreen> {
                         controller: controller,
                         onChanged: (value) {
                           setState(() {
-                            catData.calculationQuantity = double.parse(value);
+                            double parsedValue = double.tryParse(value) ?? 0.0;
+                            catData.calculationQuantity = parsedValue;
+                            //Update labor hours 2
+                            for (int i = 0;
+                                i < catData.laborHours2.length;
+                                i++) {
+                              catData.laborHours2[i] = catData.laborHours1[i] *
+                                  catData.calculationQuantity;
+                            }
+                            // Update labor cost
+                            for (int i = 0; i < catData.laborCost.length; i++) {
+                              catData.laborCost[i] =
+                                  catData.laborHours2[i] * hourlyRate;
+                            }
+                            // Update material costs
+                            for (int i = 0; i < catData.materials.length; i++) {
+                              catData.materials[i] = catData.material[i] *
+                                  catData.calculationQuantity;
+                            }
+                            // Update total price (labor + materials)
+                            for (int i = 0;
+                                i < catData.totalPrice.length;
+                                i++) {
+                              catData.totalPrice[i] =
+                                  catData.materials[i] + catData.laborCost[i];
+                            }
+                            // Calculate the total budget
+                            _calculateTotals();
+                            // Update the total budget
+                            addHours(catData.name, totalLaborHours);
+                            addLaborCosts(catData.name, totalLaborCost);
+                            addMaterialCosts(catData.name, totalMaterialCost);
+                            addBudgetSum(catData.name, totalPriceSum);
                           });
                         },
                       ),
