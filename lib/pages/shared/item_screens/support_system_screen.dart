@@ -54,35 +54,6 @@ class _SupportSystemScreenState extends State<SupportSystemScreen> {
     );
   }
 
-  void _calculateTotals() {
-    // Reset total values
-    totalLaborHours = 0.0;
-    totalLaborCost = 0.0;
-    totalMaterialCost = 0.0;
-    totalPriceSum = 0.0;
-
-    // Sum up the values for each item in filteredSupportSystemData
-    for (var item in filteredSupportSystemData) {
-      // Ensure the lists are not empty before calling reduce to avoid runtime errors
-      if (item.laborHours2.isNotEmpty) {
-        totalLaborHours += item.laborHours2
-            .reduce((double value, double element) => value + element);
-      }
-      if (item.laborCost.isNotEmpty) {
-        totalLaborCost += item.laborCost
-            .reduce((double value, double element) => value + element);
-      }
-      if (item.materials.isNotEmpty) {
-        totalMaterialCost += item.materials
-            .reduce((double value, double element) => value + element);
-      }
-      if (item.totalPrice.isNotEmpty) {
-        totalPriceSum += item.totalPrice
-            .reduce((double value, double element) => value + element);
-      }
-    }
-  }
-
   @override
   void dispose() {
     WidgetsBinding.instance.removeObserver(_observer);
@@ -167,66 +138,87 @@ class _SupportSystemScreenState extends State<SupportSystemScreen> {
                     height: double.infinity,
                     child: Center(
                       child: TextField(
-                        controller: controller,
-                        onChanged: (value) {
-                          setState(() {
-                            double parsedValue = double.tryParse(value) ?? 0.0;
-                            catData.calculationQuantity = parsedValue;
-                            // Update labor hours 2
-                            for (int i = 0;
-                                i < catData.laborHours2.length;
-                                i++) {
-                              catData.laborHours2[i] = catData.laborHours1[i] *
-                                  catData.calculationQuantity;
-                            }
-                            // Update labor cost
-                            for (int i = 0; i < catData.laborCost.length; i++) {
-                              catData.laborCost[i] =
-                                  catData.laborHours2[i] * hourlyRate;
-                            }
-                            // Update material costs
-                            for (int i = 0; i < catData.materials.length; i++) {
-                              catData.materials[i] = catData.material[i] *
-                                  catData.calculationQuantity;
-                            }
-                            // Update total price (labor + materials)
-                            for (int i = 0;
-                                i < catData.totalPrice.length;
-                                i++) {
-                              catData.totalPrice[i] =
-                                  catData.materials[i] + catData.laborCost[i];
-                            }
-                            // Calculate the total budget
-                            _calculateTotals();
-                            // Update the total budget
-                            if (languageEnglish) {
-                              eng.addHours(catData.name, totalLaborHours);
-                              eng.addLaborCosts(catData.name, totalLaborCost);
-                              eng.addMaterialCosts(
-                                  catData.name, totalMaterialCost);
-                              eng.addBudgetSum(catData.name, totalPriceSum);
-                            } else if (languageNorwegian) {
-                              norw.addHours(catData.name, totalLaborHours);
-                              norw.addLaborCosts(catData.name, totalLaborCost);
-                              norw.addMaterialCosts(
-                                  catData.name, totalMaterialCost);
-                              norw.addBudgetSum(catData.name, totalPriceSum);
-                            } else if (languagePolish) {
-                              pol.addHours(catData.name, totalLaborHours);
-                              pol.addLaborCosts(catData.name, totalLaborCost);
-                              pol.addMaterialCosts(
-                                  catData.name, totalMaterialCost);
-                              pol.addBudgetSum(catData.name, totalPriceSum);
-                            } else {
-                              lit.addHours(catData.name, totalLaborHours);
-                              lit.addLaborCosts(catData.name, totalLaborCost);
-                              lit.addMaterialCosts(
-                                  catData.name, totalMaterialCost);
-                              lit.addBudgetSum(catData.name, totalPriceSum);
-                            }
-                          });
-                        },
-                      ),
+                          controller: controller,
+                          onChanged: (value) {
+                            setState(() {
+                              double parsedValue =
+                                  double.tryParse(value) ?? 0.0;
+                              catData.calculationQuantity = parsedValue;
+
+                              // Update labor hours 2
+                              for (int i = 0;
+                                  i < catData.laborHours2.length;
+                                  i++) {
+                                catData.laborHours2[i] =
+                                    catData.laborHours1[i] *
+                                        catData.calculationQuantity;
+                              }
+
+                              // Update labor cost
+                              for (int i = 0;
+                                  i < catData.laborCost.length;
+                                  i++) {
+                                catData.laborCost[i] =
+                                    catData.laborHours2[i] * hourlyRate;
+                              }
+
+                              // Update material costs
+                              for (int i = 0;
+                                  i < catData.materials.length;
+                                  i++) {
+                                catData.materials[i] = catData.material[i] *
+                                    catData.calculationQuantity;
+                              }
+
+                              // Update total price (labor + materials)
+                              for (int i = 0;
+                                  i < catData.totalPrice.length;
+                                  i++) {
+                                catData.totalPrice[i] =
+                                    catData.materials[i] + catData.laborCost[i];
+                              }
+
+                              totalLaborHours = catData.laborHours2.fold(
+                                  0, (prev, laborHours) => prev + laborHours);
+
+                              totalLaborCost = catData.laborCost.fold(
+                                  0, (prev, laborCost) => prev + laborCost);
+
+                              totalMaterialCost = catData.materials.fold(0,
+                                  (prev, materialCost) => prev + materialCost);
+
+                              totalPriceSum = catData.totalPrice.fold(
+                                  0, (prev, totalPrice) => prev + totalPrice);
+
+                              // Update the total budget
+                              if (languageEnglish) {
+                                eng.addHours(catData.name, totalLaborHours);
+                                eng.addLaborCosts(catData.name, totalLaborCost);
+                                eng.addMaterialCosts(
+                                    catData.name, totalMaterialCost);
+                                eng.addBudgetSum(catData.name, totalPriceSum);
+                              } else if (languageNorwegian) {
+                                norw.addHours(catData.name, totalLaborHours);
+                                norw.addLaborCosts(
+                                    catData.name, totalLaborCost);
+                                norw.addMaterialCosts(
+                                    catData.name, totalMaterialCost);
+                                norw.addBudgetSum(catData.name, totalPriceSum);
+                              } else if (languagePolish) {
+                                pol.addHours(catData.name, totalLaborHours);
+                                pol.addLaborCosts(catData.name, totalLaborCost);
+                                pol.addMaterialCosts(
+                                    catData.name, totalMaterialCost);
+                                pol.addBudgetSum(catData.name, totalPriceSum);
+                              } else {
+                                lit.addHours(catData.name, totalLaborHours);
+                                lit.addLaborCosts(catData.name, totalLaborCost);
+                                lit.addMaterialCosts(
+                                    catData.name, totalMaterialCost);
+                                lit.addBudgetSum(catData.name, totalPriceSum);
+                              }
+                            });
+                          }),
                     ),
                   ),
                 ),

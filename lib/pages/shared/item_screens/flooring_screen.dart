@@ -61,35 +61,6 @@ class _FlooringSectionsState extends State<FlooringScreen> {
     );
   }
 
-  void _calculateTotals() {
-    // Reset total values
-    totalLaborHours = 0.0;
-    totalLaborCost = 0.0;
-    totalMaterialCost = 0.0;
-    totalPriceSum = 0.0;
-
-    // Sum up the values for each item in filteredFlooringData
-    for (var item in filteredFlooringData) {
-      // Ensure the lists are not empty before calling reduce to avoid runtime errors
-      if (item.laborHours2.isNotEmpty) {
-        totalLaborHours += item.laborHours2
-            .reduce((double value, double element) => value + element);
-      }
-      if (item.laborCost.isNotEmpty) {
-        totalLaborCost += item.laborCost
-            .reduce((double value, double element) => value + element);
-      }
-      if (item.materials.isNotEmpty) {
-        totalMaterialCost += item.materials
-            .reduce((double value, double element) => value + element);
-      }
-      if (item.totalPrice.isNotEmpty) {
-        totalPriceSum += item.totalPrice
-            .reduce((double value, double element) => value + element);
-      }
-    }
-  }
-
   @override
   void dispose() {
     WidgetsBinding.instance.removeObserver(_observer);
@@ -202,8 +173,17 @@ class _FlooringSectionsState extends State<FlooringScreen> {
                               catData.totalPrice[i] =
                                   catData.materials[i] + catData.laborCost[i];
                             }
-                            // Calculate the total budget
-                            _calculateTotals();
+                            totalLaborHours = catData.laborHours2.fold(
+                                0, (prev, laborHours) => prev + laborHours);
+
+                            totalLaborCost = catData.laborCost
+                                .fold(0, (prev, laborCost) => prev + laborCost);
+
+                            totalMaterialCost = catData.materials.fold(
+                                0, (prev, materialCost) => prev + materialCost);
+
+                            totalPriceSum = catData.totalPrice.fold(
+                                0, (prev, totalPrice) => prev + totalPrice);
                             // Update the total budget
                             if (languageEnglish) {
                               eng.addHours(catData.name, totalLaborHours);
