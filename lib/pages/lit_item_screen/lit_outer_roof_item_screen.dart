@@ -212,17 +212,6 @@ class _LitOuterRoofItemScreenState extends State<LitOuterRoofItemScreen> {
     );
   }
 
-  void calculateCalculationQuantity() {
-    double mat2Total = widget.material2
-        .fold(0, (previousValue, element) => previousValue + element);
-    double mat1Total = widget.material1
-        .fold(0, (previousValue, element) => previousValue + element);
-
-    calculationQuantity = mat2Total / mat1Total;
-
-    widget.calculationQuantity = calculationQuantity;
-  }
-
   void setInitialValues() {
     for (int i = 0; i < widget.description.length; i++) {
       descriptionControllers[i].text = widget.description[i];

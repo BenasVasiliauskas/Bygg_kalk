@@ -384,8 +384,8 @@ class _SupportSystemItemScreenState extends State<SupportSystemItemScreen> {
                 widget.calculationQuantity,
               ).toStringAsFixed(2);
               // Recalculate and update the total price when quantity changes
-              widget.totalPrice[i] = calculateTotalPrice(
-                  i, widget.laborCost, widget.material1, calculationQuantity);
+              widget.totalPrice[i] = calculateTotalPrice(i, widget.laborCost,
+                  widget.material1, widget.calculationQuantity);
               totalPriceControllers[i].text = calculateTotalPrice(
                       i,
                       widget.laborCost,

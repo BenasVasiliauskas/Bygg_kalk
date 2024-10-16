@@ -280,7 +280,7 @@ class _optionsScreenState extends State<optionsScreen> {
           title: languageEnglish
               ? Text("Time factor")
               : languageNorwegian
-                  ? Text('Tidskoeffisient')
+                  ? Text('Tidsfaktor')
                   : languageLithuanian
                       ? Text("Laiko faktorius")
                       : Text("Czynnik czasu"),
@@ -618,7 +618,7 @@ class _optionsScreenState extends State<optionsScreen> {
                             child: languageEnglish
                                 ? Text("Time coefficient")
                                 : languageNorwegian
-                                    ? Text('Tidskoeffisient')
+                                    ? Text('Tidsfaktor')
                                     : languageLithuanian
                                         ? Text("Laiko koeficientas")
                                         : Text("Współczynnik czasu"),

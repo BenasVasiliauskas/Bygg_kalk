@@ -216,17 +216,6 @@ class _WindowsExteriorDoorItemsScreen
     );
   }
 
-  void calculateCalculationQuantity() {
-    double mat2Total = widget.material2
-        .fold(0, (previousValue, element) => previousValue + element);
-    double mat1Total = widget.material1
-        .fold(0, (previousValue, element) => previousValue + element);
-
-    calculationQuantity = mat2Total / mat1Total;
-
-    widget.calculationQuantity = calculationQuantity;
-  }
-
   void setInitialValues() {
     for (int i = 0; i < widget.description.length; i++) {
       descriptionControllers[i].text = widget.description[i];
@@ -239,8 +228,6 @@ class _WindowsExteriorDoorItemsScreen
       material2Controllers[i].text = widget.material2[i].toStringAsFixed(2);
       totalPriceControllers[i].text = widget.totalPrice[i].toStringAsFixed(2);
     }
-
-    calculationQuantity.toStringAsFixed(2);
     recalculateValues();
   }
 

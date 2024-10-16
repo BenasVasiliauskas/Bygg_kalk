@@ -200,17 +200,6 @@ class _NorwInnerDoorItemScreenScreenState
     updateTotalSum();
   }
 
-  void calculateCalculationQuantity() {
-    double mat2Total = widget.material2
-        .fold(0, (previousValue, element) => previousValue + element);
-    double mat1Total = widget.material1
-        .fold(0, (previousValue, element) => previousValue + element);
-
-    calculationQuantity = mat2Total / mat1Total;
-
-    widget.calculationQuantity = calculationQuantity;
-  }
-
   void _resetLaborHours() {
     if (!mounted) return; // Ensure the widget is still mounted
 
