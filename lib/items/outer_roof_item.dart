@@ -124,7 +124,7 @@ class OuterRoofItem extends StatelessWidget {
         splashColor: Theme.of(context).primaryColor,
         onTap: () => selectCategory(context),
         child: Container(
-          padding: const EdgeInsets.all(15),
+          padding: const EdgeInsets.all(5),
           child: Center(
             child: Text(
               name,

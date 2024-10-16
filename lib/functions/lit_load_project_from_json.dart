@@ -1,4 +1,4 @@
-import 'package:cost_calculator/data/lith_data.dart';
+import 'package:cost_calculator/data/lithuanian%20data%20folder/lith_data.dart';
 import 'package:cost_calculator/models/deck_data_model.dart';
 import 'package:cost_calculator/models/flooring_data_model.dart';
 import 'package:cost_calculator/models/hull_roofing_data_model.dart';

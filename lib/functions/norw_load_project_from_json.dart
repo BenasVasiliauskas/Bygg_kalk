@@ -1,4 +1,4 @@
-import 'package:cost_calculator/data/norw_data.dart';
+import 'package:cost_calculator/data/norwegian%20data%20folder/norw_data.dart';
 import 'package:cost_calculator/models/deck_data_model.dart';
 import 'package:cost_calculator/models/flooring_data_model.dart';
 import 'package:cost_calculator/models/hull_roofing_data_model.dart';

@@ -2,10 +2,10 @@ import 'package:cost_calculator/constants/pol_budget_constants.dart' as pol;
 import 'package:cost_calculator/constants/norw_budget_constants.dart' as norw;
 import 'package:cost_calculator/constants/lit_budget_constants.dart' as lit;
 import 'package:cost_calculator/constants/budget_constants.dart' as eng;
-import 'package:cost_calculator/data/data.dart';
-import 'package:cost_calculator/data/lith_data.dart';
-import 'package:cost_calculator/data/norw_data.dart';
-import 'package:cost_calculator/data/polish_data.dart';
+import 'package:cost_calculator/data/english%20data%20folder/data.dart';
+import 'package:cost_calculator/data/lithuanian%20data%20folder/lith_data.dart';
+import 'package:cost_calculator/data/norwegian%20data%20folder/norw_data.dart';
+import 'package:cost_calculator/data/polish%20data%20folder/polish_data.dart';
 import 'package:cost_calculator/items/inner_stairs_item.dart';
 import 'package:cost_calculator/observer/app_life_cycle_observer.dart';
 import 'package:cost_calculator/pages/shared/globals/calculation_variables.dart';
@@ -161,7 +161,7 @@ class _InnerStairsScreen extends State<InnerStairsScreen> {
                 Padding(
                   padding: const EdgeInsets.all(8),
                   child: Container(
-                    width: 100,
+                    width: 35,
                     height: double.infinity,
                     child: Center(
                       child: TextField(
@@ -240,7 +240,7 @@ class _InnerStairsScreen extends State<InnerStairsScreen> {
           }),
           crossAxisCount: 1,
           mainAxisSpacing: 20,
-          childAspectRatio: 7 / 2,
+          childAspectRatio: 2,
         ),
       ),
     );

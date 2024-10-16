@@ -1,6 +1,6 @@
 import 'package:cost_calculator/constants/language.dart';
-import 'package:cost_calculator/data/data.dart';
-import 'package:cost_calculator/data/norw_data.dart';
+import 'package:cost_calculator/data/english%20data%20folder/data.dart';
+import 'package:cost_calculator/data/norwegian%20data%20folder/norw_data.dart';
 import 'package:cost_calculator/functions/save_project_to_json.dart';
 import 'package:cost_calculator/functions/save_to_json.dart';
 import 'package:cost_calculator/observer/app_life_cycle_observer.dart';

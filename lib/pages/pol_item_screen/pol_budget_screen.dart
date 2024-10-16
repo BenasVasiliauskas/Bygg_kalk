@@ -1,6 +1,6 @@
 import 'package:cost_calculator/constants/empty_models.dart';
 import 'package:cost_calculator/constants/pol_budget_constants.dart';
-import 'package:cost_calculator/data/polish_data.dart';
+import 'package:cost_calculator/data/polish%20data%20folder/polish_data.dart';
 import 'package:cost_calculator/functions/pol_load_project_from_json.dart';
 import 'package:cost_calculator/functions/save_to_json.dart';
 import 'package:cost_calculator/observer/app_life_cycle_observer.dart';

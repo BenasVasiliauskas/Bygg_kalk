@@ -1,5 +1,5 @@
 import 'package:cost_calculator/constants/empty_models.dart';
-import 'package:cost_calculator/data/norw_data.dart';
+import 'package:cost_calculator/data/norwegian%20data%20folder/norw_data.dart';
 import 'package:cost_calculator/functions/norw_load_project_from_json.dart';
 import 'package:cost_calculator/functions/save_to_json.dart';
 import 'package:cost_calculator/observer/app_life_cycle_observer.dart';

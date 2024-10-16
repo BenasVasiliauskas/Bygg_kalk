@@ -9,8 +9,8 @@ import 'package:cost_calculator/models/support_system_data_model.dart';
 import 'package:cost_calculator/models/terrace_model.dart';
 import 'package:cost_calculator/models/waste_data_model.dart';
 import 'package:cost_calculator/models/windows_exterior_doors_model.dart';
-import '../models/inner_wall_data_model.dart';
-import '../models/outer_wall_data_model.dart';
+import '../../models/inner_wall_data_model.dart';
+import '../../models/outer_wall_data_model.dart';
 
 final dataInnerWallData = [
   //

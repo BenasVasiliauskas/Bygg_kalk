@@ -1,6 +1,6 @@
 // ignore_for_file: must_be_immutable
 
-import 'package:cost_calculator/data/polish_data.dart';
+import 'package:cost_calculator/data/polish%20data%20folder/polish_data.dart';
 import 'package:cost_calculator/functions/initialise_functions.dart';
 import 'package:cost_calculator/observer/app_life_cycle_observer.dart';
 import 'package:cost_calculator/pages/shared/globals/calculation_variables.dart';

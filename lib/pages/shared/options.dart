@@ -380,7 +380,7 @@ class _optionsScreenState extends State<optionsScreen> {
           title: languageEnglish
               ? Text("Costs")
               : languageNorwegian
-                  ? Text('Kostnader')
+                  ? Text('Rigg og Drift')
                   : languageLithuanian
                       ? Text("Išlaidos")
                       : Text("Koszty"),

@@ -1,5 +1,5 @@
 import 'package:cost_calculator/constants/empty_models.dart';
-import 'package:cost_calculator/data/lith_data.dart';
+import 'package:cost_calculator/data/lithuanian%20data%20folder/lith_data.dart';
 import 'package:cost_calculator/functions/lit_load_project_from_json.dart';
 import 'package:cost_calculator/functions/save_to_json.dart';
 import 'package:cost_calculator/observer/app_life_cycle_observer.dart';
