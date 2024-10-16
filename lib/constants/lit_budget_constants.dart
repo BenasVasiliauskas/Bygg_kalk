@@ -1,3 +1,4 @@
+import 'package:cost_calculator/data/lithuanian_data_folder/lith_data.dart';
 import 'package:cost_calculator/models/waste_data_model.dart';
 
 List<String> calculatedNamesOrder = [
@@ -86,264 +87,244 @@ List<double> budgetSums = [
 ];
 
 Map<String, double> innerWallHours = {
-  "48x98 medinis karkasas, dviguba akustinė siena, dvigubas tinkas": 0,
-  "Medinės santvaros 48x98, apšiltintos, paprastos plokštės": 0,
-  "Medinis rėmas 48x98, pjūvis h=2400, gipso kartonas": 0,
-  "2x75 mm plieninė santvara, dviguba, apšiltinta, gipsinė": 0,
-  "2x100 mm plieninė santvara, dviguba, apšiltinta, gipsinė": 0,
-  "2x75 mm plieninė santvara, dvigubai apšiltinta, dvigubai tinkuota": 0,
-  "Mūrinės sienos, tinkuota apdaila, dvibutis": 0,
-  "Durų vidinėje sienoje griovimas baigtas": 0,
+  for (var i = 0; i < litInnerWallData.length; i++) litInnerWallData[i].name: 0,
 };
 
 Map<String, double> innerWallLaborCosts = {
-  "48x98 medinis karkasas, dviguba akustinė siena, dvigubas tinkas": 0,
-  "Medinės santvaros 48x98, apšiltintos, paprastos plokštės": 0,
-  "Medinis rėmas 48x98, pjūvis h=2400, gipso kartonas": 0,
-  "2x75 mm plieninė santvara, dviguba, apšiltinta, gipsinė": 0,
-  "2x100 mm plieninė santvara, dviguba, apšiltinta, gipsinė": 0,
-  "2x75 mm plieninė santvara, dvigubai apšiltinta, dvigubai tinkuota": 0,
-  "Mūrinės sienos, tinkuota apdaila, dvibutis": 0,
-  "Durų vidinėje sienoje griovimas baigtas": 0,
+  for (var i = 0; i < litInnerWallData.length; i++) litInnerWallData[i].name: 0,
 };
 
 Map<String, double> innerWallMaterialCosts = {
-  "48x98 medinis karkasas, dviguba akustinė siena, dvigubas tinkas": 0,
-  "Medinės santvaros 48x98, apšiltintos, paprastos plokštės": 0,
-  "Medinis rėmas 48x98, pjūvis h=2400, gipso kartonas": 0,
-  "2x75 mm plieninė santvara, dviguba, apšiltinta, gipsinė": 0,
-  "2x100 mm plieninė santvara, dviguba, apšiltinta, gipsinė": 0,
-  "2x75 mm plieninė santvara, dvigubai apšiltinta, dvigubai tinkuota": 0,
-  "Mūrinės sienos, tinkuota apdaila, dvibutis": 0,
-  "Durų vidinėje sienoje griovimas baigtas": 0,
+  for (var i = 0; i < litInnerWallData.length; i++) litInnerWallData[i].name: 0,
 };
 
 Map<String, double> innerWallBudgetSum = {
-  "48x98 medinis karkasas, dviguba akustinė siena, dvigubas tinkas": 0,
-  "Medinės santvaros 48x98, apšiltintos, paprastos plokštės": 0,
-  "Medinis rėmas 48x98, pjūvis h=2400, gipso kartonas": 0,
-  "2x75 mm plieninė santvara, dviguba, apšiltinta, gipsinė": 0,
-  "2x100 mm plieninė santvara, dviguba, apšiltinta, gipsinė": 0,
-  "2x75 mm plieninė santvara, dvigubai apšiltinta, dvigubai tinkuota": 0,
-  "Mūrinės sienos, tinkuota apdaila, dvibutis": 0,
-  "Durų vidinėje sienoje griovimas baigtas": 0,
+  for (var i = 0; i < litInnerWallData.length; i++) litInnerWallData[i].name: 0,
 };
 /////////////////////////////////////////////////////////////////////////////////////
 Map<String, double> outerWallHours = {
-  "48x198 medinis karkasas, 50 mm dailylentės, stovinčios siūlės, tinkas": 0,
-  "Medinis karkasas, po apšiltinimo. nauja plokštė": 0,
-  "Išorinėje sienoje esančių durų griovimas baigtas": 0,
+  for (var i = 0; i < litExteriorWallData.length; i++)
+    litExteriorWallData[i].name: 0,
 };
 
 Map<String, double> outerWallLaborCosts = {
-  "48x198 medinis karkasas, 50 mm dailylentės, stovinčios siūlės, tinkas": 0,
-  "Medinis karkasas, po apšiltinimo. nauja plokštė": 0,
-  "Išorinėje sienoje esančių durų griovimas baigtas": 0,
+  for (var i = 0; i < litExteriorWallData.length; i++)
+    litExteriorWallData[i].name: 0,
 };
 
 Map<String, double> outerWallMaterialCosts = {
-  "48x198 medinis karkasas, 50 mm dailylentės, stovinčios siūlės, tinkas": 0,
-  "Medinis karkasas, po apšiltinimo. nauja plokštė": 0,
-  "Išorinėje sienoje esančių durų griovimas baigtas": 0,
+  for (var i = 0; i < litExteriorWallData.length; i++)
+    litExteriorWallData[i].name: 0,
 };
 
 Map<String, double> outerWallBudgetSum = {
-  "48x198 medinis karkasas, 50 mm dailylentės, stovinčios siūlės, tinkas": 0,
-  "Medinis karkasas, po apšiltinimo. nauja plokštė": 0,
-  "Išorinėje sienoje esančių durų griovimas baigtas": 0,
+  for (var i = 0; i < litExteriorWallData.length; i++)
+    litExteriorWallData[i].name: 0,
 };
 /////////////////////////////////////////////////////////////////////////////////////
 Map<String, double> innerDoorHours = {
-  "Vidaus durys, pušies 9x21": 0,
+  for (var i = 0; i < litInnerDoor.length; i++) litInnerDoor[i].name: 0,
 };
 Map<String, double> innerDoorLaborCosts = {
-  "Vidaus durys, pušies 9x21": 0,
+  for (var i = 0; i < litInnerDoor.length; i++) litInnerDoor[i].name: 0,
 };
 Map<String, double> innerDoorMaterialCosts = {
-  "Vidaus durys, pušies 9x21": 0,
+  for (var i = 0; i < litInnerDoor.length; i++) litInnerDoor[i].name: 0,
 };
 Map<String, double> innerDoorBudgetSum = {
-  "Vidaus durys, pušies 9x21": 0,
+  for (var i = 0; i < litInnerDoor.length; i++) litInnerDoor[i].name: 0,
 };
+
 /////////////////////////////////////////////////////////////////////////////////////
 
 Map<String, double> windowsAndExteriorDoorHours = {
-  "Langas, medinė viršutinė siena 12x10 posūkis": 0,
-  "Medinės lauko durys pusrūsio sienoje, baltos, 9x21": 0,
+  for (var i = 0; i < litWindowsExteriorDoors.length; i++)
+    litWindowsExteriorDoors[i].name: 0,
 };
 Map<String, double> windowsAndExteriorDoorLaborCosts = {
-  "Langas, medinė viršutinė siena 12x10 posūkis": 0,
-  "Medinės lauko durys pusrūsio sienoje, baltos, 9x21": 0,
+  for (var i = 0; i < litWindowsExteriorDoors.length; i++)
+    litWindowsExteriorDoors[i].name: 0,
 };
 Map<String, double> windowsAndExteriorDoorMaterialCosts = {
-  "Langas, medinė viršutinė siena 12x10 posūkis": 0,
-  "Medinės lauko durys pusrūsio sienoje, baltos, 9x21": 0,
+  for (var i = 0; i < litWindowsExteriorDoors.length; i++)
+    litWindowsExteriorDoors[i].name: 0,
 };
 Map<String, double> windowsAndExteriorDoorBudgetSum = {
-  "Langas, medinė viršutinė siena 12x10 posūkis": 0,
-  "Medinės lauko durys pusrūsio sienoje, baltos, 9x21": 0,
+  for (var i = 0; i < litWindowsExteriorDoors.length; i++)
+    litWindowsExteriorDoors[i].name: 0,
 };
-
 /////////////////////////////////////////////////////////////////////////////////////
 
 Map<String, double> deckHours = {
-  "Grindys ant žemės, išlietos, apšiltintos, išlietos": 0,
-  "Medinės sijos, izoliacija po jomis": 0,
-  "Grindys ant žemės, išlyginamojo sluoksnio, linoleumo pašalinimas": 0,
+  for (var i = 0; i < litDeckData.length; i++) litDeckData[i].name: 0,
 };
+
 Map<String, double> deckLaborCosts = {
-  "Grindys ant žemės, išlietos, apšiltintos, išlietos": 0,
-  "Medinės sijos, izoliacija po jomis": 0,
-  "Grindys ant žemės, išlyginamojo sluoksnio, linoleumo pašalinimas": 0,
+  for (var i = 0; i < litDeckData.length; i++) litDeckData[i].name: 0,
 };
+
 Map<String, double> deckMaterialCosts = {
-  "Grindys ant žemės, išlietos, apšiltintos, išlietos": 0,
-  "Medinės sijos, izoliacija po jomis": 0,
-  "Grindys ant žemės, išlyginamojo sluoksnio, linoleumo pašalinimas": 0,
+  for (var i = 0; i < litDeckData.length; i++) litDeckData[i].name: 0,
 };
+
 Map<String, double> deckBudgetSum = {
-  "Grindys ant žemės, išlietos, apšiltintos, išlietos": 0,
-  "Medinės sijos, izoliacija po jomis": 0,
-  "Grindys ant žemės, išlyginamojo sluoksnio, linoleumo pašalinimas": 0,
+  for (var i = 0; i < litDeckData.length; i++) litDeckData[i].name: 0,
 };
 
 /////////////////////////////////////////////////////////////////////////////////////
 
 Map<String, double> flooringHours = {
-  "Drėgno kambario siena su plokštėmis - drėgno kambario plytelės + 25x33 plytelės":
-      0,
-  "Drėgno kambario siena su plokšte, tinku ir plytelėmis 20x30": 0,
+  for (var i = 0; i < litFlooringData.length; i++) litFlooringData[i].name: 0,
 };
+
 Map<String, double> flooringLaborCosts = {
-  "Drėgno kambario siena su plokštėmis - drėgno kambario plytelės + 25x33 plytelės":
-      0,
-  "Drėgno kambario siena su plokšte, tinku ir plytelėmis 20x30": 0,
+  for (var i = 0; i < litFlooringData.length; i++) litFlooringData[i].name: 0,
 };
+
 Map<String, double> flooringMaterialCosts = {
-  "Drėgno kambario siena su plokštėmis - drėgno kambario plytelės + 25x33 plytelės":
-      0,
-  "Drėgno kambario siena su plokšte, tinku ir plytelėmis 20x30": 0,
+  for (var i = 0; i < litFlooringData.length; i++) litFlooringData[i].name: 0,
 };
+
 Map<String, double> flooringBudgetSum = {
-  "Drėgno kambario siena su plokštėmis - drėgno kambario plytelės + 25x33 plytelės":
-      0,
-  "Drėgno kambario siena su plokšte, tinku ir plytelėmis 20x30": 0,
+  for (var i = 0; i < litFlooringData.length; i++) litFlooringData[i].name: 0,
 };
 
 /////////////////////////////////////////////////////////////////////////////////////
 
 Map<String, double> roofHours = {
-  "Barjerinis stogas iš medžio, čerpių, gipso kartono plokščių": 0,
-  "Medinės sijos, išorinė izoliacija + kartoninė danga": 0,
-  "Plokščiųjų stogų griovimas, apšiltinti stogai, čerpės/plėvelė ant plokščiųjų stogų":
-      0,
+  for (var i = 0; i < litOuterRoofData.length; i++) litOuterRoofData[i].name: 0,
 };
+
 Map<String, double> roofLaborCosts = {
-  "Barjerinis stogas iš medžio, čerpių, gipso kartono plokščių": 0,
-  "Medinės sijos, išorinė izoliacija + kartoninė danga": 0,
-  "Plokščiųjų stogų griovimas, apšiltinti stogai, čerpės/plėvelė ant plokščiųjų stogų":
-      0,
+  for (var i = 0; i < litOuterRoofData.length; i++) litOuterRoofData[i].name: 0,
 };
+
 Map<String, double> roofMaterialCosts = {
-  "Barjerinis stogas iš medžio, čerpių, gipso kartono plokščių": 0,
-  "Medinės sijos, išorinė izoliacija + kartoninė danga": 0,
-  "Plokščiųjų stogų griovimas, apšiltinti stogai, čerpės/plėvelė ant plokščiųjų stogų":
-      0,
+  for (var i = 0; i < litOuterRoofData.length; i++) litOuterRoofData[i].name: 0,
 };
+
 Map<String, double> roofBudgetSum = {
-  "Barjerinis stogas iš medžio, čerpių, gipso kartono plokščių": 0,
-  "Medinės sijos, išorinė izoliacija + kartoninė danga": 0,
-  "Plokščiųjų stogų griovimas, apšiltinti stogai, čerpės/plėvelė ant plokščiųjų stogų":
-      0,
+  for (var i = 0; i < litOuterRoofData.length; i++) litOuterRoofData[i].name: 0,
 };
 
 /////////////////////////////////////////////////////////////////////////////////////
 
 Map<String, double> terraceHours = {
-  "Nerūdijančio plieno ir stiklo turėklai": 0,
+  for (var i = 0; i < litTerraceData.length; i++) litTerraceData[i].name: 0,
 };
+
 Map<String, double> terraceLaborCosts = {
-  "Nerūdijančio plieno ir stiklo turėklai": 0,
+  for (var i = 0; i < litTerraceData.length; i++) litTerraceData[i].name: 0,
 };
+
 Map<String, double> terraceMaterialCosts = {
-  "Nerūdijančio plieno ir stiklo turėklai": 0,
+  for (var i = 0; i < litTerraceData.length; i++) litTerraceData[i].name: 0,
 };
+
 Map<String, double> terraceBudgetSum = {
-  "Nerūdijančio plieno ir stiklo turėklai": 0,
+  for (var i = 0; i < litTerraceData.length; i++) litTerraceData[i].name: 0,
 };
+
 /////////////////////////////////////////////////////////////////////////////////////
 
 Map<String, double> innerStairsHours = {
-  "Laiptai viduryje, trys važiavimai iš eilės": 0,
+  for (var i = 0; i < litInnerStairsData.length; i++)
+    litInnerStairsData[i].name: 0,
 };
+
 Map<String, double> innerStairsLaborCosts = {
-  "Laiptai viduryje, trys važiavimai iš eilės": 0,
+  for (var i = 0; i < litInnerStairsData.length; i++)
+    litInnerStairsData[i].name: 0,
 };
+
 Map<String, double> innerStairsMaterialCosts = {
-  "Laiptai viduryje, trys važiavimai iš eilės": 0,
+  for (var i = 0; i < litInnerStairsData.length; i++)
+    litInnerStairsData[i].name: 0,
 };
+
 Map<String, double> innerStairsBudgetSum = {
-  "Laiptai viduryje, trys važiavimai iš eilės": 0,
+  for (var i = 0; i < litInnerStairsData.length; i++)
+    litInnerStairsData[i].name: 0,
 };
+
 /////////////////////////////////////////////////////////////////////////////////////
 
 Map<String, double> hullRoofingHours = {
-  "245 m² ploto vienbučio namo - 2 aukštų - denginio stogo danga (apskaičiuokite kiekį ir pasirinkite medžiagos tipą)":
-      0,
+  for (var i = 0; i < litHullRoofingData.length; i++)
+    litHullRoofingData[i].name: 0,
 };
+
 Map<String, double> hullRoofingLaborCosts = {
-  "245 m² ploto vienbučio namo - 2 aukštų - denginio stogo danga (apskaičiuokite kiekį ir pasirinkite medžiagos tipą)":
-      0,
+  for (var i = 0; i < litHullRoofingData.length; i++)
+    litHullRoofingData[i].name: 0,
 };
+
 Map<String, double> hullRoofingMaterialCosts = {
-  "245 m² ploto vienbučio namo - 2 aukštų - denginio stogo danga (apskaičiuokite kiekį ir pasirinkite medžiagos tipą)":
-      0,
+  for (var i = 0; i < litHullRoofingData.length; i++)
+    litHullRoofingData[i].name: 0,
 };
+
 Map<String, double> hullRoofingBudgetSum = {
-  "245 m² ploto vienbučio namo - 2 aukštų - denginio stogo danga (apskaičiuokite kiekį ir pasirinkite medžiagos tipą)":
-      0,
+  for (var i = 0; i < litHullRoofingData.length; i++)
+    litHullRoofingData[i].name: 0,
 };
+
 /////////////////////////////////////////////////////////////////////////////////////
 
 Map<String, double> scaffoldingHours = {
-  "Sijos ir kolonos, klijuotos medienos ir plieno - Individualus namas": 0,
+  for (var i = 0; i < litScaffoldingData.length; i++)
+    litScaffoldingData[i].name: 0,
 };
+
 Map<String, double> scaffoldingLaborCosts = {
-  "Sijos ir kolonos, klijuotos medienos ir plieno - Individualus namas": 0,
+  for (var i = 0; i < litScaffoldingData.length; i++)
+    litScaffoldingData[i].name: 0,
 };
+
 Map<String, double> scaffoldingMaterialCosts = {
-  "Sijos ir kolonos, klijuotos medienos ir plieno - Individualus namas": 0,
+  for (var i = 0; i < litScaffoldingData.length; i++)
+    litScaffoldingData[i].name: 0,
 };
+
 Map<String, double> scaffoldingBudgetSum = {
-  "Sijos ir kolonos, klijuotos medienos ir plieno - Individualus namas": 0,
+  for (var i = 0; i < litScaffoldingData.length; i++)
+    litScaffoldingData[i].name: 0,
 };
+
 /////////////////////////////////////////////////////////////////////////////////////
+
 Map<String, double> wasteHours = {
-  "Atliekų šalinimas": 0,
+  for (var i = 0; i < litWasteData.length; i++) litWasteData[i].name: 0,
 };
+
 Map<String, double> wasteLaborCosts = {
-  "Atliekų šalinimas": 0,
+  for (var i = 0; i < litWasteData.length; i++) litWasteData[i].name: 0,
 };
+
 Map<String, double> wasteMaterialCosts = {
-  "Atliekų šalinimas": 0,
+  for (var i = 0; i < litWasteData.length; i++) litWasteData[i].name: 0,
 };
+
 Map<String, double> wasteBudgetSum = {
-  "Atliekų šalinimas": 0,
+  for (var i = 0; i < litWasteData.length; i++) litWasteData[i].name: 0,
 };
 
 /////////////////////////////////////////////////////////////////////////////////////
 
 Map<String, double> supportSystemHours = {
-  "Sijos ir kolonos, klijuotosios medienos / plieno - Vienbutis namas": 0,
+  for (var i = 0; i < litSupportSystem.length; i++) litSupportSystem[i].name: 0,
 };
+
 Map<String, double> supportSystemLaborCosts = {
-  "Sijos ir kolonos, klijuotosios medienos / plieno - Vienbutis namas": 0,
+  for (var i = 0; i < litSupportSystem.length; i++) litSupportSystem[i].name: 0,
 };
+
 Map<String, double> supportSystemMaterialCosts = {
-  "Sijos ir kolonos, klijuotosios medienos / plieno - Vienbutis namas": 0,
+  for (var i = 0; i < litSupportSystem.length; i++) litSupportSystem[i].name: 0,
 };
+
 Map<String, double> supportSystemBudgetSum = {
-  "Sijos ir kolonos, klijuotosios medienos / plieno - Vienbutis namas": 0,
+  for (var i = 0; i < litSupportSystem.length; i++) litSupportSystem[i].name: 0,
 };
 
 /////////////////////////////////////////////////////////////////////////////////////

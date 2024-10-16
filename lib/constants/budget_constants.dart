@@ -1,3 +1,4 @@
+import 'package:cost_calculator/data/english_data_folder/data.dart';
 import 'package:cost_calculator/models/waste_data_model.dart';
 
 List<String> calculatedNamesOrder = [
@@ -86,288 +87,232 @@ List<double> budgetSums = [
 ];
 
 Map<String, double> innerWallHours = {
-  "Wooden truss 48x98, double sound wall, double plaster": 0,
-  "Wooden trusses 48x98, insulated, smooth panel": 0,
-  "Wooden truss 48x98, precut h=2400, plaster": 0,
-  "Steel trusses 2x75mm, double, insulated, plaster": 0,
-  "Steel trusses 2x100mm, double, insulated, plaster": 0,
-  "Steel trusses 2x75mm, double, insulated, double plaster": 0,
-  "Masonry walls, rendered cladding duplex": 0,
-  "Demolition of door in inner wall complete": 0,
+  for (var i = 0; i < dataInnerWallData.length; i++)
+    dataInnerWallData[i].name: 0,
 };
 
 Map<String, double> innerWallLaborCosts = {
-  "Wooden truss 48x98, double sound wall, double plaster": 0,
-  "Wooden trusses 48x98, insulated, smooth panel": 0,
-  "Wooden truss 48x98, precut h=2400, plaster": 0,
-  "Steel trusses 2x75mm, double, insulated, plaster": 0,
-  "Steel trusses 2x100mm, double, insulated, plaster": 0,
-  "Steel trusses 2x75mm, double, insulated, double plaster": 0,
-  "Masonry walls, rendered cladding duplex": 0,
-  "Demolition of door in inner wall complete": 0,
+  for (var i = 0; i < dataInnerWallData.length; i++)
+    dataInnerWallData[i].name: 0,
 };
 
 Map<String, double> innerWallMaterialCosts = {
-  "Wooden truss 48x98, double sound wall, double plaster": 0,
-  "Wooden trusses 48x98, insulated, smooth panel": 0,
-  "Wooden truss 48x98, precut h=2400, plaster": 0,
-  "Steel trusses 2x75mm, double, insulated, plaster": 0,
-  "Steel trusses 2x100mm, double, insulated, plaster": 0,
-  "Steel trusses 2x75mm, double, insulated, double plaster": 0,
-  "Masonry walls, rendered cladding duplex": 0,
-  "Demolition of door in inner wall complete": 0,
+  for (var i = 0; i < dataInnerWallData.length; i++)
+    dataInnerWallData[i].name: 0,
 };
 
 Map<String, double> innerWallBudgetSum = {
-  "Wooden truss 48x98, double sound wall, double plaster": 0,
-  "Wooden trusses 48x98, insulated, smooth panel": 0,
-  "Wooden truss 48x98, precut h=2400, plaster": 0,
-  "Steel trusses 2x75mm, double, insulated, plaster": 0,
-  "Steel trusses 2x100mm, double, insulated, plaster": 0,
-  "Steel trusses 2x75mm, double, insulated, double plaster": 0,
-  "Masonry walls, rendered cladding duplex": 0,
-  "Demolition of door in inner wall complete": 0,
+  for (var i = 0; i < dataInnerWallData.length; i++)
+    dataInnerWallData[i].name: 0,
 };
 /////////////////////////////////////////////////////////////////////////////////////
 Map<String, double> outerWallHours = {
-  "Timber truss 48x198, 50mm liner, standing double seam, plaster": 0,
-  "Wooden timber frame, post-insulation. new panel": 0,
-  "Demolition of door in external wall complete": 0,
+  for (var i = 0; i < exteriorWallData.length; i++) exteriorWallData[i].name: 0,
 };
 
 Map<String, double> outerWallLaborCosts = {
-  "Timber truss 48x198, 50mm liner, standing double seam, plaster": 0,
-  "Wooden timber frame, post-insulation. new panel": 0,
-  "Demolition of door in external wall complete": 0,
+  for (var i = 0; i < exteriorWallData.length; i++) exteriorWallData[i].name: 0,
 };
 
 Map<String, double> outerWallMaterialCosts = {
-  "Timber truss 48x198, 50mm liner, standing double seam, plaster": 0,
-  "Wooden timber frame, post-insulation. new panel": 0,
-  "Demolition of door in external wall complete": 0,
+  for (var i = 0; i < exteriorWallData.length; i++) exteriorWallData[i].name: 0,
 };
 
 Map<String, double> outerWallBudgetSum = {
-  "Timber truss 48x198, 50mm liner, standing double seam, plaster": 0,
-  "Wooden timber frame, post-insulation. new panel": 0,
-  "Demolition of door in external wall complete": 0,
+  for (var i = 0; i < exteriorWallData.length; i++) exteriorWallData[i].name: 0,
 };
 /////////////////////////////////////////////////////////////////////////////////////
 Map<String, double> innerDoorHours = {
-  "Interior door, pine 9x21": 0,
+  for (var i = 0; i < innerDoor.length; i++) innerDoor[i].name: 0,
 };
 Map<String, double> innerDoorLaborCosts = {
-  "Interior door, pine 9x21": 0,
+  for (var i = 0; i < innerDoor.length; i++) innerDoor[i].name: 0,
 };
 Map<String, double> innerDoorMaterialCosts = {
-  "Interior door, pine 9x21": 0,
+  for (var i = 0; i < innerDoor.length; i++) innerDoor[i].name: 0,
 };
 Map<String, double> innerDoorBudgetSum = {
-  "Interior door, pine 9x21": 0,
+  for (var i = 0; i < innerDoor.length; i++) innerDoor[i].name: 0,
 };
 
 /////////////////////////////////////////////////////////////////////////////////////
 
 Map<String, double> windowsAndExteriorDoorHours = {
-  "Window, wooden wall top swing 12x10": 0,
-  "Exterior door of wood, in timber frame wall, white, 10x21": 0,
+  for (var i = 0; i < windowsExteriorDoors.length; i++)
+    windowsExteriorDoors[i].name: 0,
 };
 Map<String, double> windowsAndExteriorDoorLaborCosts = {
-  "Window, wooden wall top swing 12x10": 0,
-  "Exterior door of wood, in timber frame wall, white, 10x21": 0,
+  for (var i = 0; i < windowsExteriorDoors.length; i++)
+    windowsExteriorDoors[i].name: 0,
 };
 Map<String, double> windowsAndExteriorDoorMaterialCosts = {
-  "Window, wooden wall top swing 12x10": 0,
-  "Exterior door of wood, in timber frame wall, white, 10x21": 0,
+  for (var i = 0; i < windowsExteriorDoors.length; i++)
+    windowsExteriorDoors[i].name: 0,
 };
 Map<String, double> windowsAndExteriorDoorBudgetSum = {
-  "Window, wooden wall top swing 12x10": 0,
-  "Exterior door of wood, in timber frame wall, white, 10x21": 0,
+  for (var i = 0; i < windowsExteriorDoors.length; i++)
+    windowsExteriorDoors[i].name: 0,
 };
-
 /////////////////////////////////////////////////////////////////////////////////////
 
 Map<String, double> deckHours = {
-  "Floor on ground, poured, insulated, screeded": 0,
-  "Wooden beams, insulation underneath": 0,
-  "Flooring on the ground, removal of screed, linoleum": 0,
+  for (var i = 0; i < deckData.length; i++) deckData[i].name: 0,
 };
 
 Map<String, double> deckLaborCosts = {
-  "Floor on ground, poured, insulated, screeded": 0,
-  "Wooden beams, insulation underneath": 0,
-  "Flooring on the ground, removal of screed, linoleum": 0,
+  for (var i = 0; i < deckData.length; i++) deckData[i].name: 0,
 };
 
 Map<String, double> deckMaterialCosts = {
-  "Floor on ground, poured, insulated, screeded": 0,
-  "Wooden beams, insulation underneath": 0,
-  "Flooring on the ground, removal of screed, linoleum": 0,
+  for (var i = 0; i < deckData.length; i++) deckData[i].name: 0,
 };
 
 Map<String, double> deckBudgetSum = {
-  "Floor on ground, poured, insulated, screeded": 0,
-  "Wooden beams, insulation underneath": 0,
-  "Flooring on the ground, removal of screed, linoleum": 0,
+  for (var i = 0; i < deckData.length; i++) deckData[i].name: 0,
 };
 
 /////////////////////////////////////////////////////////////////////////////////////
 
 Map<String, double> flooringHours = {
-  "Wet room wall w/panel - wet room tile + tile 25x33": 0,
-  "Wet room wall w/panel/plaster + tile 20x30": 0,
+  for (var i = 0; i < flooringData.length; i++) flooringData[i].name: 0,
 };
+
 Map<String, double> flooringLaborCosts = {
-  "Wet room wall w/panel - wet room tile + tile 25x33": 0,
-  "Wet room wall w/panel/plaster + tile 20x30": 0,
+  for (var i = 0; i < flooringData.length; i++) flooringData[i].name: 0,
 };
+
 Map<String, double> flooringMaterialCosts = {
-  "Wet room wall w/panel - wet room tile + tile 25x33": 0,
-  "Wet room wall w/panel/plaster + tile 20x30": 0,
+  for (var i = 0; i < flooringData.length; i++) flooringData[i].name: 0,
 };
+
 Map<String, double> flooringBudgetSum = {
-  "Wet room wall w/panel - wet room tile + tile 25x33": 0,
-  "Wet room wall w/panel/plaster + tile 20x30": 0,
+  for (var i = 0; i < flooringData.length; i++) flooringData[i].name: 0,
 };
 
 /////////////////////////////////////////////////////////////////////////////////////
 
 Map<String, double> roofHours = {
-  "Barrier roof of wood, shingles, plasterboard,": 0,
-  "Wooden joists, post-insulation outside + cardboard covering": 0,
-  "Demolition flat rafter roof, insulated roofing, shingle/foil on flat roofs":
-      0,
+  for (var i = 0; i < outerRoofData.length; i++) outerRoofData[i].name: 0,
 };
 
 Map<String, double> roofLaborCosts = {
-  "Barrier roof of wood, shingles, plasterboard,": 0,
-  "Wooden joists, post-insulation outside + cardboard covering": 0,
-  "Demolition flat rafter roof, insulated roofing, shingle/foil on flat roofs":
-      0,
+  for (var i = 0; i < outerRoofData.length; i++) outerRoofData[i].name: 0,
 };
 
 Map<String, double> roofMaterialCosts = {
-  "Barrier roof of wood, shingles, plasterboard,": 0,
-  "Wooden joists, post-insulation outside + cardboard covering": 0,
-  "Demolition flat rafter roof, insulated roofing, shingle/foil on flat roofs":
-      0,
+  for (var i = 0; i < outerRoofData.length; i++) outerRoofData[i].name: 0,
 };
 
 Map<String, double> roofBudgetSum = {
-  "Barrier roof of wood, shingles, plasterboard,": 0,
-  "Wooden joists, post-insulation outside + cardboard covering": 0,
-  "Demolition flat rafter roof, insulated roofing, shingle/foil on flat roofs":
-      0,
+  for (var i = 0; i < outerRoofData.length; i++) outerRoofData[i].name: 0,
 };
+
 /////////////////////////////////////////////////////////////////////////////////////
 
 Map<String, double> terraceHours = {
-  "Railings in stainless steel and glass": 0,
+  for (var i = 0; i < terraceData.length; i++) terraceData[i].name: 0,
 };
 
 Map<String, double> terraceLaborCosts = {
-  "Railings in stainless steel and glass": 0,
+  for (var i = 0; i < terraceData.length; i++) terraceData[i].name: 0,
 };
 
 Map<String, double> terraceMaterialCosts = {
-  "Railings in stainless steel and glass": 0,
+  for (var i = 0; i < terraceData.length; i++) terraceData[i].name: 0,
 };
 
 Map<String, double> terraceBudgetSum = {
-  "Railings in stainless steel and glass": 0,
+  for (var i = 0; i < terraceData.length; i++) terraceData[i].name: 0,
 };
 
 /////////////////////////////////////////////////////////////////////////////////////
 
 Map<String, double> innerStairsHours = {
-  "Stairs inside, three straight runs": 0,
+  for (var i = 0; i < innerStairsData.length; i++) innerStairsData[i].name: 0,
 };
 
 Map<String, double> innerStairsLaborCosts = {
-  "Stairs inside, three straight runs": 0,
+  for (var i = 0; i < innerStairsData.length; i++) innerStairsData[i].name: 0,
 };
 
 Map<String, double> innerStairsMaterialCosts = {
-  "Stairs inside, three straight runs": 0,
+  for (var i = 0; i < innerStairsData.length; i++) innerStairsData[i].name: 0,
 };
 
 Map<String, double> innerStairsBudgetSum = {
-  "Stairs inside, three straight runs": 0,
+  for (var i = 0; i < innerStairsData.length; i++) innerStairsData[i].name: 0,
 };
 
 /////////////////////////////////////////////////////////////////////////////////////
 
 Map<String, double> hullRoofingHours = {
-  "Punched roofing single-family house 245m² GFA - 2 floors (Calculate quantity and select material type),":
-      0,
+  for (var i = 0; i < hullRoofingData.length; i++) hullRoofingData[i].name: 0,
 };
 
 Map<String, double> hullRoofingLaborCosts = {
-  "Punched roofing single-family house 245m² GFA - 2 floors (Calculate quantity and select material type),":
-      0,
+  for (var i = 0; i < hullRoofingData.length; i++) hullRoofingData[i].name: 0,
 };
 
 Map<String, double> hullRoofingMaterialCosts = {
-  "Punched roofing single-family house 245m² GFA - 2 floors (Calculate quantity and select material type),":
-      0,
+  for (var i = 0; i < hullRoofingData.length; i++) hullRoofingData[i].name: 0,
 };
 
 Map<String, double> hullRoofingBudgetSum = {
-  "Punched roofing single-family house 245m² GFA - 2 floors (Calculate quantity and select material type),":
-      0,
+  for (var i = 0; i < hullRoofingData.length; i++) hullRoofingData[i].name: 0,
 };
+
 /////////////////////////////////////////////////////////////////////////////////////
 
 Map<String, double> scaffoldingHours = {
-  "Beams and columns, glulam/steel - Detached house": 0,
+  for (var i = 0; i < scaffoldingData.length; i++) scaffoldingData[i].name: 0,
 };
 
 Map<String, double> scaffoldingLaborCosts = {
-  "Beams and columns, glulam/steel - Detached house": 0,
+  for (var i = 0; i < scaffoldingData.length; i++) scaffoldingData[i].name: 0,
 };
 
 Map<String, double> scaffoldingMaterialCosts = {
-  "Beams and columns, glulam/steel - Detached house": 0,
+  for (var i = 0; i < scaffoldingData.length; i++) scaffoldingData[i].name: 0,
 };
 
 Map<String, double> scaffoldingBudgetSum = {
-  "Beams and columns, glulam/steel - Detached house": 0,
+  for (var i = 0; i < scaffoldingData.length; i++) scaffoldingData[i].name: 0,
 };
 
 /////////////////////////////////////////////////////////////////////////////////////
 
 Map<String, double> wasteHours = {
-  "Waste removal": 0,
+  for (var i = 0; i < wasteData.length; i++) wasteData[i].name: 0,
 };
 
 Map<String, double> wasteLaborCosts = {
-  "Waste removal": 0,
+  for (var i = 0; i < wasteData.length; i++) wasteData[i].name: 0,
 };
 
 Map<String, double> wasteMaterialCosts = {
-  "Waste removal": 0,
+  for (var i = 0; i < wasteData.length; i++) wasteData[i].name: 0,
 };
 
 Map<String, double> wasteBudgetSum = {
-  "Waste removal": 0,
+  for (var i = 0; i < wasteData.length; i++) wasteData[i].name: 0,
 };
 
 /////////////////////////////////////////////////////////////////////////////////////
 
 Map<String, double> supportSystemHours = {
-  "Beams and columns, glulam / steel - Single-family house": 0,
+  for (var i = 0; i < supportSystem.length; i++) supportSystem[i].name: 0,
 };
 
 Map<String, double> supportSystemLaborCosts = {
-  "Beams and columns, glulam / steel - Single-family house": 0,
+  for (var i = 0; i < supportSystem.length; i++) supportSystem[i].name: 0,
 };
 
 Map<String, double> supportSystemMaterialCosts = {
-  "Beams and columns, glulam / steel - Single-family house": 0,
+  for (var i = 0; i < supportSystem.length; i++) supportSystem[i].name: 0,
 };
 
 Map<String, double> supportSystemBudgetSum = {
-  "Beams and columns, glulam / steel - Single-family house": 0,
+  for (var i = 0; i < supportSystem.length; i++) supportSystem[i].name: 0,
 };
 /////////////////////////////////////////////////////////////////////////////////////
 

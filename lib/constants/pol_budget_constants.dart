@@ -1,5 +1,6 @@
 import 'dart:core';
 
+import 'package:cost_calculator/data/polish_data_folder/polish_data.dart';
 import 'package:cost_calculator/models/waste_data_model.dart';
 
 List<String> calculatedNamesOrder = [
@@ -88,293 +89,244 @@ List<double> budgetSums = [
 ];
 
 Map<String, double> innerWallHours = {
-  "Drewniana rama 48x98, podwójna ściana akustyczna, podwójny tynk": 0,
-  "Kratownice drewniane 48x98, izolowane, panel gładki": 0,
-  "Rama drewniana 48x98, cięcie h=2400, płyta gipsowo-kartonowa": 0,
-  "Kratownica stalowa 2x75mm, podwójna, izolowana, gipsowa": 0,
-  "Kratownica stalowa 2x100mm, podwójna, izolowana, gipsowa": 0,
-  "Kratownica stalowa 2x75mm, podwójna, izolowana, podwójny tynk": 0,
-  "Ściany murowane, okładzina tynkowa duplex": 0,
-  "Rozbiórka drzwi w ścianie wewnętrznej zakończona": 0,
+  for (var i = 0; i < polInnerWallData.length; i++) polInnerWallData[i].name: 0,
 };
 
 Map<String, double> innerWallLaborCosts = {
-  "Drewniana rama 48x98, podwójna ściana akustyczna, podwójny tynk": 0,
-  "Kratownice drewniane 48x98, izolowane, panel gładki": 0,
-  "Rama drewniana 48x98, cięcie h=2400, płyta gipsowo-kartonowa": 0,
-  "Kratownica stalowa 2x75mm, podwójna, izolowana, gipsowa": 0,
-  "Kratownica stalowa 2x100mm, podwójna, izolowana, gipsowa": 0,
-  "Kratownica stalowa 2x75mm, podwójna, izolowana, podwójny tynk": 0,
-  "Ściany murowane, okładzina tynkowa duplex": 0,
-  "Rozbiórka drzwi w ścianie wewnętrznej zakończona": 0,
+  for (var i = 0; i < polInnerWallData.length; i++) polInnerWallData[i].name: 0,
 };
 
 Map<String, double> innerWallMaterialCosts = {
-  "Drewniana rama 48x98, podwójna ściana akustyczna, podwójny tynk": 0,
-  "Kratownice drewniane 48x98, izolowane, panel gładki": 0,
-  "Rama drewniana 48x98, cięcie h=2400, płyta gipsowo-kartonowa": 0,
-  "Kratownica stalowa 2x75mm, podwójna, izolowana, gipsowa": 0,
-  "Kratownica stalowa 2x100mm, podwójna, izolowana, gipsowa": 0,
-  "Kratownica stalowa 2x75mm, podwójna, izolowana, podwójny tynk": 0,
-  "Ściany murowane, okładzina tynkowa duplex": 0,
-  "Rozbiórka drzwi w ścianie wewnętrznej zakończona": 0,
+  for (var i = 0; i < polInnerWallData.length; i++) polInnerWallData[i].name: 0,
 };
 
 Map<String, double> innerWallBudgetSum = {
-  "Drewniana rama 48x98, podwójna ściana akustyczna, podwójny tynk": 0,
-  "Kratownice drewniane 48x98, izolowane, panel gładki": 0,
-  "Rama drewniana 48x98, cięcie h=2400, płyta gipsowo-kartonowa": 0,
-  "Kratownica stalowa 2x75mm, podwójna, izolowana, gipsowa": 0,
-  "Kratownica stalowa 2x100mm, podwójna, izolowana, gipsowa": 0,
-  "Kratownica stalowa 2x75mm, podwójna, izolowana, podwójny tynk": 0,
-  "Ściany murowane, okładzina tynkowa duplex": 0,
-  "Rozbiórka drzwi w ścianie wewnętrznej zakończona": 0,
+  for (var i = 0; i < polInnerWallData.length; i++) polInnerWallData[i].name: 0,
 };
 /////////////////////////////////////////////////////////////////////////////////////
 Map<String, double> outerWallHours = {
-  "Rama drewniana 48x198, okładzina 50 mm, rąbek stojący, tynk": 0,
-  "Drewniana rama drewniana, po izolacji. nowe panele": 0,
-  "Rozbiórka drzwi w ścianie zewnętrznej zakończona": 0,
+  for (var i = 0; i < polExteriorWallData.length; i++)
+    polExteriorWallData[i].name: 0,
 };
 
 Map<String, double> outerWallLaborCosts = {
-  "Rama drewniana 48x198, okładzina 50 mm, rąbek stojący, tynk": 0,
-  "Drewniana rama drewniana, po izolacji. nowe panele": 0,
-  "Rozbiórka drzwi w ścianie zewnętrznej zakończona": 0,
+  for (var i = 0; i < polExteriorWallData.length; i++)
+    polExteriorWallData[i].name: 0,
 };
 
 Map<String, double> outerWallMaterialCosts = {
-  "Rama drewniana 48x198, okładzina 50 mm, rąbek stojący, tynk": 0,
-  "Drewniana rama drewniana, po izolacji. nowe panele": 0,
-  "Rozbiórka drzwi w ścianie zewnętrznej zakończona": 0,
+  for (var i = 0; i < polExteriorWallData.length; i++)
+    polExteriorWallData[i].name: 0,
 };
 
 Map<String, double> outerWallBudgetSum = {
-  "Rama drewniana 48x198, okładzina 50 mm, rąbek stojący, tynk": 0,
-  "Drewniana rama drewniana, po izolacji. nowe panele": 0,
-  "Rozbiórka drzwi w ścianie zewnętrznej zakończona": 0,
+  for (var i = 0; i < polExteriorWallData.length; i++)
+    polExteriorWallData[i].name: 0,
 };
 /////////////////////////////////////////////////////////////////////////////////////
 Map<String, double> innerDoorHours = {
-  "Drzwi wewnętrzne, sosna 9x21": 0,
+  for (var i = 0; i < polInnerDoor.length; i++) polInnerDoor[i].name: 0,
 };
 Map<String, double> innerDoorLaborCosts = {
-  "Drzwi wewnętrzne, sosna 9x21": 0,
+  for (var i = 0; i < polInnerDoor.length; i++) polInnerDoor[i].name: 0,
 };
 Map<String, double> innerDoorMaterialCosts = {
-  "Drzwi wewnętrzne, sosna 9x21": 0,
+  for (var i = 0; i < polInnerDoor.length; i++) polInnerDoor[i].name: 0,
 };
 Map<String, double> innerDoorBudgetSum = {
-  "Drzwi wewnętrzne, sosna 9x21": 0,
+  for (var i = 0; i < polInnerDoor.length; i++) polInnerDoor[i].name: 0,
 };
 
 /////////////////////////////////////////////////////////////////////////////////////
 
 Map<String, double> windowsAndExteriorDoorHours = {
-  "Okno, drewniana ściana górna obrót 12x10": 0,
-  "Drzwi zewnętrzne z drewna, w ścianie z muru pruskiego, białe, 10x21": 0,
+  for (var i = 0; i < polWindowsExteriorDoors.length; i++)
+    polWindowsExteriorDoors[i].name: 0,
 };
 Map<String, double> windowsAndExteriorDoorLaborCosts = {
-  "Okno, drewniana ściana górna obrót 12x10": 0,
-  "Drzwi zewnętrzne z drewna, w ścianie z muru pruskiego, białe, 10x21": 0,
+  for (var i = 0; i < polWindowsExteriorDoors.length; i++)
+    polWindowsExteriorDoors[i].name: 0,
 };
 Map<String, double> windowsAndExteriorDoorMaterialCosts = {
-  "Okno, drewniana ściana górna obrót 12x10": 0,
-  "Drzwi zewnętrzne z drewna, w ścianie z muru pruskiego, białe, 10x21": 0,
+  for (var i = 0; i < polWindowsExteriorDoors.length; i++)
+    polWindowsExteriorDoors[i].name: 0,
 };
 Map<String, double> windowsAndExteriorDoorBudgetSum = {
-  "Okno, drewniana ściana górna obrót 12x10": 0,
-  "Drzwi zewnętrzne z drewna, w ścianie z muru pruskiego, białe, 10x21": 0,
+  for (var i = 0; i < polWindowsExteriorDoors.length; i++)
+    polWindowsExteriorDoors[i].name: 0,
 };
-
 /////////////////////////////////////////////////////////////////////////////////////
 
 Map<String, double> deckHours = {
-  "Podłoga na gruncie, wylewana, izolowana, wylewana": 0,
-  "Drewniane belki, izolacja od spodu": 0,
-  "Podłogi na gruncie, usuwanie jastrychu, linoleum": 0,
+  for (var i = 0; i < polDeckData.length; i++) polDeckData[i].name: 0,
 };
 
 Map<String, double> deckLaborCosts = {
-  "Podłoga na gruncie, wylewana, izolowana, wylewana": 0,
-  "Drewniane belki, izolacja od spodu": 0,
-  "Podłogi na gruncie, usuwanie jastrychu, linoleum": 0,
+  for (var i = 0; i < polDeckData.length; i++) polDeckData[i].name: 0,
 };
 
 Map<String, double> deckMaterialCosts = {
-  "Podłoga na gruncie, wylewana, izolowana, wylewana": 0,
-  "Drewniane belki, izolacja od spodu": 0,
-  "Podłogi na gruncie, usuwanie jastrychu, linoleum": 0,
+  for (var i = 0; i < polDeckData.length; i++) polDeckData[i].name: 0,
 };
 
 Map<String, double> deckBudgetSum = {
-  "Podłoga na gruncie, wylewana, izolowana, wylewana": 0,
-  "Drewniane belki, izolacja od spodu": 0,
-  "Podłogi na gruncie, usuwanie jastrychu, linoleum": 0,
+  for (var i = 0; i < polDeckData.length; i++) polDeckData[i].name: 0,
 };
 
 /////////////////////////////////////////////////////////////////////////////////////
 
 Map<String, double> flooringHours = {
-  "Ściana w pomieszczeniu mokrym z panelami - płytki w pomieszczeniu mokrym + płytki 25x33":
-      0,
+  for (var i = 0; i < polFlooringData.length; i++) polFlooringData[i].name: 0,
 };
 
 Map<String, double> flooringLaborCosts = {
-  "Ściana w pomieszczeniu mokrym z panelami - płytki w pomieszczeniu mokrym + płytki 25x33":
-      0,
+  for (var i = 0; i < polFlooringData.length; i++) polFlooringData[i].name: 0,
 };
 
 Map<String, double> flooringMaterialCosts = {
-  "Ściana w pomieszczeniu mokrym z panelami - płytki w pomieszczeniu mokrym + płytki 25x33":
-      0,
+  for (var i = 0; i < polFlooringData.length; i++) polFlooringData[i].name: 0,
 };
 
 Map<String, double> flooringBudgetSum = {
-  "Ściana w pomieszczeniu mokrym z panelami - płytki w pomieszczeniu mokrym + płytki 25x33":
-      0,
+  for (var i = 0; i < polFlooringData.length; i++) polFlooringData[i].name: 0,
 };
 
 /////////////////////////////////////////////////////////////////////////////////////
 
 Map<String, double> roofHours = {
-  "Dach barierowy wykonany z drewna, gontów, płyt gipsowo-kartonowych": 0,
-  "Drewniane legary, zewnętrzna izolacja + kartonowe pokrycie dachu": 0,
-  "Rozbiórka płaskiego dachu krokwiowego, izolowane pokrycie dachowe, gont / folia na płaskich dachach":
-      0,
+  for (var i = 0; i < polOuterRoofData.length; i++) polOuterRoofData[i].name: 0,
 };
 
 Map<String, double> roofLaborCosts = {
-  "Dach barierowy wykonany z drewna, gontów, płyt gipsowo-kartonowych": 0,
-  "Drewniane legary, zewnętrzna izolacja + kartonowe pokrycie dachu": 0,
-  "Rozbiórka płaskiego dachu krokwiowego, izolowane pokrycie dachowe, gont / folia na płaskich dachach":
-      0,
+  for (var i = 0; i < polOuterRoofData.length; i++) polOuterRoofData[i].name: 0,
 };
 
 Map<String, double> roofMaterialCosts = {
-  "Dach barierowy wykonany z drewna, gontów, płyt gipsowo-kartonowych": 0,
-  "Drewniane legary, zewnętrzna izolacja + kartonowe pokrycie dachu": 0,
-  "Rozbiórka płaskiego dachu krokwiowego, izolowane pokrycie dachowe, gont / folia na płaskich dachach":
-      0,
+  for (var i = 0; i < polOuterRoofData.length; i++) polOuterRoofData[i].name: 0,
 };
 
 Map<String, double> roofBudgetSum = {
-  "Dach barierowy wykonany z drewna, gontów, płyt gipsowo-kartonowych": 0,
-  "Drewniane legary, zewnętrzna izolacja + kartonowe pokrycie dachu": 0,
-  "Rozbiórka płaskiego dachu krokwiowego, izolowane pokrycie dachowe, gont / folia na płaskich dachach":
-      0,
+  for (var i = 0; i < polOuterRoofData.length; i++) polOuterRoofData[i].name: 0,
 };
 
 /////////////////////////////////////////////////////////////////////////////////////
 
 Map<String, double> terraceHours = {
-  "Balustrady ze stali nierdzewnej i szkła": 0,
+  for (var i = 0; i < polTerraceData.length; i++) polTerraceData[i].name: 0,
 };
 
 Map<String, double> terraceLaborCosts = {
-  "Balustrady ze stali nierdzewnej i szkła": 0,
+  for (var i = 0; i < polTerraceData.length; i++) polTerraceData[i].name: 0,
 };
 
 Map<String, double> terraceMaterialCosts = {
-  "Balustrady ze stali nierdzewnej i szkła": 0,
+  for (var i = 0; i < polTerraceData.length; i++) polTerraceData[i].name: 0,
 };
 
 Map<String, double> terraceBudgetSum = {
-  "Balustrady ze stali nierdzewnej i szkła": 0,
+  for (var i = 0; i < polTerraceData.length; i++) polTerraceData[i].name: 0,
 };
 
 /////////////////////////////////////////////////////////////////////////////////////
 
 Map<String, double> innerStairsHours = {
-  "Schody w środku, trzy biegi z rzędu": 0,
+  for (var i = 0; i < polInnerStairsData.length; i++)
+    polInnerStairsData[i].name: 0,
 };
 
 Map<String, double> innerStairsLaborCosts = {
-  "Schody w środku, trzy biegi z rzędu": 0,
+  for (var i = 0; i < polInnerStairsData.length; i++)
+    polInnerStairsData[i].name: 0,
 };
 
 Map<String, double> innerStairsMaterialCosts = {
-  "Schody w środku, trzy biegi z rzędu": 0,
+  for (var i = 0; i < polInnerStairsData.length; i++)
+    polInnerStairsData[i].name: 0,
 };
 
 Map<String, double> innerStairsBudgetSum = {
-  "Schody w środku, trzy biegi z rzędu": 0,
+  for (var i = 0; i < polInnerStairsData.length; i++)
+    polInnerStairsData[i].name: 0,
 };
 
 /////////////////////////////////////////////////////////////////////////////////////
 
 Map<String, double> hullRoofingHours = {
-  "Dziurkowane pokrycie dachowe domu jednorodzinnego 245m² GFA - 2 kondygnacje (Oblicz ilość i wybierz rodzaj materiału)":
-      0,
+  for (var i = 0; i < polHullRoofingData.length; i++)
+    polHullRoofingData[i].name: 0,
 };
 
 Map<String, double> hullRoofingLaborCosts = {
-  "Dziurkowane pokrycie dachowe domu jednorodzinnego 245m² GFA - 2 kondygnacje (Oblicz ilość i wybierz rodzaj materiału)":
-      0,
+  for (var i = 0; i < polHullRoofingData.length; i++)
+    polHullRoofingData[i].name: 0,
 };
 
 Map<String, double> hullRoofingMaterialCosts = {
-  "Dziurkowane pokrycie dachowe domu jednorodzinnego 245m² GFA - 2 kondygnacje (Oblicz ilość i wybierz rodzaj materiału)":
-      0,
+  for (var i = 0; i < polHullRoofingData.length; i++)
+    polHullRoofingData[i].name: 0,
 };
 
 Map<String, double> hullRoofingBudgetSum = {
-  "Dziurkowane pokrycie dachowe domu jednorodzinnego 245m² GFA - 2 kondygnacje (Oblicz ilość i wybierz rodzaj materiału)":
-      0,
+  for (var i = 0; i < polHullRoofingData.length; i++)
+    polHullRoofingData[i].name: 0,
 };
 
 /////////////////////////////////////////////////////////////////////////////////////
 
 Map<String, double> scaffoldingHours = {
-  "Belki i słupy, drewno klejone / stal - Dom wolnostojący": 0,
+  for (var i = 0; i < polScaffoldingData.length; i++)
+    polScaffoldingData[i].name: 0,
 };
 
 Map<String, double> scaffoldingLaborCosts = {
-  "Belki i słupy, drewno klejone / stal - Dom wolnostojący": 0,
+  for (var i = 0; i < polScaffoldingData.length; i++)
+    polScaffoldingData[i].name: 0,
 };
 
 Map<String, double> scaffoldingMaterialCosts = {
-  "Belki i słupy, drewno klejone / stal - Dom wolnostojący": 0,
+  for (var i = 0; i < polScaffoldingData.length; i++)
+    polScaffoldingData[i].name: 0,
 };
 
 Map<String, double> scaffoldingBudgetSum = {
-  "Belki i słupy, drewno klejone / stal - Dom wolnostojący": 0,
+  for (var i = 0; i < polScaffoldingData.length; i++)
+    polScaffoldingData[i].name: 0,
 };
 
 /////////////////////////////////////////////////////////////////////////////////////
 
 Map<String, double> wasteHours = {
-  "Usuwanie odpadów": 0,
+  for (var i = 0; i < polWasteData.length; i++) polWasteData[i].name: 0,
 };
 
 Map<String, double> wasteLaborCosts = {
-  "Usuwanie odpadów": 0,
+  for (var i = 0; i < polWasteData.length; i++) polWasteData[i].name: 0,
 };
 
 Map<String, double> wasteMaterialCosts = {
-  "Usuwanie odpadów": 0,
+  for (var i = 0; i < polWasteData.length; i++) polWasteData[i].name: 0,
 };
 
 Map<String, double> wasteBudgetSum = {
-  "Usuwanie odpadów": 0,
+  for (var i = 0; i < polWasteData.length; i++) polWasteData[i].name: 0,
 };
 
 /////////////////////////////////////////////////////////////////////////////////////
 
 Map<String, double> supportSystemHours = {
-  "Belki i słupy, drewno klejone / stal - Dom jednorodzinny": 0,
+  for (var i = 0; i < polSupportSystem.length; i++) polSupportSystem[i].name: 0,
 };
 
 Map<String, double> supportSystemLaborCosts = {
-  "Belki i słupy, drewno klejone / stal - Dom jednorodzinny": 0,
+  for (var i = 0; i < polSupportSystem.length; i++) polSupportSystem[i].name: 0,
 };
 
 Map<String, double> supportSystemMaterialCosts = {
-  "Belki i słupy, drewno klejone / stal - Dom jednorodzinny": 0,
+  for (var i = 0; i < polSupportSystem.length; i++) polSupportSystem[i].name: 0,
 };
 
 Map<String, double> supportSystemBudgetSum = {
-  "Belki i słupy, drewno klejone / stal - Dom jednorodzinny": 0,
+  for (var i = 0; i < polSupportSystem.length; i++) polSupportSystem[i].name: 0,
 };
 
 /////////////////////////////////////////////////////////////////////////////////////
