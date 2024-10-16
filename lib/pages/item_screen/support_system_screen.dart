@@ -500,8 +500,6 @@ class _SupportSystemItemScreenState extends State<SupportSystemItemScreen> {
               decoration: InputDecoration(
                 border: InputBorder.none,
                 contentPadding: EdgeInsets.only(left: 8),
-                fillColor: const Color.fromARGB(255, 218, 128, 122),
-                filled: true,
               ),
               controller: TextEditingController(
                 text: totalLaborHours1.toStringAsFixed(2),
@@ -530,8 +528,6 @@ class _SupportSystemItemScreenState extends State<SupportSystemItemScreen> {
               decoration: InputDecoration(
                 border: InputBorder.none,
                 contentPadding: EdgeInsets.only(left: 8),
-                fillColor: const Color.fromARGB(255, 218, 128, 122),
-                filled: true,
               ),
               controller: TextEditingController(
                 text: totalMaterial1.toStringAsFixed(2),
@@ -548,7 +544,7 @@ class _SupportSystemItemScreenState extends State<SupportSystemItemScreen> {
         dataCellDoSingleWithBoldText(
           TextEditingController(text: totalTotalPrice.toStringAsFixed(2)),
           (value) {},
-          Color.fromARGB(255, 153, 240, 131),
+          Theme.of(context).colorScheme.surface,
           true,
           75,
         ),

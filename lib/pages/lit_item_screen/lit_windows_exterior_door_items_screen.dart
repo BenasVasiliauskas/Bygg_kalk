@@ -510,10 +510,10 @@ class _LitWindowsExteriorDoorItemsScreenState
             width: 55,
             child: TextField(
               decoration: InputDecoration(
-                  border: InputBorder.none,
-                  contentPadding: EdgeInsets.only(left: 8),
-                  fillColor: const Color.fromARGB(255, 218, 128, 122),
-                  filled: true),
+                border: InputBorder.none,
+                contentPadding: EdgeInsets.only(left: 8),
+                filled: true,
+              ),
               controller: TextEditingController(
                   text: totalLaborHours1.toStringAsFixed(2)),
               readOnly: true,
@@ -537,10 +537,10 @@ class _LitWindowsExteriorDoorItemsScreenState
             width: 75,
             child: TextField(
               decoration: InputDecoration(
-                  border: InputBorder.none,
-                  contentPadding: EdgeInsets.only(left: 8),
-                  fillColor: const Color.fromARGB(255, 218, 128, 122),
-                  filled: true),
+                border: InputBorder.none,
+                contentPadding: EdgeInsets.only(left: 8),
+                filled: true,
+              ),
               controller: TextEditingController(
                   text: totalMaterial1.toStringAsFixed(2)),
               readOnly: true,

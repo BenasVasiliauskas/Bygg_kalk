@@ -507,7 +507,6 @@ class _NorwInteriorWallItemsScreenState
               decoration: InputDecoration(
                 border: InputBorder.none,
                 contentPadding: EdgeInsets.only(left: 8),
-                fillColor: const Color.fromARGB(255, 218, 128, 122),
                 filled: true,
               ),
               controller: TextEditingController(
@@ -537,7 +536,6 @@ class _NorwInteriorWallItemsScreenState
               decoration: InputDecoration(
                 border: InputBorder.none,
                 contentPadding: EdgeInsets.only(left: 8),
-                fillColor: const Color.fromARGB(255, 218, 128, 122),
                 filled: true,
               ),
               controller: TextEditingController(

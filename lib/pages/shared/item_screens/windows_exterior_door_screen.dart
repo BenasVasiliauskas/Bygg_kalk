@@ -3,7 +3,7 @@ import 'package:cost_calculator/constants/norw_budget_constants.dart' as norw;
 import 'package:cost_calculator/constants/lit_budget_constants.dart' as lit;
 import 'package:cost_calculator/constants/budget_constants.dart' as eng;
 import 'package:cost_calculator/data/english%20data%20folder/data.dart';
-import 'package:cost_calculator/data/lithuanian%20data%20folder/lith_data_original.dart';
+import 'package:cost_calculator/data/lithuanian%20data%20folder/lith_data.dart';
 import 'package:cost_calculator/data/norwegian%20data%20folder/norw_data.dart';
 import 'package:cost_calculator/data/polish%20data%20folder/polish_data.dart';
 import 'package:cost_calculator/observer/app_life_cycle_observer.dart';
@@ -42,7 +42,7 @@ class _WindowsExteriorDoorScreenState extends State<WindowsExteriorDoorScreen> {
   void initState() {
     WidgetsBinding.instance.addObserver(_observer);
     super.initState();
-    List<dynamic> filteredWindowsExteriorDoors = languageEnglish
+    filteredWindowsExteriorDoors = languageEnglish
         ? windowsExteriorDoors
         : languageNorwegian
             ? norwWindowsExteriorDoors

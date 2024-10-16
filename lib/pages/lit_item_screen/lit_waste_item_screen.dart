@@ -452,67 +452,73 @@ class _LitWasteItemScreenState extends State<LitWasteItemScreen> {
 // Create the "Total Sum" row
     DataRow totalSumRow = DataRow(
       cells: [
-        dataCellDisplaySingle(
-          "Galutinė suma",
-          70,
+        dataCellDisplaySingleBoldText(
+          "Iš viso (be PVM)",
+          115,
           Theme.of(context).colorScheme.surface,
         ),
-        dataCellDisplaySingle(
+        dataCellDisplaySingleBoldText(
           "",
-          0,
+          55,
           Theme.of(context).colorScheme.surface,
         ),
-        dataCellDisplaySingle(
+        dataCellDisplaySingleBoldText(
           "",
-          0,
+          55,
           Theme.of(context).colorScheme.surface,
         ),
         DataCell(
           SizedBox(
             width: 55,
             child: TextField(
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+              ),
               decoration: InputDecoration(
-                  border: InputBorder.none,
-                  contentPadding: EdgeInsets.only(left: 8),
-                  fillColor: const Color.fromARGB(255, 218, 128, 122),
-                  filled: true),
+                border: InputBorder.none,
+                contentPadding: EdgeInsets.only(left: 8),
+                filled: true,
+              ),
               controller: TextEditingController(
                   text: totalLaborHours1.toStringAsFixed(2)),
               readOnly: true,
             ),
           ),
         ),
-        dataCellDisplaySingle(
+        dataCellDisplaySingleBoldText(
           totalLaborHours2.toStringAsFixed(2),
-          70,
+          80,
           Theme.of(context).colorScheme.surface,
           optionalPadding: 8,
         ),
-        dataCellDisplaySingle(totalLaborCost.toStringAsFixed(2), 60,
+        dataCellDisplaySingleBoldText(totalLaborCost.toStringAsFixed(2), 55,
             Theme.of(context).colorScheme.surface,
             optionalPadding: 8),
         DataCell(
           SizedBox(
             width: 75,
             child: TextField(
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+              ),
               decoration: InputDecoration(
-                  border: InputBorder.none,
-                  contentPadding: EdgeInsets.only(left: 8),
-                  fillColor: const Color.fromARGB(255, 218, 128, 122),
-                  filled: true),
+                border: InputBorder.none,
+                contentPadding: EdgeInsets.only(left: 8),
+                filled: true,
+              ),
               controller: TextEditingController(
                   text: totalMaterial1.toStringAsFixed(2)),
               readOnly: true,
             ),
           ),
         ),
-        dataCellDisplaySingle(totalMaterial2.toStringAsFixed(2), 70,
+        dataCellDisplaySingleBoldText(totalMaterial2.toStringAsFixed(2), 75,
             Theme.of(context).colorScheme.surface,
             optionalPadding: 8),
-        dataCellDoSingle(
+        dataCellDoSingleWithBoldText(
             TextEditingController(text: totalTotalPrice.toStringAsFixed(2)),
             (value) {},
-            Color.fromARGB(255, 153, 240, 131),
+            Theme.of(context).colorScheme.surface,
             true,
             75),
       ],
