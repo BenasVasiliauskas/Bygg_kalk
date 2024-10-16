@@ -244,7 +244,7 @@ class _TerraceItemScreenState extends State<TerraceItemScreen> {
       widget.laborCost[i] = calculateJobCost(
         i,
         widget.laborHours2,
-        widget.calculationQuantity,
+        hourlyRate,
       );
       laborCostControllers[i].text = widget.laborCost[i].toStringAsFixed(2);
 
@@ -260,8 +260,7 @@ class _TerraceItemScreenState extends State<TerraceItemScreen> {
       widget.totalPrice[i] = calculateTotalPrice(
         i,
         widget.laborCost,
-        widget.material,
-        widget.calculationQuantity,
+        widget.materials,
       );
       totalPriceControllers[i].text = widget.totalPrice[i].toStringAsFixed(2);
     }
@@ -343,12 +342,12 @@ class _TerraceItemScreenState extends State<TerraceItemScreen> {
               widget.laborCost[i] = calculateJobCost(
                 i,
                 widget.laborHours2,
-                widget.calculationQuantity,
+                hourlyRate,
               );
               laborCostControllers[i].text = calculateJobCost(
                 i,
                 widget.laborHours2,
-                widget.calculationQuantity,
+                hourlyRate,
               ).toStringAsFixed(2);
               // Recalculate and update the material 2 when quantity changes
               widget.materials[i] = calculateMaterialCost(
@@ -362,14 +361,16 @@ class _TerraceItemScreenState extends State<TerraceItemScreen> {
                 widget.calculationQuantity,
               ).toStringAsFixed(2);
               // Recalculate and update the total price when quantity changes
-              widget.totalPrice[i] = calculateTotalPrice(i, widget.laborCost,
-                  widget.material, widget.calculationQuantity);
+              widget.totalPrice[i] = calculateTotalPrice(
+                i,
+                widget.laborCost,
+                widget.materials,
+              );
               totalPriceControllers[i].text = calculateTotalPrice(
-                      i,
-                      widget.laborCost,
-                      widget.material,
-                      widget.calculationQuantity)
-                  .toStringAsFixed(2);
+                i,
+                widget.laborCost,
+                widget.materials,
+              ).toStringAsFixed(2);
               rebuildDataTable();
             }, Color.fromARGB(255, 218, 128, 122), false, optionalWidth: 55),
             dataCellDo(laborHours2Controllers, i, (value) {
@@ -381,7 +382,7 @@ class _TerraceItemScreenState extends State<TerraceItemScreen> {
               double updatedLaborCost = calculateJobCost(
                 i,
                 widget.laborHours2,
-                widget.calculationQuantity,
+                hourlyRate,
               ); // Calculate the labor cost
               widget.laborCost[i] =
                   double.parse(updatedLaborCost.toStringAsFixed(2));
@@ -406,15 +407,16 @@ class _TerraceItemScreenState extends State<TerraceItemScreen> {
                   updatedMaterial2.toStringAsFixed(2);
 
               // Recalculate total price
-              double updatedTotalPrice = calculateTotalPrice(
-                  i,
-                  widget.laborCost,
-                  widget.material,
-                  widget.calculationQuantity);
-              widget.totalPrice[i] = updatedTotalPrice;
-              totalPriceControllers[i].text =
-                  updatedTotalPrice.toStringAsFixed(2);
-              // Format to 2 decimal places
+              widget.totalPrice[i] = calculateTotalPrice(
+                i,
+                widget.laborCost,
+                widget.materials,
+              );
+              totalPriceControllers[i].text = calculateTotalPrice(
+                i,
+                widget.laborCost,
+                widget.materials,
+              ).toStringAsFixed(2);
 
               rebuildDataTable();
             }, Color.fromARGB(255, 218, 128, 122), false, optionalWidth: 75),

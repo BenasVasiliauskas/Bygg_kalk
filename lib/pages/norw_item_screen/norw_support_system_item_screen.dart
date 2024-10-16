@@ -245,7 +245,7 @@ class _NorwSupportSystemItemScreenState
       widget.laborCost[i] = calculateJobCost(
         i,
         widget.laborHours2,
-        widget.calculationQuantity,
+        hourlyRate,
       );
       laborCostControllers[i].text = widget.laborCost[i].toStringAsFixed(2);
 
@@ -261,8 +261,7 @@ class _NorwSupportSystemItemScreenState
       widget.totalPrice[i] = calculateTotalPrice(
         i,
         widget.laborCost,
-        widget.material1,
-        widget.calculationQuantity,
+        widget.material2,
       );
       totalPriceControllers[i].text = widget.totalPrice[i].toStringAsFixed(2);
     }
@@ -326,46 +325,40 @@ class _NorwSupportSystemItemScreenState
                 widget.laborHours1[i] = double.parse(
                   parsedValue.toStringAsFixed(2),
                 );
-                //
+                //When hours1 change recalculate hours2
                 widget.laborHours2[i] = calculateWorkHours2(
-                    i, widget.laborHours1, widget.calculationQuantity);
-                laborHours2Controllers[i].text = calculateWorkHours2(
-                        i, widget.laborHours1, widget.calculationQuantity)
-                    .toStringAsFixed(2);
-                //
-                widget.laborCost[i] = calculateJobCost(
-                    i, widget.laborHours1, widget.calculationQuantity);
-                laborCostControllers[i].text = calculateJobCost(
-                        i, widget.laborHours1, widget.calculationQuantity)
-                    .toStringAsFixed(2);
-                //
-                widget.laborCost[i] = calculateJobCost(
-                    i, widget.laborHours2, widget.calculationQuantity);
-                laborCostControllers[i].text = calculateJobCost(
-                        i, widget.laborHours2, widget.calculationQuantity)
-                    .toStringAsFixed(2);
-
-                // Recalculate and update the material 2 when quantity changes
-                widget.material2[i] = calculateMaterialCost(
                   i,
-                  widget.material1,
+                  widget.laborHours1,
                   widget.calculationQuantity,
                 );
-                material2Controllers[i].text = calculateMaterialCost(
+                laborHours2Controllers[i].text = calculateWorkHours2(
                   i,
-                  widget.material1,
+                  widget.laborHours1,
                   widget.calculationQuantity,
                 ).toStringAsFixed(2);
+                //When hours1 change recalculate labor cost
+                widget.laborCost[i] = calculateJobCost(
+                  i,
+                  widget.laborHours2,
+                  hourlyRate,
+                );
+                laborCostControllers[i].text = calculateJobCost(
+                  i,
+                  widget.laborHours2,
+                  hourlyRate,
+                ).toStringAsFixed(2);
 
-                // Recalculate and update the total price when quantity changes
-                widget.totalPrice[i] = calculateTotalPrice(i, widget.laborCost,
-                    widget.material1, widget.calculationQuantity);
+                // When hours1 change recalculate total price
+                widget.totalPrice[i] = calculateTotalPrice(
+                  i,
+                  widget.laborCost,
+                  widget.material2,
+                );
                 totalPriceControllers[i].text = calculateTotalPrice(
-                        i,
-                        widget.laborCost,
-                        widget.material1,
-                        widget.calculationQuantity)
-                    .toStringAsFixed(2);
+                  i,
+                  widget.laborCost,
+                  widget.material2,
+                ).toStringAsFixed(2);
                 rebuildDataTable();
               },
               Color.fromARGB(255, 218, 128, 122),
@@ -381,7 +374,7 @@ class _NorwSupportSystemItemScreenState
               double updatedLaborCost = calculateJobCost(
                 i,
                 widget.laborHours2,
-                widget.calculationQuantity,
+                hourlyRate,
               ); // Calculate the labor cost
               widget.laborCost[i] =
                   double.parse(updatedLaborCost.toStringAsFixed(2));
@@ -407,10 +400,10 @@ class _NorwSupportSystemItemScreenState
 
               // Recalculate total price
               double updatedTotalPrice = calculateTotalPrice(
-                  i,
-                  widget.laborCost,
-                  widget.material1,
-                  widget.calculationQuantity);
+                i,
+                widget.laborCost,
+                widget.material1,
+              );
               widget.totalPrice[i] = updatedTotalPrice;
               totalPriceControllers[i].text =
                   updatedTotalPrice.toStringAsFixed(2);

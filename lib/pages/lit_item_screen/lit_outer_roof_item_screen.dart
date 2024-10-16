@@ -242,7 +242,7 @@ class _LitOuterRoofItemScreenState extends State<LitOuterRoofItemScreen> {
       widget.laborCost[i] = calculateJobCost(
         i,
         widget.laborHours2,
-        widget.calculationQuantity,
+        hourlyRate,
       );
       laborCostControllers[i].text = widget.laborCost[i].toStringAsFixed(2);
 
@@ -258,8 +258,7 @@ class _LitOuterRoofItemScreenState extends State<LitOuterRoofItemScreen> {
       widget.totalPrice[i] = calculateTotalPrice(
         i,
         widget.laborCost,
-        widget.material1,
-        widget.calculationQuantity,
+        widget.material2,
       );
       totalPriceControllers[i].text = widget.totalPrice[i].toStringAsFixed(2);
     }
@@ -327,10 +326,15 @@ class _LitOuterRoofItemScreenState extends State<LitOuterRoofItemScreen> {
                 );
                 //
                 widget.laborHours2[i] = calculateWorkHours2(
-                    i, widget.laborHours1, widget.calculationQuantity);
+                  i,
+                  widget.laborHours1,
+                  widget.calculationQuantity,
+                );
                 laborHours2Controllers[i].text = calculateWorkHours2(
-                        i, widget.laborHours1, widget.calculationQuantity)
-                    .toStringAsFixed(2);
+                  i,
+                  widget.laborHours1,
+                  widget.calculationQuantity,
+                ).toStringAsFixed(2);
                 //
                 widget.laborCost[i] = calculateJobCost(
                     i, widget.laborHours1, widget.calculationQuantity);
@@ -357,14 +361,16 @@ class _LitOuterRoofItemScreenState extends State<LitOuterRoofItemScreen> {
                 ).toStringAsFixed(2);
 
                 // Recalculate and update the total price when quantity changes
-                widget.totalPrice[i] = calculateTotalPrice(i, widget.laborCost,
-                    widget.material1, widget.calculationQuantity);
+                widget.totalPrice[i] = calculateTotalPrice(
+                  i,
+                  widget.laborCost,
+                  widget.material2,
+                );
                 totalPriceControllers[i].text = calculateTotalPrice(
-                        i,
-                        widget.laborCost,
-                        widget.material1,
-                        widget.calculationQuantity)
-                    .toStringAsFixed(2);
+                  i,
+                  widget.laborCost,
+                  widget.material2,
+                ).toStringAsFixed(2);
                 rebuildDataTable();
               },
               Color.fromARGB(255, 218, 128, 122),
@@ -381,7 +387,7 @@ class _LitOuterRoofItemScreenState extends State<LitOuterRoofItemScreen> {
               double updatedLaborCost = calculateJobCost(
                 i,
                 widget.laborHours2,
-                widget.calculationQuantity,
+                hourlyRate,
               ); // Calculate the labor cost
               widget.laborCost[i] =
                   double.parse(updatedLaborCost.toStringAsFixed(2));
@@ -407,10 +413,11 @@ class _LitOuterRoofItemScreenState extends State<LitOuterRoofItemScreen> {
 
               // Recalculate total price
               double updatedTotalPrice = calculateTotalPrice(
-                  i,
-                  widget.laborCost,
-                  widget.material1,
-                  widget.calculationQuantity);
+                i,
+                widget.laborCost,
+                widget.material2,
+              );
+              ;
               widget.totalPrice[i] = updatedTotalPrice;
               totalPriceControllers[i].text =
                   updatedTotalPrice.toStringAsFixed(2);

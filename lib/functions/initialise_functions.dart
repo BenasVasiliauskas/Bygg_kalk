@@ -9,15 +9,13 @@ double calculateCostPainting(
 }
 
 double calculateWorkHours2(
-    int index, List<double> widgetLaborHours1, calculationQuantity) {
+    int index, List<double> widgetLaborHours1, hourlyWorkRate) {
   double laborHours1 = widgetLaborHours1[index];
-  return laborHours1 * calculationQuantity;
+  return laborHours1 * hourlyWorkRate;
 }
 
-double calculateJobCost(int index, List<double> widgetLaborHours2,
-    hourlyRateConstructionRemodeling) {
-  double laborHours2 = widgetLaborHours2[index];
-  return laborHours2 * hourlyRateConstructionRemodeling;
+double calculateJobCost(int index, List<double> widgetLaborHours2, hourlyRate) {
+  return widgetLaborHours2[index] * hourlyRate;
 }
 
 double calculateMaterialCost(
@@ -26,10 +24,9 @@ double calculateMaterialCost(
   return material1 * calculationQuantity;
 }
 
-double calculateTotalPrice(int index, List<double> widgetLaborCost,
-    List<double> widgetMaterial1, calculationQuantity) {
-  double jobCost = widgetLaborCost[index];
-  return jobCost + widgetMaterial1[index] * calculationQuantity;
+double calculateTotalPrice(
+    int index, List<double> widgetLaborCost, List<double> widgetMaterial2) {
+  return widgetLaborCost[index] + widgetMaterial2[index];
 }
 
 Widget buildCustomColumnLabel(
