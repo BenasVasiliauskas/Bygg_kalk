@@ -1,6 +1,6 @@
 import 'package:cost_calculator/constants/language.dart';
-import 'package:cost_calculator/data/english%20data%20folder/data.dart';
-import 'package:cost_calculator/data/norwegian%20data%20folder/norw_data.dart';
+import 'package:cost_calculator/data/english_data_folder/data.dart';
+import 'package:cost_calculator/data/norwegian_data_folder/norw_data.dart';
 import 'package:cost_calculator/observer/app_life_cycle_observer.dart';
 import 'package:cost_calculator/pages/item_sections/deck_sections.dart';
 import 'package:cost_calculator/pages/item_sections/flooring_sections.dart';

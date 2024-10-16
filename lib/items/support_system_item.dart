@@ -1,4 +1,4 @@
-import 'package:cost_calculator/data/english%20data%20folder/data.dart';
+import 'package:cost_calculator/data/english_data_folder/data.dart';
 import 'package:cost_calculator/pages/item_screen/support_system_screen.dart';
 import 'package:cost_calculator/pages/item_sections/support_system_sections.dart';
 import 'package:cost_calculator/pages/lit_item_screen/lit_support_system_item_screen.dart';

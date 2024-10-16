@@ -1,7 +1,7 @@
 // ignore_for_file: must_be_immutable
 
 import 'package:cost_calculator/constants/norw_budget_constants.dart';
-import 'package:cost_calculator/data/norwegian%20data%20folder/norw_data_original.dart';
+import 'package:cost_calculator/data/norwegian_data_folder/norw_data_original.dart';
 import 'package:cost_calculator/functions/initialise_functions.dart';
 import 'package:cost_calculator/observer/app_life_cycle_observer.dart';
 import 'package:cost_calculator/pages/shared/globals/calculation_variables.dart';
