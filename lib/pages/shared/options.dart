@@ -282,7 +282,7 @@ class _optionsScreenState extends State<optionsScreen> {
               : languageNorwegian
                   ? Text('Tidsfaktor')
                   : languageLithuanian
-                      ? Text("Laiko faktorius")
+                      ? Text("Laiko veiksnys")
                       : Text("Czynnik czasu"),
           content: Row(
             mainAxisSize: MainAxisSize.min,
@@ -328,12 +328,12 @@ class _optionsScreenState extends State<optionsScreen> {
       builder: (BuildContext context) {
         return AlertDialog(
           title: languageEnglish
-              ? Text("Surcharge")
+              ? Text("Markup")
               : languageNorwegian
                   ? Text('Påslag')
                   : languageLithuanian
-                      ? Text("Priemoka")
-                      : Text("Dopłata"),
+                      ? Text("Antkainis")
+                      : Text("Narzut"),
           content: Row(
             mainAxisSize: MainAxisSize.min,
             children: [
@@ -378,12 +378,12 @@ class _optionsScreenState extends State<optionsScreen> {
       builder: (BuildContext context) {
         return AlertDialog(
           title: languageEnglish
-              ? Text("Costs")
+              ? Text("Site costs")
               : languageNorwegian
                   ? Text('Rigg og Drift')
                   : languageLithuanian
-                      ? Text("Išlaidos")
-                      : Text("Koszty"),
+                      ? Text("Statybvietės išlaidos")
+                      : Text("Koszty budowy"),
           content: Row(
             mainAxisSize: MainAxisSize.min,
             children: [
@@ -556,31 +556,44 @@ class _optionsScreenState extends State<optionsScreen> {
                 ),
                 Row(
                   children: [
-                    Icon(FontAwesomeIcons.barcode),
-                    TextButton(
-                      child: languageEnglish
-                          ? Text("Surcharge")
+                    Tooltip(
+                      message: languageEnglish
+                          ? "Markup in the construction sector is an additional charge added to the material cost to cover indirect expenses or profit. It typically ranges from 5% to 20%, depending on the project."
                           : languageNorwegian
-                              ? Text('Påslag')
+                              ? "Påslag i byggebransjen er et tillegg som legges til materialkostnaden for å dekke indirekte kostnader eller fortjeneste. Det utgjør vanligvis 5% til 20%, avhengig av prosjektet."
                               : languageLithuanian
-                                  ? Text("Antkainis")
-                                  : Text("Dopłata"),
-                      onPressed: () {
-                        showMarkupDialog(context);
-                      },
-                    )
+                                  ? "Antkainis statybos sektoriuje yra papildomas mokestis, pridedamas prie medžiagų kainos, siekiant padengti netiesiogines išlaidas ar pelną. Paprastai tai sudaro 5%–20%, priklausomai nuo projekto."
+                                  : "Narzut w sektorze budowlanym to dodatkowa opłata doliczana do ceny materiałów, mająca na celu pokrycie kosztów pośrednich lub osiągnięcie zysku. Zwykle wynosi od 5% do 20%, w zależności od projektu.",
+                      child: Row(
+                        children: [
+                          Icon(FontAwesomeIcons.barcode),
+                          TextButton(
+                            child: languageEnglish
+                                ? Text("Markup")
+                                : languageNorwegian
+                                    ? Text('Påslag')
+                                    : languageLithuanian
+                                        ? Text("Antkainis")
+                                        : Text("Narzut"),
+                            onPressed: () {
+                              showMarkupDialog(context);
+                            },
+                          )
+                        ],
+                      ),
+                    ),
                   ],
                 ),
                 Row(
                   children: [
                     Tooltip(
                       message: languageEnglish
-                          ? "Change the costs of the site"
+                          ? "Site costs in the construction sector usually account for 5–15% of additional costs added to labor costs, depending on the size and complexity of the project."
                           : languageNorwegian
-                              ? "Endre kostnadene på byggeplassen"
+                              ? "Rigg og Drift i byggebransjen utgjør vanligvis 5–15% av tilleggskostnader lagt til arbeidskostnader, avhengig av prosjektets størrelse og kompleksitet."
                               : languageLithuanian
-                                  ? "Pakeisti statybvietės išlaidas"
-                                  : "Zmień koszty witryny",
+                                  ? "Statybvietės išlaidos statybos sektoriuje dažniausiai sudaro 5–15% papildomų išlaidų, pridėtų prie darbo kaštų, priklausomai nuo projekto dydžio ir sudėtingumo."
+                                  : "Koszty budowy w sektorze budowlanym zazwyczaj stanowią 5–15% dodatkowych kosztów, doliczanych do kosztów pracy, w zależności od wielkości i złożoności projektu",
                       child: Row(
                         children: [
                           Icon(FontAwesomeIcons.fileExcel),
@@ -590,7 +603,7 @@ class _optionsScreenState extends State<optionsScreen> {
                                 : languageNorwegian
                                     ? Text('Rigg og Drift')
                                     : languageLithuanian
-                                        ? Text("Statybvietes išlaidos")
+                                        ? Text("Statybvietės išlaidos")
                                         : Text("Koszty witryny"),
                             onPressed: () {
                               showCostsDialog(context);
@@ -605,22 +618,22 @@ class _optionsScreenState extends State<optionsScreen> {
                   children: [
                     Tooltip(
                       message: languageEnglish
-                          ? "Change the time factor"
+                          ? "Time factor in the construction sector usually adds 10–20% additional time to the initial work time estimate, depending on project complexity, work efficiency, and other conditions."
                           : languageNorwegian
-                              ? "Endre tidsfaktoren"
+                              ? "Tidsfaktor i byggebransjen legger vanligvis til 10–20% ekstra tid til den opprinnelige arbeidsvurderingen, avhengig av prosjektets kompleksitet, arbeidsytelse og andre forhold."
                               : languageLithuanian
-                                  ? "Pakeisti laiko faktorių"
-                                  : "Zmień czynnik czasu",
+                                  ? "Laiko veiksnys statybos sektoriuje paprastai prideda 10–20% papildomo laiko prie pradinio darbo laiko įvertinimo, atsižvelgiant į projekto sudėtingumą, darbo našumą ir kitas sąlygas."
+                                  : "Czynnik czasu w sektorze budowlanym zazwyczaj dodaje 10–20% dodatkowego czasu do wstępnej oceny czasu pracy, w zależności od złożoności projektu, wydajności pracy i innych warunków.",
                       child: Row(
                         children: [
                           Icon(FontAwesomeIcons.tag),
                           TextButton(
                             child: languageEnglish
-                                ? Text("Time coefficient")
+                                ? Text("Time factor")
                                 : languageNorwegian
                                     ? Text('Tidsfaktor')
                                     : languageLithuanian
-                                        ? Text("Laiko koeficientas")
+                                        ? Text("Laiko veiksnys")
                                         : Text("Współczynnik czasu"),
                             onPressed: () {
                               showTimeCoefficientDialog(context);
