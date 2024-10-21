@@ -198,8 +198,7 @@ class _LitBudgetScreenState extends State<LitBudgetScreen> {
                               index == calculatedNamesOrder.length - 1
                                   ? (sumMaterialCosts * markup)
                                       .toStringAsFixed(2)
-                                  : (totalMaterialCosts[index] *
-                                          timeCoefficient)
+                                  : (totalMaterialCosts[index])
                                       .toStringAsFixed(2),
                             ),
                           ),
@@ -212,7 +211,10 @@ class _LitBudgetScreenState extends State<LitBudgetScreen> {
                                   ? (sumLaborCosts * timeCoefficient +
                                           sumMaterialCosts)
                                       .toStringAsFixed(2)
-                                  : budgetSums[index].toStringAsFixed(2),
+                                  : ((totalLaborCosts[index] *
+                                              timeCoefficient) +
+                                          totalMaterialCosts[index])
+                                      .toStringAsFixed(2),
                             ),
                           ),
                         ),

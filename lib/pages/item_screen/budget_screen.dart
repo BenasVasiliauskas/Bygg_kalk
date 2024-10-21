@@ -219,8 +219,7 @@ class _BudgetScreenState extends State<BudgetScreen> {
                             child: Text(
                               index == calculatedNamesOrder.length - 1
                                   ? (sumMaterialCosts).toStringAsFixed(2)
-                                  : (totalMaterialCosts[index] *
-                                          timeCoefficient)
+                                  : (totalMaterialCosts[index])
                                       .toStringAsFixed(2),
                             ),
                           ),
@@ -233,7 +232,10 @@ class _BudgetScreenState extends State<BudgetScreen> {
                                   ? (sumLaborCosts * timeCoefficient +
                                           sumMaterialCosts)
                                       .toStringAsFixed(2)
-                                  : budgetSums[index].toStringAsFixed(2),
+                                  : ((totalLaborCosts[index] *
+                                              timeCoefficient) +
+                                          totalMaterialCosts[index])
+                                      .toStringAsFixed(2),
                             ),
                           ),
                         ),
