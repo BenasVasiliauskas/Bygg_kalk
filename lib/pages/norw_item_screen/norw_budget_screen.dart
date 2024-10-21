@@ -199,8 +199,11 @@ class _NorwBudgetScreenState extends State<NorwBudgetScreen> {
                             width: 70,
                             child: Text(
                               index == calculatedNamesOrder.length - 1
-                                  ? (sumMaterialCosts).toStringAsFixed(2)
-                                  : (totalMaterialCosts[index])
+                                  ? (sumMaterialCosts +
+                                          sumMaterialCosts * markup)
+                                      .toStringAsFixed(2)
+                                  : (totalMaterialCosts[index] +
+                                          totalMaterialCosts[index] * markup)
                                       .toStringAsFixed(2),
                             ),
                           ),

@@ -437,7 +437,7 @@ class _optionsScreenState extends State<optionsScreen> {
                 width: 150,
                 child: TextField(
                   onChanged: (value) {
-                    markup = double.parse(value);
+                    markup = double.parse(value) / 100;
                   },
                   controller: markupTexteditingController,
                   keyboardType: TextInputType.numberWithOptions(decimal: true),

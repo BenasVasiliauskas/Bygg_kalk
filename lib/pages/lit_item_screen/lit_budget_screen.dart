@@ -196,9 +196,11 @@ class _LitBudgetScreenState extends State<LitBudgetScreen> {
                             width: 70,
                             child: Text(
                               index == calculatedNamesOrder.length - 1
-                                  ? (sumMaterialCosts * markup)
+                                  ? (sumMaterialCosts +
+                                          sumMaterialCosts * markup)
                                       .toStringAsFixed(2)
-                                  : (totalMaterialCosts[index])
+                                  : (totalMaterialCosts[index] +
+                                          totalMaterialCosts[index] * markup)
                                       .toStringAsFixed(2),
                             ),
                           ),
