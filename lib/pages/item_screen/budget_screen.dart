@@ -393,14 +393,18 @@ class _BudgetScreenState extends State<BudgetScreen> {
                         DataCell(
                           Text(
                             (((sumLaborCosts +
+                                                (costs * sumLaborCosts) +
                                                 sumMaterialCosts +
-                                                (costs * sumLaborCosts)) *
+                                                sumWasteRemoval +
+                                                sumMaterialCosts * 0.05) *
                                             1.25) -
                                         (sumLaborCosts +
+                                            (costs * sumLaborCosts) +
                                             sumMaterialCosts +
-                                            (costs * sumLaborCosts)))
+                                            sumWasteRemoval +
+                                            sumMaterialCosts * 0.05))
                                     .toStringAsFixed(2) +
-                                "kr.",
+                                "\kr",
                           ),
                         ),
                       ],
@@ -421,11 +425,13 @@ class _BudgetScreenState extends State<BudgetScreen> {
                         DataCell(
                           Text(
                             ((sumLaborCosts +
+                                            (costs * sumLaborCosts) +
                                             sumMaterialCosts +
-                                            (costs * sumLaborCosts)) *
+                                            sumWasteRemoval +
+                                            sumMaterialCosts * 0.05) *
                                         1.25)
                                     .toStringAsFixed(2) +
-                                "kr.",
+                                "\kr",
                           ),
                         ),
                       ],
