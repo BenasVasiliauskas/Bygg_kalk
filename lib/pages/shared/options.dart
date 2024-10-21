@@ -501,7 +501,7 @@ class _optionsScreenState extends State<optionsScreen> {
                 width: 150,
                 child: TextField(
                   onChanged: (value) {
-                    costs = double.parse(value);
+                    costs = double.parse(value) / 100;
                   },
                   controller: costsTextEditingController,
                   keyboardType: TextInputType.numberWithOptions(decimal: true),
