@@ -5,7 +5,7 @@ List<String> calculatedNamesOrder = [
   "Bæresystem", //13
   "Yttervegger", //2
   "Vinduer og ytterdører", //1
-  "Innvendige vegger", //3
+  "Yttervegger", //3
   "Innvendig dør", //4
   "Dekker", //5
   "Gulvbelegg", //6

@@ -38,8 +38,10 @@ class _BudgetScreenState extends State<BudgetScreen> {
 
   double sumMaterialCosts =
       totalMaterialCosts.reduce((value, element) => value + element);
+
   double sumLaborCosts =
       totalLaborCosts.reduce((value, element) => value + element);
+
   double sumTotalHours = totalHours.reduce((value, element) => value + element);
 
   @override
@@ -194,7 +196,8 @@ class _BudgetScreenState extends State<BudgetScreen> {
                               index == calculatedNamesOrder.length - 1
                                   ? (sumTotalHours * timeCoefficient)
                                       .toStringAsFixed(2)
-                                  : totalHours[index].toStringAsFixed(2),
+                                  : (totalHours[index] * timeCoefficient)
+                                      .toStringAsFixed(2),
                             ),
                           ),
                         ),
@@ -205,7 +208,8 @@ class _BudgetScreenState extends State<BudgetScreen> {
                               index == calculatedNamesOrder.length - 1
                                   ? (sumLaborCosts * timeCoefficient)
                                       .toStringAsFixed(2)
-                                  : totalLaborCosts[index].toStringAsFixed(2),
+                                  : (totalLaborCosts[index] * timeCoefficient)
+                                      .toStringAsFixed(2),
                             ),
                           ),
                         ),
@@ -214,9 +218,9 @@ class _BudgetScreenState extends State<BudgetScreen> {
                             width: 70,
                             child: Text(
                               index == calculatedNamesOrder.length - 1
-                                  ? (sumMaterialCosts * markup)
-                                      .toStringAsFixed(2)
-                                  : totalMaterialCosts[index]
+                                  ? (sumMaterialCosts).toStringAsFixed(2)
+                                  : (totalMaterialCosts[index] *
+                                          timeCoefficient)
                                       .toStringAsFixed(2),
                             ),
                           ),
@@ -226,9 +230,8 @@ class _BudgetScreenState extends State<BudgetScreen> {
                             width: 100,
                             child: Text(
                               index == calculatedNamesOrder.length - 1
-                                  ? (sumTotalHours * timeCoefficient +
-                                          sumLaborCosts * timeCoefficient +
-                                          sumMaterialCosts * markup)
+                                  ? (sumLaborCosts * timeCoefficient +
+                                          sumMaterialCosts)
                                       .toStringAsFixed(2)
                                   : budgetSums[index].toStringAsFixed(2),
                             ),
@@ -272,6 +275,7 @@ class _BudgetScreenState extends State<BudgetScreen> {
                         DataCell(
                           Text(
                             "Site setup and operation",
+                            style: TextStyle(fontWeight: FontWeight.bold),
                           ),
                         ),
                         DataCell(
@@ -291,6 +295,7 @@ class _BudgetScreenState extends State<BudgetScreen> {
                         DataCell(
                           Text(
                             "Total material cost",
+                            style: TextStyle(fontWeight: FontWeight.bold),
                           ),
                         ),
                         DataCell(
@@ -308,6 +313,7 @@ class _BudgetScreenState extends State<BudgetScreen> {
                         DataCell(
                           Text(
                             "Waste removal",
+                            style: TextStyle(fontWeight: FontWeight.bold),
                           ),
                         ),
                         DataCell(
@@ -327,6 +333,7 @@ class _BudgetScreenState extends State<BudgetScreen> {
                         DataCell(
                           Text(
                             "Materials transport",
+                            style: TextStyle(fontWeight: FontWeight.bold),
                           ),
                         ),
                         DataCell(
@@ -347,6 +354,7 @@ class _BudgetScreenState extends State<BudgetScreen> {
                         DataCell(
                           Text(
                             "Total costs (excluding VAT)",
+                            style: TextStyle(fontWeight: FontWeight.bold),
                           ),
                         ),
                         DataCell(
@@ -397,6 +405,7 @@ class _BudgetScreenState extends State<BudgetScreen> {
                         DataCell(
                           Text(
                             "Total costs (including VAT)",
+                            style: TextStyle(fontWeight: FontWeight.bold),
                           ),
                         ),
                         DataCell(

@@ -118,7 +118,7 @@ class _ExteriorWallScreenState extends State<ExteriorWallScreen> {
                 : languageLithuanian
                     ? "Išorinės sienos"
                     : languageNorwegian
-                        ? "Innvendige vegger"
+                        ? "Yttervegger"
                         : "Ściany wewnętrzne",
           ),
         ),

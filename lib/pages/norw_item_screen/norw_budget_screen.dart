@@ -39,7 +39,6 @@ class _NorwBudgetScreenState extends State<NorwBudgetScreen> {
 
   double sumLaborCosts =
       totalLaborCosts.reduce((value, element) => value + element);
-
   double sumTotalHours = totalHours.reduce((value, element) => value + element);
 
   @override
@@ -178,7 +177,8 @@ class _NorwBudgetScreenState extends State<NorwBudgetScreen> {
                               index == calculatedNamesOrder.length - 1
                                   ? (sumTotalHours * timeCoefficient)
                                       .toStringAsFixed(2)
-                                  : totalHours[index].toStringAsFixed(2),
+                                  : (totalHours[index] * timeCoefficient)
+                                      .toStringAsFixed(2),
                             ),
                           ),
                         ),
@@ -189,7 +189,8 @@ class _NorwBudgetScreenState extends State<NorwBudgetScreen> {
                               index == calculatedNamesOrder.length - 1
                                   ? (sumLaborCosts * timeCoefficient)
                                       .toStringAsFixed(2)
-                                  : totalLaborCosts[index].toStringAsFixed(2),
+                                  : (totalLaborCosts[index] * timeCoefficient)
+                                      .toStringAsFixed(2),
                             ),
                           ),
                         ),
@@ -198,9 +199,8 @@ class _NorwBudgetScreenState extends State<NorwBudgetScreen> {
                             width: 70,
                             child: Text(
                               index == calculatedNamesOrder.length - 1
-                                  ? (sumMaterialCosts * markup)
-                                      .toStringAsFixed(2)
-                                  : totalMaterialCosts[index]
+                                  ? (sumMaterialCosts).toStringAsFixed(2)
+                                  : (totalMaterialCosts[index])
                                       .toStringAsFixed(2),
                             ),
                           ),
@@ -210,11 +210,13 @@ class _NorwBudgetScreenState extends State<NorwBudgetScreen> {
                             width: 100,
                             child: Text(
                               index == calculatedNamesOrder.length - 1
-                                  ? (sumTotalHours * timeCoefficient +
-                                          sumLaborCosts * timeCoefficient +
-                                          sumMaterialCosts * markup)
+                                  ? (sumLaborCosts * timeCoefficient +
+                                          sumMaterialCosts)
                                       .toStringAsFixed(2)
-                                  : budgetSums[index].toStringAsFixed(2),
+                                  : ((totalLaborCosts[index] *
+                                              timeCoefficient) +
+                                          totalMaterialCosts[index])
+                                      .toStringAsFixed(2),
                             ),
                           ),
                         ),
@@ -256,6 +258,7 @@ class _NorwBudgetScreenState extends State<NorwBudgetScreen> {
                         DataCell(
                           Text(
                             "Rigg og drift av byggeplass",
+                            style: TextStyle(fontWeight: FontWeight.bold),
                           ),
                         ),
                         DataCell(
@@ -275,6 +278,7 @@ class _NorwBudgetScreenState extends State<NorwBudgetScreen> {
                         DataCell(
                           Text(
                             "Sum materialkostnad",
+                            style: TextStyle(fontWeight: FontWeight.bold),
                           ),
                         ),
                         DataCell(
@@ -292,6 +296,7 @@ class _NorwBudgetScreenState extends State<NorwBudgetScreen> {
                         DataCell(
                           Text(
                             "Avfall flytting",
+                            style: TextStyle(fontWeight: FontWeight.bold),
                           ),
                         ),
                         DataCell(
@@ -311,6 +316,7 @@ class _NorwBudgetScreenState extends State<NorwBudgetScreen> {
                         DataCell(
                           Text(
                             "Materialer frakt",
+                            style: TextStyle(fontWeight: FontWeight.bold),
                           ),
                         ),
                         DataCell(
@@ -331,6 +337,7 @@ class _NorwBudgetScreenState extends State<NorwBudgetScreen> {
                         DataCell(
                           Text(
                             "Totale kostnader, (eksl. mva)",
+                            style: TextStyle(fontWeight: FontWeight.bold),
                           ),
                         ),
                         DataCell(
@@ -381,6 +388,7 @@ class _NorwBudgetScreenState extends State<NorwBudgetScreen> {
                         DataCell(
                           Text(
                             "Totale kostnader, (inkl. mva)",
+                            style: TextStyle(fontWeight: FontWeight.bold),
                           ),
                         ),
                         DataCell(

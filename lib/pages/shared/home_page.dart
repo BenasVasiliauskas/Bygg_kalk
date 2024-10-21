@@ -201,7 +201,7 @@ class _homePageState extends State<homePage> {
                               languageEnglish
                                   ? "Options"
                                   : languageNorwegian
-                                      ? "Alternativer"
+                                      ? "Innstilinger"
                                       : languageLithuanian
                                           ? "Nustatymai"
                                           : "Ustawienia",

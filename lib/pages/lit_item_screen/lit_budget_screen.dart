@@ -174,7 +174,8 @@ class _LitBudgetScreenState extends State<LitBudgetScreen> {
                               index == calculatedNamesOrder.length - 1
                                   ? (sumTotalHours * timeCoefficient)
                                       .toStringAsFixed(2)
-                                  : totalHours[index].toStringAsFixed(2),
+                                  : (totalHours[index] * timeCoefficient)
+                                      .toStringAsFixed(2),
                             ),
                           ),
                         ),
@@ -185,7 +186,8 @@ class _LitBudgetScreenState extends State<LitBudgetScreen> {
                               index == calculatedNamesOrder.length - 1
                                   ? (sumLaborCosts * timeCoefficient)
                                       .toStringAsFixed(2)
-                                  : totalLaborCosts[index].toStringAsFixed(2),
+                                  : (totalLaborCosts[index] * timeCoefficient)
+                                      .toStringAsFixed(2),
                             ),
                           ),
                         ),
@@ -196,7 +198,8 @@ class _LitBudgetScreenState extends State<LitBudgetScreen> {
                               index == calculatedNamesOrder.length - 1
                                   ? (sumMaterialCosts * markup)
                                       .toStringAsFixed(2)
-                                  : totalMaterialCosts[index]
+                                  : (totalMaterialCosts[index] *
+                                          timeCoefficient)
                                       .toStringAsFixed(2),
                             ),
                           ),
@@ -206,9 +209,8 @@ class _LitBudgetScreenState extends State<LitBudgetScreen> {
                             width: 100,
                             child: Text(
                               index == calculatedNamesOrder.length - 1
-                                  ? (sumTotalHours * timeCoefficient +
-                                          sumLaborCosts * timeCoefficient +
-                                          sumMaterialCosts * markup)
+                                  ? (sumLaborCosts * timeCoefficient +
+                                          sumMaterialCosts)
                                       .toStringAsFixed(2)
                                   : budgetSums[index].toStringAsFixed(2),
                             ),
@@ -251,6 +253,7 @@ class _LitBudgetScreenState extends State<LitBudgetScreen> {
                         DataCell(
                           Text(
                             "Tvirtinimo darbai ir darbai statybvietėje",
+                            style: TextStyle(fontWeight: FontWeight.bold),
                           ),
                         ),
                         DataCell(
@@ -270,6 +273,7 @@ class _LitBudgetScreenState extends State<LitBudgetScreen> {
                         DataCell(
                           Text(
                             "Bendra medžiagų kaina",
+                            style: TextStyle(fontWeight: FontWeight.bold),
                           ),
                         ),
                         DataCell(
@@ -287,6 +291,7 @@ class _LitBudgetScreenState extends State<LitBudgetScreen> {
                         DataCell(
                           Text(
                             "Atliekų išvežimas",
+                            style: TextStyle(fontWeight: FontWeight.bold),
                           ),
                         ),
                         DataCell(
@@ -306,6 +311,7 @@ class _LitBudgetScreenState extends State<LitBudgetScreen> {
                         DataCell(
                           Text(
                             "Medžiagų gabenimas",
+                            style: TextStyle(fontWeight: FontWeight.bold),
                           ),
                         ),
                         DataCell(
@@ -326,6 +332,7 @@ class _LitBudgetScreenState extends State<LitBudgetScreen> {
                         DataCell(
                           Text(
                             "Iš viso išlaidų (be PVM)",
+                            style: TextStyle(fontWeight: FontWeight.bold),
                           ),
                         ),
                         DataCell(
@@ -376,6 +383,7 @@ class _LitBudgetScreenState extends State<LitBudgetScreen> {
                         DataCell(
                           Text(
                             "Iš viso išlaidų (su PVM)",
+                            style: TextStyle(fontWeight: FontWeight.bold),
                           ),
                         ),
                         DataCell(

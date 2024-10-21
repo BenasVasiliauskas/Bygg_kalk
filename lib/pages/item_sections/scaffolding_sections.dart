@@ -75,7 +75,7 @@ class _ScaffoldingSectionsState extends State<ScaffoldingSections> {
                 : languageLithuanian
                     ? "Pastoliai"
                     : languageNorwegian
-                        ? "Stilas"
+                        ? "Stillas"
                         : "Rusztowanie",
           ),
         ),

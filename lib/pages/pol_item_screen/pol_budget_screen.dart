@@ -35,6 +35,7 @@ class _PolBudgetScreenState extends State<PolBudgetScreen> {
 
   double sumMaterialCosts =
       totalMaterialCosts.reduce((value, element) => value + element);
+
   double sumLaborCosts =
       totalLaborCosts.reduce((value, element) => value + element);
 
@@ -172,7 +173,8 @@ class _PolBudgetScreenState extends State<PolBudgetScreen> {
                               index == calculatedNamesOrder.length - 1
                                   ? (sumTotalHours * timeCoefficient)
                                       .toStringAsFixed(2)
-                                  : totalHours[index].toStringAsFixed(2),
+                                  : (totalHours[index] * timeCoefficient)
+                                      .toStringAsFixed(2),
                             ),
                           ),
                         ),
@@ -183,7 +185,8 @@ class _PolBudgetScreenState extends State<PolBudgetScreen> {
                               index == calculatedNamesOrder.length - 1
                                   ? (sumLaborCosts * timeCoefficient)
                                       .toStringAsFixed(2)
-                                  : totalLaborCosts[index].toStringAsFixed(2),
+                                  : (totalLaborCosts[index] * timeCoefficient)
+                                      .toStringAsFixed(2),
                             ),
                           ),
                         ),
@@ -192,9 +195,9 @@ class _PolBudgetScreenState extends State<PolBudgetScreen> {
                             width: 70,
                             child: Text(
                               index == calculatedNamesOrder.length - 1
-                                  ? (sumMaterialCosts * markup)
-                                      .toStringAsFixed(2)
-                                  : totalMaterialCosts[index]
+                                  ? (sumMaterialCosts).toStringAsFixed(2)
+                                  : (totalMaterialCosts[index] *
+                                          timeCoefficient)
                                       .toStringAsFixed(2),
                             ),
                           ),
@@ -204,9 +207,8 @@ class _PolBudgetScreenState extends State<PolBudgetScreen> {
                             width: 100,
                             child: Text(
                               index == calculatedNamesOrder.length - 1
-                                  ? (sumTotalHours * timeCoefficient +
-                                          sumLaborCosts * timeCoefficient +
-                                          sumMaterialCosts * markup)
+                                  ? (sumLaborCosts * timeCoefficient +
+                                          sumMaterialCosts)
                                       .toStringAsFixed(2)
                                   : budgetSums[index].toStringAsFixed(2),
                             ),
@@ -249,6 +251,7 @@ class _PolBudgetScreenState extends State<PolBudgetScreen> {
                         DataCell(
                           Text(
                             "Olinowanie i operacje na miejscu",
+                            style: TextStyle(fontWeight: FontWeight.bold),
                           ),
                         ),
                         DataCell(
@@ -268,6 +271,7 @@ class _PolBudgetScreenState extends State<PolBudgetScreen> {
                         DataCell(
                           Text(
                             "Całkowity koszt materiałów",
+                            style: TextStyle(fontWeight: FontWeight.bold),
                           ),
                         ),
                         DataCell(
@@ -285,6 +289,7 @@ class _PolBudgetScreenState extends State<PolBudgetScreen> {
                         DataCell(
                           Text(
                             "Usuwanie odpadów",
+                            style: TextStyle(fontWeight: FontWeight.bold),
                           ),
                         ),
                         DataCell(
@@ -304,6 +309,7 @@ class _PolBudgetScreenState extends State<PolBudgetScreen> {
                         DataCell(
                           Text(
                             "Wysyłka materiałów",
+                            style: TextStyle(fontWeight: FontWeight.bold),
                           ),
                         ),
                         DataCell(
@@ -324,6 +330,7 @@ class _PolBudgetScreenState extends State<PolBudgetScreen> {
                         DataCell(
                           Text(
                             "Koszty całkowite (bez VAT)",
+                            style: TextStyle(fontWeight: FontWeight.bold),
                           ),
                         ),
                         DataCell(
@@ -374,6 +381,7 @@ class _PolBudgetScreenState extends State<PolBudgetScreen> {
                         DataCell(
                           Text(
                             "Koszty całkowite (z VAT)",
+                            style: TextStyle(fontWeight: FontWeight.bold),
                           ),
                         ),
                         DataCell(

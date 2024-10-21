@@ -75,7 +75,7 @@ class _InnerWallSectionsState extends State<InnerWallSections> {
                 : languageLithuanian
                     ? "Vidinės sienos"
                     : languageNorwegian
-                        ? "Innvendige vegger"
+                        ? "Yttervegger"
                         : "Ściany wewnętrzne",
           ),
         ),
