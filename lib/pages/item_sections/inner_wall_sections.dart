@@ -95,14 +95,23 @@ class _InnerWallSectionsState extends State<InnerWallSections> {
                       ),
                     );
                   },
-                  child: Text(
-                    languageEnglish
-                        ? "New building"
-                        : languageLithuanian
-                            ? "Naujas pastatas"
-                            : languageNorwegian
-                                ? "Ny Bygg"
-                                : "ŚNowy budynek",
+                  child: Row(
+                    children: [
+                      Icon(
+                        FontAwesomeIcons.folder,
+                        size: 18,
+                      ),
+                      SizedBox(width: 8),
+                      Text(
+                        languageEnglish
+                            ? "New building"
+                            : languageLithuanian
+                                ? "Naujas pastatas"
+                                : languageNorwegian
+                                    ? "Ny Bygg"
+                                    : "ŚNowy budynek",
+                      ),
+                    ],
                   ),
                 ),
                 Padding(
@@ -129,14 +138,23 @@ class _InnerWallSectionsState extends State<InnerWallSections> {
                       ),
                     );
                   },
-                  child: Text(
-                    languageEnglish
-                        ? "Reconstruction"
-                        : languageLithuanian
-                            ? "Rekonstrukcija"
-                            : languageNorwegian
-                                ? "Ombygging"
-                                : "Rekonstrukcja",
+                  child: Row(
+                    children: [
+                      Icon(
+                        FontAwesomeIcons.folder,
+                        size: 18,
+                      ),
+                      SizedBox(width: 8),
+                      Text(
+                        languageEnglish
+                            ? "Reconstruction"
+                            : languageLithuanian
+                                ? "Rekonstrukcija"
+                                : languageNorwegian
+                                    ? "Ombygging"
+                                    : "Rekonstrukcja",
+                      ),
+                    ],
                   ),
                 ),
                 Padding(
@@ -163,14 +181,23 @@ class _InnerWallSectionsState extends State<InnerWallSections> {
                       ),
                     );
                   },
-                  child: Text(
-                    languageEnglish
-                        ? "Demolition"
-                        : languageLithuanian
-                            ? "Griovimas"
-                            : languageNorwegian
-                                ? "Riving"
-                                : "Rozbiórka",
+                  child: Row(
+                    children: [
+                      Icon(
+                        FontAwesomeIcons.folder,
+                        size: 18,
+                      ),
+                      SizedBox(width: 8),
+                      Text(
+                        languageEnglish
+                            ? "Demolition"
+                            : languageLithuanian
+                                ? "Griovimas"
+                                : languageNorwegian
+                                    ? "Riving"
+                                    : "Rozbiórka",
+                      ),
+                    ],
                   ),
                 ),
                 Padding(

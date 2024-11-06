@@ -98,14 +98,23 @@ class _WindowsExteriorDoorSectionsState
                       ),
                     );
                   },
-                  child: Text(
-                    languageEnglish
-                        ? "New Construction"
-                        : languageLithuanian
-                            ? "Nauja statyba"
-                            : languageNorwegian
-                                ? "Nybygg"
-                                : "Nowy budynek",
+                  child: Row(
+                    children: [
+                      Icon(
+                        FontAwesomeIcons.folder,
+                        size: 18,
+                      ),
+                      SizedBox(width: 8),
+                      Text(
+                        languageEnglish
+                            ? "New Construction"
+                            : languageLithuanian
+                                ? "Nauja statyba"
+                                : languageNorwegian
+                                    ? "Nybygg"
+                                    : "Nowy budynek",
+                      ),
+                    ],
                   ),
                 ),
                 Padding(
@@ -131,14 +140,23 @@ class _WindowsExteriorDoorSectionsState
                       ),
                     );
                   },
-                  child: Text(
-                    languageEnglish
-                        ? "Demolition"
-                        : languageLithuanian
-                            ? "Griovimas"
-                            : languageNorwegian
-                                ? "Riving"
-                                : "Rozbiórka",
+                  child: Row(
+                    children: [
+                      Icon(
+                        FontAwesomeIcons.folder,
+                        size: 18,
+                      ),
+                      SizedBox(width: 8),
+                      Text(
+                        languageEnglish
+                            ? "Demolition"
+                            : languageLithuanian
+                                ? "Griovimas"
+                                : languageNorwegian
+                                    ? "Riving"
+                                    : "Rozbiórka",
+                      ),
+                    ],
                   ),
                 ),
                 Padding(
