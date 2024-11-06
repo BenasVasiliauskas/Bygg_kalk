@@ -174,10 +174,13 @@ class _NorwBudgetScreenState extends State<NorwBudgetScreen> {
                           SizedBox(
                             width: 70,
                             child: Text(
+                              style: TextStyle(fontWeight: FontWeight.bold),
                               index == calculatedNamesOrder.length - 1
-                                  ? (sumTotalHours * timeCoefficient)
+                                  ? (sumTotalHours +
+                                          (sumTotalHours * timeCoefficient))
                                       .toStringAsFixed(2)
-                                  : (totalHours[index] * timeCoefficient)
+                                  : (totalHours[index] +
+                                          (totalHours[index] * timeCoefficient))
                                       .toStringAsFixed(2),
                             ),
                           ),
@@ -187,9 +190,12 @@ class _NorwBudgetScreenState extends State<NorwBudgetScreen> {
                             width: 70,
                             child: Text(
                               index == calculatedNamesOrder.length - 1
-                                  ? (sumLaborCosts * timeCoefficient)
+                                  ? (sumLaborCosts +
+                                          (sumLaborCosts * timeCoefficient))
                                       .toStringAsFixed(2)
-                                  : (totalLaborCosts[index] * timeCoefficient)
+                                  : (totalLaborCosts[index] +
+                                          (totalLaborCosts[index] *
+                                              timeCoefficient))
                                       .toStringAsFixed(2),
                             ),
                           ),
@@ -214,11 +220,11 @@ class _NorwBudgetScreenState extends State<NorwBudgetScreen> {
                             child: Text(
                               index == calculatedNamesOrder.length - 1
                                   ? (sumLaborCosts * timeCoefficient +
-                                          sumMaterialCosts)
+                                          sumMaterialCosts * markup)
                                       .toStringAsFixed(2)
                                   : ((totalLaborCosts[index] *
                                               timeCoefficient) +
-                                          totalMaterialCosts[index])
+                                          totalMaterialCosts[index] * markup)
                                       .toStringAsFixed(2),
                             ),
                           ),

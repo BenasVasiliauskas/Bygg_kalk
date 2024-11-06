@@ -40,7 +40,7 @@ void main() async {
 }
 
 class MyApp extends StatelessWidget {
-  @override 
+  @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: splashScreen(),

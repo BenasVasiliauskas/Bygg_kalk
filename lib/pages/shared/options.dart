@@ -19,12 +19,25 @@ class optionsScreen extends StatefulWidget {
 
 class _optionsScreenState extends State<optionsScreen> {
   final AppLifecycleObserver _observer = AppLifecycleObserver();
+  TextEditingController markupTextEditingController = TextEditingController();
+  TextEditingController costsTextEditingController = TextEditingController();
+  TextEditingController timeCoefficientTextEditingController =
+      TextEditingController();
 
   @override
   void initState() {
     WidgetsBinding.instance.addObserver(_observer);
+
     super.initState();
     _loadLanguage();
+  }
+
+  @override
+  void dispose() {
+    markupTextEditingController.dispose();
+    costsTextEditingController.dispose();
+    timeCoefficientTextEditingController.dispose();
+    super.dispose();
   }
 
   Future<void> _loadLanguage() async {
@@ -349,63 +362,89 @@ class _optionsScreenState extends State<optionsScreen> {
   }
 
   void showTimeCoefficientDialog(BuildContext context) {
+    timeCoefficientTextEditingController.text =
+        (timeCoefficient * 100).toStringAsFixed(2);
+
     showDialog(
+      barrierDismissible: false,
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
-          title: languageEnglish
-              ? Text(
-                  "Time factor",
-                )
-              : languageNorwegian
-                  ? Text('Tidsfaktor')
-                  : languageLithuanian
-                      ? Text(
-                          "Laiko veiksnys",
-                        )
-                      : Text(
-                          "Czynnik czasu",
-                        ),
-          content: Row(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              SizedBox(
-                width: 150,
-                child: TextField(
-                  onChanged: (value) {
-                    timeCoefficient = double.parse(value);
-                  },
-                  controller: timeCoefficientTextEditingController,
-                  keyboardType: TextInputType.numberWithOptions(decimal: true),
-                ),
+          title: Text(
+            languageEnglish
+                ? "Time factor"
+                : languageNorwegian
+                    ? 'Tidsfaktor'
+                    : languageLithuanian
+                        ? "Laiko veiksnys"
+                        : "Czynnik czasu",
+          ),
+          content: SingleChildScrollView(
+            child: ConstrainedBox(
+              constraints: BoxConstraints(
+                maxHeight: MediaQuery.of(context).size.height * 0.6,
               ),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Text(
-                  "%",
-                ),
-              )
-            ],
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  // Input Row
+                  Row(
+                    children: [
+                      Expanded(
+                        child: TextField(
+                          onChanged: (value) {
+                            if (value.isNotEmpty) {
+                              timeCoefficient = double.parse(value) / 100;
+                            } else {
+                              timeCoefficient = 0;
+                            }
+                          },
+                          controller: timeCoefficientTextEditingController,
+                          keyboardType:
+                              TextInputType.numberWithOptions(decimal: true),
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Text("%"),
+                      ),
+                    ],
+                  ),
+                  SizedBox(height: 16.0),
+                  Text(
+                    languageEnglish
+                        ? "Time factor in the construction sector usually adds 10–20% additional time to the initial work time estimate, depending on project complexity, work efficiency, and other conditions."
+                        : languageNorwegian
+                            ? "Tidsfaktor i byggebransjen legger vanligvis til 10–20% ekstra tid til den opprinnelige arbeidsvurderingen, avhengig av prosjektets kompleksitet, arbeidsytelse og andre forhold."
+                            : languageLithuanian
+                                ? "Laiko veiksnys statybos sektoriuje paprastai prideda 10–20% papildomo laiko prie pradinio darbo laiko įvertinimo, atsižvelgiant į projekto sudėtingumą, darbo našumą ir kitas sąlygas."
+                                : "Czynnik czasu w sektorze budowlanym zazwyczaj dodaje 10–20% dodatkowego czasu do wstępnej oceny czasu pracy, w zależności od złożoności projektu, wydajności pracy i innych warunków.",
+                  ),
+                ],
+              ),
+            ),
           ),
           actions: <Widget>[
             TextButton(
               onPressed: () {
+                // Check if input is empty, reset variable to 0
+                if (timeCoefficientTextEditingController.text.isEmpty) {
+                  setState(() {
+                    timeCoefficient = 0;
+                  });
+                }
                 Navigator.of(context).pop();
               },
-              child: languageEnglish
-                  ? Text(
-                      "Close",
-                    )
-                  : languageNorwegian
-                      ? Text('Lukk')
-                      : languageLithuanian
-                          ? Text(
-                              "Uždaryti",
-                            )
-                          : Text(
-                              "Zamknij",
-                            ),
-            )
+              child: Text(
+                languageEnglish
+                    ? "Close"
+                    : languageNorwegian
+                        ? 'Lukk'
+                        : languageLithuanian
+                            ? "Uždaryti"
+                            : "Zamknij",
+              ),
+            ),
           ],
         );
       },
@@ -413,63 +452,87 @@ class _optionsScreenState extends State<optionsScreen> {
   }
 
   void showMarkupDialog(BuildContext context) {
+    markupTextEditingController.text = (markup * 100).toStringAsFixed(2);
     showDialog(
+      barrierDismissible: false,
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
-          title: languageEnglish
-              ? Text(
-                  "Markup",
-                )
-              : languageNorwegian
-                  ? Text('Påslag')
-                  : languageLithuanian
-                      ? Text(
-                          "Antkainis",
-                        )
-                      : Text(
-                          "Narzut",
-                        ),
-          content: Row(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              SizedBox(
-                width: 150,
-                child: TextField(
-                  onChanged: (value) {
-                    markup = double.parse(value) / 100;
-                  },
-                  controller: markupTexteditingController,
-                  keyboardType: TextInputType.numberWithOptions(decimal: true),
-                ),
+          title: Text(
+            languageEnglish
+                ? "Markup"
+                : languageNorwegian
+                    ? 'Påslag'
+                    : languageLithuanian
+                        ? "Antkainis"
+                        : "Narzut",
+          ),
+          content: SingleChildScrollView(
+            child: ConstrainedBox(
+              constraints: BoxConstraints(
+                maxHeight: MediaQuery.of(context).size.height * 0.6,
               ),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Text(
-                  "%",
-                ),
-              )
-            ],
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  // Input Row
+                  Row(
+                    children: [
+                      Expanded(
+                        child: TextField(
+                          onChanged: (value) {
+                            if (value.isNotEmpty) {
+                              markup = double.parse(value) / 100;
+                            } else {
+                              markup = 0;
+                            }
+                          },
+                          controller: markupTextEditingController,
+                          keyboardType:
+                              TextInputType.numberWithOptions(decimal: true),
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Text("%"),
+                      ),
+                    ],
+                  ),
+                  SizedBox(height: 16.0),
+                  Text(
+                    languageEnglish
+                        ? "Markup in the construction sector is an additional charge added to the material cost to cover indirect expenses or profit. It typically ranges from 5% to 20%, depending on the project."
+                        : languageNorwegian
+                            ? "Påslag i byggebransjen er et tillegg som legges til materialkostnaden for å dekke indirekte kostnader eller fortjeneste. Det utgjør vanligvis 5% til 20%, avhengig av prosjektet."
+                            : languageLithuanian
+                                ? "Antkainis statybos sektoriuje yra papildomas mokestis, pridedamas prie medžiagų kainos, siekiant padengti netiesiogines išlaidas ar pelną. Paprastai tai sudaro 5%–20%, priklausomai nuo projekto."
+                                : "Narzut w sektorze budowlanym to dodatkowa opłata doliczana do ceny materiałów, mająca na celu pokrycie kosztów pośrednich lub osiągnięcie zysku. Zwykle wynosi od 5% do 20%, w zależności od projektu.",
+                  ),
+                ],
+              ),
+            ),
           ),
           actions: <Widget>[
             TextButton(
               onPressed: () {
+                // Check if input is empty, reset variable to 0
+                if (markupTextEditingController.text.isEmpty) {
+                  setState(() {
+                    markup = 0;
+                  });
+                }
                 Navigator.of(context).pop();
               },
-              child: languageEnglish
-                  ? Text(
-                      "Close",
-                    )
-                  : languageNorwegian
-                      ? Text('Lukk')
-                      : languageLithuanian
-                          ? Text(
-                              "Uždaryti",
-                            )
-                          : Text(
-                              "Zamknij",
-                            ),
-            )
+              child: Text(
+                languageEnglish
+                    ? "Close"
+                    : languageNorwegian
+                        ? 'Lukk'
+                        : languageLithuanian
+                            ? "Uždaryti"
+                            : "Zamknij",
+              ),
+            ),
           ],
         );
       },
@@ -477,63 +540,87 @@ class _optionsScreenState extends State<optionsScreen> {
   }
 
   void showCostsDialog(BuildContext context) {
+    costsTextEditingController.text = (costs * 100).toStringAsFixed(2);
     showDialog(
+      barrierDismissible: false,
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
-          title: languageEnglish
-              ? Text(
-                  "Site costs",
-                )
-              : languageNorwegian
-                  ? Text('Rigg og Drift')
-                  : languageLithuanian
-                      ? Text(
-                          "Statybvietės išlaidos",
-                        )
-                      : Text(
-                          "Koszty budowy",
+          title: Text(
+            languageEnglish
+                ? "Site costs"
+                : languageNorwegian
+                    ? 'Rigg og Drift'
+                    : languageLithuanian
+                        ? "Statybvietės išlaidos"
+                        : "Koszty budowy",
+          ),
+          content: SingleChildScrollView(
+            child: ConstrainedBox(
+              constraints: BoxConstraints(
+                maxHeight: MediaQuery.of(context).size.height * 0.6,
+              ),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  // Input Row
+                  Row(
+                    children: [
+                      Expanded(
+                        child: TextField(
+                          onChanged: (value) {
+                            if (value.isNotEmpty) {
+                              costs = double.parse(value) / 100;
+                            } else {
+                              costs = 0;
+                            }
+                          },
+                          controller: costsTextEditingController,
+                          keyboardType:
+                              TextInputType.numberWithOptions(decimal: true),
                         ),
-          content: Row(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              SizedBox(
-                width: 150,
-                child: TextField(
-                  onChanged: (value) {
-                    costs = double.parse(value) / 100;
-                  },
-                  controller: costsTextEditingController,
-                  keyboardType: TextInputType.numberWithOptions(decimal: true),
-                ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Text("%"),
+                      ),
+                    ],
+                  ),
+                  SizedBox(height: 16.0),
+                  Text(
+                    languageEnglish
+                        ? "Site costs in the construction sector usually account for 5–15% of additional costs added to labor costs, depending on the size and complexity of the project."
+                        : languageNorwegian
+                            ? "Rigg og Drift i byggebransjen utgjør vanligvis 5–15% av tilleggskostnader lagt til arbeidskostnader, avhengig av prosjektets størrelse og kompleksitet."
+                            : languageLithuanian
+                                ? "Statybvietės išlaidos statybos sektoriuje dažniausiai sudaro 5–15% papildomų išlaidų, pridėtų prie darbo kaštų, priklausomai nuo projekto dydžio ir sudėtingumo."
+                                : "Koszty budowy w sektorze budowlanym zazwyczaj stanowią 5–15% dodatkowych kosztów, doliczanych do kosztów pracy, w zależności od wielkości i złożoności projektu.",
+                  ),
+                ],
               ),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Text(
-                  "%",
-                ),
-              ),
-            ],
+            ),
           ),
           actions: <Widget>[
             TextButton(
               onPressed: () {
+                // Check if input is empty, reset variable to 0
+                if (costsTextEditingController.text.isEmpty) {
+                  setState(() {
+                    costs = 0;
+                  });
+                }
                 Navigator.of(context).pop();
               },
-              child: languageEnglish
-                  ? Text(
-                      "Close",
-                    )
-                  : languageNorwegian
-                      ? Text('Lukk')
-                      : languageLithuanian
-                          ? Text(
-                              "Uždaryti",
-                            )
-                          : Text(
-                              "Zamknij",
-                            ),
-            )
+              child: Text(
+                languageEnglish
+                    ? "Close"
+                    : languageNorwegian
+                        ? 'Lukk'
+                        : languageLithuanian
+                            ? "Uždaryti"
+                            : "Zamknij",
+              ),
+            ),
           ],
         );
       },
@@ -607,7 +694,7 @@ class _optionsScreenState extends State<optionsScreen> {
                                     : "Zmień język",
                         child: Row(
                           children: [
-                            Icon(FontAwesomeIcons.gear),
+                            Icon(FontAwesomeIcons.globe),
                             TextButton(
                               child: languageEnglish
                                   ? Text(
@@ -706,110 +793,71 @@ class _optionsScreenState extends State<optionsScreen> {
                 ),
                 Row(
                   children: [
-                    Tooltip(
-                      message: languageEnglish
-                          ? "Markup in the construction sector is an additional charge added to the material cost to cover indirect expenses or profit. It typically ranges from 5% to 20%, depending on the project."
+                    Icon(FontAwesomeIcons.barcode),
+                    TextButton(
+                      child: languageEnglish
+                          ? Text(
+                              "Markup",
+                            )
                           : languageNorwegian
-                              ? "Påslag i byggebransjen er et tillegg som legges til materialkostnaden for å dekke indirekte kostnader eller fortjeneste. Det utgjør vanligvis 5% til 20%, avhengig av prosjektet."
+                              ? Text('Påslag')
                               : languageLithuanian
-                                  ? "Antkainis statybos sektoriuje yra papildomas mokestis, pridedamas prie medžiagų kainos, siekiant padengti netiesiogines išlaidas ar pelną. Paprastai tai sudaro 5%–20%, priklausomai nuo projekto."
-                                  : "Narzut w sektorze budowlanym to dodatkowa opłata doliczana do ceny materiałów, mająca na celu pokrycie kosztów pośrednich lub osiągnięcie zysku. Zwykle wynosi od 5% do 20%, w zależności od projektu.",
-                      child: Row(
-                        children: [
-                          Icon(FontAwesomeIcons.barcode),
-                          TextButton(
-                            child: languageEnglish
-                                ? Text(
-                                    "Markup",
-                                  )
-                                : languageNorwegian
-                                    ? Text('Påslag')
-                                    : languageLithuanian
-                                        ? Text(
-                                            "Antkainis",
-                                          )
-                                        : Text(
-                                            "Narzut",
-                                          ),
-                            onPressed: () {
-                              showMarkupDialog(context);
-                            },
-                          )
-                        ],
-                      ),
-                    ),
+                                  ? Text(
+                                      "Antkainis",
+                                    )
+                                  : Text(
+                                      "Narzut",
+                                    ),
+                      onPressed: () {
+                        showMarkupDialog(context);
+                      },
+                    )
                   ],
                 ),
                 Row(
                   children: [
-                    Tooltip(
-                      message: languageEnglish
-                          ? "Site costs in the construction sector usually account for 5–15% of additional costs added to labor costs, depending on the size and complexity of the project."
+                    Icon(FontAwesomeIcons.fileExcel),
+                    TextButton(
+                      child: languageEnglish
+                          ? Text(
+                              "Site costs",
+                            )
                           : languageNorwegian
-                              ? "Rigg og Drift i byggebransjen utgjør vanligvis 5–15% av tilleggskostnader lagt til arbeidskostnader, avhengig av prosjektets størrelse og kompleksitet."
+                              ? Text('Rigg og Drift')
                               : languageLithuanian
-                                  ? "Statybvietės išlaidos statybos sektoriuje dažniausiai sudaro 5–15% papildomų išlaidų, pridėtų prie darbo kaštų, priklausomai nuo projekto dydžio ir sudėtingumo."
-                                  : "Koszty budowy w sektorze budowlanym zazwyczaj stanowią 5–15% dodatkowych kosztów, doliczanych do kosztów pracy, w zależności od wielkości i złożoności projektu",
-                      child: Row(
-                        children: [
-                          Icon(FontAwesomeIcons.fileExcel),
-                          TextButton(
-                            child: languageEnglish
-                                ? Text(
-                                    "Site costs",
-                                  )
-                                : languageNorwegian
-                                    ? Text('Rigg og Drift')
-                                    : languageLithuanian
-                                        ? Text(
-                                            "Statybvietės išlaidos",
-                                          )
-                                        : Text(
-                                            "Koszty witryny",
-                                          ),
-                            onPressed: () {
-                              showCostsDialog(context);
-                            },
-                          )
-                        ],
-                      ),
-                    ),
+                                  ? Text(
+                                      "Statybvietės išlaidos",
+                                    )
+                                  : Text(
+                                      "Koszty witryny",
+                                    ),
+                      onPressed: () {
+                        showCostsDialog(context);
+                      },
+                    )
                   ],
                 ),
                 Row(
                   children: [
-                    Tooltip(
-                      message: languageEnglish
-                          ? "Time factor in the construction sector usually adds 10–20% additional time to the initial work time estimate, depending on project complexity, work efficiency, and other conditions."
+                    Icon(FontAwesomeIcons.tag),
+                    TextButton(
+                      child: languageEnglish
+                          ? Text(
+                              "Time factor",
+                            )
                           : languageNorwegian
-                              ? "Tidsfaktor i byggebransjen legger vanligvis til 10–20% ekstra tid til den opprinnelige arbeidsvurderingen, avhengig av prosjektets kompleksitet, arbeidsytelse og andre forhold."
+                              ? Text('Tidsfaktor')
                               : languageLithuanian
-                                  ? "Laiko veiksnys statybos sektoriuje paprastai prideda 10–20% papildomo laiko prie pradinio darbo laiko įvertinimo, atsižvelgiant į projekto sudėtingumą, darbo našumą ir kitas sąlygas."
-                                  : "Czynnik czasu w sektorze budowlanym zazwyczaj dodaje 10–20% dodatkowego czasu do wstępnej oceny czasu pracy, w zależności od złożoności projektu, wydajności pracy i innych warunków.",
-                      child: Row(
-                        children: [
-                          Icon(FontAwesomeIcons.tag),
-                          TextButton(
-                            child: languageEnglish
-                                ? Text(
-                                    "Time factor",
-                                  )
-                                : languageNorwegian
-                                    ? Text('Tidsfaktor')
-                                    : languageLithuanian
-                                        ? Text(
-                                            "Laiko veiksnys",
-                                          )
-                                        : Text(
-                                            "Współczynnik czasu",
-                                          ),
-                            onPressed: () {
-                              showTimeCoefficientDialog(context);
-                            },
-                          )
-                        ],
-                      ),
-                    ),
+                                  ? Text(
+                                      "Laiko veiksnys",
+                                    )
+                                  : Text(
+                                      "Współczynnik czasu",
+                                    ),
+                      onPressed: () {
+                        showTimeCoefficientDialog(context);
+                      },
+                    )
                   ],
                 ),
               ],
