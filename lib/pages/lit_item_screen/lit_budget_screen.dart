@@ -157,6 +157,7 @@ class _LitBudgetScreenState extends State<LitBudgetScreen> {
                     ),
                   ],
                   rows: List.generate(calculatedNamesOrder.length, (index) {
+                    bool isLastRow = index == calculatedNamesOrder.length - 1;
                     return DataRow(
                       cells: [
                         DataCell(
@@ -164,6 +165,9 @@ class _LitBudgetScreenState extends State<LitBudgetScreen> {
                             width: 100,
                             child: Text(
                               calculatedNamesOrder[index],
+                              style: isLastRow
+                                  ? TextStyle(fontWeight: FontWeight.bold)
+                                  : null,
                             ),
                           ),
                         ),
@@ -176,6 +180,9 @@ class _LitBudgetScreenState extends State<LitBudgetScreen> {
                                       .toStringAsFixed(2)
                                   : (totalHours[index] * timeCoefficient)
                                       .toStringAsFixed(2),
+                              style: isLastRow
+                                  ? TextStyle(fontWeight: FontWeight.bold)
+                                  : null,
                             ),
                           ),
                         ),
@@ -188,6 +195,9 @@ class _LitBudgetScreenState extends State<LitBudgetScreen> {
                                       .toStringAsFixed(2)
                                   : (totalLaborCosts[index] * timeCoefficient)
                                       .toStringAsFixed(2),
+                              style: isLastRow
+                                  ? TextStyle(fontWeight: FontWeight.bold)
+                                  : null,
                             ),
                           ),
                         ),
@@ -202,6 +212,9 @@ class _LitBudgetScreenState extends State<LitBudgetScreen> {
                                   : (totalMaterialCosts[index] +
                                           totalMaterialCosts[index] * markup)
                                       .toStringAsFixed(2),
+                              style: isLastRow
+                                  ? TextStyle(fontWeight: FontWeight.bold)
+                                  : null,
                             ),
                           ),
                         ),
@@ -217,6 +230,9 @@ class _LitBudgetScreenState extends State<LitBudgetScreen> {
                                               timeCoefficient) +
                                           totalMaterialCosts[index])
                                       .toStringAsFixed(2),
+                              style: isLastRow
+                                  ? TextStyle(fontWeight: FontWeight.bold)
+                                  : null,
                             ),
                           ),
                         ),

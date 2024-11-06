@@ -179,6 +179,8 @@ class _BudgetScreenState extends State<BudgetScreen> {
                     ),
                   ],
                   rows: List.generate(calculatedNamesOrder.length, (index) {
+                    bool isLastRow = index == calculatedNamesOrder.length - 1;
+
                     return DataRow(
                       cells: [
                         DataCell(
@@ -186,6 +188,9 @@ class _BudgetScreenState extends State<BudgetScreen> {
                             width: 100,
                             child: Text(
                               calculatedNamesOrder[index],
+                              style: isLastRow
+                                  ? TextStyle(fontWeight: FontWeight.bold)
+                                  : null,
                             ),
                           ),
                         ),
@@ -198,6 +203,9 @@ class _BudgetScreenState extends State<BudgetScreen> {
                                       .toStringAsFixed(2)
                                   : (totalHours[index] * timeCoefficient)
                                       .toStringAsFixed(2),
+                              style: isLastRow
+                                  ? TextStyle(fontWeight: FontWeight.bold)
+                                  : null,
                             ),
                           ),
                         ),
@@ -210,6 +218,9 @@ class _BudgetScreenState extends State<BudgetScreen> {
                                       .toStringAsFixed(2)
                                   : (totalLaborCosts[index] * timeCoefficient)
                                       .toStringAsFixed(2),
+                              style: isLastRow
+                                  ? TextStyle(fontWeight: FontWeight.bold)
+                                  : null,
                             ),
                           ),
                         ),
@@ -224,6 +235,9 @@ class _BudgetScreenState extends State<BudgetScreen> {
                                   : (totalMaterialCosts[index] +
                                           totalMaterialCosts[index] * markup)
                                       .toStringAsFixed(2),
+                              style: isLastRow
+                                  ? TextStyle(fontWeight: FontWeight.bold)
+                                  : null,
                             ),
                           ),
                         ),
@@ -231,15 +245,17 @@ class _BudgetScreenState extends State<BudgetScreen> {
                           SizedBox(
                             width: 100,
                             child: Text(
-                              index == calculatedNamesOrder.length - 1
-                                  ? (sumLaborCosts * timeCoefficient +
-                                          sumMaterialCosts)
-                                      .toStringAsFixed(2)
-                                  : ((totalLaborCosts[index] *
-                                              timeCoefficient) +
-                                          totalMaterialCosts[index])
-                                      .toStringAsFixed(2),
-                            ),
+                                index == calculatedNamesOrder.length - 1
+                                    ? (sumLaborCosts * timeCoefficient +
+                                            sumMaterialCosts)
+                                        .toStringAsFixed(2)
+                                    : ((totalLaborCosts[index] *
+                                                timeCoefficient) +
+                                            totalMaterialCosts[index])
+                                        .toStringAsFixed(2),
+                                style: isLastRow
+                                    ? TextStyle(fontWeight: FontWeight.bold)
+                                    : null),
                           ),
                         ),
                       ],

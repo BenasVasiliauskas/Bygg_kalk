@@ -156,6 +156,8 @@ class _PolBudgetScreenState extends State<PolBudgetScreen> {
                     ),
                   ],
                   rows: List.generate(calculatedNamesOrder.length, (index) {
+                    bool isLastRow = index == calculatedNamesOrder.length - 1;
+
                     return DataRow(
                       cells: [
                         DataCell(
@@ -163,6 +165,9 @@ class _PolBudgetScreenState extends State<PolBudgetScreen> {
                             width: 100,
                             child: Text(
                               calculatedNamesOrder[index],
+                              style: isLastRow
+                                  ? TextStyle(fontWeight: FontWeight.bold)
+                                  : null,
                             ),
                           ),
                         ),
@@ -175,6 +180,9 @@ class _PolBudgetScreenState extends State<PolBudgetScreen> {
                                       .toStringAsFixed(2)
                                   : (totalHours[index] * timeCoefficient)
                                       .toStringAsFixed(2),
+                              style: isLastRow
+                                  ? TextStyle(fontWeight: FontWeight.bold)
+                                  : null,
                             ),
                           ),
                         ),
@@ -187,6 +195,9 @@ class _PolBudgetScreenState extends State<PolBudgetScreen> {
                                       .toStringAsFixed(2)
                                   : (totalLaborCosts[index] * timeCoefficient)
                                       .toStringAsFixed(2),
+                              style: isLastRow
+                                  ? TextStyle(fontWeight: FontWeight.bold)
+                                  : null,
                             ),
                           ),
                         ),
@@ -201,6 +212,9 @@ class _PolBudgetScreenState extends State<PolBudgetScreen> {
                                   : (totalMaterialCosts[index] +
                                           totalMaterialCosts[index] * markup)
                                       .toStringAsFixed(2),
+                              style: isLastRow
+                                  ? TextStyle(fontWeight: FontWeight.bold)
+                                  : null,
                             ),
                           ),
                         ),
@@ -216,6 +230,9 @@ class _PolBudgetScreenState extends State<PolBudgetScreen> {
                                               timeCoefficient) +
                                           totalMaterialCosts[index])
                                       .toStringAsFixed(2),
+                              style: isLastRow
+                                  ? TextStyle(fontWeight: FontWeight.bold)
+                                  : null,
                             ),
                           ),
                         ),

@@ -160,6 +160,9 @@ class _NorwBudgetScreenState extends State<NorwBudgetScreen> {
                     ),
                   ],
                   rows: List.generate(calculatedNamesOrder.length, (index) {
+                    // Determine if this is the last row
+                    bool isLastRow = index == calculatedNamesOrder.length - 1;
+
                     return DataRow(
                       cells: [
                         DataCell(
@@ -167,6 +170,9 @@ class _NorwBudgetScreenState extends State<NorwBudgetScreen> {
                             width: 100,
                             child: Text(
                               calculatedNamesOrder[index],
+                              style: isLastRow
+                                  ? TextStyle(fontWeight: FontWeight.bold)
+                                  : null,
                             ),
                           ),
                         ),
@@ -174,14 +180,16 @@ class _NorwBudgetScreenState extends State<NorwBudgetScreen> {
                           SizedBox(
                             width: 70,
                             child: Text(
-                              style: TextStyle(fontWeight: FontWeight.bold),
-                              index == calculatedNamesOrder.length - 1
-                                  ? (sumTotalHours +
+                              (index == calculatedNamesOrder.length - 1
+                                      ? (sumTotalHours +
                                           (sumTotalHours * timeCoefficient))
-                                      .toStringAsFixed(2)
-                                  : (totalHours[index] +
-                                          (totalHours[index] * timeCoefficient))
-                                      .toStringAsFixed(2),
+                                      : (totalHours[index] +
+                                          (totalHours[index] *
+                                              timeCoefficient)))
+                                  .toStringAsFixed(2),
+                              style: isLastRow
+                                  ? TextStyle(fontWeight: FontWeight.bold)
+                                  : null,
                             ),
                           ),
                         ),
@@ -189,14 +197,16 @@ class _NorwBudgetScreenState extends State<NorwBudgetScreen> {
                           SizedBox(
                             width: 70,
                             child: Text(
-                              index == calculatedNamesOrder.length - 1
-                                  ? (sumLaborCosts +
+                              (index == calculatedNamesOrder.length - 1
+                                      ? (sumLaborCosts +
                                           (sumLaborCosts * timeCoefficient))
-                                      .toStringAsFixed(2)
-                                  : (totalLaborCosts[index] +
+                                      : (totalLaborCosts[index] +
                                           (totalLaborCosts[index] *
-                                              timeCoefficient))
-                                      .toStringAsFixed(2),
+                                              timeCoefficient)))
+                                  .toStringAsFixed(2),
+                              style: isLastRow
+                                  ? TextStyle(fontWeight: FontWeight.bold)
+                                  : null,
                             ),
                           ),
                         ),
@@ -204,13 +214,15 @@ class _NorwBudgetScreenState extends State<NorwBudgetScreen> {
                           SizedBox(
                             width: 70,
                             child: Text(
-                              index == calculatedNamesOrder.length - 1
-                                  ? (sumMaterialCosts +
+                              (index == calculatedNamesOrder.length - 1
+                                      ? (sumMaterialCosts +
                                           sumMaterialCosts * markup)
-                                      .toStringAsFixed(2)
-                                  : (totalMaterialCosts[index] +
-                                          totalMaterialCosts[index] * markup)
-                                      .toStringAsFixed(2),
+                                      : (totalMaterialCosts[index] +
+                                          totalMaterialCosts[index] * markup))
+                                  .toStringAsFixed(2),
+                              style: isLastRow
+                                  ? TextStyle(fontWeight: FontWeight.bold)
+                                  : null,
                             ),
                           ),
                         ),
@@ -218,14 +230,16 @@ class _NorwBudgetScreenState extends State<NorwBudgetScreen> {
                           SizedBox(
                             width: 100,
                             child: Text(
-                              index == calculatedNamesOrder.length - 1
-                                  ? (sumLaborCosts * timeCoefficient +
+                              (index == calculatedNamesOrder.length - 1
+                                      ? (sumLaborCosts * timeCoefficient +
                                           sumMaterialCosts * markup)
-                                      .toStringAsFixed(2)
-                                  : ((totalLaborCosts[index] *
-                                              timeCoefficient) +
-                                          totalMaterialCosts[index] * markup)
-                                      .toStringAsFixed(2),
+                                      : (totalLaborCosts[index] *
+                                              timeCoefficient +
+                                          totalMaterialCosts[index] * markup))
+                                  .toStringAsFixed(2),
+                              style: isLastRow
+                                  ? TextStyle(fontWeight: FontWeight.bold)
+                                  : null,
                             ),
                           ),
                         ),
