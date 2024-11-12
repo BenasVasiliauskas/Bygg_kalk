@@ -110,7 +110,13 @@ class _OuterRoofScreenState extends State<OuterRoofScreen> {
               },
             ),
           ],
-          title: const Text('Bygg Kalk'),
+          title: Text(languageEnglish
+              ? 'Outer Roof'
+              : languageLithuanian
+                  ? 'Išorinė stogas'
+                  : languageNorwegian
+                      ? 'Yttertak'
+                      : 'Dach zewnętrzny'),
         ),
         body: GridView.count(
           padding: const EdgeInsets.all(25),

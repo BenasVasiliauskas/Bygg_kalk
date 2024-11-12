@@ -104,7 +104,13 @@ class _SupportSystemScreenState extends State<SupportSystemScreen> {
               },
             ),
           ],
-          title: const Text('Bygg Kalk'),
+          title: Text(languageEnglish
+              ? "Support System"
+              : languageNorwegian
+                  ? "Bæresystemer"
+                  : languagePolish
+                      ? "Systemy wspierające"
+                      : "Palaikymo sistema"),
         ),
         body: GridView.count(
           padding: const EdgeInsets.all(25),

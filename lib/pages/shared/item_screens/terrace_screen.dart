@@ -103,7 +103,13 @@ class _TerraceScreenState extends State<TerraceScreen> {
               },
             ),
           ],
-          title: const Text('Bygg Kalk'),
+          title: Text(languageEnglish
+              ? 'Terrace'
+              : languageNorwegian
+                  ? 'Terrasser'
+                  : languagePolish
+                      ? 'Tarasy'
+                      : 'Terasos'),
         ),
         body: GridView.count(
           padding: const EdgeInsets.all(25),

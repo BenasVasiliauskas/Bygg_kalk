@@ -111,7 +111,13 @@ class _FlooringSectionsState extends State<FlooringScreen> {
               },
             ),
           ],
-          title: const Text('Bygg Kalk'),
+          title: Text(languageEnglish
+              ? 'Flooring'
+              : languageNorwegian
+                  ? 'Gulv'
+                  : languagePolish
+                      ? 'Podłoga'
+                      : 'Grindys'),
         ),
         body: GridView.count(
           padding: const EdgeInsets.all(25),

@@ -113,7 +113,13 @@ class _DeckScreenState extends State<DeckScreen> {
               },
             ),
           ],
-          title: const Text('Bygg Kalk'),
+          title: Text(languageEnglish
+              ? 'Cover'
+              : languageLithuanian
+                  ? 'Apdanga'
+                  : languageNorwegian
+                      ? 'Dekker'
+                      : 'Opona'),
         ),
         body: GridView.count(
           padding: const EdgeInsets.all(25),

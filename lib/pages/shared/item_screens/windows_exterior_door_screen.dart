@@ -114,7 +114,13 @@ class _WindowsExteriorDoorScreenState extends State<WindowsExteriorDoorScreen> {
               },
             ),
           ],
-          title: const Text('Bygg Kalk'),
+          title: Text(languageEnglish
+              ? "Windows and Exterior Doors"
+              : languageNorwegian
+                  ? "Vinduer og ytterdører"
+                  : languagePolish
+                      ? "Okna i drzwi zewnętrzne"
+                      : "Langai ir išorinės durys"),
         ),
         body: GridView.count(
           padding: const EdgeInsets.all(25),

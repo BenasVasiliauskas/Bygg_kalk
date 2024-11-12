@@ -101,7 +101,13 @@ class _HullRoofingScreenState extends State<HullRoofingScreen> {
               },
             ),
           ],
-          title: const Text('Bygg Kalk'),
+          title: Text(languageEnglish
+              ? 'Hull and Roofing'
+              : languageNorwegian
+                  ? "Skrog og tak"
+                  : languagePolish
+                      ? "Kadłub i pokrycie"
+                      : "Korpusas ir stogas"),
         ),
         body: GridView.count(
           padding: const EdgeInsets.all(25),

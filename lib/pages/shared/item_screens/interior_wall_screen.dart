@@ -113,7 +113,13 @@ class _InnerWallScreenState extends State<InnerWallScreen> {
               },
             ),
           ],
-          title: const Text('Bygg Kalk'),
+          title: Text(languageEnglish
+              ? "Inner Wall"
+              : languageNorwegian
+                  ? "Innervegger"
+                  : languagePolish
+                      ? "Ściany wewnętrzne"
+                      : "Vidinės sienos"),
         ),
         body: GridView.count(
           padding: const EdgeInsets.all(25),

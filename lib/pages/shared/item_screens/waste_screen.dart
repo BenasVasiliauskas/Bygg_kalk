@@ -103,7 +103,13 @@ class _WasteScreenState extends State<WasteScreen> {
               },
             ),
           ],
-          title: const Text('Bygg Kalk'),
+          title: Text(languageEnglish
+              ? 'Waste removal'
+              : languageNorwegian
+                  ? "Avfall flytting"
+                  : languagePolish
+                      ? "Usuwanie odpadów"
+                      : "Atliekų šalinimas"),
         ),
         body: GridView.count(
           padding: const EdgeInsets.all(25),

@@ -163,6 +163,21 @@ class _NorwBudgetScreenState extends State<NorwBudgetScreen> {
                     // Determine if this is the last row
                     bool isLastRow = index == calculatedNamesOrder.length - 1;
 
+                    final double labor =
+                        (index == calculatedNamesOrder.length - 1)
+                            ? sumLaborCosts + (sumLaborCosts * timeCoefficient)
+                            : totalLaborCosts[index] +
+                                (totalLaborCosts[index] * timeCoefficient);
+
+                    final double material =
+                        (index == calculatedNamesOrder.length - 1)
+                            ? sumMaterialCosts + (sumMaterialCosts * markup)
+                            : totalMaterialCosts[index] +
+                                (totalMaterialCosts[index] * markup);
+
+                    final double total = labor + material;
+                    print(
+                        "Row $index: Labor = $labor, Material = $material, Total = $total");
                     return DataRow(
                       cells: [
                         DataCell(
@@ -197,13 +212,7 @@ class _NorwBudgetScreenState extends State<NorwBudgetScreen> {
                           SizedBox(
                             width: 70,
                             child: Text(
-                              (index == calculatedNamesOrder.length - 1
-                                      ? (sumLaborCosts +
-                                          (sumLaborCosts * timeCoefficient))
-                                      : (totalLaborCosts[index] +
-                                          (totalLaborCosts[index] *
-                                              timeCoefficient)))
-                                  .toStringAsFixed(2),
+                              labor.toStringAsFixed(2),
                               style: isLastRow
                                   ? TextStyle(fontWeight: FontWeight.bold)
                                   : null,
@@ -214,12 +223,7 @@ class _NorwBudgetScreenState extends State<NorwBudgetScreen> {
                           SizedBox(
                             width: 70,
                             child: Text(
-                              (index == calculatedNamesOrder.length - 1
-                                      ? (sumMaterialCosts +
-                                          sumMaterialCosts * markup)
-                                      : (totalMaterialCosts[index] +
-                                          totalMaterialCosts[index] * markup))
-                                  .toStringAsFixed(2),
+                              material.toStringAsFixed(2),
                               style: isLastRow
                                   ? TextStyle(fontWeight: FontWeight.bold)
                                   : null,
@@ -230,13 +234,7 @@ class _NorwBudgetScreenState extends State<NorwBudgetScreen> {
                           SizedBox(
                             width: 100,
                             child: Text(
-                              (index == calculatedNamesOrder.length - 1
-                                      ? (sumLaborCosts * timeCoefficient +
-                                          sumMaterialCosts * markup)
-                                      : (totalLaborCosts[index] *
-                                              timeCoefficient +
-                                          totalMaterialCosts[index] * markup))
-                                  .toStringAsFixed(2),
+                              total.toStringAsFixed(2),
                               style: isLastRow
                                   ? TextStyle(fontWeight: FontWeight.bold)
                                   : null,
@@ -291,7 +289,11 @@ class _NorwBudgetScreenState extends State<NorwBudgetScreen> {
                         ),
                         DataCell(
                           Text(
-                            (costs * sumLaborCosts).toStringAsFixed(2) + "\kr",
+                            (costs *
+                                        (sumLaborCosts +
+                                            (sumLaborCosts * timeCoefficient)))
+                                    .toStringAsFixed(2) +
+                                "\kr",
                           ),
                         ),
                       ],

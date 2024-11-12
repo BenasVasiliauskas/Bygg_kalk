@@ -100,7 +100,13 @@ class _ScaffoldingScreenState extends State<ScaffoldingScreen> {
               },
             ),
           ],
-          title: const Text('Bygg Kalk'),
+          title: Text(languageEnglish
+              ? 'Scaffolding'
+              : languageNorwegian
+                  ? 'Stillas'
+                  : languagePolish
+                      ? 'Rusztowanie'
+                      : 'Pastoliai'),
         ),
         body: GridView.count(
           padding: const EdgeInsets.all(25),

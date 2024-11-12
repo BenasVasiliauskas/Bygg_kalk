@@ -111,7 +111,13 @@ class _InnerDoorScreenState extends State<InnerDoorScreen> {
               },
             ),
           ],
-          title: const Text('Bygg Kalk'),
+          title: Text(languageEnglish
+              ? "Inner Doors"
+              : languageNorwegian
+                  ? "Innerdører"
+                  : languagePolish
+                      ? "Drzwi wewnętrzne"
+                      : "Vidiniai durys"),
         ),
         body: GridView.count(
           padding: const EdgeInsets.all(25),

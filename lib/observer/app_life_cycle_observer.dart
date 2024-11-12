@@ -9,7 +9,6 @@ class AppLifecycleObserver extends WidgetsBindingObserver {
     super.didChangeAppLifecycleState(state);
     switch (state) {
       case AppLifecycleState.resumed:
-        print("App is in the foreground");
         break;
       case AppLifecycleState.inactive:
         final fileName = "autoSave";
@@ -25,10 +24,8 @@ class AppLifecycleObserver extends WidgetsBindingObserver {
       case AppLifecycleState.paused:
         break;
       case AppLifecycleState.detached:
-        print("App is detached from any view");
         break;
       case AppLifecycleState.hidden:
-        print("App is hidden");
         break;
     }
   }

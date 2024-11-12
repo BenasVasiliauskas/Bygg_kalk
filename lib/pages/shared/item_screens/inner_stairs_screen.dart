@@ -102,7 +102,13 @@ class _InnerStairsScreen extends State<InnerStairsScreen> {
               },
             ),
           ],
-          title: const Text('Bygg Kalk'),
+          title: Text(languageEnglish
+              ? "Inner Stairs"
+              : languageNorwegian
+                  ? "Innvende trapper"
+                  : languagePolish
+                      ? "Schody wewnętrzne"
+                      : "Vidiniai laiptai"),
         ),
         body: GridView.count(
           padding: const EdgeInsets.all(25),
