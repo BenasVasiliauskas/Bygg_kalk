@@ -299,10 +299,10 @@ class _NorwWindowsExteriorDoorItemsScreenState
         rebuildDataTable();
       }),
       createDataColumn("Sum. tid.", 75, () {}),
-      createDataColumn("Arb.pris ", 55, () {}),
-      createDataColumn("Enh. mater.", 85, () {}),
-      createDataColumn("Sum. material", 85, () {}),
-      createDataColumn("Total pris'", 75, () {}),
+      createDataColumn("Arb.pris eks.MVA", 55, () {}),
+      createDataColumn("Enh.mat.pris eks.MVA", 85, () {}),
+      createDataColumn("Sum.mat.eks.MVA", 85, () {}),
+      createDataColumn("Total pris eks.MVA", 75, () {}),
     ];
 
     List<DataRow> rows = [];
