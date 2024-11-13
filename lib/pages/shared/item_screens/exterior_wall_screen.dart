@@ -226,7 +226,11 @@ class _ExteriorWallScreenState extends State<ExteriorWallScreen> {
                   ),
                 ),
                 Text(
-                  outerWallUnits[index],
+                  widget.constructionType == "New Construction"
+                      ? outerWallUnitsNewC[index]
+                      : widget.constructionType == "Demolition"
+                          ? outerWallUnitsDemo[index]
+                          : outerWallUnitsRecon[index],
                 ),
               ],
             );

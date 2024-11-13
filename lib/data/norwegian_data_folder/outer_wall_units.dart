@@ -1,4 +1,4 @@
-List<String> outerWallUnits = [
+List<String> outerWallUnitsNewC = [
   'lm',
   'lm',
   'm²',
@@ -99,6 +99,9 @@ List<String> outerWallUnits = [
   'm²',
   'm',
   'm',
+];
+
+List<String> outerWallUnitsRecon = [
   'm²',
   'm²',
   'm²',
@@ -127,6 +130,9 @@ List<String> outerWallUnits = [
   'm²',
   'm²',
   'm²',
+];
+
+List<String> outerWallUnitsDemo = [
   'stk',
   'stk',
   'm²',
