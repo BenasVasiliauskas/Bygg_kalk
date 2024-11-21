@@ -369,7 +369,7 @@ Nowa konstrukcja, Przebudowa, Wyburzenie''',
                       ),
                     ),
                   ),
-                  Text(deckData.length.toString()),
+                  Text(norwDeckData.length.toString()),
                 ],
               ),
               Row(

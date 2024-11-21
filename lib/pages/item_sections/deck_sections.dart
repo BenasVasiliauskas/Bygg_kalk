@@ -1,5 +1,6 @@
 import 'package:cost_calculator/constants/language.dart';
 import 'package:cost_calculator/data/english_data_folder/data.dart';
+import 'package:cost_calculator/data/norwegian_data_folder/norw_data.dart';
 import 'package:cost_calculator/observer/app_life_cycle_observer.dart';
 import 'package:cost_calculator/pages/shared/home_page.dart';
 import 'package:cost_calculator/pages/shared/item_screens/building_components_screen.dart';
@@ -117,7 +118,7 @@ class _DeckSectionsState extends State<DeckSections> {
                 ),
                 Padding(
                   padding: const EdgeInsets.all(8.0),
-                  child: Text(deckData
+                  child: Text(norwDeckData
                       .where(
                           (deck) => deck.constructionType == "New Construction")
                       .length
@@ -159,7 +160,7 @@ class _DeckSectionsState extends State<DeckSections> {
                 ),
                 Padding(
                   padding: const EdgeInsets.all(8.0),
-                  child: Text(deckData
+                  child: Text(norwDeckData
                       .where(
                           (deck) => deck.constructionType == "Reconstruction")
                       .length
@@ -201,7 +202,7 @@ class _DeckSectionsState extends State<DeckSections> {
                 ),
                 Padding(
                   padding: const EdgeInsets.all(8.0),
-                  child: Text(deckData
+                  child: Text(norwDeckData
                       .where((deck) => deck.constructionType == "Demolition")
                       .length
                       .toString()),
