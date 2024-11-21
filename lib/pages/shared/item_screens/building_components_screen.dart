@@ -228,7 +228,7 @@ Nowa konstrukcja, Wyburzenie''',
                       ),
                     ),
                   ),
-                  Text(windowsExteriorDoors.length.toString()),
+                  Text(norwWindowsExteriorDoors.length.toString()),
                 ],
               ),
               Row(

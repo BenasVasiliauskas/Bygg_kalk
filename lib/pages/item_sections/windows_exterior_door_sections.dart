@@ -1,5 +1,6 @@
 import 'package:cost_calculator/constants/language.dart';
 import 'package:cost_calculator/data/english_data_folder/data.dart';
+import 'package:cost_calculator/data/norwegian_data_folder/norw_data.dart';
 import 'package:cost_calculator/observer/app_life_cycle_observer.dart';
 import 'package:cost_calculator/pages/shared/home_page.dart';
 import 'package:cost_calculator/pages/shared/item_screens/building_components_screen.dart';
@@ -119,7 +120,7 @@ class _WindowsExteriorDoorSectionsState
                 ),
                 Padding(
                   padding: const EdgeInsets.all(8.0),
-                  child: Text(windowsExteriorDoors
+                  child: Text(norwWindowsExteriorDoors
                       .where((e) => e.constructionType == "New Construction")
                       .length
                       .toString()),
@@ -161,7 +162,7 @@ class _WindowsExteriorDoorSectionsState
                 ),
                 Padding(
                   padding: const EdgeInsets.all(8.0),
-                  child: Text(windowsExteriorDoors
+                  child: Text(norwWindowsExteriorDoors
                       .where((e) => e.constructionType == "Demolition")
                       .length
                       .toString()),
