@@ -289,17 +289,17 @@ class _NorwInnerDoorItemScreenScreenState
   Widget build(BuildContext context) {
     List<DataColumn> columns = [
       createDataColumn("Beskrivelse", 98, () {}),
-      createDataColumn("Enhet", 55, () {}),
+      createDataColumn("Enhet", 65, () {}),
       createDataColumn("Mengde", 80, () {}),
       createDataColumn("Enh. tid.", 65, () {
         updateTotalSum();
         rebuildDataTable();
       }),
       createDataColumn("Sum. tid.", 75, () {}),
-      createDataColumn("Arb.pris eks.MVA", 55, () {}),
-      createDataColumn("Enh.mat.pris eks.MVA", 85, () {}),
-      createDataColumn("Sum.mat.eks.MVA", 85, () {}),
-      createDataColumn("Total pris eks.MVA", 75, () {}),
+      createDataColumn("Arb.pris eks.MVA", 100, () {}),
+      createDataColumn("Enh.mat.pris eks.MVA", 105, () {}),
+      createDataColumn("Sum.mat.eks.MVA", 105, () {}),
+      createDataColumn("Total pris eks.MVA", 100, () {}),
     ];
 
     List<DataRow> rows = [];
