@@ -320,7 +320,7 @@ Nowa konstrukcja, Wyburzenie''',
                       ),
                     ),
                   ),
-                  Text(innerDoor.length.toString()),
+                  Text(norwInnerDoor.length.toString()),
                 ],
               ),
               Row(
