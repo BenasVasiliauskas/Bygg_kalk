@@ -274,7 +274,7 @@ Nowa konstrukcja, Przebudowa, Wyburzenie''',
                       ),
                     ),
                   ),
-                  Text(dataInnerWallData.length.toString()),
+                  Text(norwInnerWallData.length.toString()),
                 ],
               ),
               Row(

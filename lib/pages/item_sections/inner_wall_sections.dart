@@ -1,5 +1,5 @@
 import 'package:cost_calculator/constants/language.dart';
-import 'package:cost_calculator/data/english_data_folder/data.dart';
+import 'package:cost_calculator/data/norwegian_data_folder/norw_data.dart';
 import 'package:cost_calculator/observer/app_life_cycle_observer.dart';
 import 'package:cost_calculator/pages/shared/home_page.dart';
 import 'package:cost_calculator/pages/shared/item_screens/building_components_screen.dart';
@@ -116,7 +116,7 @@ class _InnerWallSectionsState extends State<InnerWallSections> {
                 ),
                 Padding(
                   padding: const EdgeInsets.all(8.0),
-                  child: Text(dataInnerWallData
+                  child: Text(norwInnerWallData
                       .where((innerWall) =>
                           innerWall.constructionType == "New Construction")
                       .length
@@ -159,7 +159,7 @@ class _InnerWallSectionsState extends State<InnerWallSections> {
                 ),
                 Padding(
                   padding: const EdgeInsets.all(8.0),
-                  child: Text(dataInnerWallData
+                  child: Text(norwInnerWallData
                       .where((innerWall) =>
                           innerWall.constructionType == "Reconstruction")
                       .length
@@ -202,7 +202,7 @@ class _InnerWallSectionsState extends State<InnerWallSections> {
                 ),
                 Padding(
                   padding: const EdgeInsets.all(8.0),
-                  child: Text(dataInnerWallData
+                  child: Text(norwInnerWallData
                       .where((innerWall) =>
                           innerWall.constructionType == "Demolition")
                       .length

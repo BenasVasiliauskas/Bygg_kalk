@@ -112,18 +112,18 @@ class _homePageState extends State<homePage> {
                             ),
                             Text(
                               (dataInnerWallData.length +
-                                      deckData.length +
-                                      innerDoor.length +
-                                      windowsExteriorDoors.length +
+                                      norwDeckData.length +
+                                      norwInnerDoor.length +
+                                      norwWindowsExteriorDoors.length +
                                       norwSupportSystem.length +
-                                      flooringData.length +
-                                      terraceData.length +
-                                      outerRoofData.length +
+                                      norwFlooringData.length +
+                                      norwTerraceData.length +
+                                      norwOuterRoofData.length +
                                       norwExteriorWallData.length +
-                                      hullRoofingData.length +
-                                      scaffoldingData.length +
-                                      innerStairsData.length +
-                                      wasteData.length)
+                                      norwHullRoofingData.length +
+                                      norwScaffoldingData.length +
+                                      norwInnerStairsData.length +
+                                      norwWasteData.length)
                                   .toString(),
                               style: TextStyle(color: Colors.white),
                             ),

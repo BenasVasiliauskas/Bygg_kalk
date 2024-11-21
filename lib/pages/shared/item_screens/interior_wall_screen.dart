@@ -4,6 +4,7 @@ import 'package:cost_calculator/constants/lit_budget_constants.dart' as lit;
 import 'package:cost_calculator/constants/budget_constants.dart' as eng;
 import 'package:cost_calculator/data/english_data_folder/data.dart';
 import 'package:cost_calculator/data/lithuanian_data_folder/lith_data.dart';
+import 'package:cost_calculator/data/norwegian_data_folder/inner_wall_units.dart';
 import 'package:cost_calculator/data/norwegian_data_folder/norw_data.dart';
 import 'package:cost_calculator/data/polish_data_folder/polish_data.dart';
 import 'package:cost_calculator/observer/app_life_cycle_observer.dart';
@@ -224,7 +225,13 @@ class _InnerWallScreenState extends State<InnerWallScreen> {
                     ),
                   ),
                 ),
-                Text("m²"),
+                Text(
+                  widget.constructionType == "New Construction"
+                      ? InnerWallUnitsNewC[index]
+                      : widget.constructionType == "Demolition"
+                          ? InnerWallUnitsDemo[index]
+                          : InnerWallUnitsRecon[index],
+                ),
               ],
             );
           }),
