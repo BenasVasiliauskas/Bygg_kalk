@@ -172,7 +172,13 @@ DataCell dataCellDo(List<TextEditingController> controller, int i, Function f,
         controller: controller[i],
         onChanged: (value) => f(value),
         decoration: InputDecoration(
-          border: InputBorder.none,
+          border: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(10),
+            borderSide: BorderSide(
+              width: 0,
+              style: BorderStyle.none,
+            ),
+          ),
           contentPadding: EdgeInsets.only(left: 8),
           fillColor: color,
           filled: true,
