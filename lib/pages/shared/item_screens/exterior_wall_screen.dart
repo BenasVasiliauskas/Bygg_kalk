@@ -5,6 +5,7 @@ import 'package:cost_calculator/constants/budget_constants.dart' as eng;
 import 'package:cost_calculator/constants/language.dart';
 import 'package:cost_calculator/data/english_data_folder/data.dart';
 import 'package:cost_calculator/data/lithuanian_data_folder/lith_data.dart';
+import 'package:cost_calculator/data/lithuanian_data_folder/outer_wall_units_LT.dart';
 import 'package:cost_calculator/data/norwegian_data_folder/norw_data.dart';
 import 'package:cost_calculator/data/norwegian_data_folder/outer_wall_units.dart';
 import 'package:cost_calculator/data/polish_data_folder/polish_data.dart';
@@ -225,13 +226,21 @@ class _ExteriorWallScreenState extends State<ExteriorWallScreen> {
                     ),
                   ),
                 ),
-                Text(
-                  widget.constructionType == "New Construction"
-                      ? outerWallUnitsNewC[index]
-                      : widget.constructionType == "Demolition"
-                          ? outerWallUnitsDemo[index]
-                          : outerWallUnitsRecon[index],
-                ),
+                languageNorwegian
+                    ? Text(
+                        widget.constructionType == "New Construction"
+                            ? outerWallUnitsNewC[index]
+                            : widget.constructionType == "Demolition"
+                                ? outerWallUnitsDemo[index]
+                                : outerWallUnitsRecon[index],
+                      )
+                    : Text(
+                        widget.constructionType == "New Construction"
+                            ? outerWallUnitsNewCLT[index]
+                            : widget.constructionType == "Demolition"
+                                ? outerWallUnitsDemo[index]
+                                : outerWallUnitsRecon[index],
+                      ),
               ],
             );
           }),
