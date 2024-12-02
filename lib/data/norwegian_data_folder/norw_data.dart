@@ -23508,7 +23508,7 @@ final norwExteriorWallData = [
     constructionType: "Reconstruction",
   ),
   OuterWallModel(
-    name: "Riving  dår i yttervegg.",
+    name: "Riving yttervegg dør",
     description: [
       'Riving av utvendige karmlister.',
       'Riving utvendig utforinger.',
