@@ -1,5 +1,8 @@
+import 'dart:developer';
 import 'dart:io';
 import 'package:cost_calculator/constants/innerwall_constants.dart';
+import 'package:cost_calculator/data/english_data_folder/data.dart';
+import 'package:cost_calculator/models/outer_wall_data_model.dart';
 import 'package:syncfusion_flutter_xlsio/xlsio.dart';
 import 'package:path_provider/path_provider.dart';
 
@@ -20,6 +23,57 @@ Future<String?> getDownloadPath() async {
     print("Cannot get download folder path");
   }
   return directory?.path;
+}
+
+void createExcelFile() async {
+  OuterWallModel outerWallModel = exteriorWallData[0];
+  var dlPath = await getDownloadPath();
+
+  Workbook workbook = Workbook();
+  Worksheet worksheet = workbook.worksheets[0];
+  worksheet.getRangeByName("A1").columnWidth = 40;
+  worksheet.getRangeByIndex(1, 1).setText('Description');
+  worksheet.getRangeByIndex(1, 2).setText('Unit');
+  worksheet.getRangeByIndex(1, 3).setText('Quantity');
+  worksheet.getRangeByIndex(1, 4).setText('Hours');
+  worksheet.getRangeByName("E1").columnWidth = 10;
+  worksheet.getRangeByIndex(1, 5).setText('Total hours');
+  worksheet.getRangeByIndex(1, 6).setText('Job cost');
+  worksheet.getRangeByIndex(1, 7).setText('Material');
+  worksheet.getRangeByName("H1").columnWidth = 15;
+  worksheet.getRangeByIndex(1, 8).setText('Material cost');
+  worksheet.getRangeByIndex(1, 9).setText('Total price');
+
+  worksheet.getRangeByIndex(2, 1).setText(outerWallModel.name);
+  for (int i = 0; i < outerWallModel.description.length; i++) {
+    worksheet.getRangeByIndex(i + 3, 1).setText(outerWallModel.description[i]);
+    worksheet.getRangeByIndex(i + 3, 2).setText(outerWallModel.unit[i]);
+    worksheet
+        .getRangeByIndex(i + 3, 3)
+        .setText(outerWallModel.quantity[i].toString());
+    worksheet
+        .getRangeByIndex(i + 3, 4)
+        .setText(outerWallModel.laborHours1[i].toString());
+    worksheet
+        .getRangeByIndex(i + 3, 5)
+        .setText(outerWallModel.laborHours2[i].toString());
+    worksheet
+        .getRangeByIndex(i + 3, 6)
+        .setText(outerWallModel.laborCost[i].toString());
+    worksheet
+        .getRangeByIndex(i + 3, 7)
+        .setText(outerWallModel.material[i].toString());
+    worksheet
+        .getRangeByIndex(i + 3, 8)
+        .setText(outerWallModel.materials[i].toString());
+    worksheet
+        .getRangeByIndex(i + 3, 9)
+        .setText(outerWallModel.totalPrice[i].toString());
+  }
+
+  final List<int> bytes = workbook.saveAsStream();
+  File(dlPath! + "CreateExcel.xlsx").writeAsBytes(bytes);
+  workbook.dispose();
 }
 
 void addDataInnerWall(

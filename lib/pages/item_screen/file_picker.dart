@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:cost_calculator/constants/empty_models.dart';
 import 'package:cost_calculator/constants/language.dart';
+import 'package:cost_calculator/functions/create_worksheet.dart';
 import 'package:cost_calculator/functions/lit_load_project_from_json.dart';
 import 'package:cost_calculator/functions/load_project_from_json.dart';
 import 'package:cost_calculator/functions/norw_load_project_from_json.dart';
@@ -229,12 +230,34 @@ class _FilePickerScreenState extends State<FilePickerScreen> {
                               : "Załaduj projekt",
                 ),
               ),
+              TextButton(
+                  onPressed: createExcelFile, child: Text("Create excel file"))
             ],
           ),
         ),
       ),
     );
   }
+
+  Future<String?> openExcelDialog() => showDialog<String>(
+        context: context,
+        builder: (context) => AlertDialog(
+          title: Text(languageEnglish
+              ? "Choose a category"
+              : languageNorwegian
+                  ? "Velg en kategori"
+                  : languagePolish
+                      ? "Wybierz kategorię"
+                      : "Pasirinkite kategoriją"),
+          content: Column(
+            children: [
+              Text("Deck"),
+              Text("Flooring"),
+            ],
+          ),
+          actions: [],
+        ),
+      );
 
   Widget _buildFileCard(io.FileSystemEntity file) {
     return Card(

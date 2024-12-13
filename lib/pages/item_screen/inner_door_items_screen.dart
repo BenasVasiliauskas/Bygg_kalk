@@ -291,18 +291,18 @@ class _InnerDoorItemScreenState extends State<InnerDoorItemScreen> {
   @override
   Widget build(BuildContext context) {
     List<DataColumn> columns = [
-      createDataColumn("Description", 98, () {}),
+      createDataColumn("Description", 100, () {}),
       createDataColumn("Unit", 55, () {}),
-      createDataColumn("Quantity", 80, () {}),
-      createDataColumn("Hours", 65, () {
+      createDataColumn("Qty", 80, () {}),
+      createDataColumn("Time norm.", 65, () {
         updateTotalSum();
         rebuildDataTable();
       }),
-      createDataColumn("Total hours", 75, () {}),
-      createDataColumn("Job Cost", 55, () {}),
-      createDataColumn("Materials", 85, () {}),
-      createDataColumn("Material cost", 85, () {}),
-      createDataColumn("Total price", 75, () {}),
+      createDataColumn("Time", 75, () {}),
+      createDataColumn("Work excl. VAT", 60, () {}),
+      createDataColumn("Material norm excl. VAT", 85, () {}),
+      createDataColumn("Materials excl. VAT", 85, () {}),
+      createDataColumn("Total excl. VAT", 75, () {}),
     ];
 
     List<DataRow> rows = [];
