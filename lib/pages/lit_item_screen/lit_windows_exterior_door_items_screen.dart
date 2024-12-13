@@ -292,18 +292,18 @@ class _LitWindowsExteriorDoorItemsScreenState
   @override
   Widget build(BuildContext context) {
     List<DataColumn> columns = [
-      createDataColumn("Aprašymas", 98, () {}),
-      createDataColumn("Vienetas", 55, () {}),
+      createDataColumn("Įkainio aprašymas", 98, () {}),
+      createDataColumn("Mato vnt.", 60, () {}),
       createDataColumn("Kiekis", 80, () {}),
-      createDataColumn("Valandos", 65, () {
+      createDataColumn("Laiko norma", 70, () {
         updateTotalSum();
         rebuildDataTable();
       }),
-      createDataColumn("Visos valandos", 75, () {}),
-      createDataColumn("Darbo kaina", 55, () {}),
-      createDataColumn("Medžiagos", 85, () {}),
-      createDataColumn("Medžiagų suma", 85, () {}),
-      createDataColumn("Bendra kaina", 75, () {}),
+      createDataColumn("Laikas", 65, () {}),
+      createDataColumn("Darbas be PVM", 75, () {}),
+      createDataColumn("Medžiagų norma be PVM", 90, () {}),
+      createDataColumn("Medžiagos be PVM", 95, () {}),
+      createDataColumn("Bendra kaina be PVM ", 85, () {}),
     ];
 
     List<DataRow> rows = [];
