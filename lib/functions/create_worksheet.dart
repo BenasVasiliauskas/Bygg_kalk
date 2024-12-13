@@ -1,4 +1,3 @@
-import 'dart:developer';
 import 'dart:io';
 import 'package:cost_calculator/constants/innerwall_constants.dart';
 import 'package:cost_calculator/data/english_data_folder/data.dart';

@@ -65,20 +65,20 @@ class _BudgetScreenState extends State<BudgetScreen> {
               Text("Budget screen"),
               Row(
                 children: [
-                  Padding(
-                    padding: const EdgeInsets.all(12.0),
-                    child: TextButton(
-                      onPressed: () async {
-                        if (File("a.json").existsSync()) {
-                          File("a.json").deleteSync();
-                        }
-                        await writeJsonArrayStart("a");
-                        await saveEngProjectToJSON("a");
-                        await writeJsonArrayEnd("a");
-                      },
-                      child: Text("Save project"),
-                    ),
-                  ),
+                  // Padding(
+                  //   padding: const EdgeInsets.all(12.0),
+                  //   child: TextButton(
+                  //     onPressed: () async {
+                  //       if (File("a.json").existsSync()) {
+                  //         File("a.json").deleteSync();
+                  //       }
+                  //       await writeJsonArrayStart("a");
+                  //       await saveEngProjectToJSON("a");
+                  //       await writeJsonArrayEnd("a");
+                  //     },
+                  //     child: Text("Save project"),
+                  //   ),
+                  // ),
                   Padding(
                     padding: const EdgeInsets.all(12.0),
                     child: TextButton(
@@ -180,7 +180,19 @@ class _BudgetScreenState extends State<BudgetScreen> {
                   ],
                   rows: List.generate(calculatedNamesOrder.length, (index) {
                     bool isLastRow = index == calculatedNamesOrder.length - 1;
+                    final double labor =
+                        (index == calculatedNamesOrder.length - 1)
+                            ? sumLaborCosts + (sumLaborCosts * timeCoefficient)
+                            : totalLaborCosts[index] +
+                                (totalLaborCosts[index] * timeCoefficient);
 
+                    final double material =
+                        (index == calculatedNamesOrder.length - 1)
+                            ? sumMaterialCosts + (sumMaterialCosts * markup)
+                            : totalMaterialCosts[index] +
+                                (totalMaterialCosts[index] * markup);
+
+                    final double total = labor + material;
                     return DataRow(
                       cells: [
                         DataCell(
@@ -198,11 +210,13 @@ class _BudgetScreenState extends State<BudgetScreen> {
                           SizedBox(
                             width: 70,
                             child: Text(
-                              index == calculatedNamesOrder.length - 1
-                                  ? (sumTotalHours * timeCoefficient)
-                                      .toStringAsFixed(2)
-                                  : (totalHours[index] * timeCoefficient)
-                                      .toStringAsFixed(2),
+                              (index == calculatedNamesOrder.length - 1
+                                      ? (sumTotalHours +
+                                          (sumTotalHours * timeCoefficient))
+                                      : (totalHours[index] +
+                                          (totalHours[index] *
+                                              timeCoefficient)))
+                                  .toStringAsFixed(2),
                               style: isLastRow
                                   ? TextStyle(fontWeight: FontWeight.bold)
                                   : null,
@@ -213,11 +227,7 @@ class _BudgetScreenState extends State<BudgetScreen> {
                           SizedBox(
                             width: 70,
                             child: Text(
-                              index == calculatedNamesOrder.length - 1
-                                  ? (sumLaborCosts * timeCoefficient)
-                                      .toStringAsFixed(2)
-                                  : (totalLaborCosts[index] * timeCoefficient)
-                                      .toStringAsFixed(2),
+                              labor.toStringAsFixed(2),
                               style: isLastRow
                                   ? TextStyle(fontWeight: FontWeight.bold)
                                   : null,
@@ -228,13 +238,7 @@ class _BudgetScreenState extends State<BudgetScreen> {
                           SizedBox(
                             width: 70,
                             child: Text(
-                              index == calculatedNamesOrder.length - 1
-                                  ? (sumMaterialCosts +
-                                          sumMaterialCosts * markup)
-                                      .toStringAsFixed(2)
-                                  : (totalMaterialCosts[index] +
-                                          totalMaterialCosts[index] * markup)
-                                      .toStringAsFixed(2),
+                              material.toStringAsFixed(2),
                               style: isLastRow
                                   ? TextStyle(fontWeight: FontWeight.bold)
                                   : null,
@@ -244,15 +248,7 @@ class _BudgetScreenState extends State<BudgetScreen> {
                         DataCell(
                           SizedBox(
                             width: 100,
-                            child: Text(
-                                index == calculatedNamesOrder.length - 1
-                                    ? (sumLaborCosts * timeCoefficient +
-                                            sumMaterialCosts)
-                                        .toStringAsFixed(2)
-                                    : ((totalLaborCosts[index] *
-                                                timeCoefficient) +
-                                            totalMaterialCosts[index])
-                                        .toStringAsFixed(2),
+                            child: Text(total.toStringAsFixed(2),
                                 style: isLastRow
                                     ? TextStyle(fontWeight: FontWeight.bold)
                                     : null),
@@ -306,7 +302,11 @@ class _BudgetScreenState extends State<BudgetScreen> {
                         ),
                         DataCell(
                           Text(
-                            (costs * sumLaborCosts).toStringAsFixed(2) + "kr.",
+                            (costs *
+                                        (sumLaborCosts +
+                                            (sumLaborCosts * timeCoefficient)))
+                                    .toStringAsFixed(2) +
+                                "\kr",
                           ),
                         ),
                       ],
@@ -386,10 +386,12 @@ class _BudgetScreenState extends State<BudgetScreen> {
                         DataCell(
                           Text(
                             (sumLaborCosts +
+                                        (costs * sumLaborCosts) +
                                         sumMaterialCosts +
-                                        (costs * sumLaborCosts))
+                                        sumWasteRemoval +
+                                        sumMaterialCosts * 0.05)
                                     .toStringAsFixed(2) +
-                                "kr.",
+                                "\kr",
                           ),
                         ),
                       ],

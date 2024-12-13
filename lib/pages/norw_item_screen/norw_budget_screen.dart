@@ -176,8 +176,6 @@ class _NorwBudgetScreenState extends State<NorwBudgetScreen> {
                                 (totalMaterialCosts[index] * markup);
 
                     final double total = labor + material;
-                    print(
-                        "Row $index: Labor = $labor, Material = $material, Total = $total");
                     return DataRow(
                       cells: [
                         DataCell(
