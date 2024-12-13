@@ -291,18 +291,18 @@ class _PolFlooringItemScreenState extends State<PolFlooringItemScreen> {
   @override
   Widget build(BuildContext context) {
     List<DataColumn> columns = [
-      createDataColumn("Opis", 98, () {}),
-      createDataColumn("Jednostka", 55, () {}),
-      createDataColumn("Ilość", 80, () {}),
-      createDataColumn("Zwiększ. czas.", 65, () {
+      createDataColumn("Opis pozycji", 98, () {}),
+      createDataColumn("Jedn. Miary", 65, () {}),
+      createDataColumn("Ilość", 55, () {}),
+      createDataColumn("Norma czasu", 70, () {
         updateTotalSum();
         rebuildDataTable();
       }),
-      createDataColumn("Suma czasu.", 75, () {}),
-      createDataColumn("Koszt pracy", 55, () {}),
-      createDataColumn("Wzmocnienie", 85, () {}),
-      createDataColumn("Suma materiałów", 85, () {}),
-      createDataColumn("Łączna cena", 75, () {}),
+      createDataColumn("Czas", 75, () {}),
+      createDataColumn("Praca bez VAT", 75, () {}),
+      createDataColumn("Norma materiałowa bez VAT", 105, () {}),
+      createDataColumn("Materiały bez VAT", 85, () {}),
+      createDataColumn("Cena całkowita bez VAT", 105, () {}),
     ];
 
     List<DataRow> rows = [];
