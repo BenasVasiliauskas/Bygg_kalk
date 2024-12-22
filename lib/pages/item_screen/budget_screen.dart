@@ -1,9 +1,6 @@
-import 'dart:io';
-
 import 'package:cost_calculator/constants/empty_models.dart';
 import 'package:cost_calculator/data/english_data_folder/data.dart';
 import 'package:cost_calculator/functions/load_project_from_json.dart';
-import 'package:cost_calculator/functions/save_project_to_json.dart';
 import 'package:cost_calculator/functions/save_to_json.dart';
 import 'package:cost_calculator/observer/app_life_cycle_observer.dart';
 import 'package:cost_calculator/pages/shared/globals/calculation_variables.dart';

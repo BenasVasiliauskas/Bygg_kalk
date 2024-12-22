@@ -102,7 +102,7 @@ class _buildingComponentsScreenState extends State<buildingComponentsScreen> {
                         ? '''View support system Contained elements: 
 New building'''
                         : languageLithuanian
-                            ? '''Peržiūrėti atraminę sistemą. Sudaryti elementai:
+                            ? '''Peržiūrėti laikančiają konstrukciją. Sudaryti elementai:
 Nauja statyba'''
                             : languageNorwegian
                                 ? '''Vis bæresystem. Inneholdte elementer:
@@ -131,7 +131,7 @@ Nowa konstrukcja''',
                                   ? "Bæresystemer"
                                   : languagePolish
                                       ? "System nośny"
-                                      : "Atraminė sistema"),
+                                      : "Laikančiosios konstrukcijos"),
                         ],
                       ),
                     ),
@@ -147,7 +147,7 @@ Nowa konstrukcja''',
                         ? '''View exterior walls. Contained elements: 
 New building, Reconstruction, Demolition'''
                         : languageLithuanian
-                            ? '''Peržiūrėti išorines sienas. Sudaryti elementai:
+                            ? '''Peržiūrėti lauko sienas. Sudaryti elementai:
 Nauja statyba, Rekonstrukcija, Griovimas'''
                             : languageNorwegian
                                 ? '''Vis yttervegger. Inneholdte elementer:
@@ -176,7 +176,7 @@ Nowa konstrukcja, Przebudowa, Wyburzenie''',
                                   ? "Yttervegger"
                                   : languagePolish
                                       ? "Ściany zewnętrzne"
-                                      : "Išorinės sienos"),
+                                      : "Lauko sienos"),
                         ],
                       ),
                     ),
@@ -191,7 +191,7 @@ Nowa konstrukcja, Przebudowa, Wyburzenie''',
                         ? '''View windows and exterior doors. Contained elements:
 New building, Demolition'''
                         : languageLithuanian
-                            ? '''Peržiūrėti langus ir išorines duris. Sudaryti elementai:
+                            ? '''Peržiūrėti langus ir lauko duris. Sudaryti elementai:
 Nauja statyba, Griovimas'''
                             : languageNorwegian
                                 ? '''Vis vinduer og ytterdører. Inneholdte elementer:
@@ -223,7 +223,7 @@ Nowa konstrukcja, Wyburzenie''',
                                   ? "Vinduer/ytterdører"
                                   : languagePolish
                                       ? "Okno/drzwi zewnętrzne"
-                                      : "Langas/išorinė durys"),
+                                      : "Langai ir lauko durys"),
                         ],
                       ),
                     ),
@@ -284,7 +284,7 @@ Nowa konstrukcja, Przebudowa, Wyburzenie''',
                         ? '''View interior doors. Contained elements:
 New building, Demolition'''
                         : languageLithuanian
-                            ? '''Peržiūrėti vidinius duris. Sudaryti elementai:
+                            ? '''Peržiūrėti vidaus duris. Sudaryti elementai:
 Nauja statyba, Griovimas'''
                             : languageNorwegian
                                 ? '''Vis indre dører. Inneholdte elementer:
@@ -315,7 +315,7 @@ Nowa konstrukcja, Wyburzenie''',
                                   ? "Innedører"
                                   : languagePolish
                                       ? "Drzwi wewnętrzne"
-                                      : "Vidinės durys"),
+                                      : "Vidaus durys"),
                         ],
                       ),
                     ),
@@ -330,7 +330,7 @@ Nowa konstrukcja, Wyburzenie''',
                         ? '''View Covers. Contained elements:
 New building, Reconstruction, Demolition'''
                         : languageLithuanian
-                            ? '''Peržiūrėti dangas. Sudaryti elementai:
+                            ? '''Peržiūrėti perdanga. Sudaryti elementai:
 Nauja statyba, Rekonstrukcija, Griovimas'''
                             : languageNorwegian
                                 ? '''Vis dekker. Inneholdte elementer:
@@ -360,7 +360,7 @@ Nowa konstrukcja, Przebudowa, Wyburzenie''',
                             languageEnglish
                                 ? "Covers"
                                 : languageLithuanian
-                                    ? "Apdanga"
+                                    ? "Perdanga"
                                     : languageNorwegian
                                         ? "Dekker"
                                         : "Opona",
@@ -379,7 +379,7 @@ Nowa konstrukcja, Przebudowa, Wyburzenie''',
                         ? '''View Flooring. Contained elements:
 New building, Demolition'''
                         : languageLithuanian
-                            ? '''Peržiūrėti grindis. Sudaryti elementai:
+                            ? '''Peržiūrėti grindų dangą. Sudaryti elementai:
 Nauja statyba, Griovimas'''
                             : languageNorwegian
                                 ? '''Vis gulvbelegg. Inneholdte elementer:
@@ -408,7 +408,7 @@ Nowa konstrukcja, Wyburzenie''',
                                   ? "Gulvbelegg"
                                   : languagePolish
                                       ? "Podłoga"
-                                      : "Grindys"),
+                                      : "Grindų danga"),
                         ],
                       ),
                     ),
@@ -467,7 +467,7 @@ Nowa konstrukcja, Przebudowa, Wyburzenie''',
                         ? '''View Terrace/railings. Contained elements:
 New building'''
                         : languageLithuanian
-                            ? '''Peržiūrėti terasą/laistymo sistemas. Sudaryti elementai:
+                            ? '''Peržiūrėti terasas, turėklus. Sudaryti elementai:
 Nauja statyba'''
                             : languageNorwegian
                                 ? '''Vis terrasse/rekkverk. Inneholdte elementer:
@@ -496,7 +496,7 @@ Nowa konstrukcja''',
                                   ? "Terrasser/rekkverk"
                                   : languagePolish
                                       ? "Taras/barierki"
-                                      : "Terasa/turėklai"),
+                                      : "Terosos, turėklai"),
                         ],
                       ),
                     ),
@@ -511,7 +511,7 @@ Nowa konstrukcja''',
                         ? '''View Inner stairs. Contained elements:
 New building'''
                         : languageLithuanian
-                            ? '''Peržiūrėti vidinius laiptus. Sudaryti elementai:
+                            ? '''Peržiūrėti vidaus laiptus. Sudaryti elementai:
 Nauja statyba'''
                             : languageNorwegian
                                 ? '''Vis indre trapper. Inneholdte elementer:
@@ -540,7 +540,7 @@ Nowa konstrukcja''',
                                   ? "Trapper"
                                   : languagePolish
                                       ? "Schody wewnętrzne"
-                                      : "Vidiniai laiptai"),
+                                      : "Vidaus laiptai"),
                         ],
                       ),
                     ),
@@ -555,7 +555,7 @@ Nowa konstrukcja''',
                         ? '''View Hull roofing. Contained elements:
 New building'''
                         : languageLithuanian
-                            ? '''Peržiūrėti korpuso stogą. Sudaryti elementai:
+                            ? '''Peržiūrėti angų gręžimą. Sudaryti elementai:
 Nauja statyba'''
                             : languageNorwegian
                                 ? '''Vis skrog taktekking. Inneholdte elementer:
@@ -584,7 +584,7 @@ Nowa konstrukcja''',
                                   ? "Hulltaking"
                                   : languagePolish
                                       ? "Pokrycie kadłuba"
-                                      : "Korpuso stogas"),
+                                      : "Angų gręžimas"),
                         ],
                       ),
                     ),
@@ -643,7 +643,7 @@ Nowa konstrukcja''',
                         ? '''View Waste management. Contained elements:
 New building'''
                         : languageLithuanian
-                            ? '''Peržiūrėti atliekų tvarkymą. Sudaryti elementai:
+                            ? '''Peržiūrėti atliekų išvežimą. Sudaryti elementai:
 Nauja statyba'''
                             : languageNorwegian
                                 ? '''Vis avfallshåndtering. Inneholdte elementer:
@@ -672,7 +672,7 @@ Nowa konstrukcja''',
                                   ? "Avfall"
                                   : languagePolish
                                       ? "Zarządzanie odpadami"
-                                      : "Atliekų tvarkymas"),
+                                      : "Atliekų išvežimas"),
                         ],
                       ),
                     ),
