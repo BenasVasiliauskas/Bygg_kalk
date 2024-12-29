@@ -562,6 +562,7 @@ class _LitHullRoofingItemScreenState extends State<LitHullRoofingItemScreen> {
                 color: Theme.of(context).colorScheme.surface,
                 width: 2,
               ),
+              headingRowHeight: 80,
               horizontalMargin: 15,
               columnSpacing: 0,
               dataRowMaxHeight: double.infinity,
