@@ -568,6 +568,7 @@ class _PolOuterRoofItemScreenState extends State<PolOuterRoofItemScreen> {
                 color: Theme.of(context).colorScheme.surface,
                 width: 2,
               ),
+              headingRowHeight: 80,
               horizontalMargin: 15,
               columnSpacing: 0,
               dataRowMaxHeight: double.infinity,

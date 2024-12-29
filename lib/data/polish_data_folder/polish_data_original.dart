@@ -1886,18 +1886,6 @@ final polWindowsExteriorDoors = [
 
 final polExteriorWallData = [
   OuterWallModel(
-      name: "Opis pozycji",
-      description: [],
-      unit: [],
-      quantity: [],
-      laborHours1: [],
-      laborHours2: [],
-      laborCost: [],
-      material: [],
-      materials: [],
-      totalPrice: [],
-      constructionType: "New Construction"),
-  OuterWallModel(
       name: "Akcesoria do podwalin",
       description: [
         'Uszczelnienie pod dolną belką konstrukcyjną.',
