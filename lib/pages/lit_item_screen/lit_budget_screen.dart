@@ -113,35 +113,9 @@ class _LitBudgetScreenState extends State<LitBudgetScreen> {
                   columns: [
                     DataColumn(
                       label: SizedBox(
-                        width: 70,
+                        width: 85,
                         child: Text(
-                          'Išlaidų tipas',
-                        ),
-                      ),
-                    ),
-                    DataColumn(
-                      label: SizedBox(
-                        width: 80,
-                        child: Text(
-                          'Bendras valandų skaičius',
-                          softWrap: true,
-                        ),
-                      ),
-                    ),
-                    DataColumn(
-                      label: SizedBox(
-                        width: 80,
-                        child: Text(
-                          'Darbo sąnaudos',
-                          softWrap: true,
-                        ),
-                      ),
-                    ),
-                    DataColumn(
-                      label: SizedBox(
-                        width: 80,
-                        child: Text(
-                          'Medžiagų sąnaudos',
+                          'Sąnaudų kategorija.',
                           softWrap: true,
                         ),
                       ),
@@ -150,7 +124,34 @@ class _LitBudgetScreenState extends State<LitBudgetScreen> {
                       label: SizedBox(
                         width: 85,
                         child: Text(
-                          'Biudžeto suma',
+                          'Valandos.',
+                          softWrap: true,
+                        ),
+                      ),
+                    ),
+                    DataColumn(
+                      label: SizedBox(
+                        width: 85,
+                        child: Text(
+                          'Darbo sąnaudos (be PVM)',
+                          softWrap: true,
+                        ),
+                      ),
+                    ),
+                    DataColumn(
+                      label: SizedBox(
+                        width: 85,
+                        child: Text(
+                          'Medžiagų sanaudos (be PVM)',
+                          softWrap: true,
+                        ),
+                      ),
+                    ),
+                    DataColumn(
+                      label: SizedBox(
+                        width: 85,
+                        child: Text(
+                          'Bendra kaina (be PVM)',
                           softWrap: true,
                         ),
                       ),
@@ -294,7 +295,7 @@ class _LitBudgetScreenState extends State<LitBudgetScreen> {
                       cells: [
                         DataCell(
                           Text(
-                            "Bendra medžiagų kaina",
+                            "Bendra medžiagu kaina (be PVM)",
                             style: TextStyle(fontWeight: FontWeight.bold),
                           ),
                         ),
@@ -312,7 +313,7 @@ class _LitBudgetScreenState extends State<LitBudgetScreen> {
                       cells: [
                         DataCell(
                           Text(
-                            "Atliekų išvežimas",
+                            "Atliekų išvežimas (be PVM)",
                             style: TextStyle(fontWeight: FontWeight.bold),
                           ),
                         ),
@@ -332,7 +333,7 @@ class _LitBudgetScreenState extends State<LitBudgetScreen> {
                       cells: [
                         DataCell(
                           Text(
-                            "Medžiagų gabenimas",
+                            "Medžiagų pristatymas (be PVM)",
                             style: TextStyle(fontWeight: FontWeight.bold),
                           ),
                         ),
@@ -353,7 +354,7 @@ class _LitBudgetScreenState extends State<LitBudgetScreen> {
                       cells: [
                         DataCell(
                           Text(
-                            "Iš viso išlaidų (be PVM)",
+                            "Bendra kaina (be PVM)",
                             style: TextStyle(fontWeight: FontWeight.bold),
                           ),
                         ),
@@ -410,7 +411,7 @@ class _LitBudgetScreenState extends State<LitBudgetScreen> {
                       cells: [
                         DataCell(
                           Text(
-                            "Iš viso išlaidų (su PVM)",
+                            "Bendra kaina (su PVM)",
                             style: TextStyle(fontWeight: FontWeight.bold),
                           ),
                         ),
