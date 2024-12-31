@@ -1,6 +1,8 @@
 import 'package:cost_calculator/constants/language.dart';
 import 'package:cost_calculator/data/english_data_folder/data.dart';
+import 'package:cost_calculator/data/lithuanian_data_folder/lith_data.dart';
 import 'package:cost_calculator/data/norwegian_data_folder/norw_data.dart';
+import 'package:cost_calculator/data/polish_data_folder/polish_data.dart';
 import 'package:cost_calculator/functions/save_project_to_json.dart';
 import 'package:cost_calculator/functions/save_to_json.dart';
 import 'package:cost_calculator/observer/app_life_cycle_observer.dart';
@@ -111,20 +113,67 @@ class _homePageState extends State<homePage> {
                               style: TextStyle(color: Colors.white),
                             ),
                             Text(
-                              (dataInnerWallData.length +
-                                      norwDeckData.length +
-                                      norwInnerDoor.length +
-                                      norwWindowsExteriorDoors.length +
-                                      norwSupportSystem.length +
-                                      norwFlooringData.length +
-                                      norwTerraceData.length +
-                                      norwOuterRoofData.length +
-                                      norwExteriorWallData.length +
-                                      norwHullRoofingData.length +
-                                      norwScaffoldingData.length +
-                                      norwInnerStairsData.length +
-                                      norwWasteData.length)
-                                  .toString(),
+                              languageNorwegian
+                                  ? (norwInnerWallData.length +
+                                          norwDeckData.length +
+                                          norwInnerDoor.length +
+                                          norwWindowsExteriorDoors.length +
+                                          norwSupportSystem.length +
+                                          norwFlooringData.length +
+                                          norwTerraceData.length +
+                                          norwOuterRoofData.length +
+                                          norwExteriorWallData.length +
+                                          norwHullRoofingData.length +
+                                          norwScaffoldingData.length +
+                                          norwInnerStairsData.length +
+                                          norwWasteData.length)
+                                      .toString()
+                                  : languageEnglish
+                                      ? (dataInnerWallData.length +
+                                              deckData.length +
+                                              innerDoor.length +
+                                              windowsExteriorDoors.length +
+                                              supportSystem.length +
+                                              flooringData.length +
+                                              terraceData.length +
+                                              outerRoofData.length +
+                                              exteriorWallData.length +
+                                              hullRoofingData.length +
+                                              scaffoldingData.length +
+                                              innerStairsData.length +
+                                              wasteData.length)
+                                          .toString()
+                                      : languageLithuanian
+                                          ? (litInnerWallData.length +
+                                                  litDeckData.length +
+                                                  litInnerDoor.length +
+                                                  litWindowsExteriorDoors
+                                                      .length +
+                                                  litSupportSystem.length +
+                                                  litFlooringData.length +
+                                                  litTerraceData.length +
+                                                  litOuterRoofData.length +
+                                                  litExteriorWallData.length +
+                                                  litHullRoofingData.length +
+                                                  litScaffoldingData.length +
+                                                  litInnerStairsData.length +
+                                                  litWasteData.length)
+                                              .toString()
+                                          : (polInnerWallData.length +
+                                                  polDeckData.length +
+                                                  polInnerDoor.length +
+                                                  polWindowsExteriorDoors
+                                                      .length +
+                                                  polSupportSystem.length +
+                                                  polFlooringData.length +
+                                                  polTerraceData.length +
+                                                  polOuterRoofData.length +
+                                                  polExteriorWallData.length +
+                                                  polHullRoofingData.length +
+                                                  polScaffoldingData.length +
+                                                  polInnerStairsData.length +
+                                                  polWasteData.length)
+                                              .toString(),
                               style: TextStyle(color: Colors.white),
                             ),
                           ],

@@ -297,7 +297,7 @@ class _NorwInteriorWallItemsScreenState
       createDataColumn("Sum. tid.", 75, () {}),
       createDataColumn("Arb.pris eks.MVA", 100, () {}),
       createDataColumn("Enh.mat.pris eks.MVA", 105, () {}),
-      createDataColumn("Sum.mat.eks.MVA", 110, () {}),
+      createDataColumn("Sum.mat.eks.MVA", 90, () {}),
       createDataColumn("Total pris eks.MVA", 100, () {}),
     ];
 

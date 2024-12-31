@@ -1,6 +1,8 @@
 import 'package:cost_calculator/constants/language.dart';
 import 'package:cost_calculator/data/english_data_folder/data.dart';
+import 'package:cost_calculator/data/lithuanian_data_folder/lith_data.dart';
 import 'package:cost_calculator/data/norwegian_data_folder/norw_data.dart';
+import 'package:cost_calculator/data/polish_data_folder/polish_data_original.dart';
 import 'package:cost_calculator/observer/app_life_cycle_observer.dart';
 import 'package:cost_calculator/pages/item_sections/deck_sections.dart';
 import 'package:cost_calculator/pages/item_sections/flooring_sections.dart';
@@ -136,8 +138,13 @@ Nowa konstrukcja''',
                       ),
                     ),
                   ),
-                  //change back to eng after adding eng data
-                  Text(norwSupportSystem.length.toString()),
+                  Text(languageNorwegian
+                      ? norwSupportSystem.length.toString()
+                      : languageLithuanian
+                          ? litSupportSystem.length.toString()
+                          : languageEnglish
+                              ? supportSystem.length.toString()
+                              : polSupportSystem.length.toString()),
                 ],
               ),
               Row(
@@ -181,7 +188,13 @@ Nowa konstrukcja, Przebudowa, Wyburzenie''',
                       ),
                     ),
                   ),
-                  Text(norwExteriorWallData.length.toString()),
+                  Text(languageNorwegian
+                      ? norwExteriorWallData.length.toString()
+                      : languageLithuanian
+                          ? litExteriorWallData.length.toString()
+                          : languageEnglish
+                              ? exteriorWallData.length.toString()
+                              : polExteriorWallData.length.toString()),
                 ],
               ),
               Row(
@@ -228,7 +241,13 @@ Nowa konstrukcja, Wyburzenie''',
                       ),
                     ),
                   ),
-                  Text(norwWindowsExteriorDoors.length.toString()),
+                  Text(languageNorwegian
+                      ? norwWindowsExteriorDoors.length.toString()
+                      : languageLithuanian
+                          ? litWindowsExteriorDoors.length.toString()
+                          : languageEnglish
+                              ? windowsExteriorDoors.length.toString()
+                              : polWindowsExteriorDoors.length.toString()),
                 ],
               ),
               Row(
@@ -274,7 +293,13 @@ Nowa konstrukcja, Przebudowa, Wyburzenie''',
                       ),
                     ),
                   ),
-                  Text(norwInnerWallData.length.toString()),
+                  Text(languageNorwegian
+                      ? norwInnerWallData.length.toString()
+                      : languageLithuanian
+                          ? litInnerWallData.length.toString()
+                          : languageEnglish
+                              ? dataInnerWallData.length.toString()
+                              : polInnerWallData.length.toString()),
                 ],
               ),
               Row(
@@ -320,7 +345,13 @@ Nowa konstrukcja, Wyburzenie''',
                       ),
                     ),
                   ),
-                  Text(norwInnerDoor.length.toString()),
+                  Text(languageNorwegian
+                      ? norwInnerDoor.length.toString()
+                      : languageLithuanian
+                          ? litInnerDoor.length.toString()
+                          : languageEnglish
+                              ? innerDoor.length.toString()
+                              : polInnerDoor.length.toString()),
                 ],
               ),
               Row(
@@ -369,7 +400,13 @@ Nowa konstrukcja, Przebudowa, Wyburzenie''',
                       ),
                     ),
                   ),
-                  Text(norwDeckData.length.toString()),
+                  Text(languageNorwegian
+                      ? norwDeckData.length.toString()
+                      : languageLithuanian
+                          ? litDeckData.length.toString()
+                          : languageEnglish
+                              ? deckData.length.toString()
+                              : polDeckData.length.toString()),
                 ],
               ),
               Row(
@@ -413,7 +450,13 @@ Nowa konstrukcja, Wyburzenie''',
                       ),
                     ),
                   ),
-                  Text(flooringData.length.toString()),
+                  Text(languageNorwegian
+                      ? flooringData.length.toString()
+                      : languageLithuanian
+                          ? litFlooringData.length.toString()
+                          : languageEnglish
+                              ? flooringData.length.toString()
+                              : polFlooringData.length.toString()),
                 ],
               ),
               Row(
@@ -457,7 +500,13 @@ Nowa konstrukcja, Przebudowa, Wyburzenie''',
                       ),
                     ),
                   ),
-                  Text(outerRoofData.length.toString()),
+                  Text(languageNorwegian
+                      ? outerRoofData.length.toString()
+                      : languageLithuanian
+                          ? litOuterRoofData.length.toString()
+                          : languageEnglish
+                              ? outerRoofData.length.toString()
+                              : polOuterRoofData.length.toString()),
                 ],
               ),
               Row(
@@ -501,7 +550,13 @@ Nowa konstrukcja''',
                       ),
                     ),
                   ),
-                  Text(terraceData.length.toString()),
+                  Text(languageNorwegian
+                      ? terraceData.length.toString()
+                      : languageLithuanian
+                          ? litTerraceData.length.toString()
+                          : languageEnglish
+                              ? terraceData.length.toString()
+                              : polTerraceData.length.toString()),
                 ],
               ),
               Row(
@@ -545,7 +600,13 @@ Nowa konstrukcja''',
                       ),
                     ),
                   ),
-                  Text(innerStairsData.length.toString()),
+                  Text(languageNorwegian
+                      ? innerStairsData.length.toString()
+                      : languageLithuanian
+                          ? litInnerStairsData.length.toString()
+                          : languageEnglish
+                              ? innerStairsData.length.toString()
+                              : polInnerStairsData.length.toString()),
                 ],
               ),
               Row(
@@ -589,7 +650,13 @@ Nowa konstrukcja''',
                       ),
                     ),
                   ),
-                  Text(hullRoofingData.length.toString()),
+                  Text(languageNorwegian
+                      ? hullRoofingData.length.toString()
+                      : languageLithuanian
+                          ? litHullRoofingData.length.toString()
+                          : languageEnglish
+                              ? hullRoofingData.length.toString()
+                              : polHullRoofingData.length.toString()),
                 ],
               ),
               Row(
@@ -633,7 +700,13 @@ Nowa konstrukcja''',
                       ),
                     ),
                   ),
-                  Text(scaffoldingData.length.toString()),
+                  Text(languageNorwegian
+                      ? scaffoldingData.length.toString()
+                      : languageLithuanian
+                          ? litScaffoldingData.length.toString()
+                          : languageEnglish
+                              ? scaffoldingData.length.toString()
+                              : polScaffoldingData.length.toString()),
                 ],
               ),
               Row(
@@ -677,7 +750,13 @@ Nowa konstrukcja''',
                       ),
                     ),
                   ),
-                  Text(wasteData.length.toString()),
+                  Text(languageNorwegian
+                      ? wasteData.length.toString()
+                      : languageLithuanian
+                          ? litWasteData.length.toString()
+                          : languageEnglish
+                              ? wasteData.length.toString()
+                              : polWasteData.length.toString()),
                 ],
               ),
             ],
