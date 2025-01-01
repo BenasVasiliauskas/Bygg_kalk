@@ -154,7 +154,14 @@ class _OuterRoofScreenState extends State<OuterRoofScreen> {
                         onChanged: (value) {
                           setState(() {
                             double parsedValue = double.tryParse(value) ?? 0.0;
-                            catData.calculationQuantity = parsedValue;
+                            norwOuterRoofData[index].calculationQuantity =
+                                parsedValue;
+                            polOuterRoofData[index].calculationQuantity =
+                                parsedValue;
+                            litOuterRoofData[index].calculationQuantity =
+                                parsedValue;
+                            outerRoofData[index].calculationQuantity =
+                                parsedValue;
                             //Update labor hours 2
                             for (int i = 0;
                                 i < catData.laborHours2.length;

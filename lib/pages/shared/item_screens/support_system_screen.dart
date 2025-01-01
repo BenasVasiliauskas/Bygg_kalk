@@ -149,7 +149,14 @@ class _SupportSystemScreenState extends State<SupportSystemScreen> {
                             setState(() {
                               double parsedValue =
                                   double.tryParse(value) ?? 0.0;
-                              catData.calculationQuantity = parsedValue;
+                              norwSupportSystem[index].calculationQuantity =
+                                  parsedValue;
+                              polSupportSystem[index].calculationQuantity =
+                                  parsedValue;
+                              litSupportSystem[index].calculationQuantity =
+                                  parsedValue;
+                              supportSystem[index].calculationQuantity =
+                                  parsedValue;
 
                               // Update labor hours 2
                               for (int i = 0;

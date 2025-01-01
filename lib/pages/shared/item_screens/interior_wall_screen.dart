@@ -157,7 +157,14 @@ class _InnerWallScreenState extends State<InnerWallScreen> {
                         onChanged: (value) {
                           setState(() {
                             double parsedValue = double.tryParse(value) ?? 0.0;
-                            catData.calculationQuantity = parsedValue;
+                            norwInnerWallData[index].calculationQuantity =
+                                parsedValue;
+                            polInnerWallData[index].calculationQuantity =
+                                parsedValue;
+                            litInnerWallData[index].calculationQuantity =
+                                parsedValue;
+                            dataInnerWallData[index].calculationQuantity =
+                                parsedValue;
                             //Update labor hours 2
                             for (int i = 0;
                                 i < catData.laborHours2.length;

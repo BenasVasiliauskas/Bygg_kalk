@@ -147,7 +147,14 @@ class _TerraceScreenState extends State<TerraceScreen> {
                         onChanged: (value) {
                           setState(() {
                             double parsedValue = double.tryParse(value) ?? 0.0;
-                            catData.calculationQuantity = parsedValue;
+                            norwTerraceData[index].calculationQuantity =
+                                parsedValue;
+                            polTerraceData[index].calculationQuantity =
+                                parsedValue;
+                            litTerraceData[index].calculationQuantity =
+                                parsedValue;
+                            terraceData[index].calculationQuantity =
+                                parsedValue;
                             //Update labor hours 2
                             for (int i = 0;
                                 i < catData.laborHours2.length;

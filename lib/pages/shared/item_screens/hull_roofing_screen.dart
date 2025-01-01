@@ -148,7 +148,14 @@ class _HullRoofingScreenState extends State<HullRoofingScreen> {
                             setState(() {
                               double parsedValue =
                                   double.tryParse(value) ?? 0.0;
-                              catData.calculationQuantity = parsedValue;
+                              norwHullRoofingData[index].calculationQuantity =
+                                  parsedValue;
+                              polHullRoofingData[index].calculationQuantity =
+                                  parsedValue;
+                              litHullRoofingData[index].calculationQuantity =
+                                  parsedValue;
+                              hullRoofingData[index].calculationQuantity =
+                                  parsedValue;
                               //Update labor hours 2
                               for (int i = 0;
                                   i < catData.laborHours2.length;

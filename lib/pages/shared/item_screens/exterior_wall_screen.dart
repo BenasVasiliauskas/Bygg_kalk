@@ -158,7 +158,14 @@ class _ExteriorWallScreenState extends State<ExteriorWallScreen> {
                         onChanged: (value) {
                           setState(() {
                             double parsedValue = double.tryParse(value) ?? 0.0;
-                            catData.calculationQuantity = parsedValue;
+                            norwExteriorWallData[index].calculationQuantity =
+                                parsedValue;
+                            polExteriorWallData[index].calculationQuantity =
+                                parsedValue;
+                            litExteriorWallData[index].calculationQuantity =
+                                parsedValue;
+                            exteriorWallData[index].calculationQuantity =
+                                parsedValue;
                             //Update labor hours 2
                             for (int i = 0;
                                 i < catData.laborHours2.length;
