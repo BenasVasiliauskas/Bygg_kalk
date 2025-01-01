@@ -163,25 +163,91 @@ class _WindowsExteriorDoorScreenState extends State<WindowsExteriorDoorScreen> {
                             for (int i = 0;
                                 i < catData.laborHours2.length;
                                 i++) {
-                              catData.laborHours2[i] = catData.laborHours1[i] *
-                                  catData.calculationQuantity;
-                            }
-                            // Update labor cost
-                            for (int i = 0; i < catData.laborCost.length; i++) {
-                              catData.laborCost[i] =
-                                  catData.laborHours2[i] * hourlyRate;
-                            }
-                            // Update material costs
-                            for (int i = 0; i < catData.materials.length; i++) {
-                              catData.materials[i] = catData.material[i] *
-                                  catData.calculationQuantity;
-                            }
-                            // Update total price (labor + materials)
-                            for (int i = 0;
-                                i < catData.totalPrice.length;
-                                i++) {
-                              catData.totalPrice[i] =
-                                  catData.materials[i] + catData.laborCost[i];
+                              //
+                              norwWindowsExteriorDoors[index].laborHours2[i] =
+                                  norwWindowsExteriorDoors[index]
+                                          .laborHours1[i] *
+                                      norwWindowsExteriorDoors[index]
+                                          .calculationQuantity;
+                              //
+                              polWindowsExteriorDoors[index].laborHours2[i] =
+                                  polWindowsExteriorDoors[index]
+                                          .laborHours1[i] *
+                                      polWindowsExteriorDoors[index]
+                                          .calculationQuantity;
+                              //
+                              litWindowsExteriorDoors[index].laborHours2[i] =
+                                  litWindowsExteriorDoors[index]
+                                          .laborHours1[i] *
+                                      litWindowsExteriorDoors[index]
+                                          .calculationQuantity;
+                              //
+                              windowsExteriorDoors[index].laborHours2[i] =
+                                  windowsExteriorDoors[index].laborHours1[i] *
+                                      windowsExteriorDoors[index]
+                                          .calculationQuantity;
+                              // Update labor cost
+
+                              norwWindowsExteriorDoors[index].laborCost[i] =
+                                  norwWindowsExteriorDoors[index]
+                                          .laborHours2[i] *
+                                      hourlyRate;
+
+                              polWindowsExteriorDoors[index].laborCost[i] =
+                                  polWindowsExteriorDoors[index]
+                                          .laborHours2[i] *
+                                      hourlyRate;
+
+                              litWindowsExteriorDoors[index].laborCost[i] =
+                                  litWindowsExteriorDoors[index]
+                                          .laborHours2[i] *
+                                      hourlyRate;
+
+                              windowsExteriorDoors[index].laborCost[i] =
+                                  windowsExteriorDoors[index].laborHours2[i] *
+                                      hourlyRate;
+
+                              // Update material costs
+
+                              norwWindowsExteriorDoors[index].materials[i] =
+                                  norwWindowsExteriorDoors[index].material[i] *
+                                      norwWindowsExteriorDoors[index]
+                                          .calculationQuantity;
+
+                              polWindowsExteriorDoors[index].materials[i] =
+                                  polWindowsExteriorDoors[index].material[i] *
+                                      polWindowsExteriorDoors[index]
+                                          .calculationQuantity;
+
+                              litWindowsExteriorDoors[index].materials[i] =
+                                  litWindowsExteriorDoors[index].material[i] *
+                                      litWindowsExteriorDoors[index]
+                                          .calculationQuantity;
+
+                              windowsExteriorDoors[index].materials[i] =
+                                  windowsExteriorDoors[index].material[i] *
+                                      windowsExteriorDoors[index]
+                                          .calculationQuantity;
+                              // Update total price (labor + materials)
+
+                              norwWindowsExteriorDoors[index].totalPrice[i] =
+                                  norwWindowsExteriorDoors[index].materials[i] +
+                                      norwWindowsExteriorDoors[index]
+                                          .laborCost[i];
+
+                              polWindowsExteriorDoors[index].totalPrice[i] =
+                                  polWindowsExteriorDoors[index].materials[i] +
+                                      polWindowsExteriorDoors[index]
+                                          .laborCost[i];
+
+                              litWindowsExteriorDoors[index].totalPrice[i] =
+                                  litWindowsExteriorDoors[index].materials[i] +
+                                      litWindowsExteriorDoors[index]
+                                          .laborCost[i];
+
+                              windowsExteriorDoors[index].totalPrice[i] =
+                                  windowsExteriorDoors[index].materials[i] +
+                                      windowsExteriorDoors[index].laborCost[i];
                             }
                             totalLaborHours = catData.laborHours2.fold(
                                 0, (prev, laborHours) => prev + laborHours);
@@ -195,31 +261,51 @@ class _WindowsExteriorDoorScreenState extends State<WindowsExteriorDoorScreen> {
                             totalPriceSum = catData.totalPrice.fold(
                                 0, (prev, totalPrice) => prev + totalPrice);
                             // Update the total budget
-                            if (languageEnglish) {
-                              eng.addHours(catData.name, totalLaborHours);
-                              eng.addLaborCosts(catData.name, totalLaborCost);
-                              eng.addMaterialCosts(
-                                  catData.name, totalMaterialCost);
-                              eng.addBudgetSum(catData.name, totalPriceSum);
-                            } else if (languageNorwegian) {
-                              norw.addHours(catData.name, totalLaborHours);
-                              norw.addLaborCosts(catData.name, totalLaborCost);
-                              norw.addMaterialCosts(
-                                  catData.name, totalMaterialCost);
-                              norw.addBudgetSum(catData.name, totalPriceSum);
-                            } else if (languagePolish) {
-                              pol.addHours(catData.name, totalLaborHours);
-                              pol.addLaborCosts(catData.name, totalLaborCost);
-                              pol.addMaterialCosts(
-                                  catData.name, totalMaterialCost);
-                              pol.addBudgetSum(catData.name, totalPriceSum);
-                            } else {
-                              lit.addHours(catData.name, totalLaborHours);
-                              lit.addLaborCosts(catData.name, totalLaborCost);
-                              lit.addMaterialCosts(
-                                  catData.name, totalMaterialCost);
-                              lit.addBudgetSum(catData.name, totalPriceSum);
-                            }
+                            eng.addHours(windowsExteriorDoors[index].name,
+                                totalLaborHours);
+                            eng.addLaborCosts(windowsExteriorDoors[index].name,
+                                totalLaborCost);
+                            eng.addMaterialCosts(
+                                windowsExteriorDoors[index].name,
+                                totalMaterialCost);
+                            eng.addBudgetSum(windowsExteriorDoors[index].name,
+                                totalPriceSum);
+
+                            norw.addHours(norwWindowsExteriorDoors[index].name,
+                                totalLaborHours);
+                            norw.addLaborCosts(
+                                norwWindowsExteriorDoors[index].name,
+                                totalLaborCost);
+                            norw.addMaterialCosts(
+                                norwWindowsExteriorDoors[index].name,
+                                totalMaterialCost);
+                            norw.addBudgetSum(
+                                norwWindowsExteriorDoors[index].name,
+                                totalPriceSum);
+
+                            pol.addHours(polWindowsExteriorDoors[index].name,
+                                totalLaborHours);
+                            pol.addLaborCosts(
+                                polWindowsExteriorDoors[index].name,
+                                totalLaborCost);
+                            pol.addMaterialCosts(
+                                polWindowsExteriorDoors[index].name,
+                                totalMaterialCost);
+                            pol.addBudgetSum(
+                                polWindowsExteriorDoors[index].name,
+                                totalPriceSum);
+
+                            lit.addHours(litWindowsExteriorDoors[index].name,
+                                totalLaborHours);
+                            lit.addLaborCosts(
+                                litWindowsExteriorDoors[index].name,
+                                totalLaborCost);
+                            lit.addMaterialCosts(
+                                litWindowsExteriorDoors[index].name,
+                                totalMaterialCost);
+                            lit.addBudgetSum(
+                                litWindowsExteriorDoors[index].name,
+                                totalPriceSum);
                           });
                         },
                       ),

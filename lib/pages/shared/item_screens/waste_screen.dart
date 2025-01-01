@@ -152,25 +152,73 @@ class _WasteScreenState extends State<WasteScreen> {
                             for (int i = 0;
                                 i < catData.laborHours2.length;
                                 i++) {
-                              catData.laborHours2[i] = catData.laborHours1[i] *
-                                  catData.calculationQuantity;
-                            }
-                            // Update labor cost
-                            for (int i = 0; i < catData.laborCost.length; i++) {
-                              catData.laborCost[i] =
-                                  catData.laborHours2[i] * hourlyRate;
-                            }
-                            // Update material costs
-                            for (int i = 0; i < catData.materials.length; i++) {
-                              catData.materials[i] = catData.material[i] *
-                                  catData.calculationQuantity;
-                            }
-                            // Update total price (labor + materials)
-                            for (int i = 0;
-                                i < catData.totalPrice.length;
-                                i++) {
-                              catData.totalPrice[i] =
-                                  catData.materials[i] + catData.laborCost[i];
+                              //
+                              norwWasteData[index].laborHours2[i] =
+                                  norwWasteData[index].laborHours1[i] *
+                                      norwWasteData[index].calculationQuantity;
+                              //
+                              polWasteData[index].laborHours2[i] =
+                                  polWasteData[index].laborHours1[i] *
+                                      polWasteData[index].calculationQuantity;
+                              //
+                              litWasteData[index].laborHours2[i] =
+                                  litWasteData[index].laborHours1[i] *
+                                      litWasteData[index].calculationQuantity;
+                              //
+                              wasteData[index].laborHours2[i] =
+                                  wasteData[index].laborHours1[i] *
+                                      wasteData[index].calculationQuantity;
+                              // Update labor cost
+
+                              norwWasteData[index].laborCost[i] =
+                                  norwWasteData[index].laborHours2[i] *
+                                      hourlyRate;
+
+                              polWasteData[index].laborCost[i] =
+                                  polWasteData[index].laborHours2[i] *
+                                      hourlyRate;
+
+                              litWasteData[index].laborCost[i] =
+                                  litWasteData[index].laborHours2[i] *
+                                      hourlyRate;
+
+                              wasteData[index].laborCost[i] =
+                                  wasteData[index].laborHours2[i] * hourlyRate;
+
+                              // Update material costs
+
+                              norwWasteData[index].materials[i] =
+                                  norwWasteData[index].material[i] *
+                                      norwWasteData[index].calculationQuantity;
+
+                              polWasteData[index].materials[i] =
+                                  polWasteData[index].material[i] *
+                                      polWasteData[index].calculationQuantity;
+
+                              litWasteData[index].materials[i] =
+                                  litWasteData[index].material[i] *
+                                      litWasteData[index].calculationQuantity;
+
+                              wasteData[index].materials[i] =
+                                  wasteData[index].material[i] *
+                                      wasteData[index].calculationQuantity;
+                              // Update total price (labor + materials)
+
+                              norwWasteData[index].totalPrice[i] =
+                                  norwWasteData[index].materials[i] +
+                                      norwWasteData[index].laborCost[i];
+
+                              polWasteData[index].totalPrice[i] =
+                                  polWasteData[index].materials[i] +
+                                      polWasteData[index].laborCost[i];
+
+                              litWasteData[index].totalPrice[i] =
+                                  litWasteData[index].materials[i] +
+                                      litWasteData[index].laborCost[i];
+
+                              wasteData[index].totalPrice[i] =
+                                  wasteData[index].materials[i] +
+                                      wasteData[index].laborCost[i];
                             }
                             totalLaborHours = catData.laborHours2.fold(
                                 0, (prev, laborHours) => prev + laborHours);
@@ -184,31 +232,41 @@ class _WasteScreenState extends State<WasteScreen> {
                             totalPriceSum = catData.totalPrice.fold(
                                 0, (prev, totalPrice) => prev + totalPrice);
                             // Update the total budget
-                            if (languageEnglish) {
-                              eng.addHours(catData.name, totalLaborHours);
-                              eng.addLaborCosts(catData.name, totalLaborCost);
-                              eng.addMaterialCosts(
-                                  catData.name, totalMaterialCost);
-                              eng.addBudgetSum(catData.name, totalPriceSum);
-                            } else if (languageNorwegian) {
-                              norw.addHours(catData.name, totalLaborHours);
-                              norw.addLaborCosts(catData.name, totalLaborCost);
-                              norw.addMaterialCosts(
-                                  catData.name, totalMaterialCost);
-                              norw.addBudgetSum(catData.name, totalPriceSum);
-                            } else if (languagePolish) {
-                              pol.addHours(catData.name, totalLaborHours);
-                              pol.addLaborCosts(catData.name, totalLaborCost);
-                              pol.addMaterialCosts(
-                                  catData.name, totalMaterialCost);
-                              pol.addBudgetSum(catData.name, totalPriceSum);
-                            } else {
-                              lit.addHours(catData.name, totalLaborHours);
-                              lit.addLaborCosts(catData.name, totalLaborCost);
-                              lit.addMaterialCosts(
-                                  catData.name, totalMaterialCost);
-                              lit.addBudgetSum(catData.name, totalPriceSum);
-                            }
+                            eng.addHours(
+                                wasteData[index].name, totalLaborHours);
+                            eng.addLaborCosts(
+                                wasteData[index].name, totalLaborCost);
+                            eng.addMaterialCosts(
+                                wasteData[index].name, totalMaterialCost);
+                            eng.addBudgetSum(
+                                wasteData[index].name, totalPriceSum);
+
+                            norw.addHours(
+                                norwWasteData[index].name, totalLaborHours);
+                            norw.addLaborCosts(
+                                norwWasteData[index].name, totalLaborCost);
+                            norw.addMaterialCosts(
+                                norwWasteData[index].name, totalMaterialCost);
+                            norw.addBudgetSum(
+                                norwWasteData[index].name, totalPriceSum);
+
+                            pol.addHours(
+                                polWasteData[index].name, totalLaborHours);
+                            pol.addLaborCosts(
+                                polWasteData[index].name, totalLaborCost);
+                            pol.addMaterialCosts(
+                                polWasteData[index].name, totalMaterialCost);
+                            pol.addBudgetSum(
+                                polWasteData[index].name, totalPriceSum);
+
+                            lit.addHours(
+                                litWasteData[index].name, totalLaborHours);
+                            lit.addLaborCosts(
+                                litWasteData[index].name, totalLaborCost);
+                            lit.addMaterialCosts(
+                                litWasteData[index].name, totalMaterialCost);
+                            lit.addBudgetSum(
+                                litWasteData[index].name, totalPriceSum);
                           });
                         },
                       ),

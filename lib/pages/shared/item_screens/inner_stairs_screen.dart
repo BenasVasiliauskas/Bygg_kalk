@@ -151,25 +151,82 @@ class _InnerStairsScreen extends State<InnerStairsScreen> {
                             for (int i = 0;
                                 i < catData.laborHours2.length;
                                 i++) {
-                              catData.laborHours2[i] = catData.laborHours1[i] *
-                                  catData.calculationQuantity;
-                            }
-                            // Update labor cost
-                            for (int i = 0; i < catData.laborCost.length; i++) {
-                              catData.laborCost[i] =
-                                  catData.laborHours2[i] * hourlyRate;
-                            }
-                            // Update material costs
-                            for (int i = 0; i < catData.materials.length; i++) {
-                              catData.materials[i] = catData.material[i] *
-                                  catData.calculationQuantity;
-                            }
-                            // Update total price (labor + materials)
-                            for (int i = 0;
-                                i < catData.totalPrice.length;
-                                i++) {
-                              catData.totalPrice[i] =
-                                  catData.materials[i] + catData.laborCost[i];
+                              //
+                              norwInnerStairsData[index].laborHours2[i] =
+                                  norwInnerStairsData[index].laborHours1[i] *
+                                      norwInnerStairsData[index]
+                                          .calculationQuantity;
+                              //
+                              polInnerStairsData[index].laborHours2[i] =
+                                  polInnerStairsData[index].laborHours1[i] *
+                                      polInnerStairsData[index]
+                                          .calculationQuantity;
+                              //
+                              litInnerStairsData[index].laborHours2[i] =
+                                  litInnerStairsData[index].laborHours1[i] *
+                                      litInnerStairsData[index]
+                                          .calculationQuantity;
+                              //
+                              innerStairsData[index].laborHours2[i] =
+                                  innerStairsData[index].laborHours1[i] *
+                                      innerStairsData[index]
+                                          .calculationQuantity;
+                              // Update labor cost
+
+                              norwInnerStairsData[index].laborCost[i] =
+                                  norwInnerStairsData[index].laborHours2[i] *
+                                      hourlyRate;
+
+                              polInnerStairsData[index].laborCost[i] =
+                                  polInnerStairsData[index].laborHours2[i] *
+                                      hourlyRate;
+
+                              litInnerStairsData[index].laborCost[i] =
+                                  litInnerStairsData[index].laborHours2[i] *
+                                      hourlyRate;
+
+                              innerStairsData[index].laborCost[i] =
+                                  innerStairsData[index].laborHours2[i] *
+                                      hourlyRate;
+
+                              // Update material costs
+
+                              norwInnerStairsData[index].materials[i] =
+                                  norwInnerStairsData[index].material[i] *
+                                      norwInnerStairsData[index]
+                                          .calculationQuantity;
+
+                              polInnerStairsData[index].materials[i] =
+                                  polInnerStairsData[index].material[i] *
+                                      polInnerStairsData[index]
+                                          .calculationQuantity;
+
+                              litInnerStairsData[index].materials[i] =
+                                  litInnerStairsData[index].material[i] *
+                                      litInnerStairsData[index]
+                                          .calculationQuantity;
+
+                              innerStairsData[index].materials[i] =
+                                  innerStairsData[index].material[i] *
+                                      innerStairsData[index]
+                                          .calculationQuantity;
+                              // Update total price (labor + materials)
+
+                              norwInnerStairsData[index].totalPrice[i] =
+                                  norwInnerStairsData[index].materials[i] +
+                                      norwInnerStairsData[index].laborCost[i];
+
+                              polInnerStairsData[index].totalPrice[i] =
+                                  polInnerStairsData[index].materials[i] +
+                                      polInnerStairsData[index].laborCost[i];
+
+                              litInnerStairsData[index].totalPrice[i] =
+                                  litInnerStairsData[index].materials[i] +
+                                      litInnerStairsData[index].laborCost[i];
+
+                              innerStairsData[index].totalPrice[i] =
+                                  innerStairsData[index].materials[i] +
+                                      innerStairsData[index].laborCost[i];
                             }
                             totalLaborHours = catData.laborHours2.fold(
                                 0, (prev, laborHours) => prev + laborHours);
@@ -183,31 +240,42 @@ class _InnerStairsScreen extends State<InnerStairsScreen> {
                             totalPriceSum = catData.totalPrice.fold(
                                 0, (prev, totalPrice) => prev + totalPrice);
                             // Update the total budget
-                            if (languageEnglish) {
-                              eng.addHours(catData.name, totalLaborHours);
-                              eng.addLaborCosts(catData.name, totalLaborCost);
-                              eng.addMaterialCosts(
-                                  catData.name, totalMaterialCost);
-                              eng.addBudgetSum(catData.name, totalPriceSum);
-                            } else if (languageNorwegian) {
-                              norw.addHours(catData.name, totalLaborHours);
-                              norw.addLaborCosts(catData.name, totalLaborCost);
-                              norw.addMaterialCosts(
-                                  catData.name, totalMaterialCost);
-                              norw.addBudgetSum(catData.name, totalPriceSum);
-                            } else if (languagePolish) {
-                              pol.addHours(catData.name, totalLaborHours);
-                              pol.addLaborCosts(catData.name, totalLaborCost);
-                              pol.addMaterialCosts(
-                                  catData.name, totalMaterialCost);
-                              pol.addBudgetSum(catData.name, totalPriceSum);
-                            } else {
-                              lit.addHours(catData.name, totalLaborHours);
-                              lit.addLaborCosts(catData.name, totalLaborCost);
-                              lit.addMaterialCosts(
-                                  catData.name, totalMaterialCost);
-                              lit.addBudgetSum(catData.name, totalPriceSum);
-                            }
+                            eng.addHours(
+                                innerStairsData[index].name, totalLaborHours);
+                            eng.addLaborCosts(
+                                innerStairsData[index].name, totalLaborCost);
+                            eng.addMaterialCosts(
+                                innerStairsData[index].name, totalMaterialCost);
+                            eng.addBudgetSum(
+                                innerStairsData[index].name, totalPriceSum);
+
+                            norw.addHours(norwInnerStairsData[index].name,
+                                totalLaborHours);
+                            norw.addLaborCosts(norwInnerStairsData[index].name,
+                                totalLaborCost);
+                            norw.addMaterialCosts(
+                                norwInnerStairsData[index].name,
+                                totalMaterialCost);
+                            norw.addBudgetSum(
+                                norwInnerStairsData[index].name, totalPriceSum);
+
+                            pol.addHours(polInnerStairsData[index].name,
+                                totalLaborHours);
+                            pol.addLaborCosts(
+                                polInnerStairsData[index].name, totalLaborCost);
+                            pol.addMaterialCosts(polInnerStairsData[index].name,
+                                totalMaterialCost);
+                            pol.addBudgetSum(
+                                polInnerStairsData[index].name, totalPriceSum);
+
+                            lit.addHours(litInnerStairsData[index].name,
+                                totalLaborHours);
+                            lit.addLaborCosts(
+                                litInnerStairsData[index].name, totalLaborCost);
+                            lit.addMaterialCosts(litInnerStairsData[index].name,
+                                totalMaterialCost);
+                            lit.addBudgetSum(
+                                litInnerStairsData[index].name, totalPriceSum);
                           });
                         },
                       ),

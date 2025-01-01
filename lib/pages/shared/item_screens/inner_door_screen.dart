@@ -163,30 +163,77 @@ class _InnerDoorScreenState extends State<InnerDoorScreen> {
                               for (int i = 0;
                                   i < catData.laborHours2.length;
                                   i++) {
-                                catData.laborHours2[i] =
-                                    catData.laborHours1[i] *
-                                        catData.calculationQuantity;
-                              }
-                              // Update labor cost
-                              for (int i = 0;
-                                  i < catData.laborCost.length;
-                                  i++) {
-                                catData.laborCost[i] =
-                                    catData.laborHours2[i] * hourlyRate;
-                              }
-                              // Update material costs
-                              for (int i = 0;
-                                  i < catData.materials.length;
-                                  i++) {
-                                catData.materials[i] = catData.material[i] *
-                                    catData.calculationQuantity;
-                              }
-                              // Update total price (labor + materials)
-                              for (int i = 0;
-                                  i < catData.totalPrice.length;
-                                  i++) {
-                                catData.totalPrice[i] =
-                                    catData.materials[i] + catData.laborCost[i];
+                                //
+                                norwInnerDoor[index].laborHours2[i] =
+                                    norwInnerDoor[index].laborHours1[i] *
+                                        norwInnerDoor[index]
+                                            .calculationQuantity;
+                                //
+                                polInnerDoor[index].laborHours2[i] =
+                                    polInnerDoor[index].laborHours1[i] *
+                                        polInnerDoor[index].calculationQuantity;
+                                //
+                                litInnerDoor[index].laborHours2[i] =
+                                    litInnerDoor[index].laborHours1[i] *
+                                        litInnerDoor[index].calculationQuantity;
+                                //
+
+                                innerDoor[index].laborHours2[i] =
+                                    innerDoor[index].laborHours1[i] *
+                                        innerDoor[index].calculationQuantity;
+                                // Update labor cost
+
+                                norwInnerDoor[index].laborCost[i] =
+                                    norwInnerDoor[index].laborHours2[i] *
+                                        hourlyRate;
+
+                                polInnerDoor[index].laborCost[i] =
+                                    polInnerDoor[index].laborHours2[i] *
+                                        hourlyRate;
+
+                                litInnerDoor[index].laborCost[i] =
+                                    litInnerDoor[index].laborHours2[i] *
+                                        hourlyRate;
+
+                                innerDoor[index].laborCost[i] =
+                                    innerDoor[index].laborHours2[i] *
+                                        hourlyRate;
+
+                                // Update material costs
+
+                                norwInnerDoor[index].materials[i] =
+                                    norwInnerDoor[index].material[i] *
+                                        norwInnerDoor[index]
+                                            .calculationQuantity;
+
+                                polInnerDoor[index].materials[i] =
+                                    polInnerDoor[index].material[i] *
+                                        polInnerDoor[index].calculationQuantity;
+
+                                litInnerDoor[index].materials[i] =
+                                    litInnerDoor[index].material[i] *
+                                        litInnerDoor[index].calculationQuantity;
+
+                                innerDoor[index].materials[i] =
+                                    innerDoor[index].material[i] *
+                                        innerDoor[index].calculationQuantity;
+                                // Update total price (labor + materials)
+
+                                norwInnerDoor[index].totalPrice[i] =
+                                    norwInnerDoor[index].materials[i] +
+                                        norwInnerDoor[index].laborCost[i];
+
+                                polInnerDoor[index].totalPrice[i] =
+                                    polInnerDoor[index].materials[i] +
+                                        polInnerDoor[index].laborCost[i];
+
+                                litInnerDoor[index].totalPrice[i] =
+                                    litInnerDoor[index].materials[i] +
+                                        litInnerDoor[index].laborCost[i];
+
+                                innerDoor[index].totalPrice[i] =
+                                    innerDoor[index].materials[i] +
+                                        innerDoor[index].laborCost[i];
                               }
                               totalLaborHours = catData.laborHours2.fold(
                                   0, (prev, laborHours) => prev + laborHours);
@@ -200,32 +247,41 @@ class _InnerDoorScreenState extends State<InnerDoorScreen> {
                               totalPriceSum = catData.totalPrice.fold(
                                   0, (prev, totalPrice) => prev + totalPrice);
                               // Update the total budget
-                              if (languageEnglish) {
-                                eng.addHours(catData.name, totalLaborHours);
-                                eng.addLaborCosts(catData.name, totalLaborCost);
-                                eng.addMaterialCosts(
-                                    catData.name, totalMaterialCost);
-                                eng.addBudgetSum(catData.name, totalPriceSum);
-                              } else if (languageNorwegian) {
-                                norw.addHours(catData.name, totalLaborHours);
-                                norw.addLaborCosts(
-                                    catData.name, totalLaborCost);
-                                norw.addMaterialCosts(
-                                    catData.name, totalMaterialCost);
-                                norw.addBudgetSum(catData.name, totalPriceSum);
-                              } else if (languagePolish) {
-                                pol.addHours(catData.name, totalLaborHours);
-                                pol.addLaborCosts(catData.name, totalLaborCost);
-                                pol.addMaterialCosts(
-                                    catData.name, totalMaterialCost);
-                                pol.addBudgetSum(catData.name, totalPriceSum);
-                              } else {
-                                lit.addHours(catData.name, totalLaborHours);
-                                lit.addLaborCosts(catData.name, totalLaborCost);
-                                lit.addMaterialCosts(
-                                    catData.name, totalMaterialCost);
-                                lit.addBudgetSum(catData.name, totalPriceSum);
-                              }
+                              eng.addHours(
+                                  innerDoor[index].name, totalLaborHours);
+                              eng.addLaborCosts(
+                                  innerDoor[index].name, totalLaborCost);
+                              eng.addMaterialCosts(
+                                  innerDoor[index].name, totalMaterialCost);
+                              eng.addBudgetSum(
+                                  innerDoor[index].name, totalPriceSum);
+
+                              norw.addHours(
+                                  norwInnerDoor[index].name, totalLaborHours);
+                              norw.addLaborCosts(
+                                  norwInnerDoor[index].name, totalLaborCost);
+                              norw.addMaterialCosts(
+                                  norwInnerDoor[index].name, totalMaterialCost);
+                              norw.addBudgetSum(
+                                  norwInnerDoor[index].name, totalPriceSum);
+
+                              pol.addHours(
+                                  polInnerDoor[index].name, totalLaborHours);
+                              pol.addLaborCosts(
+                                  polInnerDoor[index].name, totalLaborCost);
+                              pol.addMaterialCosts(
+                                  polInnerDoor[index].name, totalMaterialCost);
+                              pol.addBudgetSum(
+                                  polInnerDoor[index].name, totalPriceSum);
+
+                              lit.addHours(
+                                  litInnerDoor[index].name, totalLaborHours);
+                              lit.addLaborCosts(
+                                  litInnerDoor[index].name, totalLaborCost);
+                              lit.addMaterialCosts(
+                                  litInnerDoor[index].name, totalMaterialCost);
+                              lit.addBudgetSum(
+                                  litInnerDoor[index].name, totalPriceSum);
                             });
                           },
                         ),

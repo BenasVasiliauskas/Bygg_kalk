@@ -155,35 +155,83 @@ class _SupportSystemScreenState extends State<SupportSystemScreen> {
                               for (int i = 0;
                                   i < catData.laborHours2.length;
                                   i++) {
-                                catData.laborHours2[i] =
-                                    catData.laborHours1[i] *
-                                        catData.calculationQuantity;
-                              }
+                                //
+                                norwSupportSystem[index].laborHours2[i] =
+                                    norwSupportSystem[index].laborHours1[i] *
+                                        norwSupportSystem[index]
+                                            .calculationQuantity;
+                                //
+                                polSupportSystem[index].laborHours2[i] =
+                                    polSupportSystem[index].laborHours1[i] *
+                                        polSupportSystem[index]
+                                            .calculationQuantity;
+                                //
+                                litSupportSystem[index].laborHours2[i] =
+                                    litSupportSystem[index].laborHours1[i] *
+                                        litSupportSystem[index]
+                                            .calculationQuantity;
+                                //
+                                supportSystem[index].laborHours2[i] =
+                                    supportSystem[index].laborHours1[i] *
+                                        supportSystem[index]
+                                            .calculationQuantity;
+                                // Update labor cost
 
-                              // Update labor cost
-                              for (int i = 0;
-                                  i < catData.laborCost.length;
-                                  i++) {
-                                catData.laborCost[i] =
-                                    catData.laborHours2[i] * hourlyRate;
-                              }
+                                norwSupportSystem[index].laborCost[i] =
+                                    norwSupportSystem[index].laborHours2[i] *
+                                        hourlyRate;
 
-                              // Update material costs
-                              for (int i = 0;
-                                  i < catData.materials.length;
-                                  i++) {
-                                catData.materials[i] = catData.material[i] *
-                                    catData.calculationQuantity;
-                              }
+                                polSupportSystem[index].laborCost[i] =
+                                    polSupportSystem[index].laborHours2[i] *
+                                        hourlyRate;
 
-                              // Update total price (labor + materials)
-                              for (int i = 0;
-                                  i < catData.totalPrice.length;
-                                  i++) {
-                                catData.totalPrice[i] =
-                                    catData.materials[i] + catData.laborCost[i];
-                              }
+                                litSupportSystem[index].laborCost[i] =
+                                    litSupportSystem[index].laborHours2[i] *
+                                        hourlyRate;
 
+                                supportSystem[index].laborCost[i] =
+                                    supportSystem[index].laborHours2[i] *
+                                        hourlyRate;
+
+                                // Update material costs
+
+                                norwSupportSystem[index].materials[i] =
+                                    norwSupportSystem[index].material[i] *
+                                        norwSupportSystem[index]
+                                            .calculationQuantity;
+
+                                polSupportSystem[index].materials[i] =
+                                    polSupportSystem[index].material[i] *
+                                        polSupportSystem[index]
+                                            .calculationQuantity;
+
+                                litSupportSystem[index].materials[i] =
+                                    litSupportSystem[index].material[i] *
+                                        litSupportSystem[index]
+                                            .calculationQuantity;
+
+                                supportSystem[index].materials[i] =
+                                    supportSystem[index].material[i] *
+                                        supportSystem[index]
+                                            .calculationQuantity;
+                                // Update total price (labor + materials)
+
+                                norwSupportSystem[index].totalPrice[i] =
+                                    norwSupportSystem[index].materials[i] +
+                                        norwSupportSystem[index].laborCost[i];
+
+                                polSupportSystem[index].totalPrice[i] =
+                                    polSupportSystem[index].materials[i] +
+                                        polSupportSystem[index].laborCost[i];
+
+                                litSupportSystem[index].totalPrice[i] =
+                                    litSupportSystem[index].materials[i] +
+                                        litSupportSystem[index].laborCost[i];
+
+                                supportSystem[index].totalPrice[i] =
+                                    supportSystem[index].materials[i] +
+                                        supportSystem[index].laborCost[i];
+                              }
                               totalLaborHours = catData.laborHours2.fold(
                                   0, (prev, laborHours) => prev + laborHours);
 
@@ -195,34 +243,43 @@ class _SupportSystemScreenState extends State<SupportSystemScreen> {
 
                               totalPriceSum = catData.totalPrice.fold(
                                   0, (prev, totalPrice) => prev + totalPrice);
-
                               // Update the total budget
-                              if (languageEnglish) {
-                                eng.addHours(catData.name, totalLaborHours);
-                                eng.addLaborCosts(catData.name, totalLaborCost);
-                                eng.addMaterialCosts(
-                                    catData.name, totalMaterialCost);
-                                eng.addBudgetSum(catData.name, totalPriceSum);
-                              } else if (languageNorwegian) {
-                                norw.addHours(catData.name, totalLaborHours);
-                                norw.addLaborCosts(
-                                    catData.name, totalLaborCost);
-                                norw.addMaterialCosts(
-                                    catData.name, totalMaterialCost);
-                                norw.addBudgetSum(catData.name, totalPriceSum);
-                              } else if (languagePolish) {
-                                pol.addHours(catData.name, totalLaborHours);
-                                pol.addLaborCosts(catData.name, totalLaborCost);
-                                pol.addMaterialCosts(
-                                    catData.name, totalMaterialCost);
-                                pol.addBudgetSum(catData.name, totalPriceSum);
-                              } else {
-                                lit.addHours(catData.name, totalLaborHours);
-                                lit.addLaborCosts(catData.name, totalLaborCost);
-                                lit.addMaterialCosts(
-                                    catData.name, totalMaterialCost);
-                                lit.addBudgetSum(catData.name, totalPriceSum);
-                              }
+                              eng.addHours(
+                                  supportSystem[index].name, totalLaborHours);
+                              eng.addLaborCosts(
+                                  supportSystem[index].name, totalLaborCost);
+                              eng.addMaterialCosts(
+                                  supportSystem[index].name, totalMaterialCost);
+                              eng.addBudgetSum(
+                                  supportSystem[index].name, totalPriceSum);
+
+                              norw.addHours(norwSupportSystem[index].name,
+                                  totalLaborHours);
+                              norw.addLaborCosts(norwSupportSystem[index].name,
+                                  totalLaborCost);
+                              norw.addMaterialCosts(
+                                  norwSupportSystem[index].name,
+                                  totalMaterialCost);
+                              norw.addBudgetSum(
+                                  norwSupportSystem[index].name, totalPriceSum);
+
+                              pol.addHours(polSupportSystem[index].name,
+                                  totalLaborHours);
+                              pol.addLaborCosts(
+                                  polSupportSystem[index].name, totalLaborCost);
+                              pol.addMaterialCosts(polSupportSystem[index].name,
+                                  totalMaterialCost);
+                              pol.addBudgetSum(
+                                  polSupportSystem[index].name, totalPriceSum);
+
+                              lit.addHours(litSupportSystem[index].name,
+                                  totalLaborHours);
+                              lit.addLaborCosts(
+                                  litSupportSystem[index].name, totalLaborCost);
+                              lit.addMaterialCosts(litSupportSystem[index].name,
+                                  totalMaterialCost);
+                              lit.addBudgetSum(
+                                  litSupportSystem[index].name, totalPriceSum);
                             });
                           }),
                     ),

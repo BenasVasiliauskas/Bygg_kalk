@@ -163,25 +163,73 @@ class _DeckScreenState extends State<DeckScreen> {
                             for (int i = 0;
                                 i < catData.laborHours2.length;
                                 i++) {
-                              catData.laborHours2[i] = catData.laborHours1[i] *
-                                  catData.calculationQuantity;
-                            }
-                            // Update labor cost
-                            for (int i = 0; i < catData.laborCost.length; i++) {
-                              catData.laborCost[i] =
-                                  catData.laborHours2[i] * hourlyRate;
-                            }
-                            // Update material costs
-                            for (int i = 0; i < catData.materials.length; i++) {
-                              catData.materials[i] = catData.material[i] *
-                                  catData.calculationQuantity;
-                            }
-                            // Update total price (labor + materials)
-                            for (int i = 0;
-                                i < catData.totalPrice.length;
-                                i++) {
-                              catData.totalPrice[i] =
-                                  catData.materials[i] + catData.laborCost[i];
+                              //
+                              norwDeckData[index].laborHours2[i] =
+                                  norwDeckData[index].laborHours1[i] *
+                                      norwDeckData[index].calculationQuantity;
+                              //
+                              polDeckData[index].laborHours2[i] =
+                                  polDeckData[index].laborHours1[i] *
+                                      polDeckData[index].calculationQuantity;
+                              //
+                              litDeckData[index].laborHours2[i] =
+                                  litDeckData[index].laborHours1[i] *
+                                      litDeckData[index].calculationQuantity;
+                              //
+                              deckData[index].laborHours2[i] =
+                                  deckData[index].laborHours1[i] *
+                                      deckData[index].calculationQuantity;
+                              // Update labor cost
+
+                              norwDeckData[index].laborCost[i] =
+                                  norwDeckData[index].laborHours2[i] *
+                                      hourlyRate;
+
+                              polDeckData[index].laborCost[i] =
+                                  polDeckData[index].laborHours2[i] *
+                                      hourlyRate;
+
+                              litDeckData[index].laborCost[i] =
+                                  litDeckData[index].laborHours2[i] *
+                                      hourlyRate;
+
+                              deckData[index].laborCost[i] =
+                                  deckData[index].laborHours2[i] * hourlyRate;
+
+                              // Update material costs
+
+                              norwDeckData[index].materials[i] =
+                                  norwDeckData[index].material[i] *
+                                      norwDeckData[index].calculationQuantity;
+
+                              polDeckData[index].materials[i] =
+                                  polDeckData[index].material[i] *
+                                      polDeckData[index].calculationQuantity;
+
+                              litDeckData[index].materials[i] =
+                                  litDeckData[index].material[i] *
+                                      litDeckData[index].calculationQuantity;
+
+                              deckData[index].materials[i] =
+                                  deckData[index].material[i] *
+                                      deckData[index].calculationQuantity;
+                              // Update total price (labor + materials)
+
+                              norwDeckData[index].totalPrice[i] =
+                                  norwDeckData[index].materials[i] +
+                                      norwDeckData[index].laborCost[i];
+
+                              polDeckData[index].totalPrice[i] =
+                                  polDeckData[index].materials[i] +
+                                      polDeckData[index].laborCost[i];
+
+                              litDeckData[index].totalPrice[i] =
+                                  litDeckData[index].materials[i] +
+                                      litDeckData[index].laborCost[i];
+
+                              deckData[index].totalPrice[i] =
+                                  deckData[index].materials[i] +
+                                      deckData[index].laborCost[i];
                             }
                             totalLaborHours = catData.laborHours2.fold(
                                 0, (prev, laborHours) => prev + laborHours);
@@ -195,31 +243,40 @@ class _DeckScreenState extends State<DeckScreen> {
                             totalPriceSum = catData.totalPrice.fold(
                                 0, (prev, totalPrice) => prev + totalPrice);
                             // Update the total budget
-                            if (languageEnglish) {
-                              eng.addHours(catData.name, totalLaborHours);
-                              eng.addLaborCosts(catData.name, totalLaborCost);
-                              eng.addMaterialCosts(
-                                  catData.name, totalMaterialCost);
-                              eng.addBudgetSum(catData.name, totalPriceSum);
-                            } else if (languageNorwegian) {
-                              norw.addHours(catData.name, totalLaborHours);
-                              norw.addLaborCosts(catData.name, totalLaborCost);
-                              norw.addMaterialCosts(
-                                  catData.name, totalMaterialCost);
-                              norw.addBudgetSum(catData.name, totalPriceSum);
-                            } else if (languagePolish) {
-                              pol.addHours(catData.name, totalLaborHours);
-                              pol.addLaborCosts(catData.name, totalLaborCost);
-                              pol.addMaterialCosts(
-                                  catData.name, totalMaterialCost);
-                              pol.addBudgetSum(catData.name, totalPriceSum);
-                            } else {
-                              lit.addHours(catData.name, totalLaborHours);
-                              lit.addLaborCosts(catData.name, totalLaborCost);
-                              lit.addMaterialCosts(
-                                  catData.name, totalMaterialCost);
-                              lit.addBudgetSum(catData.name, totalPriceSum);
-                            }
+                            eng.addHours(deckData[index].name, totalLaborHours);
+                            eng.addLaborCosts(
+                                deckData[index].name, totalLaborCost);
+                            eng.addMaterialCosts(
+                                deckData[index].name, totalMaterialCost);
+                            eng.addBudgetSum(
+                                deckData[index].name, totalPriceSum);
+
+                            norw.addHours(
+                                norwDeckData[index].name, totalLaborHours);
+                            norw.addLaborCosts(
+                                norwDeckData[index].name, totalLaborCost);
+                            norw.addMaterialCosts(
+                                norwDeckData[index].name, totalMaterialCost);
+                            norw.addBudgetSum(
+                                norwDeckData[index].name, totalPriceSum);
+
+                            pol.addHours(
+                                polDeckData[index].name, totalLaborHours);
+                            pol.addLaborCosts(
+                                polDeckData[index].name, totalLaborCost);
+                            pol.addMaterialCosts(
+                                polDeckData[index].name, totalMaterialCost);
+                            pol.addBudgetSum(
+                                polDeckData[index].name, totalPriceSum);
+
+                            lit.addHours(
+                                litDeckData[index].name, totalLaborHours);
+                            lit.addLaborCosts(
+                                litDeckData[index].name, totalLaborCost);
+                            lit.addMaterialCosts(
+                                litDeckData[index].name, totalMaterialCost);
+                            lit.addBudgetSum(
+                                litDeckData[index].name, totalPriceSum);
                           });
                         },
                       ),

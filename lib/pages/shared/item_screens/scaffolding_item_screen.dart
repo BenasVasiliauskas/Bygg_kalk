@@ -149,25 +149,82 @@ class _ScaffoldingScreenState extends State<ScaffoldingScreen> {
                             for (int i = 0;
                                 i < catData.laborHours2.length;
                                 i++) {
-                              catData.laborHours2[i] = catData.laborHours1[i] *
-                                  catData.calculationQuantity;
-                            }
-                            // Update labor cost
-                            for (int i = 0; i < catData.laborCost.length; i++) {
-                              catData.laborCost[i] =
-                                  catData.laborHours2[i] * hourlyRate;
-                            }
-                            // Update material costs
-                            for (int i = 0; i < catData.materials.length; i++) {
-                              catData.materials[i] = catData.material[i] *
-                                  catData.calculationQuantity;
-                            }
-                            // Update total price (labor + materials)
-                            for (int i = 0;
-                                i < catData.totalPrice.length;
-                                i++) {
-                              catData.totalPrice[i] =
-                                  catData.materials[i] + catData.laborCost[i];
+                              //
+                              norwScaffoldingData[index].laborHours2[i] =
+                                  norwScaffoldingData[index].laborHours1[i] *
+                                      norwScaffoldingData[index]
+                                          .calculationQuantity;
+                              //
+                              polScaffoldingData[index].laborHours2[i] =
+                                  polScaffoldingData[index].laborHours1[i] *
+                                      polScaffoldingData[index]
+                                          .calculationQuantity;
+                              //
+                              litScaffoldingData[index].laborHours2[i] =
+                                  litScaffoldingData[index].laborHours1[i] *
+                                      litScaffoldingData[index]
+                                          .calculationQuantity;
+                              //
+                              scaffoldingData[index].laborHours2[i] =
+                                  scaffoldingData[index].laborHours1[i] *
+                                      scaffoldingData[index]
+                                          .calculationQuantity;
+                              // Update labor cost
+
+                              norwScaffoldingData[index].laborCost[i] =
+                                  norwScaffoldingData[index].laborHours2[i] *
+                                      hourlyRate;
+
+                              polScaffoldingData[index].laborCost[i] =
+                                  polScaffoldingData[index].laborHours2[i] *
+                                      hourlyRate;
+
+                              litScaffoldingData[index].laborCost[i] =
+                                  litScaffoldingData[index].laborHours2[i] *
+                                      hourlyRate;
+
+                              scaffoldingData[index].laborCost[i] =
+                                  scaffoldingData[index].laborHours2[i] *
+                                      hourlyRate;
+
+                              // Update material costs
+
+                              norwScaffoldingData[index].materials[i] =
+                                  norwScaffoldingData[index].material[i] *
+                                      norwScaffoldingData[index]
+                                          .calculationQuantity;
+
+                              polScaffoldingData[index].materials[i] =
+                                  polScaffoldingData[index].material[i] *
+                                      polScaffoldingData[index]
+                                          .calculationQuantity;
+
+                              litScaffoldingData[index].materials[i] =
+                                  litScaffoldingData[index].material[i] *
+                                      litScaffoldingData[index]
+                                          .calculationQuantity;
+
+                              scaffoldingData[index].materials[i] =
+                                  scaffoldingData[index].material[i] *
+                                      scaffoldingData[index]
+                                          .calculationQuantity;
+                              // Update total price (labor + materials)
+
+                              norwScaffoldingData[index].totalPrice[i] =
+                                  norwScaffoldingData[index].materials[i] +
+                                      norwScaffoldingData[index].laborCost[i];
+
+                              polScaffoldingData[index].totalPrice[i] =
+                                  polScaffoldingData[index].materials[i] +
+                                      polScaffoldingData[index].laborCost[i];
+
+                              litScaffoldingData[index].totalPrice[i] =
+                                  litScaffoldingData[index].materials[i] +
+                                      litScaffoldingData[index].laborCost[i];
+
+                              scaffoldingData[index].totalPrice[i] =
+                                  scaffoldingData[index].materials[i] +
+                                      scaffoldingData[index].laborCost[i];
                             }
                             totalLaborHours = catData.laborHours2.fold(
                                 0, (prev, laborHours) => prev + laborHours);
@@ -181,31 +238,42 @@ class _ScaffoldingScreenState extends State<ScaffoldingScreen> {
                             totalPriceSum = catData.totalPrice.fold(
                                 0, (prev, totalPrice) => prev + totalPrice);
                             // Update the total budget
-                            if (languageEnglish) {
-                              eng.addHours(catData.name, totalLaborHours);
-                              eng.addLaborCosts(catData.name, totalLaborCost);
-                              eng.addMaterialCosts(
-                                  catData.name, totalMaterialCost);
-                              eng.addBudgetSum(catData.name, totalPriceSum);
-                            } else if (languageNorwegian) {
-                              norw.addHours(catData.name, totalLaborHours);
-                              norw.addLaborCosts(catData.name, totalLaborCost);
-                              norw.addMaterialCosts(
-                                  catData.name, totalMaterialCost);
-                              norw.addBudgetSum(catData.name, totalPriceSum);
-                            } else if (languagePolish) {
-                              pol.addHours(catData.name, totalLaborHours);
-                              pol.addLaborCosts(catData.name, totalLaborCost);
-                              pol.addMaterialCosts(
-                                  catData.name, totalMaterialCost);
-                              pol.addBudgetSum(catData.name, totalPriceSum);
-                            } else {
-                              lit.addHours(catData.name, totalLaborHours);
-                              lit.addLaborCosts(catData.name, totalLaborCost);
-                              lit.addMaterialCosts(
-                                  catData.name, totalMaterialCost);
-                              lit.addBudgetSum(catData.name, totalPriceSum);
-                            }
+                            eng.addHours(
+                                scaffoldingData[index].name, totalLaborHours);
+                            eng.addLaborCosts(
+                                scaffoldingData[index].name, totalLaborCost);
+                            eng.addMaterialCosts(
+                                scaffoldingData[index].name, totalMaterialCost);
+                            eng.addBudgetSum(
+                                scaffoldingData[index].name, totalPriceSum);
+
+                            norw.addHours(norwScaffoldingData[index].name,
+                                totalLaborHours);
+                            norw.addLaborCosts(norwScaffoldingData[index].name,
+                                totalLaborCost);
+                            norw.addMaterialCosts(
+                                norwScaffoldingData[index].name,
+                                totalMaterialCost);
+                            norw.addBudgetSum(
+                                norwScaffoldingData[index].name, totalPriceSum);
+
+                            pol.addHours(polScaffoldingData[index].name,
+                                totalLaborHours);
+                            pol.addLaborCosts(
+                                polScaffoldingData[index].name, totalLaborCost);
+                            pol.addMaterialCosts(polScaffoldingData[index].name,
+                                totalMaterialCost);
+                            pol.addBudgetSum(
+                                polScaffoldingData[index].name, totalPriceSum);
+
+                            lit.addHours(litScaffoldingData[index].name,
+                                totalLaborHours);
+                            lit.addLaborCosts(
+                                litScaffoldingData[index].name, totalLaborCost);
+                            lit.addMaterialCosts(litScaffoldingData[index].name,
+                                totalMaterialCost);
+                            lit.addBudgetSum(
+                                litScaffoldingData[index].name, totalPriceSum);
                           });
                         },
                       ),

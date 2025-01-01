@@ -153,30 +153,82 @@ class _HullRoofingScreenState extends State<HullRoofingScreen> {
                               for (int i = 0;
                                   i < catData.laborHours2.length;
                                   i++) {
-                                catData.laborHours2[i] =
-                                    catData.laborHours1[i] *
-                                        catData.calculationQuantity;
-                              }
-                              // Update labor cost
-                              for (int i = 0;
-                                  i < catData.laborCost.length;
-                                  i++) {
-                                catData.laborCost[i] =
-                                    catData.laborHours2[i] * hourlyRate;
-                              }
-                              // Update material costs
-                              for (int i = 0;
-                                  i < catData.materials.length;
-                                  i++) {
-                                catData.materials[i] = catData.material[i] *
-                                    catData.calculationQuantity;
-                              }
-                              // Update total price (labor + materials)
-                              for (int i = 0;
-                                  i < catData.totalPrice.length;
-                                  i++) {
-                                catData.totalPrice[i] =
-                                    catData.materials[i] + catData.laborCost[i];
+                                //
+                                norwHullRoofingData[index].laborHours2[i] =
+                                    norwHullRoofingData[index].laborHours1[i] *
+                                        norwHullRoofingData[index]
+                                            .calculationQuantity;
+                                //
+                                polHullRoofingData[index].laborHours2[i] =
+                                    polHullRoofingData[index].laborHours1[i] *
+                                        polHullRoofingData[index]
+                                            .calculationQuantity;
+                                //
+                                litHullRoofingData[index].laborHours2[i] =
+                                    litHullRoofingData[index].laborHours1[i] *
+                                        litHullRoofingData[index]
+                                            .calculationQuantity;
+                                //
+                                hullRoofingData[index].laborHours2[i] =
+                                    hullRoofingData[index].laborHours1[i] *
+                                        hullRoofingData[index]
+                                            .calculationQuantity;
+                                // Update labor cost
+
+                                norwHullRoofingData[index].laborCost[i] =
+                                    norwHullRoofingData[index].laborHours2[i] *
+                                        hourlyRate;
+
+                                polHullRoofingData[index].laborCost[i] =
+                                    polHullRoofingData[index].laborHours2[i] *
+                                        hourlyRate;
+
+                                litHullRoofingData[index].laborCost[i] =
+                                    litHullRoofingData[index].laborHours2[i] *
+                                        hourlyRate;
+
+                                hullRoofingData[index].laborCost[i] =
+                                    hullRoofingData[index].laborHours2[i] *
+                                        hourlyRate;
+
+                                // Update material costs
+
+                                norwHullRoofingData[index].materials[i] =
+                                    norwHullRoofingData[index].material[i] *
+                                        norwHullRoofingData[index]
+                                            .calculationQuantity;
+
+                                polHullRoofingData[index].materials[i] =
+                                    polHullRoofingData[index].material[i] *
+                                        polHullRoofingData[index]
+                                            .calculationQuantity;
+
+                                litHullRoofingData[index].materials[i] =
+                                    litHullRoofingData[index].material[i] *
+                                        litHullRoofingData[index]
+                                            .calculationQuantity;
+
+                                hullRoofingData[index].materials[i] =
+                                    hullRoofingData[index].material[i] *
+                                        hullRoofingData[index]
+                                            .calculationQuantity;
+                                // Update total price (labor + materials)
+
+                                norwHullRoofingData[index].totalPrice[i] =
+                                    norwHullRoofingData[index].materials[i] +
+                                        norwHullRoofingData[index].laborCost[i];
+
+                                polHullRoofingData[index].totalPrice[i] =
+                                    polHullRoofingData[index].materials[i] +
+                                        polHullRoofingData[index].laborCost[i];
+
+                                litHullRoofingData[index].totalPrice[i] =
+                                    litHullRoofingData[index].materials[i] +
+                                        litHullRoofingData[index].laborCost[i];
+
+                                hullRoofingData[index].totalPrice[i] =
+                                    hullRoofingData[index].materials[i] +
+                                        hullRoofingData[index].laborCost[i];
                               }
                               totalLaborHours = catData.laborHours2.fold(
                                   0, (prev, laborHours) => prev + laborHours);
@@ -190,32 +242,45 @@ class _HullRoofingScreenState extends State<HullRoofingScreen> {
                               totalPriceSum = catData.totalPrice.fold(
                                   0, (prev, totalPrice) => prev + totalPrice);
                               // Update the total budget
-                              if (languageEnglish) {
-                                eng.addHours(catData.name, totalLaborHours);
-                                eng.addLaborCosts(catData.name, totalLaborCost);
-                                eng.addMaterialCosts(
-                                    catData.name, totalMaterialCost);
-                                eng.addBudgetSum(catData.name, totalPriceSum);
-                              } else if (languageNorwegian) {
-                                norw.addHours(catData.name, totalLaborHours);
-                                norw.addLaborCosts(
-                                    catData.name, totalLaborCost);
-                                norw.addMaterialCosts(
-                                    catData.name, totalMaterialCost);
-                                norw.addBudgetSum(catData.name, totalPriceSum);
-                              } else if (languagePolish) {
-                                pol.addHours(catData.name, totalLaborHours);
-                                pol.addLaborCosts(catData.name, totalLaborCost);
-                                pol.addMaterialCosts(
-                                    catData.name, totalMaterialCost);
-                                pol.addBudgetSum(catData.name, totalPriceSum);
-                              } else {
-                                lit.addHours(catData.name, totalLaborHours);
-                                lit.addLaborCosts(catData.name, totalLaborCost);
-                                lit.addMaterialCosts(
-                                    catData.name, totalMaterialCost);
-                                lit.addBudgetSum(catData.name, totalPriceSum);
-                              }
+                              eng.addHours(
+                                  hullRoofingData[index].name, totalLaborHours);
+                              eng.addLaborCosts(
+                                  hullRoofingData[index].name, totalLaborCost);
+                              eng.addMaterialCosts(hullRoofingData[index].name,
+                                  totalMaterialCost);
+                              eng.addBudgetSum(
+                                  hullRoofingData[index].name, totalPriceSum);
+
+                              norw.addHours(norwHullRoofingData[index].name,
+                                  totalLaborHours);
+                              norw.addLaborCosts(
+                                  norwHullRoofingData[index].name,
+                                  totalLaborCost);
+                              norw.addMaterialCosts(
+                                  norwHullRoofingData[index].name,
+                                  totalMaterialCost);
+                              norw.addBudgetSum(norwHullRoofingData[index].name,
+                                  totalPriceSum);
+
+                              pol.addHours(polHullRoofingData[index].name,
+                                  totalLaborHours);
+                              pol.addLaborCosts(polHullRoofingData[index].name,
+                                  totalLaborCost);
+                              pol.addMaterialCosts(
+                                  polHullRoofingData[index].name,
+                                  totalMaterialCost);
+                              pol.addBudgetSum(polHullRoofingData[index].name,
+                                  totalPriceSum);
+
+                              lit.addHours(litHullRoofingData[index].name,
+                                  totalLaborHours);
+                              lit.addLaborCosts(litHullRoofingData[index].name,
+                                  totalLaborCost);
+                              lit.addMaterialCosts(
+                                  litHullRoofingData[index].name,
+                                  totalMaterialCost);
+                              lit.addBudgetSum(litHullRoofingData[index].name,
+                                  totalPriceSum);
                             });
                           },
                         ),

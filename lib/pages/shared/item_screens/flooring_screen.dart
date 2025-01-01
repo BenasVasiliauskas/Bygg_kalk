@@ -159,25 +159,80 @@ class _FlooringSectionsState extends State<FlooringScreen> {
                             for (int i = 0;
                                 i < catData.laborHours2.length;
                                 i++) {
-                              catData.laborHours2[i] = catData.laborHours1[i] *
-                                  catData.calculationQuantity;
-                            }
-                            // Update labor cost
-                            for (int i = 0; i < catData.laborCost.length; i++) {
-                              catData.laborCost[i] =
-                                  catData.laborHours2[i] * hourlyRate;
-                            }
-                            // Update material costs
-                            for (int i = 0; i < catData.materials.length; i++) {
-                              catData.materials[i] = catData.material[i] *
-                                  catData.calculationQuantity;
-                            }
-                            // Update total price (labor + materials)
-                            for (int i = 0;
-                                i < catData.totalPrice.length;
-                                i++) {
-                              catData.totalPrice[i] =
-                                  catData.materials[i] + catData.laborCost[i];
+                              //
+                              norwFlooringData[index].laborHours2[i] =
+                                  norwFlooringData[index].laborHours1[i] *
+                                      norwFlooringData[index]
+                                          .calculationQuantity;
+                              //
+                              polFlooringData[index].laborHours2[i] =
+                                  polFlooringData[index].laborHours1[i] *
+                                      polFlooringData[index]
+                                          .calculationQuantity;
+                              //
+                              litFlooringData[index].laborHours2[i] =
+                                  litFlooringData[index].laborHours1[i] *
+                                      litFlooringData[index]
+                                          .calculationQuantity;
+                              //
+                              flooringData[index].laborHours2[i] =
+                                  flooringData[index].laborHours1[i] *
+                                      flooringData[index].calculationQuantity;
+                              // Update labor cost
+
+                              norwFlooringData[index].laborCost[i] =
+                                  norwFlooringData[index].laborHours2[i] *
+                                      hourlyRate;
+
+                              polFlooringData[index].laborCost[i] =
+                                  polFlooringData[index].laborHours2[i] *
+                                      hourlyRate;
+
+                              litFlooringData[index].laborCost[i] =
+                                  litFlooringData[index].laborHours2[i] *
+                                      hourlyRate;
+
+                              flooringData[index].laborCost[i] =
+                                  flooringData[index].laborHours2[i] *
+                                      hourlyRate;
+
+                              // Update material costs
+
+                              norwFlooringData[index].materials[i] =
+                                  norwFlooringData[index].material[i] *
+                                      norwFlooringData[index]
+                                          .calculationQuantity;
+
+                              polFlooringData[index].materials[i] =
+                                  polFlooringData[index].material[i] *
+                                      polFlooringData[index]
+                                          .calculationQuantity;
+
+                              litFlooringData[index].materials[i] =
+                                  litFlooringData[index].material[i] *
+                                      litFlooringData[index]
+                                          .calculationQuantity;
+
+                              flooringData[index].materials[i] =
+                                  flooringData[index].material[i] *
+                                      flooringData[index].calculationQuantity;
+                              // Update total price (labor + materials)
+
+                              norwFlooringData[index].totalPrice[i] =
+                                  norwFlooringData[index].materials[i] +
+                                      norwFlooringData[index].laborCost[i];
+
+                              polFlooringData[index].totalPrice[i] =
+                                  polFlooringData[index].materials[i] +
+                                      polFlooringData[index].laborCost[i];
+
+                              litFlooringData[index].totalPrice[i] =
+                                  litFlooringData[index].materials[i] +
+                                      litFlooringData[index].laborCost[i];
+
+                              flooringData[index].totalPrice[i] =
+                                  flooringData[index].materials[i] +
+                                      flooringData[index].laborCost[i];
                             }
                             totalLaborHours = catData.laborHours2.fold(
                                 0, (prev, laborHours) => prev + laborHours);
@@ -191,31 +246,41 @@ class _FlooringSectionsState extends State<FlooringScreen> {
                             totalPriceSum = catData.totalPrice.fold(
                                 0, (prev, totalPrice) => prev + totalPrice);
                             // Update the total budget
-                            if (languageEnglish) {
-                              eng.addHours(catData.name, totalLaborHours);
-                              eng.addLaborCosts(catData.name, totalLaborCost);
-                              eng.addMaterialCosts(
-                                  catData.name, totalMaterialCost);
-                              eng.addBudgetSum(catData.name, totalPriceSum);
-                            } else if (languageNorwegian) {
-                              norw.addHours(catData.name, totalLaborHours);
-                              norw.addLaborCosts(catData.name, totalLaborCost);
-                              norw.addMaterialCosts(
-                                  catData.name, totalMaterialCost);
-                              norw.addBudgetSum(catData.name, totalPriceSum);
-                            } else if (languagePolish) {
-                              pol.addHours(catData.name, totalLaborHours);
-                              pol.addLaborCosts(catData.name, totalLaborCost);
-                              pol.addMaterialCosts(
-                                  catData.name, totalMaterialCost);
-                              pol.addBudgetSum(catData.name, totalPriceSum);
-                            } else {
-                              lit.addHours(catData.name, totalLaborHours);
-                              lit.addLaborCosts(catData.name, totalLaborCost);
-                              lit.addMaterialCosts(
-                                  catData.name, totalMaterialCost);
-                              lit.addBudgetSum(catData.name, totalPriceSum);
-                            }
+                            eng.addHours(
+                                flooringData[index].name, totalLaborHours);
+                            eng.addLaborCosts(
+                                flooringData[index].name, totalLaborCost);
+                            eng.addMaterialCosts(
+                                flooringData[index].name, totalMaterialCost);
+                            eng.addBudgetSum(
+                                flooringData[index].name, totalPriceSum);
+
+                            norw.addHours(
+                                norwFlooringData[index].name, totalLaborHours);
+                            norw.addLaborCosts(
+                                norwFlooringData[index].name, totalLaborCost);
+                            norw.addMaterialCosts(norwFlooringData[index].name,
+                                totalMaterialCost);
+                            norw.addBudgetSum(
+                                norwFlooringData[index].name, totalPriceSum);
+
+                            pol.addHours(
+                                polFlooringData[index].name, totalLaborHours);
+                            pol.addLaborCosts(
+                                polFlooringData[index].name, totalLaborCost);
+                            pol.addMaterialCosts(
+                                polFlooringData[index].name, totalMaterialCost);
+                            pol.addBudgetSum(
+                                polFlooringData[index].name, totalPriceSum);
+
+                            lit.addHours(
+                                litFlooringData[index].name, totalLaborHours);
+                            lit.addLaborCosts(
+                                litFlooringData[index].name, totalLaborCost);
+                            lit.addMaterialCosts(
+                                litFlooringData[index].name, totalMaterialCost);
+                            lit.addBudgetSum(
+                                litFlooringData[index].name, totalPriceSum);
                           });
                         },
                       ),

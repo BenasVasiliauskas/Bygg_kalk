@@ -152,25 +152,76 @@ class _TerraceScreenState extends State<TerraceScreen> {
                             for (int i = 0;
                                 i < catData.laborHours2.length;
                                 i++) {
-                              catData.laborHours2[i] = catData.laborHours1[i] *
-                                  catData.calculationQuantity;
-                            }
-                            // Update labor cost
-                            for (int i = 0; i < catData.laborCost.length; i++) {
-                              catData.laborCost[i] =
-                                  catData.laborHours2[i] * hourlyRate;
-                            }
-                            // Update material costs
-                            for (int i = 0; i < catData.materials.length; i++) {
-                              catData.materials[i] = catData.material[i] *
-                                  catData.calculationQuantity;
-                            }
-                            // Update total price (labor + materials)
-                            for (int i = 0;
-                                i < catData.totalPrice.length;
-                                i++) {
-                              catData.totalPrice[i] =
-                                  catData.materials[i] + catData.laborCost[i];
+                              //
+                              norwTerraceData[index].laborHours2[i] =
+                                  norwTerraceData[index].laborHours1[i] *
+                                      norwTerraceData[index]
+                                          .calculationQuantity;
+                              //
+                              polTerraceData[index].laborHours2[i] =
+                                  polTerraceData[index].laborHours1[i] *
+                                      polTerraceData[index].calculationQuantity;
+                              //
+                              litTerraceData[index].laborHours2[i] =
+                                  litTerraceData[index].laborHours1[i] *
+                                      litTerraceData[index].calculationQuantity;
+                              //
+                              terraceData[index].laborHours2[i] =
+                                  terraceData[index].laborHours1[i] *
+                                      terraceData[index].calculationQuantity;
+                              // Update labor cost
+
+                              norwTerraceData[index].laborCost[i] =
+                                  norwTerraceData[index].laborHours2[i] *
+                                      hourlyRate;
+
+                              polTerraceData[index].laborCost[i] =
+                                  polTerraceData[index].laborHours2[i] *
+                                      hourlyRate;
+
+                              litTerraceData[index].laborCost[i] =
+                                  litTerraceData[index].laborHours2[i] *
+                                      hourlyRate;
+
+                              terraceData[index].laborCost[i] =
+                                  terraceData[index].laborHours2[i] *
+                                      hourlyRate;
+
+                              // Update material costs
+
+                              norwTerraceData[index].materials[i] =
+                                  norwTerraceData[index].material[i] *
+                                      norwTerraceData[index]
+                                          .calculationQuantity;
+
+                              polTerraceData[index].materials[i] =
+                                  polTerraceData[index].material[i] *
+                                      polTerraceData[index].calculationQuantity;
+
+                              litTerraceData[index].materials[i] =
+                                  litTerraceData[index].material[i] *
+                                      litTerraceData[index].calculationQuantity;
+
+                              terraceData[index].materials[i] =
+                                  terraceData[index].material[i] *
+                                      terraceData[index].calculationQuantity;
+                              // Update total price (labor + materials)
+
+                              norwTerraceData[index].totalPrice[i] =
+                                  norwTerraceData[index].materials[i] +
+                                      norwTerraceData[index].laborCost[i];
+
+                              polTerraceData[index].totalPrice[i] =
+                                  polTerraceData[index].materials[i] +
+                                      polTerraceData[index].laborCost[i];
+
+                              litTerraceData[index].totalPrice[i] =
+                                  litTerraceData[index].materials[i] +
+                                      litTerraceData[index].laborCost[i];
+
+                              terraceData[index].totalPrice[i] =
+                                  terraceData[index].materials[i] +
+                                      terraceData[index].laborCost[i];
                             }
                             totalLaborHours = catData.laborHours2.fold(
                                 0, (prev, laborHours) => prev + laborHours);
@@ -184,31 +235,41 @@ class _TerraceScreenState extends State<TerraceScreen> {
                             totalPriceSum = catData.totalPrice.fold(
                                 0, (prev, totalPrice) => prev + totalPrice);
                             // Update the total budget
-                            if (languageEnglish) {
-                              eng.addHours(catData.name, totalLaborHours);
-                              eng.addLaborCosts(catData.name, totalLaborCost);
-                              eng.addMaterialCosts(
-                                  catData.name, totalMaterialCost);
-                              eng.addBudgetSum(catData.name, totalPriceSum);
-                            } else if (languageNorwegian) {
-                              norw.addHours(catData.name, totalLaborHours);
-                              norw.addLaborCosts(catData.name, totalLaborCost);
-                              norw.addMaterialCosts(
-                                  catData.name, totalMaterialCost);
-                              norw.addBudgetSum(catData.name, totalPriceSum);
-                            } else if (languagePolish) {
-                              pol.addHours(catData.name, totalLaborHours);
-                              pol.addLaborCosts(catData.name, totalLaborCost);
-                              pol.addMaterialCosts(
-                                  catData.name, totalMaterialCost);
-                              pol.addBudgetSum(catData.name, totalPriceSum);
-                            } else {
-                              lit.addHours(catData.name, totalLaborHours);
-                              lit.addLaborCosts(catData.name, totalLaborCost);
-                              lit.addMaterialCosts(
-                                  catData.name, totalMaterialCost);
-                              lit.addBudgetSum(catData.name, totalPriceSum);
-                            }
+                            eng.addHours(
+                                terraceData[index].name, totalLaborHours);
+                            eng.addLaborCosts(
+                                terraceData[index].name, totalLaborCost);
+                            eng.addMaterialCosts(
+                                terraceData[index].name, totalMaterialCost);
+                            eng.addBudgetSum(
+                                terraceData[index].name, totalPriceSum);
+
+                            norw.addHours(
+                                norwTerraceData[index].name, totalLaborHours);
+                            norw.addLaborCosts(
+                                norwTerraceData[index].name, totalLaborCost);
+                            norw.addMaterialCosts(
+                                norwTerraceData[index].name, totalMaterialCost);
+                            norw.addBudgetSum(
+                                norwTerraceData[index].name, totalPriceSum);
+
+                            pol.addHours(
+                                polTerraceData[index].name, totalLaborHours);
+                            pol.addLaborCosts(
+                                polTerraceData[index].name, totalLaborCost);
+                            pol.addMaterialCosts(
+                                polTerraceData[index].name, totalMaterialCost);
+                            pol.addBudgetSum(
+                                polTerraceData[index].name, totalPriceSum);
+
+                            lit.addHours(
+                                litTerraceData[index].name, totalLaborHours);
+                            lit.addLaborCosts(
+                                litTerraceData[index].name, totalLaborCost);
+                            lit.addMaterialCosts(
+                                litTerraceData[index].name, totalMaterialCost);
+                            lit.addBudgetSum(
+                                litTerraceData[index].name, totalPriceSum);
                           });
                         },
                       ),

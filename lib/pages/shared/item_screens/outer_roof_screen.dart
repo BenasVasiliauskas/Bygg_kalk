@@ -159,25 +159,80 @@ class _OuterRoofScreenState extends State<OuterRoofScreen> {
                             for (int i = 0;
                                 i < catData.laborHours2.length;
                                 i++) {
-                              catData.laborHours2[i] = catData.laborHours1[i] *
-                                  catData.calculationQuantity;
-                            }
-                            // Update labor cost
-                            for (int i = 0; i < catData.laborCost.length; i++) {
-                              catData.laborCost[i] =
-                                  catData.laborHours2[i] * hourlyRate;
-                            }
-                            // Update material costs
-                            for (int i = 0; i < catData.materials.length; i++) {
-                              catData.materials[i] = catData.material[i] *
-                                  catData.calculationQuantity;
-                            }
-                            // Update total price (labor + materials)
-                            for (int i = 0;
-                                i < catData.totalPrice.length;
-                                i++) {
-                              catData.totalPrice[i] =
-                                  catData.materials[i] + catData.laborCost[i];
+                              //
+                              norwOuterRoofData[index].laborHours2[i] =
+                                  norwOuterRoofData[index].laborHours1[i] *
+                                      norwOuterRoofData[index]
+                                          .calculationQuantity;
+                              //
+                              polOuterRoofData[index].laborHours2[i] =
+                                  polOuterRoofData[index].laborHours1[i] *
+                                      polOuterRoofData[index]
+                                          .calculationQuantity;
+                              //
+                              litOuterRoofData[index].laborHours2[i] =
+                                  litOuterRoofData[index].laborHours1[i] *
+                                      litOuterRoofData[index]
+                                          .calculationQuantity;
+                              //
+                              outerRoofData[index].laborHours2[i] =
+                                  outerRoofData[index].laborHours1[i] *
+                                      outerRoofData[index].calculationQuantity;
+                              // Update labor cost
+
+                              norwOuterRoofData[index].laborCost[i] =
+                                  norwOuterRoofData[index].laborHours2[i] *
+                                      hourlyRate;
+
+                              polOuterRoofData[index].laborCost[i] =
+                                  polOuterRoofData[index].laborHours2[i] *
+                                      hourlyRate;
+
+                              litOuterRoofData[index].laborCost[i] =
+                                  litOuterRoofData[index].laborHours2[i] *
+                                      hourlyRate;
+
+                              outerRoofData[index].laborCost[i] =
+                                  outerRoofData[index].laborHours2[i] *
+                                      hourlyRate;
+
+                              // Update material costs
+
+                              norwOuterRoofData[index].materials[i] =
+                                  norwOuterRoofData[index].material[i] *
+                                      norwOuterRoofData[index]
+                                          .calculationQuantity;
+
+                              polOuterRoofData[index].materials[i] =
+                                  polOuterRoofData[index].material[i] *
+                                      polOuterRoofData[index]
+                                          .calculationQuantity;
+
+                              litOuterRoofData[index].materials[i] =
+                                  litOuterRoofData[index].material[i] *
+                                      litOuterRoofData[index]
+                                          .calculationQuantity;
+
+                              outerRoofData[index].materials[i] =
+                                  outerRoofData[index].material[i] *
+                                      outerRoofData[index].calculationQuantity;
+                              // Update total price (labor + materials)
+
+                              norwOuterRoofData[index].totalPrice[i] =
+                                  norwOuterRoofData[index].materials[i] +
+                                      norwOuterRoofData[index].laborCost[i];
+
+                              polOuterRoofData[index].totalPrice[i] =
+                                  polOuterRoofData[index].materials[i] +
+                                      polOuterRoofData[index].laborCost[i];
+
+                              litOuterRoofData[index].totalPrice[i] =
+                                  litOuterRoofData[index].materials[i] +
+                                      litOuterRoofData[index].laborCost[i];
+
+                              outerRoofData[index].totalPrice[i] =
+                                  outerRoofData[index].materials[i] +
+                                      outerRoofData[index].laborCost[i];
                             }
                             totalLaborHours = catData.laborHours2.fold(
                                 0, (prev, laborHours) => prev + laborHours);
@@ -191,31 +246,41 @@ class _OuterRoofScreenState extends State<OuterRoofScreen> {
                             totalPriceSum = catData.totalPrice.fold(
                                 0, (prev, totalPrice) => prev + totalPrice);
                             // Update the total budget
-                            if (languageEnglish) {
-                              eng.addHours(catData.name, totalLaborHours);
-                              eng.addLaborCosts(catData.name, totalLaborCost);
-                              eng.addMaterialCosts(
-                                  catData.name, totalMaterialCost);
-                              eng.addBudgetSum(catData.name, totalPriceSum);
-                            } else if (languageNorwegian) {
-                              norw.addHours(catData.name, totalLaborHours);
-                              norw.addLaborCosts(catData.name, totalLaborCost);
-                              norw.addMaterialCosts(
-                                  catData.name, totalMaterialCost);
-                              norw.addBudgetSum(catData.name, totalPriceSum);
-                            } else if (languagePolish) {
-                              pol.addHours(catData.name, totalLaborHours);
-                              pol.addLaborCosts(catData.name, totalLaborCost);
-                              pol.addMaterialCosts(
-                                  catData.name, totalMaterialCost);
-                              pol.addBudgetSum(catData.name, totalPriceSum);
-                            } else {
-                              lit.addHours(catData.name, totalLaborHours);
-                              lit.addLaborCosts(catData.name, totalLaborCost);
-                              lit.addMaterialCosts(
-                                  catData.name, totalMaterialCost);
-                              lit.addBudgetSum(catData.name, totalPriceSum);
-                            }
+                            eng.addHours(
+                                outerRoofData[index].name, totalLaborHours);
+                            eng.addLaborCosts(
+                                outerRoofData[index].name, totalLaborCost);
+                            eng.addMaterialCosts(
+                                outerRoofData[index].name, totalMaterialCost);
+                            eng.addBudgetSum(
+                                outerRoofData[index].name, totalPriceSum);
+
+                            norw.addHours(
+                                norwOuterRoofData[index].name, totalLaborHours);
+                            norw.addLaborCosts(
+                                norwOuterRoofData[index].name, totalLaborCost);
+                            norw.addMaterialCosts(norwOuterRoofData[index].name,
+                                totalMaterialCost);
+                            norw.addBudgetSum(
+                                norwOuterRoofData[index].name, totalPriceSum);
+
+                            pol.addHours(
+                                polOuterRoofData[index].name, totalLaborHours);
+                            pol.addLaborCosts(
+                                polOuterRoofData[index].name, totalLaborCost);
+                            pol.addMaterialCosts(polOuterRoofData[index].name,
+                                totalMaterialCost);
+                            pol.addBudgetSum(
+                                polOuterRoofData[index].name, totalPriceSum);
+
+                            lit.addHours(
+                                litOuterRoofData[index].name, totalLaborHours);
+                            lit.addLaborCosts(
+                                litOuterRoofData[index].name, totalLaborCost);
+                            lit.addMaterialCosts(litOuterRoofData[index].name,
+                                totalMaterialCost);
+                            lit.addBudgetSum(
+                                litOuterRoofData[index].name, totalPriceSum);
                           });
                         },
                       ),
