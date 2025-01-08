@@ -16222,44 +16222,80 @@ final litTerraceData = [
 
 final litInnerStairsData = [
   InnerStairsModel(
-    name: "Laiptai viduryje, trys važiavimai iš eilės",
-    description: [
-      "Angos sijose >4 m²",
-      "Tiesūs balti surenkamieji laiptai, ąžuolo pušies atspalvio",
-    ],
-    unit: [
-      "stk",
-      "stk",
-    ],
-    quantity: [
-      1.00,
-      1.00,
-    ],
-    laborHours1: [
-      1.27,
-      20.14,
-    ],
-    laborHours2: [
-      0.00,
-      0.00,
-    ],
-    laborCost: [
-      0.00,
-      0.00,
-    ],
-    material: [
-      838.42,
-      45000,
-    ],
-    materials: [
-      0.00,
-      0.00,
-    ],
-    totalPrice: [
-      0.00,
-      0.00,
-    ],
-  )
+      name: "Vidaus laiptai, tiesūs, pušis su ąžuolo tonu.",
+      description: [
+        'Angos formavymas >4 m².',
+        'Tiesūs laiptai, balti gruntuoti, pušis su ąžuolo tonu.'
+      ],
+      unit: ['vnt', 'vnt'],
+      quantity: [1, 1],
+      laborHours1: [1.27, 20.14],
+      laborHours2: [1.27, 20.14],
+      laborCost: [698.5, 11077],
+      material: [914.63, 48000],
+      materials: [914.63, 48000],
+      totalPrice: [1613.13, 59077],
+      constructionType: "New Construction"),
+  InnerStairsModel(
+      name: "Vidaus laiptų montavimas, 180° sraigtiniai laiptai.",
+      description: [
+        'Angos formavymas >4 m².',
+        '180° sraigtiniai laiptai, lakuota pušis.'
+      ],
+      unit: ['vnt', 'vnt'],
+      quantity: [2.7, 1],
+      laborHours1: [3.42, 17.13],
+      laborHours2: [0, 0],
+      laborCost: [0, 0],
+      material: [2263.74, 59517.5],
+      materials: [0, 0],
+      totalPrice: [0, 0],
+      constructionType: "New Construction"),
+  InnerStairsModel(
+      name: "Vidaus laiptai, dviejų pakopų (dviejų eilių), mediniai.",
+      description: [
+        'Angos formavymas >4 m².',
+        'Dviejų pakopų mediniai laiptai, lakuota pušis.'
+      ],
+      unit: ['vnt', 'vnt'],
+      quantity: [1, 1],
+      laborHours1: [1.27, 17.12],
+      laborHours2: [0, 0],
+      laborCost: [0, 0],
+      material: [914.63, 51250],
+      materials: [0, 0],
+      totalPrice: [0, 0],
+      constructionType: "New Construction"),
+  InnerStairsModel(
+      name: "Vidaus laiptai, kampiniai laiptai.",
+      description: [
+        'Angos formavymas >4 m².',
+        '90° kampiniai laiptai su aikštele, lakuota pušis.'
+      ],
+      unit: ['vnt', 'vnt'],
+      quantity: [2.7, 1],
+      laborHours1: [3.42, 8.3],
+      laborHours2: [0, 0],
+      laborCost: [0, 0],
+      material: [2263.74, 50207],
+      materials: [0, 0],
+      totalPrice: [0, 0],
+      constructionType: "New Construction"),
+  InnerStairsModel(
+      name: "Vidaus laiptų montavimas, sraigtiniai mediniai laiptai.",
+      description: [
+        'Angos formavymas >4 m².',
+        '180° sraigtiniai laiptai, lakuota pušis.'
+      ],
+      unit: ['vnt', 'vnt'],
+      quantity: [2.7, 1],
+      laborHours1: [3.42, 9.2],
+      laborHours2: [0, 0],
+      laborCost: [0, 0],
+      material: [2469.5, 59517.5],
+      materials: [0, 0],
+      totalPrice: [0, 0],
+      constructionType: "New Construction"),
 ];
 
 final litHullRoofingData = [
