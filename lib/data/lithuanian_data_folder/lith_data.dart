@@ -26456,36 +26456,227 @@ final litOuterRoofData = [
 
 final litTerraceData = [
   TerraceModel(
-    name: "Nerūdijančio plieno ir stiklo turėklai",
-    description: [
-      "Turėklai, stiklas / nerūdijantis plienas - Icopal",
-    ],
-    unit: [
-      "m",
-    ],
-    quantity: [
-      1,
-    ],
-    laborHours1: [
-      1.32,
-    ],
-    laborHours2: [
-      0,
-    ],
-    laborCost: [
-      0,
-    ],
-    material: [
-      1,
-      145.22,
-    ],
-    materials: [
-      0,
-    ],
-    totalPrice: [
-      0,
-    ],
-  )
+      name: "Nerūdijančio plieno ir stiklo turėklai, aukštis 1,1 m.",
+      description: ['Nerūdijančio plieno ir stiklo turėklai, aukštis 1,1 m.'],
+      unit: ['m'],
+      quantity: [1],
+      laborHours1: [1.16],
+      laborHours2: [1.16],
+      laborCost: [638],
+      material: [3922.06],
+      materials: [3922.06],
+      totalPrice: [4560.0599999999995],
+      constructionType: "New Construction"),
+  TerraceModel(
+      name:
+          "Impregnuotos medienos turėklai, stulpas 48x98 mm, apdaila 19x98 mm, su balkoniniu turėklu.",
+      description: ['Impregnuotos medienos turėklai 19x98 mm.'],
+      unit: ['m'],
+      quantity: [1],
+      laborHours1: [1.51],
+      laborHours2: [1.51],
+      laborCost: [830.5],
+      material: [583.02],
+      materials: [583.02],
+      totalPrice: [1413.52],
+      constructionType: "New Construction"),
+  TerraceModel(
+      name:
+          "Mediniai turėklai – horizontalūs tašeliai 30x48 mm, stulpai 73x73 mm, su balkoniniu turėklu.",
+      description: ['Horizontalūs tašeliai 30x48 mm, impregnuoti.'],
+      unit: ['m'],
+      quantity: [1],
+      laborHours1: [1.16],
+      laborHours2: [1.16],
+      laborCost: [638],
+      material: [555.05],
+      materials: [555.05],
+      totalPrice: [1193.05],
+      constructionType: "New Construction"),
+  TerraceModel(
+      name:
+          "Mediniai turėklai – vertikalūs tašeliai 48x48 mm, stulpai 73x73 mm, su balkoniniu turėklu.",
+      description: ['Vertikalūs tašeliai 48x48 mm, impregnuoti.'],
+      unit: ['m'],
+      quantity: [1],
+      laborHours1: [1.16],
+      laborHours2: [1.16],
+      laborCost: [638],
+      material: [580.37],
+      materials: [580.37],
+      totalPrice: [1218.37],
+      constructionType: "New Construction"),
+  TerraceModel(
+      name:
+          "Vėjo užtvara (Užstojanti sienelė), lentos 19x123 mm iš abiejų pusių, stulpai 73x73 mm, aukštis 1,8 m.",
+      description: [
+        'Uždengta vėjo užtvara, lentos 19x123 mm iš abiejų pusių.',
+        'Išorinė gipso plokštė, 9,5 mm, apdaila.',
+        'Paprastas medinis karkasas 48x78 mm, be tvirtinimo tašų.'
+      ],
+      unit: ['m', 'm²', 'm²'],
+      quantity: [1, 1, 1],
+      laborHours1: [0.68, 0.16, 0.27],
+      laborHours2: [0.68, 0.16, 0.27],
+      laborCost: [374, 88, 148.5],
+      material: [1168.82, 129.53, 180.25],
+      materials: [1168.82, 129.53, 180.25],
+      totalPrice: [1542.82, 217.53, 328.75],
+      constructionType: "New Construction"),
+  TerraceModel(
+      name:
+          "Terasos konstrukcija iš impregnuotos medienos, apie 20 m², sijų rėmas 48x198 mm, terasos grindys 28x95 mm.",
+      description: [
+        'Kolona, impregnuota, sujungta iš 2x48x98 mm.',
+        'Impregnuotas sijų rėmas 48x198 mm, balkonas, c/c 600 mm.',
+        'Terasos grindys, impregnuotos lentos 28x95 mm.',
+        'Impregnuotos medienos turėklai, apdaila 19x98 mm.'
+      ],
+      unit: ['m', 'm²', 'm²', 'm'],
+      quantity: [15, 20, 20, 15],
+      laborHours1: [4.3, 6.1, 10.1, 22.6],
+      laborHours2: [4.3, 6.1, 10.1, 22.6],
+      laborCost: [2365, 3355, 5555, 12430],
+      material: [1253.1, 10382.2, 4021, 9279.9],
+      materials: [1253.1, 10382.2, 4021, 9279.9],
+      totalPrice: [3618.1, 13737.2, 9576, 21709.9],
+      constructionType: "New Construction"),
+  TerraceModel(
+      name:
+          "Terasos konstrukcija iš impregnuotos medienos, apie 20 m², sijų rėmas 48x148 mm, terasos grindys 28x95 mm.",
+      description: [
+        'Kolona, impregnuota, sujungta iš 2x48x98 mm.',
+        'Impregnuotas sijų rėmas 48x148 mm, balkonas, c/c 600 mm.',
+        'Terasos grindys, impregnuotos lentos 28x95 mm.',
+        'Impregnuotos medienos turėklai, apdaila 19x98 mm.'
+      ],
+      unit: ['m', 'm²', 'm²', 'm'],
+      quantity: [15, 20, 20, 15],
+      laborHours1: [4.3, 5.7, 10.1, 22.6],
+      laborHours2: [4.3, 5.7, 10.1, 22.6],
+      laborCost: [2365, 3135, 5555, 12430],
+      material: [1253.1, 9182.2, 4021, 9279.9],
+      materials: [1253.1, 9182.2, 4021, 9279.9],
+      totalPrice: [3618.1, 12317.2, 9576, 21709.9],
+      constructionType: "New Construction"),
+  TerraceModel(
+      name:
+          "Terasos konstrukcija iš impregnuotos medienos, apie 20 m², sijų rėmas 48x198 mm, terasos grindys 28x120 mm.",
+      description: [
+        'Kolonos, impregnuota, sujungta iš 2x48x98 mm.',
+        'Impregnuotas sijų rėmas 48x198 mm., balkonas, c/c 600 mm.',
+        'Terasos grindys, impregnuotos lentos 28x120 mm.',
+        'Impregnuotos medienos turėklai, apdaila 19x98 mm.'
+      ],
+      unit: ['lm', 'm²', 'm²', 'm'],
+      quantity: [15, 20, 20, 15],
+      laborHours1: [4.3, 6.1, 9.1, 22.6],
+      laborHours2: [4.3, 6.1, 9.1, 22.6],
+      laborCost: [2365, 3355, 5005, 12430],
+      material: [1253.1, 10382.2, 4258.4, 9279.9],
+      materials: [1253.1, 10382.2, 4258.4, 9279.9],
+      totalPrice: [3618.1, 13737.2, 9263.4, 21709.9],
+      constructionType: "New Construction"),
+  TerraceModel(
+      name:
+          "Terasos konstrukcija iš impregnuotos medienos, apie 20 m², sijų rėmas 48x148 mm, terasos grindys 28x120 mm.",
+      description: [
+        'Kolonos, impregnuota, sujungta iš 2x48x98 mm.',
+        'Impregnuotas sijų rėmas 48x148 mm., balkonas, c/c 600 mm.',
+        'Terasos grindys, impregnuotos lentos 28x120 mm.',
+        'Impregnuotos medienos turėklai, apdaila 19x98 mm.'
+      ],
+      unit: ['m', 'm²', 'm²', 'm'],
+      quantity: [15, 20, 20, 15],
+      laborHours1: [4.3, 5.7, 9.1, 22.6],
+      laborHours2: [4.3, 5.7, 9.1, 22.6],
+      laborCost: [2365, 3135, 5005, 12430],
+      material: [1253.1, 9182.2, 4258.4, 9279.9],
+      materials: [1253.1, 9182.2, 4258.4, 9279.9],
+      totalPrice: [3618.1, 12317.2, 9263.4, 21709.9],
+      constructionType: "New Construction"),
+  TerraceModel(
+      name:
+          "Terasos konstrukcija su sijų rėmu 48x148 mm, Kebony terasos grindys 28x120 mm, stikliniai turėklai.",
+      description: [
+        'Kolonos, impregnuota, sujungta ir dėžėje uždengta iš 2x48x98 mm.',
+        'Sija 48x148 mm., skirta sijų rėmo tvirtinimui.',
+        'Medinis masyvo sijos laikiklis, impregnuotas, sujungtas iš 2x48x148 mm.',
+        'Impregnuotas sijų rėmas 48x148 mm., c/c 600 mm.',
+        'Kebony terasos grindys 28x120 mm.',
+        'Juodos spalvos skardos apdailos detalės.',
+        'Stikliniai turėklai su nerūdijančio plieno konstrukcija („Icopal“).'
+      ],
+      unit: ['m', 'm', 'm', 'm²', 'm²', 'm', 'm'],
+      quantity: [0.25, 0.25, 0.25, 1, 1, 0.25, 0.25],
+      laborHours1: [0.08, 0.05, 0.03, 0.29, 0.51, 0.05, 0.29],
+      laborHours2: [0.08, 0.05, 0.03, 0.29, 0.51, 0.05, 0.29],
+      laborCost: [44, 27.5, 16.5, 159.5, 280.5, 27.5, 159.5],
+      material: [55.33, 21.06, 37.1, 459.11, 920.75, 24.54, 980.65],
+      materials: [55.33, 21.06, 37.1, 459.11, 920.75, 24.54, 980.65],
+      totalPrice: [99.33, 48.56, 53.6, 618.61, 1201.25, 52.04, 1140.15],
+      constructionType: "New Construction"),
+  TerraceModel(
+      name:
+          "Terasos konstrukcija iš impregnuotos medienos, pušis, su mediniais turėklais.",
+      description: [
+        'Kolonos, impregnuota, sujungta iš 2x48x98 mm.',
+        'Sija 48x148 mm, skirta sijų rėmo tvirtinimui.',
+        'Medinis masyvo sijos laikiklis, impregnuotas, sujungtas iš 2x48x198 mm.',
+        'Impregnuotas sijų rėmas 48x198 mm, c/c 600 mm.',
+        'Terasos grindys, impregnuotos lentos 28x120 mm.',
+        'Juodos spalvos skardos apdailos detalės.',
+        'Impregnuotos medienos turėklai 19x98 mm su balkoniniu turėklu.'
+      ],
+      unit: ['m', 'm', 'm', 'm²', 'm²', 'm', 'm'],
+      quantity: [0.25, 0.25, 0.25, 1, 1, 0.25, 0.25],
+      laborHours1: [0.08, 0.05, 0.03, 0.31, 0.46, 0.05, 0.39],
+      laborHours2: [0.08, 0.05, 0.03, 0.31, 0.46, 0.05, 0.39],
+      laborCost: [44, 27.5, 16.5, 170.5, 253, 27.5, 214.5],
+      material: [20.88, 21.06, 52.47, 519.11, 212.92, 24.54, 154.67],
+      materials: [20.88, 21.06, 52.47, 519.11, 212.92, 24.54, 154.67],
+      totalPrice: [
+        64.88,
+        48.56,
+        68.97,
+        689.61,
+        465.91999999999996,
+        52.04,
+        369.16999999999996
+      ],
+      constructionType: "New Construction"),
+  TerraceModel(
+      name: "Terasos grindys ant žvyro pagrindo, impregnuota pušis, 28x98 mm.",
+      description: [
+        'Grunto sluoksnis <1000 m², storis 100 mm.',
+        'Impregnuotos tvirtinimo lentos 48x123 mm, c/c 600 mm.',
+        'Terasos grindys, impregnuotos lentos 28x95 mm.'
+      ],
+      unit: ['m²', 'm²', 'm²'],
+      quantity: [1, 1, 1],
+      laborHours1: [0.05, 0.34, 0.66],
+      laborHours2: [0.05, 0.34, 0.66],
+      laborCost: [27.5, 187, 363],
+      material: [28.05, 138.5, 201.05],
+      materials: [28.05, 138.5, 201.05],
+      totalPrice: [55.55, 325.5, 564.05],
+      constructionType: "New Construction"),
+  TerraceModel(
+      name: "Terasos grindys ant žvyro pagrindo, Kebony 28x95 mm.",
+      description: [
+        'Grunto sluoksnis <1000 m², storis 100 mm.',
+        'Impregnuotos tvirtinimo lentos 48x123 mm, c/c 600 mm.',
+        'Kebony terasos grindys 28x95 mm.'
+      ],
+      unit: ['m²', 'm²', 'm²'],
+      quantity: [1, 1, 1],
+      laborHours1: [0.05, 0.34, 0.66],
+      laborHours2: [0, 0, 0],
+      laborCost: [0, 0, 0],
+      material: [28.05, 138.5, 469.85],
+      materials: [0, 0, 0],
+      totalPrice: [0, 0, 0],
+      constructionType: "New Construction"),
 ];
 
 final litInnerStairsData = [
