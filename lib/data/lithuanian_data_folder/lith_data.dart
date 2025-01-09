@@ -5909,18 +5909,6 @@ final litDeckData = [
       totalPrice: [0],
       constructionType: "New Construction"),
   DeckModel(
-      name: "Įkainio aprašymas",
-      description: [],
-      unit: [],
-      quantity: [],
-      laborHours1: [],
-      laborHours2: [],
-      laborCost: [],
-      material: [],
-      materials: [],
-      totalPrice: [],
-      constructionType: "Reconstruction"),
-  DeckModel(
       name: "Papildomas izoliavimas tarp sijų, įpučiant 200 mm. izoliacijos.",
       description: [
         'Gręžimas angų izoliacijos įpūtimui. Ø=50 mm.',
@@ -25885,18 +25873,6 @@ final litOuterRoofData = [
       totalPrice: [843.01],
       constructionType: "New Construction"),
   OuterRoofModel(
-      name: "Įkainio aprašymas",
-      description: [],
-      unit: [],
-      quantity: [],
-      laborHours1: [],
-      laborHours2: [],
-      laborCost: [],
-      material: [],
-      materials: [],
-      totalPrice: [],
-      constructionType: "Reconstruction"),
-  OuterRoofModel(
       name:
           "Naujos lubos po stogo gegnėm 48x98 mm., izoliacija, 2 gipso sluoksniai.",
       description: [
@@ -26172,18 +26148,6 @@ final litOuterRoofData = [
       materials: [0, 3444.16, 10458.52, 3724.09],
       totalPrice: [291.5, 5649.66, 12856.52, 5929.59],
       constructionType: "Reconstruction"),
-  OuterRoofModel(
-      name: "Įkainio aprašymas",
-      description: [],
-      unit: [],
-      quantity: [],
-      laborHours1: [],
-      laborHours2: [],
-      laborCost: [],
-      material: [],
-      materials: [],
-      totalPrice: [],
-      constructionType: "Demolition"),
   OuterRoofModel(
       name: "Izoliuoto plokščio stogo su prilidoma danga ir skalda ardymas.",
       description: [
