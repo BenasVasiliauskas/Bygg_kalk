@@ -73,7 +73,7 @@ class _HullRoofingSectionsState extends State<HullRoofingSections> {
             languageEnglish
                 ? "Hull roofing"
                 : languageLithuanian
-                    ? "Korpuso stogo danga"
+                    ? "Angų gręžimas"
                     : languageNorwegian
                         ? "Hultaking"
                         : "Pokrycia dachowe Hull",

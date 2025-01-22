@@ -109,7 +109,7 @@ class _WindowsExteriorDoorSectionsState
                         languageEnglish
                             ? "New Construction"
                             : languageLithuanian
-                                ? "Nauja statyba"
+                                ? "Naujas pastatas"
                                 : languageNorwegian
                                     ? "Nybygg"
                                     : "Nowy budynek",
@@ -126,48 +126,6 @@ class _WindowsExteriorDoorSectionsState
                 )
               ],
             ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                TextButton(
-                  onPressed: () {
-                    Navigator.of(context).pushReplacement(
-                      MaterialPageRoute(
-                        builder: (context) {
-                          return WindowsExteriorDoorScreen(
-                              constructionType: "Demolition");
-                        },
-                      ),
-                    );
-                  },
-                  child: Row(
-                    children: [
-                      Icon(
-                        FontAwesomeIcons.folder,
-                        size: 18,
-                      ),
-                      SizedBox(width: 8),
-                      Text(
-                        languageEnglish
-                            ? "Demolition"
-                            : languageLithuanian
-                                ? "Griovimas"
-                                : languageNorwegian
-                                    ? "Riving"
-                                    : "Rozbiórka",
-                      ),
-                    ],
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Text(norwWindowsExteriorDoors
-                      .where((e) => e.constructionType == "Demolition")
-                      .length
-                      .toString()),
-                )
-              ],
-            )
           ],
         ),
       ),

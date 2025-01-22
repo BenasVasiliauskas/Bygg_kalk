@@ -2,19 +2,19 @@ import 'package:cost_calculator/data/lithuanian_data_folder/lith_data.dart';
 import 'package:cost_calculator/models/waste_data_model.dart';
 
 List<String> calculatedNamesOrder = [
-  "Atraminė sistema", //14
-  "Išorės sienos", //2
-  "Langai ir išorinės durys", //1
+  "Laikančioji konstrukcija", //14
+  "Lauko sienos", //2
+  "Langai, lauko durys", //1
   "Vidaus sienos", //3
   "Vidaus durys", //4
-  "Dangos", //5
-  "Grindys", //6
-  "Išorinis stogas", //7
-  "Terasos ir (arba) turėklai", //8
+  "Perdangos", //5
+  "Grindų danga", //6
+  "Stogas", //7
+  "Terasos ir turėklai", //8
   "Vidiniai laiptai", //9
-  "Korpuso stogo danga", //10
+  "Angų gręžimas", //10
   "Pastoliai", //11
-  "Atliekų tvarkymas", //12
+  "Atliekų išvežimas", //12
   "Iš viso", //13
 ];
 

@@ -62,43 +62,55 @@ class _NorwBudgetScreenState extends State<NorwBudgetScreen> {
               Text('Budsjettskjermen'),
               Padding(
                 padding: const EdgeInsets.all(12.0),
-                child: TextButton(
-                  onPressed: () async {
-                    FilePickerResult? result =
-                        await FilePicker.platform.pickFiles(
-                      type: FileType.custom,
-                      allowedExtensions: ["json"],
-                    );
-                    if (result != null) {
-                      PlatformFile file = result.files.first;
-                      final fileName = file.name;
+                child: Container(
+                  decoration: BoxDecoration(
+                    color: Colors.lightBlueAccent,
+                    borderRadius: BorderRadius.circular(
+                        12), // Adjust the corner radius as needed
+                  ),
+                  child: TextButton(
+                    onPressed: () async {
+                      FilePickerResult? result =
+                          await FilePicker.platform.pickFiles(
+                        type: FileType.custom,
+                        allowedExtensions: ["json"],
+                      );
+                      if (result != null) {
+                        PlatformFile file = result.files.first;
+                        final fileName = file.name;
 
-                      var data = await readJsonFileSelected(fileName);
+                        var data = await readJsonFileSelected(fileName);
 
-                      await norwLoadProject(fileName, data, emptyDeckModel);
-                      await norwLoadProject(fileName, data, emptyFlooringModel);
-                      await norwLoadProject(
-                          fileName, data, emptyInnerDoorModel);
-                      await norwLoadProject(
-                          fileName, data, emptyInnerStairsModel);
-                      await norwLoadProject(
-                          fileName, data, emptyInnerWallModel);
-                      await norwLoadProject(
-                          fileName, data, emptyOuterRoofModel);
-                      await norwLoadProject(
-                          fileName, data, emptyOuterWallModel);
-                      await norwLoadProject(
-                          fileName, data, emptyScaffoldingModel);
-                      await norwLoadProject(
-                          fileName, data, emptySupportSystemModel);
-                      await norwLoadProject(fileName, data, emptyTerraceModel);
-                      await norwLoadProject(
-                          fileName, data, emptyWindowsExteriorDoorsModel);
-                    } else {
-                      // User canceled the picker
-                    }
-                  },
-                  child: Text("Last inn et prosjekt"),
+                        await norwLoadProject(fileName, data, emptyDeckModel);
+                        await norwLoadProject(
+                            fileName, data, emptyFlooringModel);
+                        await norwLoadProject(
+                            fileName, data, emptyInnerDoorModel);
+                        await norwLoadProject(
+                            fileName, data, emptyInnerStairsModel);
+                        await norwLoadProject(
+                            fileName, data, emptyInnerWallModel);
+                        await norwLoadProject(
+                            fileName, data, emptyOuterRoofModel);
+                        await norwLoadProject(
+                            fileName, data, emptyOuterWallModel);
+                        await norwLoadProject(
+                            fileName, data, emptyScaffoldingModel);
+                        await norwLoadProject(
+                            fileName, data, emptySupportSystemModel);
+                        await norwLoadProject(
+                            fileName, data, emptyTerraceModel);
+                        await norwLoadProject(
+                            fileName, data, emptyWindowsExteriorDoorsModel);
+                      } else {
+                        // User canceled the picker
+                      }
+                    },
+                    child: Text(
+                      "Last inn et prosjekt",
+                      style: TextStyle(fontWeight: FontWeight.bold),
+                    ),
+                  ),
                 ),
               ),
             ],

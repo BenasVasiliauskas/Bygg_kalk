@@ -73,7 +73,7 @@ class _OuterRoofSectionsState extends State<OuterRoofSections> {
             languageEnglish
                 ? "Outer roof"
                 : languageLithuanian
-                    ? "Išorinis stogas"
+                    ? "Stogas"
                     : languageNorwegian
                         ? "Yttertak"
                         : "Dach zewnętrzny",

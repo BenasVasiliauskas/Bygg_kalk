@@ -78,41 +78,53 @@ class _BudgetScreenState extends State<BudgetScreen> {
                   // ),
                   Padding(
                     padding: const EdgeInsets.all(12.0),
-                    child: TextButton(
-                      onPressed: () async {
-                        FilePickerResult? result =
-                            await FilePicker.platform.pickFiles(
-                          type: FileType.custom,
-                          allowedExtensions: ["json"],
-                        );
-                        if (result != null) {
-                          PlatformFile file = result.files.first;
-                          final fileName = file.name;
-                          var data = await readJsonFileSelected(fileName);
-                          await loadProject(fileName, data, emptyDeckModel);
-                          await loadProject(fileName, data, emptyFlooringModel);
-                          await loadProject(
-                              fileName, data, emptyInnerDoorModel);
-                          await loadProject(
-                              fileName, data, emptyInnerStairsModel);
-                          await loadProject(
-                              fileName, data, emptyInnerWallModel);
-                          await loadProject(
-                              fileName, data, emptyOuterRoofModel);
-                          await loadProject(
-                              fileName, data, emptyOuterWallModel);
-                          await loadProject(
-                              fileName, data, emptyScaffoldingModel);
-                          await loadProject(
-                              fileName, data, emptySupportSystemModel);
-                          await loadProject(fileName, data, emptyTerraceModel);
-                          await loadProject(
-                              fileName, data, emptyWindowsExteriorDoorsModel);
-                        } else {
-                          // User canceled the picker
-                        }
-                      },
-                      child: Text("Load a project"),
+                    child: Container(
+                      decoration: BoxDecoration(
+                        color: Colors.lightBlueAccent,
+                        borderRadius: BorderRadius.circular(
+                            12), // Adjust the corner radius as needed
+                      ),
+                      child: TextButton(
+                        onPressed: () async {
+                          FilePickerResult? result =
+                              await FilePicker.platform.pickFiles(
+                            type: FileType.custom,
+                            allowedExtensions: ["json"],
+                          );
+                          if (result != null) {
+                            PlatformFile file = result.files.first;
+                            final fileName = file.name;
+                            var data = await readJsonFileSelected(fileName);
+                            await loadProject(fileName, data, emptyDeckModel);
+                            await loadProject(
+                                fileName, data, emptyFlooringModel);
+                            await loadProject(
+                                fileName, data, emptyInnerDoorModel);
+                            await loadProject(
+                                fileName, data, emptyInnerStairsModel);
+                            await loadProject(
+                                fileName, data, emptyInnerWallModel);
+                            await loadProject(
+                                fileName, data, emptyOuterRoofModel);
+                            await loadProject(
+                                fileName, data, emptyOuterWallModel);
+                            await loadProject(
+                                fileName, data, emptyScaffoldingModel);
+                            await loadProject(
+                                fileName, data, emptySupportSystemModel);
+                            await loadProject(
+                                fileName, data, emptyTerraceModel);
+                            await loadProject(
+                                fileName, data, emptyWindowsExteriorDoorsModel);
+                          } else {
+                            // User canceled the picker
+                          }
+                        },
+                        child: Text(
+                          "Load a project",
+                          style: TextStyle(fontWeight: FontWeight.bold),
+                        ),
+                      ),
                     ),
                   ),
                 ],

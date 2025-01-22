@@ -126,51 +126,6 @@ class _InnerDoorSectionsState extends State<InnerDoorSections> {
                 ),
               ],
             ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                TextButton(
-                  onPressed: () {
-                    Navigator.of(context).pushReplacement(
-                      MaterialPageRoute(
-                        builder: (context) {
-                          return InnerDoorScreen(
-                              constructionType: "Demolition");
-                        },
-                      ),
-                    );
-                  },
-                  child: Row(
-                    children: [
-                      Icon(
-                        FontAwesomeIcons.folder,
-                        size: 18,
-                      ),
-                      SizedBox(width: 8),
-                      Text(
-                        languageEnglish
-                            ? "Demolition"
-                            : languageLithuanian
-                                ? "Griovimas"
-                                : languageNorwegian
-                                    ? "Riving"
-                                    : "Rozbiórka",
-                      ),
-                    ],
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Text(
-                    norwInnerDoor
-                        .where((innerDoor) =>
-                            innerDoor.constructionType == "Demolition")
-                        .length
-                        .toString(),
-                  ),
-                ),
-              ],
-            ),
           ],
         ),
       ),

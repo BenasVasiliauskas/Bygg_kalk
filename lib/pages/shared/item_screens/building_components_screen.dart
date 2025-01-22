@@ -391,7 +391,7 @@ Nowa konstrukcja, Przebudowa, Wyburzenie''',
                             languageEnglish
                                 ? "Covers"
                                 : languageLithuanian
-                                    ? "Perdanga"
+                                    ? "Perdangos"
                                     : languageNorwegian
                                         ? "Dekker"
                                         : "Opona",
@@ -495,7 +495,7 @@ Nowa konstrukcja, Przebudowa, Wyburzenie''',
                                   ? "Yttertak"
                                   : languagePolish
                                       ? "Dach zewnętrzny"
-                                      : "Išorinė stogo dalis"),
+                                      : "Stogas"),
                         ],
                       ),
                     ),

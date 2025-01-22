@@ -73,7 +73,7 @@ class _FlooringSectionsState extends State<FlooringSections> {
             languageEnglish
                 ? "Flooring"
                 : languageLithuanian
-                    ? "Grindys"
+                    ? "Grindų danga"
                     : languageNorwegian
                         ? "Gulvbelegg"
                         : "Wykładziny podłogowe",
@@ -119,49 +119,6 @@ class _FlooringSectionsState extends State<FlooringSections> {
                   child: Text(
                     flooringData
                         .where((e) => e.constructionType == "New Construction")
-                        .length
-                        .toString(),
-                  ),
-                ),
-              ],
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                TextButton(
-                  onPressed: () {
-                    Navigator.of(context).pushReplacement(
-                      MaterialPageRoute(
-                        builder: (context) {
-                          return FlooringScreen(constructionType: "Demolition");
-                        },
-                      ),
-                    );
-                  },
-                  child: Row(
-                    children: [
-                      Icon(
-                        FontAwesomeIcons.folder,
-                        size: 18,
-                      ),
-                      SizedBox(width: 8),
-                      Text(
-                        languageEnglish
-                            ? "Demolition"
-                            : languageLithuanian
-                                ? "Griovimas"
-                                : languageNorwegian
-                                    ? "Riving"
-                                    : "Rozbiórka",
-                      ),
-                    ],
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Text(
-                    flooringData
-                        .where((e) => e.constructionType == "Demolition")
                         .length
                         .toString(),
                   ),

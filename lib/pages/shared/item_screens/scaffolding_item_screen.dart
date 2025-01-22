@@ -101,12 +101,12 @@ class _ScaffoldingScreenState extends State<ScaffoldingScreen> {
             ),
           ],
           title: Text(languageEnglish
-              ? 'Scaffolding'
-              : languageNorwegian
-                  ? 'Stillas'
-                  : languagePolish
-                      ? 'Rusztowanie'
-                      : 'Pastoliai'),
+              ? "New Construction"
+              : languageLithuanian
+                  ? "Nauja statyba"
+                  : languageNorwegian
+                      ? "Nye konstruksjons"
+                      : "Nowa konstrukcja"),
         ),
         body: GridView.count(
           padding: const EdgeInsets.all(25),

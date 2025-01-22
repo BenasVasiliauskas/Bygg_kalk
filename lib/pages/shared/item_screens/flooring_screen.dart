@@ -111,13 +111,31 @@ class _FlooringSectionsState extends State<FlooringScreen> {
               },
             ),
           ],
-          title: Text(languageEnglish
-              ? 'Flooring'
-              : languageNorwegian
-                  ? 'Gulv'
-                  : languagePolish
-                      ? 'Podłoga'
-                      : 'Grindys'),
+          title: Text(widget.constructionType == "New Construction"
+              ? languageEnglish
+                  ? "New Construction"
+                  : languageLithuanian
+                      ? "Nauja statyba"
+                      : languageNorwegian
+                          ? "Nye konstruksjons"
+                          : "Nowa konstrukcja"
+              : widget.constructionType == "Demolition"
+                  ? languageEnglish
+                      ? "Demolition"
+                      : languageLithuanian
+                          ? "Demontavimas"
+                          : languageNorwegian
+                              ? "Riving"
+                              : "Demolizione"
+                  : widget.constructionType == "Reconstruction"
+                      ? languageEnglish
+                          ? "Reconstruction"
+                          : languageLithuanian
+                              ? "Rekonstrukcija"
+                              : languageNorwegian
+                                  ? "Rekonstruksjon"
+                                  : "Rekonstrukcja"
+                      : ""),
         ),
         body: GridView.count(
           padding: const EdgeInsets.all(25),

@@ -114,13 +114,31 @@ class _WindowsExteriorDoorScreenState extends State<WindowsExteriorDoorScreen> {
               },
             ),
           ],
-          title: Text(languageEnglish
-              ? "Windows and Exterior Doors"
-              : languageNorwegian
-                  ? "Vinduer og ytterdører"
-                  : languagePolish
-                      ? "Okna i drzwi zewnętrzne"
-                      : "Langai ir išorinės durys"),
+          title: Text(widget.constructionType == "New Construction"
+              ? languageEnglish
+                  ? "New Construction"
+                  : languageLithuanian
+                      ? "Nauja statyba"
+                      : languageNorwegian
+                          ? "Nye konstruksjons"
+                          : "Nowa konstrukcja"
+              : widget.constructionType == "Demolition"
+                  ? languageEnglish
+                      ? "Demolition"
+                      : languageLithuanian
+                          ? "Demontavimas"
+                          : languageNorwegian
+                              ? "Riving"
+                              : "Demolizione"
+                  : widget.constructionType == "Reconstruction"
+                      ? languageEnglish
+                          ? "Reconstruction"
+                          : languageLithuanian
+                              ? "Rekonstrukcija"
+                              : languageNorwegian
+                                  ? "Rekonstruksjon"
+                                  : "Rekonstrukcja"
+                      : ""),
         ),
         body: GridView.count(
           padding: const EdgeInsets.all(25),

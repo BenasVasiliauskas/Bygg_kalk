@@ -60,42 +60,57 @@ class _LitBudgetScreenState extends State<LitBudgetScreen> {
         appBar: AppBar(
           title: Row(
             children: [
-              Text('Biudžeto ekranas'),
+              Text('Biudžetas'),
               Padding(
-                padding: const EdgeInsets.all(12.0),
-                child: TextButton(
-                  onPressed: () async {
-                    FilePickerResult? result =
-                        await FilePicker.platform.pickFiles(
-                      type: FileType.custom,
-                      allowedExtensions: ["json"],
-                    );
-                    if (result != null) {
-                      PlatformFile file = result.files.first;
-                      final fileName = file.name;
+                padding: const EdgeInsets.all(70.0),
+                child: Container(
+                  decoration: BoxDecoration(
+                    color: Colors.lightBlueAccent,
+                    borderRadius: BorderRadius.circular(
+                        12), // Adjust the corner radius as needed
+                  ),
+                  child: TextButton(
+                    onPressed: () async {
+                      FilePickerResult? result =
+                          await FilePicker.platform.pickFiles(
+                        type: FileType.custom,
+                        allowedExtensions: ["json"],
+                      );
+                      if (result != null) {
+                        PlatformFile file = result.files.first;
+                        final fileName = file.name;
 
-                      var data = await readJsonFileSelected(fileName);
+                        var data = await readJsonFileSelected(fileName);
 
-                      await litLoadProject(fileName, data, emptyDeckModel);
-                      await litLoadProject(fileName, data, emptyFlooringModel);
-                      await litLoadProject(fileName, data, emptyInnerDoorModel);
-                      await litLoadProject(
-                          fileName, data, emptyInnerStairsModel);
-                      await litLoadProject(fileName, data, emptyInnerWallModel);
-                      await litLoadProject(fileName, data, emptyOuterRoofModel);
-                      await litLoadProject(fileName, data, emptyOuterWallModel);
-                      await litLoadProject(
-                          fileName, data, emptyScaffoldingModel);
-                      await litLoadProject(
-                          fileName, data, emptySupportSystemModel);
-                      await litLoadProject(fileName, data, emptyTerraceModel);
-                      await litLoadProject(
-                          fileName, data, emptyWindowsExteriorDoorsModel);
-                    } else {
-                      // User canceled the picker
-                    }
-                  },
-                  child: Text("Įkelti projektą"),
+                        await litLoadProject(fileName, data, emptyDeckModel);
+                        await litLoadProject(
+                            fileName, data, emptyFlooringModel);
+                        await litLoadProject(
+                            fileName, data, emptyInnerDoorModel);
+                        await litLoadProject(
+                            fileName, data, emptyInnerStairsModel);
+                        await litLoadProject(
+                            fileName, data, emptyInnerWallModel);
+                        await litLoadProject(
+                            fileName, data, emptyOuterRoofModel);
+                        await litLoadProject(
+                            fileName, data, emptyOuterWallModel);
+                        await litLoadProject(
+                            fileName, data, emptyScaffoldingModel);
+                        await litLoadProject(
+                            fileName, data, emptySupportSystemModel);
+                        await litLoadProject(fileName, data, emptyTerraceModel);
+                        await litLoadProject(
+                            fileName, data, emptyWindowsExteriorDoorsModel);
+                      } else {
+                        // User canceled the picker
+                      }
+                    },
+                    child: Text(
+                      "Įkelti projektą",
+                      style: TextStyle(fontWeight: FontWeight.bold),
+                    ),
+                  ),
                 ),
               ),
             ],
@@ -271,7 +286,7 @@ class _LitBudgetScreenState extends State<LitBudgetScreen> {
                       cells: [
                         DataCell(
                           Text(
-                            "Tvirtinimo darbai ir darbai statybvietėje",
+                            "Statybvietės išlaidos",
                             style: TextStyle(fontWeight: FontWeight.bold),
                           ),
                         ),

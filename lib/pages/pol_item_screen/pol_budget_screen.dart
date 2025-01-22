@@ -62,39 +62,54 @@ class _PolBudgetScreenState extends State<PolBudgetScreen> {
               Text('Ekran budżetu'),
               Padding(
                 padding: const EdgeInsets.all(12.0),
-                child: TextButton(
-                  onPressed: () async {
-                    FilePickerResult? result =
-                        await FilePicker.platform.pickFiles(
-                      type: FileType.custom,
-                      allowedExtensions: ["json"],
-                    );
-                    if (result != null) {
-                      PlatformFile file = result.files.first;
-                      final fileName = file.name;
+                child: Container(
+                  decoration: BoxDecoration(
+                    color: Colors.lightBlueAccent,
+                    borderRadius: BorderRadius.circular(
+                        12), // Adjust the corner radius as needed
+                  ),
+                  child: TextButton(
+                    onPressed: () async {
+                      FilePickerResult? result =
+                          await FilePicker.platform.pickFiles(
+                        type: FileType.custom,
+                        allowedExtensions: ["json"],
+                      );
+                      if (result != null) {
+                        PlatformFile file = result.files.first;
+                        final fileName = file.name;
 
-                      var data = await readJsonFileSelected(fileName);
+                        var data = await readJsonFileSelected(fileName);
 
-                      await polLoadProject(fileName, data, emptyDeckModel);
-                      await polLoadProject(fileName, data, emptyFlooringModel);
-                      await polLoadProject(fileName, data, emptyInnerDoorModel);
-                      await polLoadProject(
-                          fileName, data, emptyInnerStairsModel);
-                      await polLoadProject(fileName, data, emptyInnerWallModel);
-                      await polLoadProject(fileName, data, emptyOuterRoofModel);
-                      await polLoadProject(fileName, data, emptyOuterWallModel);
-                      await polLoadProject(
-                          fileName, data, emptyScaffoldingModel);
-                      await polLoadProject(
-                          fileName, data, emptySupportSystemModel);
-                      await polLoadProject(fileName, data, emptyTerraceModel);
-                      await polLoadProject(
-                          fileName, data, emptyWindowsExteriorDoorsModel);
-                    } else {
-                      // User canceled the picker
-                    }
-                  },
-                  child: Text("Załaduj projekt"),
+                        await polLoadProject(fileName, data, emptyDeckModel);
+                        await polLoadProject(
+                            fileName, data, emptyFlooringModel);
+                        await polLoadProject(
+                            fileName, data, emptyInnerDoorModel);
+                        await polLoadProject(
+                            fileName, data, emptyInnerStairsModel);
+                        await polLoadProject(
+                            fileName, data, emptyInnerWallModel);
+                        await polLoadProject(
+                            fileName, data, emptyOuterRoofModel);
+                        await polLoadProject(
+                            fileName, data, emptyOuterWallModel);
+                        await polLoadProject(
+                            fileName, data, emptyScaffoldingModel);
+                        await polLoadProject(
+                            fileName, data, emptySupportSystemModel);
+                        await polLoadProject(fileName, data, emptyTerraceModel);
+                        await polLoadProject(
+                            fileName, data, emptyWindowsExteriorDoorsModel);
+                      } else {
+                        // User canceled the picker
+                      }
+                    },
+                    child: Text(
+                      "Załaduj projekt",
+                      style: TextStyle(fontWeight: FontWeight.bold),
+                    ),
+                  ),
                 ),
               ),
             ],

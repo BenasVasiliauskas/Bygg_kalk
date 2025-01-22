@@ -108,7 +108,7 @@ class _homePageState extends State<homePage> {
                                   : languageNorwegian
                                       ? "Byggdeler"
                                       : languageLithuanian
-                                          ? "Statybinės dalys"
+                                          ? "Statybos komponentai"
                                           : "Komponenty budynku",
                               style: TextStyle(color: Colors.white),
                             ),

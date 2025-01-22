@@ -105,12 +105,12 @@ class _SupportSystemScreenState extends State<SupportSystemScreen> {
             ),
           ],
           title: Text(languageEnglish
-              ? "Support System"
-              : languageNorwegian
-                  ? "Bæresystemer"
-                  : languagePolish
-                      ? "Systemy wspierające"
-                      : "Palaikymo sistema"),
+              ? "New Construction"
+              : languageLithuanian
+                  ? "Nauja statyba"
+                  : languageNorwegian
+                      ? "Nye konstruksjons"
+                      : "Nowa konstrukcja"),
         ),
         body: GridView.count(
           padding: const EdgeInsets.all(25),

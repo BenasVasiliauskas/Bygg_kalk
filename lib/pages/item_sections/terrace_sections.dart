@@ -73,7 +73,7 @@ class _TerraceSectionsState extends State<TerraceSections> {
             languageEnglish
                 ? "Terrace"
                 : languageLithuanian
-                    ? "Terasa"
+                    ? "Terasos, turėklai"
                     : languageNorwegian
                         ? "Terrasse/rekkverk"
                         : "Taras",
