@@ -42,6 +42,8 @@ class LitInnerStairsItemScreen extends StatefulWidget {
 }
 
 class _LitInnerStairsItemScreenState extends State<LitInnerStairsItemScreen> {
+  bool visible = false;
+
   final AppLifecycleObserver _observer = AppLifecycleObserver();
 
   List<DataRow> rows = [];
@@ -312,9 +314,9 @@ class _LitInnerStairsItemScreenState extends State<LitInnerStairsItemScreen> {
       rows.add(
         DataRow(
           cells: [
-            dataCellDisplay(widget.description, i, 120),
-            dataCellDisplay(widget.unit, i, 45, optionalPadding: 12),
-            dataCellDisplayController(quantityControllers, i),
+            dataCellDisplay(widget.description, i, 120, true),
+            dataCellDisplay(widget.unit, i, 45, true, optionalPadding: 12),
+            dataCellDisplayController(quantityControllers, i, visible),
             dataCellDo(
               laborHours1Controllers,
               i,
@@ -376,6 +378,7 @@ class _LitInnerStairsItemScreenState extends State<LitInnerStairsItemScreen> {
               },
               Color.fromARGB(255, 218, 128, 122),
               false,
+              visible,
               optionalWidth: 55,
             ),
             dataCellDo(laborHours2Controllers, i, (value) {
@@ -391,10 +394,12 @@ class _LitInnerStairsItemScreenState extends State<LitInnerStairsItemScreen> {
               ); // Calculate the labor cost
               widget.laborCost[i] =
                   double.parse(updatedLaborCost.toStringAsFixed(2));
-            }, Theme.of(context).colorScheme.surface, true, optionalWidth: 45),
+            }, Theme.of(context).colorScheme.surface, true, visible,
+                optionalWidth: 45),
             dataCellDo(laborCostControllers, i, (value) {
               widget.laborCost[i] = double.parse(value);
-            }, Theme.of(context).colorScheme.surface, true, optionalWidth: 65),
+            }, Theme.of(context).colorScheme.surface, true, visible,
+                optionalWidth: 65),
             dataCellDo(material1Controllers, i, (value) {
               // Handle changes to material 1
               double parsedValue = double.parse(value);
@@ -424,17 +429,20 @@ class _LitInnerStairsItemScreenState extends State<LitInnerStairsItemScreen> {
               // Format to 2 decimal places
 
               rebuildDataTable();
-            }, Color.fromARGB(255, 218, 128, 122), false, optionalWidth: 75),
+            }, Color.fromARGB(255, 218, 128, 122), false, visible,
+                optionalWidth: 75),
             dataCellDo(material2Controllers, i, (value) {
               widget.material2[i] = double.parse(value);
               material2Controllers[i].text =
                   widget.material2[i].toStringAsFixed(2);
-            }, Theme.of(context).colorScheme.surface, true, optionalWidth: 75),
+            }, Theme.of(context).colorScheme.surface, true, visible,
+                optionalWidth: 75),
             dataCellDo(totalPriceControllers, i, (value) {
               widget.totalPrice[i] = double.parse(value);
               totalPriceControllers[i].text =
                   widget.totalPrice[i].toStringAsFixed(2);
-            }, Color.fromARGB(255, 153, 240, 131), true, optionalWidth: 75),
+            }, Color.fromARGB(255, 153, 240, 131), true, visible,
+                optionalWidth: 75),
           ],
         ),
       );
@@ -464,17 +472,12 @@ class _LitInnerStairsItemScreenState extends State<LitInnerStairsItemScreen> {
           "Iš viso (be PVM)",
           115,
           Theme.of(context).colorScheme.surface,
+          true,
         ),
         dataCellDisplaySingleBoldText(
-          "",
-          55,
-          Theme.of(context).colorScheme.surface,
-        ),
+            "", 55, Theme.of(context).colorScheme.surface, true),
         dataCellDisplaySingleBoldText(
-          "",
-          55,
-          Theme.of(context).colorScheme.surface,
-        ),
+            "", 55, Theme.of(context).colorScheme.surface, true),
         DataCell(
           SizedBox(
             width: 55,
@@ -497,38 +500,25 @@ class _LitInnerStairsItemScreenState extends State<LitInnerStairsItemScreen> {
           totalLaborHours2.toStringAsFixed(2),
           80,
           Theme.of(context).colorScheme.surface,
+          visible,
           optionalPadding: 8,
         ),
         dataCellDisplaySingleBoldText(totalLaborCost.toStringAsFixed(2), 55,
-            Theme.of(context).colorScheme.surface,
+            Theme.of(context).colorScheme.surface, visible,
             optionalPadding: 8),
-        DataCell(
-          SizedBox(
-            width: 75,
-            child: TextField(
-              style: TextStyle(
-                fontWeight: FontWeight.bold,
-              ),
-              decoration: InputDecoration(
-                border: InputBorder.none,
-                contentPadding: EdgeInsets.only(left: 8),
-                filled: true,
-              ),
-              controller: TextEditingController(
-                  text: totalMaterial1.toStringAsFixed(2)),
-              readOnly: true,
-            ),
-          ),
-        ),
+        dataCellDisplaySingleBoldText(totalMaterial1.toStringAsFixed(2), 75,
+            Theme.of(context).colorScheme.surface, visible),
         dataCellDisplaySingleBoldText(totalMaterial2.toStringAsFixed(2), 75,
-            Theme.of(context).colorScheme.surface,
+            Theme.of(context).colorScheme.surface, visible,
             optionalPadding: 8),
         dataCellDoSingleWithBoldText(
-            TextEditingController(text: totalTotalPrice.toStringAsFixed(2)),
-            (value) {},
-            Theme.of(context).colorScheme.surface,
-            true,
-            75),
+          TextEditingController(text: totalTotalPrice.toStringAsFixed(2)),
+          (value) {},
+          Theme.of(context).colorScheme.surface,
+          true,
+          75,
+          visible,
+        ),
       ],
     );
 

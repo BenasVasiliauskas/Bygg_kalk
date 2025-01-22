@@ -43,6 +43,8 @@ class PolSupportSystemItemScreen extends StatefulWidget {
 
 class _PolSupportSystemItemScreenState
     extends State<PolSupportSystemItemScreen> {
+  bool visible = false;
+
   final AppLifecycleObserver _observer = AppLifecycleObserver();
   List<DataRow> rows = [];
   List<TextEditingController> descriptionControllers = [];
@@ -313,9 +315,9 @@ class _PolSupportSystemItemScreenState
       rows.add(
         DataRow(
           cells: [
-            dataCellDisplay(widget.description, i, 120),
-            dataCellDisplay(widget.unit, i, 45, optionalPadding: 12),
-            dataCellDisplayController(quantityControllers, i),
+            dataCellDisplay(widget.description, i, 120, true),
+            dataCellDisplay(widget.unit, i, 45, true, optionalPadding: 12),
+            dataCellDisplayController(quantityControllers, i, visible),
             dataCellDo(
               laborHours1Controllers,
               i,
@@ -377,6 +379,7 @@ class _PolSupportSystemItemScreenState
               },
               Color.fromARGB(255, 218, 128, 122),
               false,
+              visible,
               optionalWidth: 55,
             ),
             dataCellDo(laborHours2Controllers, i, (value) {
@@ -392,10 +395,12 @@ class _PolSupportSystemItemScreenState
               ); // Calculate the labor cost
               widget.laborCost[i] =
                   double.parse(updatedLaborCost.toStringAsFixed(2));
-            }, Theme.of(context).colorScheme.surface, true, optionalWidth: 45),
+            }, Theme.of(context).colorScheme.surface, true, visible,
+                optionalWidth: 45),
             dataCellDo(laborCostControllers, i, (value) {
               widget.laborCost[i] = double.parse(value);
-            }, Theme.of(context).colorScheme.surface, true, optionalWidth: 65),
+            }, Theme.of(context).colorScheme.surface, true, visible,
+                optionalWidth: 65),
             dataCellDo(material1Controllers, i, (value) {
               // Handle changes to material 1
               double parsedValue = double.parse(value);
@@ -425,17 +430,20 @@ class _PolSupportSystemItemScreenState
               // Format to 2 decimal places
 
               rebuildDataTable();
-            }, Color.fromARGB(255, 218, 128, 122), false, optionalWidth: 75),
+            }, Color.fromARGB(255, 218, 128, 122), false, visible,
+                optionalWidth: 75),
             dataCellDo(material2Controllers, i, (value) {
               widget.material2[i] = double.parse(value);
               material2Controllers[i].text =
                   widget.material2[i].toStringAsFixed(2);
-            }, Theme.of(context).colorScheme.surface, true, optionalWidth: 75),
+            }, Theme.of(context).colorScheme.surface, true, visible,
+                optionalWidth: 75),
             dataCellDo(totalPriceControllers, i, (value) {
               widget.totalPrice[i] = double.parse(value);
               totalPriceControllers[i].text =
                   widget.totalPrice[i].toStringAsFixed(2);
-            }, Color.fromARGB(255, 153, 240, 131), true, optionalWidth: 75),
+            }, Color.fromARGB(255, 153, 240, 131), true, visible,
+                optionalWidth: 75),
           ],
         ),
       );

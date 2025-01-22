@@ -43,6 +43,8 @@ class LitInnerDoorItemScreenScreen extends StatefulWidget {
 
 class _LitInnerDoorItemScreenScreenState
     extends State<LitInnerDoorItemScreenScreen> {
+  bool visible = false;
+
   final AppLifecycleObserver _observer = AppLifecycleObserver();
 
   List<DataRow> rows = [];
@@ -309,9 +311,9 @@ class _LitInnerDoorItemScreenScreenState
       rows.add(
         DataRow(
           cells: [
-            dataCellDisplay(widget.description, i, 120),
-            dataCellDisplay(widget.unit, i, 40, optionalPadding: 12),
-            dataCellDisplayController(quantityControllers, i),
+            dataCellDisplay(widget.description, i, 120, true),
+            dataCellDisplay(widget.unit, i, 40, true, optionalPadding: 12),
+            dataCellDisplayController(quantityControllers, i, visible),
             dataCellDo(
               laborHours1Controllers,
               i,
@@ -373,6 +375,7 @@ class _LitInnerDoorItemScreenScreenState
               },
               Color.fromARGB(255, 218, 128, 122),
               false,
+              visible,
               optionalWidth: 55,
             ),
             dataCellDo(laborHours2Controllers, i, (value) {
@@ -385,10 +388,12 @@ class _LitInnerDoorItemScreenScreenState
                   widget.calculationQuantity); // Calculate the labor cost
               widget.laborCost[i] =
                   double.parse(updatedLaborCost.toStringAsFixed(2));
-            }, Theme.of(context).colorScheme.surface, true, optionalWidth: 55),
+            }, Theme.of(context).colorScheme.surface, true, visible,
+                optionalWidth: 55),
             dataCellDo(laborCostControllers, i, (value) {
               widget.laborCost[i] = double.parse(value);
-            }, Theme.of(context).colorScheme.surface, true, optionalWidth: 65),
+            }, Theme.of(context).colorScheme.surface, true, visible,
+                optionalWidth: 65),
             dataCellDo(
               material1Controllers,
               i,
@@ -423,6 +428,7 @@ class _LitInnerDoorItemScreenScreenState
               },
               Color.fromARGB(255, 218, 128, 122),
               false,
+              visible,
               optionalWidth: 75,
             ),
             dataCellDo(
@@ -435,6 +441,7 @@ class _LitInnerDoorItemScreenScreenState
               },
               Theme.of(context).colorScheme.surface,
               true,
+              visible,
               optionalWidth: 75,
             ),
             dataCellDo(
@@ -447,6 +454,7 @@ class _LitInnerDoorItemScreenScreenState
               },
               Color.fromARGB(255, 153, 240, 131),
               true,
+              visible,
               optionalWidth: 75,
             ),
           ],
@@ -479,17 +487,12 @@ class _LitInnerDoorItemScreenScreenState
           "Iš viso (be PVM)",
           115,
           Theme.of(context).colorScheme.surface,
+          true,
         ),
         dataCellDisplaySingleBoldText(
-          "",
-          55,
-          Theme.of(context).colorScheme.surface,
-        ),
+            "", 55, Theme.of(context).colorScheme.surface, true),
         dataCellDisplaySingleBoldText(
-          "",
-          55,
-          Theme.of(context).colorScheme.surface,
-        ),
+            "", 55, Theme.of(context).colorScheme.surface, true),
         DataCell(
           SizedBox(
             width: 55,
@@ -512,38 +515,25 @@ class _LitInnerDoorItemScreenScreenState
           totalLaborHours2.toStringAsFixed(2),
           80,
           Theme.of(context).colorScheme.surface,
+          visible,
           optionalPadding: 8,
         ),
         dataCellDisplaySingleBoldText(totalLaborCost.toStringAsFixed(2), 55,
-            Theme.of(context).colorScheme.surface,
+            Theme.of(context).colorScheme.surface, visible,
             optionalPadding: 8),
-        DataCell(
-          SizedBox(
-            width: 75,
-            child: TextField(
-              style: TextStyle(
-                fontWeight: FontWeight.bold,
-              ),
-              decoration: InputDecoration(
-                border: InputBorder.none,
-                contentPadding: EdgeInsets.only(left: 8),
-                filled: true,
-              ),
-              controller: TextEditingController(
-                  text: totalMaterial1.toStringAsFixed(2)),
-              readOnly: true,
-            ),
-          ),
-        ),
+        dataCellDisplaySingleBoldText(totalMaterial1.toStringAsFixed(2), 75,
+            Theme.of(context).colorScheme.surface, visible),
         dataCellDisplaySingleBoldText(totalMaterial2.toStringAsFixed(2), 75,
-            Theme.of(context).colorScheme.surface,
+            Theme.of(context).colorScheme.surface, visible,
             optionalPadding: 8),
         dataCellDoSingleWithBoldText(
-            TextEditingController(text: totalTotalPrice.toStringAsFixed(2)),
-            (value) {},
-            Theme.of(context).colorScheme.surface,
-            true,
-            75),
+          TextEditingController(text: totalTotalPrice.toStringAsFixed(2)),
+          (value) {},
+          Theme.of(context).colorScheme.surface,
+          true,
+          75,
+          visible,
+        ),
       ],
     );
 

@@ -40,7 +40,7 @@ Widget buildCustomColumnLabel(
   );
 }
 
-DataCell dataCellDisplay(List<String> text, int i, double width,
+DataCell dataCellDisplay(List<String> text, int i, double width, bool visible,
     {double? optionalPadding}) {
   return DataCell(
     Container(
@@ -49,17 +49,21 @@ DataCell dataCellDisplay(List<String> text, int i, double width,
         padding: optionalPadding != null
             ? EdgeInsets.only(left: optionalPadding)
             : EdgeInsets.zero,
-        child: Text(
-          text[i],
-          maxLines: 5, // Set the maximum number of lines
-          overflow: TextOverflow.ellipsis, // Allow text to overflow and wrap
+        child: Visibility(
+          visible: visible,
+          child: Text(
+            text[i],
+            maxLines: 5, // Set the maximum number of lines
+            overflow: TextOverflow.ellipsis, // Allow text to overflow and wrap
+          ),
         ),
       ),
     ),
   );
 }
 
-DataCell dataCellDisplaySingleBoldText(String text, double width, Color color,
+DataCell dataCellDisplaySingleBoldText(
+    String text, double width, Color color, bool visible,
     {double? optionalPadding}) {
   return DataCell(
     Container(
@@ -67,10 +71,13 @@ DataCell dataCellDisplaySingleBoldText(String text, double width, Color color,
           ? EdgeInsets.only(left: optionalPadding)
           : EdgeInsets.zero,
       width: width,
-      child: Text(
-        text,
-        style: TextStyle(
-          fontWeight: FontWeight.bold,
+      child: Visibility(
+        visible: visible,
+        child: Text(
+          text,
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+          ),
         ),
       ),
     ),
@@ -96,17 +103,20 @@ DataCell dataCellDisplaySingle(String text, double width, Color color,
 }
 
 DataCell dataCellDisplayController(
-    List<TextEditingController> controller, int i) {
+    List<TextEditingController> controller, int i, bool visible) {
   return DataCell(
     Container(
       width: 55,
-      child: TextField(
-        decoration: InputDecoration(
-          border: InputBorder.none,
-          contentPadding: EdgeInsets.only(left: 12),
+      child: Visibility(
+        visible: visible,
+        child: TextField(
+          decoration: InputDecoration(
+            border: InputBorder.none,
+            contentPadding: EdgeInsets.only(left: 12),
+          ),
+          readOnly: true,
+          controller: controller[i],
         ),
-        readOnly: true,
-        controller: controller[i],
       ),
     ),
   );
@@ -118,23 +128,27 @@ DataCell dataCellDoSingleWithBoldText(
   Color color,
   bool readOnly,
   double width,
+  bool visible,
 ) {
   return DataCell(
     SizedBox(
       width: width,
-      child: TextField(
-        style: TextStyle(
-          fontWeight: FontWeight.bold,
+      child: Visibility(
+        visible: visible,
+        child: TextField(
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+          ),
+          readOnly: readOnly,
+          controller: controller,
+          onChanged: (value) => f(value),
+          decoration: InputDecoration(
+            border: InputBorder.none,
+            contentPadding: EdgeInsets.only(left: 8),
+          ),
+          keyboardType:
+              readOnly ? null : TextInputType.numberWithOptions(decimal: true),
         ),
-        readOnly: readOnly,
-        controller: controller,
-        onChanged: (value) => f(value),
-        decoration: InputDecoration(
-          border: InputBorder.none,
-          contentPadding: EdgeInsets.only(left: 8),
-        ),
-        keyboardType:
-            readOnly ? null : TextInputType.numberWithOptions(decimal: true),
       ),
     ),
   );
@@ -162,31 +176,55 @@ DataCell dataCellDoSingle(TextEditingController controller, Function f,
 }
 
 DataCell dataCellDo(List<TextEditingController> controller, int i, Function f,
-    Color color, bool readOnly,
+    Color color, bool readOnly, bool visible,
     {double? optionalWidth}) {
   return DataCell(
     SizedBox(
       width: optionalWidth != null ? optionalWidth : 60,
-      child: TextField(
-        readOnly: readOnly,
-        controller: controller[i],
-        onChanged: (value) => f(value),
-        decoration: InputDecoration(
-          border: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(10),
-            borderSide: BorderSide(
-              width: 0,
-              style: BorderStyle.none,
+      child: Visibility(
+        visible: visible,
+        child: TextField(
+          readOnly: readOnly,
+          controller: controller[i],
+          onChanged: (value) => f(value),
+          decoration: InputDecoration(
+            border: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(10),
+              borderSide: BorderSide(
+                width: 0,
+                style: BorderStyle.none,
+              ),
             ),
+            contentPadding: EdgeInsets.only(left: 8),
+            fillColor: color,
+            filled: true,
           ),
-          contentPadding: EdgeInsets.only(left: 8),
-          fillColor: color,
-          filled: true,
+          keyboardType:
+              readOnly ? null : TextInputType.numberWithOptions(decimal: true),
         ),
-        keyboardType:
-            readOnly ? null : TextInputType.numberWithOptions(decimal: true),
       ),
     ),
+  );
+}
+
+Widget buildCustomDisappearingColumnLabel(
+    String label, double width, VoidCallback onPressed, bool visible) {
+  return SizedBox(
+    width: width,
+    child: Visibility(
+      visible: visible,
+      child: TextButton(
+        onPressed: onPressed,
+        child: Text("$label"),
+      ),
+    ),
+  );
+}
+
+DataColumn createDisappearingDataColumn(
+    String label, double width, VoidCallback onPressed, visible) {
+  return DataColumn(
+    label: buildCustomDisappearingColumnLabel(label, width, onPressed, visible),
   );
 }
 

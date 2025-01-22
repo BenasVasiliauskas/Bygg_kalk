@@ -43,6 +43,8 @@ class LitWindowsExteriorDoorItemsScreen extends StatefulWidget {
 
 class _LitWindowsExteriorDoorItemsScreenState
     extends State<LitWindowsExteriorDoorItemsScreen> {
+  bool visible = false;
+
   final AppLifecycleObserver _observer = AppLifecycleObserver();
 
   List<DataRow> rows = [];
@@ -312,9 +314,10 @@ class _LitWindowsExteriorDoorItemsScreenState
       rows.add(
         DataRow(
           cells: [
-            dataCellDisplay(widget.description, i, 120),
-            dataCellDisplay(widget.unit, i, 40, optionalPadding: 12),
-            dataCellDisplayController(quantityControllers, i),
+            dataCellDisplay(widget.description, i, 120, true),
+
+            dataCellDisplay(widget.unit, i, 40, true, optionalPadding: 12),
+            dataCellDisplayController(quantityControllers, i, visible),
 
             dataCellDo(
               laborHours1Controllers,
@@ -377,6 +380,7 @@ class _LitWindowsExteriorDoorItemsScreenState
               },
               Color.fromARGB(255, 218, 128, 122),
               false,
+              visible,
               optionalWidth: 55,
             ), // custom column cell
 
@@ -398,6 +402,7 @@ class _LitWindowsExteriorDoorItemsScreenState
               },
               Theme.of(context).colorScheme.surface,
               true,
+              visible,
               optionalWidth: 55,
             ),
             dataCellDo(
@@ -408,6 +413,7 @@ class _LitWindowsExteriorDoorItemsScreenState
               },
               Theme.of(context).colorScheme.surface,
               true,
+              visible,
               optionalWidth: 65,
             ),
             dataCellDo(
@@ -444,6 +450,7 @@ class _LitWindowsExteriorDoorItemsScreenState
               },
               Color.fromARGB(255, 218, 128, 122),
               false,
+              visible,
               optionalWidth: 75,
             ),
             dataCellDo(
@@ -456,6 +463,7 @@ class _LitWindowsExteriorDoorItemsScreenState
               },
               Theme.of(context).colorScheme.surface,
               true,
+              visible,
               optionalWidth: 75,
             ),
             dataCellDo(
@@ -468,6 +476,7 @@ class _LitWindowsExteriorDoorItemsScreenState
               },
               Color.fromARGB(255, 153, 240, 131),
               true,
+              visible,
               optionalWidth: 75,
             ),
           ],

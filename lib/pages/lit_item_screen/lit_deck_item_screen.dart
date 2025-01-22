@@ -5,6 +5,7 @@ import 'package:cost_calculator/observer/app_life_cycle_observer.dart';
 import 'package:cost_calculator/pages/shared/globals/calculation_variables.dart';
 import 'package:flutter/material.dart';
 
+// ignore: must_be_immutable
 class LitDeckItemScreen extends StatefulWidget {
   String name;
   List<String> description;
@@ -40,6 +41,8 @@ class LitDeckItemScreen extends StatefulWidget {
 
 //
 class _LitDeckItemScreenState extends State<LitDeckItemScreen> {
+  bool visible = false;
+
   final AppLifecycleObserver _observer = AppLifecycleObserver();
 
   List<DataRow> rows = [];
@@ -284,16 +287,21 @@ class _LitDeckItemScreenState extends State<LitDeckItemScreen> {
     List<DataColumn> columns = [
       createDataColumn("Įkainio aprašymas", 98, () {}),
       createDataColumn("Mato vnt.", 60, () {}),
-      createDataColumn("Kiekis", 80, () {}),
-      createDataColumn("Laiko norma", 70, () {
+      createDataColumn(visible ? "<" : ">", 55, () {
+        setState(() {
+          visible = !visible;
+        });
+      }),
+      createDisappearingDataColumn("Kiekis", 80, () {}, visible),
+      createDisappearingDataColumn("Laiko norma", 70, () {
         updateTotalSum();
         rebuildDataTable();
-      }),
-      createDataColumn("Laikas", 65, () {}),
-      createDataColumn("Darbas be PVM", 75, () {}),
-      createDataColumn("Medžiagų norma be PVM", 90, () {}),
-      createDataColumn("Medžiagos be PVM", 95, () {}),
-      createDataColumn("Bendra kaina be PVM ", 85, () {}),
+      }, visible),
+      createDisappearingDataColumn("Laikas", 65, () {}, visible),
+      createDisappearingDataColumn("Darbas be PVM", 75, () {}, visible),
+      createDisappearingDataColumn("Medžiagų norma be PVM", 90, () {}, visible),
+      createDisappearingDataColumn("Medžiagos be PVM", 95, () {}, visible),
+      createDisappearingDataColumn("Bendra kaina be PVM ", 85, () {}, visible),
     ];
 
     List<DataRow> rows = [];
@@ -302,70 +310,73 @@ class _LitDeckItemScreenState extends State<LitDeckItemScreen> {
       rows.add(
         DataRow(
           cells: [
-            dataCellDisplay(widget.description, i, 120),
-            dataCellDisplay(widget.unit, i, 45, optionalPadding: 12),
-            dataCellDisplayController(quantityControllers, i),
-            dataCellDo(
-              laborHours1Controllers,
-              i,
-              (value) {
-                isDirty = true;
-                //
-                double parsedValue = double.parse(value);
-                widget.laborHours1[i] = double.parse(
-                  parsedValue.toStringAsFixed(2),
-                );
-                //
-                widget.laborHours2[i] = calculateWorkHours2(
-                  i,
-                  widget.laborHours1,
-                  widget.calculationQuantity,
-                );
-                laborHours2Controllers[i].text = calculateWorkHours2(
-                  i,
-                  widget.laborHours1,
-                  widget.calculationQuantity,
-                ).toStringAsFixed(2);
-                //
-                widget.laborCost[i] = calculateJobCost(
-                    i, widget.laborHours1, widget.calculationQuantity);
-                laborCostControllers[i].text = calculateJobCost(
-                        i, widget.laborHours1, widget.calculationQuantity)
-                    .toStringAsFixed(2);
-                //
-                widget.laborCost[i] = calculateJobCost(
-                    i, widget.laborHours2, widget.calculationQuantity);
-                laborCostControllers[i].text = calculateJobCost(
-                        i, widget.laborHours2, widget.calculationQuantity)
-                    .toStringAsFixed(2);
-                // Recalculate and update the material 2 when quantity changes
-                widget.material2[i] = calculateMaterialCost(
-                  i,
-                  widget.material1,
-                  widget.calculationQuantity,
-                );
-                material2Controllers[i].text = calculateMaterialCost(
-                  i,
-                  widget.material1,
-                  widget.calculationQuantity,
-                ).toStringAsFixed(2);
-                // Recalculate and update the total price when quantity changes
-                widget.totalPrice[i] = calculateTotalPrice(
-                  i,
-                  widget.laborCost,
-                  widget.material2,
-                );
-                totalPriceControllers[i].text = calculateTotalPrice(
-                  i,
-                  widget.laborCost,
-                  widget.material2,
-                ).toStringAsFixed(2);
-                rebuildDataTable();
-              },
-              Color.fromARGB(255, 218, 128, 122),
-              false,
-              optionalWidth: 55,
+            dataCellDisplay(widget.description, i, 120, true),
+            dataCellDisplay(widget.unit, i, 45, true, optionalPadding: 12),
+            DataCell(
+              Container(
+                width: 55, // match column width
+                child: const Text(""), // or a TextField, or anything you want
+              ),
             ),
+            dataCellDisplayController(quantityControllers, i, visible),
+            dataCellDo(laborHours1Controllers, i, (value) {
+              isDirty = true;
+              //
+              double parsedValue = double.parse(value);
+              widget.laborHours1[i] = double.parse(
+                parsedValue.toStringAsFixed(2),
+              );
+              //
+              widget.laborHours2[i] = calculateWorkHours2(
+                i,
+                widget.laborHours1,
+                widget.calculationQuantity,
+              );
+              laborHours2Controllers[i].text = calculateWorkHours2(
+                i,
+                widget.laborHours1,
+                widget.calculationQuantity,
+              ).toStringAsFixed(2);
+              //
+              widget.laborCost[i] = calculateJobCost(
+                  i, widget.laborHours1, widget.calculationQuantity);
+              laborCostControllers[i].text = calculateJobCost(
+                      i, widget.laborHours1, widget.calculationQuantity)
+                  .toStringAsFixed(2);
+              //
+              widget.laborCost[i] = calculateJobCost(
+                  i, widget.laborHours2, widget.calculationQuantity);
+              laborCostControllers[i].text = calculateJobCost(
+                      i, widget.laborHours2, widget.calculationQuantity)
+                  .toStringAsFixed(2);
+              // Recalculate and update the material 2 when quantity changes
+              widget.material2[i] = calculateMaterialCost(
+                i,
+                widget.material1,
+                widget.calculationQuantity,
+              );
+              material2Controllers[i].text = calculateMaterialCost(
+                i,
+                widget.material1,
+                widget.calculationQuantity,
+              ).toStringAsFixed(2);
+              // Recalculate and update the total price when quantity changes
+              widget.totalPrice[i] = calculateTotalPrice(
+                i,
+                widget.laborCost,
+                widget.material2,
+              );
+              totalPriceControllers[i].text = calculateTotalPrice(
+                i,
+                widget.laborCost,
+                widget.material2,
+              ).toStringAsFixed(2);
+              rebuildDataTable();
+            },
+                Color.fromARGB(255, 218, 128, 122),
+                false,
+                optionalWidth: 55,
+                visible),
             dataCellDo(laborHours2Controllers, i, (value) {
               // Handle changes to labor hours 2
               double parsedValue = double.parse(value);
@@ -379,10 +390,12 @@ class _LitDeckItemScreenState extends State<LitDeckItemScreen> {
               ); // Calculate the labor cost
               widget.laborCost[i] =
                   double.parse(updatedLaborCost.toStringAsFixed(2));
-            }, Theme.of(context).colorScheme.surface, true, optionalWidth: 45),
+            }, Theme.of(context).colorScheme.surface, true, visible,
+                optionalWidth: 45),
             dataCellDo(laborCostControllers, i, (value) {
               widget.laborCost[i] = double.parse(value);
-            }, Theme.of(context).colorScheme.surface, true, optionalWidth: 65),
+            }, Theme.of(context).colorScheme.surface, true, visible,
+                optionalWidth: 65),
             dataCellDo(material1Controllers, i, (value) {
               // Handle changes to material 1
               double parsedValue = double.parse(value);
@@ -409,17 +422,20 @@ class _LitDeckItemScreenState extends State<LitDeckItemScreen> {
                   updatedTotalPrice.toStringAsFixed(2);
               // Format to 2 decimal places
               rebuildDataTable();
-            }, Color.fromARGB(255, 218, 128, 122), false, optionalWidth: 75),
+            }, Color.fromARGB(255, 218, 128, 122), false, visible,
+                optionalWidth: 75),
             dataCellDo(material2Controllers, i, (value) {
               widget.material2[i] = double.parse(value);
               material2Controllers[i].text =
                   widget.material2[i].toStringAsFixed(2);
-            }, Theme.of(context).colorScheme.surface, true, optionalWidth: 75),
+            }, Theme.of(context).colorScheme.surface, true, visible,
+                optionalWidth: 75),
             dataCellDo(totalPriceControllers, i, (value) {
               widget.totalPrice[i] = double.parse(value);
               totalPriceControllers[i].text =
                   widget.totalPrice[i].toStringAsFixed(2);
-            }, Color.fromARGB(255, 153, 240, 131), true, optionalWidth: 75),
+            }, Color.fromARGB(255, 153, 240, 131), true, visible,
+                optionalWidth: 75),
           ],
         ),
       );
@@ -446,32 +462,32 @@ class _LitDeckItemScreenState extends State<LitDeckItemScreen> {
           "Iš viso (be PVM)",
           115,
           Theme.of(context).colorScheme.surface,
+          true,
         ),
         dataCellDisplaySingleBoldText(
-          "",
-          55,
-          Theme.of(context).colorScheme.surface,
-        ),
+            "", 55, Theme.of(context).colorScheme.surface, true),
         dataCellDisplaySingleBoldText(
-          "",
-          55,
-          Theme.of(context).colorScheme.surface,
-        ),
+            "", 55, Theme.of(context).colorScheme.surface, true),
+        dataCellDisplaySingleBoldText(
+            "", 55, Theme.of(context).colorScheme.surface, true),
         DataCell(
-          SizedBox(
-            width: 55,
-            child: TextField(
-              style: TextStyle(
-                fontWeight: FontWeight.bold,
+          Visibility(
+            visible: visible,
+            child: SizedBox(
+              width: 55,
+              child: TextField(
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                ),
+                decoration: InputDecoration(
+                  border: InputBorder.none,
+                  contentPadding: EdgeInsets.only(left: 8),
+                  filled: true,
+                ),
+                controller: TextEditingController(
+                    text: totalLaborHours1.toStringAsFixed(2)),
+                readOnly: true,
               ),
-              decoration: InputDecoration(
-                border: InputBorder.none,
-                contentPadding: EdgeInsets.only(left: 8),
-                filled: true,
-              ),
-              controller: TextEditingController(
-                  text: totalLaborHours1.toStringAsFixed(2)),
-              readOnly: true,
             ),
           ),
         ),
@@ -479,38 +495,25 @@ class _LitDeckItemScreenState extends State<LitDeckItemScreen> {
           totalLaborHours2.toStringAsFixed(2),
           80,
           Theme.of(context).colorScheme.surface,
+          visible,
           optionalPadding: 8,
         ),
         dataCellDisplaySingleBoldText(totalLaborCost.toStringAsFixed(2), 55,
-            Theme.of(context).colorScheme.surface,
+            Theme.of(context).colorScheme.surface, visible,
             optionalPadding: 8),
-        DataCell(
-          SizedBox(
-            width: 75,
-            child: TextField(
-              style: TextStyle(
-                fontWeight: FontWeight.bold,
-              ),
-              decoration: InputDecoration(
-                border: InputBorder.none,
-                contentPadding: EdgeInsets.only(left: 8),
-                filled: true,
-              ),
-              controller: TextEditingController(
-                  text: totalMaterial1.toStringAsFixed(2)),
-              readOnly: true,
-            ),
-          ),
-        ),
+        dataCellDisplaySingleBoldText(totalMaterial1.toStringAsFixed(2), 75,
+            Theme.of(context).colorScheme.surface, visible),
         dataCellDisplaySingleBoldText(totalMaterial2.toStringAsFixed(2), 75,
-            Theme.of(context).colorScheme.surface,
+            Theme.of(context).colorScheme.surface, visible,
             optionalPadding: 8),
         dataCellDoSingleWithBoldText(
-            TextEditingController(text: totalTotalPrice.toStringAsFixed(2)),
-            (value) {},
-            Theme.of(context).colorScheme.surface,
-            true,
-            75),
+          TextEditingController(text: totalTotalPrice.toStringAsFixed(2)),
+          (value) {},
+          Theme.of(context).colorScheme.surface,
+          true,
+          75,
+          visible,
+        ),
       ],
     );
     rows.add(totalSumRow);

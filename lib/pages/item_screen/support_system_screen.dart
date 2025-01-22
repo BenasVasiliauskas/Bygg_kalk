@@ -42,6 +42,8 @@ class SupportSystemItemScreen extends StatefulWidget {
 }
 
 class _SupportSystemItemScreenState extends State<SupportSystemItemScreen> {
+  bool visible = false;
+
   final AppLifecycleObserver _observer = AppLifecycleObserver();
 
   List<DataRow> rows = [];
@@ -333,9 +335,9 @@ class _SupportSystemItemScreenState extends State<SupportSystemItemScreen> {
       rows.add(
         DataRow(
           cells: [
-            dataCellDisplay(widget.description, i, 120),
-            dataCellDisplay(widget.unit, i, 45, optionalPadding: 12),
-            dataCellDisplayController(quantityControllers, i),
+            dataCellDisplay(widget.description, i, 120, true),
+            dataCellDisplay(widget.unit, i, 45, true, optionalPadding: 12),
+            dataCellDisplayController(quantityControllers, i, visible),
             dataCellDo(laborHours1Controllers, i, (value) {
               isDirty = true;
               //
@@ -399,7 +401,8 @@ class _SupportSystemItemScreenState extends State<SupportSystemItemScreen> {
                 widget.material2,
               ).toStringAsFixed(2);
               rebuildDataTable();
-            }, Color.fromARGB(255, 218, 128, 122), false, optionalWidth: 55),
+            }, Color.fromARGB(255, 218, 128, 122), false, visible,
+                optionalWidth: 55),
             dataCellDo(laborHours2Controllers, i, (value) {
               // Handle changes to labor hours 2
               double parsedValue = double.parse(value);
@@ -413,10 +416,12 @@ class _SupportSystemItemScreenState extends State<SupportSystemItemScreen> {
               ); // Calculate the labor cost
               widget.laborCost[i] =
                   double.parse(updatedLaborCost.toStringAsFixed(2));
-            }, Theme.of(context).colorScheme.surface, true, optionalWidth: 45),
+            }, Theme.of(context).colorScheme.surface, true, visible,
+                optionalWidth: 45),
             dataCellDo(laborCostControllers, i, (value) {
               widget.laborCost[i] = double.parse(value);
-            }, Theme.of(context).colorScheme.surface, true, optionalWidth: 65),
+            }, Theme.of(context).colorScheme.surface, true, visible,
+                optionalWidth: 65),
             dataCellDo(material1Controllers, i, (value) {
               // Handle changes to material 1
               double parsedValue = double.parse(value);
@@ -446,17 +451,20 @@ class _SupportSystemItemScreenState extends State<SupportSystemItemScreen> {
               // Format to 2 decimal places
 
               rebuildDataTable();
-            }, Color.fromARGB(255, 218, 128, 122), false, optionalWidth: 75),
+            }, Color.fromARGB(255, 218, 128, 122), false, visible,
+                optionalWidth: 75),
             dataCellDo(material2Controllers, i, (value) {
               widget.material2[i] = double.parse(value);
               material2Controllers[i].text =
                   widget.material2[i].toStringAsFixed(2);
-            }, Theme.of(context).colorScheme.surface, true, optionalWidth: 75),
+            }, Theme.of(context).colorScheme.surface, true, visible,
+                optionalWidth: 75),
             dataCellDo(totalPriceControllers, i, (value) {
               widget.totalPrice[i] = double.parse(value);
               totalPriceControllers[i].text =
                   widget.totalPrice[i].toStringAsFixed(2);
-            }, Color.fromARGB(255, 153, 240, 131), true, optionalWidth: 75),
+            }, Color.fromARGB(255, 153, 240, 131), true, visible,
+                optionalWidth: 75),
           ],
         ),
       );
@@ -486,17 +494,12 @@ class _SupportSystemItemScreenState extends State<SupportSystemItemScreen> {
           "Total sum",
           115,
           Theme.of(context).colorScheme.surface,
+          true,
         ),
         dataCellDisplaySingleBoldText(
-          "",
-          55,
-          Theme.of(context).colorScheme.surface,
-        ),
+            "", 55, Theme.of(context).colorScheme.surface, true),
         dataCellDisplaySingleBoldText(
-          "",
-          45,
-          Theme.of(context).colorScheme.surface,
-        ),
+            "", 45, Theme.of(context).colorScheme.surface, true),
         DataCell(
           SizedBox(
             width: 55,
@@ -515,16 +518,10 @@ class _SupportSystemItemScreenState extends State<SupportSystemItemScreen> {
             ),
           ),
         ),
-        dataCellDisplaySingleBoldText(
-          totalLaborHours2.toStringAsFixed(2),
-          80,
-          Theme.of(context).colorScheme.surface,
-        ),
-        dataCellDisplaySingleBoldText(
-          totalLaborCost.toStringAsFixed(2),
-          55,
-          Theme.of(context).colorScheme.surface,
-        ),
+        dataCellDisplaySingleBoldText(totalLaborHours2.toStringAsFixed(2), 80,
+            Theme.of(context).colorScheme.surface, visible),
+        dataCellDisplaySingleBoldText(totalLaborCost.toStringAsFixed(2), 55,
+            Theme.of(context).colorScheme.surface, visible),
         DataCell(
           SizedBox(
             width: 75,
@@ -547,6 +544,7 @@ class _SupportSystemItemScreenState extends State<SupportSystemItemScreen> {
           totalMaterial2.toStringAsFixed(2),
           75,
           Theme.of(context).colorScheme.surface,
+          visible,
         ),
         dataCellDoSingleWithBoldText(
           TextEditingController(text: totalTotalPrice.toStringAsFixed(2)),
@@ -554,6 +552,7 @@ class _SupportSystemItemScreenState extends State<SupportSystemItemScreen> {
           Theme.of(context).colorScheme.surface,
           true,
           75,
+          visible,
         ),
       ],
     );

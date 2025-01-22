@@ -43,6 +43,8 @@ class PolInteriorWallItemsScreen extends StatefulWidget {
 
 class _PolInteriorWallItemsScreenState
     extends State<PolInteriorWallItemsScreen> {
+  bool visible = false;
+
   final AppLifecycleObserver _observer = AppLifecycleObserver();
   List<DataRow> rows = [];
   List<TextEditingController> descriptionControllers = [];
@@ -309,9 +311,10 @@ class _PolInteriorWallItemsScreenState
       rows.add(
         DataRow(
           cells: [
-            dataCellDisplay(widget.description, i, 120),
-            dataCellDisplay(widget.unit, i, 40, optionalPadding: 12),
-            dataCellDisplayController(quantityControllers, i),
+            dataCellDisplay(widget.description, i, 120, true),
+
+            dataCellDisplay(widget.unit, i, 40, true, optionalPadding: 12),
+            dataCellDisplayController(quantityControllers, i, visible),
 
             dataCellDo(
               laborHours1Controllers,
@@ -374,6 +377,7 @@ class _PolInteriorWallItemsScreenState
               },
               Color.fromARGB(255, 218, 128, 122),
               false,
+              visible,
               optionalWidth: 55,
             ), // custom column cell
 
@@ -395,6 +399,7 @@ class _PolInteriorWallItemsScreenState
               },
               Theme.of(context).colorScheme.surface,
               true,
+              visible,
               optionalWidth: 55,
             ),
             dataCellDo(
@@ -405,6 +410,7 @@ class _PolInteriorWallItemsScreenState
               },
               Theme.of(context).colorScheme.surface,
               true,
+              visible,
               optionalWidth: 65,
             ),
             dataCellDo(
@@ -441,6 +447,7 @@ class _PolInteriorWallItemsScreenState
               },
               Color.fromARGB(255, 218, 128, 122),
               false,
+              visible,
               optionalWidth: 75,
             ),
             dataCellDo(
@@ -453,6 +460,7 @@ class _PolInteriorWallItemsScreenState
               },
               Theme.of(context).colorScheme.surface,
               true,
+              visible,
               optionalWidth: 75,
             ),
             dataCellDo(
@@ -465,6 +473,7 @@ class _PolInteriorWallItemsScreenState
               },
               Color.fromARGB(255, 153, 240, 131),
               true,
+              visible,
               optionalWidth: 75,
             ),
           ],
@@ -496,69 +505,25 @@ class _PolInteriorWallItemsScreenState
           "Total (eks. mva)",
           115,
           Theme.of(context).colorScheme.surface,
+          true,
         ),
         dataCellDisplaySingleBoldText(
-          "",
-          55,
-          Theme.of(context).colorScheme.surface,
-        ),
+            "", 55, Theme.of(context).colorScheme.surface, true),
         dataCellDisplaySingleBoldText(
-          "",
-          45,
-          Theme.of(context).colorScheme.surface,
-        ),
-        DataCell(
-          SizedBox(
-            width: 55,
-            child: TextField(
-              style: TextStyle(
-                fontWeight: FontWeight.bold,
-              ),
-              decoration: InputDecoration(
-                border: InputBorder.none,
-                contentPadding: EdgeInsets.only(left: 8),
-                filled: true,
-              ),
-              controller: TextEditingController(
-                text: totalLaborHours1.toStringAsFixed(2),
-              ),
-              readOnly: true,
-            ),
-          ),
-        ),
-        dataCellDisplaySingleBoldText(
-          totalLaborHours2.toStringAsFixed(2),
-          80,
-          Theme.of(context).colorScheme.surface,
-        ),
-        dataCellDisplaySingleBoldText(
-          totalLaborCost.toStringAsFixed(2),
-          55,
-          Theme.of(context).colorScheme.surface,
-        ),
-        DataCell(
-          SizedBox(
-            width: 75,
-            child: TextField(
-              style: TextStyle(
-                fontWeight: FontWeight.bold,
-              ),
-              decoration: InputDecoration(
-                border: InputBorder.none,
-                contentPadding: EdgeInsets.only(left: 8),
-                filled: true,
-              ),
-              controller: TextEditingController(
-                text: totalMaterial1.toStringAsFixed(2),
-              ),
-              readOnly: true,
-            ),
-          ),
-        ),
+            "", 45, Theme.of(context).colorScheme.surface, true),
+        dataCellDisplaySingleBoldText(totalLaborHours1.toStringAsFixed(2), 55,
+            Theme.of(context).colorScheme.surface, visible),
+        dataCellDisplaySingleBoldText(totalLaborHours2.toStringAsFixed(2), 80,
+            Theme.of(context).colorScheme.surface, visible),
+        dataCellDisplaySingleBoldText(totalLaborCost.toStringAsFixed(2), 55,
+            Theme.of(context).colorScheme.surface, visible),
+        dataCellDisplaySingleBoldText(totalMaterial1.toStringAsFixed(2), 75,
+            Theme.of(context).colorScheme.surface, visible),
         dataCellDisplaySingleBoldText(
           totalMaterial2.toStringAsFixed(2),
           75,
           Theme.of(context).colorScheme.surface,
+          visible,
         ),
         dataCellDoSingleWithBoldText(
           TextEditingController(text: totalTotalPrice.toStringAsFixed(2)),
@@ -566,6 +531,7 @@ class _PolInteriorWallItemsScreenState
           Color.fromARGB(255, 153, 240, 131),
           true,
           75,
+          visible,
         ),
       ],
     );
