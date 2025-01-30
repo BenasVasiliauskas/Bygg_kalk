@@ -71,7 +71,7 @@ class _WasteSectionsState extends State<WasteSections> {
           ],
           title: Text(
             languageEnglish
-                ? "Waste management"
+                ? "Waste"
                 : languageLithuanian
                     ? "Atliekų išvežimas"
                     : languageNorwegian

@@ -71,7 +71,7 @@ class _OuterWallSectionsState extends State<OuterWallSections> {
           ],
           title: Text(
             languageEnglish
-                ? "Outer wall"
+                ? "External walls"
                 : languageLithuanian
                     ? "Lauko sienos"
                     : languageNorwegian

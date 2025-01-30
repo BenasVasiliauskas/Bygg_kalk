@@ -154,34 +154,34 @@ class _BudgetScreenState extends State<BudgetScreen> {
                       label: SizedBox(
                         width: 50,
                         child: Text(
-                          'Total Hours',
+                          'Hours',
                           softWrap: true,
                         ),
                       ),
                     ),
                     DataColumn(
                       label: SizedBox(
-                        width: 50,
+                        width: 75,
                         child: Text(
-                          'Labor Costs',
+                          'Labor Costs (exl. VAT)',
                           softWrap: true,
                         ),
                       ),
                     ),
                     DataColumn(
                       label: SizedBox(
-                        width: 55,
+                        width: 75,
                         child: Text(
-                          'Material Costs',
+                          'Material Costs (exl. VAT)',
                           softWrap: true,
                         ),
                       ),
                     ),
                     DataColumn(
                       label: SizedBox(
-                        width: 50,
+                        width: 75,
                         child: Text(
-                          'Budget Sum',
+                          'Total price (exl. VAT)',
                           softWrap: true,
                         ),
                       ),
@@ -300,7 +300,7 @@ class _BudgetScreenState extends State<BudgetScreen> {
                       cells: [
                         DataCell(
                           Text(
-                            "Site setup and operation",
+                            "Site cost",
                             style: TextStyle(fontWeight: FontWeight.bold),
                           ),
                         ),
@@ -324,7 +324,7 @@ class _BudgetScreenState extends State<BudgetScreen> {
                       cells: [
                         DataCell(
                           Text(
-                            "Total material cost",
+                            "Total material cost (excl. VAT)",
                             style: TextStyle(fontWeight: FontWeight.bold),
                           ),
                         ),
@@ -342,7 +342,7 @@ class _BudgetScreenState extends State<BudgetScreen> {
                       cells: [
                         DataCell(
                           Text(
-                            "Waste removal",
+                            "Waste removal (excl. VAT)",
                             style: TextStyle(fontWeight: FontWeight.bold),
                           ),
                         ),
@@ -362,7 +362,7 @@ class _BudgetScreenState extends State<BudgetScreen> {
                       cells: [
                         DataCell(
                           Text(
-                            "Materials transport",
+                            "Materials delivery (excl. VAT)",
                             style: TextStyle(fontWeight: FontWeight.bold),
                           ),
                         ),
@@ -383,7 +383,7 @@ class _BudgetScreenState extends State<BudgetScreen> {
                       cells: [
                         DataCell(
                           Text(
-                            "Total costs (excluding VAT)",
+                            "Total price (excluding VAT)",
                             style: TextStyle(fontWeight: FontWeight.bold),
                           ),
                         ),
@@ -440,7 +440,7 @@ class _BudgetScreenState extends State<BudgetScreen> {
                       cells: [
                         DataCell(
                           Text(
-                            "Total costs (including VAT)",
+                            "Total price (including VAT)",
                             style: TextStyle(fontWeight: FontWeight.bold),
                           ),
                         ),

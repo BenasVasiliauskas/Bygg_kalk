@@ -71,7 +71,7 @@ class _InnerDoorSectionsState extends State<InnerDoorSections> {
           ],
           title: Text(
             languageEnglish
-                ? "Inner doors"
+                ? "Internal doors"
                 : languageLithuanian
                     ? "Vidinės durys"
                     : languageNorwegian

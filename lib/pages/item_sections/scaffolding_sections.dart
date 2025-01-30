@@ -71,7 +71,7 @@ class _ScaffoldingSectionsState extends State<ScaffoldingSections> {
           ],
           title: Text(
             languageEnglish
-                ? "Scaffolding"
+                ? "Load-bearing structure"
                 : languageLithuanian
                     ? "Pastoliai"
                     : languageNorwegian

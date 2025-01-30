@@ -128,7 +128,7 @@ Nowa konstrukcja''',
                                 child: Image.asset("assets/SupportSystem.jpg")),
                           ),
                           Text(languageEnglish
-                              ? "Support system"
+                              ? "Load-bearing system"
                               : languageNorwegian
                                   ? "Bæresystemer"
                                   : languagePolish
@@ -231,7 +231,7 @@ Nowa konstrukcja, Wyburzenie''',
                                     "assets/WindowExteriorDoor.jpg")),
                           ),
                           Text(languageEnglish
-                              ? "Window/exterior door"
+                              ? "Window, door"
                               : languageNorwegian
                                   ? "Vinduer/ytterdører"
                                   : languagePolish
@@ -389,7 +389,7 @@ Nowa konstrukcja, Przebudowa, Wyburzenie''',
                           ),
                           Text(
                             languageEnglish
-                                ? "Covers"
+                                ? "Floor structure"
                                 : languageLithuanian
                                     ? "Perdangos"
                                     : languageNorwegian
@@ -490,7 +490,7 @@ Nowa konstrukcja, Przebudowa, Wyburzenie''',
                                 child: Image.asset("assets/OuterRoof.jpg")),
                           ),
                           Text(languageEnglish
-                              ? "Exterior roof"
+                              ? "Roof"
                               : languageNorwegian
                                   ? "Yttertak"
                                   : languagePolish
@@ -640,7 +640,7 @@ Nowa konstrukcja''',
                                 child: Image.asset("assets/Roofing.jpg")),
                           ),
                           Text(languageEnglish
-                              ? "Hull roofing"
+                              ? "Holes"
                               : languageNorwegian
                                   ? "Hulltaking"
                                   : languagePolish
@@ -740,7 +740,7 @@ Nowa konstrukcja''',
                                 child: Image.asset("assets/Waste.jpg")),
                           ),
                           Text(languageEnglish
-                              ? "Waste management"
+                              ? "Waste"
                               : languageNorwegian
                                   ? "Avfall"
                                   : languagePolish

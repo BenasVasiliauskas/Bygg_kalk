@@ -104,7 +104,7 @@ class _FlooringSectionsState extends State<FlooringSections> {
                       SizedBox(width: 8),
                       Text(
                         languageEnglish
-                            ? "New Construction"
+                            ? "New building"
                             : languageLithuanian
                                 ? "Naujos statybos"
                                 : languageNorwegian

@@ -71,7 +71,7 @@ class _DeckSectionsState extends State<DeckSections> {
           ],
           title: Text(
             languageEnglish
-                ? "Covers"
+                ? "Floor structure"
                 : languageLithuanian
                     ? "Apdanga"
                     : languageNorwegian

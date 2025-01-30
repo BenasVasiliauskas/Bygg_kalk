@@ -71,7 +71,7 @@ class _InnerWallSectionsState extends State<InnerWallSections> {
           ],
           title: Text(
             languageEnglish
-                ? "Inner walls"
+                ? "Internal walls"
                 : languageLithuanian
                     ? "Vidinės sienos"
                     : languageNorwegian

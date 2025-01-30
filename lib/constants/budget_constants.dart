@@ -2,19 +2,19 @@ import 'package:cost_calculator/data/english_data_folder/data.dart';
 import 'package:cost_calculator/models/waste_data_model.dart';
 
 List<String> calculatedNamesOrder = [
-  "Support system",
+  "Load-bearing structures",
   "Exterior walls",
-  "Windows and exterior doors",
+  "Windows doors",
   "Interior walls",
   "Interior door",
-  "Covers",
+  "Floor structure",
   "Flooring",
-  "Exterior roof",
+  "Roof",
   "Terrace/Railings",
-  "Inner stairs",
-  "Hull roofing",
+  "Indoor stairs",
+  "Holes",
   "Scaffolding",
-  "Waste Management",
+  "Waste",
   "Totals"
 ];
 

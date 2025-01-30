@@ -73,7 +73,7 @@ class _WindowsExteriorDoorSectionsState
           ],
           title: Text(
             languageEnglish
-                ? "Windows and exterior doors"
+                ? "Windows doors"
                 : languageLithuanian
                     ? "Langai ir išorinės durys"
                     : languageNorwegian
@@ -107,7 +107,7 @@ class _WindowsExteriorDoorSectionsState
                       SizedBox(width: 8),
                       Text(
                         languageEnglish
-                            ? "New Construction"
+                            ? "New building"
                             : languageLithuanian
                                 ? "Naujas pastatas"
                                 : languageNorwegian
