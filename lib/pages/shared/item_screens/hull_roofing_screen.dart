@@ -112,7 +112,7 @@ class _HullRoofingScreenState extends State<HullRoofingScreen> {
         body: GridView.count(
           padding: const EdgeInsets.all(25),
           children: List.generate(
-            hullRoofingData.length,
+            filteredHullRoofingData.length,
             (index) {
               var catData = filteredHullRoofingData[index];
               var controller = hullCalculationControllers[index];
