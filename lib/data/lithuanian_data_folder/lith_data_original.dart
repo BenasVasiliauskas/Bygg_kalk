@@ -16264,226 +16264,413 @@ final litInnerStairsData = [
 
 final litHullRoofingData = [
   HullRoofingModel(
-    name:
-        "245 m² ploto vienbučio namo - 2 aukštų - denginio stogo danga (apskaičiuokite kiekį ir pasirinkite medžiagos tipą)",
-    description: [
-      "Perforuota medžio drožlių plokštės lubų dėžė",
-      "Lubų dėžė iš gipso kartono plokščių",
-      "Tuščiavidurė lubų dėžė iš medžio plokščių",
-      "Tuščios lubų sienelės - plokštės",
-      "Tuščiavidurė lubų siena iš medžio plokščių",
-      "Tuščiavidurė lubų siena iš medžio drožlių plokščių",
-      "Tuščiavidurė lubų siena iš gipso kartono plokščių",
-      "Perforuota stogo danga ventiliacijai",
-    ],
-    unit: [
-      "stk",
-      "stk",
-      "stk",
-      "stk",
-      "stk",
-      "stk",
-      "stk",
-      "stk",
-    ],
-    quantity: [
-      0.00,
-      0.00,
-      0.00,
-      0.00,
-      0.00,
-      0.00,
-      0.00,
-      0.00,
-    ],
-    laborHours1: [
-      0.18,
-      0.18,
-      0.18,
-      0.20,
-      0.15,
-      0.15,
-      0.15,
-      0.15,
-    ],
-    laborHours2: [
-      0.00,
-      0.00,
-      0.00,
-      0.00,
-      0.00,
-      0.00,
-      0.00,
-      0.00,
-    ],
-    laborCost: [
-      0.00,
-      0.00,
-      0.00,
-      0.00,
-      0.00,
-      0.00,
-      0.00,
-      0.00,
-    ],
-    material: [
-      0.00,
-      0.00,
-      0.00,
-      0.00,
-      0.00,
-      0.00,
-      0.00,
-      0.00,
-    ],
-    materials: [
-      0.00,
-      0.00,
-      0.00,
-      0.00,
-      0.00,
-      0.00,
-      0.00,
-      0.00,
-    ],
-    totalPrice: [
-      0.00,
-      0.00,
-      0.00,
-      0.00,
-      0.00,
-      0.00,
-      0.00,
-      0.00,
-    ],
-  )
+      name:
+          "86 mm. skersmens angos gręžimas lubų dėžutei medžio drožlių plokštės lubose.",
+      description: [
+        '86 mm. skersmens angos gręžimas lubų dėžutei medžio drožlių plokštės lubose.'
+      ],
+      unit: ['vnt'],
+      quantity: [1],
+      laborHours1: [0.16],
+      laborHours2: [0.16],
+      laborCost: [88],
+      material: [0],
+      materials: [0],
+      totalPrice: [88],
+      constructionType: "New Construction"),
+  HullRoofingModel(
+      name:
+          "86 mm. skersmens angos gręžimas lubų dėžutei gipso plokštės lubose.",
+      description: [
+        '86 mm. skersmens angos gręžimas lubų dėžutei gipso plokštės lubose.'
+      ],
+      unit: ['vnt'],
+      quantity: [1],
+      laborHours1: [0.1],
+      laborHours2: [0.11],
+      laborCost: [60.5],
+      material: [0],
+      materials: [0],
+      totalPrice: [60.5],
+      constructionType: "New Construction"),
+  HullRoofingModel(
+      name:
+          "86 mm. skersmens angos gręžimas lubų dėžutei medinių dailylenčių lubose.",
+      description: [
+        '86 mm. skersmens angos gręžimas lubų dėžutei medinių dailylenčių lubose.'
+      ],
+      unit: ['vnt'],
+      quantity: [1],
+      laborHours1: [0.18],
+      laborHours2: [0.18],
+      laborCost: [99],
+      material: [0],
+      materials: [0],
+      totalPrice: [99],
+      constructionType: "New Construction"),
+  HullRoofingModel(
+      name: "72 mm. skersmens angos gręžimas medinių dailylenčių sienoje.",
+      description: [
+        '72 mm. skersmens angos gręžimas medinių dailylenčių sienoje.'
+      ],
+      unit: ['vnt'],
+      quantity: [1],
+      laborHours1: [0.15],
+      laborHours2: [0.15],
+      laborCost: [82.5],
+      material: [0],
+      materials: [0],
+      totalPrice: [82.5],
+      constructionType: "New Construction"),
+  HullRoofingModel(
+      name: "72 mm. skersmens angos gręžimas medžio drožlių plokštės sienoje.",
+      description: [
+        '72 mm. skersmens angos gręžimas medžio drožlių plokštės sienoje.'
+      ],
+      unit: ['vnt'],
+      quantity: [1],
+      laborHours1: [0.13],
+      laborHours2: [0.13],
+      laborCost: [71.5],
+      material: [0],
+      materials: [0],
+      totalPrice: [71.5],
+      constructionType: "New Construction"),
+  HullRoofingModel(
+      name: "72 mm. skersmens angos gręžimas gipso plokštės sienoje.",
+      description: ['72 mm. skersmens angos gręžimas gipso plokštės sienoje.'],
+      unit: ['vnt'],
+      quantity: [1],
+      laborHours1: [0.1],
+      laborHours2: [0.1],
+      laborCost: [55],
+      material: [0],
+      materials: [0],
+      totalPrice: [55],
+      constructionType: "New Construction"),
+  HullRoofingModel(
+      name: "20 mm. skersmens angos gręžimas keraminių plytelių sienoje.",
+      description: [
+        '20 mm. skersmens angos gręžimas keraminių plytelių sienoje.'
+      ],
+      unit: ['vnt'],
+      quantity: [1],
+      laborHours1: [0.09],
+      laborHours2: [0.09],
+      laborCost: [49.5],
+      material: [0],
+      materials: [0],
+      totalPrice: [49.5],
+      constructionType: "New Construction"),
+  HullRoofingModel(
+      name: "28 mm. skersmens angos gręžimas keraminių plytelių sienoje.",
+      description: [
+        '28 mm. skersmens angos gręžimas keraminių plytelių sienoje.'
+      ],
+      unit: ['vnt'],
+      quantity: [1],
+      laborHours1: [0.12],
+      laborHours2: [0.12],
+      laborCost: [66],
+      material: [0],
+      materials: [0],
+      totalPrice: [66],
+      constructionType: "New Construction"),
+  HullRoofingModel(
+      name: "35 mm. skersmens angos gręžimas keraminių plytelių sienoje.",
+      description: [
+        '35 mm. skersmens angos gręžimas keraminių plytelių sienoje.'
+      ],
+      unit: ['vnt'],
+      quantity: [1],
+      laborHours1: [0.16],
+      laborHours2: [0.16],
+      laborCost: [88],
+      material: [0],
+      materials: [0],
+      totalPrice: [88],
+      constructionType: "New Construction"),
+  HullRoofingModel(
+      name: "55 mm. skersmens angos gręžimas keraminių plytelių sienoje.",
+      description: [
+        '55 mm. skersmens angos gręžimas keraminių plytelių sienoje.'
+      ],
+      unit: ['vnt'],
+      quantity: [1],
+      laborHours1: [0.25],
+      laborHours2: [0.25],
+      laborCost: [137.5],
+      material: [0],
+      materials: [0],
+      totalPrice: [137.5],
+      constructionType: "New Construction"),
+  HullRoofingModel(
+      name: "72 mm. skersmens angos gręžimas keraminių plytelių sienoje.",
+      description: [
+        '72 mm. skersmens angos gręžimas keraminių plytelių sienoje.'
+      ],
+      unit: ['vnt'],
+      quantity: [1],
+      laborHours1: [0.32],
+      laborHours2: [0.32],
+      laborCost: [176],
+      material: [0],
+      materials: [0],
+      totalPrice: [176],
+      constructionType: "New Construction"),
+  HullRoofingModel(
+      name: "115 mm. skersmens angos gręžimas keraminių plytelių sienoje.",
+      description: [
+        '115 mm. skersmens angos gręžimas keraminių plytelių sienoje.'
+      ],
+      unit: ['vnt'],
+      quantity: [1],
+      laborHours1: [0.51],
+      laborHours2: [0.51],
+      laborCost: [280.5],
+      material: [0],
+      materials: [0],
+      totalPrice: [280.5],
+      constructionType: "New Construction"),
+  HullRoofingModel(
+      name:
+          "100 mm. skersmens angos gręžimas vėdinimui iš abiejų sienos pusių (gipso plokštės siena).",
+      description: [
+        '100 mm. skersmens angos gręžimas vėdinimui iš abiejų sienos pusių (gipso plokštės siena).'
+      ],
+      unit: ['vnt'],
+      quantity: [1],
+      laborHours1: [0.3],
+      laborHours2: [0.3],
+      laborCost: [165],
+      material: [0],
+      materials: [0],
+      totalPrice: [165],
+      constructionType: "New Construction"),
+  HullRoofingModel(
+      name:
+          "125 mm. skersmens angos gręžimas vėdinimui iš abiejų sienos pusių (gipso plokštės siena).",
+      description: [
+        '125 mm. skersmens angos gręžimas vėdinimui iš abiejų sienos pusių (gipso plokštės siena).'
+      ],
+      unit: ['vnt'],
+      quantity: [1],
+      laborHours1: [0.38],
+      laborHours2: [0.38],
+      laborCost: [209],
+      material: [0],
+      materials: [0],
+      totalPrice: [209],
+      constructionType: "New Construction"),
+  HullRoofingModel(
+      name:
+          "160 mm. skersmens angos gręžimas vėdinimui iš abiejų sienos pusių (gipso plokštės siena).",
+      description: [
+        '160 mm. skersmens angos gręžimas vėdinimui iš abiejų sienos pusių (gipso plokštės siena).'
+      ],
+      unit: ['vnt'],
+      quantity: [1],
+      laborHours1: [0.48],
+      laborHours2: [0.48],
+      laborCost: [264],
+      material: [0],
+      materials: [0],
+      totalPrice: [264],
+      constructionType: "New Construction"),
+  HullRoofingModel(
+      name:
+          "200 mm. skersmens angos gręžimas vėdinimui iš abiejų sienos pusių (gipso plokštės siena).",
+      description: [
+        '200 mm. skersmens angos gręžimas vėdinimui iš abiejų sienos pusių (gipso plokštės siena).'
+      ],
+      unit: ['vnt'],
+      quantity: [1],
+      laborHours1: [0.6],
+      laborHours2: [0.6],
+      laborCost: [330],
+      material: [0],
+      materials: [0],
+      totalPrice: [330],
+      constructionType: "New Construction"),
+  HullRoofingModel(
+      name:
+          "250 mm. skersmens angos gręžimas vėdinimui iš abiejų sienos pusių (gipso plokštės siena).",
+      description: [
+        '250 mm. skersmens angos gręžimas vėdinimui iš abiejų sienos pusių (gipso plokštės siena).'
+      ],
+      unit: ['vnt'],
+      quantity: [1],
+      laborHours1: [0.75],
+      laborHours2: [0.75],
+      laborCost: [412.5],
+      material: [0],
+      materials: [0],
+      totalPrice: [412.5],
+      constructionType: "New Construction"),
+  HullRoofingModel(
+      name:
+          "315 mm. skersmens angos gręžimas vėdinimui iš abiejų sienos pusių (gipso plokštės siena).",
+      description: [
+        '315 mm. skersmens angos gręžimas vėdinimui iš abiejų sienos pusių (gipso plokštės siena).'
+      ],
+      unit: ['vnt'],
+      quantity: [1],
+      laborHours1: [0.95],
+      laborHours2: [0.95],
+      laborCost: [522.5],
+      material: [0],
+      materials: [0],
+      totalPrice: [522.5],
+      constructionType: "New Construction"),
+  HullRoofingModel(
+      name:
+          "400 mm. skersmens angos gręžimas vėdinimui iš abiejų sienos pusių (gipso plokštės siena).",
+      description: [
+        '400 mm. skersmens angos gręžimas vėdinimui iš abiejų sienos pusių (gipso plokštės siena).'
+      ],
+      unit: ['vnt'],
+      quantity: [1],
+      laborHours1: [1.2],
+      laborHours2: [1.2],
+      laborCost: [660],
+      material: [0],
+      materials: [0],
+      totalPrice: [660],
+      constructionType: "New Construction"),
+  HullRoofingModel(
+      name:
+          "500 mm. skersmens angos gręžimas vėdinimui iš abiejų sienos pusių (gipso plokštės siena).",
+      description: [
+        '500 mm. skersmens angos gręžimas vėdinimui iš abiejų sienos pusių (gipso plokštės siena).'
+      ],
+      unit: ['vnt'],
+      quantity: [1],
+      laborHours1: [1.5],
+      laborHours2: [1.5],
+      laborCost: [825],
+      material: [0],
+      materials: [0],
+      totalPrice: [825],
+      constructionType: "New Construction"),
 ];
 
 final litScaffoldingData = [
   ScaffoldingModel(
-    name: "Sijos ir kolonos, klijuotos medienos ir plieno - Individualus namas",
-    description: [
-      "Pastolių nuoma už m²/mėn. - 132m²",
-      "Lengvųjų pastolių montavimas",
-      "Lengvųjų pastolių demontavimas",
-    ],
-    unit: [
-      "stk",
-      "m²",
-      "m²",
-    ],
-    quantity: [
-      0.00,
-      0.00,
-      0.00,
-    ],
-    laborHours1: [
-      0.00,
-      0.15,
-      0.15,
-    ],
-    laborHours2: [
-      0.00,
-      0.00,
-      0.00,
-    ],
-    laborCost: [
-      0.00,
-      0.00,
-      0.00,
-    ],
-    material: [
-      10350.00,
-      0.00,
-      0.00,
-    ],
-    materials: [
-      0.00,
-      0.00,
-      0.00,
-    ],
-    totalPrice: [
-      0.00,
-      0.00,
-      0.00,
-    ],
-  )
+      name: "Pastolių nuoma už m²/mėn. – (100 m² komplektas)",
+      description: ['Pastolių nuoma už m²/mėn. – (100 m² komplektas)'],
+      unit: ['vnt'],
+      quantity: [0],
+      laborHours1: [0],
+      laborHours2: [0],
+      laborCost: [0],
+      material: [7840],
+      materials: [0],
+      totalPrice: [0],
+      constructionType: "New Construction"),
+  ScaffoldingModel(
+      name: "Pastolių montavimas",
+      description: ['Pastolių montavimas'],
+      unit: ['m²'],
+      quantity: [0],
+      laborHours1: [0.21],
+      laborHours2: [0],
+      laborCost: [0],
+      material: [0],
+      materials: [0],
+      totalPrice: [0],
+      constructionType: "New Construction"),
+  ScaffoldingModel(
+      name: "Pastolių demontavimas",
+      description: ['Pastolių demontavimas'],
+      unit: ['m²'],
+      quantity: [0],
+      laborHours1: [0.21],
+      laborHours2: [0],
+      laborCost: [0],
+      material: [0],
+      materials: [0],
+      totalPrice: [0],
+      constructionType: "New Construction"),
 ];
 
 final litWasteData = [
   WasteModel(
-    name: "Atliekų šalinimas",
-    description: [
-      "Konteineris 10 m³: Kolekcija. Tarifas. ir sienos",
-      "Konteineris 10 m³: Kolekcija. Švari mediena",
-      "Konteineris 10 m³: Konteineris 10 m³",
-      "Konteineris 10 m³: Savaitinė nuoma",
-      "Konteineris 10 m³: Ištuštinimo mokestis. Švari mediena",
-      "Konteineris 10 m³: Ištuštinimo mokestis. Tarifas. ir mūras",
-    ],
-    unit: [
-      "RS",
-      "RS",
-      "RS",
-      "RS",
-      "RS",
-      "RS",
-    ],
-    quantity: [
-      0.00,
-      0.00,
-      0.00,
-      0.00,
-      0.00,
-      0.00,
-    ],
-    laborHours1: [
-      0.00,
-      0.00,
-      0.00,
-      0.00,
-      0.00,
-      0.00,
-    ],
-    laborHours2: [
-      0.00,
-      0.00,
-      0.00,
-      0.00,
-      0.00,
-      0.00,
-    ],
-    laborCost: [
-      0.00,
-      0.00,
-      0.00,
-      0.00,
-      0.00,
-      0.00,
-    ],
-    material: [
-      5135.00,
-      3275.00,
-      491.00,
-      1500.00,
-      3264.00,
-      5124.00,
-    ],
-    materials: [
-      0.00,
-      0.00,
-      0.00,
-      0.00,
-      0.00,
-      0.00,
-    ],
-    totalPrice: [
-      0.00,
-      0.00,
-      0.00,
-      0.00,
-      0.00,
-      0.00,
-    ],
-  )
+      name: "Konteineris 10 m³: Surinkimas. Čerpės ir mūras.",
+      description: ['Konteineris 10 m³: Surinkimas. Čerpės ir mūras.'],
+      unit: ['RS'],
+      quantity: [1],
+      laborHours1: [0],
+      laborHours2: [0],
+      laborCost: [0],
+      material: [5135],
+      materials: [5135],
+      totalPrice: [5135],
+      constructionType: "New Construction"),
+  WasteModel(
+      name: "Konteineris 10 m³: Surinkimas. Švarios medienos atliekos.",
+      description: [
+        'Konteineris 10 m³: Surinkimas. Švarios medienos atliekos.'
+      ],
+      unit: ['RS'],
+      quantity: [1],
+      laborHours1: [0],
+      laborHours2: [0],
+      laborCost: [0],
+      material: [3275],
+      materials: [3275],
+      totalPrice: [3275],
+      constructionType: "New Construction"),
+  WasteModel(
+      name: "Konteineris 10 m³: Pristatymas.",
+      description: ['Konteineris 10 m³: Pristatymas.'],
+      unit: ['RS'],
+      quantity: [1],
+      laborHours1: [0],
+      laborHours2: [0],
+      laborCost: [0],
+      material: [491],
+      materials: [491],
+      totalPrice: [491],
+      constructionType: "New Construction"),
+  WasteModel(
+      name: "Konteineris 10 m³: Nuoma per savaitę.",
+      description: ['Konteineris 10 m³: Nuoma per savaitę.'],
+      unit: ['RS'],
+      quantity: [1],
+      laborHours1: [0],
+      laborHours2: [0],
+      laborCost: [0],
+      material: [1500],
+      materials: [1500],
+      totalPrice: [1500],
+      constructionType: "New Construction"),
+  WasteModel(
+      name:
+          "Konteineris 10 m³: Ištuštinimo mokestis. Švarios medienos atliekos.",
+      description: [
+        'Konteineris 10 m³: Ištuštinimo mokestis. Švarios medienos atliekos.'
+      ],
+      unit: ['RS'],
+      quantity: [1],
+      laborHours1: [0],
+      laborHours2: [0],
+      laborCost: [0],
+      material: [3264],
+      materials: [3264],
+      totalPrice: [3264],
+      constructionType: "New Construction"),
+  WasteModel(
+      name: "Konteineris 10 m³: Ištuštinimo mokestis. Stogas ir mūras.",
+      description: [
+        'Konteineris 10 m³: Ištuštinimo mokestis. Stogas ir mūras.'
+      ],
+      unit: ['RS'],
+      quantity: [1],
+      laborHours1: [0],
+      laborHours2: [0],
+      laborCost: [0],
+      material: [5124],
+      materials: [5124],
+      totalPrice: [5124],
+      constructionType: "New Construction"),
 ];
