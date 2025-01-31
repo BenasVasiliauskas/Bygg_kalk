@@ -18,6 +18,7 @@ class LitBudgetScreen extends StatefulWidget {
 class _LitBudgetScreenState extends State<LitBudgetScreen> {
   final AppLifecycleObserver _observer = AppLifecycleObserver();
 
+  // You may or may not need a scrollController. If you don't, feel free to remove it.
   final ScrollController _scrollController = ScrollController();
 
   @override
@@ -33,13 +34,10 @@ class _LitBudgetScreenState extends State<LitBudgetScreen> {
   }
 
   double sumWasteRemoval = calculateTotalWaste(litWasteData);
-
   double sumMaterialCosts =
       totalMaterialCosts.reduce((value, element) => value + element);
-
   double sumLaborCosts =
       totalLaborCosts.reduce((value, element) => value + element);
-
   double sumTotalHours = totalHours.reduce((value, element) => value + element);
 
   @override
@@ -66,8 +64,7 @@ class _LitBudgetScreenState extends State<LitBudgetScreen> {
                 child: Container(
                   decoration: BoxDecoration(
                     color: Colors.lightBlueAccent,
-                    borderRadius: BorderRadius.circular(
-                        12), // Adjust the corner radius as needed
+                    borderRadius: BorderRadius.circular(12),
                   ),
                   child: TextButton(
                     onPressed: () async {
@@ -117,14 +114,28 @@ class _LitBudgetScreenState extends State<LitBudgetScreen> {
           ),
         ),
         drawer: CustomDrawer(),
+
+        // 1) Use a vertical SingleChildScrollView (or you can use just a Column
+        //    if you know it won't overflow vertically). Each table gets its own
+        //    horizontal SingleChildScrollView. This removes extra left gaps.
         body: SingleChildScrollView(
           controller: _scrollController,
-          scrollDirection: Axis.horizontal,
-          child: SingleChildScrollView(
-            child: Column(
-              children: [
-                DataTable(
+          padding: EdgeInsets.all(15),
+          child: Column(
+            // 2) Align everything flush to the left
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              // ─────────────────────────────────────────────────────────────────
+              // First data table
+              // ─────────────────────────────────────────────────────────────────
+              SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                padding: EdgeInsets.zero,
+                child: DataTable(
+                  // Remove or reduce spacing to keep columns tight
                   columnSpacing: 0,
+                  horizontalMargin: 0,
+
                   columns: [
                     DataColumn(
                       label: SizedBox(
@@ -187,6 +198,7 @@ class _LitBudgetScreenState extends State<LitBudgetScreen> {
                                 (totalMaterialCosts[index] * markup);
 
                     final double total = labor + material;
+
                     return DataRow(
                       cells: [
                         DataCell(
@@ -254,30 +266,39 @@ class _LitBudgetScreenState extends State<LitBudgetScreen> {
                     );
                   }),
                 ),
-                DataTable(
+              ),
+
+              // ─────────────────────────────────────────────────────────────────
+              // Add a little vertical space if desired
+              // ─────────────────────────────────────────────────────────────────
+              SizedBox(height: 16),
+
+              // ─────────────────────────────────────────────────────────────────
+              // Second data table
+              // ─────────────────────────────────────────────────────────────────
+              SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                padding: EdgeInsets.zero,
+                child: DataTable(
+                  columnSpacing: 0,
+                  horizontalMargin: 0,
                   columns: [
                     DataColumn(
                       label: SizedBox(
                         width: 70,
-                        child: Text(
-                          '',
-                        ),
+                        child: Text(''),
                       ),
                     ),
                     DataColumn(
                       label: SizedBox(
                         width: 210,
-                        child: Text(
-                          '',
-                        ),
+                        child: Text(''),
                       ),
                     ),
                     DataColumn(
                       label: SizedBox(
                         width: 70,
-                        child: Text(
-                          '',
-                        ),
+                        child: Text(''),
                       ),
                     ),
                   ],
@@ -290,11 +311,7 @@ class _LitBudgetScreenState extends State<LitBudgetScreen> {
                             style: TextStyle(fontWeight: FontWeight.bold),
                           ),
                         ),
-                        DataCell(
-                          Text(
-                            "",
-                          ),
-                        ),
+                        DataCell(Text("")),
                         DataCell(
                           Text(
                             (costs *
@@ -314,11 +331,7 @@ class _LitBudgetScreenState extends State<LitBudgetScreen> {
                             style: TextStyle(fontWeight: FontWeight.bold),
                           ),
                         ),
-                        DataCell(
-                          Text(
-                            "",
-                          ),
-                        ),
+                        DataCell(Text("")),
                         DataCell(
                           Text(sumMaterialCosts.toStringAsFixed(2) + "kr."),
                         ),
@@ -332,15 +345,13 @@ class _LitBudgetScreenState extends State<LitBudgetScreen> {
                             style: TextStyle(fontWeight: FontWeight.bold),
                           ),
                         ),
+                        DataCell(Text("")),
                         DataCell(
                           Text(
-                            "",
+                            (sumWasteRemoval + sumWasteRemoval * costs)
+                                    .toStringAsFixed(2) +
+                                "kr.",
                           ),
-                        ),
-                        DataCell(
-                          Text((sumWasteRemoval + sumWasteRemoval * costs)
-                                  .toStringAsFixed(2) +
-                              "kr."),
                         ),
                       ],
                     ),
@@ -352,11 +363,7 @@ class _LitBudgetScreenState extends State<LitBudgetScreen> {
                             style: TextStyle(fontWeight: FontWeight.bold),
                           ),
                         ),
-                        DataCell(
-                          Text(
-                            "",
-                          ),
-                        ),
+                        DataCell(Text("")),
                         DataCell(
                           Text(
                             (sumMaterialCosts * 0.05).toStringAsFixed(2) +
@@ -373,11 +380,7 @@ class _LitBudgetScreenState extends State<LitBudgetScreen> {
                             style: TextStyle(fontWeight: FontWeight.bold),
                           ),
                         ),
-                        DataCell(
-                          Text(
-                            "",
-                          ),
-                        ),
+                        DataCell(Text("")),
                         DataCell(
                           Text(
                             (sumLaborCosts +
@@ -394,15 +397,9 @@ class _LitBudgetScreenState extends State<LitBudgetScreen> {
                     DataRow(
                       cells: [
                         DataCell(
-                          Text(
-                            "PVM",
-                          ),
+                          Text("PVM"),
                         ),
-                        DataCell(
-                          Text(
-                            "",
-                          ),
-                        ),
+                        DataCell(Text("")),
                         DataCell(
                           Text(
                             (((sumLaborCosts +
@@ -430,11 +427,7 @@ class _LitBudgetScreenState extends State<LitBudgetScreen> {
                             style: TextStyle(fontWeight: FontWeight.bold),
                           ),
                         ),
-                        DataCell(
-                          Text(
-                            "",
-                          ),
-                        ),
+                        DataCell(Text("")),
                         DataCell(
                           Text(
                             ((sumLaborCosts +
@@ -451,8 +444,8 @@ class _LitBudgetScreenState extends State<LitBudgetScreen> {
                     ),
                   ],
                 ),
-              ],
-            ),
+              ),
+            ],
           ),
         ),
       ),

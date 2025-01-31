@@ -17,7 +17,6 @@ class NorwBudgetScreen extends StatefulWidget {
 
 class _NorwBudgetScreenState extends State<NorwBudgetScreen> {
   final AppLifecycleObserver _observer = AppLifecycleObserver();
-
   final ScrollController _scrollController = ScrollController();
 
   @override
@@ -33,10 +32,8 @@ class _NorwBudgetScreenState extends State<NorwBudgetScreen> {
   }
 
   double sumWasteRemoval = calculateTotalWaste(norwWasteData);
-
   double sumMaterialCosts =
       totalMaterialCosts.reduce((value, element) => value + element);
-
   double sumLaborCosts =
       totalLaborCosts.reduce((value, element) => value + element);
   double sumTotalHours = totalHours.reduce((value, element) => value + element);
@@ -61,12 +58,11 @@ class _NorwBudgetScreenState extends State<NorwBudgetScreen> {
             children: [
               Text('Budsjettskjermen'),
               Padding(
-                padding: const EdgeInsets.all(12.0),
+                padding: const EdgeInsets.all(70.0),
                 child: Container(
                   decoration: BoxDecoration(
                     color: Colors.lightBlueAccent,
-                    borderRadius: BorderRadius.circular(
-                        12), // Adjust the corner radius as needed
+                    borderRadius: BorderRadius.circular(12),
                   ),
                   child: TextButton(
                     onPressed: () async {
@@ -76,10 +72,9 @@ class _NorwBudgetScreenState extends State<NorwBudgetScreen> {
                         allowedExtensions: ["json"],
                       );
                       if (result != null) {
-                        PlatformFile file = result.files.first;
+                        final file = result.files.first;
                         final fileName = file.name;
-
-                        var data = await readJsonFileSelected(fileName);
+                        final data = await readJsonFileSelected(fileName);
 
                         await norwLoadProject(fileName, data, emptyDeckModel);
                         await norwLoadProject(
@@ -117,21 +112,28 @@ class _NorwBudgetScreenState extends State<NorwBudgetScreen> {
           ),
         ),
         drawer: CustomDrawer(),
+
+        // 1) A vertical scroll for the entire content:
         body: SingleChildScrollView(
           controller: _scrollController,
-          scrollDirection: Axis.horizontal,
-          child: SingleChildScrollView(
-            child: Column(
-              children: [
-                DataTable(
-                  columnSpacing: 10,
+          padding: EdgeInsets.all(15),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start, // flush-left
+            children: [
+              // ────────────────────────────────────────────────────────────────
+              // 2) First DataTable (horizontal scroll)
+              // ────────────────────────────────────────────────────────────────
+              SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                padding: EdgeInsets.zero,
+                child: DataTable(
+                  columnSpacing: 0,
+                  horizontalMargin: 0,
                   columns: [
                     DataColumn(
                       label: SizedBox(
                         width: 70,
-                        child: Text(
-                          'Kostnadsart',
-                        ),
+                        child: Text('Kostnadsart'),
                       ),
                     ),
                     DataColumn(
@@ -172,22 +174,21 @@ class _NorwBudgetScreenState extends State<NorwBudgetScreen> {
                     ),
                   ],
                   rows: List.generate(calculatedNamesOrder.length, (index) {
-                    // Determine if this is the last row
-                    bool isLastRow = index == calculatedNamesOrder.length - 1;
+                    final bool isLastRow =
+                        index == calculatedNamesOrder.length - 1;
 
-                    final double labor =
-                        (index == calculatedNamesOrder.length - 1)
-                            ? sumLaborCosts + (sumLaborCosts * timeCoefficient)
-                            : totalLaborCosts[index] +
-                                (totalLaborCosts[index] * timeCoefficient);
+                    final double labor = isLastRow
+                        ? sumLaborCosts + (sumLaborCosts * timeCoefficient)
+                        : totalLaborCosts[index] +
+                            (totalLaborCosts[index] * timeCoefficient);
 
-                    final double material =
-                        (index == calculatedNamesOrder.length - 1)
-                            ? sumMaterialCosts + (sumMaterialCosts * markup)
-                            : totalMaterialCosts[index] +
-                                (totalMaterialCosts[index] * markup);
+                    final double material = isLastRow
+                        ? sumMaterialCosts + (sumMaterialCosts * markup)
+                        : totalMaterialCosts[index] +
+                            (totalMaterialCosts[index] * markup);
 
                     final double total = labor + material;
+
                     return DataRow(
                       cells: [
                         DataCell(
@@ -205,7 +206,7 @@ class _NorwBudgetScreenState extends State<NorwBudgetScreen> {
                           SizedBox(
                             width: 70,
                             child: Text(
-                              (index == calculatedNamesOrder.length - 1
+                              (isLastRow
                                       ? (sumTotalHours +
                                           (sumTotalHours * timeCoefficient))
                                       : (totalHours[index] +
@@ -255,31 +256,36 @@ class _NorwBudgetScreenState extends State<NorwBudgetScreen> {
                     );
                   }),
                 ),
-                DataTable(
-                  columnSpacing: 10,
+              ),
+
+              SizedBox(height: 16),
+
+              // ────────────────────────────────────────────────────────────────
+              // 3) Second DataTable (horizontal scroll)
+              // ────────────────────────────────────────────────────────────────
+              SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                padding: EdgeInsets.zero,
+                child: DataTable(
+                  columnSpacing: 0,
+                  horizontalMargin: 0,
                   columns: [
                     DataColumn(
                       label: SizedBox(
                         width: 70,
-                        child: Text(
-                          '',
-                        ),
+                        child: Text(''),
                       ),
                     ),
                     DataColumn(
                       label: SizedBox(
                         width: 210,
-                        child: Text(
-                          '',
-                        ),
+                        child: Text(''),
                       ),
                     ),
                     DataColumn(
                       label: SizedBox(
                         width: 70,
-                        child: Text(
-                          '',
-                        ),
+                        child: Text(''),
                       ),
                     ),
                   ],
@@ -292,11 +298,7 @@ class _NorwBudgetScreenState extends State<NorwBudgetScreen> {
                             style: TextStyle(fontWeight: FontWeight.bold),
                           ),
                         ),
-                        DataCell(
-                          Text(
-                            "",
-                          ),
-                        ),
+                        DataCell(Text("")),
                         DataCell(
                           Text(
                             (costs *
@@ -316,11 +318,7 @@ class _NorwBudgetScreenState extends State<NorwBudgetScreen> {
                             style: TextStyle(fontWeight: FontWeight.bold),
                           ),
                         ),
-                        DataCell(
-                          Text(
-                            "",
-                          ),
-                        ),
+                        DataCell(Text("")),
                         DataCell(
                           Text(sumMaterialCosts.toStringAsFixed(2) + "\kr"),
                         ),
@@ -334,15 +332,13 @@ class _NorwBudgetScreenState extends State<NorwBudgetScreen> {
                             style: TextStyle(fontWeight: FontWeight.bold),
                           ),
                         ),
+                        DataCell(Text("")),
                         DataCell(
                           Text(
-                            "",
+                            (sumWasteRemoval + sumWasteRemoval * costs)
+                                    .toStringAsFixed(2) +
+                                "\kr",
                           ),
-                        ),
-                        DataCell(
-                          Text((sumWasteRemoval + sumWasteRemoval * costs)
-                                  .toStringAsFixed(2) +
-                              "\kr"),
                         ),
                       ],
                     ),
@@ -354,11 +350,7 @@ class _NorwBudgetScreenState extends State<NorwBudgetScreen> {
                             style: TextStyle(fontWeight: FontWeight.bold),
                           ),
                         ),
-                        DataCell(
-                          Text(
-                            "",
-                          ),
-                        ),
+                        DataCell(Text("")),
                         DataCell(
                           Text(
                             (sumMaterialCosts * 0.05).toStringAsFixed(2) +
@@ -375,11 +367,7 @@ class _NorwBudgetScreenState extends State<NorwBudgetScreen> {
                             style: TextStyle(fontWeight: FontWeight.bold),
                           ),
                         ),
-                        DataCell(
-                          Text(
-                            "",
-                          ),
-                        ),
+                        DataCell(Text("")),
                         DataCell(
                           Text(
                             (sumLaborCosts +
@@ -395,16 +383,8 @@ class _NorwBudgetScreenState extends State<NorwBudgetScreen> {
                     ),
                     DataRow(
                       cells: [
-                        DataCell(
-                          Text(
-                            "Mva",
-                          ),
-                        ),
-                        DataCell(
-                          Text(
-                            "",
-                          ),
-                        ),
+                        DataCell(Text("Mva")),
+                        DataCell(Text("")),
                         DataCell(
                           Text(
                             (((sumLaborCosts +
@@ -432,11 +412,7 @@ class _NorwBudgetScreenState extends State<NorwBudgetScreen> {
                             style: TextStyle(fontWeight: FontWeight.bold),
                           ),
                         ),
-                        DataCell(
-                          Text(
-                            "",
-                          ),
-                        ),
+                        DataCell(Text("")),
                         DataCell(
                           Text(
                             ((sumLaborCosts +
@@ -453,8 +429,8 @@ class _NorwBudgetScreenState extends State<NorwBudgetScreen> {
                     ),
                   ],
                 ),
-              ],
-            ),
+              ),
+            ],
           ),
         ),
       ),

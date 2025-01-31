@@ -17,6 +17,9 @@ class PolBudgetScreen extends StatefulWidget {
 
 class _PolBudgetScreenState extends State<PolBudgetScreen> {
   final AppLifecycleObserver _observer = AppLifecycleObserver();
+
+  /// You can keep this if you want manual control over vertical scrolling,
+  /// otherwise you can remove it if it’s not required.
   final ScrollController _scrollController = ScrollController();
 
   @override
@@ -32,13 +35,10 @@ class _PolBudgetScreenState extends State<PolBudgetScreen> {
   }
 
   double sumWasteRemoval = calculateTotalWaste(polWasteData);
-
   double sumMaterialCosts =
       totalMaterialCosts.reduce((value, element) => value + element);
-
   double sumLaborCosts =
       totalLaborCosts.reduce((value, element) => value + element);
-
   double sumTotalHours = totalHours.reduce((value, element) => value + element);
 
   @override
@@ -50,9 +50,9 @@ class _PolBudgetScreenState extends State<PolBudgetScreen> {
           return;
         }
         Navigator.of(context).pushReplacement(
-          MaterialPageRoute(builder: (context) {
-            return homePage();
-          }),
+          MaterialPageRoute(
+            builder: (context) => homePage(),
+          ),
         );
       },
       child: Scaffold(
@@ -61,12 +61,11 @@ class _PolBudgetScreenState extends State<PolBudgetScreen> {
             children: [
               Text('Ekran budżetu'),
               Padding(
-                padding: const EdgeInsets.all(12.0),
+                padding: const EdgeInsets.all(70.0),
                 child: Container(
                   decoration: BoxDecoration(
                     color: Colors.lightBlueAccent,
-                    borderRadius: BorderRadius.circular(
-                        12), // Adjust the corner radius as needed
+                    borderRadius: BorderRadius.circular(12),
                   ),
                   child: TextButton(
                     onPressed: () async {
@@ -76,9 +75,8 @@ class _PolBudgetScreenState extends State<PolBudgetScreen> {
                         allowedExtensions: ["json"],
                       );
                       if (result != null) {
-                        PlatformFile file = result.files.first;
+                        final file = result.files.first;
                         final fileName = file.name;
-
                         var data = await readJsonFileSelected(fileName);
 
                         await polLoadProject(fileName, data, emptyDeckModel);
@@ -116,21 +114,29 @@ class _PolBudgetScreenState extends State<PolBudgetScreen> {
           ),
         ),
         drawer: CustomDrawer(),
+
+        // A vertical scroll for the entire screen
         body: SingleChildScrollView(
           controller: _scrollController,
-          scrollDirection: Axis.horizontal,
-          child: SingleChildScrollView(
-            child: Column(
-              children: [
-                DataTable(
-                  columnSpacing: 40,
+          padding: EdgeInsets.all(15),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start, // Align flush-left
+            children: [
+              // ────────────────────────────────────────────────────────────────
+              // 1. First DataTable with horizontal scroll
+              // ────────────────────────────────────────────────────────────────
+              SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                padding: EdgeInsets.zero,
+                child: DataTable(
+                  // Adjust these to remove extra spacing
+                  columnSpacing: 0,
+                  horizontalMargin: 0,
                   columns: [
                     DataColumn(
                       label: SizedBox(
                         width: 70,
-                        child: Text(
-                          'Rodzaj kosztu',
-                        ),
+                        child: Text('Rodzaj kosztu'),
                       ),
                     ),
                     DataColumn(
@@ -172,18 +178,14 @@ class _PolBudgetScreenState extends State<PolBudgetScreen> {
                   ],
                   rows: List.generate(calculatedNamesOrder.length, (index) {
                     bool isLastRow = index == calculatedNamesOrder.length - 1;
-
-                    final double labor =
-                        (index == calculatedNamesOrder.length - 1)
-                            ? sumLaborCosts + (sumLaborCosts * timeCoefficient)
-                            : totalLaborCosts[index] +
-                                (totalLaborCosts[index] * timeCoefficient);
-
-                    final double material =
-                        (index == calculatedNamesOrder.length - 1)
-                            ? sumMaterialCosts + (sumMaterialCosts * markup)
-                            : totalMaterialCosts[index] +
-                                (totalMaterialCosts[index] * markup);
+                    final double labor = isLastRow
+                        ? sumLaborCosts + (sumLaborCosts * timeCoefficient)
+                        : totalLaborCosts[index] +
+                            (totalLaborCosts[index] * timeCoefficient);
+                    final double material = isLastRow
+                        ? sumMaterialCosts + (sumMaterialCosts * markup)
+                        : totalMaterialCosts[index] +
+                            (totalMaterialCosts[index] * markup);
                     final double total = labor + material;
 
                     return DataRow(
@@ -203,7 +205,7 @@ class _PolBudgetScreenState extends State<PolBudgetScreen> {
                           SizedBox(
                             width: 70,
                             child: Text(
-                              (index == calculatedNamesOrder.length - 1
+                              (isLastRow
                                       ? (sumTotalHours +
                                           (sumTotalHours * timeCoefficient))
                                       : (totalHours[index] +
@@ -253,31 +255,28 @@ class _PolBudgetScreenState extends State<PolBudgetScreen> {
                     );
                   }),
                 ),
-                DataTable(
+              ),
+
+              SizedBox(height: 16),
+
+              // ────────────────────────────────────────────────────────────────
+              // 2. Second DataTable with horizontal scroll
+              // ────────────────────────────────────────────────────────────────
+              SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                padding: EdgeInsets.zero,
+                child: DataTable(
+                  columnSpacing: 0,
+                  horizontalMargin: 0,
                   columns: [
                     DataColumn(
-                      label: SizedBox(
-                        width: 70,
-                        child: Text(
-                          '',
-                        ),
-                      ),
+                      label: SizedBox(width: 70, child: Text('')),
                     ),
                     DataColumn(
-                      label: SizedBox(
-                        width: 210,
-                        child: Text(
-                          '',
-                        ),
-                      ),
+                      label: SizedBox(width: 210, child: Text('')),
                     ),
                     DataColumn(
-                      label: SizedBox(
-                        width: 70,
-                        child: Text(
-                          '',
-                        ),
-                      ),
+                      label: SizedBox(width: 70, child: Text('')),
                     ),
                   ],
                   rows: [
@@ -289,11 +288,7 @@ class _PolBudgetScreenState extends State<PolBudgetScreen> {
                             style: TextStyle(fontWeight: FontWeight.bold),
                           ),
                         ),
-                        DataCell(
-                          Text(
-                            "",
-                          ),
-                        ),
+                        DataCell(Text("")),
                         DataCell(
                           Text(
                             (costs *
@@ -313,11 +308,7 @@ class _PolBudgetScreenState extends State<PolBudgetScreen> {
                             style: TextStyle(fontWeight: FontWeight.bold),
                           ),
                         ),
-                        DataCell(
-                          Text(
-                            "",
-                          ),
-                        ),
+                        DataCell(Text("")),
                         DataCell(
                           Text(sumMaterialCosts.toStringAsFixed(2) + "kr."),
                         ),
@@ -331,15 +322,13 @@ class _PolBudgetScreenState extends State<PolBudgetScreen> {
                             style: TextStyle(fontWeight: FontWeight.bold),
                           ),
                         ),
+                        DataCell(Text("")),
                         DataCell(
                           Text(
-                            "",
+                            (sumWasteRemoval + sumWasteRemoval * costs)
+                                    .toStringAsFixed(2) +
+                                "kr.",
                           ),
-                        ),
-                        DataCell(
-                          Text((sumWasteRemoval + sumWasteRemoval * costs)
-                                  .toStringAsFixed(2) +
-                              "kr."),
                         ),
                       ],
                     ),
@@ -351,11 +340,7 @@ class _PolBudgetScreenState extends State<PolBudgetScreen> {
                             style: TextStyle(fontWeight: FontWeight.bold),
                           ),
                         ),
-                        DataCell(
-                          Text(
-                            "",
-                          ),
-                        ),
+                        DataCell(Text("")),
                         DataCell(
                           Text(
                             (sumMaterialCosts * 0.05).toStringAsFixed(2) +
@@ -372,36 +357,23 @@ class _PolBudgetScreenState extends State<PolBudgetScreen> {
                             style: TextStyle(fontWeight: FontWeight.bold),
                           ),
                         ),
-                        DataCell(
-                          Text(
-                            "",
-                          ),
-                        ),
+                        DataCell(Text("")),
                         DataCell(
                           Text(
                             (sumLaborCosts +
-                                        (costs * sumLaborCosts) +
-                                        sumMaterialCosts +
-                                        sumWasteRemoval +
-                                        sumMaterialCosts * 0.05)
-                                    .toStringAsFixed(2) +
-                                "\kr",
+                                    (costs * sumLaborCosts) +
+                                    sumMaterialCosts +
+                                    sumWasteRemoval +
+                                    sumMaterialCosts * 0.05)
+                                .toStringAsFixed(2),
                           ),
                         ),
                       ],
                     ),
                     DataRow(
                       cells: [
-                        DataCell(
-                          Text(
-                            "VAT",
-                          ),
-                        ),
-                        DataCell(
-                          Text(
-                            "",
-                          ),
-                        ),
+                        DataCell(Text("VAT")),
+                        DataCell(Text("")),
                         DataCell(
                           Text(
                             (((sumLaborCosts +
@@ -416,7 +388,7 @@ class _PolBudgetScreenState extends State<PolBudgetScreen> {
                                             sumWasteRemoval +
                                             sumMaterialCosts * 0.05))
                                     .toStringAsFixed(2) +
-                                "\kr",
+                                "kr.",
                           ),
                         ),
                       ],
@@ -429,11 +401,7 @@ class _PolBudgetScreenState extends State<PolBudgetScreen> {
                             style: TextStyle(fontWeight: FontWeight.bold),
                           ),
                         ),
-                        DataCell(
-                          Text(
-                            "",
-                          ),
-                        ),
+                        DataCell(Text("")),
                         DataCell(
                           Text(
                             ((sumLaborCosts +
@@ -443,15 +411,15 @@ class _PolBudgetScreenState extends State<PolBudgetScreen> {
                                             sumMaterialCosts * 0.05) *
                                         1.25)
                                     .toStringAsFixed(2) +
-                                "\kr",
+                                "kr.",
                           ),
                         ),
                       ],
                     ),
                   ],
                 ),
-              ],
-            ),
+              ),
+            ],
           ),
         ),
       ),
