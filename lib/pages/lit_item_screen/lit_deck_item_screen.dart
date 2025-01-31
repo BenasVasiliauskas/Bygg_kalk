@@ -284,7 +284,7 @@ class _LitDeckItemScreenState extends State<LitDeckItemScreen> {
 
   @override
   Widget build(BuildContext context) {
-    List<DataColumn> columns = [
+    List<DataColumn> baseColumns = [
       createDataColumn("Įkainio aprašymas", 98, () {}),
       createDataColumn("Mato vnt.", 60, () {}),
       createDataColumn(visible ? "<" : ">", 55, () {
@@ -292,7 +292,14 @@ class _LitDeckItemScreenState extends State<LitDeckItemScreen> {
           visible = !visible;
         });
       }),
-      createDisappearingDataColumn("Kiekis", 80, () {}, visible),
+    ];
+
+    // Define the columns that are conditionally visible
+    List<DataColumn> conditionalColumns = [
+      visible
+          ? createDisappearingDataColumn("Kiekis", 80, () {}, visible)
+          : createDisappearingDataColumn(
+              "Bendra kaina be PVM", 85, () {}, !visible),
       createDisappearingDataColumn("Laiko norma", 70, () {
         updateTotalSum();
         rebuildDataTable();
@@ -301,9 +308,21 @@ class _LitDeckItemScreenState extends State<LitDeckItemScreen> {
       createDisappearingDataColumn("Darbas be PVM", 75, () {}, visible),
       createDisappearingDataColumn("Medžiagų norma be PVM", 90, () {}, visible),
       createDisappearingDataColumn("Medžiagos be PVM", 95, () {}, visible),
-      createDisappearingDataColumn("Bendra kaina be PVM ", 85, () {}, visible),
     ];
 
+    // Define the last column that should be conditionally placed
+    DataColumn lastColumn = createDisappearingDataColumn(
+        "Bendra kaina be PVM ", 85, () {}, visible);
+
+    List<DataColumn> columns = [];
+    columns.addAll(baseColumns);
+    if (visible) {
+      columns.addAll(conditionalColumns);
+      columns.add(lastColumn); // Add the last column at the end
+    } else {
+      columns.add(lastColumn); // Add the last column as the 4th element
+      columns.addAll(conditionalColumns);
+    }
     List<DataRow> rows = [];
 
     for (int i = 0; i < widget.description.length; i++) {
@@ -314,69 +333,75 @@ class _LitDeckItemScreenState extends State<LitDeckItemScreen> {
             dataCellDisplay(widget.unit, i, 45, true, optionalPadding: 12),
             DataCell(
               Container(
-                width: 55, // match column width
-                child: const Text(""), // or a TextField, or anything you want
-              ),
+                child: Text(""),
+              ), // or an icon, or empty
             ),
             dataCellDisplayController(quantityControllers, i, visible),
-            dataCellDo(laborHours1Controllers, i, (value) {
-              isDirty = true;
-              //
-              double parsedValue = double.parse(value);
-              widget.laborHours1[i] = double.parse(
-                parsedValue.toStringAsFixed(2),
-              );
-              //
-              widget.laborHours2[i] = calculateWorkHours2(
-                i,
-                widget.laborHours1,
-                widget.calculationQuantity,
-              );
-              laborHours2Controllers[i].text = calculateWorkHours2(
-                i,
-                widget.laborHours1,
-                widget.calculationQuantity,
-              ).toStringAsFixed(2);
-              //
-              widget.laborCost[i] = calculateJobCost(
-                  i, widget.laborHours1, widget.calculationQuantity);
-              laborCostControllers[i].text = calculateJobCost(
-                      i, widget.laborHours1, widget.calculationQuantity)
-                  .toStringAsFixed(2);
-              //
-              widget.laborCost[i] = calculateJobCost(
-                  i, widget.laborHours2, widget.calculationQuantity);
-              laborCostControllers[i].text = calculateJobCost(
-                      i, widget.laborHours2, widget.calculationQuantity)
-                  .toStringAsFixed(2);
-              // Recalculate and update the material 2 when quantity changes
-              widget.material2[i] = calculateMaterialCost(
-                i,
-                widget.material1,
-                widget.calculationQuantity,
-              );
-              material2Controllers[i].text = calculateMaterialCost(
-                i,
-                widget.material1,
-                widget.calculationQuantity,
-              ).toStringAsFixed(2);
-              // Recalculate and update the total price when quantity changes
-              widget.totalPrice[i] = calculateTotalPrice(
-                i,
-                widget.laborCost,
-                widget.material2,
-              );
-              totalPriceControllers[i].text = calculateTotalPrice(
-                i,
-                widget.laborCost,
-                widget.material2,
-              ).toStringAsFixed(2);
-              rebuildDataTable();
-            },
-                Color.fromARGB(255, 218, 128, 122),
-                false,
-                optionalWidth: 55,
-                visible),
+            visible
+                ? dataCellDo(laborHours1Controllers, i, (value) {
+                    isDirty = true;
+                    //
+                    double parsedValue = double.parse(value);
+                    widget.laborHours1[i] = double.parse(
+                      parsedValue.toStringAsFixed(2),
+                    );
+                    //
+                    widget.laborHours2[i] = calculateWorkHours2(
+                      i,
+                      widget.laborHours1,
+                      widget.calculationQuantity,
+                    );
+                    laborHours2Controllers[i].text = calculateWorkHours2(
+                      i,
+                      widget.laborHours1,
+                      widget.calculationQuantity,
+                    ).toStringAsFixed(2);
+                    //
+                    widget.laborCost[i] = calculateJobCost(
+                        i, widget.laborHours1, widget.calculationQuantity);
+                    laborCostControllers[i].text = calculateJobCost(
+                            i, widget.laborHours1, widget.calculationQuantity)
+                        .toStringAsFixed(2);
+                    //
+                    widget.laborCost[i] = calculateJobCost(
+                        i, widget.laborHours2, widget.calculationQuantity);
+                    laborCostControllers[i].text = calculateJobCost(
+                            i, widget.laborHours2, widget.calculationQuantity)
+                        .toStringAsFixed(2);
+                    // Recalculate and update the material 2 when quantity changes
+                    widget.material2[i] = calculateMaterialCost(
+                      i,
+                      widget.material1,
+                      widget.calculationQuantity,
+                    );
+                    material2Controllers[i].text = calculateMaterialCost(
+                      i,
+                      widget.material1,
+                      widget.calculationQuantity,
+                    ).toStringAsFixed(2);
+                    // Recalculate and update the total price when quantity changes
+                    widget.totalPrice[i] = calculateTotalPrice(
+                      i,
+                      widget.laborCost,
+                      widget.material2,
+                    );
+                    totalPriceControllers[i].text = calculateTotalPrice(
+                      i,
+                      widget.laborCost,
+                      widget.material2,
+                    ).toStringAsFixed(2);
+                    rebuildDataTable();
+                  },
+                    Color.fromARGB(255, 218, 128, 122),
+                    false,
+                    optionalWidth: 55,
+                    visible)
+                : dataCellDo(totalPriceControllers, i, (value) {
+                    widget.totalPrice[i] = double.parse(value);
+                    totalPriceControllers[i].text =
+                        widget.totalPrice[i].toStringAsFixed(2);
+                  }, Color.fromARGB(255, 153, 240, 131), true, !visible,
+                    optionalWidth: 75),
             dataCellDo(laborHours2Controllers, i, (value) {
               // Handle changes to labor hours 2
               double parsedValue = double.parse(value);

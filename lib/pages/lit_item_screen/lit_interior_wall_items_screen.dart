@@ -43,7 +43,7 @@ class LitInteriorWallItemsScreen extends StatefulWidget {
 
 class _LitInteriorWallItemsScreenState
     extends State<LitInteriorWallItemsScreen> {
-  bool visible = false;
+  bool visible = true;
 
   final AppLifecycleObserver _observer = AppLifecycleObserver();
 

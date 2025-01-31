@@ -41,7 +41,7 @@ class WasteItemScreen extends StatefulWidget {
 }
 
 class _WasteItemScreenState extends State<WasteItemScreen> {
-  bool visible = false;
+  bool visible = true;
 
   final AppLifecycleObserver _observer = AppLifecycleObserver();
 

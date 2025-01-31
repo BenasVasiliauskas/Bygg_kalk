@@ -42,7 +42,7 @@ class PolScaffoldingItemScreen extends StatefulWidget {
 }
 
 class _PolScaffoldingItemScreenState extends State<PolScaffoldingItemScreen> {
-  bool visible = false;
+  bool visible = true;
 
   final AppLifecycleObserver _observer = AppLifecycleObserver();
   List<DataRow> rows = [];

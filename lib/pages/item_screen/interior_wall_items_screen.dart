@@ -42,7 +42,7 @@ class InteriorWallItemsScreen extends StatefulWidget {
 }
 
 class _InteriorWallItemsScreenState extends State<InteriorWallItemsScreen> {
-  bool visible = false;
+  bool visible = true;
 
   final AppLifecycleObserver _observer = AppLifecycleObserver();
 

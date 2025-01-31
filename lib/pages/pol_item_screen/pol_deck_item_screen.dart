@@ -43,7 +43,7 @@ class PolDeckItemScreen extends StatefulWidget {
 //
 
 class _PolDeckItemScreenState extends State<PolDeckItemScreen> {
-  bool visible = false;
+  bool visible = true;
 
   final AppLifecycleObserver _observer = AppLifecycleObserver();
   List<DataRow> rows = [];

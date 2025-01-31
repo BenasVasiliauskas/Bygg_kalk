@@ -43,7 +43,7 @@ class PolInnerDoorItemScreenScreen extends StatefulWidget {
 
 class _PolInnerDoorItemScreenScreenState
     extends State<PolInnerDoorItemScreenScreen> {
-  bool visible = false;
+  bool visible = true;
 
   final AppLifecycleObserver _observer = AppLifecycleObserver();
   List<DataRow> rows = [];

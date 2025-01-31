@@ -43,7 +43,7 @@ class NorwWindowsExteriorDoorItemsScreen extends StatefulWidget {
 
 class _NorwWindowsExteriorDoorItemsScreenState
     extends State<NorwWindowsExteriorDoorItemsScreen> {
-  bool visible = false;
+  bool visible = true;
 
   final AppLifecycleObserver _observer = AppLifecycleObserver();
   List<DataRow> rows = [];

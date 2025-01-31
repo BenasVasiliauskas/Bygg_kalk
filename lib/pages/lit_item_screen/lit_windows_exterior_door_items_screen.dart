@@ -43,7 +43,7 @@ class LitWindowsExteriorDoorItemsScreen extends StatefulWidget {
 
 class _LitWindowsExteriorDoorItemsScreenState
     extends State<LitWindowsExteriorDoorItemsScreen> {
-  bool visible = false;
+  bool visible = true;
 
   final AppLifecycleObserver _observer = AppLifecycleObserver();
 

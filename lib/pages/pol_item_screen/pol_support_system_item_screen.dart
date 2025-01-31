@@ -43,7 +43,7 @@ class PolSupportSystemItemScreen extends StatefulWidget {
 
 class _PolSupportSystemItemScreenState
     extends State<PolSupportSystemItemScreen> {
-  bool visible = false;
+  bool visible = true;
 
   final AppLifecycleObserver _observer = AppLifecycleObserver();
   List<DataRow> rows = [];

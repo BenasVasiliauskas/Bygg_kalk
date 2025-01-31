@@ -41,7 +41,7 @@ class LitFlooringItemScreen extends StatefulWidget {
 }
 
 class _LitFlooringItemScreenState extends State<LitFlooringItemScreen> {
-  bool visible = false;
+  bool visible = true;
 
   final AppLifecycleObserver _observer = AppLifecycleObserver();
 

@@ -41,7 +41,7 @@ class InnerStairsItemScreen extends StatefulWidget {
 }
 
 class _InnerStairsItemScreenState extends State<InnerStairsItemScreen> {
-  bool visible = false;
+  bool visible = true;
 
   final AppLifecycleObserver _observer = AppLifecycleObserver();
 

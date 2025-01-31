@@ -41,7 +41,7 @@ class NorwFlooringItemScreen extends StatefulWidget {
 }
 
 class _NorwFlooringItemScreenState extends State<NorwFlooringItemScreen> {
-  bool visible = false;
+  bool visible = true;
 
   final AppLifecycleObserver _observer = AppLifecycleObserver();
   List<DataRow> rows = [];

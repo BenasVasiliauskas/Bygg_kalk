@@ -42,7 +42,7 @@ class LitScaffoldingItemScreen extends StatefulWidget {
 }
 
 class _LitScaffoldingItemScreenState extends State<LitScaffoldingItemScreen> {
-  bool visible = false;
+  bool visible = true;
 
   final AppLifecycleObserver _observer = AppLifecycleObserver();
 

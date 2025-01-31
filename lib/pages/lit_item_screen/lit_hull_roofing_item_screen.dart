@@ -42,7 +42,7 @@ class LitHullRoofingItemScreen extends StatefulWidget {
 }
 
 class _LitHullRoofingItemScreenState extends State<LitHullRoofingItemScreen> {
-  bool visible = false;
+  bool visible = true;
 
   final AppLifecycleObserver _observer = AppLifecycleObserver();
 

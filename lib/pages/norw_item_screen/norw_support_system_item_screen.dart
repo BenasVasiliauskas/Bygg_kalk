@@ -43,7 +43,7 @@ class NorwSupportSystemItemScreen extends StatefulWidget {
 
 class _NorwSupportSystemItemScreenState
     extends State<NorwSupportSystemItemScreen> {
-  bool visible = false;
+  bool visible = true;
 
   final AppLifecycleObserver _observer = AppLifecycleObserver();
   List<DataRow> rows = [];

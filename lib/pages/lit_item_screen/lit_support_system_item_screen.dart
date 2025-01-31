@@ -43,7 +43,7 @@ class LitSupportSystemItemScreen extends StatefulWidget {
 
 class _LitSupportSystemItemScreenState
     extends State<LitSupportSystemItemScreen> {
-  bool visible = false;
+  bool visible = true;
 
   final AppLifecycleObserver _observer = AppLifecycleObserver();
 

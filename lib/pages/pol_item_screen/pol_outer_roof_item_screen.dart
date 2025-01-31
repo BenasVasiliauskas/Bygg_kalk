@@ -41,7 +41,7 @@ class PolOuterRoofItemScreen extends StatefulWidget {
 }
 
 class _PolOuterRoofItemScreenState extends State<PolOuterRoofItemScreen> {
-  bool visible = false;
+  bool visible = true;
 
   final AppLifecycleObserver _observer = AppLifecycleObserver();
   List<DataRow> rows = [];

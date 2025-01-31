@@ -41,7 +41,7 @@ class NorwTerraceItemScreen extends StatefulWidget {
 }
 
 class _NorwTerraceItemScreenState extends State<NorwTerraceItemScreen> {
-  bool visible = false;
+  bool visible = true;
 
   final AppLifecycleObserver _observer = AppLifecycleObserver();
   List<DataRow> rows = [];

@@ -41,7 +41,7 @@ class PolTerraceItemScreen extends StatefulWidget {
 }
 
 class _PolTerraceItemScreenState extends State<PolTerraceItemScreen> {
-  bool visible = false;
+  bool visible = true;
 
   final AppLifecycleObserver _observer = AppLifecycleObserver();
   List<DataRow> rows = [];

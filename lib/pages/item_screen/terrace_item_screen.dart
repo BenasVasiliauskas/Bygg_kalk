@@ -41,7 +41,7 @@ class TerraceItemScreen extends StatefulWidget {
 }
 
 class _TerraceItemScreenState extends State<TerraceItemScreen> {
-  bool visible = false;
+  bool visible = true;
 
   final AppLifecycleObserver _observer = AppLifecycleObserver();
 

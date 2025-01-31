@@ -41,7 +41,7 @@ class NorwWasteItemScreen extends StatefulWidget {
 }
 
 class _NorwWasteItemScreenState extends State<NorwWasteItemScreen> {
-  bool visible = false;
+  bool visible = true;
 
   final AppLifecycleObserver _observer = AppLifecycleObserver();
   List<DataRow> rows = [];

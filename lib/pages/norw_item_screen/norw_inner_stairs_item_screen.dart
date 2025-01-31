@@ -42,7 +42,7 @@ class NorwInnerStairsItemScreen extends StatefulWidget {
 }
 
 class _NorwInnerStairsItemScreenState extends State<NorwInnerStairsItemScreen> {
-  bool visible = false;
+  bool visible = true;
 
   final AppLifecycleObserver _observer = AppLifecycleObserver();
   List<DataRow> rows = [];

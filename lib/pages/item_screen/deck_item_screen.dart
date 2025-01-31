@@ -41,7 +41,7 @@ class DeckItemScreen extends StatefulWidget {
 }
 
 class _DeckItemScreenState extends State<DeckItemScreen> {
-  bool visible = false;
+  bool visible = true;
   final AppLifecycleObserver _observer = AppLifecycleObserver();
 
   List<DataRow> rows = [];

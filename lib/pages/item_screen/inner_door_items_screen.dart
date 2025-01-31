@@ -40,7 +40,7 @@ class InnerDoorItemScreen extends StatefulWidget {
 }
 
 class _InnerDoorItemScreenState extends State<InnerDoorItemScreen> {
-  bool visible = false;
+  bool visible = true;
 
   final AppLifecycleObserver _observer = AppLifecycleObserver();
 

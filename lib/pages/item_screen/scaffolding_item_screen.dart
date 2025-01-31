@@ -41,7 +41,7 @@ class ScaffoldingItemScreen extends StatefulWidget {
 }
 
 class _ScaffoldingItemScreenState extends State<ScaffoldingItemScreen> {
-  bool visible = false;
+  bool visible = true;
 
   final AppLifecycleObserver _observer = AppLifecycleObserver();
 

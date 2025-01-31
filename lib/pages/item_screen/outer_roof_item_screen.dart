@@ -41,7 +41,7 @@ class OuterRoofItemScreen extends StatefulWidget {
 }
 
 class _OuterRoofItemScreenState extends State<OuterRoofItemScreen> {
-  bool visible = false;
+  bool visible = true;
 
   final AppLifecycleObserver _observer = AppLifecycleObserver();
 

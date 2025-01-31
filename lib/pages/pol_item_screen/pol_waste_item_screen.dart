@@ -41,7 +41,7 @@ class PolWasteItemScreen extends StatefulWidget {
 }
 
 class _PolWasteItemScreenState extends State<PolWasteItemScreen> {
-  bool visible = false;
+  bool visible = true;
 
   final AppLifecycleObserver _observer = AppLifecycleObserver();
   List<DataRow> rows = [];

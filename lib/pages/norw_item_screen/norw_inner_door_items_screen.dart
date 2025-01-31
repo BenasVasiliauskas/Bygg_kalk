@@ -43,7 +43,7 @@ class NorwInnerDoorItemScreenScreen extends StatefulWidget {
 
 class _NorwInnerDoorItemScreenScreenState
     extends State<NorwInnerDoorItemScreenScreen> {
-  bool visible = false;
+  bool visible = true;
 
   final AppLifecycleObserver _observer = AppLifecycleObserver();
   List<DataRow> rows = [];

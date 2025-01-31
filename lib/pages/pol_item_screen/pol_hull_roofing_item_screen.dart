@@ -42,7 +42,7 @@ class PolHullRoofingItemScreen extends StatefulWidget {
 }
 
 class _PolHullRoofingItemScreenState extends State<PolHullRoofingItemScreen> {
-  bool visible = false;
+  bool visible = true;
 
   final AppLifecycleObserver _observer = AppLifecycleObserver();
   List<DataRow> rows = [];

@@ -41,7 +41,7 @@ class HullRoofingItemScreen extends StatefulWidget {
 }
 
 class _HullRoofingItemScreenState extends State<HullRoofingItemScreen> {
-  bool visible = false;
+  bool visible = true;
   final AppLifecycleObserver _observer = AppLifecycleObserver();
 
   List<DataRow> rows = [];

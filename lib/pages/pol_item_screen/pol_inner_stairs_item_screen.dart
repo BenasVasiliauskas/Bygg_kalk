@@ -42,7 +42,7 @@ class PolInnerStairsItemScreen extends StatefulWidget {
 }
 
 class _PolInnerStairsItemScreenState extends State<PolInnerStairsItemScreen> {
-  bool visible = false;
+  bool visible = true;
 
   final AppLifecycleObserver _observer = AppLifecycleObserver();
   List<DataRow> rows = [];

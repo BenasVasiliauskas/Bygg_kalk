@@ -41,7 +41,7 @@ class FlooringItemScreen extends StatefulWidget {
 }
 
 class _FlooringItemScreenState extends State<FlooringItemScreen> {
-  bool visible = false;
+  bool visible = true;
 
   final AppLifecycleObserver _observer = AppLifecycleObserver();
 

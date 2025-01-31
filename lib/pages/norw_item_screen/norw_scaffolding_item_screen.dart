@@ -42,7 +42,7 @@ class NorwScaffoldingItemScreen extends StatefulWidget {
 }
 
 class _NorwScaffoldingItemScreenState extends State<NorwScaffoldingItemScreen> {
-  bool visible = false;
+  bool visible = true;
 
   final AppLifecycleObserver _observer = AppLifecycleObserver();
   List<DataRow> rows = [];

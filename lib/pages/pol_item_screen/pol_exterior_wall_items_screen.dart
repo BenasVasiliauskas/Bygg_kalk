@@ -43,7 +43,7 @@ class PolExteriorWallItemsScreen extends StatefulWidget {
 
 class _PolExteriorWallItemsScreenState
     extends State<PolExteriorWallItemsScreen> {
-  bool visible = false;
+  bool visible = true;
 
   final AppLifecycleObserver _observer = AppLifecycleObserver();
   List<DataRow> rows = [];

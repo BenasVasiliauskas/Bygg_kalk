@@ -43,7 +43,7 @@ class NorwInteriorWallItemsScreen extends StatefulWidget {
 
 class _NorwInteriorWallItemsScreenState
     extends State<NorwInteriorWallItemsScreen> {
-  bool visible = false;
+  bool visible = true;
 
   final AppLifecycleObserver _observer = AppLifecycleObserver();
   List<DataRow> rows = [];

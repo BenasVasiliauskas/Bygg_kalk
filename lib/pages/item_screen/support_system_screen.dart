@@ -42,7 +42,7 @@ class SupportSystemItemScreen extends StatefulWidget {
 }
 
 class _SupportSystemItemScreenState extends State<SupportSystemItemScreen> {
-  bool visible = false;
+  bool visible = true;
 
   final AppLifecycleObserver _observer = AppLifecycleObserver();
 

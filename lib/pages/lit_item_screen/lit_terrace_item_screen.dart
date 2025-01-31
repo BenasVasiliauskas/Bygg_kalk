@@ -41,7 +41,7 @@ class LitTerraceItemScreen extends StatefulWidget {
 }
 
 class _LitTerraceItemScreenState extends State<LitTerraceItemScreen> {
-  bool visible = false;
+  bool visible = true;
 
   final AppLifecycleObserver _observer = AppLifecycleObserver();
 

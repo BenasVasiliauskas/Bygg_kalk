@@ -42,7 +42,7 @@ class NorwOuterRoofItemScreen extends StatefulWidget {
 }
 
 class _NorwOuterRoofItemScreenState extends State<NorwOuterRoofItemScreen> {
-  bool visible = false;
+  bool visible = true;
 
   final AppLifecycleObserver _observer = AppLifecycleObserver();
   List<DataRow> rows = [];

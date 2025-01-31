@@ -42,7 +42,7 @@ class NorwHullRoofingItemScreen extends StatefulWidget {
 }
 
 class _NorwHullRoofingItemScreenState extends State<NorwHullRoofingItemScreen> {
-  bool visible = false;
+  bool visible = true;
 
   final AppLifecycleObserver _observer = AppLifecycleObserver();
   List<DataRow> rows = [];

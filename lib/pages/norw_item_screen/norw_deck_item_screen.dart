@@ -41,7 +41,7 @@ class NorwDeckItemScreen extends StatefulWidget {
 }
 
 class _NorwDeckItemScreenState extends State<NorwDeckItemScreen> {
-  bool visible = false;
+  bool visible = true;
 
   final AppLifecycleObserver _observer = AppLifecycleObserver();
 
