@@ -123,7 +123,7 @@ class _FlooringSectionsState extends State<FlooringScreen> {
                   ? languageEnglish
                       ? "Demolition"
                       : languageLithuanian
-                          ? "Demontavimas"
+                          ? "Griovimas"
                           : languageNorwegian
                               ? "Riving"
                               : "Demolizione"

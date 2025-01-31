@@ -123,7 +123,7 @@ class _InnerDoorScreenState extends State<InnerDoorScreen> {
                   ? languageEnglish
                       ? "Demolition"
                       : languageLithuanian
-                          ? "Demontavimas"
+                          ? "Griovimas"
                           : languageNorwegian
                               ? "Riving"
                               : "Demolizione"

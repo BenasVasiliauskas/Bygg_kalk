@@ -125,7 +125,7 @@ class _ExteriorWallScreenState extends State<ExteriorWallScreen> {
                   ? languageEnglish
                       ? "Demolition"
                       : languageLithuanian
-                          ? "Demontavimas"
+                          ? "Griovimas"
                           : languageNorwegian
                               ? "Riving"
                               : "Demolizione"

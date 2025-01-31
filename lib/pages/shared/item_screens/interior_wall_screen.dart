@@ -126,7 +126,7 @@ class _InnerWallScreenState extends State<InnerWallScreen> {
                   ? languageEnglish
                       ? "Demolition"
                       : languageLithuanian
-                          ? "Demontavimas"
+                          ? "Griovimas"
                           : languageNorwegian
                               ? "Riving"
                               : "Demolizione"

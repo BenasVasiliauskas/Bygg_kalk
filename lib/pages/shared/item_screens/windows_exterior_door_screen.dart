@@ -126,7 +126,7 @@ class _WindowsExteriorDoorScreenState extends State<WindowsExteriorDoorScreen> {
                   ? languageEnglish
                       ? "Demolition"
                       : languageLithuanian
-                          ? "Demontavimas"
+                          ? "Griovimas"
                           : languageNorwegian
                               ? "Riving"
                               : "Demolizione"
