@@ -120,7 +120,7 @@ class _homePageState extends State<homePage> {
                                           norwWindowsExteriorDoors.length +
                                           norwSupportSystem.length +
                                           norwFlooringData.length +
-                                          norwTerraceData.length +
+                                          norwTerraceData.length + //wrong
                                           norwOuterRoofData.length +
                                           norwExteriorWallData.length +
                                           norwHullRoofingData.length +
