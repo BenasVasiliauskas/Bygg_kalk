@@ -22588,30 +22588,6 @@ final litExteriorWallData = [
       totalPrice: [115.81],
       constructionType: "New Construction"),
   OuterWallModel(
-      name: "Išorinės sienos, rekonstrukcija.",
-      description: [],
-      unit: [],
-      quantity: [],
-      laborHours1: [],
-      laborHours2: [],
-      laborCost: [],
-      material: [],
-      materials: [],
-      totalPrice: [],
-      constructionType: "Reconstruction"),
-  OuterWallModel(
-      name: "Įkainio aprašymas",
-      description: [],
-      unit: [],
-      quantity: [],
-      laborHours1: [],
-      laborHours2: [],
-      laborCost: [],
-      material: [],
-      materials: [],
-      totalPrice: [],
-      constructionType: "Reconstruction"),
-  OuterWallModel(
       name:
           "Nauja vertikali dailylentė 19x123 mm., karkasas 48x48 mm., izoliacija 50 mm.",
       description: [
