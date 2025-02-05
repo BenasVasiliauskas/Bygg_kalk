@@ -116,11 +116,11 @@ class _DeckScreenState extends State<DeckScreen> {
           ],
           title: Text(widget.constructionType == "New Construction"
               ? languageEnglish
-                  ? "New Construction"
+                  ? "Floor structure - New Construction"
                   : languageLithuanian
-                      ? "Nauja statyba"
+                      ? "Perdanga - Nauja statyba"
                       : languageNorwegian
-                          ? "Nye konstruksjons"
+                          ? "Dekker - Nye konstruksjons"
                           : "Nowa konstrukcja"
               : widget.constructionType == "Demolition"
                   ? languageEnglish

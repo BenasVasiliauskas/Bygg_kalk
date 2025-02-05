@@ -4135,7 +4135,7 @@ final deckData = [
       material: [19.66],
       materials: [19.66],
       totalPrice: [58.16000000000001],
-      constructionType: "New Construction "),
+      constructionType: "New Construction"),
   DeckModel(
       name: "Parquet underlayment, plastic, width 1 m.",
       description: ['Parquet underlayment, plastic, width 1 m.'],
@@ -4147,7 +4147,7 @@ final deckData = [
       material: [17.1],
       materials: [17.1],
       totalPrice: [55.60000000000001],
-      constructionType: "New Construction "),
+      constructionType: "New Construction"),
   DeckModel(
       name: "Herringbone parquet underlayment, XPS board, width 0.5 m.",
       description: ['Herringbone parquet underlayment, width 0.5 m.'],
@@ -4159,7 +4159,7 @@ final deckData = [
       material: [55.86],
       materials: [55.86],
       totalPrice: [132.86],
-      constructionType: "New Construction "),
+      constructionType: "New Construction"),
   DeckModel(
       name: "Parquet 14 mm, matte, oak.",
       description: ['Parquet 14 mm, matte, oak.'],
@@ -4171,7 +4171,7 @@ final deckData = [
       material: [528.3],
       materials: [528.3],
       totalPrice: [704.3],
-      constructionType: "New Construction "),
+      constructionType: "New Construction"),
   DeckModel(
       name: "Multilayer parquet, 20 mm, oak.",
       description: ['Multilayer parquet, 20 mm, oak.'],
@@ -4183,7 +4183,7 @@ final deckData = [
       material: [2109.69],
       materials: [2109.69],
       totalPrice: [2285.69],
-      constructionType: "New Construction "),
+      constructionType: "New Construction"),
   DeckModel(
       name: "Multilayer parquet, 14 mm, beech.",
       description: ['Multilayer parquet, 14 mm, beech.'],
@@ -4195,7 +4195,7 @@ final deckData = [
       material: [673.41],
       materials: [673.41],
       totalPrice: [849.41],
-      constructionType: "New Construction "),
+      constructionType: "New Construction"),
   DeckModel(
       name: "Parquet 14 mm, single plank pattern, oak.",
       description: ['Parquet 14 mm, single plank pattern, oak.'],
@@ -4207,7 +4207,7 @@ final deckData = [
       material: [1182.51],
       materials: [1182.51],
       totalPrice: [1358.51],
-      constructionType: "New Construction "),
+      constructionType: "New Construction"),
   DeckModel(
       name: "Parquet 13 mm, three-plank pattern, oak.",
       description: ['Parquet 13 mm, three-plank pattern, oak.'],
@@ -4219,7 +4219,7 @@ final deckData = [
       material: [472.27],
       materials: [472.27],
       totalPrice: [648.27],
-      constructionType: "New Construction "),
+      constructionType: "New Construction"),
   DeckModel(
       name: "Parquet 28 mm, solid, ash.",
       description: ['Parquet 28 mm, solid, ash.'],
@@ -4231,7 +4231,7 @@ final deckData = [
       material: [976.35],
       materials: [976.35],
       totalPrice: [1207.35],
-      constructionType: "New Construction "),
+      constructionType: "New Construction"),
   DeckModel(
       name: "Parquet 14 mm, ash.",
       description: ['Parquet 14 mm, ash.'],
@@ -4243,7 +4243,7 @@ final deckData = [
       material: [952.96],
       materials: [952.96],
       totalPrice: [1128.96],
-      constructionType: "New Construction "),
+      constructionType: "New Construction"),
   DeckModel(
       name: "Parquet 15 mm, matte ash.",
       description: ['Parquet 15 mm, matte ash.'],
@@ -4255,7 +4255,7 @@ final deckData = [
       material: [971.66],
       materials: [971.66],
       totalPrice: [1147.6599999999999],
-      constructionType: "New Construction "),
+      constructionType: "New Construction"),
   DeckModel(
       name: "Parquet 14 mm, oak.",
       description: ['Parquet 14 mm, oak.'],
@@ -4267,7 +4267,7 @@ final deckData = [
       material: [578.32],
       materials: [578.32],
       totalPrice: [754.32],
-      constructionType: "New Construction "),
+      constructionType: "New Construction"),
   DeckModel(
       name: "Parquet boards 21 mm on beams/joists.",
       description: ['Parquet boards 21 mm on beams/joists.'],
@@ -4279,7 +4279,7 @@ final deckData = [
       material: [881.44],
       materials: [881.44],
       totalPrice: [1079.44],
-      constructionType: "New Construction "),
+      constructionType: "New Construction"),
   DeckModel(
       name: "Herringbone parquet with lock, 14 mm, oak.",
       description: ['Herringbone parquet with lock, 14 mm, oak.'],
@@ -4291,7 +4291,7 @@ final deckData = [
       material: [695.06],
       materials: [695.06],
       totalPrice: [1107.56],
-      constructionType: "New Construction "),
+      constructionType: "New Construction"),
   DeckModel(
       name: "Herringbone parquet, glued, 15 mm, oak.",
       description: ['Herringbone parquet, glued, 15 mm, oak.'],
@@ -4303,7 +4303,7 @@ final deckData = [
       material: [1040.79],
       materials: [1040.79],
       totalPrice: [1618.29],
-      constructionType: "New Construction "),
+      constructionType: "New Construction"),
   DeckModel(
       name: "Laminate wood fiber flooring 7.2 mm., ash.",
       description: ['Laminate wood fiber flooring 7.2 mm., ash.'],
@@ -4315,7 +4315,7 @@ final deckData = [
       material: [441.35],
       materials: [441.35],
       totalPrice: [567.85],
-      constructionType: "New Construction "),
+      constructionType: "New Construction"),
   DeckModel(
       name: "Laminate wood fiber flooring 7.2 mm., oak.",
       description: ['Laminate wood fiber flooring 7.2 mm., oak.'],
@@ -4327,7 +4327,7 @@ final deckData = [
       material: [396.06],
       materials: [396.06],
       totalPrice: [522.56],
-      constructionType: "New Construction "),
+      constructionType: "New Construction"),
   DeckModel(
       name: "Laminate wood fiber flooring 8 mm., natural oak.",
       description: ['Laminate wood fiber flooring 8 mm., natural oak.'],
@@ -4339,7 +4339,7 @@ final deckData = [
       material: [350.77],
       materials: [350.77],
       totalPrice: [466.27],
-      constructionType: "New Construction "),
+      constructionType: "New Construction"),
   DeckModel(
       name: "Laminate wood fiber flooring 9.5 mm., ash.",
       description: ['Laminate wood fiber flooring 9.5 mm., ash.'],
@@ -4351,7 +4351,7 @@ final deckData = [
       material: [441.35],
       materials: [441.35],
       totalPrice: [556.85],
-      constructionType: "New Construction "),
+      constructionType: "New Construction"),
   DeckModel(
       name: "Wooden plank covering, 25 mm, natural pine solid wood.",
       description: ['Wooden plank covering, 25 mm, natural pine solid wood.'],
@@ -4363,7 +4363,7 @@ final deckData = [
       material: [946.77],
       materials: [946.77],
       totalPrice: [1122.77],
-      constructionType: "New Construction "),
+      constructionType: "New Construction"),
   DeckModel(
       name: "Cork covering, 3.2 mm.",
       description: ['Cork covering, 3.2 mm.'],
@@ -4375,7 +4375,7 @@ final deckData = [
       material: [181.57],
       materials: [181.57],
       totalPrice: [456.57],
-      constructionType: "New Construction "),
+      constructionType: "New Construction"),
   DeckModel(
       name: "Linoleum covering, 2.5 mm, glued.",
       description: ['Linoleum covering, 2.5 mm, glued.'],
@@ -4387,7 +4387,7 @@ final deckData = [
       material: [192.09],
       materials: [192.09],
       totalPrice: [357.09000000000003],
-      constructionType: "New Construction "),
+      constructionType: "New Construction"),
   DeckModel(
       name: "Linoleum floor tiles, 30x30 cm, 3.2 mm.",
       description: ['Linoleum floor tiles, 30x30 cm, 3.2 mm.'],
@@ -4399,7 +4399,7 @@ final deckData = [
       material: [385.17],
       materials: [385.17],
       totalPrice: [605.1700000000001],
-      constructionType: "New Construction "),
+      constructionType: "New Construction"),
   DeckModel(
       name: "Linoleum covering, 2 mm, “Wallton”, glued.",
       description: ['Linoleum covering, 2 mm, “Wallton”, glued.'],
@@ -4411,7 +4411,7 @@ final deckData = [
       material: [192.09],
       materials: [192.09],
       totalPrice: [357.09000000000003],
-      constructionType: "New Construction "),
+      constructionType: "New Construction"),
   DeckModel(
       name: "Linoleum covering, 2.5 mm, “Wallton”, glued.",
       description: ['Linoleum covering, 2.5 mm, “Wallton”, glued.'],
@@ -4423,7 +4423,7 @@ final deckData = [
       material: [213.1],
       materials: [213.1],
       totalPrice: [378.1],
-      constructionType: "New Construction "),
+      constructionType: "New Construction"),
   DeckModel(
       name: "Linoleum floor tiles, 30x30 cm, 3.2 mm, glued.",
       description: ['Linoleum floor tiles, 30x30 cm, 3.2 mm, glued.'],
@@ -4435,7 +4435,7 @@ final deckData = [
       material: [385.17],
       materials: [385.17],
       totalPrice: [610.6700000000001],
-      constructionType: "New Construction "),
+      constructionType: "New Construction"),
   DeckModel(
       name: "Linoleum floor tiles, 30x30 cm, 3.2 mm, glued.",
       description: ['Linoleum floor tiles, 30x30 cm, 3.2 mm, glued.'],
@@ -4447,7 +4447,7 @@ final deckData = [
       material: [371.22],
       materials: [371.22],
       totalPrice: [646.22],
-      constructionType: "New Construction "),
+      constructionType: "New Construction"),
   DeckModel(
       name: "Vinyl covering, 2 mm, glued.",
       description: ['Vinyl covering, 2 mm, glued.'],
@@ -4459,7 +4459,7 @@ final deckData = [
       material: [507.76],
       materials: [507.76],
       totalPrice: [661.76],
-      constructionType: "New Construction "),
+      constructionType: "New Construction"),
   DeckModel(
       name: "Vinyl covering, 1.5 mm, glued.",
       description: ['Vinyl covering, 1.5 mm, glued.'],
@@ -4471,7 +4471,7 @@ final deckData = [
       material: [361.93],
       materials: [361.93],
       totalPrice: [510.43],
-      constructionType: "New Construction "),
+      constructionType: "New Construction"),
   DeckModel(
       name: "Vinyl-linoleum covering, 2 mm, 30x90 cm, locking system, glued.",
       description: [
@@ -4485,7 +4485,7 @@ final deckData = [
       material: [425.64],
       materials: [425.64],
       totalPrice: [574.14],
-      constructionType: "New Construction "),
+      constructionType: "New Construction"),
 ];
 
 final innerDoor = [
@@ -4947,18 +4947,6 @@ final innerDoor = [
 ];
 
 final windowsExteriorDoors = [
-  WindowsAndExteriorDoorsModel(
-      name: "Description of costs:",
-      description: [],
-      unit: [],
-      quantity: [],
-      laborHours1: [],
-      laborHours2: [],
-      laborCost: [],
-      material: [],
-      materials: [],
-      totalPrice: [],
-      constructionType: "New Construction"),
   WindowsAndExteriorDoorsModel(
       name: "Mounting a 6x6 window in a wooden wall.",
       description: [
@@ -13828,30 +13816,6 @@ final flooringData = [
       totalPrice: [0],
       constructionType: "New Construction"),
   FlooringModel(
-      name: "Floor structure reconstruction.",
-      description: [],
-      unit: [],
-      quantity: [],
-      laborHours1: [],
-      laborHours2: [],
-      laborCost: [],
-      material: [],
-      materials: [],
-      totalPrice: [],
-      constructionType: "Reconstruction"),
-  FlooringModel(
-      name: "Description of costs:",
-      description: [],
-      unit: [],
-      quantity: [],
-      laborHours1: [],
-      laborHours2: [],
-      laborCost: [],
-      material: [],
-      materials: [],
-      totalPrice: [],
-      constructionType: "Reconstruction"),
-  FlooringModel(
       name:
           "Additional insulation between beams, blowing in 200 mm. of insulation.",
       description: [
@@ -14285,7 +14249,7 @@ final terraceData = [
       material: [3922.06],
       materials: [3922.06],
       totalPrice: [4560.0599999999995],
-      constructionType: "New Construction "),
+      constructionType: "New Construction"),
   TerraceModel(
       name:
           "Impregnated wood railings, post 48x98 mm, finish 19x98 mm, with wide armrests.",
@@ -14298,7 +14262,7 @@ final terraceData = [
       material: [583.02],
       materials: [583.02],
       totalPrice: [1413.52],
-      constructionType: "New Construction "),
+      constructionType: "New Construction"),
   TerraceModel(
       name:
           "Wooden railings – horizontal slats 30x48 mm, posts 73x73 mm, with wide armrests.",
@@ -14311,7 +14275,7 @@ final terraceData = [
       material: [555.05],
       materials: [555.05],
       totalPrice: [1193.05],
-      constructionType: "New Construction "),
+      constructionType: "New Construction"),
   TerraceModel(
       name:
           "Wooden railings – vertical slats 48x48 mm, posts 73x73 mm, with wide armrests.",
@@ -14324,7 +14288,7 @@ final terraceData = [
       material: [580.37],
       materials: [580.37],
       totalPrice: [1218.37],
-      constructionType: "New Construction "),
+      constructionType: "New Construction"),
   TerraceModel(
       name:
           "Wind barrier (blocking wall), boards 19x123 mm on both sides, posts 73x73 mm, height 1.8 m.",
@@ -14341,7 +14305,7 @@ final terraceData = [
       material: [1168.82, 129.53, 180.25],
       materials: [1168.82, 129.53, 180.25],
       totalPrice: [1542.82, 217.53, 328.75],
-      constructionType: "New Construction "),
+      constructionType: "New Construction"),
   TerraceModel(
       name:
           "Terrace structure made of impregnated wood, about 20 m², beam frame 48x198 mm, terrace flooring 28x95 mm.",
@@ -14359,7 +14323,7 @@ final terraceData = [
       material: [1253.1, 10382.2, 4021, 9279.9],
       materials: [1253.1, 10382.2, 4021, 9279.9],
       totalPrice: [3618.1, 13737.2, 9576, 21709.9],
-      constructionType: "New Construction "),
+      constructionType: "New Construction"),
   TerraceModel(
       name:
           "Terrace structure made of impregnated wood, about 20 m², beam frame 48x148 mm, terrace flooring 28x95 mm.",
@@ -14377,7 +14341,7 @@ final terraceData = [
       material: [1253.1, 9182.2, 4021, 9279.9],
       materials: [1253.1, 9182.2, 4021, 9279.9],
       totalPrice: [3618.1, 12317.2, 9576, 21709.9],
-      constructionType: "New Construction "),
+      constructionType: "New Construction"),
   TerraceModel(
       name:
           "Terrace structure made of impregnated wood, about 20 m², beam frame 48x198 mm, terrace flooring 28x120 mm.",
@@ -14395,7 +14359,7 @@ final terraceData = [
       material: [1253.1, 10382.2, 4258.4, 9279.9],
       materials: [1253.1, 10382.2, 4258.4, 9279.9],
       totalPrice: [3618.1, 13737.2, 9263.4, 21709.9],
-      constructionType: "New Construction "),
+      constructionType: "New Construction"),
   TerraceModel(
       name:
           "Terrace structure made of impregnated wood, about 20 m², beam frame 48x148 mm, terrace flooring 28x120 mm.",
@@ -14413,7 +14377,7 @@ final terraceData = [
       material: [1253.1, 9182.2, 4258.4, 9279.9],
       materials: [1253.1, 9182.2, 4258.4, 9279.9],
       totalPrice: [3618.1, 12317.2, 9263.4, 21709.9],
-      constructionType: "New Construction "),
+      constructionType: "New Construction"),
   TerraceModel(
       name:
           "Terrace structure with beam frame 48x148 mm, Kebony terrace flooring 28x120 mm, glass railings.",
@@ -14434,7 +14398,7 @@ final terraceData = [
       material: [55.33, 21.06, 37.1, 459.11, 920.75, 24.54, 980.65],
       materials: [55.33, 21.06, 37.1, 459.11, 920.75, 24.54, 980.65],
       totalPrice: [99.33, 48.56, 53.6, 618.61, 1201.25, 52.04, 1140.15],
-      constructionType: "New Construction "),
+      constructionType: "New Construction"),
   TerraceModel(
       name:
           "Terrace structure made of impregnated wood, pine, with wooden railings.",
@@ -14463,7 +14427,7 @@ final terraceData = [
         52.04,
         369.16999999999996
       ],
-      constructionType: "New Construction "),
+      constructionType: "New Construction"),
   TerraceModel(
       name: "Terrace flooring on gravel base, impregnated pine, 28x98 mm.",
       description: [
@@ -14479,7 +14443,7 @@ final terraceData = [
       material: [28.05, 138.5, 201.05],
       materials: [28.05, 138.5, 201.05],
       totalPrice: [55.55, 325.5, 564.05],
-      constructionType: "New Construction "),
+      constructionType: "New Construction"),
   TerraceModel(
       name: "Terrace flooring on gravel base, Kebony 28x95 mm.",
       description: [
@@ -14495,7 +14459,7 @@ final terraceData = [
       material: [28.05, 138.5, 469.85],
       materials: [0, 0, 0],
       totalPrice: [0, 0, 0],
-      constructionType: "New Construction "),
+      constructionType: "New Construction"),
 ];
 
 final outerRoofData = [
@@ -27691,7 +27655,7 @@ final hullRoofingData = [
       material: [0],
       materials: [0],
       totalPrice: [88],
-      constructionType: "New Construction "),
+      constructionType: "New Construction"),
   HullRoofingModel(
       name:
           "Drilling a 86 mm. diameter hole for a ceiling box in gypsum board ceiling.",
@@ -27706,7 +27670,7 @@ final hullRoofingData = [
       material: [0],
       materials: [0],
       totalPrice: [60.5],
-      constructionType: "New Construction "),
+      constructionType: "New Construction"),
   HullRoofingModel(
       name:
           "Drilling a 86 mm. diameter hole for a ceiling box in wooden plank ceiling.",
@@ -27721,7 +27685,7 @@ final hullRoofingData = [
       material: [0],
       materials: [0],
       totalPrice: [99],
-      constructionType: "New Construction "),
+      constructionType: "New Construction"),
   HullRoofingModel(
       name: "Drilling a 72 mm. diameter hole in wooden plank wall.",
       description: ['Drilling a 72 mm. diameter hole in wooden plank wall.'],
@@ -27733,7 +27697,7 @@ final hullRoofingData = [
       material: [0],
       materials: [0],
       totalPrice: [82.5],
-      constructionType: "New Construction "),
+      constructionType: "New Construction"),
   HullRoofingModel(
       name: "Drilling a 72 mm. diameter hole in wood chipboard wall.",
       description: ['Drilling a 72 mm. diameter hole in wood chipboard wall.'],
@@ -27745,7 +27709,7 @@ final hullRoofingData = [
       material: [0],
       materials: [0],
       totalPrice: [71.5],
-      constructionType: "New Construction "),
+      constructionType: "New Construction"),
   HullRoofingModel(
       name: "Drilling a 72 mm. diameter hole in gypsum board wall.",
       description: ['Drilling a 72 mm. diameter hole in gypsum board wall.'],
@@ -27757,7 +27721,7 @@ final hullRoofingData = [
       material: [0],
       materials: [0],
       totalPrice: [55],
-      constructionType: "New Construction "),
+      constructionType: "New Construction"),
   HullRoofingModel(
       name: "Drilling a 20 mm. diameter hole in ceramic tile wall.",
       description: ['Drilling a 20 mm. diameter hole in ceramic tile wall.'],
@@ -27769,7 +27733,7 @@ final hullRoofingData = [
       material: [0],
       materials: [0],
       totalPrice: [49.5],
-      constructionType: "New Construction "),
+      constructionType: "New Construction"),
   HullRoofingModel(
       name: "Drilling a 28 mm. diameter hole in ceramic tile wall.",
       description: ['Drilling a 28 mm. diameter hole in ceramic tile wall.'],
@@ -27781,7 +27745,7 @@ final hullRoofingData = [
       material: [0],
       materials: [0],
       totalPrice: [66],
-      constructionType: "New Construction "),
+      constructionType: "New Construction"),
   HullRoofingModel(
       name: "Drilling a 35 mm. diameter hole in ceramic tile wall.",
       description: ['Drilling a 35 mm. diameter hole in ceramic tile wall.'],
@@ -27793,7 +27757,7 @@ final hullRoofingData = [
       material: [0],
       materials: [0],
       totalPrice: [88],
-      constructionType: "New Construction "),
+      constructionType: "New Construction"),
   HullRoofingModel(
       name: "Drilling a 55 mm. diameter hole in ceramic tile wall.",
       description: ['Drilling a 55 mm. diameter hole in ceramic tile wall.'],
@@ -27805,7 +27769,7 @@ final hullRoofingData = [
       material: [0],
       materials: [0],
       totalPrice: [137.5],
-      constructionType: "New Construction "),
+      constructionType: "New Construction"),
   HullRoofingModel(
       name: "Drilling a 72 mm. diameter hole in ceramic tile wall.",
       description: ['Drilling a 72 mm. diameter hole in ceramic tile wall.'],
@@ -27817,7 +27781,7 @@ final hullRoofingData = [
       material: [0],
       materials: [0],
       totalPrice: [176],
-      constructionType: "New Construction "),
+      constructionType: "New Construction"),
   HullRoofingModel(
       name: "Drilling a 115 mm. diameter hole in ceramic tile wall.",
       description: ['Drilling a 115 mm. diameter hole in ceramic tile wall.'],
@@ -27829,7 +27793,7 @@ final hullRoofingData = [
       material: [0],
       materials: [0],
       totalPrice: [280.5],
-      constructionType: "New Construction "),
+      constructionType: "New Construction"),
   HullRoofingModel(
       name:
           "Drilling a 100 mm. diameter hole for ventilation from both sides of the wall (gypsum board wall).",
@@ -27844,7 +27808,7 @@ final hullRoofingData = [
       material: [0],
       materials: [0],
       totalPrice: [165],
-      constructionType: "New Construction "),
+      constructionType: "New Construction"),
   HullRoofingModel(
       name:
           "Drilling a 125 mm. diameter hole for ventilation from both sides of the wall (gypsum board wall).",
@@ -27859,7 +27823,7 @@ final hullRoofingData = [
       material: [0],
       materials: [0],
       totalPrice: [209],
-      constructionType: "New Construction "),
+      constructionType: "New Construction"),
   HullRoofingModel(
       name:
           "Drilling a 160 mm. diameter hole for ventilation from both sides of the wall (gypsum board wall).",
@@ -27874,7 +27838,7 @@ final hullRoofingData = [
       material: [0],
       materials: [0],
       totalPrice: [264],
-      constructionType: "New Construction "),
+      constructionType: "New Construction"),
   HullRoofingModel(
       name:
           "Drilling a 200 mm. diameter hole for ventilation from both sides of the wall (gypsum board wall).",
@@ -27889,7 +27853,7 @@ final hullRoofingData = [
       material: [0],
       materials: [0],
       totalPrice: [330],
-      constructionType: "New Construction "),
+      constructionType: "New Construction"),
   HullRoofingModel(
       name:
           "Drilling a 250 mm. diameter hole for ventilation from both sides of the wall (gypsum board wall).",
@@ -27904,7 +27868,7 @@ final hullRoofingData = [
       material: [0],
       materials: [0],
       totalPrice: [412.5],
-      constructionType: "New Construction "),
+      constructionType: "New Construction"),
   HullRoofingModel(
       name:
           "Drilling a 315 mm. diameter hole for ventilation from both sides of the wall (gypsum board wall).",
@@ -27919,7 +27883,7 @@ final hullRoofingData = [
       material: [0],
       materials: [0],
       totalPrice: [522.5],
-      constructionType: "New Construction "),
+      constructionType: "New Construction"),
   HullRoofingModel(
       name:
           "Drilling a 400 mm. diameter hole for ventilation from both sides of the wall (gypsum board wall).",
@@ -27934,7 +27898,7 @@ final hullRoofingData = [
       material: [0],
       materials: [0],
       totalPrice: [660],
-      constructionType: "New Construction "),
+      constructionType: "New Construction"),
   HullRoofingModel(
       name:
           "Drilling a 500 mm. diameter hole for ventilation from both sides of the wall (gypsum board wall).",
@@ -27949,7 +27913,7 @@ final hullRoofingData = [
       material: [0],
       materials: [0],
       totalPrice: [825],
-      constructionType: "New Construction "),
+      constructionType: "New Construction"),
 ];
 
 final scaffoldingData = [
@@ -27964,7 +27928,7 @@ final scaffoldingData = [
       material: [7840],
       materials: [0],
       totalPrice: [0],
-      constructionType: "New Construction "),
+      constructionType: "New Construction"),
   ScaffoldingModel(
       name: "Scaffolding assembly",
       description: ['Scaffolding assembly'],
@@ -27976,7 +27940,7 @@ final scaffoldingData = [
       material: [0],
       materials: [0],
       totalPrice: [0],
-      constructionType: "New Construction "),
+      constructionType: "New Construction"),
   ScaffoldingModel(
       name: "Scaffolding disassembly",
       description: ['Scaffolding disassembly'],
@@ -27988,7 +27952,7 @@ final scaffoldingData = [
       material: [0],
       materials: [0],
       totalPrice: [0],
-      constructionType: "New Construction "),
+      constructionType: "New Construction"),
 ];
 
 final innerStairsData = [
@@ -28006,7 +27970,7 @@ final innerStairsData = [
       material: [914.63, 48000],
       materials: [914.63, 48000],
       totalPrice: [1613.13, 59077],
-      constructionType: "New Construction "),
+      constructionType: "New Construction"),
   InnerStairsModel(
       name: "Indoor stairs installation, 180° spiral stairs.",
       description: [
@@ -28021,7 +27985,7 @@ final innerStairsData = [
       material: [2263.74, 59517.5],
       materials: [0, 0],
       totalPrice: [0, 0],
-      constructionType: "New Construction "),
+      constructionType: "New Construction"),
   InnerStairsModel(
       name: "Indoor stairs, two-step (two-row), wooden.",
       description: [
@@ -28036,7 +28000,7 @@ final innerStairsData = [
       material: [914.63, 51250],
       materials: [0, 0],
       totalPrice: [0, 0],
-      constructionType: "New Construction "),
+      constructionType: "New Construction"),
   InnerStairsModel(
       name: "Indoor stairs, corner stairs.",
       description: [
@@ -28051,7 +28015,7 @@ final innerStairsData = [
       material: [2263.74, 50207],
       materials: [0, 0],
       totalPrice: [0, 0],
-      constructionType: "New Construction "),
+      constructionType: "New Construction"),
   InnerStairsModel(
       name: "Indoor stairs installation, spiral wooden stairs.",
       description: [
@@ -28066,22 +28030,10 @@ final innerStairsData = [
       material: [2469.5, 59517.5],
       materials: [0, 0],
       totalPrice: [0, 0],
-      constructionType: "New Construction "),
+      constructionType: "New Construction"),
 ];
 
 final wasteData = [
-  WasteModel(
-      name: "Description of costs:",
-      description: [],
-      unit: [],
-      quantity: [],
-      laborHours1: [],
-      laborHours2: [],
-      laborCost: [],
-      material: [],
-      materials: [],
-      totalPrice: [],
-      constructionType: "New Construction "),
   WasteModel(
       name: "10 m³ container: Collection. Tiles and masonry.",
       description: ['10 m³ container: Collection. Tiles and masonry.'],
@@ -28093,7 +28045,7 @@ final wasteData = [
       material: [5135],
       materials: [5135],
       totalPrice: [5135],
-      constructionType: "New Construction "),
+      constructionType: "New Construction"),
   WasteModel(
       name: "10 m³ container: Collection. Clean wood waste.",
       description: ['10 m³ container: Collection. Clean wood waste.'],
@@ -28105,7 +28057,7 @@ final wasteData = [
       material: [3275],
       materials: [3275],
       totalPrice: [3275],
-      constructionType: "New Construction "),
+      constructionType: "New Construction"),
   WasteModel(
       name: "10 m³ container: Delivery.",
       description: ['10 m³ container: Delivery.'],
@@ -28117,7 +28069,7 @@ final wasteData = [
       material: [491],
       materials: [491],
       totalPrice: [491],
-      constructionType: "New Construction "),
+      constructionType: "New Construction"),
   WasteModel(
       name: "10 m³ container: Weekly rental.",
       description: ['10 m³ container: Weekly rental.'],
@@ -28129,7 +28081,7 @@ final wasteData = [
       material: [1500],
       materials: [1500],
       totalPrice: [1500],
-      constructionType: "New Construction "),
+      constructionType: "New Construction"),
   WasteModel(
       name: "10 m³ container: Emptying fee. Clean wood waste.",
       description: ['10 m³ container: Emptying fee. Clean wood waste.'],
@@ -28141,5 +28093,5 @@ final wasteData = [
       material: [3264],
       materials: [3264],
       totalPrice: [3264],
-      constructionType: "New Construction "),
+      constructionType: "New Construction"),
 ];

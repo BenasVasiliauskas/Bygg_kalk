@@ -1,4 +1,6 @@
 import 'package:cost_calculator/constants/language.dart';
+import 'package:cost_calculator/data/english_data_folder/data.dart';
+import 'package:cost_calculator/data/lithuanian_data_folder/lith_data.dart';
 import 'package:cost_calculator/data/norwegian_data_folder/norw_data.dart';
 import 'package:cost_calculator/observer/app_life_cycle_observer.dart';
 import 'package:cost_calculator/pages/shared/home_page.dart';
@@ -117,11 +119,31 @@ class _DeckSectionsState extends State<DeckSections> {
                 ),
                 Padding(
                   padding: const EdgeInsets.all(8.0),
-                  child: Text(norwDeckData
-                      .where(
-                          (deck) => deck.constructionType == "New Construction")
-                      .length
-                      .toString()),
+                  child: languageNorwegian
+                      ? Text(norwDeckData
+                          .where((deck) =>
+                              deck.constructionType == "New Construction")
+                          .length
+                          .toString())
+                      : languageLithuanian
+                          ? Text(litDeckData
+                              .where((deck) =>
+                                  deck.constructionType == "New Construction")
+                              .length
+                              .toString())
+                          : languageEnglish
+                              ? Text(deckData
+                                  .where((deck) =>
+                                      deck.constructionType ==
+                                      "New Construction")
+                                  .length
+                                  .toString())
+                              : Text(deckData
+                                  .where((deck) =>
+                                      deck.constructionType ==
+                                      "New Construction")
+                                  .length
+                                  .toString()),
                 ),
               ],
             ),
@@ -159,11 +181,29 @@ class _DeckSectionsState extends State<DeckSections> {
                 ),
                 Padding(
                   padding: const EdgeInsets.all(8.0),
-                  child: Text(norwDeckData
-                      .where(
-                          (deck) => deck.constructionType == "Reconstruction")
-                      .length
-                      .toString()),
+                  child: languageNorwegian
+                      ? Text(norwDeckData
+                          .where((deck) =>
+                              deck.constructionType == "Reconstruction")
+                          .length
+                          .toString())
+                      : languageLithuanian
+                          ? Text(litDeckData
+                              .where((deck) =>
+                                  deck.constructionType == "Reconstruction")
+                              .length
+                              .toString())
+                          : languageEnglish
+                              ? Text(deckData
+                                  .where((deck) =>
+                                      deck.constructionType == "Reconstruction")
+                                  .length
+                                  .toString())
+                              : Text(deckData
+                                  .where((deck) =>
+                                      deck.constructionType == "Reconstruction")
+                                  .length
+                                  .toString()),
                 ),
               ],
             ),
@@ -201,10 +241,29 @@ class _DeckSectionsState extends State<DeckSections> {
                 ),
                 Padding(
                   padding: const EdgeInsets.all(8.0),
-                  child: Text(norwDeckData
-                      .where((deck) => deck.constructionType == "Demolition")
-                      .length
-                      .toString()),
+                  child: languageNorwegian
+                      ? Text(norwDeckData
+                          .where(
+                              (deck) => deck.constructionType == "Demolition")
+                          .length
+                          .toString())
+                      : languageLithuanian
+                          ? Text(litDeckData
+                              .where((deck) =>
+                                  deck.constructionType == "Demolition")
+                              .length
+                              .toString())
+                          : languageEnglish
+                              ? Text(deckData
+                                  .where((deck) =>
+                                      deck.constructionType == "Demolition")
+                                  .length
+                                  .toString())
+                              : Text(deckData
+                                  .where((deck) =>
+                                      deck.constructionType == "Demolition")
+                                  .length
+                                  .toString()),
                 ),
               ],
             ),
