@@ -78,7 +78,7 @@ class _SupportSystemSectionsState extends State<SupportSystemSections> {
             languageEnglish
                 ? "Load-bearing systems"
                 : languageLithuanian
-                    ? "Laikančiosios sistemos"
+                    ? "Laikančiosios konstrukcijos"
                     : languageNorwegian
                         ? "Bæresystemer"
                         : "Systemy wsparcia",
