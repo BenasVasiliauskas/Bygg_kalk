@@ -112,28 +112,28 @@ class _OuterRoofScreenState extends State<OuterRoofScreen> {
           ],
           title: Text(widget.constructionType == "New Construction"
               ? languageEnglish
-                  ? "New Construction"
+                  ? "Roof - New Construction"
                   : languageLithuanian
-                      ? "Nauja statyba"
+                      ? "Stogas - Nauja statyba"
                       : languageNorwegian
-                          ? "Nye konstruksjons"
-                          : "Nowa konstrukcja"
+                          ? "Yttertak - Nye konstruksjons"
+                          : "Dach zewnętrzny - Nowa konstrukcja"
               : widget.constructionType == "Demolition"
                   ? languageEnglish
-                      ? "Demolition"
+                      ? "Roof - Demolition"
                       : languageLithuanian
-                          ? "Griovimas"
+                          ? "Stogas - Griovimas"
                           : languageNorwegian
-                              ? "Riving"
-                              : "Demolizione"
+                              ? "Yttertak - Riving"
+                              : "Dach zewnętrzny - Demolizione"
                   : widget.constructionType == "Reconstruction"
                       ? languageEnglish
-                          ? "Reconstruction"
+                          ? "Roof - Reconstruction"
                           : languageLithuanian
-                              ? "Rekonstrukcija"
+                              ? "Stogas - Rekonstrukcija"
                               : languageNorwegian
-                                  ? "Rekonstruksjon"
-                                  : "Rekonstrukcja"
+                                  ? "Yttertak - Rekonstruksjon"
+                                  : "Dach zewnętrzny - Rekonstrukcja"
                       : ""),
         ),
         body: GridView.count(

@@ -115,28 +115,28 @@ class _ExteriorWallScreenState extends State<ExteriorWallScreen> {
           ],
           title: Text(widget.constructionType == "New Construction"
               ? languageEnglish
-                  ? "New Construction"
+                  ? "Outer wall - New Construction"
                   : languageLithuanian
-                      ? "Nauja statyba"
+                      ? "Išorinės sienos - Nauja statyba"
                       : languageNorwegian
-                          ? "Nye konstruksjons"
-                          : "Nowa konstrukcja"
+                          ? "Yttervegger - Nye konstruksjons"
+                          : "Ściany wewnętrzne - Nowa konstrukcja"
               : widget.constructionType == "Demolition"
                   ? languageEnglish
-                      ? "Demolition"
+                      ? "Outer wall - Demolition"
                       : languageLithuanian
-                          ? "Griovimas"
+                          ? "Išorinės sienos - Griovimas"
                           : languageNorwegian
-                              ? "Riving"
-                              : "Demolizione"
+                              ? "Yttervegger - Riving"
+                              : "Ściany wewnętrzne - Demolizione"
                   : widget.constructionType == "Reconstruction"
                       ? languageEnglish
-                          ? "Reconstruction"
+                          ? "Outer wall - Reconstruction"
                           : languageLithuanian
-                              ? "Rekonstrukcija"
+                              ? "Išorinės sienos - Rekonstrukcija"
                               : languageNorwegian
-                                  ? "Rekonstruksjon"
-                                  : "Rekonstrukcja"
+                                  ? "Yttervegger - Rekonstruksjon"
+                                  : "Ściany wewnętrzne - Rekonstrukcja"
                       : ""),
         ),
         body: GridView.count(

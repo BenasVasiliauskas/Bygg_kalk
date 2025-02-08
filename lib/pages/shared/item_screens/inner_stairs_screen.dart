@@ -103,12 +103,12 @@ class _InnerStairsScreen extends State<InnerStairsScreen> {
             ),
           ],
           title: Text(languageEnglish
-              ? "New Construction"
+              ? "Inner stairs - New Construction"
               : languageLithuanian
-                  ? "Nauja statyba"
+                  ? "Vidaus laiptai - Nauja statyba"
                   : languageNorwegian
-                      ? "Nye konstruksjons"
-                      : "Nowa konstrukcja"),
+                      ? "Trapper - Nye konstruksjons"
+                      : "Schody wewnętrzne - Nowa konstrukcja"),
         ),
         body: GridView.count(
           padding: const EdgeInsets.all(25),

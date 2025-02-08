@@ -116,28 +116,28 @@ class _WindowsExteriorDoorScreenState extends State<WindowsExteriorDoorScreen> {
           ],
           title: Text(widget.constructionType == "New Construction"
               ? languageEnglish
-                  ? "New Construction"
+                  ? "Windows, doors - New Construction"
                   : languageLithuanian
-                      ? "Nauja statyba"
+                      ? "Langai ir lauko durys - Nauja statyba"
                       : languageNorwegian
-                          ? "Nye konstruksjons"
-                          : "Nowa konstrukcja"
+                          ? "Vinduer og ytterdører - Nye konstruksjons"
+                          : "Okna i drzwi zewnętrzne - Nowa konstrukcja"
               : widget.constructionType == "Demolition"
                   ? languageEnglish
-                      ? "Demolition"
+                      ? "Windows, doors - Demolition"
                       : languageLithuanian
-                          ? "Griovimas"
+                          ? "Langai ir lauko durys - Griovimas"
                           : languageNorwegian
-                              ? "Riving"
-                              : "Demolizione"
+                              ? "Vinduer og ytterdører - Riving"
+                              : "Okna i drzwi zewnętrzne - Demolizione"
                   : widget.constructionType == "Reconstruction"
                       ? languageEnglish
-                          ? "Reconstruction"
+                          ? "Windows, doors - Reconstruction"
                           : languageLithuanian
-                              ? "Rekonstrukcija"
+                              ? "Langai ir lauko durys - Rekonstrukcija"
                               : languageNorwegian
-                                  ? "Rekonstruksjon"
-                                  : "Rekonstrukcja"
+                                  ? "Vinduer og ytterdører - Rekonstruksjon"
+                                  : "Okna i drzwi zewnętrzne - Rekonstrukcja"
                       : ""),
         ),
         body: GridView.count(

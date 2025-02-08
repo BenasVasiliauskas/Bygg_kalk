@@ -113,28 +113,28 @@ class _InnerDoorScreenState extends State<InnerDoorScreen> {
           ],
           title: Text(widget.constructionType == "New Construction"
               ? languageEnglish
-                  ? "New Construction"
+                  ? "Interior door - New Construction"
                   : languageLithuanian
-                      ? "Nauja statyba"
+                      ? "Vidaus durys - Nauja statyba"
                       : languageNorwegian
-                          ? "Nye konstruksjons"
-                          : "Nowa konstrukcja"
+                          ? "Innerdører - Nye konstruksjons"
+                          : "Drzwi wewnętrzne - Nowa konstrukcja"
               : widget.constructionType == "Demolition"
                   ? languageEnglish
-                      ? "Demolition"
+                      ? "Interior door - Demolition"
                       : languageLithuanian
-                          ? "Griovimas"
+                          ? "Vidaus durys - Griovimas"
                           : languageNorwegian
-                              ? "Riving"
-                              : "Demolizione"
+                              ? "Innerdører - Riving"
+                              : "Drzwi wewnętrzne - Demolizione"
                   : widget.constructionType == "Reconstruction"
                       ? languageEnglish
-                          ? "Reconstruction"
+                          ? "Interior door - Reconstruction"
                           : languageLithuanian
-                              ? "Rekonstrukcija"
+                              ? "Vidaus durys - Rekonstrukcija"
                               : languageNorwegian
-                                  ? "Rekonstruksjon"
-                                  : "Rekonstrukcja"
+                                  ? "Innerdører - Rekonstruksjon"
+                                  : "Drzwi wewnętrzne - Rekonstrukcja"
                       : ""),
         ),
         body: GridView.count(

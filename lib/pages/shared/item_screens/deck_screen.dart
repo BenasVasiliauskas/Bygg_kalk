@@ -118,26 +118,26 @@ class _DeckScreenState extends State<DeckScreen> {
               ? languageEnglish
                   ? "Floor structure - New Construction"
                   : languageLithuanian
-                      ? "Perdanga - Nauja statyba"
+                      ? "Perdangos - Nauja statyba"
                       : languageNorwegian
                           ? "Dekker - Nye konstruksjons"
-                          : "Nowa konstrukcja"
+                          : "Opona - Nowa konstrukcja"
               : widget.constructionType == "Demolition"
                   ? languageEnglish
-                      ? "Demolition"
+                      ? "Floor structure - Demolition"
                       : languageLithuanian
-                          ? "Griovimas"
+                          ? "Perdangos - Griovimas"
                           : languageNorwegian
-                              ? "Riving"
-                              : "Demolizione"
+                              ? "Dekker - Riving"
+                              : "Opona - Demolizione"
                   : widget.constructionType == "Reconstruction"
                       ? languageEnglish
-                          ? "Reconstruction"
+                          ? "Floor structure - Reconstruction"
                           : languageLithuanian
-                              ? "Rekonstrukcija"
+                              ? "Perdangos - Rekonstrukcija"
                               : languageNorwegian
-                                  ? "Rekonstruksjon"
-                                  : "Rekonstrukcja"
+                                  ? "Dekker - Rekonstruksjon"
+                                  : "Opona - Rekonstrukcja"
                       : ""),
         ),
         body: GridView.count(

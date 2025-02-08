@@ -116,28 +116,28 @@ class _InnerWallScreenState extends State<InnerWallScreen> {
           ],
           title: Text(widget.constructionType == "New Construction"
               ? languageEnglish
-                  ? "New Construction"
+                  ? "Interior walls - New Construction"
                   : languageLithuanian
-                      ? "Nauja statyba"
+                      ? "Vidinės sienos - Nauja statyba"
                       : languageNorwegian
-                          ? "Nye konstruksjons"
-                          : "Nowa konstrukcja"
+                          ? "Innervegger - Nye konstruksjons"
+                          : "Ściany wewnętrzne - Nowa konstrukcja"
               : widget.constructionType == "Demolition"
                   ? languageEnglish
-                      ? "Demolition"
+                      ? "Interior walls - Demolition"
                       : languageLithuanian
-                          ? "Griovimas"
+                          ? "Vidinės sienos - Griovimas"
                           : languageNorwegian
-                              ? "Riving"
-                              : "Demolizione"
+                              ? "Innervegger - Riving"
+                              : "Ściany wewnętrzne - Demolizione"
                   : widget.constructionType == "Reconstruction"
                       ? languageEnglish
-                          ? "Reconstruction"
+                          ? "Interior walls - Reconstruction"
                           : languageLithuanian
-                              ? "Rekonstrukcija"
+                              ? "Vidinės sienos - Rekonstrukcija"
                               : languageNorwegian
-                                  ? "Rekonstruksjon"
-                                  : "Rekonstrukcja"
+                                  ? "Innervegger - Rekonstruksjon"
+                                  : "Ściany wewnętrzne - Rekonstrukcja"
                       : ""),
         ),
         body: GridView.count(
