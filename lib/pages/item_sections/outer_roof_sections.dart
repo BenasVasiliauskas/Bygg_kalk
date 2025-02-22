@@ -109,7 +109,7 @@ class _OuterRoofSectionsState extends State<OuterRoofSections> {
                                 ? "Naujas pastatas"
                                 : languageNorwegian
                                     ? "Ny Bygg"
-                                    : "ŚNowy budynek",
+                                    : "Nowy budynek",
                       ),
                     ],
                   ),

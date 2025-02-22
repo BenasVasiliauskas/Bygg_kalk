@@ -119,8 +119,8 @@ class _ExteriorWallScreenState extends State<ExteriorWallScreen> {
                   : languageLithuanian
                       ? "Išorinės sienos - Nauja statyba"
                       : languageNorwegian
-                          ? "Yttervegger - Nye konstruksjons"
-                          : "Ściany wewnętrzne - Nowa konstrukcja"
+                          ? "Yttervegger - Nybygg"
+                          : "Ściany wewnętrzne - Nowy budynek"
               : widget.constructionType == "Demolition"
                   ? languageEnglish
                       ? "Outer wall - Demolition"
@@ -128,14 +128,14 @@ class _ExteriorWallScreenState extends State<ExteriorWallScreen> {
                           ? "Išorinės sienos - Griovimas"
                           : languageNorwegian
                               ? "Yttervegger - Riving"
-                              : "Ściany wewnętrzne - Demolizione"
+                              : "Ściany wewnętrzne - Rozbiórka"
                   : widget.constructionType == "Reconstruction"
                       ? languageEnglish
                           ? "Outer wall - Reconstruction"
                           : languageLithuanian
                               ? "Išorinės sienos - Rekonstrukcija"
                               : languageNorwegian
-                                  ? "Yttervegger - Rekonstruksjon"
+                                  ? "Yttervegger - Ombygging"
                                   : "Ściany wewnętrzne - Rekonstrukcja"
                       : ""),
         ),
@@ -327,13 +327,21 @@ class _ExteriorWallScreenState extends State<ExteriorWallScreen> {
                                 ? outerWallUnitsDemo[index]
                                 : outerWallUnitsRecon[index],
                       )
-                    : Text(
-                        widget.constructionType == "New Construction"
-                            ? outerWallUnitsNewCLT[index]
-                            : widget.constructionType == "Demolition"
-                                ? outerWallUnitsDemo[index]
-                                : outerWallUnitsRecon[index],
-                      ),
+                    : languageLithuanian
+                        ? Text(
+                            widget.constructionType == "New Construction"
+                                ? outerWallUnitsNewCLT[index]
+                                : widget.constructionType == "Demolition"
+                                    ? outerWallUnitsLTDestro[index]
+                                    : outerWallUnitsRecon[index],
+                          )
+                        : Text(
+                            widget.constructionType == "New Construction"
+                                ? outerWallUnitsNewC[index]
+                                : widget.constructionType == "Demolition"
+                                    ? outerWallUnitsDemo[index]
+                                    : outerWallUnitsRecon[index],
+                          ),
               ],
             );
           }),

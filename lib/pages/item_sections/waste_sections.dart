@@ -108,7 +108,7 @@ class _WasteSectionsState extends State<WasteSections> {
                                 ? "Naujas pastatas"
                                 : languageNorwegian
                                     ? "Ny Bygg"
-                                    : "ŚNowy budynek",
+                                    : "Nowy budynek",
                       ),
                     ],
                   ),

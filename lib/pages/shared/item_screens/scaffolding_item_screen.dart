@@ -106,8 +106,8 @@ class _ScaffoldingScreenState extends State<ScaffoldingScreen> {
               : languageLithuanian
                   ? "Pastoliai - Nauja statyba"
                   : languageNorwegian
-                      ? "Stillas - Nye konstruksjons"
-                      : "Rusztowanie - Nowa konstrukcja"),
+                      ? "Stillas - Nybygg"
+                      : "Rusztowanie - Nowy budynek"),
         ),
         body: GridView.count(
           padding: const EdgeInsets.all(25),

@@ -108,7 +108,7 @@ class _ScaffoldingSectionsState extends State<ScaffoldingSections> {
                                 ? "Naujas pastatas"
                                 : languageNorwegian
                                     ? "Ny Bygg"
-                                    : "ŚNowy budynek",
+                                    : "Nowy budynek",
                       ),
                     ],
                   ),

@@ -490,11 +490,11 @@ class _LitDeckItemScreenState extends State<LitDeckItemScreen> {
           true,
         ),
         dataCellDisplaySingleBoldText(
-            "", 55, Theme.of(context).colorScheme.surface, true),
+            "", 55, Theme.of(context).colorScheme.surface, visible),
         dataCellDisplaySingleBoldText(
-            "", 55, Theme.of(context).colorScheme.surface, true),
+            "", 55, Theme.of(context).colorScheme.surface, visible),
         dataCellDisplaySingleBoldText(
-            "", 55, Theme.of(context).colorScheme.surface, true),
+            "", 55, Theme.of(context).colorScheme.surface, visible),
         DataCell(
           Visibility(
             visible: visible,

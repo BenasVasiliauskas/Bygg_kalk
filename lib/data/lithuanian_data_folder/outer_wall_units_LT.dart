@@ -100,3 +100,15 @@ List<String> outerWallUnitsNewCLT = [
   'm',
   'm',
 ];
+
+List<String> outerWallUnitsLTDestro = [
+  "vnt.",
+  "vnt.",
+  "m²",
+  "m²",
+  "m²",
+  "m²",
+  "m²",
+  "m²",
+  "m²",
+];

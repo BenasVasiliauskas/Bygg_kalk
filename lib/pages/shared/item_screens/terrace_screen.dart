@@ -108,8 +108,8 @@ class _TerraceScreenState extends State<TerraceScreen> {
               : languageLithuanian
                   ? "Terasos, turėklai - Nauja statyba"
                   : languageNorwegian
-                      ? "Terrasse/rekkverk - Nye konstruksjons"
-                      : "Taras/Railings - Nowa konstrukcja"),
+                      ? "Terrasse/rekkverk - Nybygg"
+                      : "Taras/Railings - Nowy budynek"),
         ),
         body: GridView.count(
           padding: const EdgeInsets.all(25),

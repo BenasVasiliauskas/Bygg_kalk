@@ -117,8 +117,8 @@ class _InnerDoorScreenState extends State<InnerDoorScreen> {
                   : languageLithuanian
                       ? "Vidaus durys - Nauja statyba"
                       : languageNorwegian
-                          ? "Innerdører - Nye konstruksjons"
-                          : "Drzwi wewnętrzne - Nowa konstrukcja"
+                          ? "Innerdører - Nybygg"
+                          : "Drzwi wewnętrzne - Nowy budynek"
               : widget.constructionType == "Demolition"
                   ? languageEnglish
                       ? "Interior door - Demolition"
@@ -126,14 +126,14 @@ class _InnerDoorScreenState extends State<InnerDoorScreen> {
                           ? "Vidaus durys - Griovimas"
                           : languageNorwegian
                               ? "Innerdører - Riving"
-                              : "Drzwi wewnętrzne - Demolizione"
+                              : "Drzwi wewnętrzne - Rozbiórka"
                   : widget.constructionType == "Reconstruction"
                       ? languageEnglish
                           ? "Interior door - Reconstruction"
                           : languageLithuanian
                               ? "Vidaus durys - Rekonstrukcija"
                               : languageNorwegian
-                                  ? "Innerdører - Rekonstruksjon"
+                                  ? "Innerdører - Ombygging"
                                   : "Drzwi wewnętrzne - Rekonstrukcja"
                       : ""),
         ),

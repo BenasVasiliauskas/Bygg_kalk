@@ -109,8 +109,8 @@ class _SupportSystemScreenState extends State<SupportSystemScreen> {
               : languageLithuanian
                   ? "Laikančioji konstrukcija - Nauja statyba"
                   : languageNorwegian
-                      ? "Bæresystem - Nye konstruksjons"
-                      : "System wsparcia - Nowa konstrukcja"),
+                      ? "Bæresystem - Nybygg"
+                      : "System wsparcia - Nowy budynek"),
         ),
         body: GridView.count(
           padding: const EdgeInsets.all(25),

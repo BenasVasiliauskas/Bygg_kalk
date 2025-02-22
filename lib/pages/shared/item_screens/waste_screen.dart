@@ -108,8 +108,8 @@ class _WasteScreenState extends State<WasteScreen> {
               : languageLithuanian
                   ? "Atliekų išvežimas - Nauja statyba"
                   : languageNorwegian
-                      ? "Avfall - Nye konstruksjons"
-                      : "Gospodarka odpadami - Nowa konstrukcja"),
+                      ? "Avfall - Nybygg"
+                      : "Gospodarka odpadami - Nowy budynek"),
         ),
         body: GridView.count(
           padding: const EdgeInsets.all(25),

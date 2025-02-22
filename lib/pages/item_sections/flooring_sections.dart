@@ -109,7 +109,7 @@ class _FlooringSectionsState extends State<FlooringSections> {
                                 ? "Naujos statybos"
                                 : languageNorwegian
                                     ? "Ny bygg"
-                                    : "Nowa konstrukcja",
+                                    : "Nowy budynek",
                       ),
                     ],
                   ),

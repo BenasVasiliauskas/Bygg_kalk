@@ -120,8 +120,8 @@ class _WindowsExteriorDoorScreenState extends State<WindowsExteriorDoorScreen> {
                   : languageLithuanian
                       ? "Langai ir lauko durys - Nauja statyba"
                       : languageNorwegian
-                          ? "Vinduer og ytterdører - Nye konstruksjons"
-                          : "Okna i drzwi zewnętrzne - Nowa konstrukcja"
+                          ? "Vinduer og ytterdører - Nybygg"
+                          : "Okna i drzwi zewnętrzne - Nowy budynek"
               : widget.constructionType == "Demolition"
                   ? languageEnglish
                       ? "Windows, doors - Demolition"
@@ -129,14 +129,14 @@ class _WindowsExteriorDoorScreenState extends State<WindowsExteriorDoorScreen> {
                           ? "Langai ir lauko durys - Griovimas"
                           : languageNorwegian
                               ? "Vinduer og ytterdører - Riving"
-                              : "Okna i drzwi zewnętrzne - Demolizione"
+                              : "Okna i drzwi zewnętrzne - Rozbiórka"
                   : widget.constructionType == "Reconstruction"
                       ? languageEnglish
                           ? "Windows, doors - Reconstruction"
                           : languageLithuanian
                               ? "Langai ir lauko durys - Rekonstrukcija"
                               : languageNorwegian
-                                  ? "Vinduer og ytterdører - Rekonstruksjon"
+                                  ? "Vinduer og ytterdører - Ombygging"
                                   : "Okna i drzwi zewnętrzne - Rekonstrukcja"
                       : ""),
         ),

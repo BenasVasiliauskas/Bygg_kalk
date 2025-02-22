@@ -116,8 +116,8 @@ class _OuterRoofScreenState extends State<OuterRoofScreen> {
                   : languageLithuanian
                       ? "Stogas - Nauja statyba"
                       : languageNorwegian
-                          ? "Yttertak - Nye konstruksjons"
-                          : "Dach zewnętrzny - Nowa konstrukcja"
+                          ? "Yttertak - Nybygg"
+                          : "Dach zewnętrzny - Nowy budynek"
               : widget.constructionType == "Demolition"
                   ? languageEnglish
                       ? "Roof - Demolition"
@@ -125,14 +125,14 @@ class _OuterRoofScreenState extends State<OuterRoofScreen> {
                           ? "Stogas - Griovimas"
                           : languageNorwegian
                               ? "Yttertak - Riving"
-                              : "Dach zewnętrzny - Demolizione"
+                              : "Dach zewnętrzny - Rozbiórka"
                   : widget.constructionType == "Reconstruction"
                       ? languageEnglish
                           ? "Roof - Reconstruction"
                           : languageLithuanian
                               ? "Stogas - Rekonstrukcija"
                               : languageNorwegian
-                                  ? "Yttertak - Rekonstruksjon"
+                                  ? "Yttertak - Ombygging"
                                   : "Dach zewnętrzny - Rekonstrukcja"
                       : ""),
         ),

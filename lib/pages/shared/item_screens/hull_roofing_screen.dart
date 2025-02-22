@@ -106,8 +106,8 @@ class _HullRoofingScreenState extends State<HullRoofingScreen> {
               : languageLithuanian
                   ? "Angų grežimas - Nauja statyba"
                   : languageNorwegian
-                      ? "Hulltaking - Nye konstruksjons"
-                      : "Pokrycia kadłuba - Nowa konstrukcja"),
+                      ? "Hulltaking - Nybygg"
+                      : "Pokrycia kadłuba - Nowy budynek"),
         ),
         body: GridView.count(
           padding: const EdgeInsets.all(25),

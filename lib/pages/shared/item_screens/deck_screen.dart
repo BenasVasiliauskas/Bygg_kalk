@@ -120,8 +120,8 @@ class _DeckScreenState extends State<DeckScreen> {
                   : languageLithuanian
                       ? "Perdangos - Nauja statyba"
                       : languageNorwegian
-                          ? "Dekker - Nye konstruksjons"
-                          : "Opona - Nowa konstrukcja"
+                          ? "Dekker - Nybygg"
+                          : "Opona - Nowy budynek"
               : widget.constructionType == "Demolition"
                   ? languageEnglish
                       ? "Floor structure - Demolition"
@@ -129,14 +129,14 @@ class _DeckScreenState extends State<DeckScreen> {
                           ? "Perdangos - Griovimas"
                           : languageNorwegian
                               ? "Dekker - Riving"
-                              : "Opona - Demolizione"
+                              : "Opona - Rozbiórka"
                   : widget.constructionType == "Reconstruction"
                       ? languageEnglish
                           ? "Floor structure - Reconstruction"
                           : languageLithuanian
                               ? "Perdangos - Rekonstrukcija"
                               : languageNorwegian
-                                  ? "Dekker - Rekonstruksjon"
+                                  ? "Dekker - Ombygging"
                                   : "Opona - Rekonstrukcja"
                       : ""),
         ),

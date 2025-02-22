@@ -117,8 +117,8 @@ class _FlooringSectionsState extends State<FlooringScreen> {
                   : languageLithuanian
                       ? "Grindys - Nauja statyba"
                       : languageNorwegian
-                          ? "Gulvbelegg - Nye konstruksjons"
-                          : "Podłoga - Nowa konstrukcja"
+                          ? "Gulvbelegg - Nybygg"
+                          : "Podłoga - Nowy budynek"
               : widget.constructionType == "Demolition"
                   ? languageEnglish
                       ? "Flooring - Demolition"
@@ -126,14 +126,14 @@ class _FlooringSectionsState extends State<FlooringScreen> {
                           ? "Grindys - Griovimas"
                           : languageNorwegian
                               ? "Podłoga - Riving"
-                              : "Gulvbelegg - Demolizione"
+                              : "Gulvbelegg - Rozbiórka"
                   : widget.constructionType == "Reconstruction"
                       ? languageEnglish
                           ? "Flooring - Reconstruction"
                           : languageLithuanian
                               ? "Gulvbelegg - Rekonstrukcija"
                               : languageNorwegian
-                                  ? "Podłoga - Rekonstruksjon"
+                                  ? "Podłoga - Ombygging"
                                   : "Grindys - Rekonstrukcja"
                       : ""),
         ),

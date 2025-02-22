@@ -5998,13 +5998,13 @@ final polDeckData = [
       constructionType: "Demolition"),
   DeckModel(
       name:
-          "Rozbiórka belek drewnianych 50x200 mm, linoleum, podłogi z desek i drewnianych sufitów.",
+          "Rozbiórkabelek drewnianych 50x200 mm, linoleum, podłogi z desek i drewnianych sufitów.",
       description: [
         'Usuwanie linoleum.',
-        'Rozbiórka podłóg z desek.',
+        'Rozbiórkapodłóg z desek.',
         'Demontaż drewnianych sufitów.',
         'Usuwanie powłoki papieru bitumicznego.',
-        'Rozbiórka belek drewnianych 50x200 mm.'
+        'Rozbiórkabelek drewnianych 50x200 mm.'
       ],
       unit: ['m²', 'm²', 'm²', 'm²', 'm²'],
       quantity: [1, 1, 1, 1, 1],
@@ -6017,9 +6017,9 @@ final polDeckData = [
       constructionType: "Demolition"),
   DeckModel(
       name:
-          "Rozbiórka podłóg z parkietem i warstwą podkładową betonu (około 40 mm) na podłożu.",
+          "Rozbiórkapodłóg z parkietem i warstwą podkładową betonu (około 40 mm) na podłożu.",
       description: [
-        'Rozbiórka parkietu.',
+        'Rozbiórkaparkietu.',
         'Usuwanie warstwy podkładowej betonu, około 40 mm.'
       ],
       unit: ['m²', 'm²'],
@@ -6033,7 +6033,7 @@ final polDeckData = [
       constructionType: "Demolition"),
   DeckModel(
       name:
-          "Rozbiórka podłóg z linoleum i warstwą podkładową betonu (około 40 mm) na podłożu.",
+          "Rozbiórkapodłóg z linoleum i warstwą podkładową betonu (około 40 mm) na podłożu.",
       description: [
         'Usuwanie linoleum.',
         'Usuwanie warstwy podkładowej betonu, około 40 mm.'
@@ -6049,13 +6049,13 @@ final polDeckData = [
       constructionType: "Demolition"),
   DeckModel(
       name:
-          "Rozbiórka belek drewnianych 50x200 mm z linoleum, podłogami z desek i wypełnieniem glinianym.",
+          "Rozbiórkabelek drewnianych 50x200 mm z linoleum, podłogami z desek i wypełnieniem glinianym.",
       description: [
         'Usuwanie linoleum.',
-        'Rozbiórka podłóg z desek.',
+        'Rozbiórkapodłóg z desek.',
         'Usuwanie wypełnienia glinianego (Slak).',
-        'Rozbiórka poddesek.',
-        'Rozbiórka belek drewnianych 50x200 mm.',
+        'Rozbiórkapoddesek.',
+        'Rozbiórkabelek drewnianych 50x200 mm.',
         'Usuwanie powłoki papieru bitumicznego.'
       ],
       unit: ['m²', 'm²', 'm²', 'm²', 'm²', 'm²'],
@@ -6069,13 +6069,13 @@ final polDeckData = [
       constructionType: "Demolition"),
   DeckModel(
       name:
-          "Rozbiórka belek drewnianych 50x200 mm z płytkami ceramicznymi, podłogami z desek i wypełnieniem glinianym.",
+          "Rozbiórkabelek drewnianych 50x200 mm z płytkami ceramicznymi, podłogami z desek i wypełnieniem glinianym.",
       description: [
-        'Rozbiórka płytek ceramicznych.',
-        'Rozbiórka podłóg z desek.',
+        'Rozbiórkapłytek ceramicznych.',
+        'Rozbiórkapodłóg z desek.',
         'Usuwanie wypełnienia glinianego (Slak).',
-        'Rozbiórka belek drewnianych.',
-        'Rozbiórka poddesek.',
+        'Rozbiórkabelek drewnianych.',
+        'Rozbiórkapoddesek.',
         'Usuwanie powłoki papieru bitumicznego.'
       ],
       unit: ['m²', 'm²', 'm²', 'm²', 'm²', 'm²'],
@@ -6089,10 +6089,10 @@ final polDeckData = [
       constructionType: "Demolition"),
   DeckModel(
       name:
-          "Rozbiórka płyt betonowych monolitycznych 160 mm z pośrednią podłogą.",
+          "Rozbiórkapłyt betonowych monolitycznych 160 mm z pośrednią podłogą.",
       description: [
-        'Rozbiórka pośredniej podłogi.',
-        'Rozbiórka płyty żelbetowej 160 mm.'
+        'Rozbiórkapośredniej podłogi.',
+        'Rozbiórkapłyty żelbetowej 160 mm.'
       ],
       unit: ['m²', 'm²'],
       quantity: [1, 1],
@@ -6104,8 +6104,8 @@ final polDeckData = [
       totalPrice: [302.5, 1017.5],
       constructionType: "Demolition"),
   DeckModel(
-      name: "Rozbiórka płyt betonowych monolitycznych 160 mm z linoleum.",
-      description: ['Usuwanie linoleum.', 'Rozbiórka płyty żelbetowej 160 mm.'],
+      name: "Rozbiórkapłyt betonowych monolitycznych 160 mm z linoleum.",
+      description: ['Usuwanie linoleum.', 'Rozbiórkapłyty żelbetowej 160 mm.'],
       unit: ['m²', 'm²'],
       quantity: [1, 1],
       laborHours1: [0.15, 1.85],
@@ -6117,10 +6117,10 @@ final polDeckData = [
       constructionType: "Demolition"),
   DeckModel(
       name:
-          "Rozbiórka płyt betonowych monolitycznych 160 mm z płytkami ceramicznymi.",
+          "Rozbiórkapłyt betonowych monolitycznych 160 mm z płytkami ceramicznymi.",
       description: [
-        'Rozbiórka płytek ceramicznych.',
-        'Rozbiórka płyty żelbetowej 160 mm.'
+        'Rozbiórkapłytek ceramicznych.',
+        'Rozbiórkapłyty żelbetowej 160 mm.'
       ],
       unit: ['m²', 'm²'],
       quantity: [1, 1],
@@ -6133,10 +6133,10 @@ final polDeckData = [
       constructionType: "Demolition"),
   DeckModel(
       name:
-          "Rozbiórka płyt betonowych monolitycznych 160 mm z linoleum i warstwą podkładową betonu (40 mm).",
+          "Rozbiórkapłyt betonowych monolitycznych 160 mm z linoleum i warstwą podkładową betonu (40 mm).",
       description: [
         'Usuwanie linoleum z warstwą podkładową betonu (40 mm).',
-        'Rozbiórka płyty żelbetowej 160 mm.'
+        'Rozbiórkapłyty żelbetowej 160 mm.'
       ],
       unit: ['m²', 'm²'],
       quantity: [1, 1],
@@ -22344,13 +22344,13 @@ final polExteriorWallData = [
     constructionType: "Reconstruction",
   ),
   OuterWallModel(
-    name: "Rozbiórka drzwi w ścianie zewnętrznej zakończona",
+    name: "Rozbiórkadrzwi w ścianie zewnętrznej zakończona",
     description: [
-      "Rozbiórka zapadlisk < 150 mm",
-      "Rozbiórka przedłużonych profili ramowych",
-      "Rozbiórka zewnętrznych obramowań drzwi/okien",
-      "Rozbiórka listew wewnętrznych",
-      "Rozbiórka drzwi zewnętrznych ze szkłem",
+      "Rozbiórkazapadlisk < 150 mm",
+      "Rozbiórkaprzedłużonych profili ramowych",
+      "Rozbiórkazewnętrznych obramowań drzwi/okien",
+      "Rozbiórkalistew wewnętrznych",
+      "Rozbiórkadrzwi zewnętrznych ze szkłem",
     ],
     unit: [
       "m",
@@ -25958,7 +25958,7 @@ final polOuterRoofData = [
       totalPrice: [60.5, 60.5, 132],
       constructionType: "Demolition"),
   OuterRoofModel(
-      name: "Rozbiórka pokrycia dachowego (pokrycie pasmowe).",
+      name: "Rozbiórkapokrycia dachowego (pokrycie pasmowe).",
       description: [
         'Demontaż pokrycia pasmowego.',
         'Demontaż łat pod pokrycie dachowe.',
@@ -25975,7 +25975,7 @@ final polOuterRoofData = [
       totalPrice: [187, 27.5, 60.5, 22],
       constructionType: "Demolition"),
   OuterRoofModel(
-      name: "Rozbiórka pokrycia dachowego (pokrycie papowe).",
+      name: "Rozbiórkapokrycia dachowego (pokrycie papowe).",
       description: [
         'Demontaż jednej warstwy pokrycia papowego.',
         'Usuwanie pokrycia papowego.'
@@ -25990,7 +25990,7 @@ final polOuterRoofData = [
       totalPrice: [60.5, 22],
       constructionType: "Demolition"),
   OuterRoofModel(
-      name: "Rozbiórka pokrycia dachowego (dachówki).",
+      name: "Rozbiórkapokrycia dachowego (dachówki).",
       description: [
         'Demontaż dachówek.',
         'Demontaż łat pod pokrycie dachowe.',
@@ -26007,7 +26007,7 @@ final polOuterRoofData = [
       totalPrice: [60.5, 27.5, 60.5, 22],
       constructionType: "Demolition"),
   OuterRoofModel(
-      name: "Rozbiórka pokrycia dachowego (blachy faliste).",
+      name: "Rozbiórkapokrycia dachowego (blachy faliste).",
       description: [
         'Demontaż falistych blach stalowych.',
         'Demontaż łat pod pokrycie dachowe.',
