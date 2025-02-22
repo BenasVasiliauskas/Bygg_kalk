@@ -1,0 +1,17 @@
+List<String> NORWSupportSystemUnitsNewC = [
+  "m",
+  "m",
+  "m",
+  "m",
+  "m",
+  "m",
+  "m",
+  "m",
+  "m",
+  "m",
+  "stk",
+  "m",
+  "kg",
+  "kg",
+  "kg",
+];

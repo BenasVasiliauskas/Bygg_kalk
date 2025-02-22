@@ -1,0 +1,17 @@
+List<String> POLSupportSystemUnitsNewC = [
+  "m",
+  "m",
+  "m",
+  "m",
+  "m",
+  "m",
+  "m",
+  "m",
+  "m",
+  "m",
+  "szt",
+  "m",
+  "kg",
+  "kg",
+  "kg",
+];

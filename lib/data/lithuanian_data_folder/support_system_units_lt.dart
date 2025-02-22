@@ -1,0 +1,17 @@
+List<String> LTSupportSystemUnitsNewC = [
+  "m",
+  "m",
+  "m",
+  "m",
+  "m",
+  "m",
+  "m",
+  "m",
+  "m",
+  "m",
+  "vnt.",
+  "m",
+  "kg",
+  "kg",
+  "kg",
+];
