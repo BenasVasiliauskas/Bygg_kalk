@@ -3,8 +3,12 @@ import 'package:cost_calculator/constants/norw_budget_constants.dart' as norw;
 import 'package:cost_calculator/constants/lit_budget_constants.dart' as lit;
 import 'package:cost_calculator/constants/budget_constants.dart' as eng;
 import 'package:cost_calculator/data/english_data_folder/data.dart';
+import 'package:cost_calculator/data/english_data_folder/roof_units_ENG.dart';
 import 'package:cost_calculator/data/lithuanian_data_folder/lith_data.dart';
+import 'package:cost_calculator/data/lithuanian_data_folder/roof_units_LT.dart';
 import 'package:cost_calculator/data/norwegian_data_folder/norw_data.dart';
+import 'package:cost_calculator/data/norwegian_data_folder/roof_units_norw.dart';
+import 'package:cost_calculator/data/polish_data_folder/pol_roof_units_pol.dart';
 import 'package:cost_calculator/data/polish_data_folder/polish_data.dart';
 import 'package:cost_calculator/items/outer_roof_item.dart';
 import 'package:cost_calculator/observer/app_life_cycle_observer.dart';
@@ -312,7 +316,31 @@ class _OuterRoofScreenState extends State<OuterRoofScreen> {
                     ),
                   ),
                 ),
-                Text("m²"),
+                Text(languageLithuanian
+                    ? widget.constructionType == "New Construction"
+                        ? LTRoofUnitsNewC[index]
+                        : widget.constructionType == "Demolition"
+                            ? LTRoofUnitsDestro[index]
+                            : LTRoofUnitsReco[index]
+                    : languageEnglish
+                        ? widget.constructionType == "New Construction"
+                            ? ENGRoofUnitsNewC[index]
+                            : widget.constructionType == "Demolition"
+                                ? ENGRoofUnitsDestro[index]
+                                : ENGRoofUnitsReco[index]
+                        : languageNorwegian
+                            ? widget.constructionType == "New Construction"
+                                ? NORWRoofUnitsNewC[index]
+                                : widget.constructionType == "Demolition"
+                                    ? NORWRoofUnitsDestro[index]
+                                    : NORWRoofUnitsReco[index]
+                            : languagePolish
+                                ? widget.constructionType == "New Construction"
+                                    ? POLRoofUnitsNewC[index]
+                                    : widget.constructionType == "Demolition"
+                                        ? POLRoofUnitsDestro[index]
+                                        : POLRoofUnitsReco[index]
+                                : ""),
               ],
             );
           }),
