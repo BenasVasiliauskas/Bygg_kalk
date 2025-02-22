@@ -290,7 +290,7 @@ class _InnerStairsScreen extends State<InnerStairsScreen> {
                   ),
                 ),
                 Text(languageEnglish
-                    ? "Units"
+                    ? "pcs"
                     : languageNorwegian
                         ? "stk"
                         : languagePolish

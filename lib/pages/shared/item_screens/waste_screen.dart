@@ -280,7 +280,7 @@ class _WasteScreenState extends State<WasteScreen> {
                   ),
                 ),
                 Text(languageEnglish
-                    ? "Units"
+                    ? "pcs"
                     : languageNorwegian
                         ? "stk"
                         : languagePolish

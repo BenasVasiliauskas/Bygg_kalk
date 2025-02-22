@@ -295,7 +295,7 @@ class _HullRoofingScreenState extends State<HullRoofingScreen> {
                     ),
                   ),
                   Text(languageEnglish
-                      ? "Units"
+                      ? "pcs"
                       : languageNorwegian
                           ? "stk"
                           : languagePolish

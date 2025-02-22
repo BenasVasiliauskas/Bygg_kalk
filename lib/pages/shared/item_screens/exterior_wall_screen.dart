@@ -4,10 +4,12 @@ import 'package:cost_calculator/constants/lit_budget_constants.dart' as lit;
 import 'package:cost_calculator/constants/budget_constants.dart' as eng;
 import 'package:cost_calculator/constants/language.dart';
 import 'package:cost_calculator/data/english_data_folder/data.dart';
+import 'package:cost_calculator/data/english_data_folder/outer_wall_units_ENG.dart';
 import 'package:cost_calculator/data/lithuanian_data_folder/lith_data.dart';
 import 'package:cost_calculator/data/lithuanian_data_folder/outer_wall_units_LT.dart';
 import 'package:cost_calculator/data/norwegian_data_folder/norw_data.dart';
 import 'package:cost_calculator/data/norwegian_data_folder/outer_wall_units.dart';
+import 'package:cost_calculator/data/polish_data_folder/outer_wall_units_pol.dart';
 import 'package:cost_calculator/data/polish_data_folder/polish_data.dart';
 import 'package:cost_calculator/items/outer_wall_item.dart';
 import 'package:cost_calculator/observer/app_life_cycle_observer.dart';
@@ -335,13 +337,21 @@ class _ExteriorWallScreenState extends State<ExteriorWallScreen> {
                                     ? outerWallUnitsLTDestro[index]
                                     : outerWallUnitsRecon[index],
                           )
-                        : Text(
-                            widget.constructionType == "New Construction"
-                                ? outerWallUnitsNewC[index]
-                                : widget.constructionType == "Demolition"
-                                    ? outerWallUnitsDemo[index]
-                                    : outerWallUnitsRecon[index],
-                          ),
+                        : languageEnglish
+                            ? Text(
+                                widget.constructionType == "New Construction"
+                                    ? outerWallUnitsNewC[index]
+                                    : widget.constructionType == "Demolition"
+                                        ? outerWallUnitsENGDestro[index]
+                                        : outerWallUnitsRecon[index],
+                              )
+                            : Text(
+                                widget.constructionType == "New Construction"
+                                    ? outerWallUnitsNewC[index]
+                                    : widget.constructionType == "Demolition"
+                                        ? outerWallUnitsPOLDestro[index]
+                                        : outerWallUnitsRecon[index],
+                              ),
               ],
             );
           }),

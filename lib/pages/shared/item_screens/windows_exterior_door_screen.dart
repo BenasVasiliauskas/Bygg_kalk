@@ -340,7 +340,7 @@ class _WindowsExteriorDoorScreenState extends State<WindowsExteriorDoorScreen> {
                   ),
                 ),
                 Text(languageEnglish
-                    ? "Units"
+                    ? "pcs"
                     : languageNorwegian
                         ? "stk"
                         : languagePolish

@@ -314,7 +314,7 @@ class _InnerDoorScreenState extends State<InnerDoorScreen> {
                     ),
                   ),
                   Text(languageEnglish
-                      ? "Units"
+                      ? "pcs"
                       : languageNorwegian
                           ? "stk"
                           : languagePolish
