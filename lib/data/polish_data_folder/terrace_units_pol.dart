@@ -1,0 +1,15 @@
+List<String> POLTerraceUnitsNewC = [
+  "m",
+  "m",
+  "m",
+  "m",
+  "m",
+  "szt",
+  "szt",
+  "szt",
+  "szt",
+  "m²",
+  "m²",
+  "m²",
+  "m²",
+];

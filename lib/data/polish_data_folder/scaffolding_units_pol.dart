@@ -1,5 +1,5 @@
 List<String> ScaffoldingUnitsPOL = [
   "szt",
-  "szt",
+  "m²",
   "m²",
 ];

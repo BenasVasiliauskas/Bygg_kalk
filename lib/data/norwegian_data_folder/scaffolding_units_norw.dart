@@ -1,5 +1,5 @@
 List<String> ScaffoldingUnitsNORW = [
   "stk",
-  "stk",
+  "m²",
   "m²",
 ];

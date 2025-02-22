@@ -1,5 +1,5 @@
 List<String> ScaffoldingUnitsLT = [
   "vnt",
-  "vnt",
+  "m²",
   "m²",
 ];

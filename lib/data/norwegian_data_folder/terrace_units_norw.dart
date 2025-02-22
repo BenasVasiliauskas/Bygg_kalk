@@ -1,0 +1,15 @@
+List<String> NORWTerraceUnitsNewC = [
+  "m",
+  "m",
+  "m",
+  "m",
+  "m",
+  "stk",
+  "stk",
+  "stk",
+  "stk",
+  "m²",
+  "m²",
+  "m²",
+  "m²",
+];

@@ -1,0 +1,15 @@
+List<String> LTTerraceUnitsNewC = [
+  "m",
+  "m",
+  "m",
+  "m",
+  "m",
+  "vnt",
+  "vnt",
+  "vnt",
+  "vnt",
+  "m²",
+  "m²",
+  "m²",
+  "m²",
+];
