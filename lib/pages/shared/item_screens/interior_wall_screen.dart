@@ -3,6 +3,7 @@ import 'package:cost_calculator/constants/norw_budget_constants.dart' as norw;
 import 'package:cost_calculator/constants/lit_budget_constants.dart' as lit;
 import 'package:cost_calculator/constants/budget_constants.dart' as eng;
 import 'package:cost_calculator/data/english_data_folder/data.dart';
+import 'package:cost_calculator/data/lithuanian_data_folder/inner_wall_units_LT.dart';
 import 'package:cost_calculator/data/lithuanian_data_folder/lith_data.dart';
 import 'package:cost_calculator/data/norwegian_data_folder/inner_wall_units.dart';
 import 'package:cost_calculator/data/norwegian_data_folder/norw_data.dart';
@@ -319,13 +320,29 @@ class _InnerWallScreenState extends State<InnerWallScreen> {
                     ),
                   ),
                 ),
-                Text(
-                  widget.constructionType == "New Construction"
-                      ? InnerWallUnitsNewC[index]
-                      : widget.constructionType == "Demolition"
-                          ? InnerWallUnitsDemo[index]
-                          : InnerWallUnitsRecon[index],
-                ),
+                languageNorwegian
+                    ? Text(
+                        widget.constructionType == "New Construction"
+                            ? LTInnerWallUnitsNewConstruction[index]
+                            : widget.constructionType == "Demolition"
+                                ? InnerWallUnitsDemo[index]
+                                : InnerWallUnitsRecon[index],
+                      )
+                    : languageLithuanian
+                        ? Text(
+                            widget.constructionType == "New Construction"
+                                ? LTInnerWallUnitsNewConstruction[index]
+                                : widget.constructionType == "Demolition"
+                                    ? LTInnerWallUnitsDestro[index]
+                                    : InnerWallUnitsRecon[index],
+                          )
+                        : Text(
+                            widget.constructionType == "New Construction"
+                                ? LTInnerWallUnitsNewConstruction[index]
+                                : widget.constructionType == "Demolition"
+                                    ? LTInnerWallUnitsDestro[index]
+                                    : InnerWallUnitsRecon[index],
+                          ),
               ],
             );
           }),
