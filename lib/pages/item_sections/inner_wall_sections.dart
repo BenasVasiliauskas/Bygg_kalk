@@ -108,7 +108,7 @@ class _InnerWallSectionsState extends State<InnerWallSections> {
                             : languageLithuanian
                                 ? "Naujas pastatas"
                                 : languageNorwegian
-                                    ? "Ny Bygg"
+                                    ? "Nybygg"
                                     : "Nowy budynek",
                       ),
                     ],

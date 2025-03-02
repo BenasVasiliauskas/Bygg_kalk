@@ -318,8 +318,8 @@ class _InnerDoorScreenState extends State<InnerDoorScreen> {
                       : languageNorwegian
                           ? "stk"
                           : languagePolish
-                              ? "szt."
-                              : "vnt."),
+                              ? "szt"
+                              : "vnt"),
                 ],
               );
             },

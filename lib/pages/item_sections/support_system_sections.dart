@@ -112,7 +112,7 @@ class _SupportSystemSectionsState extends State<SupportSystemSections> {
                             : languageLithuanian
                                 ? "Naujas pastatas"
                                 : languageNorwegian
-                                    ? "Ny Bygg"
+                                    ? "Nybygg"
                                     : "Śnowy budynek",
                       ),
                     ],

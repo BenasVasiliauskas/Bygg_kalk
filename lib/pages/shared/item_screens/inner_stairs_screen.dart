@@ -294,8 +294,8 @@ class _InnerStairsScreen extends State<InnerStairsScreen> {
                     : languageNorwegian
                         ? "stk"
                         : languagePolish
-                            ? "szt."
-                            : "vnt."),
+                            ? "szt"
+                            : "vnt"),
               ],
             );
           }),

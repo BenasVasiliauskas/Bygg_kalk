@@ -288,12 +288,12 @@ class _TerraceScreenState extends State<TerraceScreen> {
                   ),
                 ),
                 Text(languageEnglish
-                    ? LTTerraceUnitsNewC[index]
+                    ? ENGTerraceUnitsNewC[index]
                     : languageNorwegian
                         ? NORWTerraceUnitsNewC[index]
                         : languagePolish
                             ? POLTerraceUnitsNewC[index]
-                            : ENGTerraceUnitsNewC[index]),
+                            : LTTerraceUnitsNewC[index]),
               ],
             );
           }),

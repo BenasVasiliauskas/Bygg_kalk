@@ -344,8 +344,8 @@ class _WindowsExteriorDoorScreenState extends State<WindowsExteriorDoorScreen> {
                     : languageNorwegian
                         ? "stk"
                         : languagePolish
-                            ? "szt."
-                            : "vnt."),
+                            ? "szt"
+                            : "vnt"),
               ],
             );
           }),

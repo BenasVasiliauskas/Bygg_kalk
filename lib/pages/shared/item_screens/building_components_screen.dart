@@ -358,7 +358,7 @@ Nowa konstrukcja, Wyburzenie''',
                 children: [
                   Tooltip(
                     message: languageEnglish
-                        ? '''View Covers. Contained elements:
+                        ? '''View Floor structure. Contained elements:
 New building, Reconstruction, Demolition'''
                         : languageLithuanian
                             ? '''Peržiūrėti perdanga. Sudaryti elementai:
@@ -401,12 +401,12 @@ Nowa konstrukcja, Przebudowa, Wyburzenie''',
                     ),
                   ),
                   Text(languageNorwegian
-                      ? norwDeckData.length.toString()
+                      ? norwFlooringData.length.toString()
                       : languageLithuanian
-                          ? litDeckData.length.toString()
+                          ? litFlooringData.length.toString()
                           : languageEnglish
-                              ? deckData.length.toString()
-                              : polDeckData.length.toString()),
+                              ? flooringData.length.toString()
+                              : polFlooringData.length.toString()),
                 ],
               ),
               Row(
@@ -451,12 +451,12 @@ Nowa konstrukcja, Wyburzenie''',
                     ),
                   ),
                   Text(languageNorwegian
-                      ? flooringData.length.toString()
+                      ? norwDeckData.length.toString()
                       : languageLithuanian
-                          ? litFlooringData.length.toString()
+                          ? litDeckData.length.toString()
                           : languageEnglish
-                              ? flooringData.length.toString()
-                              : polFlooringData.length.toString()),
+                              ? deckData.length.toString()
+                              : polDeckData.length.toString()),
                 ],
               ),
               Row(

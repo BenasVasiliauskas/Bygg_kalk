@@ -284,8 +284,8 @@ class _WasteScreenState extends State<WasteScreen> {
                     : languageNorwegian
                         ? "stk"
                         : languagePolish
-                            ? "szt."
-                            : "vnt."),
+                            ? "szt"
+                            : "vnt"),
               ],
             );
           }),

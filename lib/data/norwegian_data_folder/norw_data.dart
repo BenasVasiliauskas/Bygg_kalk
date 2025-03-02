@@ -24,7 +24,7 @@ final norwInnerWallData = [
       laborCost: [44, 11],
       material1: [2.9, 24.08],
       material2: [2.9, 24.08],
-      totalPrice: [46.9, 35.08],
+      totalPrice: [0.00, 0.00],
       constructionType: "New Construction"),
   InnerWallModel(
       name:
@@ -44,14 +44,7 @@ final norwInnerWallData = [
       laborCost: [27.5, 115.5, 115.5, 55, 115.5, 27.5],
       material1: [19.93, 69.02, 116.93, 80, 69.02, 19.93],
       material2: [19.93, 69.02, 116.93, 80, 69.02, 19.93],
-      totalPrice: [
-        47.43,
-        184.51999999999998,
-        232.43,
-        135,
-        184.51999999999998,
-        47.43
-      ],
+      totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   InnerWallModel(
       name:
@@ -71,14 +64,7 @@ final norwInnerWallData = [
       laborCost: [27.5, 115.5, 115.5, 55, 115.5, 27.5],
       material1: [19.93, 69.02, 200.37, 92.8, 69.02, 19.93],
       material2: [19.93, 69.02, 200.37, 92.8, 69.02, 19.93],
-      totalPrice: [
-        47.43,
-        184.51999999999998,
-        315.87,
-        147.8,
-        184.51999999999998,
-        47.43
-      ],
+      totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   InnerWallModel(
       name:
@@ -100,16 +86,7 @@ final norwInnerWallData = [
       laborCost: [27.5, 93.5, 176, 220, 104.5, 176, 93.5, 27.5],
       material1: [19.93, 71.54, 138.07, 238.92, 160, 138.07, 71.54, 19.93],
       material2: [19.93, 71.54, 138.07, 238.92, 160, 138.07, 71.54, 19.93],
-      totalPrice: [
-        47.43,
-        165.04000000000002,
-        314.07,
-        458.91999999999996,
-        264.5,
-        314.07,
-        165.04000000000002,
-        47.43
-      ],
+      totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   InnerWallModel(
       name:
@@ -131,16 +108,7 @@ final norwInnerWallData = [
       laborCost: [27.5, 93.5, 176, 220, 104.5, 176, 93.5, 27.5],
       material1: [19.93, 71.54, 138.07, 405.78, 185.6, 138.07, 71.54, 19.93],
       material2: [19.93, 71.54, 138.07, 405.78, 185.6, 138.07, 71.54, 19.93],
-      totalPrice: [
-        47.43,
-        165.04000000000002,
-        314.07,
-        625.78,
-        290.1,
-        314.07,
-        165.04000000000002,
-        47.43
-      ],
+      totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   InnerWallModel(
       name:
@@ -159,13 +127,7 @@ final norwInnerWallData = [
       laborCost: [27.5, 115.5, 115.5, 115.5, 27.5],
       material1: [19.93, 69.02, 116.93, 69.02, 19.93],
       material2: [19.93, 69.02, 116.93, 69.02, 19.93],
-      totalPrice: [
-        47.43,
-        184.51999999999998,
-        232.43,
-        184.51999999999998,
-        47.43
-      ],
+      totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   InnerWallModel(
       name:
@@ -184,13 +146,7 @@ final norwInnerWallData = [
       laborCost: [27.5, 115.5, 115.5, 115.5, 27.5],
       material1: [19.93, 69.02, 200.37, 69.02, 19.93],
       material2: [19.93, 69.02, 200.37, 69.02, 19.93],
-      totalPrice: [
-        47.43,
-        184.51999999999998,
-        315.87,
-        184.51999999999998,
-        47.43
-      ],
+      totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   InnerWallModel(
       name:
@@ -211,15 +167,7 @@ final norwInnerWallData = [
       laborCost: [27.5, 115.5, 115.5, 55, 143, 115.5, 27.5],
       material1: [19.93, 69.02, 116.93, 80, 119.48, 69.02, 19.93],
       material2: [19.93, 69.02, 116.93, 80, 119.48, 69.02, 19.93],
-      totalPrice: [
-        47.43,
-        184.51999999999998,
-        232.43,
-        135,
-        262.48,
-        184.51999999999998,
-        47.43
-      ],
+      totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   InnerWallModel(
       name:
@@ -240,15 +188,7 @@ final norwInnerWallData = [
       laborCost: [27.5, 115.5, 115.5, 55, 143, 115.5, 27.5],
       material1: [19.93, 69.02, 200.37, 92.8, 119.48, 69.02, 19.93],
       material2: [19.93, 69.02, 200.37, 92.8, 119.48, 69.02, 19.93],
-      totalPrice: [
-        47.43,
-        184.51999999999998,
-        315.87,
-        147.8,
-        262.48,
-        184.51999999999998,
-        47.43
-      ],
+      totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   InnerWallModel(
       name:
@@ -291,17 +231,7 @@ final norwInnerWallData = [
         71.54,
         19.93
       ],
-      totalPrice: [
-        47.43,
-        165.04000000000002,
-        314.07,
-        458.91999999999996,
-        264.5,
-        256.98,
-        314.07,
-        165.04000000000002,
-        47.43
-      ],
+      totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   InnerWallModel(
       name:
@@ -344,17 +274,7 @@ final norwInnerWallData = [
         71.54,
         19.93
       ],
-      totalPrice: [
-        47.43,
-        165.04000000000002,
-        314.07,
-        625.78,
-        290.1,
-        262.48,
-        314.07,
-        165.04000000000002,
-        47.43
-      ],
+      totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   InnerWallModel(
       name:
@@ -373,7 +293,7 @@ final norwInnerWallData = [
       laborCost: [0, 0, 0, 0, 0],
       material1: [19.93, 69.02, 116.93, 119.48, 19.93],
       material2: [0, 0, 0, 0, 0],
-      totalPrice: [0, 0, 0, 0, 0],
+      totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   InnerWallModel(
       name:
@@ -393,14 +313,7 @@ final norwInnerWallData = [
       laborCost: [27.5, 115.5, 115.5, 143, 115.5, 27.5],
       material1: [19.93, 69.02, 200.37, 119.48, 69.02, 19.93],
       material2: [19.93, 69.02, 200.37, 119.48, 69.02, 19.93],
-      totalPrice: [
-        47.43,
-        184.51999999999998,
-        315.87,
-        262.48,
-        184.51999999999998,
-        47.43
-      ],
+      totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   InnerWallModel(
       name:
@@ -420,14 +333,7 @@ final norwInnerWallData = [
       laborCost: [27.5, 115.5, 115.5, 143, 115.5, 27.5],
       material1: [19.93, 69.02, 200.37, 119.48, 69.02, 19.93],
       material2: [19.93, 69.02, 200.37, 119.48, 69.02, 19.93],
-      totalPrice: [
-        47.43,
-        184.51999999999998,
-        315.87,
-        262.48,
-        184.51999999999998,
-        47.43
-      ],
+      totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   InnerWallModel(
       name:
@@ -449,16 +355,7 @@ final norwInnerWallData = [
       laborCost: [27.5, 115.5, 137.5, 115.5, 55, 143, 115.5, 27.5],
       material1: [19.93, 69.02, 119.48, 116.93, 80, 119.48, 69.02, 19.93],
       material2: [19.93, 69.02, 119.48, 116.93, 80, 119.48, 69.02, 19.93],
-      totalPrice: [
-        47.43,
-        184.51999999999998,
-        256.98,
-        232.43,
-        135,
-        262.48,
-        184.51999999999998,
-        47.43
-      ],
+      totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   InnerWallModel(
       name:
@@ -480,16 +377,7 @@ final norwInnerWallData = [
       laborCost: [27.5, 115.5, 143, 115.5, 55, 143, 115.5, 27.5],
       material1: [19.93, 69.02, 119.48, 200.37, 92.8, 119.48, 69.02, 19.93],
       material2: [19.93, 69.02, 119.48, 200.37, 92.8, 119.48, 69.02, 19.93],
-      totalPrice: [
-        47.43,
-        184.51999999999998,
-        262.48,
-        315.87,
-        147.8,
-        262.48,
-        184.51999999999998,
-        47.43
-      ],
+      totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   InnerWallModel(
       name:
@@ -535,18 +423,7 @@ final norwInnerWallData = [
         71.54,
         19.93
       ],
-      totalPrice: [
-        47.43,
-        165.04000000000002,
-        314.07,
-        262.48,
-        458.91999999999996,
-        264.5,
-        262.48,
-        314.07,
-        165.04000000000002,
-        294.93
-      ],
+      totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   InnerWallModel(
       name:
@@ -592,18 +469,7 @@ final norwInnerWallData = [
         71.54,
         19.93
       ],
-      totalPrice: [
-        47.43,
-        165.04000000000002,
-        314.07,
-        262.48,
-        625.78,
-        290.1,
-        262.48,
-        314.07,
-        165.04000000000002,
-        47.43
-      ],
+      totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   InnerWallModel(
       name:
@@ -624,15 +490,7 @@ final norwInnerWallData = [
       laborCost: [27.5, 115.5, 143, 115.5, 143, 115.5, 27.5],
       material1: [19.93, 69.02, 119.48, 116.93, 119.48, 69.02, 19.93],
       material2: [19.93, 69.02, 119.48, 116.93, 119.48, 69.02, 19.93],
-      totalPrice: [
-        47.43,
-        184.51999999999998,
-        262.48,
-        232.43,
-        262.48,
-        184.51999999999998,
-        47.43
-      ],
+      totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   InnerWallModel(
       name:
@@ -653,15 +511,7 @@ final norwInnerWallData = [
       laborCost: [27.5, 115.5, 143, 115.5, 143, 115.5, 27.5],
       material1: [19.93, 69.02, 119.48, 200.37, 119.48, 69.02, 19.93],
       material2: [19.93, 69.02, 119.48, 200.37, 119.48, 69.02, 19.93],
-      totalPrice: [
-        47.43,
-        184.51999999999998,
-        262.48,
-        315.87,
-        262.48,
-        184.51999999999998,
-        47.43
-      ],
+      totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   InnerWallModel(
       name:
@@ -681,14 +531,7 @@ final norwInnerWallData = [
       laborCost: [27.5, 115.5, 49.5, 148.5, 115.5, 27.5],
       material1: [19.93, 69.02, 67.2, 180.25, 69.02, 19.93],
       material2: [19.93, 69.02, 67.2, 180.25, 69.02, 19.93],
-      totalPrice: [
-        47.43,
-        184.51999999999998,
-        116.7,
-        328.75,
-        184.51999999999998,
-        47.43
-      ],
+      totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   InnerWallModel(
       name:
@@ -708,14 +551,7 @@ final norwInnerWallData = [
       laborCost: [27.5, 115.5, 159.5, 49.5, 115.5, 27.5],
       material1: [19.93, 69.02, 114.48, 95.36, 69.02, 19.93],
       material2: [19.93, 69.02, 114.48, 95.36, 69.02, 19.93],
-      totalPrice: [
-        47.43,
-        184.51999999999998,
-        273.98,
-        144.86,
-        184.51999999999998,
-        47.43
-      ],
+      totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   InnerWallModel(
       name:
@@ -736,15 +572,7 @@ final norwInnerWallData = [
       laborCost: [27.5, 115.5, 49.5, 143, 143, 115.5, 27.5],
       material1: [19.93, 69.02, 67.2, 180.25, 119.48, 69.02, 19.93],
       material2: [19.93, 69.02, 67.2, 180.25, 119.48, 69.02, 19.93],
-      totalPrice: [
-        47.43,
-        184.51999999999998,
-        116.7,
-        323.25,
-        262.48,
-        184.51999999999998,
-        47.43
-      ],
+      totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   InnerWallModel(
       name:
@@ -765,15 +593,7 @@ final norwInnerWallData = [
       laborCost: [27.5, 115.5, 159.5, 44, 137.5, 115.5, 27.5],
       material1: [19.93, 69.02, 114.48, 95.36, 119.48, 69.02, 19.93],
       material2: [19.93, 69.02, 114.48, 95.36, 119.48, 69.02, 19.93],
-      totalPrice: [
-        47.43,
-        184.51999999999998,
-        273.98,
-        139.36,
-        256.98,
-        184.51999999999998,
-        47.43
-      ],
+      totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   InnerWallModel(
       name:
@@ -795,16 +615,7 @@ final norwInnerWallData = [
       laborCost: [27.5, 115.5, 143, 49.5, 148.5, 143, 115.5, 27.5],
       material1: [19.93, 69.02, 119.48, 67.2, 180.25, 119.48, 69.02, 19.93],
       material2: [19.93, 69.02, 119.48, 67.2, 180.25, 119.48, 69.02, 19.93],
-      totalPrice: [
-        47.43,
-        184.51999999999998,
-        262.48,
-        116.7,
-        328.75,
-        262.48,
-        184.51999999999998,
-        47.43
-      ],
+      totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   InnerWallModel(
       name:
@@ -826,16 +637,7 @@ final norwInnerWallData = [
       laborCost: [27.5, 115.5, 143, 159.5, 143, 49.5, 115.5, 27.5],
       material1: [19.93, 69.02, 119.48, 114.48, 119.48, 95.36, 69.02, 19.93],
       material2: [19.93, 69.02, 119.48, 114.48, 119.48, 95.36, 69.02, 19.93],
-      totalPrice: [
-        47.43,
-        184.51999999999998,
-        262.48,
-        273.98,
-        262.48,
-        144.86,
-        184.51999999999998,
-        47.43
-      ],
+      totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   InnerWallModel(
       name:
@@ -857,7 +659,7 @@ final norwInnerWallData = [
       laborCost: [27.5, 33, 115.5, 49.5, 148.5, 115.5, 33, 27.5],
       material1: [19.93, 20.91, 210.35, 67.2, 180.25, 210.35, 20.91, 19.93],
       material2: [19.93, 20.91, 210.35, 67.2, 180.25, 210.35, 20.91, 19.93],
-      totalPrice: [47.43, 53.91, 325.85, 116.7, 328.75, 325.85, 53.91, 47.43],
+      totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   InnerWallModel(
       name:
@@ -879,7 +681,7 @@ final norwInnerWallData = [
       laborCost: [27.5, 33, 115.5, 148.5, 49.5, 115.5, 33, 27.5],
       material1: [19.93, 20.91, 210.35, 114.48, 95.36, 210.35, 20.91, 19.93],
       material2: [19.93, 20.91, 210.35, 114.48, 95.36, 210.35, 20.91, 19.93],
-      totalPrice: [47.43, 53.91, 325.85, 262.98, 144.86, 325.85, 53.91, 47.43],
+      totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   InnerWallModel(
       name:
@@ -901,7 +703,7 @@ final norwInnerWallData = [
       laborCost: [27.5, 33, 49.5, 143, 148.5, 143, 33, 27.5],
       material1: [19.93, 20.91, 67.2, 217.73, 180.25, 217.73, 20.91, 19.93],
       material2: [19.93, 20.91, 67.2, 217.73, 180.25, 217.73, 20.91, 19.93],
-      totalPrice: [47.43, 53.91, 116.7, 360.73, 328.75, 360.73, 53.91, 47.43],
+      totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   InnerWallModel(
       name:
@@ -923,7 +725,7 @@ final norwInnerWallData = [
       laborCost: [33, 27.5, 143, 49.5, 181.5, 143, 33, 27.5],
       material1: [20.91, 19.93, 217.73, 95.36, 170.5, 217.73, 20.91, 19.93],
       material2: [20.91, 19.93, 217.73, 95.36, 170.5, 217.73, 20.91, 19.93],
-      totalPrice: [53.91, 47.43, 360.73, 144.86, 352, 360.73, 53.91, 47.43],
+      totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   InnerWallModel(
       name:
@@ -943,7 +745,7 @@ final norwInnerWallData = [
       laborCost: [27.5, 198, 148.5, 49.5, 198, 27.5],
       material1: [19.93, 244.36, 180.25, 67.2, 244.36, 19.93],
       material2: [19.93, 244.36, 180.25, 67.2, 244.36, 19.93],
-      totalPrice: [47.43, 442.36, 328.75, 116.7, 442.36, 47.43],
+      totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   InnerWallModel(
       name:
@@ -963,7 +765,7 @@ final norwInnerWallData = [
       laborCost: [27.5, 198, 159.5, 49.5, 198, 27.5],
       material1: [19.93, 244.36, 114.48, 95.36, 244.36, 19.93],
       material2: [19.93, 244.36, 114.48, 95.36, 244.36, 19.93],
-      totalPrice: [47.43, 442.36, 273.98, 144.86, 442.36, 47.43],
+      totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   InnerWallModel(
       name:
@@ -985,7 +787,7 @@ final norwInnerWallData = [
       laborCost: [27.5, 33, 198, 49.5, 214.5, 198, 33, 27.5],
       material1: [19.93, 20.91, 746.85, 67.2, 280.66, 746.85, 20.91, 19.93],
       material2: [19.93, 20.91, 746.85, 67.2, 280.66, 746.85, 20.91, 19.93],
-      totalPrice: [47.43, 53.91, 944.85, 116.7, 495.16, 944.85, 53.91, 47.43],
+      totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   InnerWallModel(
       name:
@@ -1007,16 +809,7 @@ final norwInnerWallData = [
       laborCost: [27.5, 33, 198, 225.5, 49.5, 198, 33, 27.5],
       material1: [19.93, 20.91, 746.85, 171.33, 95.36, 746.85, 20.91, 19.93],
       material2: [19.93, 20.91, 746.85, 171.33, 95.36, 746.85, 20.91, 19.93],
-      totalPrice: [
-        47.43,
-        53.91,
-        944.85,
-        396.83000000000004,
-        144.86,
-        944.85,
-        53.91,
-        47.43
-      ],
+      totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   InnerWallModel(
       name:
@@ -1038,7 +831,7 @@ final norwInnerWallData = [
       laborCost: [27.5, 33, 148.5, 49.5, 214.5, 148.5, 33, 27.5],
       material1: [19.93, 20.91, 545.53, 67.2, 280.66, 545.53, 20.91, 19.93],
       material2: [19.93, 20.91, 545.53, 67.2, 280.66, 545.53, 20.91, 19.93],
-      totalPrice: [47.43, 53.91, 694.03, 116.7, 495.16, 694.03, 53.91, 47.43],
+      totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   InnerWallModel(
       name:
@@ -1060,16 +853,7 @@ final norwInnerWallData = [
       laborCost: [27.5, 33, 148.5, 225.5, 49.5, 148.5, 33, 27.5],
       material1: [19.93, 20.91, 545.53, 171.33, 95.36, 545.53, 20.91, 19.93],
       material2: [19.93, 20.91, 545.53, 171.33, 95.36, 545.53, 20.91, 19.93],
-      totalPrice: [
-        47.43,
-        53.91,
-        694.03,
-        396.83000000000004,
-        144.86,
-        694.03,
-        53.91,
-        47.43
-      ],
+      totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   InnerWallModel(
       name:
@@ -1100,7 +884,7 @@ final norwInnerWallData = [
       ],
       material1: [19.93, 20.91, 505.21, 280.66, 67.2, 505.21, 20.91, 19.93],
       material2: [19.93, 20.91, 505.21, 280.66, 67.2, 505.21, 20.91, 19.93],
-      totalPrice: [47.43, 53.91, 659.21, 489.66, 116.7, 659.21, 53.91, 47.43],
+      totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   InnerWallModel(
       name:
@@ -1131,16 +915,7 @@ final norwInnerWallData = [
       ],
       material1: [19.93, 20.91, 505.21, 171.33, 95.36, 505.21, 20.91, 19.93],
       material2: [19.93, 20.91, 505.21, 171.33, 95.36, 505.21, 20.91, 19.93],
-      totalPrice: [
-        47.43,
-        53.91,
-        659.21,
-        396.83000000000004,
-        144.86,
-        659.21,
-        53.91,
-        47.43
-      ],
+      totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   InnerWallModel(
       name:
@@ -1162,7 +937,7 @@ final norwInnerWallData = [
       laborCost: [27.5, 33, 165, 214.5, 49.5, 165, 33, 27.5],
       material1: [19.93, 20.91, 472.97, 280.66, 67.2, 472.97, 20.91, 19.93],
       material2: [19.93, 20.91, 472.97, 280.66, 67.2, 472.97, 20.91, 19.93],
-      totalPrice: [47.43, 53.91, 637.97, 495.16, 116.7, 637.97, 53.91, 47.43],
+      totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   InnerWallModel(
       name:
@@ -1184,16 +959,7 @@ final norwInnerWallData = [
       laborCost: [27.5, 33, 165, 49.5, 225.5, 165, 33, 27.5],
       material1: [19.93, 20.91, 472.97, 95.36, 171.33, 472.97, 20.91, 19.93],
       material2: [19.93, 20.91, 472.97, 95.36, 171.33, 472.97, 20.91, 19.93],
-      totalPrice: [
-        47.43,
-        53.91,
-        637.97,
-        144.86,
-        396.83000000000004,
-        637.97,
-        53.91,
-        47.43
-      ],
+      totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   InnerWallModel(
       name:
@@ -1239,18 +1005,7 @@ final norwInnerWallData = [
         71.54,
         19.93
       ],
-      totalPrice: [
-        47.43,
-        165.04000000000002,
-        314.07,
-        116.7,
-        328.75,
-        116.7,
-        328.75,
-        314.07,
-        165.04000000000002,
-        41.93
-      ],
+      totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   InnerWallModel(
       name:
@@ -1296,18 +1051,7 @@ final norwInnerWallData = [
         71.54,
         19.93
       ],
-      totalPrice: [
-        47.43,
-        165.04000000000002,
-        314.07,
-        273.98,
-        144.86,
-        273.98,
-        144.86,
-        308.57,
-        165.04000000000002,
-        47.43
-      ],
+      totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   InnerWallModel(
       name:
@@ -1393,17 +1137,17 @@ final norwInnerWallData = [
         19.93
       ],
       totalPrice: [
-        47.43,
-        165.04000000000002,
-        314.07,
-        116.7,
-        328.75,
-        116.7,
-        328.75,
-        262.48,
-        314.07,
-        165.04000000000002,
-        47.43
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00
       ],
       constructionType: "New Construction"),
   InnerWallModel(
@@ -1509,18 +1253,18 @@ final norwInnerWallData = [
         19.93
       ],
       totalPrice: [
-        47.43,
-        165.04000000000002,
-        314.07,
-        262.48,
-        116.7,
-        328.75,
-        116.7,
-        328.75,
-        262.48,
-        314.07,
-        165.04000000000002,
-        47.43
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00
       ],
       constructionType: "New Construction"),
   InnerWallModel(
@@ -1626,18 +1370,18 @@ final norwInnerWallData = [
         19.93
       ],
       totalPrice: [
-        47.43,
-        165.04000000000002,
-        314.07,
-        262.48,
-        273.98,
-        144.86,
-        273.98,
-        144.86,
-        262.48,
-        314.07,
-        165.04000000000002,
-        47.43
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00
       ],
       constructionType: "New Construction"),
   InnerWallModel(
@@ -1684,18 +1428,7 @@ final norwInnerWallData = [
         157.22,
         19.93
       ],
-      totalPrice: [
-        47.43,
-        165.04000000000002,
-        289.22,
-        116.7,
-        328.75,
-        116.7,
-        328.75,
-        165.04000000000002,
-        289.22,
-        47.43
-      ],
+      totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   InnerWallModel(
       name:
@@ -1741,18 +1474,7 @@ final norwInnerWallData = [
         71.54,
         19.93
       ],
-      totalPrice: [
-        47.43,
-        289.22,
-        165.04000000000002,
-        273.98,
-        144.86,
-        289.22,
-        273.98,
-        144.86,
-        165.04000000000002,
-        47.43
-      ],
+      totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   InnerWallModel(
       name:
@@ -1809,18 +1531,7 @@ final norwInnerWallData = [
         71.54,
         19.93
       ],
-      totalPrice: [
-        47.43,
-        165.04000000000002,
-        879.22,
-        155.34,
-        273.98,
-        155.34,
-        273.98,
-        879.22,
-        165.04000000000002,
-        47.43
-      ],
+      totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   InnerWallModel(
       name:
@@ -1912,18 +1623,18 @@ final norwInnerWallData = [
         19.93
       ],
       totalPrice: [
-        53.91,
-        47.43,
-        165.04000000000002,
-        476.78,
-        116.7,
-        328.75,
-        116.7,
-        328.75,
-        476.78,
-        165.04000000000002,
-        53.91,
-        47.43
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00
       ],
       constructionType: "New Construction"),
   InnerWallModel(
@@ -2016,18 +1727,18 @@ final norwInnerWallData = [
         19.93
       ],
       totalPrice: [
-        47.43,
-        53.91,
-        165.04000000000002,
-        476.78,
-        155.34,
-        273.98,
-        155.34,
-        273.98,
-        476.78,
-        165.04000000000002,
-        53.91,
-        47.43
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00
       ],
       constructionType: "New Construction"),
   InnerWallModel(
@@ -2046,7 +1757,7 @@ final norwInnerWallData = [
       laborCost: [115.5, 225.5, 71.5, 198],
       material1: [69.02, 144.29, 83.84, 1263.55],
       material2: [69.02, 144.29, 83.84, 1263.55],
-      totalPrice: [184.51999999999998, 369.78999999999996, 155.34, 1461.55],
+      totalPrice: [0.00, 0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   InnerWallModel(
       name:
@@ -2064,7 +1775,7 @@ final norwInnerWallData = [
       laborCost: [115.5, 225.5, 71.5, 170.5],
       material1: [69.02, 144.29, 83.84, 5176.39],
       material2: [69.02, 144.29, 83.84, 5176.39],
-      totalPrice: [184.51999999999998, 369.78999999999996, 155.34, 5346.89],
+      totalPrice: [0.00, 0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   InnerWallModel(
       name:
@@ -2084,7 +1795,7 @@ final norwInnerWallData = [
       laborCost: [60.5, 269.5, 110, 198, 269.5, 60.5],
       material1: [47.43, 165.65, 161.28, 429.03, 165.65, 47.43],
       material2: [47.43, 165.65, 161.28, 429.03, 165.65, 47.43],
-      totalPrice: [107.93, 435.15, 271.28, 627.03, 435.15, 107.93],
+      totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   InnerWallModel(
       name:
@@ -2104,7 +1815,7 @@ final norwInnerWallData = [
       laborCost: [60.5, 269.5, 110, 198, 269.5, 60.5],
       material1: [47.43, 165.65, 228.86, 390.06, 165.65, 47.43],
       material2: [47.43, 165.65, 228.86, 390.06, 165.65, 47.43],
-      totalPrice: [107.93, 435.15, 338.86, 588.06, 435.15, 107.93],
+      totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   InnerWallModel(
       name:
@@ -2124,7 +1835,7 @@ final norwInnerWallData = [
       laborCost: [60.5, 412.5, 110, 198, 412.5, 60.5],
       material1: [47.43, 331.36, 161.28, 429.03, 331.36, 47.43],
       material2: [47.43, 331.36, 161.28, 429.03, 331.36, 47.43],
-      totalPrice: [107.93, 743.86, 271.28, 627.03, 743.86, 107.93],
+      totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   InnerWallModel(
       name:
@@ -2144,7 +1855,7 @@ final norwInnerWallData = [
       laborCost: [60.5, 412.5, 110, 198, 412.5, 60.5],
       material1: [47.43, 331.36, 228.86, 390.06, 331.36, 47.43],
       material2: [47.43, 331.36, 228.86, 390.06, 331.36, 47.43],
-      totalPrice: [107.93, 743.86, 338.86, 588.06, 743.86, 107.93],
+      totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   InnerWallModel(
       name:
@@ -2165,7 +1876,7 @@ final norwInnerWallData = [
       laborCost: [60.5, 269.5, 110, 198, 335.5, 269.5, 60.5],
       material1: [47.43, 165.65, 161.28, 429.03, 286.76, 165.65, 47.43],
       material2: [47.43, 165.65, 161.28, 429.03, 286.76, 165.65, 47.43],
-      totalPrice: [107.93, 435.15, 271.28, 627.03, 622.26, 435.15, 107.93],
+      totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   InnerWallModel(
       name:
@@ -2186,7 +1897,7 @@ final norwInnerWallData = [
       laborCost: [60.5, 269.5, 110, 198, 335.5, 269.5, 60.5],
       material1: [47.43, 165.65, 228.86, 390.06, 286.76, 165.65, 47.43],
       material2: [47.43, 165.65, 228.86, 390.06, 286.76, 165.65, 47.43],
-      totalPrice: [107.93, 435.15, 338.86, 588.06, 622.26, 435.15, 107.93],
+      totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   InnerWallModel(
       name:
@@ -2208,16 +1919,7 @@ final norwInnerWallData = [
       laborCost: [60.5, 269.5, 335.5, 110, 335.5, 198, 269.5, 60.5],
       material1: [47.43, 165.65, 286.76, 161.28, 286.76, 429.03, 165.65, 47.43],
       material2: [47.43, 165.65, 286.76, 161.28, 286.76, 429.03, 165.65, 47.43],
-      totalPrice: [
-        107.93,
-        435.15,
-        622.26,
-        271.28,
-        622.26,
-        627.03,
-        435.15,
-        107.93
-      ],
+      totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   InnerWallModel(
       name:
@@ -2239,16 +1941,7 @@ final norwInnerWallData = [
       laborCost: [60.5, 269.5, 335.5, 110, 198, 335.5, 269.5, 60.5],
       material1: [47.43, 165.65, 286.76, 228.86, 390.06, 286.76, 165.65, 47.43],
       material2: [47.43, 165.65, 286.76, 228.86, 390.06, 286.76, 165.65, 47.43],
-      totalPrice: [
-        107.93,
-        435.15,
-        622.26,
-        338.86,
-        588.06,
-        622.26,
-        435.15,
-        107.93
-      ],
+      totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   InnerWallModel(
       name:
@@ -2269,7 +1962,7 @@ final norwInnerWallData = [
       laborCost: [60.5, 412.5, 110, 192.5, 335.5, 412.5, 60.5],
       material1: [47.43, 331.36, 161.28, 429.03, 286.76, 331.36, 47.43],
       material2: [47.43, 331.36, 161.28, 429.03, 286.76, 331.36, 47.43],
-      totalPrice: [107.93, 743.86, 271.28, 621.53, 622.26, 743.86, 107.93],
+      totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   InnerWallModel(
       name:
@@ -2290,7 +1983,7 @@ final norwInnerWallData = [
       laborCost: [60.5, 412.5, 110, 198, 335.5, 412.5, 60.5],
       material1: [47.43, 331.36, 228.86, 390.06, 286.76, 331.36, 47.43],
       material2: [47.43, 331.36, 228.86, 390.06, 286.76, 331.36, 47.43],
-      totalPrice: [107.93, 743.86, 338.86, 588.06, 622.26, 743.86, 107.93],
+      totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   InnerWallModel(
       name:
@@ -2312,16 +2005,7 @@ final norwInnerWallData = [
       laborCost: [60.5, 412.5, 335.5, 110, 198, 335.5, 412.5, 60.5],
       material1: [47.43, 331.36, 286.76, 161.28, 429.03, 286.76, 331.36, 47.43],
       material2: [47.43, 331.36, 286.76, 161.28, 429.03, 286.76, 331.36, 47.43],
-      totalPrice: [
-        107.93,
-        743.86,
-        622.26,
-        271.28,
-        627.03,
-        622.26,
-        743.86,
-        107.93
-      ],
+      totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   InnerWallModel(
       name:
@@ -2343,16 +2027,7 @@ final norwInnerWallData = [
       laborCost: [60.5, 412.5, 335.5, 110, 198, 335.5, 412.5, 60.5],
       material1: [47.43, 331.36, 286.76, 228.86, 390.06, 286.76, 331.36, 47.43],
       material2: [47.43, 331.36, 286.76, 228.86, 390.06, 286.76, 331.36, 47.43],
-      totalPrice: [
-        107.93,
-        743.86,
-        622.26,
-        338.86,
-        588.06,
-        622.26,
-        743.86,
-        107.93
-      ],
+      totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   InnerWallModel(
       name:
@@ -2398,18 +2073,7 @@ final norwInnerWallData = [
         331.36,
         47.43
       ],
-      totalPrice: [
-        102.43,
-        159.54000000000002,
-        738.36,
-        265.78,
-        621.53,
-        265.78,
-        621.53,
-        159.54000000000002,
-        738.36,
-        102.43
-      ],
+      totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   InnerWallModel(
       name:
@@ -2431,16 +2095,7 @@ final norwInnerWallData = [
       laborCost: [60.5, 412.5, 110, 198, 110, 198, 412.5, 60.5],
       material1: [47.43, 331.36, 228.86, 390.06, 228.86, 390.06, 331.36, 47.43],
       material2: [47.43, 331.36, 228.86, 390.06, 228.86, 390.06, 331.36, 47.43],
-      totalPrice: [
-        107.93,
-        743.86,
-        338.86,
-        588.06,
-        338.86,
-        588.06,
-        743.86,
-        107.93
-      ],
+      totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   InnerWallModel(
       name:
@@ -2526,17 +2181,17 @@ final norwInnerWallData = [
         47.43
       ],
       totalPrice: [
-        107.93,
-        165.04000000000002,
-        743.86,
-        271.28,
-        627.03,
-        271.28,
-        627.03,
-        622.26,
-        165.04000000000002,
-        743.86,
-        107.93
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00
       ],
       constructionType: "New Construction"),
   InnerWallModel(
@@ -2580,17 +2235,7 @@ final norwInnerWallData = [
         331.36,
         47.43
       ],
-      totalPrice: [
-        107.93,
-        743.86,
-        338.86,
-        588.06,
-        338.86,
-        588.06,
-        622.26,
-        743.86,
-        107.93
-      ],
+      totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   InnerWallModel(
       name:
@@ -2682,18 +2327,18 @@ final norwInnerWallData = [
         47.43
       ],
       totalPrice: [
-        107.93,
-        165.04000000000002,
-        743.86,
-        622.26,
-        271.28,
-        627.03,
-        271.28,
-        627.03,
-        165.04000000000002,
-        622.26,
-        743.86,
-        107.93
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00
       ],
       constructionType: "New Construction"),
   InnerWallModel(
@@ -2740,18 +2385,7 @@ final norwInnerWallData = [
         331.36,
         47.43
       ],
-      totalPrice: [
-        107.93,
-        743.86,
-        622.26,
-        338.86,
-        588.06,
-        338.86,
-        588.06,
-        622.26,
-        743.86,
-        107.93
-      ],
+      totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   InnerWallModel(
       name:
@@ -2773,7 +2407,7 @@ final norwInnerWallData = [
       laborCost: [60.5, 66, 335.5, 110, 198, 335.5, 60.5, 66],
       material1: [19.93, 20.91, 286.54, 161.28, 429.03, 286.54, 19.93, 20.91],
       material2: [19.93, 20.91, 286.54, 161.28, 429.03, 286.54, 19.93, 20.91],
-      totalPrice: [80.43, 86.91, 622.04, 271.28, 627.03, 622.04, 80.43, 86.91],
+      totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   InnerWallModel(
       name:
@@ -2795,7 +2429,7 @@ final norwInnerWallData = [
       laborCost: [60.5, 66, 335.5, 110, 335.5, 198, 66, 60.5],
       material1: [19.93, 20.91, 286.54, 228.86, 286.54, 390.06, 20.91, 19.93],
       material2: [19.93, 20.91, 286.54, 228.86, 286.54, 390.06, 20.91, 19.93],
-      totalPrice: [80.43, 86.91, 622.04, 338.86, 622.04, 588.06, 86.91, 80.43],
+      totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   InnerWallModel(
       name:
@@ -2817,16 +2451,7 @@ final norwInnerWallData = [
       laborCost: [60.5, 66, 110, 269.5, 198, 269.5, 66, 60.5],
       material1: [19.93, 20.91, 161.28, 504.84, 429.03, 504.84, 20.91, 19.93],
       material2: [19.93, 20.91, 161.28, 504.84, 429.03, 504.84, 20.91, 19.93],
-      totalPrice: [
-        80.43,
-        86.91,
-        271.28,
-        774.3399999999999,
-        627.03,
-        774.3399999999999,
-        86.91,
-        80.43
-      ],
+      totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   InnerWallModel(
       name:
@@ -2848,16 +2473,7 @@ final norwInnerWallData = [
       laborCost: [60.5, 66, 269.5, 110, 198, 269.5, 66, 60.5],
       material1: [19.93, 20.91, 504.84, 228.86, 390.06, 504.84, 20.91, 19.93],
       material2: [19.93, 20.91, 504.84, 228.86, 390.06, 504.84, 20.91, 19.93],
-      totalPrice: [
-        80.43,
-        86.91,
-        774.3399999999999,
-        338.86,
-        588.06,
-        774.3399999999999,
-        86.91,
-        80.43
-      ],
+      totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   InnerWallModel(
       name:
@@ -2910,17 +2526,7 @@ final norwInnerWallData = [
         20.91,
         19.93
       ],
-      totalPrice: [
-        80.43,
-        86.91,
-        1736.04,
-        271.28,
-        404.02,
-        627.03,
-        1736.04,
-        86.91,
-        80.43
-      ],
+      totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   InnerWallModel(
       name:
@@ -2973,17 +2579,7 @@ final norwInnerWallData = [
         20.91,
         19.93
       ],
-      totalPrice: [
-        80.43,
-        86.91,
-        1736.04,
-        382.56,
-        338.86,
-        1736.04,
-        588.06,
-        86.91,
-        80.43
-      ],
+      totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   InnerWallModel(
       name:
@@ -3026,17 +2622,7 @@ final norwInnerWallData = [
         20.91,
         19.93
       ],
-      totalPrice: [
-        80.43,
-        86.91,
-        1655.77,
-        404.02,
-        271.28,
-        627.03,
-        1655.77,
-        86.91,
-        80.43
-      ],
+      totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   InnerWallModel(
       name:
@@ -3079,17 +2665,7 @@ final norwInnerWallData = [
         20.91,
         19.93
       ],
-      totalPrice: [
-        80.43,
-        86.91,
-        1655.77,
-        338.86,
-        377.06,
-        615.56,
-        1655.77,
-        86.91,
-        80.43
-      ],
+      totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   InnerWallModel(
       name:
@@ -3132,17 +2708,7 @@ final norwInnerWallData = [
         20.91,
         19.93
       ],
-      totalPrice: [
-        80.43,
-        86.91,
-        2259.94,
-        404.02,
-        271.28,
-        627.03,
-        2259.94,
-        86.91,
-        80.43
-      ],
+      totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   InnerWallModel(
       name:
@@ -3185,17 +2751,7 @@ final norwInnerWallData = [
         20.91,
         19.93
       ],
-      totalPrice: [
-        80.43,
-        86.91,
-        2259.94,
-        382.56,
-        338.86,
-        588.06,
-        2259.94,
-        86.91,
-        80.43
-      ],
+      totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   InnerWallModel(
       name:
@@ -3215,7 +2771,7 @@ final norwInnerWallData = [
       laborCost: [27.5, 49.5, 115.5, 181.5, 99, 187],
       material1: [19.93, 67.2, 69.02, 170.5, 26.52, 730.81],
       material2: [19.93, 67.2, 69.02, 170.5, 26.52, 730.81],
-      totalPrice: [47.43, 116.7, 184.51999999999998, 352, 125.52, 917.81],
+      totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   InnerWallModel(
       name:
@@ -3235,7 +2791,7 @@ final norwInnerWallData = [
       laborCost: [27.5, 115.5, 49.5, 181.5, 99, 187],
       material1: [19.93, 69.02, 144, 232, 26.52, 730.81],
       material2: [19.93, 69.02, 144, 232, 26.52, 730.81],
-      totalPrice: [47.43, 184.51999999999998, 193.5, 413.5, 125.52, 917.81],
+      totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   InnerWallModel(
       name:
@@ -3255,7 +2811,7 @@ final norwInnerWallData = [
       laborCost: [27.5, 115.5, 55, 181.5, 99, 187],
       material1: [19.93, 69.02, 184.96, 305.7, 26.52, 730.81],
       material2: [19.93, 69.02, 184.96, 305.7, 26.52, 730.81],
-      totalPrice: [47.43, 184.51999999999998, 239.96, 487.2, 125.52, 917.81],
+      totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   InnerWallModel(
       name: "Våtromsvegg med rupanel 15x120mm.  og  Våtromsplate 13mm.",
@@ -3271,7 +2827,7 @@ final norwInnerWallData = [
       laborCost: [99, 148.5, 115.5],
       material1: [26.52, 90.88, 523.91],
       material2: [26.52, 90.88, 523.91],
-      totalPrice: [125.52, 239.38, 639.41],
+      totalPrice: [0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   InnerWallModel(
       name: "Våtromsvegg med Osb finer og  Våtromsplate 13mm.",
@@ -3287,7 +2843,7 @@ final norwInnerWallData = [
       laborCost: [99, 143, 115.5],
       material1: [26.52, 119.48, 716.02],
       material2: [26.52, 119.48, 716.02],
-      totalPrice: [125.52, 262.48, 831.52],
+      totalPrice: [0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   InnerWallModel(
       name: "Våtromsvegg med rupanel 15x120mm. og 1 lag gips.",
@@ -3303,7 +2859,7 @@ final norwInnerWallData = [
       laborCost: [99, 148.5, 198],
       material1: [26.52, 90.88, 320.65],
       material2: [26.52, 90.88, 320.65],
-      totalPrice: [125.52, 239.38, 518.65],
+      totalPrice: [0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   InnerWallModel(
       name: "Våtromsvegg med Osb finer 12mm. og 1 lag gips.",
@@ -3319,7 +2875,7 @@ final norwInnerWallData = [
       laborCost: [99, 143, 198],
       material1: [26.52, 119.48, 320.65],
       material2: [26.52, 119.48, 320.65],
-      totalPrice: [125.52, 262.48, 518.65],
+      totalPrice: [0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   InnerWallModel(
       name: "Skyggepanel 14x120 skrå kant hvit, stående.",
@@ -3331,7 +2887,7 @@ final norwInnerWallData = [
       laborCost: [148.5],
       material1: [506.21],
       material2: [506.21],
-      totalPrice: [654.71],
+      totalPrice: [0.00],
       constructionType: "New Construction"),
   InnerWallModel(
       name: "Skyggepanel 14x120 skrå kant hvit., liggende.",
@@ -3343,7 +2899,7 @@ final norwInnerWallData = [
       laborCost: [104.5],
       material1: [504.83],
       material2: [504.83],
-      totalPrice: [609.3299999999999],
+      totalPrice: [0.00],
       constructionType: "New Construction"),
   InnerWallModel(
       name: "Gipsplate innvendig kledning, 1 lag gips.",
@@ -3355,7 +2911,7 @@ final norwInnerWallData = [
       laborCost: [115.5],
       material1: [70.02],
       material2: [70.02],
-      totalPrice: [185.51999999999998],
+      totalPrice: [0.00],
       constructionType: "New Construction"),
   InnerWallModel(
       name: "Innvendig kledning av 2 lag gipsplate.",
@@ -3367,7 +2923,7 @@ final norwInnerWallData = [
       laborCost: [176],
       material1: [138.07],
       material2: [138.07],
-      totalPrice: [314.07],
+      totalPrice: [0.00],
       constructionType: "New Construction"),
   InnerWallModel(
       name: "Innvendig kledning av 1 lag 12mm. Osb finer.",
@@ -3379,7 +2935,7 @@ final norwInnerWallData = [
       laborCost: [143],
       material1: [119.48],
       material2: [119.48],
-      totalPrice: [262.48],
+      totalPrice: [0.00],
       constructionType: "New Construction"),
   InnerWallModel(
       name: "Sponplate innvendig vegg Walls2Paint 12mm.",
@@ -3391,7 +2947,7 @@ final norwInnerWallData = [
       laborCost: [143],
       material1: [218.73],
       material2: [218.73],
-      totalPrice: [361.73],
+      totalPrice: [0.00],
       constructionType: "New Construction"),
   InnerWallModel(
       name: "MDF Tradisjonelt hvit 11x620x2390 Skyggepanel, 5 bord per plate.",
@@ -3405,7 +2961,7 @@ final norwInnerWallData = [
       laborCost: [115.5],
       material1: [211.35],
       material2: [88.767],
-      totalPrice: [204.267],
+      totalPrice: [0.00],
       constructionType: "New Construction"),
   InnerWallModel(
       name: "Gipsplate innvendig. Fermacell .",
@@ -3417,7 +2973,7 @@ final norwInnerWallData = [
       laborCost: [198],
       material1: [245.36],
       material2: [245.36],
-      totalPrice: [443.36],
+      totalPrice: [0.00],
       constructionType: "New Construction"),
   InnerWallModel(
       name: "Litex membranplate 13mm.",
@@ -3429,7 +2985,7 @@ final norwInnerWallData = [
       laborCost: [115.5],
       material1: [523.91],
       material2: [523.91],
-      totalPrice: [639.41],
+      totalPrice: [0.00],
       constructionType: "New Construction"),
   InnerWallModel(
       name: "Baderomspanel hvit. (11x620x2400mm)",
@@ -3441,7 +2997,7 @@ final norwInnerWallData = [
       laborCost: [187],
       material1: [730.81],
       material2: [730.81],
-      totalPrice: [917.81],
+      totalPrice: [0.00],
       constructionType: "New Construction"),
   InnerWallModel(
       name: "Våtromsvegg 48x98, isolert, gipsplate - baderomspanel",
@@ -3455,7 +3011,7 @@ final norwInnerWallData = [
       laborCost: [143],
       material1: [180.25],
       material2: [180.25],
-      totalPrice: [323.25],
+      totalPrice: [0.00],
       constructionType: "New Construction"),
   InnerWallModel(
       name: "Våtromsvegg 48x98, isolert, gipsplate - baderomspanel",
@@ -3469,7 +3025,7 @@ final norwInnerWallData = [
       laborCost: [159.5],
       material1: [114.48],
       material2: [114.48],
-      totalPrice: [273.98],
+      totalPrice: [0.00],
       constructionType: "New Construction"),
   InnerWallModel(
       name: "Isolering 70mm.",
@@ -3483,7 +3039,7 @@ final norwInnerWallData = [
       laborCost: [49.5],
       material1: [67.2],
       material2: [67.2],
-      totalPrice: [116.7],
+      totalPrice: [0.00],
       constructionType: "New Construction"),
   InnerWallModel(
       name: "Isolering 100mm.",
@@ -3497,7 +3053,7 @@ final norwInnerWallData = [
       laborCost: [44],
       material1: [95.36],
       material2: [95.36],
-      totalPrice: [139.36],
+      totalPrice: [0.00],
       constructionType: "New Construction"),
   InnerWallModel(
       name: "Taklist furu 21x44 glatt hvitmalt.",
@@ -3509,7 +3065,7 @@ final norwInnerWallData = [
       laborCost: [33],
       material1: [20.91],
       material2: [20.91],
-      totalPrice: [53.91],
+      totalPrice: [0.00],
       constructionType: "New Construction"),
   InnerWallModel(
       name: "Gulvlist furu 12x58 glatt hvitmalt.",
@@ -3521,7 +3077,7 @@ final norwInnerWallData = [
       laborCost: [27.5],
       material1: [19.93],
       material2: [19.93],
-      totalPrice: [47.43],
+      totalPrice: [0.00],
       constructionType: "New Construction"),
   InnerWallModel(
       name: "Spikerslag for membran i Våtrom kledning gran  22x148mm.",
@@ -3533,7 +3089,7 @@ final norwInnerWallData = [
       laborCost: [27.5],
       material1: [19.93],
       material2: [19.93],
-      totalPrice: [47.43],
+      totalPrice: [0.00],
       constructionType: "New Construction"),
   InnerWallModel(
       name: "Innervegger ombygging.",
@@ -3565,15 +3121,7 @@ final norwInnerWallData = [
       laborCost: [27.5, 115.5, 93.5, 0, 93.5, 115.5, 27.5],
       material1: [19.93, 69.02, 36.83, 0, 36.83, 69.02, 19.93],
       material2: [19.93, 69.02, 36.83, 0, 36.83, 69.02, 19.93],
-      totalPrice: [
-        47.43,
-        184.51999999999998,
-        130.32999999999998,
-        0,
-        130.32999999999998,
-        184.51999999999998,
-        47.43
-      ],
+      totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00],
       constructionType: "Reconstruction"),
   InnerWallModel(
       name: "Murvegg, utlekting, MDF Skyggepanel 11mm. kledning tosidig.",
@@ -3595,17 +3143,7 @@ final norwInnerWallData = [
       laborCost: [33, 27.5, 115.5, 93.5, 0, 93.5, 115.5, 27.5, 33],
       material1: [20.91, 19.93, 210.35, 36.83, 0, 36.83, 210.35, 19.93, 20.91],
       material2: [20.91, 19.93, 210.35, 36.83, 0, 36.83, 210.35, 19.93, 20.91],
-      totalPrice: [
-        53.91,
-        47.43,
-        325.85,
-        130.32999999999998,
-        0,
-        130.32999999999998,
-        325.85,
-        47.43,
-        53.91
-      ],
+      totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00],
       constructionType: "Reconstruction"),
   InnerWallModel(
       name: "Murvegg, utlekting, Sponplate fals 12mm. kledning tosidig.",
@@ -3627,17 +3165,7 @@ final norwInnerWallData = [
       laborCost: [33, 27.5, 143, 93.5, 0, 93.5, 143, 27.5, 33],
       material1: [20.91, 19.93, 393.72, 36.83, 0, 36.83, 393.72, 19.93, 20.91],
       material2: [20.91, 19.93, 393.72, 36.83, 0, 36.83, 393.72, 19.93, 20.91],
-      totalPrice: [
-        53.91,
-        47.43,
-        536.72,
-        130.32999999999998,
-        0,
-        130.32999999999998,
-        536.72,
-        47.43,
-        53.91
-      ],
+      totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00],
       constructionType: "Reconstruction"),
   InnerWallModel(
       name: "Murvegg, utlekting, 2 lag gips kledning tosidig.",
@@ -3657,15 +3185,7 @@ final norwInnerWallData = [
       laborCost: [27.5, 176, 93.5, 0, 93.5, 176, 27.5],
       material1: [19.93, 276.14, 36.83, 0, 36.83, 276.14, 19.93],
       material2: [19.93, 276.14, 36.83, 0, 36.83, 276.14, 19.93],
-      totalPrice: [
-        47.43,
-        452.14,
-        130.32999999999998,
-        0,
-        130.32999999999998,
-        452.14,
-        47.43
-      ],
+      totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00],
       constructionType: "Reconstruction"),
   InnerWallModel(
       name: "Reisverk av tre, 50mm. isolering, kledning 1 lag gips ensidig.",
@@ -3683,7 +3203,7 @@ final norwInnerWallData = [
       laborCost: [0, 143, 49.5, 115.5, 27.5],
       material1: [0, 76.69, 49.86, 69.02, 19.93],
       material2: [0, 76.69, 49.86, 69.02, 19.93],
-      totalPrice: [0, 219.69, 99.36, 184.51999999999998, 47.43],
+      totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00],
       constructionType: "Reconstruction"),
   InnerWallModel(
       name:
@@ -3703,7 +3223,7 @@ final norwInnerWallData = [
       laborCost: [0, 143, 49.5, 115.5, 27.5, 33],
       material1: [0, 76.69, 49.86, 210.35, 19.93, 20.91],
       material2: [0, 76.69, 49.86, 210.35, 19.93, 20.91],
-      totalPrice: [0, 219.69, 99.36, 325.85, 47.43, 53.91],
+      totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00],
       constructionType: "Reconstruction"),
   InnerWallModel(
       name:
@@ -3723,7 +3243,7 @@ final norwInnerWallData = [
       laborCost: [0, 0, 0, 0, 0, 0],
       material1: [0, 76.69, 49.86, 196.86, 19.93, 20.91],
       material2: [0, 0, 0, 0, 0, 0],
-      totalPrice: [0, 0, 0, 0, 0, 0],
+      totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00],
       constructionType: "Reconstruction"),
   InnerWallModel(
       name: "Reisverk av tre, 50mm. isolering, kledning 2 lag gips ensidig.",
@@ -3741,7 +3261,7 @@ final norwInnerWallData = [
       laborCost: [0, 143, 49.5, 176, 27.5],
       material1: [0, 76.69, 49.86, 138.07, 19.93],
       material2: [0, 76.69, 49.86, 138.07, 19.93],
-      totalPrice: [0, 219.69, 99.36, 314.07, 47.43],
+      totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00],
       constructionType: "Reconstruction"),
   InnerWallModel(
       name: "Reisverk av tre, 50mm. isolering, kledning 1 lag gips tosidig.",
@@ -3763,17 +3283,7 @@ final norwInnerWallData = [
       laborCost: [27.5, 115.5, 137.5, 49.5, 0, 143, 49.5, 115.5, 27.5],
       material1: [19.93, 69.02, 76.69, 49.86, 0, 76.69, 49.86, 69.02, 19.93],
       material2: [19.93, 69.02, 76.69, 49.86, 0, 76.69, 49.86, 69.02, 19.93],
-      totalPrice: [
-        47.43,
-        184.51999999999998,
-        214.19,
-        99.36,
-        0,
-        219.69,
-        99.36,
-        184.51999999999998,
-        47.43
-      ],
+      totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00],
       constructionType: "Reconstruction"),
   InnerWallModel(
       name:
@@ -3847,17 +3357,17 @@ final norwInnerWallData = [
         20.91
       ],
       totalPrice: [
-        53.91,
-        47.43,
-        325.85,
-        99.36,
-        219.69,
-        0,
-        219.69,
-        99.36,
-        325.85,
-        47.43,
-        53.91
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00
       ],
       constructionType: "Reconstruction"),
   InnerWallModel(
@@ -3932,17 +3442,17 @@ final norwInnerWallData = [
         20.91
       ],
       totalPrice: [
-        53.91,
-        47.43,
-        339.86,
-        99.36,
-        219.69,
-        0,
-        219.69,
-        99.36,
-        339.86,
-        47.43,
-        53.91
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00
       ],
       constructionType: "Reconstruction"),
   InnerWallModel(
@@ -3965,17 +3475,7 @@ final norwInnerWallData = [
       laborCost: [27.5, 176, 49.5, 143, 0, 143, 49.5, 176, 27.5],
       material1: [19.93, 138.07, 49.86, 153.38, 0, 76.69, 49.86, 138.07, 19.93],
       material2: [19.93, 138.07, 49.86, 153.38, 0, 76.69, 49.86, 138.07, 19.93],
-      totalPrice: [
-        47.43,
-        314.07,
-        99.36,
-        296.38,
-        0,
-        219.69,
-        99.36,
-        314.07,
-        47.43
-      ],
+      totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00],
       constructionType: "Reconstruction"),
   InnerWallModel(
       name: "Støpte vegger, 70mm. isolering, kledning 1 lag gips ensidig.",
@@ -3993,7 +3493,7 @@ final norwInnerWallData = [
       laborCost: [0, 126.5, 49.5, 115.5, 27.5],
       material1: [0, 92.48, 67.2, 69.02, 19.93],
       material2: [0, 92.48, 67.2, 69.02, 19.93],
-      totalPrice: [0, 218.98000000000002, 116.7, 184.51999999999998, 47.43],
+      totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00],
       constructionType: "Reconstruction"),
   InnerWallModel(
       name:
@@ -4013,7 +3513,7 @@ final norwInnerWallData = [
       laborCost: [0, 126.5, 49.5, 143, 27.5, 33],
       material1: [0, 92.48, 67.2, 393.72, 19.93, 20.91],
       material2: [0, 92.48, 67.2, 393.72, 19.93, 20.91],
-      totalPrice: [0, 218.98000000000002, 116.7, 536.72, 47.43, 53.91],
+      totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00],
       constructionType: "Reconstruction"),
   InnerWallModel(
       name: "Støpte vegger, 70mm. isolering, kledning 2 lag gips ensidig.",
@@ -4031,7 +3531,7 @@ final norwInnerWallData = [
       laborCost: [0, 126.5, 49.5, 176, 27.5],
       material1: [0, 92.48, 67.2, 138.07, 19.93],
       material2: [0, 92.48, 67.2, 138.07, 19.93],
-      totalPrice: [0, 218.98000000000002, 116.7, 314.07, 47.43],
+      totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00],
       constructionType: "Reconstruction"),
   InnerWallModel(
       name: "Komplett riving av innvendige dører.",
@@ -4047,7 +3547,7 @@ final norwInnerWallData = [
       laborCost: [93.5, 225.5, 407],
       material1: [0, 0, 0],
       material2: [0, 0, 0],
-      totalPrice: [93.5, 225.5, 407],
+      totalPrice: [0.00, 0.00, 0.00],
       constructionType: "Demolition"),
   InnerWallModel(
       name: "Riving av 48x98mm trevegger med 15mm underpanel og gips.",
@@ -4065,7 +3565,7 @@ final norwInnerWallData = [
       laborCost: [49.5, 38.50000000000001, 390.5, 49.5, 302.5],
       material1: [0, 0, 0, 0, 0],
       material2: [0, 0, 0, 0, 0],
-      totalPrice: [49.5, 38.50000000000001, 390.5, 49.5, 302.5],
+      totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00],
       constructionType: "Demolition"),
   InnerWallModel(
       name: "Riving av 48x98mm trevegger  gips 1 lag.",
@@ -4083,7 +3583,7 @@ final norwInnerWallData = [
       laborCost: [49.5, 38.50000000000001, 280.5, 49.5, 308.00000000000006],
       material1: [0, 0, 0, 0, 0],
       material2: [0, 0, 0, 0, 0],
-      totalPrice: [49.5, 38.50000000000001, 280.5, 49.5, 308.00000000000006],
+      totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00],
       constructionType: "Demolition"),
   InnerWallModel(
       name: "Riving av 48x98mm trevegger  gips 2 lag.",
@@ -4101,7 +3601,7 @@ final norwInnerWallData = [
       laborCost: [49.5, 38.50000000000001, 357.5, 49.5, 308.00000000000006],
       material1: [0, 0, 0, 0, 0],
       material2: [0, 0, 0, 0, 0],
-      totalPrice: [49.5, 38.50000000000001, 357.5, 49.5, 308.00000000000006],
+      totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00],
       constructionType: "Demolition"),
 ];
 
@@ -4132,9 +3632,7 @@ final norwSupportSystem = [
     materials: [
       842.76,
     ],
-    totalPrice: [
-      1068.26,
-    ],
+    totalPrice: [0.00, 0.00],
     constructionType: "New Construction",
   ),
   SupportSystemModel(
@@ -4163,9 +3661,7 @@ final norwSupportSystem = [
     materials: [
       504.34,
     ],
-    totalPrice: [
-      729.84,
-    ],
+    totalPrice: [0.00, 0.00],
     constructionType: "New Construction",
   ),
   SupportSystemModel(
@@ -4194,9 +3690,7 @@ final norwSupportSystem = [
     materials: [
       840.34,
     ],
-    totalPrice: [
-      1065.84,
-    ],
+    totalPrice: [0.00, 0.00],
     constructionType: "New Construction",
   ),
   SupportSystemModel(
@@ -4225,9 +3719,7 @@ final norwSupportSystem = [
     materials: [
       539.54,
     ],
-    totalPrice: [
-      765.04,
-    ],
+    totalPrice: [0.00, 0.00],
     constructionType: "New Construction",
   ),
   SupportSystemModel(
@@ -4256,9 +3748,7 @@ final norwSupportSystem = [
     materials: [
       351.56,
     ],
-    totalPrice: [
-      450.56,
-    ],
+    totalPrice: [0.00, 0.00],
     constructionType: "New Construction",
   ),
   SupportSystemModel(
@@ -4287,9 +3777,7 @@ final norwSupportSystem = [
     materials: [
       359.56,
     ],
-    totalPrice: [
-      458.56,
-    ],
+    totalPrice: [0.00, 0.00],
     constructionType: "New Construction",
   ),
   SupportSystemModel(
@@ -4318,9 +3806,7 @@ final norwSupportSystem = [
     materials: [
       231.56,
     ],
-    totalPrice: [
-      330.56,
-    ],
+    totalPrice: [0.00, 0.00],
     constructionType: "New Construction",
   ),
   SupportSystemModel(
@@ -4349,9 +3835,7 @@ final norwSupportSystem = [
     materials: [
       28.84,
     ],
-    totalPrice: [
-      45.34,
-    ],
+    totalPrice: [0.00, 0.00],
     constructionType: "New Construction",
   ),
   SupportSystemModel(
@@ -4380,9 +3864,7 @@ final norwSupportSystem = [
     materials: [
       13.50,
     ],
-    totalPrice: [
-      30.00,
-    ],
+    totalPrice: [0.00, 0.00],
     constructionType: "New Construction",
   ),
   SupportSystemModel(
@@ -4411,9 +3893,7 @@ final norwSupportSystem = [
     materials: [
       34.93,
     ],
-    totalPrice: [
-      51.43,
-    ],
+    totalPrice: [0.00, 0.00],
     constructionType: "New Construction",
   ),
   SupportSystemModel(
@@ -4442,9 +3922,7 @@ final norwSupportSystem = [
     materials: [
       541.80,
     ],
-    totalPrice: [
-      679.30,
-    ],
+    totalPrice: [0.00, 0.00],
     constructionType: "New Construction",
   ),
   SupportSystemModel(
@@ -4473,9 +3951,7 @@ final norwSupportSystem = [
     materials: [
       21.99,
     ],
-    totalPrice: [
-      137.49,
-    ],
+    totalPrice: [0.00, 0.00],
     constructionType: "New Construction",
   ),
   SupportSystemModel(
@@ -4504,9 +3980,7 @@ final norwSupportSystem = [
     materials: [
       34.93,
     ],
-    totalPrice: [
-      51.43,
-    ],
+    totalPrice: [0.00, 0.00],
     constructionType: "New Construction",
   ),
   SupportSystemModel(
@@ -4535,9 +4009,7 @@ final norwSupportSystem = [
     materials: [
       36.93,
     ],
-    totalPrice: [
-      53.43,
-    ],
+    totalPrice: [0.00, 0.00],
     constructionType: "New Construction",
   ),
   SupportSystemModel(
@@ -4566,9 +4038,7 @@ final norwSupportSystem = [
     materials: [
       36.21,
     ],
-    totalPrice: [
-      52.71,
-    ],
+    totalPrice: [0.00, 0.00],
     constructionType: "New Construction",
   ),
 ];
@@ -4640,14 +4110,7 @@ final norwFlooringData = [
       0.00,
       0.00,
     ],
-    totalPrice: [
-      0.00,
-      0.00,
-      0.00,
-      0.00,
-      0.00,
-      0.00,
-    ],
+    totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00],
     constructionType: "New Construction",
   ),
   FlooringModel(
@@ -4716,14 +4179,7 @@ final norwFlooringData = [
         0.00,
         0.00,
       ],
-      totalPrice: [
-        0.00,
-        0.00,
-        0.00,
-        0.00,
-        0.00,
-        0.00,
-      ],
+      totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00],
       constructionType: "Demolition"),
   FlooringModel(
     name: "Overflate dekker parkett",
@@ -4759,10 +4215,7 @@ final norwFlooringData = [
       0.00,
       0.00,
     ],
-    totalPrice: [
-      0.00,
-      0.00,
-    ],
+    totalPrice: [0.00, 0.00, 0.00],
   ),
 ];
 
@@ -4821,18 +4274,7 @@ final norwDeckData = [
         49.7,
         67.76
       ],
-      totalPrice: [
-        432.45,
-        606.55,
-        80.58,
-        62,
-        18.12,
-        40.07,
-        48.54,
-        245.46,
-        176.2,
-        221.76000000000005
-      ],
+      totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   DeckModel(
       name: "Bjelkelag av tre 48x198, fullisolert etasjeskille, 1 lag gips.",
@@ -4851,7 +4293,7 @@ final norwDeckData = [
       laborCost: [88, 126.5, 49.5, 60.5, 126.5, 154.00000000000003],
       material: [344.45, 480.05, 31.08, 184.96, 49.7, 67.76],
       materials: [344.45, 480.05, 31.08, 184.96, 49.7, 67.76],
-      totalPrice: [432.45, 606.55, 80.58, 245.46, 176.2, 221.76000000000005],
+      totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   DeckModel(
       name: "Bjelkelag av tre 48x198, fullisolert over kjeller, 2 lag gips.",
@@ -4896,18 +4338,7 @@ final norwDeckData = [
         49.7,
         156.25
       ],
-      totalPrice: [
-        432.45,
-        606.55,
-        80.58,
-        62,
-        18.12,
-        40.07,
-        48.54,
-        245.46,
-        176.2,
-        365.25
-      ],
+      totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   DeckModel(
       name: "Bjelkelag av tre 48x198, lydkonstruksjon, 2 lag gips",
@@ -5011,18 +4442,18 @@ final norwDeckData = [
         156.25
       ],
       totalPrice: [
-        272.22,
-        385.24,
-        76.19,
-        268.82,
-        606.55,
-        80.58,
-        48.54,
-        245.46,
-        164.31,
-        196.9,
-        58.04,
-        365.25
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00
       ],
       constructionType: "New Construction"),
   DeckModel(
@@ -5127,18 +4558,18 @@ final norwDeckData = [
         62.11
       ],
       totalPrice: [
-        297.85,
-        606.55,
-        234.07,
-        80.58,
-        61.980000000000004,
-        245.46,
-        155.86,
-        77.17,
-        204.65,
-        48.54,
-        197.12,
-        95.11
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00
       ],
       constructionType: "New Construction"),
   DeckModel(
@@ -5159,7 +4590,7 @@ final norwDeckData = [
       laborCost: [88, 104.5, 44, 60.5, 126.5, 154.00000000000003],
       material: [344.45, 265.06, 50.88, 255.36, 49.7, 62.34],
       materials: [344.45, 265.06, 50.88, 255.36, 49.7, 62.34],
-      totalPrice: [432.45, 369.56, 94.88, 315.86, 176.2, 216.34000000000003],
+      totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   DeckModel(
       name:
@@ -5216,18 +4647,7 @@ final norwDeckData = [
         45.72,
         62.34
       ],
-      totalPrice: [
-        432.45,
-        369.56,
-        94.88,
-        62,
-        315.86,
-        26.46,
-        18.12,
-        40.07,
-        172.22,
-        216.34000000000003
-      ],
+      totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   DeckModel(
       name:
@@ -5273,18 +4693,7 @@ final norwDeckData = [
         45.72,
         143.75
       ],
-      totalPrice: [
-        432.45,
-        369.56,
-        94.88,
-        62,
-        18.12,
-        40.07,
-        26.46,
-        315.86,
-        172.22,
-        352.75
-      ],
+      totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   DeckModel(
       name:
@@ -5341,18 +4750,7 @@ final norwDeckData = [
         45.72,
         234.94
       ],
-      totalPrice: [
-        432.45,
-        369.56,
-        94.88,
-        62,
-        18.12,
-        40.07,
-        26.46,
-        315.86,
-        172.22,
-        388.94000000000005
-      ],
+      totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   DeckModel(
       name:
@@ -5372,7 +4770,7 @@ final norwDeckData = [
       laborCost: [88, 104.5, 44, 60.5, 159.5, 143],
       material: [344.45, 265.06, 50.88, 255.36, 71.24, 1263.55],
       materials: [344.45, 265.06, 50.88, 255.36, 71.24, 1263.55],
-      totalPrice: [432.45, 369.56, 94.88, 315.86, 230.74, 1406.55],
+      totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   DeckModel(
       name: "Nedforing av himling 30x 48mm., 1 lag gips.",
@@ -5387,7 +4785,7 @@ final norwDeckData = [
       laborCost: [159.5, 154.00000000000003],
       material: [71.24, 67.76],
       materials: [71.24, 67.76],
-      totalPrice: [230.74, 221.76000000000005],
+      totalPrice: [0.00, 0.00],
       constructionType: "New Construction"),
   DeckModel(
       name: "Nedforing av himling 30x 48mm., 2 lag gips.",
@@ -5402,7 +4800,7 @@ final norwDeckData = [
       laborCost: [159.5, 209],
       material: [71.24, 156.25],
       materials: [71.24, 156.25],
-      totalPrice: [230.74, 365.25],
+      totalPrice: [0.00, 0.00],
       constructionType: "New Construction"),
   DeckModel(
       name: "Himling, bjelkelag 48x198, isolasjon 200mm, 1 lag gips.",
@@ -5420,13 +4818,7 @@ final norwDeckData = [
       laborCost: [126.5, 60.5, 159.5, 33, 154.00000000000003],
       material: [480.05, 184.96, 79.03, 27.99, 67.76],
       materials: [480.05, 184.96, 79.03, 27.99, 67.76],
-      totalPrice: [
-        606.55,
-        245.46,
-        238.53,
-        60.989999999999995,
-        221.76000000000005
-      ],
+      totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   DeckModel(
       name: "Himling, bjelkelag 48x198, isolasjon 200mm, 2 lag gips.",
@@ -5444,7 +4836,7 @@ final norwDeckData = [
       laborCost: [126.5, 60.5, 33, 159.5, 209],
       material: [480.05, 184.96, 27.99, 79.03, 156.25],
       materials: [480.05, 184.96, 27.99, 79.03, 156.25],
-      totalPrice: [606.55, 245.46, 60.989999999999995, 238.53, 365.25],
+      totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   DeckModel(
       name:
@@ -5463,7 +4855,7 @@ final norwDeckData = [
       laborCost: [126.5, 60.5, 159.5, 33, 154.00000000000003],
       material: [480.05, 184.96, 79.03, 27.99, 255.37],
       materials: [480.05, 184.96, 79.03, 27.99, 255.37],
-      totalPrice: [606.55, 245.46, 238.53, 60.989999999999995, 409.37],
+      totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   DeckModel(
       name:
@@ -5480,7 +4872,7 @@ final norwDeckData = [
       laborCost: [0, 0, 0],
       material: [49.7, 168.32, 1106.95],
       materials: [0, 0, 0],
-      totalPrice: [0, 0, 0],
+      totalPrice: [0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   DeckModel(
       name:
@@ -5499,13 +4891,7 @@ final norwDeckData = [
       laborCost: [126.5, 60.5, 159.5, 33, 154.00000000000003],
       material: [480.05, 184.96, 79.03, 27.99, 200.8],
       materials: [480.05, 184.96, 79.03, 27.99, 200.8],
-      totalPrice: [
-        606.55,
-        245.46,
-        238.53,
-        60.989999999999995,
-        354.80000000000007
-      ],
+      totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   DeckModel(
       name: "Himling, isolasjon 200mm, panel perlestaff 14x120mm., malt furu.",
@@ -5521,7 +4907,7 @@ final norwDeckData = [
       laborCost: [60.5, 126.5, 148.5],
       material: [184.96, 49.7, 569.38],
       materials: [184.96, 49.7, 569.38],
-      totalPrice: [245.46, 176.2, 717.88],
+      totalPrice: [0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   DeckModel(
       name:
@@ -5538,7 +4924,7 @@ final norwDeckData = [
       laborCost: [126.5, 88, 198],
       material: [49.7, 168.32, 3455.95],
       materials: [49.7, 168.32, 3455.95],
-      totalPrice: [176.2, 256.32, 3653.95],
+      totalPrice: [0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   DeckModel(
       name: "Himling, isolasjon 200mm., panel glatt 15x95mm., furu.",
@@ -5554,7 +4940,7 @@ final norwDeckData = [
       laborCost: [60.5, 126.5, 148.5],
       material: [184.96, 49.7, 468.89],
       materials: [184.96, 49.7, 468.89],
-      totalPrice: [245.46, 176.2, 617.39],
+      totalPrice: [0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   DeckModel(
       name: "Himling, isolasjon 200mm., panel skygge skrå 14x120mm., malt.",
@@ -5570,7 +4956,7 @@ final norwDeckData = [
       laborCost: [60.5, 126.5, 154.00000000000003],
       material: [184.96, 49.7, 505.21],
       materials: [184.96, 49.7, 505.21],
-      totalPrice: [245.46, 176.2, 659.21],
+      totalPrice: [0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   DeckModel(
       name:
@@ -5588,7 +4974,7 @@ final norwDeckData = [
       laborCost: [60.5, 159.5, 33, 154.00000000000003],
       material: [265.6, 71.24, 27.99, 67.76],
       materials: [265.6, 71.24, 27.99, 67.76],
-      totalPrice: [326.1, 230.74, 60.989999999999995, 221.76000000000005],
+      totalPrice: [0.00, 0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   DeckModel(
       name:
@@ -5606,7 +4992,7 @@ final norwDeckData = [
       laborCost: [60.5, 159.5, 33, 209],
       material: [265.6, 71.24, 27.99, 156.25],
       materials: [265.6, 71.24, 27.99, 156.25],
-      totalPrice: [326.1, 230.74, 60.989999999999995, 365.25],
+      totalPrice: [0.00, 0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   DeckModel(
       name:
@@ -5624,7 +5010,7 @@ final norwDeckData = [
       laborCost: [60.5, 126.5, 33, 154.00000000000003],
       material: [265.6, 49.7, 27.99, 200.8],
       materials: [265.6, 49.7, 27.99, 200.8],
-      totalPrice: [326.1, 176.2, 60.989999999999995, 354.80000000000007],
+      totalPrice: [0.00, 0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   DeckModel(
       name:
@@ -5642,7 +5028,7 @@ final norwDeckData = [
       laborCost: [60.5, 126.5, 33, 148.5],
       material: [265.6, 49.7, 27.99, 505.21],
       materials: [265.6, 49.7, 27.99, 505.21],
-      totalPrice: [326.1, 176.2, 60.989999999999995, 653.71],
+      totalPrice: [0.00, 0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   DeckModel(
       name:
@@ -5660,7 +5046,7 @@ final norwDeckData = [
       laborCost: [60.5, 126.5, 33, 104.5],
       material: [265.6, 49.7, 27.99, 205.78],
       materials: [265.6, 49.7, 27.99, 205.78],
-      totalPrice: [326.1, 176.2, 60.989999999999995, 310.28],
+      totalPrice: [0.00, 0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   DeckModel(
       name: "Systemhimling Gyproc med 1 lag av gipsplate.",
@@ -5672,7 +5058,7 @@ final norwDeckData = [
       laborCost: [665.5],
       material: [348.54],
       materials: [348.54],
-      totalPrice: [1014.04],
+      totalPrice: [0.00],
       constructionType: "New Construction"),
   DeckModel(
       name: "Systemhimling Gyproc med 2 lag av gipsplate.",
@@ -5684,7 +5070,7 @@ final norwDeckData = [
       laborCost: [720.5],
       material: [414.69],
       materials: [414.69],
-      totalPrice: [1135.19],
+      totalPrice: [0.00],
       constructionType: "New Construction"),
   DeckModel(
       name: "Systemhimling Gyproc 2 lag gipsplate.",
@@ -5696,7 +5082,7 @@ final norwDeckData = [
       laborCost: [720.5],
       material: [412.61],
       materials: [412.61],
-      totalPrice: [1133.1100000000001],
+      totalPrice: [0.00],
       constructionType: "New Construction"),
   DeckModel(
       name: "T-profil Himling kant A 20mm.",
@@ -5708,7 +5094,7 @@ final norwDeckData = [
       laborCost: [225.5],
       material: [1826.02],
       materials: [1826.02],
-      totalPrice: [2051.52],
+      totalPrice: [0.00],
       constructionType: "New Construction"),
   DeckModel(
       name: "T-profil Himling opph. kant A 20mm.",
@@ -5720,7 +5106,7 @@ final norwDeckData = [
       laborCost: [225.5],
       material: [1814.5],
       materials: [1814.5],
-      totalPrice: [2040],
+      totalPrice: [0.00],
       constructionType: "New Construction"),
   DeckModel(
       name: "Glava Venus E-kant himlings-oppheng.",
@@ -5732,7 +5118,7 @@ final norwDeckData = [
       laborCost: [275],
       material: [682.23],
       materials: [682.23],
-      totalPrice: [957.23],
+      totalPrice: [0.00],
       constructionType: "New Construction"),
   DeckModel(
       name: "Undergulv av 22mm. sponplater, impregnert.",
@@ -5744,7 +5130,7 @@ final norwDeckData = [
       laborCost: [88],
       material: [344.45],
       materials: [344.45],
-      totalPrice: [432.45],
+      totalPrice: [0.00],
       constructionType: "New Construction"),
   DeckModel(
       name: "Bjelkelag, c/c 600mm. 48x198mm.",
@@ -5756,7 +5142,7 @@ final norwDeckData = [
       laborCost: [126.5],
       material: [480.05],
       materials: [480.05],
-      totalPrice: [606.55],
+      totalPrice: [0.00],
       constructionType: "New Construction"),
   DeckModel(
       name: "Bjelkelag, trebasert I-profil c/c 600 mm. 70x250mm.",
@@ -5768,7 +5154,7 @@ final norwDeckData = [
       laborCost: [104.5],
       material: [265.06],
       materials: [265.06],
-      totalPrice: [369.56],
+      totalPrice: [0.00],
       constructionType: "New Construction"),
   DeckModel(
       name: "Kantbjelke av heltre 36x198mm.",
@@ -5780,7 +5166,7 @@ final norwDeckData = [
       laborCost: [115.5],
       material: [73.99],
       materials: [73.99],
-      totalPrice: [189.49],
+      totalPrice: [0.00],
       constructionType: "New Construction"),
   DeckModel(
       name: "Kantbjelke av spon til I-bjelker 18x250mm.",
@@ -5792,7 +5178,7 @@ final norwDeckData = [
       laborCost: [104.5],
       material: [121.14],
       materials: [121.14],
-      totalPrice: [225.64],
+      totalPrice: [0.00],
       constructionType: "New Construction"),
   DeckModel(
       name: "Sviller, gran 36x148mm.",
@@ -5804,7 +5190,7 @@ final norwDeckData = [
       laborCost: [66],
       material: [82.11],
       materials: [82.11],
-      totalPrice: [148.11],
+      totalPrice: [0.00],
       constructionType: "New Construction"),
   DeckModel(
       name: "Mineralull Lafteremse 20mm.",
@@ -5816,7 +5202,7 @@ final norwDeckData = [
       laborCost: [27.5],
       material: [16.94],
       materials: [16.94],
-      totalPrice: [44.44],
+      totalPrice: [0.00],
       constructionType: "New Construction"),
   DeckModel(
       name: "Grunnmurspapp, bredde 25cm.",
@@ -5828,7 +5214,7 @@ final norwDeckData = [
       laborCost: [27.5],
       material: [69.19],
       materials: [69.19],
-      totalPrice: [96.69],
+      totalPrice: [0.00],
       constructionType: "New Construction"),
   DeckModel(
       name: "Mineralull A-plate i bjelkelag 200mm.",
@@ -5840,7 +5226,7 @@ final norwDeckData = [
       laborCost: [60.5],
       material: [184.96],
       materials: [184.96],
-      totalPrice: [245.46],
+      totalPrice: [0.00],
       constructionType: "New Construction"),
   DeckModel(
       name: "Mineralull I-plate A i bjelkelag 250mm.",
@@ -5852,7 +5238,7 @@ final norwDeckData = [
       laborCost: [60.5],
       material: [255.36],
       materials: [255.36],
-      totalPrice: [315.86],
+      totalPrice: [0.00],
       constructionType: "New Construction"),
   DeckModel(
       name: "Nedforing av himling c/c 600mm. 30x48mm.",
@@ -5864,7 +5250,7 @@ final norwDeckData = [
       laborCost: [126.5],
       material: [49.7],
       materials: [49.7],
-      totalPrice: [176.2],
+      totalPrice: [0.00],
       constructionType: "New Construction"),
   DeckModel(
       name: "13mm. gipsplater i himling, 1 lag.",
@@ -5876,7 +5262,7 @@ final norwDeckData = [
       laborCost: [154.00000000000003],
       material: [62.34],
       materials: [62.34],
-      totalPrice: [216.34000000000003],
+      totalPrice: [0.00],
       constructionType: "New Construction"),
   DeckModel(
       name: "13mm. gipsplater i himling, 2 lag.",
@@ -5888,7 +5274,7 @@ final norwDeckData = [
       laborCost: [209],
       material: [143.75],
       materials: [143.75],
-      totalPrice: [352.75],
+      totalPrice: [0.00],
       constructionType: "New Construction"),
   DeckModel(
       name: "Plater i himling MDF plater 11 mm. Antikk.",
@@ -5900,7 +5286,7 @@ final norwDeckData = [
       laborCost: [154.00000000000003],
       material: [234.94],
       materials: [234.94],
-      totalPrice: [388.94000000000005],
+      totalPrice: [0.00],
       constructionType: "New Construction"),
   DeckModel(
       name: "Skyggepanel 15x120mm., furu, skrå, himling.",
@@ -5912,7 +5298,7 @@ final norwDeckData = [
       laborCost: [148.5],
       material: [505.21],
       materials: [505.21],
-      totalPrice: [653.71],
+      totalPrice: [0.00],
       constructionType: "New Construction"),
   DeckModel(
       name: "Plater i himling  12x620x1220mm., takess.",
@@ -5924,7 +5310,7 @@ final norwDeckData = [
       laborCost: [104.5],
       material: [205.78],
       materials: [205.78],
-      totalPrice: [310.28],
+      totalPrice: [0.00],
       constructionType: "New Construction"),
   DeckModel(
       name: "Glattpanel 15x95mm., furu, himling.",
@@ -5936,7 +5322,7 @@ final norwDeckData = [
       laborCost: [148.5],
       material: [468.89],
       materials: [468.89],
-      totalPrice: [617.39],
+      totalPrice: [0.00],
       constructionType: "New Construction"),
   DeckModel(
       name: "Spiletak 20x45mm. av eik - ubehandlet glattkant.",
@@ -5948,7 +5334,7 @@ final norwDeckData = [
       laborCost: [0],
       material: [3455.95],
       materials: [0],
-      totalPrice: [0],
+      totalPrice: [0.00],
       constructionType: "New Construction"),
   DeckModel(
       name: "Spiletak 20x45mm av furu - ubehandlet rund kant.",
@@ -5960,7 +5346,7 @@ final norwDeckData = [
       laborCost: [0],
       material: [1106.95],
       materials: [0],
-      totalPrice: [0],
+      totalPrice: [0.00],
       constructionType: "New Construction"),
   DeckModel(
       name: "Etterisolering med innblåsing av 200 mm. mellom bjelkelag.",
@@ -5975,7 +5361,7 @@ final norwDeckData = [
       laborCost: [104.5, 27.5],
       material: [0, 254.69],
       materials: [0, 254.69],
-      totalPrice: [104.5, 282.19],
+      totalPrice: [0.00, 0.00],
       constructionType: "Reconstruction"),
   DeckModel(
       name: "Etterisolering med innblåsing av 300 mm. mellom bjelkelag.",
@@ -5990,7 +5376,7 @@ final norwDeckData = [
       laborCost: [104.5, 33],
       material: [0, 363.84],
       materials: [0, 363.84],
-      totalPrice: [104.5, 396.84],
+      totalPrice: [0.00, 0.00],
       constructionType: "Reconstruction"),
   DeckModel(
       name: "Etterisolering med innblåsing av 400 mm. mellom bjelkelag.",
@@ -6005,7 +5391,7 @@ final norwDeckData = [
       laborCost: [104.5, 38.50000000000001],
       material: [0, 509.38],
       materials: [0, 509.38],
-      totalPrice: [104.5, 547.88],
+      totalPrice: [0.00, 0.00],
       constructionType: "Reconstruction"),
   DeckModel(
       name: "Bjelkelag av tre, 50mm. etterisolering underside, gips 1 lag.",
@@ -6022,7 +5408,7 @@ final norwDeckData = [
       laborCost: [126.5, 38.50000000000001, 49.5, 154.00000000000003],
       material: [82.58, 63.19, 49.86, 67.76],
       materials: [82.58, 63.19, 49.86, 67.76],
-      totalPrice: [209.07999999999998, 101.69, 99.36, 221.76000000000005],
+      totalPrice: [0.00, 0.00, 0.00, 0.00],
       constructionType: "Reconstruction"),
   DeckModel(
       name: "Bjelkelag av tre, 50mm. etterisolering underside, gips 2 lag.",
@@ -6039,7 +5425,7 @@ final norwDeckData = [
       laborCost: [126.5, 38.50000000000001, 49.5, 209],
       material: [82.58, 63.19, 49.86, 156.25],
       materials: [82.58, 63.19, 49.86, 156.25],
-      totalPrice: [209.07999999999998, 101.69, 99.36, 365.25],
+      totalPrice: [0.00, 0.00, 0.00, 0.00],
       constructionType: "Reconstruction"),
   DeckModel(
       name: "Bjelkelag av tre, 50mm. etterisolering underside, takess.",
@@ -6056,7 +5442,7 @@ final norwDeckData = [
       laborCost: [126.5, 38.50000000000001, 49.5, 104.5],
       material: [82.58, 63.19, 49.86, 205.78],
       materials: [82.58, 63.19, 49.86, 205.78],
-      totalPrice: [209.07999999999998, 101.69, 99.36, 310.28],
+      totalPrice: [0.00, 0.00, 0.00, 0.00],
       constructionType: "Reconstruction"),
   DeckModel(
       name: "Ny himling av gips plater 1 lag.",
@@ -6072,7 +5458,7 @@ final norwDeckData = [
       laborCost: [126.5, 49.5, 154.00000000000003],
       material: [82.58, 49.86, 67.76],
       materials: [82.58, 49.86, 67.76],
-      totalPrice: [209.07999999999998, 99.36, 221.76000000000005],
+      totalPrice: [0.00, 0.00, 0.00],
       constructionType: "Reconstruction"),
   DeckModel(
       name: "Ny himling av gips plater 2 lag.",
@@ -6088,7 +5474,7 @@ final norwDeckData = [
       laborCost: [121, 44, 203.5],
       material: [82.58, 49.86, 156.25],
       materials: [82.58, 49.86, 156.25],
-      totalPrice: [203.57999999999998, 93.86, 359.75],
+      totalPrice: [0.00, 0.00, 0.00],
       constructionType: "Reconstruction"),
   DeckModel(
       name:
@@ -6105,7 +5491,7 @@ final norwDeckData = [
       laborCost: [82.5, 137.5, 55],
       material: [209.85, 92.35, 95.36],
       materials: [209.85, 92.35, 95.36],
-      totalPrice: [292.35, 229.85, 150.36],
+      totalPrice: [0.00, 0.00, 0.00],
       constructionType: "Reconstruction"),
   DeckModel(
       name:
@@ -6122,7 +5508,7 @@ final norwDeckData = [
       laborCost: [176, 126.5, 60.5],
       material: [858.26, 149.56, 55.11],
       materials: [858.26, 149.56, 55.11],
-      totalPrice: [1034.26, 276.06, 115.61],
+      totalPrice: [0.00, 0.00, 0.00],
       constructionType: "Reconstruction"),
   DeckModel(
       name: "Riving linoleum.",
@@ -6134,7 +5520,7 @@ final norwDeckData = [
       laborCost: [82.5],
       material: [0],
       materials: [0],
-      totalPrice: [82.5],
+      totalPrice: [0.00],
       constructionType: "Demolition"),
   DeckModel(
       name: "Riving parkett.",
@@ -6146,7 +5532,7 @@ final norwDeckData = [
       laborCost: [115.5],
       material: [0],
       materials: [0],
-      totalPrice: [115.5],
+      totalPrice: [0.00],
       constructionType: "Demolition"),
   DeckModel(
       name: "Riving bordgulv med  tekstilteppe.",
@@ -6162,7 +5548,7 @@ final norwDeckData = [
       laborCost: [16.5, 115.5, 143],
       material: [0, 0, 0],
       materials: [0, 0, 0],
-      totalPrice: [16.5, 115.5, 143],
+      totalPrice: [0.00, 0.00, 0.00],
       constructionType: "Demolition"),
   DeckModel(
       name: "Riving bordgulv med parkett.",
@@ -6178,7 +5564,7 @@ final norwDeckData = [
       laborCost: [115.5, 115.5, 143],
       material: [0, 0, 0],
       materials: [0, 0, 0],
-      totalPrice: [115.5, 115.5, 143],
+      totalPrice: [0.00, 0.00, 0.00],
       constructionType: "Demolition"),
   DeckModel(
       name: "Riving  bordgulv med linoleum.",
@@ -6194,7 +5580,7 @@ final norwDeckData = [
       laborCost: [82.5, 115.5, 143],
       material: [0, 0, 0],
       materials: [0, 0, 0],
-      totalPrice: [82.5, 115.5, 143],
+      totalPrice: [0.00, 0.00, 0.00],
       constructionType: "Demolition"),
   DeckModel(
       name: "Riving 75x200mm bjelkelag  av tre, himling av trepanel.",
@@ -6206,7 +5592,7 @@ final norwDeckData = [
       laborCost: [121, 88],
       material: [0, 0],
       materials: [0, 0],
-      totalPrice: [121, 88],
+      totalPrice: [0.00, 0.00],
       constructionType: "Demolition"),
   DeckModel(
       name: "Riving 75x200 bjelkelag av tre med nedforet himling.",
@@ -6218,7 +5604,7 @@ final norwDeckData = [
       laborCost: [104.5, 88],
       material: [0, 0],
       materials: [0, 0],
-      totalPrice: [104.5, 88],
+      totalPrice: [0.00, 0.00],
       constructionType: "Demolition"),
   DeckModel(
       name:
@@ -6237,7 +5623,7 @@ final norwDeckData = [
       laborCost: [82.5, 143, 88, 16.5, 198],
       material: [0, 0, 0, 0, 0],
       materials: [0, 0, 0, 0, 0],
-      totalPrice: [82.5, 143, 88, 16.5, 198],
+      totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00],
       constructionType: "Demolition"),
   DeckModel(
       name: "Gulv på grunn, fjerning av påstøp med parkett.",
@@ -6249,7 +5635,7 @@ final norwDeckData = [
       laborCost: [115.5, 335.5],
       material: [0, 0],
       materials: [0, 0],
-      totalPrice: [115.5, 335.5],
+      totalPrice: [0.00, 0.00],
       constructionType: "Demolition"),
   DeckModel(
       name: "Gulv på grunn, fjerning av påstøp med linoleum.",
@@ -6261,7 +5647,7 @@ final norwDeckData = [
       laborCost: [82.5, 335.5],
       material: [0, 0],
       materials: [0, 0],
-      totalPrice: [82.5, 335.5],
+      totalPrice: [0.00, 0.00],
       constructionType: "Demolition"),
   DeckModel(
       name: "Riving 50x200mm. bjelkelag av tre, linoleum, bordgulv stubbloft.",
@@ -6280,7 +5666,7 @@ final norwDeckData = [
       laborCost: [82.5, 143, 280.5, 143, 198, 16.5],
       material: [0, 0, 0, 0, 0, 0],
       materials: [0, 0, 0, 0, 0, 0],
-      totalPrice: [82.5, 143, 280.5, 143, 198, 16.5],
+      totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00],
       constructionType: "Demolition"),
   DeckModel(
       name:
@@ -6300,7 +5686,7 @@ final norwDeckData = [
       laborCost: [335.5, 143, 280.5, 198, 143, 16.5],
       material: [0, 0, 0, 0, 0, 0],
       materials: [0, 0, 0, 0, 0, 0],
-      totalPrice: [335.5, 143, 280.5, 198, 143, 16.5],
+      totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00],
       constructionType: "Demolition"),
   DeckModel(
       name: "Riving 160mm. plasstøpte dekker med tilfarergulv.",
@@ -6315,7 +5701,7 @@ final norwDeckData = [
       laborCost: [302.5, 1017.5],
       material: [0, 0],
       materials: [0, 0],
-      totalPrice: [302.5, 1017.5],
+      totalPrice: [0.00, 0.00],
       constructionType: "Demolition"),
   DeckModel(
       name: "Riving 160mm. plasstøpte dekker med linoleum.",
@@ -6327,7 +5713,7 @@ final norwDeckData = [
       laborCost: [82.5, 1017.5],
       material: [0, 0],
       materials: [0, 0],
-      totalPrice: [82.5, 1017.5],
+      totalPrice: [0.00, 0.00],
       constructionType: "Demolition"),
   DeckModel(
       name: "Riving 160mm. plasstøpte dekker med keramikkfliser.",
@@ -6342,7 +5728,7 @@ final norwDeckData = [
       laborCost: [335.5, 1017.5],
       material: [0, 0],
       materials: [0, 0],
-      totalPrice: [335.5, 1017.5],
+      totalPrice: [0.00, 0.00],
       constructionType: "Demolition"),
   DeckModel(
       name: "Riving 160mm. plasstøpte dekker , linoleum med  påstøp.",
@@ -6357,7 +5743,7 @@ final norwDeckData = [
       laborCost: [500.5, 1017.5],
       material: [0, 0],
       materials: [0, 0],
-      totalPrice: [500.5, 1017.5],
+      totalPrice: [0.00, 0.00],
       constructionType: "Demolition"),
 ];
 
@@ -6416,18 +5802,7 @@ final norwInnerDoor = [
         589.68,
         823.07
       ],
-      totalPrice: [
-        640.3299999999999,
-        7009.31,
-        1030.52,
-        210.4,
-        689.52,
-        977.8599999999999,
-        126.99,
-        144,
-        760.18,
-        1422.5700000000002
-      ],
+      totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   InnerDoorModel(
       name: "Innsetting entredør 10x21 hvit. Lyd og brann ( EI30C/30dB).",
@@ -6461,7 +5836,7 @@ final norwInnerDoor = [
         823.07
       ],
       materials: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-      totalPrice: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   InnerDoorModel(
       name: "Innsetting innerdør 10x21, hvit.",
@@ -6482,7 +5857,7 @@ final norwInnerDoor = [
       laborCost: [330, 555.5, 291.5, 33, 60.5, 60.5, 170.5, 588.5],
       material: [233.87, 5190.09, 393.74, 41.6, 66.49, 83.5, 589.68, 807.83],
       materials: [233.87, 5190.09, 393.74, 41.6, 66.49, 83.5, 589.68, 807.83],
-      totalPrice: [563.87, 5745.59, 685.24, 74.6, 126.99, 144, 760.18, 1396.33],
+      totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   InnerDoorModel(
       name: "Innsetting innerdør 9x21, hvit.",
@@ -6503,16 +5878,7 @@ final norwInnerDoor = [
       laborCost: [225.5, 555.5, 286, 66, 55, 55, 170.5, 588.5],
       material: [233.87, 4064.93, 386.17, 88, 59.85, 75.15, 589.68, 807.83],
       materials: [233.87, 4064.93, 386.17, 88, 59.85, 75.15, 589.68, 807.83],
-      totalPrice: [
-        459.37,
-        4620.43,
-        672.1700000000001,
-        154,
-        114.85,
-        130.15,
-        760.18,
-        1396.33
-      ],
+      totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   InnerDoorModel(
       name: "Innsetting innerdør 10x21 i støpt-murt vegg.",
@@ -6530,7 +5896,7 @@ final norwInnerDoor = [
       laborCost: [49.5, 49.5, 60.5, 165, 550],
       material: [59.85, 75.15, 91.2, 589.68, 5190.09],
       materials: [59.85, 75.15, 91.2, 589.68, 5190.09],
-      totalPrice: [109.35, 124.65, 151.7, 754.68, 5740.09],
+      totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   InnerDoorModel(
       name: "Innsetting innerdør 9x21 i støpt-murt vegg.",
@@ -6548,7 +5914,7 @@ final norwInnerDoor = [
       laborCost: [49.5, 49.5, 60.5, 165, 550],
       material: [59.85, 75.15, 88.8, 589.68, 4064.93],
       materials: [59.85, 75.15, 88.8, 589.68, 4064.93],
-      totalPrice: [109.35, 124.65, 149.3, 754.68, 4614.93],
+      totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   InnerDoorModel(
       name: "Innsetting innerdører med skåtefelt med glass, hvit 10+4x21.",
@@ -6568,7 +5934,7 @@ final norwInnerDoor = [
       laborCost: [330, 665.5, 291.5, 170.5, 60.5, 588.5, 60.5],
       material: [233.87, 16076.33, 331.19, 589.68, 83.5, 807.83, 66.49],
       materials: [233.87, 16076.33, 331.19, 589.68, 83.5, 807.83, 66.49],
-      totalPrice: [563.87, 16741.83, 622.69, 760.18, 144, 1396.33, 126.99],
+      totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   InnerDoorModel(
       name: "Innsetting innerdører med skåtefelt med glass, hvit 9+4x21.",
@@ -6588,15 +5954,7 @@ final norwInnerDoor = [
       laborCost: [330, 665.5, 170.5, 291.5, 88, 588.5, 88],
       material: [233.87, 15844.7, 589.68, 331.19, 125.25, 807.83, 99.73],
       materials: [233.87, 15844.7, 589.68, 331.19, 125.25, 807.83, 99.73],
-      totalPrice: [
-        563.87,
-        16510.2,
-        760.18,
-        622.69,
-        213.25,
-        1396.33,
-        187.73000000000002
-      ],
+      totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   InnerDoorModel(
       name: "Innsetting tofløyet innerdør 15x21, malt.",
@@ -6616,15 +5974,7 @@ final norwInnerDoor = [
       laborCost: [330, 885.5, 319, 88, 88, 170.5, 676.5],
       material: [310.33, 25746.33, 431.61, 99.73, 125.25, 589.68, 929.76],
       materials: [310.33, 25746.33, 431.61, 99.73, 125.25, 589.68, 929.76],
-      totalPrice: [
-        640.3299999999999,
-        26631.83,
-        750.61,
-        187.73000000000002,
-        213.25,
-        760.18,
-        1606.26
-      ],
+      totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   InnerDoorModel(
       name: "Innsetting skyvedør 9x21, hvit.",
@@ -6640,7 +5990,7 @@ final norwInnerDoor = [
       laborCost: [330, 2398, 588.5],
       material: [310.33, 5719.04, 807.83],
       materials: [310.33, 5719.04, 807.83],
-      totalPrice: [640.3299999999999, 8117.04, 1396.33],
+      totalPrice: [0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   InnerDoorModel(
       name: "Innsetting tofløyet skyvedør 18x21, furu.",
@@ -6656,7 +6006,7 @@ final norwInnerDoor = [
       laborCost: [660, 4790.500000000001, 731.5],
       material: [620.66, 8131.48, 1005.97],
       materials: [620.66, 8131.48, 1005.97],
-      totalPrice: [1280.6599999999999, 12921.98, 1737.47],
+      totalPrice: [0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   InnerDoorModel(
       name: "Innsetting tofløyet skyvedør 20x21, malt.",
@@ -6672,7 +6022,7 @@ final norwInnerDoor = [
       laborCost: [660, 4790.500000000001, 731.5],
       material: [620.66, 6848.44, 1005.97],
       materials: [620.66, 6848.44, 1005.97],
-      totalPrice: [1280.6599999999999, 11638.94, 1737.47],
+      totalPrice: [0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   InnerDoorModel(
       name: "Innsetting branninnerdør 10x21, hvit.",
@@ -6724,17 +6074,7 @@ final norwInnerDoor = [
         589.68,
         823.07
       ],
-      totalPrice: [
-        640.3299999999999,
-        679.74,
-        210.4,
-        14279.22,
-        882.5999999999999,
-        126.99,
-        144,
-        760.18,
-        1422.5700000000002
-      ],
+      totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   InnerDoorModel(
       name: "Innsetting branninnerdør 9x21, hvit.",
@@ -6786,17 +6126,7 @@ final norwInnerDoor = [
         589.68,
         823.07
       ],
-      totalPrice: [
-        640.3299999999999,
-        11436.82,
-        210.4,
-        1030.52,
-        882.5999999999999,
-        126.99,
-        144,
-        760.18,
-        1422.5700000000002
-      ],
+      totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   InnerDoorModel(
       name: "Innsetting kottdør 55x90 for knevegg.",
@@ -6813,7 +6143,7 @@ final norwInnerDoor = [
       laborCost: [0, 0, 0, 0],
       material: [263.51, 1105.74, 329.2, 228.63],
       materials: [0, 0, 0, 0],
-      totalPrice: [0, 0, 0, 0],
+      totalPrice: [0.00, 0.00, 0.00, 0.00],
       constructionType: "New Construction"),
 ];
 
@@ -6949,20 +6279,20 @@ final norwWindowsExteriorDoors = [
         213.39
       ],
       totalPrice: [
-        1268.23,
-        5768.63,
-        162.79000000000002,
-        452.17,
-        92.4,
-        227.03,
-        77.3,
-        64,
-        82.80000000000001,
-        348.55,
-        106.52000000000001,
-        137.3,
-        682.11,
-        372.89
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00
       ],
       constructionType: "New Construction"),
   WindowsAndExteriorDoorsModel(
@@ -7081,20 +6411,20 @@ final norwWindowsExteriorDoors = [
         304.84
       ],
       totalPrice: [
-        1323.23,
-        8854.96,
-        162.79000000000002,
-        678.25,
-        126.5,
-        227.03,
-        82.80000000000001,
-        64,
-        82.80000000000001,
-        497.14,
-        157.02,
-        152.4,
-        1020.41,
-        530.3399999999999
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00
       ],
       constructionType: "New Construction"),
   WindowsAndExteriorDoorsModel(
@@ -7228,20 +6558,20 @@ final norwWindowsExteriorDoors = [
         350.57
       ],
       totalPrice: [
-        1356.87,
-        6103.46,
-        162.79000000000002,
-        791.2900000000001,
-        143.55,
-        227.03,
-        82.80000000000001,
-        64,
-        82.80000000000001,
-        568.6800000000001,
-        176.78,
-        177.8,
-        1189.56,
-        609.0699999999999
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00
       ],
       constructionType: "New Construction"),
   WindowsAndExteriorDoorsModel(
@@ -7375,20 +6705,20 @@ final norwWindowsExteriorDoors = [
         396.29
       ],
       totalPrice: [
-        1356.87,
-        6746.67,
-        162.79000000000002,
-        898.84,
-        160.6,
-        227.03,
-        82.80000000000001,
-        64,
-        82.80000000000001,
-        645.73,
-        207.53,
-        263.6,
-        1358.72,
-        687.79
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00
       ],
       constructionType: "New Construction"),
   WindowsAndExteriorDoorsModel(
@@ -7522,20 +6852,20 @@ final norwWindowsExteriorDoors = [
         426.78
       ],
       totalPrice: [
-        1356.87,
-        7297.46,
-        162.79000000000002,
-        977.8599999999999,
-        173.8,
-        227.03,
-        82.80000000000001,
-        64,
-        82.80000000000001,
-        691.5899999999999,
-        224.37,
-        287.4,
-        1471.48,
-        740.28
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00
       ],
       constructionType: "New Construction"),
   WindowsAndExteriorDoorsModel(
@@ -7654,20 +6984,20 @@ final norwWindowsExteriorDoors = [
         243.87
       ],
       totalPrice: [
-        1268.23,
-        5768.63,
-        204.86,
-        525.7,
-        100.10000000000001,
-        282.40999999999997,
-        99.38,
-        89.07,
-        99.38,
-        399.90999999999997,
-        123.35,
-        155.6,
-        794.88,
-        425.37
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00
       ],
       constructionType: "New Construction"),
   WindowsAndExteriorDoorsModel(
@@ -7786,20 +7116,20 @@ final norwWindowsExteriorDoors = [
         274.36
       ],
       totalPrice: [
-        1268.23,
-        6742.96,
-        204.86,
-        604.72,
-        113.3,
-        282.40999999999997,
-        99.38,
-        89.07,
-        99.38,
-        445.77,
-        140.19,
-        179.40000000000003,
-        907.64,
-        477.86
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00
       ],
       constructionType: "New Construction"),
   WindowsAndExteriorDoorsModel(
@@ -7918,20 +7248,20 @@ final norwWindowsExteriorDoors = [
         304.84
       ],
       totalPrice: [
-        1268.23,
-        11008.96,
-        204.86,
-        678.25,
-        126.5,
-        282.40999999999997,
-        99.38,
-        89.07,
-        99.38,
-        497.14,
-        157.02,
-        197.7,
-        1020.41,
-        530.3399999999999
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00
       ],
       constructionType: "New Construction"),
   WindowsAndExteriorDoorsModel(
@@ -8050,20 +7380,20 @@ final norwWindowsExteriorDoors = [
         335.32
       ],
       totalPrice: [
-        1356.87,
-        8134.96,
-        204.86,
-        751.78,
-        139.7,
-        282.40999999999997,
-        99.38,
-        89.07,
-        99.38,
-        548.51,
-        173.86,
-        188.5,
-        1133.1799999999998,
-        582.8199999999999
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00
       ],
       constructionType: "New Construction"),
   WindowsAndExteriorDoorsModel(
@@ -8182,20 +7512,20 @@ final norwWindowsExteriorDoors = [
         365.81
       ],
       totalPrice: [
-        1356.87,
-        8770.96,
-        204.86,
-        825.31,
-        152.9,
-        282.40999999999997,
-        99.38,
-        89.07,
-        99.38,
-        594.37,
-        190.7,
-        245.3,
-        1245.95,
-        635.31
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00
       ],
       constructionType: "New Construction"),
   WindowsAndExteriorDoorsModel(
@@ -8314,20 +7644,20 @@ final norwWindowsExteriorDoors = [
         304.84
       ],
       totalPrice: [
-        1268.23,
-        7150.96,
-        241.43,
-        678.25,
-        126.5,
-        337.79,
-        121.46,
-        97.42,
-        121.46,
-        497.14,
-        157.02,
-        152.4,
-        1014.91,
-        530.3399999999999
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00
       ],
       constructionType: "New Construction"),
   WindowsAndExteriorDoorsModel(
@@ -8446,20 +7776,20 @@ final norwWindowsExteriorDoors = [
         335.32
       ],
       totalPrice: [
-        1213.23,
-        7996.96,
-        241.43,
-        751.78,
-        139.7,
-        337.79,
-        121.46,
-        97.42,
-        121.46,
-        548.51,
-        173.86,
-        221.5,
-        1133.1799999999998,
-        582.8199999999999
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00
       ],
       constructionType: "New Construction"),
   WindowsAndExteriorDoorsModel(
@@ -8593,20 +7923,20 @@ final norwWindowsExteriorDoors = [
         365.81
       ],
       totalPrice: [
-        1356.87,
-        8694.46,
-        241.43,
-        825.31,
-        152.9,
-        337.79,
-        121.46,
-        97.42,
-        121.46,
-        594.37,
-        190.7,
-        182.60000000000002,
-        1245.95,
-        635.31
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00
       ],
       constructionType: "New Construction"),
   WindowsAndExteriorDoorsModel(
@@ -8725,20 +8055,20 @@ final norwWindowsExteriorDoors = [
         411.53
       ],
       totalPrice: [
-        1356.87,
-        8024.96,
-        241.43,
-        938.35,
-        169.95,
-        337.79,
-        121.46,
-        97.42,
-        121.46,
-        671.4200000000001,
-        215.95,
-        208,
-        1415.1,
-        714.03
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00
       ],
       constructionType: "New Construction"),
   WindowsAndExteriorDoorsModel(
@@ -8872,20 +8202,20 @@ final norwWindowsExteriorDoors = [
         624.92
       ],
       totalPrice: [
-        1356.87,
-        9205.46,
-        241.43,
-        1458.55,
-        251.35,
-        337.79,
-        121.46,
-        97.42,
-        121.46,
-        968.6,
-        333.8,
-        329.5,
-        2204.48,
-        1081.42
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00
       ],
       constructionType: "New Construction"),
   WindowsAndExteriorDoorsModel(
@@ -9004,20 +8334,20 @@ final norwWindowsExteriorDoors = [
         487.74
       ],
       totalPrice: [
-        1334.87,
-        9925.46,
-        241.43,
-        1075.42,
-        194.7,
-        332.29,
-        115.96,
-        91.92,
-        115.96,
-        788.8299999999999,
-        252.54000000000002,
-        324,
-        1691.52,
-        839.74
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00
       ],
       constructionType: "New Construction"),
   WindowsAndExteriorDoorsModel(
@@ -9151,20 +8481,20 @@ final norwWindowsExteriorDoors = [
         289.6
       ],
       totalPrice: [
-        1268.23,
-        10143.17,
-        283.5,
-        638.74,
-        122.65,
-        365.48,
-        138.03,
-        114.14000000000001,
-        138.03,
-        465.96,
-        165.44,
-        235,
-        964.03,
-        504.1
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00
       ],
       constructionType: "New Construction"),
   WindowsAndExteriorDoorsModel(
@@ -9283,20 +8613,20 @@ final norwWindowsExteriorDoors = [
         335.32
       ],
       totalPrice: [
-        1268.23,
-        7612.96,
-        283.5,
-        751.78,
-        139.7,
-        393.18,
-        138.03,
-        114.14000000000001,
-        138.03,
-        548.51,
-        173.86,
-        167.5,
-        1133.1799999999998,
-        582.8199999999999
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00
       ],
       constructionType: "New Construction"),
   WindowsAndExteriorDoorsModel(
@@ -9430,20 +8760,20 @@ final norwWindowsExteriorDoors = [
         365.81
       ],
       totalPrice: [
-        1356.87,
-        13281.17,
-        283.5,
-        825.31,
-        152.9,
-        393.18,
-        138.03,
-        114.14000000000001,
-        138.03,
-        594.37,
-        190.7,
-        182.60000000000002,
-        1245.95,
-        635.31
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00
       ],
       constructionType: "New Construction"),
   WindowsAndExteriorDoorsModel(
@@ -9577,20 +8907,20 @@ final norwWindowsExteriorDoors = [
         396.29
       ],
       totalPrice: [
-        1356.87,
-        9523.96,
-        283.5,
-        898.84,
-        160.6,
-        393.18,
-        138.03,
-        114.14000000000001,
-        138.03,
-        645.73,
-        207.53,
-        263.6,
-        1358.72,
-        687.79
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00
       ],
       constructionType: "New Construction"),
   WindowsAndExteriorDoorsModel(
@@ -9709,20 +9039,20 @@ final norwWindowsExteriorDoors = [
         487.74
       ],
       totalPrice: [
-        1499.03,
-        11551.96,
-        283.5,
-        1124.92,
-        200.20000000000002,
-        393.18,
-        138.03,
-        114.14000000000001,
-        138.03,
-        794.3299999999999,
-        258.04,
-        344.6,
-        1697.02,
-        845.24
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00
       ],
       constructionType: "New Construction"),
   WindowsAndExteriorDoorsModel(
@@ -9856,20 +9186,20 @@ final norwWindowsExteriorDoors = [
         518.23
       ],
       totalPrice: [
-        1499.03,
-        11179.46,
-        283.5,
-        1198.45,
-        213.4,
-        393.18,
-        138.03,
-        114.14000000000001,
-        138.03,
-        840.19,
-        274.88,
-        353.3,
-        1809.79,
-        897.73
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00
       ],
       constructionType: "New Construction"),
   WindowsAndExteriorDoorsModel(
@@ -9988,20 +9318,20 @@ final norwWindowsExteriorDoors = [
         335.32
       ],
       totalPrice: [
-        1268.23,
-        7458.46,
-        314.58000000000004,
-        751.78,
-        139.7,
-        448.55,
-        149.07,
-        130.85,
-        149.07,
-        548.51,
-        173.86,
-        167.5,
-        1133.1799999999998,
-        582.8199999999999
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00
       ],
       constructionType: "New Construction"),
   WindowsAndExteriorDoorsModel(
@@ -10135,20 +9465,20 @@ final norwWindowsExteriorDoors = [
         365.81
       ],
       totalPrice: [
-        1356.87,
-        8619.46,
-        320.08000000000004,
-        825.31,
-        152.9,
-        448.55,
-        149.07,
-        130.85,
-        149.07,
-        594.37,
-        190.7,
-        182.60000000000002,
-        1245.95,
-        635.31
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00
       ],
       constructionType: "New Construction"),
   WindowsAndExteriorDoorsModel(
@@ -10267,20 +9597,20 @@ final norwWindowsExteriorDoors = [
         411.53
       ],
       totalPrice: [
-        1356.87,
-        10102.96,
-        320.08000000000004,
-        938.35,
-        169.95,
-        448.55,
-        138.03,
-        130.85,
-        138.03,
-        671.4200000000001,
-        215.95,
-        208,
-        1415.1,
-        714.03
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00
       ],
       constructionType: "New Construction"),
   WindowsAndExteriorDoorsModel(
@@ -10414,20 +9744,20 @@ final norwWindowsExteriorDoors = [
         502.99
       ],
       totalPrice: [
-        1499.03,
-        11085.2,
-        320.08000000000004,
-        843.03,
-        204.05,
-        448.55,
-        138.03,
-        130.85,
-        138.03,
-        814.5,
-        278.81,
-        335.9,
-        1753.4,
-        871.49
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00
       ],
       constructionType: "New Construction"),
   WindowsAndExteriorDoorsModel(
@@ -10561,20 +9891,20 @@ final norwWindowsExteriorDoors = [
         411.53
       ],
       totalPrice: [
-        1499.03,
-        9928.96,
-        362.15,
-        1164.4299999999998,
-        204.05,
-        476.25,
-        176.68,
-        139.21,
-        176.68,
-        814.5,
-        266.46,
-        275.5,
-        1415.1,
-        714.03
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00
       ],
       constructionType: "New Construction"),
   WindowsAndExteriorDoorsModel(
@@ -10686,19 +10016,19 @@ final norwWindowsExteriorDoors = [
         472.5
       ],
       totalPrice: [
-        1499.03,
-        17701.96,
-        784.73,
-        190.85,
-        282.40999999999997,
-        176.68,
-        89.07,
-        176.68,
-        768.64,
-        262.24,
-        317.6,
-        1640.64,
-        819
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00
       ],
       constructionType: "New Construction"),
   WindowsAndExteriorDoorsModel(
@@ -10824,19 +10154,19 @@ final norwWindowsExteriorDoors = [
         518.23
       ],
       totalPrice: [
-        1499.03,
-        11656.41,
-        866.6700000000001,
-        213.4,
-        448.55,
-        176.68,
-        139.21,
-        176.68,
-        840.19,
-        287.09000000000003,
-        353.3,
-        1809.79,
-        897.73
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00
       ],
       constructionType: "New Construction"),
   WindowsAndExteriorDoorsModel(
@@ -10962,19 +10292,19 @@ final norwWindowsExteriorDoors = [
         594.44
       ],
       totalPrice: [
-        1499.03,
-        15694.41,
-        1385.02,
-        243.65,
-        227.03,
-        176.68,
-        64,
-        176.68,
-        963.1,
-        311.93,
-        407.3,
-        2091.71,
-        1028.94
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00
       ],
       constructionType: "New Construction"),
   WindowsAndExteriorDoorsModel(
@@ -11093,20 +10423,20 @@ final norwWindowsExteriorDoors = [
         487.74
       ],
       totalPrice: [
-        1499.03,
-        10396.96,
-        362.15,
-        1124.92,
-        200.20000000000002,
-        503.94,
-        193.26,
-        155.92000000000002,
-        193.26,
-        794.3299999999999,
-        215.95,
-        329.5,
-        1697.02,
-        845.24
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00
       ],
       constructionType: "New Construction"),
   WindowsAndExteriorDoorsModel(
@@ -11218,19 +10548,19 @@ final norwWindowsExteriorDoors = [
         411.53
       ],
       totalPrice: [
-        1356.87,
-        13387.96,
-        938.35,
-        169.95,
-        642.39,
-        215.34,
-        189.36,
-        215.34,
-        671.4200000000001,
-        263.13,
-        275.5,
-        1415.1,
-        714.03
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00
       ],
       constructionType: "New Construction"),
   WindowsAndExteriorDoorsModel(
@@ -11342,19 +10672,19 @@ final norwWindowsExteriorDoors = [
         640.16
       ],
       totalPrice: [
-        1279.03,
-        16975.96,
-        1498.06,
-        260.7,
-        587.01,
-        215.34,
-        189.36,
-        215.34,
-        1040.15,
-        415.81,
-        329.5,
-        2260.86,
-        1107.6599999999999
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00
       ],
       constructionType: "New Construction"),
   WindowsAndExteriorDoorsModel(
@@ -11375,7 +10705,7 @@ final norwWindowsExteriorDoors = [
       laborCost: [544.5, 176, 126.5, 93.5, 60.5, 137.5, 137.5],
       material: [5224.13, 276.17, 65.69, 89.18, 76.8, 544.61, 182.9],
       materials: [5224.13, 276.17, 65.69, 89.18, 76.8, 544.61, 182.9],
-      totalPrice: [5768.63, 452.17, 192.19, 182.68, 137.3, 682.11, 320.4],
+      totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   WindowsAndExteriorDoorsModel(
       name: "Innsetting vindu 6x8 i murvegg uten pussing smyg.",
@@ -11395,15 +10725,7 @@ final norwWindowsExteriorDoors = [
       laborCost: [544.5, 203.5, 126.5, 104.5, 60.5, 159.5, 181.5],
       material: [5776.13, 322.2, 65.69, 99.08, 76.8, 635.38, 243.87],
       materials: [5776.13, 322.2, 65.69, 99.08, 76.8, 635.38, 243.87],
-      totalPrice: [
-        6320.63,
-        525.7,
-        192.19,
-        203.57999999999998,
-        137.3,
-        794.88,
-        425.37
-      ],
+      totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   WindowsAndExteriorDoorsModel(
       name: "Innsetting vindu 6x10 i murvegg uten pussing smyg.",
@@ -11423,15 +10745,7 @@ final norwWindowsExteriorDoors = [
       laborCost: [544.5, 236.5, 126.5, 115.5, 77.00000000000001, 181.5, 203.5],
       material: [6288.46, 368.22, 65.69, 108.98, 102.4, 726.14, 274.36],
       materials: [6288.46, 368.22, 65.69, 108.98, 102.4, 726.14, 274.36],
-      totalPrice: [
-        6832.96,
-        604.72,
-        192.19,
-        224.48000000000002,
-        179.40000000000003,
-        907.64,
-        477.86
-      ],
+      totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   WindowsAndExteriorDoorsModel(
       name: "Innsetting vindu 6x14 i murvegg uten pussing smyg.",
@@ -11451,15 +10765,7 @@ final norwWindowsExteriorDoors = [
       laborCost: [544.5, 291.5, 126.5, 143, 82.5, 225.5, 247.5],
       material: [7302.46, 460.28, 65.69, 138.72, 115.2, 907.68, 335.32],
       materials: [7302.46, 460.28, 65.69, 138.72, 115.2, 907.68, 335.32],
-      totalPrice: [
-        7846.96,
-        751.78,
-        192.19,
-        281.72,
-        197.7,
-        1133.1799999999998,
-        582.8199999999999
-      ],
+      totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   WindowsAndExteriorDoorsModel(
       name: "Innsetting vindu 6x18 i murvegg uten pussing smyg.",
@@ -11479,15 +10785,7 @@ final norwWindowsExteriorDoors = [
       laborCost: [544.5, 346.5, 126.5, 214.5, 126.5, 269.5, 291.5],
       material: [6270.46, 552.34, 65.69, 394.59, 179.2, 1089.22, 396.29],
       materials: [6270.46, 552.34, 65.69, 394.59, 179.2, 1089.22, 396.29],
-      totalPrice: [
-        6814.96,
-        898.84,
-        192.19,
-        609.0899999999999,
-        305.7,
-        1358.72,
-        687.79
-      ],
+      totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   WindowsAndExteriorDoorsModel(
       name: "Innsetting vindu 8x6 i murvegg uten pussing smyg.",
@@ -11507,15 +10805,7 @@ final norwWindowsExteriorDoors = [
       laborCost: [544.5, 203.5, 159.5, 115.5, 66, 159.5, 181.5],
       material: [5224.13, 322.2, 82.11, 108.98, 89.6, 635.38, 243.87],
       materials: [5224.13, 322.2, 82.11, 108.98, 89.6, 635.38, 243.87],
-      totalPrice: [
-        5768.63,
-        525.7,
-        241.61,
-        224.48000000000002,
-        155.6,
-        794.88,
-        425.37
-      ],
+      totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   WindowsAndExteriorDoorsModel(
       name: "Innsetting vindu 8x8 i murvegg uten pussing smyg.",
@@ -11535,15 +10825,7 @@ final norwWindowsExteriorDoors = [
       laborCost: [544.5, 203.5, 159.5, 115.5, 66, 159.5, 181.5],
       material: [6198.46, 322.2, 82.11, 108.98, 89.6, 635.38, 243.87],
       materials: [6198.46, 322.2, 82.11, 108.98, 89.6, 635.38, 243.87],
-      totalPrice: [
-        6742.96,
-        525.7,
-        241.61,
-        224.48000000000002,
-        155.6,
-        794.88,
-        425.37
-      ],
+      totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   WindowsAndExteriorDoorsModel(
       name: "Innsetting vindu 8x10 i murvegg uten pussing smyg.",
@@ -11563,15 +10845,7 @@ final norwWindowsExteriorDoors = [
       laborCost: [544.5, 264, 159.5, 132, 82.5, 203.5, 225.5],
       material: [10464.46, 414.25, 82.11, 128.8, 115.2, 816.91, 304.84],
       materials: [10464.46, 414.25, 82.11, 128.8, 115.2, 816.91, 304.84],
-      totalPrice: [
-        11008.96,
-        678.25,
-        241.61,
-        260.8,
-        197.7,
-        1020.41,
-        530.3399999999999
-      ],
+      totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   WindowsAndExteriorDoorsModel(
       name: "Innsetting vindu 8x12 i murvegg uten pussing smyg.",
@@ -11590,14 +10864,7 @@ final norwWindowsExteriorDoors = [
       laborCost: [291.5, 159.5, 143, 88, 225.5, 247.5],
       material: [460.28, 82.11, 138.72, 121.6, 907.68, 335.32],
       materials: [460.28, 82.11, 138.72, 121.6, 907.68, 335.32],
-      totalPrice: [
-        751.78,
-        241.61,
-        281.72,
-        209.6,
-        1133.1799999999998,
-        582.8199999999999
-      ],
+      totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   WindowsAndExteriorDoorsModel(
       name: "Innsetting vindu 8x14 i murvegg uten pussing smyg.",
@@ -11617,7 +10884,7 @@ final norwWindowsExteriorDoors = [
       laborCost: [544.5, 319, 159.5, 159.5, 88, 247.5, 269.5],
       material: [8226.46, 506.31, 82.11, 153.57, 121.6, 998.45, 365.81],
       materials: [8226.46, 506.31, 82.11, 153.57, 121.6, 998.45, 365.81],
-      totalPrice: [8770.96, 825.31, 241.61, 313.07, 209.6, 1245.95, 635.31],
+      totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   WindowsAndExteriorDoorsModel(
       name: "Innsetting vindu 9x18 i murvegg uten pussing smyg.",
@@ -11637,7 +10904,7 @@ final norwWindowsExteriorDoors = [
       laborCost: [544.5, 390.5, 176, 231, 126.5, 302.5, 324.5],
       material: [6957.46, 621.38, 90.32, 422.77, 179.2, 1225.37, 442.02],
       materials: [6957.46, 621.38, 90.32, 422.77, 179.2, 1225.37, 442.02],
-      totalPrice: [7501.96, 1011.88, 266.32, 653.77, 305.7, 1527.87, 766.52],
+      totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   WindowsAndExteriorDoorsModel(
       name: "Innsetting vindu 10x6 i murvegg uten pussing smyg.",
@@ -11657,15 +10924,7 @@ final norwWindowsExteriorDoors = [
       laborCost: [544.5, 264, 192.5, 126.5, 82.5, 203.5, 225.5],
       material: [5562.46, 414.25, 98.53, 118.9, 115.2, 816.91, 304.84],
       materials: [5562.46, 414.25, 98.53, 118.9, 115.2, 816.91, 304.84],
-      totalPrice: [
-        6106.96,
-        678.25,
-        291.03,
-        245.4,
-        197.7,
-        1020.41,
-        530.3399999999999
-      ],
+      totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   WindowsAndExteriorDoorsModel(
       name: "Innsetting vindu 10x8 i murvegg uten pussing smyg.",
@@ -11685,15 +10944,7 @@ final norwWindowsExteriorDoors = [
       laborCost: [544.5, 264, 192.5, 121, 77.00000000000001, 203.5, 225.5],
       material: [6606.46, 414.25, 98.53, 118.9, 115.2, 816.91, 304.84],
       materials: [6606.46, 414.25, 98.53, 118.9, 115.2, 816.91, 304.84],
-      totalPrice: [
-        7150.96,
-        678.25,
-        291.03,
-        239.9,
-        192.20000000000002,
-        1020.41,
-        530.3399999999999
-      ],
+      totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   WindowsAndExteriorDoorsModel(
       name: "Innsetting vindu 10x10 i murvegg uten pussing smyg.",
@@ -11713,15 +10964,7 @@ final norwWindowsExteriorDoors = [
       laborCost: [544.5, 286, 192.5, 154.00000000000003, 93.5, 225.5, 247.5],
       material: [7452.46, 460.28, 98.53, 148.62, 128, 907.68, 335.32],
       materials: [7452.46, 460.28, 98.53, 148.62, 128, 907.68, 335.32],
-      totalPrice: [
-        7996.96,
-        746.28,
-        291.03,
-        302.62,
-        221.5,
-        1133.1799999999998,
-        582.8199999999999
-      ],
+      totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   WindowsAndExteriorDoorsModel(
       name: "Innsetting vindu 10x12 i murvegg uten pussing smyg.",
@@ -11741,15 +10984,7 @@ final norwWindowsExteriorDoors = [
       laborCost: [528, 308.00000000000006, 159.5, 159.5, 93.5, 236.5, 258.5],
       material: [8166.46, 483.29, 82.11, 153.57, 128, 953.06, 350.57],
       materials: [8166.46, 483.29, 82.11, 153.57, 128, 953.06, 350.57],
-      totalPrice: [
-        8694.46,
-        791.2900000000001,
-        241.61,
-        313.07,
-        221.5,
-        1189.56,
-        609.0699999999999
-      ],
+      totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   WindowsAndExteriorDoorsModel(
       name: "Innsetting vindu 12x6 i murvegg uten pussing smyg.",
@@ -11769,15 +11004,7 @@ final norwWindowsExteriorDoors = [
       laborCost: [544.5, 264, 220, 126.5, 126.5, 203.5, 225.5],
       material: [6078.46, 414.25, 114.95, 118.9, 179.2, 816.91, 304.84],
       materials: [6078.46, 414.25, 114.95, 118.9, 179.2, 816.91, 304.84],
-      totalPrice: [
-        6622.96,
-        678.25,
-        334.95,
-        245.4,
-        305.7,
-        1020.41,
-        530.3399999999999
-      ],
+      totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   WindowsAndExteriorDoorsModel(
       name: "Innsetting vindu 12x8 i murvegg uten pussing smyg.",
@@ -11805,15 +11032,7 @@ final norwWindowsExteriorDoors = [
       ],
       material: [7068.46, 506.31, 114.95, 148.62, 128, 998.45, 365.81],
       materials: [7068.46, 506.31, 114.95, 148.62, 128, 998.45, 365.81],
-      totalPrice: [
-        7612.96,
-        814.3100000000001,
-        334.95,
-        302.62,
-        221.5,
-        1245.95,
-        635.31
-      ],
+      totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   WindowsAndExteriorDoorsModel(
       name: "Innsetting vindu 12x10 i murvegg uten pussing smyg.",
@@ -11833,7 +11052,7 @@ final norwWindowsExteriorDoors = [
       laborCost: [511.5, 319, 220, 165, 104.5, 247.5, 269.5],
       material: [12769.67, 506.31, 114.95, 158.52, 140.8, 998.45, 365.81],
       materials: [12769.67, 506.31, 114.95, 158.52, 140.8, 998.45, 365.81],
-      totalPrice: [13281.17, 825.31, 334.95, 323.52, 245.3, 1245.95, 635.31],
+      totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   WindowsAndExteriorDoorsModel(
       name: "Innsetting vindu 12x12 i murvegg uten pussing smyg.",
@@ -11853,15 +11072,7 @@ final norwWindowsExteriorDoors = [
       laborCost: [511.5, 346.5, 220, 181.5, 110, 269.5, 291.5],
       material: [9012.46, 552.34, 114.95, 178.34, 153.6, 1089.22, 396.29],
       materials: [9012.46, 552.34, 114.95, 178.34, 153.6, 1089.22, 396.29],
-      totalPrice: [
-        9523.96,
-        898.84,
-        334.95,
-        359.84000000000003,
-        263.6,
-        1358.72,
-        687.79
-      ],
+      totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   WindowsAndExteriorDoorsModel(
       name: "Innsetting vindu 12x16 i murvegg uten pussing smyg.",
@@ -11881,15 +11092,7 @@ final norwWindowsExteriorDoors = [
       laborCost: [511.5, 407, 220, 225.5, 126.5, 313.5, 335.5],
       material: [11040.46, 644.39, 114.95, 217.98, 179.2, 1270.75, 457.26],
       materials: [11040.46, 644.39, 114.95, 217.98, 179.2, 1270.75, 457.26],
-      totalPrice: [
-        11551.96,
-        1051.3899999999999,
-        334.95,
-        443.48,
-        305.7,
-        1584.25,
-        792.76
-      ],
+      totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   WindowsAndExteriorDoorsModel(
       name: "Innsetting vindu 12x18 i murvegg uten pussing smyg.",
@@ -11909,7 +11112,7 @@ final norwWindowsExteriorDoors = [
       laborCost: [544.5, 434.5, 220, 242, 126.5, 335.5, 357.5],
       material: [9846.46, 690.42, 114.95, 450.96, 179.2, 1361.52, 487.74],
       materials: [9846.46, 690.42, 114.95, 450.96, 179.2, 1361.52, 487.74],
-      totalPrice: [10390.96, 1124.92, 334.95, 692.96, 305.7, 1697.02, 845.24],
+      totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   WindowsAndExteriorDoorsModel(
       name: "Innsetting vindu 14x6 i murvegg uten pussing smyg.",
@@ -11929,15 +11132,7 @@ final norwWindowsExteriorDoors = [
       laborCost: [528, 291.5, 253, 192.5, 93.5, 225.5, 247.5],
       material: [6930.46, 460.28, 131.38, 188.26, 128, 907.68, 335.32],
       materials: [6930.46, 460.28, 131.38, 188.26, 128, 907.68, 335.32],
-      totalPrice: [
-        7458.46,
-        751.78,
-        384.38,
-        380.76,
-        221.5,
-        1133.1799999999998,
-        582.8199999999999
-      ],
+      totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   WindowsAndExteriorDoorsModel(
       name: "Innsetting vindu 14x8 i murvegg uten pussing smyg.",
@@ -11957,7 +11152,7 @@ final norwWindowsExteriorDoors = [
       laborCost: [528, 319, 253, 214.5, 93.5, 247.5, 269.5],
       material: [8091.46, 506.31, 131.38, 208.06, 128, 998.45, 365.81],
       materials: [8091.46, 506.31, 131.38, 208.06, 128, 998.45, 365.81],
-      totalPrice: [8619.46, 825.31, 384.38, 422.56, 221.5, 1245.95, 635.31],
+      totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   WindowsAndExteriorDoorsModel(
       name: "Innsetting vindu 14x12 i murvegg uten pussing smyg.",
@@ -11977,15 +11172,7 @@ final norwWindowsExteriorDoors = [
       laborCost: [528, 379.49999999999994, 165, 209, 93.5, 291.5, 313.5],
       material: [10314.46, 598.36, 82.11, 203.11, 128, 1179.98, 426.78],
       materials: [10314.46, 598.36, 82.11, 203.11, 128, 1179.98, 426.78],
-      totalPrice: [
-        10842.46,
-        977.8599999999999,
-        247.11,
-        412.11,
-        221.5,
-        1471.48,
-        740.28
-      ],
+      totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   WindowsAndExteriorDoorsModel(
       name: "Innsetting vindu 14x14 i murvegg uten pussing smyg.",
@@ -12005,15 +11192,7 @@ final norwWindowsExteriorDoors = [
       laborCost: [544.5, 379.49999999999994, 159.5, 209, 93.5, 291.5, 313.5],
       material: [11706.46, 598.36, 82.11, 203.11, 128, 1179.98, 426.78],
       materials: [11706.46, 598.36, 82.11, 203.11, 128, 1179.98, 426.78],
-      totalPrice: [
-        12250.96,
-        977.8599999999999,
-        241.61,
-        412.11,
-        221.5,
-        1471.48,
-        740.28
-      ],
+      totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   WindowsAndExteriorDoorsModel(
       name: "Innsetting vindu 14x17 i murvegg uten pussing smyg.",
@@ -12033,15 +11212,7 @@ final norwWindowsExteriorDoors = [
       laborCost: [544.5, 379.49999999999994, 253, 209, 93.5, 291.5, 313.5],
       material: [11706.46, 598.36, 131.38, 203.11, 128, 1179.98, 426.78],
       materials: [11706.46, 598.36, 131.38, 203.11, 128, 1179.98, 426.78],
-      totalPrice: [
-        12250.96,
-        977.8599999999999,
-        384.38,
-        412.11,
-        221.5,
-        1471.48,
-        740.28
-      ],
+      totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   WindowsAndExteriorDoorsModel(
       name: "Innsetting vindu 16x6 i murvegg uten pussing smyg.",
@@ -12061,7 +11232,7 @@ final norwWindowsExteriorDoors = [
       laborCost: [544.5, 319, 280.5, 192.5, 104.5, 247.5, 269.5],
       material: [7452.46, 506.31, 147.8, 188.26, 140.8, 998.45, 365.81],
       materials: [7452.46, 506.31, 147.8, 188.26, 140.8, 998.45, 365.81],
-      totalPrice: [7996.96, 825.31, 428.3, 380.76, 245.3, 1245.95, 635.31],
+      totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   WindowsAndExteriorDoorsModel(
       name: "Innsetting vindu 16x8 i murvegg uten pussing smyg.",
@@ -12081,7 +11252,7 @@ final norwWindowsExteriorDoors = [
       laborCost: [544.5, 363, 280.5, 209, 115.5, 280.5, 302.5],
       material: [9384.46, 575.35, 147.8, 203.11, 160, 1134.6, 411.53],
       materials: [9384.46, 575.35, 147.8, 203.11, 160, 1134.6, 411.53],
-      totalPrice: [9928.96, 938.35, 428.3, 412.11, 275.5, 1415.1, 714.03],
+      totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   WindowsAndExteriorDoorsModel(
       name: "Innsetting vindu 16x12 i murvegg uten pussing smyg.",
@@ -12101,15 +11272,7 @@ final norwWindowsExteriorDoors = [
       laborCost: [544.5, 407, 280.5, 225.5, 115.5, 313.5, 335.5],
       material: [11532.46, 644.39, 147.8, 217.98, 160, 1270.75, 457.26],
       materials: [11532.46, 644.39, 147.8, 217.98, 160, 1270.75, 457.26],
-      totalPrice: [
-        12076.96,
-        1051.3899999999999,
-        428.3,
-        443.48,
-        275.5,
-        1584.25,
-        792.76
-      ],
+      totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   WindowsAndExteriorDoorsModel(
       name: "Innsetting vindu 16x14 i murvegg uten pussing smyg.",
@@ -12129,7 +11292,7 @@ final norwWindowsExteriorDoors = [
       laborCost: [544.5, 434.5, 280.5, 231, 115.5, 335.5, 357.5],
       material: [13446.46, 690.42, 147.8, 227.88, 160, 1361.52, 487.74],
       materials: [13446.46, 690.42, 147.8, 227.88, 160, 1361.52, 487.74],
-      totalPrice: [13990.96, 1124.92, 428.3, 458.88, 275.5, 1697.02, 845.24],
+      totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   WindowsAndExteriorDoorsModel(
       name: "Innsetting vindu 18x6 i murvegg uten pussing smyg.",
@@ -12149,15 +11312,7 @@ final norwWindowsExteriorDoors = [
       laborCost: [544.5, 346.5, 313.5, 214.5, 126.5, 269.5, 291.5],
       material: [6330.46, 552.34, 164.22, 394.59, 179.2, 1089.22, 396.29],
       materials: [6330.46, 552.34, 164.22, 394.59, 179.2, 1089.22, 396.29],
-      totalPrice: [
-        6874.96,
-        898.84,
-        477.72,
-        609.0899999999999,
-        305.7,
-        1358.72,
-        687.79
-      ],
+      totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   WindowsAndExteriorDoorsModel(
       name: "Innsetting vindu 18x9 i murvegg uten pussing smyg.",
@@ -12177,7 +11332,7 @@ final norwWindowsExteriorDoors = [
       laborCost: [544.5, 390.5, 313.5, 231, 126.5, 302.5, 335.5],
       material: [8088.46, 621.38, 164.22, 422.77, 179.2, 1225.37, 457.26],
       materials: [8088.46, 621.38, 164.22, 422.77, 179.2, 1225.37, 457.26],
-      totalPrice: [8632.96, 1011.88, 477.72, 653.77, 305.7, 1527.87, 792.76],
+      totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   WindowsAndExteriorDoorsModel(
       name: "Innsetting vindu 18x11 i murvegg uten pussing smyg.",
@@ -12197,15 +11352,7 @@ final norwWindowsExteriorDoors = [
       laborCost: [544.5, 418, 313.5, 231, 126.5, 324.5, 346.5],
       material: [9288.46, 667.41, 164.22, 441.56, 179.2, 1316.14, 472.5],
       materials: [9288.46, 667.41, 164.22, 441.56, 179.2, 1316.14, 472.5],
-      totalPrice: [
-        9832.96,
-        1085.4099999999999,
-        477.72,
-        672.56,
-        305.7,
-        1640.64,
-        819
-      ],
+      totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   WindowsAndExteriorDoorsModel(
       name: "Innsetting vindu 18x12 i murvegg uten pussing smyg.",
@@ -12225,7 +11372,7 @@ final norwWindowsExteriorDoors = [
       laborCost: [539, 429, 308.00000000000006, 236.5, 121, 330, 352],
       material: [9852.46, 690.42, 164.22, 450.96, 179.2, 1361.52, 487.74],
       materials: [9852.46, 690.42, 164.22, 450.96, 179.2, 1361.52, 487.74],
-      totalPrice: [10391.46, 1119.42, 472.22, 687.46, 300.2, 1691.52, 839.74],
+      totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   WindowsAndExteriorDoorsModel(
       name: "Innsetting vindu 20x18 i murvegg uten pussing smyg.",
@@ -12245,15 +11392,7 @@ final norwWindowsExteriorDoors = [
       laborCost: [544.5, 577.5, 346.5, 280.5, 170.5, 445.50000000000006, 467.5],
       material: [14622.46, 920.56, 180.64, 526.12, 243.2, 1815.36, 640.16],
       materials: [14622.46, 920.56, 180.64, 526.12, 243.2, 1815.36, 640.16],
-      totalPrice: [
-        15166.96,
-        1498.06,
-        527.14,
-        806.62,
-        413.7,
-        2260.86,
-        1107.6599999999999
-      ],
+      totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   WindowsAndExteriorDoorsModel(
       name:
@@ -12310,18 +11449,7 @@ final norwWindowsExteriorDoors = [
         1134.6,
         411.53
       ],
-      totalPrice: [
-        14383.68,
-        18364.24,
-        938.35,
-        760.18,
-        542.52,
-        287.4,
-        254.25,
-        303.51,
-        1415.1,
-        714.03
-      ],
+      totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   WindowsAndExteriorDoorsModel(
       name: "Innsetting ytterdør 10x21 i murvegg uten pussing smyg.",
@@ -12373,17 +11501,7 @@ final norwWindowsExteriorDoors = [
         1732.9,
         588
       ],
-      totalPrice: [
-        18364.24,
-        938.35,
-        334.95,
-        552.97,
-        760.18,
-        248.5,
-        171.06,
-        2024.4,
-        896
-      ],
+      totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   WindowsAndExteriorDoorsModel(
       name: "Innsetting tofløyet ytterdør 14x21 i trevegg.",
@@ -12516,20 +11634,20 @@ final norwWindowsExteriorDoors = [
         464.88
       ],
       totalPrice: [
-        1499.03,
-        48745.22,
-        1068.3899999999999,
-        175.72,
-        476.25,
-        160.11,
-        709.78,
-        704.4300000000001,
-        248.16,
-        84.10000000000001,
-        226,
-        253.84,
-        1612.45,
-        805.88
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00
       ],
       constructionType: "New Construction"),
   WindowsAndExteriorDoorsModel(
@@ -12663,20 +11781,20 @@ final norwWindowsExteriorDoors = [
         464.88
       ],
       totalPrice: [
-        1279.03,
-        44958.02,
-        1068.3899999999999,
-        175.72,
-        476.25,
-        160.11,
-        709.78,
-        704.4300000000001,
-        248.16,
-        84.10000000000001,
-        237.38,
-        253.84,
-        1612.45,
-        805.88
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00
       ],
       constructionType: "New Construction"),
   WindowsAndExteriorDoorsModel(
@@ -12810,20 +11928,20 @@ final norwWindowsExteriorDoors = [
         464.88
       ],
       totalPrice: [
-        1279.03,
-        35388.85,
-        1068.3899999999999,
-        175.72,
-        476.25,
-        193.26,
-        709.78,
-        704.4300000000001,
-        248.16,
-        84.10000000000001,
-        282.5,
-        303.51,
-        1612.45,
-        805.88
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00
       ],
       constructionType: "New Construction"),
   WindowsAndExteriorDoorsModel(
@@ -12957,20 +12075,20 @@ final norwWindowsExteriorDoors = [
         426.78
       ],
       totalPrice: [
-        1499.03,
-        16026.59,
-        977.8599999999999,
-        173.8,
-        337.79,
-        121.46,
-        709.78,
-        691.5899999999999,
-        241.2,
-        341.4,
-        169.5,
-        171.06,
-        1471.48,
-        740.28
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00
       ],
       constructionType: "New Construction"),
   WindowsAndExteriorDoorsModel(
@@ -13096,19 +12214,19 @@ final norwWindowsExteriorDoors = [
         579.2
       ],
       totalPrice: [
-        1279.03,
-        32961.619999999995,
-        1351,
-        234.3,
-        476.25,
-        165.65,
-        937.4099999999999,
-        325.38,
-        395.4,
-        237.38,
-        253.84,
-        1584.25,
-        1002.7
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00
       ],
       constructionType: "New Construction"),
   WindowsAndExteriorDoorsModel(
@@ -13220,19 +12338,19 @@ final norwWindowsExteriorDoors = [
         502.99
       ],
       totalPrice: [
-        1499.03,
-        18779.62,
-        1164.4299999999998,
-        204.05,
-        337.79,
-        121.46,
-        814.5,
-        283.29,
-        258.8,
-        169.5,
-        171.06,
-        1471.48,
-        871.49
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00
       ],
       constructionType: "New Construction"),
   WindowsAndExteriorDoorsModel(
@@ -13318,17 +12436,17 @@ final norwWindowsExteriorDoors = [
         221
       ],
       totalPrice: [
-        7194.59,
-        474.67,
-        81.12,
-        171.64,
-        55.19,
-        315.53,
-        113.48000000000002,
-        42,
-        71.72999999999999,
-        710.3,
-        386
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00
       ],
       constructionType: "New Construction"),
   WindowsAndExteriorDoorsModel(
@@ -13440,19 +12558,19 @@ final norwWindowsExteriorDoors = [
         556.34
       ],
       totalPrice: [
-        1279.03,
-        36070.8,
-        1458.55,
-        198.28000000000003,
-        869.23,
-        193.26,
-        781.49,
-        273.42,
-        373.20000000000005,
-        332.03999999999996,
-        254.8,
-        1812.78,
-        963.34
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00
       ],
       constructionType: "New Construction"),
   WindowsAndExteriorDoorsModel(
@@ -13564,19 +12682,19 @@ final norwWindowsExteriorDoors = [
         556.34
       ],
       totalPrice: [
-        1279.03,
-        41578.72,
-        1645.12,
-        228.52,
-        869.23,
-        281.6,
-        904.4,
-        315.51,
-        332.7,
-        504.48,
-        393.3,
-        2013.59,
-        963.34
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00
       ],
       constructionType: "New Construction"),
   WindowsAndExteriorDoorsModel(
@@ -13688,19 +12806,19 @@ final norwWindowsExteriorDoors = [
         640.16
       ],
       totalPrice: [
-        1279.03,
-        51713.36,
-        2057.77,
-        266.48,
-        1040.87,
-        347.87,
-        1073.1599999999999,
-        374.43,
-        451,
-        609.04,
-        476.4,
-        2415.21,
-        1107.6599999999999
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00
       ],
       constructionType: "New Construction"),
   WindowsAndExteriorDoorsModel(
@@ -13812,19 +12930,19 @@ final norwWindowsExteriorDoors = [
         495.37
       ],
       totalPrice: [
-        1279.03,
-        34237.39,
-        1537.5700000000002,
-        202.12,
-        636.7,
-        204.3,
-        807.1700000000001,
-        281.84000000000003,
-        339.8,
-        293.88,
-        282.5,
-        1753.4,
-        858.37
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00
       ],
       constructionType: "New Construction"),
   WindowsAndExteriorDoorsModel(
@@ -13950,19 +13068,19 @@ final norwWindowsExteriorDoors = [
         510.61
       ],
       totalPrice: [
-        1279.03,
-        35974.03,
-        1198.45,
-        205.98000000000002,
-        697.59,
-        226.37,
-        827.3399999999999,
-        290.25,
-        354.9,
-        322.13,
-        310.2,
-        1809.79,
-        884.61
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00
       ],
       constructionType: "New Construction"),
   WindowsAndExteriorDoorsModel(
@@ -14088,19 +13206,19 @@ final norwWindowsExteriorDoors = [
         541.09
       ],
       totalPrice: [
-        1279.03,
-        40066.15,
-        1758.16,
-        219.17,
-        813.85,
-        259.53,
-        878.71,
-        307.09000000000003,
-        385.1,
-        378.63,
-        365.6,
-        1922.56,
-        937.09
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00
       ],
       constructionType: "New Construction"),
   WindowsAndExteriorDoorsModel(
@@ -14212,19 +13330,19 @@ final norwWindowsExteriorDoors = [
         571.57
       ],
       totalPrice: [
-        1279.03,
-        45006.75,
-        1910.71,
-        232.38,
-        924.61,
-        298.18,
-        930.0699999999999,
-        323.92,
-        422.4,
-        435.13,
-        421,
-        2029.82,
-        989.57
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00
       ],
       constructionType: "New Construction"),
 ];
@@ -14245,7 +13363,7 @@ final norwExteriorWallData = [
       laborCost: [44, 22, 16.5, 5.5],
       material: [11.01, 48.14, 13.19, 0.27],
       materials: [11.01, 48.14, 13.19, 0.27],
-      totalPrice: [55.01, 70.14, 29.689999999999998, 5.77],
+      totalPrice: [0.00, 0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   OuterWallModel(
       name: "Hjørnekasser på fasader to sider 22x98mm.",
@@ -14260,7 +13378,7 @@ final norwExteriorWallData = [
       laborCost: [66, 66],
       material: [66.61, 66.61],
       materials: [66.61, 66.61],
-      totalPrice: [132.61, 132.61],
+      totalPrice: [0.00, 0.00],
       constructionType: "New Construction"),
   OuterWallModel(
       name:
@@ -14379,20 +13497,20 @@ final norwExteriorWallData = [
         20.93
       ],
       totalPrice: [
-        476.06,
-        183.62,
-        113.88,
-        28.61,
-        6.7,
-        77.53999999999999,
-        245.72,
-        385.16999999999996,
-        240.96,
-        56.489999999999995,
-        169.5,
-        100.36,
-        185.51999999999998,
-        48.43
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00
       ],
       constructionType: "New Construction"),
   OuterWallModel(
@@ -14519,21 +13637,21 @@ final norwExteriorWallData = [
         20.93
       ],
       totalPrice: [
-        476.06,
-        183.62,
-        113.88,
-        28.61,
-        6.7,
-        77.53999999999999,
-        245.72,
-        385.16999999999996,
-        240.96,
-        56.489999999999995,
-        169.5,
-        100.36,
-        326.85,
-        54.91,
-        48.43
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00
       ],
       constructionType: "New Construction"),
   OuterWallModel(
@@ -14660,21 +13778,21 @@ final norwExteriorWallData = [
         20.93
       ],
       totalPrice: [
-        476.06,
-        183.62,
-        113.88,
-        28.61,
-        6.7,
-        77.53999999999999,
-        245.72,
-        385.16999999999996,
-        240.96,
-        56.489999999999995,
-        169.5,
-        100.36,
-        361.73,
-        54.91,
-        48.43
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00
       ],
       constructionType: "New Construction"),
   OuterWallModel(
@@ -14801,21 +13919,21 @@ final norwExteriorWallData = [
         20.93
       ],
       totalPrice: [
-        476.06,
-        183.62,
-        113.88,
-        28.61,
-        6.7,
-        77.53999999999999,
-        245.72,
-        385.16999999999996,
-        240.96,
-        56.489999999999995,
-        169.5,
-        99.36,
-        654.71,
-        54.91,
-        48.43
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00
       ],
       constructionType: "New Construction"),
   OuterWallModel(
@@ -14928,19 +14046,19 @@ final norwExteriorWallData = [
         20.93
       ],
       totalPrice: [
-        594.53,
-        183.62,
-        81.48,
-        28.61,
-        6.7,
-        245.72,
-        385.16999999999996,
-        240.96,
-        56.489999999999995,
-        169.5,
-        100.36,
-        185.51999999999998,
-        48.43
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00
       ],
       constructionType: "New Construction"),
   OuterWallModel(
@@ -15060,20 +14178,20 @@ final norwExteriorWallData = [
         20.93
       ],
       totalPrice: [
-        594.53,
-        183.62,
-        81.48,
-        28.61,
-        6.7,
-        245.72,
-        385.16999999999996,
-        240.96,
-        56.489999999999995,
-        169.5,
-        100.36,
-        376.12,
-        54.91,
-        48.43
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00
       ],
       constructionType: "New Construction"),
   OuterWallModel(
@@ -15193,20 +14311,20 @@ final norwExteriorWallData = [
         20.93
       ],
       totalPrice: [
-        594.53,
-        183.62,
-        81.48,
-        28.61,
-        6.7,
-        245.72,
-        385.16999999999996,
-        240.96,
-        56.489999999999995,
-        169.5,
-        100.36,
-        361.73,
-        54.91,
-        48.43
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00
       ],
       constructionType: "New Construction"),
   OuterWallModel(
@@ -15326,20 +14444,20 @@ final norwExteriorWallData = [
         648.83
       ],
       totalPrice: [
-        18430.43,
-        5692.22,
-        2525.88,
-        716.41,
-        207.7,
-        7617.32,
-        11940.27,
-        7469.76,
-        1751.19,
-        5254.5,
-        3111.16,
-        20466.510000000002,
-        1702.21,
-        1501.33
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00
       ],
       constructionType: "New Construction"),
   OuterWallModel(
@@ -15452,19 +14570,19 @@ final norwExteriorWallData = [
         20.93
       ],
       totalPrice: [
-        476.06,
-        183.62,
-        113.88,
-        28.61,
-        6.7,
-        245.72,
-        385.16999999999996,
-        240.96,
-        56.489999999999995,
-        169.5,
-        100.36,
-        185.51999999999998,
-        48.43
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00
       ],
       constructionType: "New Construction"),
   OuterWallModel(
@@ -15584,20 +14702,20 @@ final norwExteriorWallData = [
         20.93
       ],
       totalPrice: [
-        476.06,
-        183.62,
-        113.88,
-        28.61,
-        6.7,
-        156.62,
-        385.16999999999996,
-        240.96,
-        56.489999999999995,
-        169.5,
-        100.36,
-        361.73,
-        54.91,
-        48.43
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00
       ],
       constructionType: "New Construction"),
   OuterWallModel(
@@ -15717,20 +14835,20 @@ final norwExteriorWallData = [
         20.93
       ],
       totalPrice: [
-        476.06,
-        183.62,
-        113.88,
-        28.61,
-        6.7,
-        245.72,
-        385.16999999999996,
-        240.96,
-        56.489999999999995,
-        169.5,
-        100.36,
-        443.36,
-        324.77,
-        48.43
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00
       ],
       constructionType: "New Construction"),
   OuterWallModel(
@@ -15850,20 +14968,20 @@ final norwExteriorWallData = [
         20.93
       ],
       totalPrice: [
-        476.06,
-        183.62,
-        113.88,
-        28.61,
-        6.7,
-        245.72,
-        385.16999999999996,
-        240.96,
-        56.489999999999995,
-        169.5,
-        100.36,
-        660.21,
-        54.91,
-        48.43
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00
       ],
       constructionType: "New Construction"),
   OuterWallModel(
@@ -15998,20 +15116,20 @@ final norwExteriorWallData = [
         48.43
       ],
       totalPrice: [
-        1402.6799999999998,
-        437.09000000000003,
-        262.03,
-        15.65,
-        43.95,
-        9.77,
-        581.73,
-        972.28,
-        776.2,
-        135.57999999999998,
-        396.6,
-        230.66,
-        430.65,
-        108.93
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00
       ],
       constructionType: "New Construction"),
   OuterWallModel(
@@ -16124,19 +15242,19 @@ final norwExteriorWallData = [
         48.43
       ],
       totalPrice: [
-        1402.6799999999998,
-        437.09000000000003,
-        262.03,
-        15.65,
-        43.95,
-        445.89,
-        972.28,
-        776.2,
-        135.57999999999998,
-        396.6,
-        230.66,
-        436.15,
-        108.93
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00
       ],
       constructionType: "New Construction"),
   OuterWallModel(
@@ -16271,20 +15389,20 @@ final norwExteriorWallData = [
         47.43
       ],
       totalPrice: [
-        1402.6799999999998,
-        437.09000000000003,
-        262.03,
-        15.65,
-        43.95,
-        9.77,
-        459.68,
-        972.28,
-        776.2,
-        135.57999999999998,
-        396.6,
-        230.66,
-        436.15,
-        107.93
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00
       ],
       constructionType: "New Construction"),
   OuterWallModel(
@@ -16419,20 +15537,20 @@ final norwExteriorWallData = [
         48.43
       ],
       totalPrice: [
-        1402.6799999999998,
-        437.09000000000003,
-        262.03,
-        15.65,
-        43.95,
-        9.77,
-        700.49,
-        972.28,
-        776.2,
-        135.57999999999998,
-        396.6,
-        230.66,
-        436.15,
-        108.93
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00
       ],
       constructionType: "New Construction"),
   OuterWallModel(
@@ -16502,7 +15620,21 @@ final norwExteriorWallData = [
         48.43
       ],
       materials: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-      totalPrice: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      totalPrice: [
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00
+      ],
       constructionType: "New Construction"),
   OuterWallModel(
       name:
@@ -16614,19 +15746,19 @@ final norwExteriorWallData = [
         48.43
       ],
       totalPrice: [
-        1206.6699999999998,
-        262.03,
-        15.65,
-        43.95,
-        9.77,
-        445.89,
-        972.28,
-        776.2,
-        135.57999999999998,
-        391.1,
-        224.16,
-        436.15,
-        108.93
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00
       ],
       constructionType: "New Construction"),
   OuterWallModel(
@@ -16739,19 +15871,19 @@ final norwExteriorWallData = [
         48.43
       ],
       totalPrice: [
-        1206.6699999999998,
-        262.03,
-        15.65,
-        43.95,
-        9.77,
-        459.68,
-        972.28,
-        776.2,
-        135.57999999999998,
-        396.6,
-        230.66,
-        436.15,
-        108.93
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00
       ],
       constructionType: "New Construction"),
   OuterWallModel(
@@ -16864,19 +15996,19 @@ final norwExteriorWallData = [
         48.43
       ],
       totalPrice: [
-        1206.6699999999998,
-        262.03,
-        15.65,
-        43.95,
-        9.77,
-        700.49,
-        972.28,
-        776.2,
-        135.57999999999998,
-        396.6,
-        230.66,
-        436.15,
-        108.93
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00
       ],
       constructionType: "New Construction"),
   OuterWallModel(
@@ -16963,17 +16095,17 @@ final norwExteriorWallData = [
         20.93
       ],
       totalPrice: [
-        504.74,
-        107.06,
-        7.8100000000000005,
-        23.11,
-        7.66,
-        245.72,
-        386.16999999999996,
-        240.96,
-        56.489999999999995,
-        185.51999999999998,
-        48.43
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00
       ],
       constructionType: "New Construction"),
   OuterWallModel(
@@ -17066,18 +16198,18 @@ final norwExteriorWallData = [
         20.93
       ],
       totalPrice: [
-        504.74,
-        107.06,
-        7.8100000000000005,
-        23.11,
-        7.66,
-        245.72,
-        385.16999999999996,
-        240.96,
-        56.489999999999995,
-        609.3299999999999,
-        54.91,
-        48.43
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00
       ],
       constructionType: "New Construction"),
   OuterWallModel(
@@ -17170,18 +16302,18 @@ final norwExteriorWallData = [
         20.93
       ],
       totalPrice: [
-        504.74,
-        107.06,
-        7.8100000000000005,
-        23.11,
-        7.66,
-        245.72,
-        385.16999999999996,
-        191.46,
-        56.489999999999995,
-        361.73,
-        54.91,
-        48.43
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00
       ],
       constructionType: "New Construction"),
   OuterWallModel(
@@ -17294,19 +16426,19 @@ final norwExteriorWallData = [
         20.93
       ],
       totalPrice: [
-        504.74,
-        107.06,
-        7.8100000000000005,
-        23.11,
-        7.66,
-        245.72,
-        385.16999999999996,
-        240.96,
-        56.489999999999995,
-        147.18,
-        654.71,
-        54.91,
-        48.43
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00
       ],
       constructionType: "New Construction"),
   OuterWallModel(
@@ -17412,18 +16544,18 @@ final norwExteriorWallData = [
         20.93
       ],
       totalPrice: [
-        504.74,
-        107.06,
-        23.11,
-        77.53999999999999,
-        245.72,
-        385.16999999999996,
-        240.96,
-        56.489999999999995,
-        169.5,
-        94.86,
-        436.15,
-        48.43
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00
       ],
       constructionType: "New Construction"),
   OuterWallModel(
@@ -17536,19 +16668,19 @@ final norwExteriorWallData = [
         20.93
       ],
       totalPrice: [
-        504.74,
-        107.06,
-        23.11,
-        77.53999999999999,
-        245.72,
-        379.67,
-        240.96,
-        56.489999999999995,
-        169.5,
-        100.36,
-        326.85,
-        54.91,
-        48.43
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00
       ],
       constructionType: "New Construction"),
   OuterWallModel(
@@ -17661,19 +16793,19 @@ final norwExteriorWallData = [
         20.93
       ],
       totalPrice: [
-        504.74,
-        107.06,
-        23.11,
-        77.53999999999999,
-        245.72,
-        385.16999999999996,
-        240.96,
-        56.489999999999995,
-        169.5,
-        100.36,
-        361.73,
-        54.91,
-        48.43
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00
       ],
       constructionType: "New Construction"),
   OuterWallModel(
@@ -17779,18 +16911,18 @@ final norwExteriorWallData = [
         20.93
       ],
       totalPrice: [
-        504.74,
-        107.06,
-        23.11,
-        77.53999999999999,
-        245.72,
-        385.16999999999996,
-        240.96,
-        56.489999999999995,
-        169.5,
-        100.36,
-        443.36,
-        48.43
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00
       ],
       constructionType: "New Construction"),
   OuterWallModel(
@@ -17903,19 +17035,19 @@ final norwExteriorWallData = [
         47.43
       ],
       totalPrice: [
-        3469.43,
-        261.03,
-        14.65,
-        42.95,
-        8.77,
-        580.73,
-        765.51,
-        636.7,
-        127.68,
-        395.6,
-        229.66,
-        435.15,
-        107.93
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00
       ],
       constructionType: "New Construction"),
   OuterWallModel(
@@ -18028,19 +17160,19 @@ final norwExteriorWallData = [
         47.43
       ],
       totalPrice: [
-        3469.43,
-        261.03,
-        14.65,
-        42.95,
-        8.77,
-        466.76,
-        765.51,
-        636.7,
-        127.68,
-        395.6,
-        229.66,
-        435.15,
-        107.93
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00
       ],
       constructionType: "New Construction"),
   OuterWallModel(
@@ -18175,20 +17307,20 @@ final norwExteriorWallData = [
         47.43
       ],
       totalPrice: [
-        3534.41,
-        436.09000000000003,
-        261.03,
-        14.65,
-        42.95,
-        8.77,
-        580.73,
-        765.51,
-        636.7,
-        127.68,
-        395.6,
-        229.66,
-        435.15,
-        107.93
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00
       ],
       constructionType: "New Construction"),
   OuterWallModel(
@@ -18323,20 +17455,20 @@ final norwExteriorWallData = [
         47.43
       ],
       totalPrice: [
-        3534.41,
-        436.09000000000003,
-        261.03,
-        14.65,
-        42.95,
-        8.77,
-        765.51,
-        466.76,
-        636.7,
-        127.68,
-        395.6,
-        229.66,
-        435.15,
-        107.93
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00
       ],
       constructionType: "New Construction"),
   OuterWallModel(
@@ -18380,17 +17512,7 @@ final norwExteriorWallData = [
         21.95,
         19.93
       ],
-      totalPrice: [
-        800.06,
-        314.89,
-        217.79,
-        509.36,
-        268.5,
-        56.05,
-        360.84000000000003,
-        54.95,
-        47.43
-      ],
+      totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   OuterWallModel(
       name:
@@ -18495,18 +17617,18 @@ final norwExteriorWallData = [
         19.93
       ],
       totalPrice: [
-        324.86,
-        182.8,
-        107.36000000000001,
-        22.490000000000002,
-        166.82,
-        99.36,
-        201.36,
-        584.74,
-        268.5,
-        49.71,
-        184.78,
-        47.43
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00
       ],
       constructionType: "New Construction"),
   OuterWallModel(
@@ -18626,20 +17748,20 @@ final norwExteriorWallData = [
         19.93
       ],
       totalPrice: [
-        1391.99,
-        107.36000000000001,
-        22.490000000000002,
-        6.82,
-        6.71,
-        245.01,
-        642.5899999999999,
-        310.36,
-        56.05,
-        168.56,
-        99.36,
-        717.88,
-        176.28,
-        47.43
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00
       ],
       constructionType: "New Construction"),
   OuterWallModel(
@@ -18759,20 +17881,20 @@ final norwExteriorWallData = [
         19.93
       ],
       totalPrice: [
-        1391.99,
-        107.36000000000001,
-        22.490000000000002,
-        6.82,
-        6.71,
-        245.01,
-        642.5899999999999,
-        310.36,
-        56.05,
-        168.56,
-        99.36,
-        694.03,
-        176.28,
-        47.43
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00
       ],
       constructionType: "New Construction"),
   OuterWallModel(
@@ -18892,20 +18014,20 @@ final norwExteriorWallData = [
         19.93
       ],
       totalPrice: [
-        1391.99,
-        107.36000000000001,
-        22.490000000000002,
-        6.82,
-        6.71,
-        245.01,
-        642.5899999999999,
-        310.36,
-        56.05,
-        168.56,
-        99.36,
-        608.3299999999999,
-        176.28,
-        47.43
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00
       ],
       constructionType: "New Construction"),
   OuterWallModel(
@@ -19025,20 +18147,20 @@ final norwExteriorWallData = [
         19.93
       ],
       totalPrice: [
-        1391.99,
-        107.36000000000001,
-        22.490000000000002,
-        6.82,
-        6.71,
-        245.01,
-        642.5899999999999,
-        310.36,
-        56.05,
-        168.56,
-        99.36,
-        659.21,
-        176.28,
-        47.43
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00
       ],
       constructionType: "New Construction"),
   OuterWallModel(
@@ -19165,21 +18287,21 @@ final norwExteriorWallData = [
         21.95
       ],
       totalPrice: [
-        1076.65,
-        182.8,
-        107.36000000000001,
-        22.490000000000002,
-        6.82,
-        6.71,
-        245.01,
-        310.36,
-        642.5899999999999,
-        56.05,
-        168.56,
-        99.36,
-        807.91,
-        52.93,
-        49.45
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00
       ],
       constructionType: "New Construction"),
   OuterWallModel(
@@ -19257,7 +18379,23 @@ final norwExteriorWallData = [
         19.93
       ],
       materials: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-      totalPrice: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      totalPrice: [
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00
+      ],
       constructionType: "New Construction"),
   OuterWallModel(
       name:
@@ -19383,21 +18521,21 @@ final norwExteriorWallData = [
         19.93
       ],
       totalPrice: [
-        1076.65,
-        182.8,
-        107.36000000000001,
-        22.490000000000002,
-        6.82,
-        6.71,
-        245.01,
-        310.36,
-        642.5899999999999,
-        56.05,
-        168.56,
-        99.36,
-        659.21,
-        54.95,
-        47.43
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00
       ],
       constructionType: "New Construction"),
   OuterWallModel(
@@ -19420,16 +18558,7 @@ final norwExteriorWallData = [
       laborCost: [159.5, 99, 115.5, 159.5, 55, 27.5, 115.5, 27.5],
       material: [795.05, 46.53, 73.01, 226.4, 184.96, 28.55, 69.02, 19.93],
       materials: [795.05, 46.53, 73.01, 226.4, 184.96, 28.55, 69.02, 19.93],
-      totalPrice: [
-        954.55,
-        145.53,
-        188.51,
-        385.9,
-        239.96,
-        56.05,
-        184.51999999999998,
-        47.43
-      ],
+      totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   OuterWallModel(
       name:
@@ -19451,16 +18580,7 @@ final norwExteriorWallData = [
       laborCost: [159.5, 99, 115.5, 143, 55, 27.5, 115.5, 27.5],
       material: [795.05, 46.53, 73.01, 499.59, 255.36, 28.55, 69.02, 19.93],
       materials: [795.05, 46.53, 73.01, 499.59, 255.36, 28.55, 69.02, 19.93],
-      totalPrice: [
-        954.55,
-        145.53,
-        188.51,
-        642.5899999999999,
-        310.36,
-        56.05,
-        184.51999999999998,
-        47.43
-      ],
+      totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   OuterWallModel(
       name:
@@ -19503,17 +18623,7 @@ final norwExteriorWallData = [
         21.95,
         19.93
       ],
-      totalPrice: [
-        954.55,
-        145.53,
-        188.51,
-        385.9,
-        239.96,
-        56.05,
-        375.42,
-        54.95,
-        47.43
-      ],
+      totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   OuterWallModel(
       name:
@@ -19556,17 +18666,7 @@ final norwExteriorWallData = [
         21.95,
         19.93
       ],
-      totalPrice: [
-        954.55,
-        145.53,
-        188.51,
-        642.5899999999999,
-        310.36,
-        56.05,
-        375.42,
-        54.95,
-        47.43
-      ],
+      totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   OuterWallModel(
       name:
@@ -19609,17 +18709,7 @@ final norwExteriorWallData = [
         21.95,
         19.93
       ],
-      totalPrice: [
-        954.55,
-        145.53,
-        188.51,
-        385.9,
-        56.05,
-        239.96,
-        360.84000000000003,
-        54.95,
-        47.43
-      ],
+      totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   OuterWallModel(
       name:
@@ -19662,17 +18752,7 @@ final norwExteriorWallData = [
         21.95,
         19.93
       ],
-      totalPrice: [
-        954.55,
-        145.53,
-        188.51,
-        642.5899999999999,
-        310.36,
-        56.05,
-        360.84000000000003,
-        54.95,
-        47.43
-      ],
+      totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   OuterWallModel(
       name:
@@ -19715,17 +18795,7 @@ final norwExteriorWallData = [
         21.95,
         19.93
       ],
-      totalPrice: [
-        954.55,
-        145.53,
-        188.51,
-        385.9,
-        239.96,
-        56.05,
-        609.71,
-        54.95,
-        47.43
-      ],
+      totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   OuterWallModel(
       name:
@@ -19768,17 +18838,7 @@ final norwExteriorWallData = [
         21.95,
         19.93
       ],
-      totalPrice: [
-        954.55,
-        145.53,
-        188.51,
-        642.5899999999999,
-        310.36,
-        56.05,
-        609.71,
-        54.95,
-        47.43
-      ],
+      totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   OuterWallModel(
       name:
@@ -19864,17 +18924,17 @@ final norwExteriorWallData = [
         19.93
       ],
       totalPrice: [
-        503.74,
-        114.18,
-        6.82,
-        22.490000000000002,
-        6.71,
-        188.19,
-        642.5899999999999,
-        310.36,
-        56.05,
-        184.78,
-        47.43
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00
       ],
       constructionType: "New Construction"),
   OuterWallModel(
@@ -19967,18 +19027,18 @@ final norwExteriorWallData = [
         19.93
       ],
       totalPrice: [
-        503.74,
-        114.18,
-        6.82,
-        22.490000000000002,
-        6.71,
-        188.19,
-        642.5899999999999,
-        310.36,
-        56.05,
-        608.3299999999999,
-        54.95,
-        47.43
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00
       ],
       constructionType: "New Construction"),
   OuterWallModel(
@@ -20071,18 +19131,18 @@ final norwExteriorWallData = [
         19.93
       ],
       totalPrice: [
-        503.74,
-        114.18,
-        6.82,
-        22.490000000000002,
-        6.71,
-        188.19,
-        642.5899999999999,
-        310.36,
-        56.05,
-        325.85,
-        54.95,
-        47.43
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00
       ],
       constructionType: "New Construction"),
   OuterWallModel(
@@ -20175,18 +19235,18 @@ final norwExteriorWallData = [
         19.93
       ],
       totalPrice: [
-        503.74,
-        114.18,
-        6.82,
-        22.490000000000002,
-        6.71,
-        188.19,
-        642.5899999999999,
-        310.36,
-        56.05,
-        360.84000000000003,
-        54.95,
-        47.43
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00
       ],
       constructionType: "New Construction"),
   OuterWallModel(
@@ -20306,20 +19366,20 @@ final norwExteriorWallData = [
         19.93
       ],
       totalPrice: [
-        698.47,
-        182.62,
-        114.18,
-        6.82,
-        22.11,
-        6.66,
-        244.72,
-        509.36,
-        239.96,
-        55.489999999999995,
-        168.5,
-        99.36,
-        184.51999999999998,
-        47.43
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00
       ],
       constructionType: "New Construction"),
   OuterWallModel(
@@ -20446,21 +19506,21 @@ final norwExteriorWallData = [
         19.93
       ],
       totalPrice: [
-        698.47,
-        182.62,
-        114.18,
-        6.82,
-        22.11,
-        6.66,
-        244.72,
-        509.36,
-        239.96,
-        55.489999999999995,
-        168.5,
-        99.36,
-        608.3299999999999,
-        54.95,
-        47.43
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00
       ],
       constructionType: "New Construction"),
   OuterWallModel(
@@ -20587,21 +19647,21 @@ final norwExteriorWallData = [
         19.93
       ],
       totalPrice: [
-        698.47,
-        182.62,
-        114.18,
-        6.82,
-        22.11,
-        6.66,
-        244.72,
-        509.36,
-        239.96,
-        55.489999999999995,
-        168.5,
-        99.36,
-        325.85,
-        54.95,
-        47.43
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00
       ],
       constructionType: "New Construction"),
   OuterWallModel(
@@ -20728,21 +19788,21 @@ final norwExteriorWallData = [
         19.93
       ],
       totalPrice: [
-        698.47,
-        182.62,
-        114.18,
-        6.82,
-        22.11,
-        6.66,
-        244.72,
-        509.36,
-        239.96,
-        55.489999999999995,
-        168.5,
-        99.36,
-        360.84000000000003,
-        54.95,
-        47.43
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00
       ],
       constructionType: "New Construction"),
   OuterWallModel(
@@ -20848,18 +19908,18 @@ final norwExteriorWallData = [
         19.93
       ],
       totalPrice: [
-        475.15999999999997,
-        182.8,
-        114.18,
-        6.82,
-        22.490000000000002,
-        6.71,
-        245.01,
-        642.5899999999999,
-        310.36,
-        56.05,
-        184.78,
-        47.43
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00
       ],
       constructionType: "New Construction"),
   OuterWallModel(
@@ -20972,19 +20032,19 @@ final norwExteriorWallData = [
         19.93
       ],
       totalPrice: [
-        475.15999999999997,
-        182.8,
-        114.18,
-        6.82,
-        22.490000000000002,
-        6.71,
-        245.01,
-        642.5899999999999,
-        310.36,
-        56.05,
-        608.3299999999999,
-        54.95,
-        47.43
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00
       ],
       constructionType: "New Construction"),
   OuterWallModel(
@@ -21097,19 +20157,19 @@ final norwExteriorWallData = [
         19.93
       ],
       totalPrice: [
-        475.15999999999997,
-        182.8,
-        114.18,
-        6.82,
-        22.490000000000002,
-        1.21,
-        245.01,
-        642.5899999999999,
-        310.36,
-        56.05,
-        325.85,
-        54.95,
-        47.43
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00
       ],
       constructionType: "New Construction"),
   OuterWallModel(
@@ -21222,19 +20282,19 @@ final norwExteriorWallData = [
         19.93
       ],
       totalPrice: [
-        475.15999999999997,
-        182.8,
-        114.18,
-        6.82,
-        22.490000000000002,
-        6.71,
-        245.01,
-        642.5899999999999,
-        310.36,
-        56.05,
-        360.84000000000003,
-        54.95,
-        47.43
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00
       ],
       constructionType: "New Construction"),
   OuterWallModel(
@@ -21354,20 +20414,20 @@ final norwExteriorWallData = [
         19.93
       ],
       totalPrice: [
-        698.47,
-        182.8,
-        107.36000000000001,
-        11.1,
-        22.490000000000002,
-        6.71,
-        201.36,
-        509.36,
-        239.82,
-        260.7,
-        168.56,
-        113.68,
-        442.99,
-        47.43
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00
       ],
       constructionType: "New Construction"),
   OuterWallModel(
@@ -21480,19 +20540,19 @@ final norwExteriorWallData = [
         19.93
       ],
       totalPrice: [
-        916.49,
-        107.36000000000001,
-        11.1,
-        22.490000000000002,
-        6.71,
-        201.36,
-        509.36,
-        239.82,
-        260.7,
-        168.56,
-        113.68,
-        442.99,
-        47.43
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00
       ],
       constructionType: "New Construction"),
   OuterWallModel(
@@ -21612,20 +20672,20 @@ final norwExteriorWallData = [
         19.93
       ],
       totalPrice: [
-        1210.01,
-        107.36000000000001,
-        11.1,
-        22.490000000000002,
-        6.71,
-        177.15,
-        326.72,
-        219.55,
-        239.82,
-        20.189999999999998,
-        50.07,
-        483.26,
-        54.95,
-        47.43
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00
       ],
       constructionType: "New Construction"),
   OuterWallModel(
@@ -21745,20 +20805,20 @@ final norwExteriorWallData = [
         19.93
       ],
       totalPrice: [
-        1210.01,
-        107.36000000000001,
-        11.1,
-        22.490000000000002,
-        6.71,
-        177.15,
-        326.72,
-        219.55,
-        239.82,
-        20.189999999999998,
-        722.12,
-        50.07,
-        54.95,
-        47.43
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00
       ],
       constructionType: "New Construction"),
   OuterWallModel(
@@ -21871,19 +20931,19 @@ final norwExteriorWallData = [
         5176.43
       ],
       totalPrice: [
-        698.47,
-        182.8,
-        107.36000000000001,
-        11.1,
-        22.490000000000002,
-        6.71,
-        201.36,
-        509.36,
-        239.82,
-        260.7,
-        168.56,
-        113.68,
-        5346.93
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00
       ],
       constructionType: "New Construction"),
   OuterWallModel(
@@ -21996,19 +21056,19 @@ final norwExteriorWallData = [
         1263.59
       ],
       totalPrice: [
-        698.47,
-        182.8,
-        107.36000000000001,
-        11.1,
-        22.490000000000002,
-        6.71,
-        201.36,
-        509.36,
-        239.82,
-        260.7,
-        168.56,
-        113.68,
-        1461.59
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00
       ],
       constructionType: "New Construction"),
   OuterWallModel(
@@ -22028,7 +21088,7 @@ final norwExteriorWallData = [
       laborCost: [236.5, 104.5, 33, 11, 88, 159.5],
       material: [187.7, 59.82, 67.27, 11.49, 129.79, 116.01],
       materials: [187.7, 59.82, 67.27, 11.49, 129.79, 116.01],
-      totalPrice: [424.2, 164.32, 100.27, 22.490000000000002, 217.79, 275.51],
+      totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   OuterWallModel(
       name:
@@ -22048,7 +21108,7 @@ final norwExteriorWallData = [
       laborCost: [143, 33, 5.5, 11, 88, 159.5],
       material: [305.99, 67.27, 1.32, 11.49, 129.79, 116.01],
       materials: [305.99, 67.27, 1.32, 11.49, 129.79, 116.01],
-      totalPrice: [448.99, 100.27, 6.82, 22.490000000000002, 217.79, 275.51],
+      totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   OuterWallModel(
       name: "Tømmermannspanel, gran rektangulær  19x148mm.",
@@ -22060,7 +21120,7 @@ final norwExteriorWallData = [
       laborCost: [264],
       material: [212.06],
       materials: [212.06],
-      totalPrice: [476.06],
+      totalPrice: [0.00],
       constructionType: "New Construction"),
   OuterWallModel(
       name: "Stående panel med dobbeltfals 19x148mm.",
@@ -22072,7 +21132,7 @@ final norwExteriorWallData = [
       laborCost: [170.5],
       material: [424.03],
       materials: [424.03],
-      totalPrice: [594.53],
+      totalPrice: [0.00],
       constructionType: "New Construction"),
   OuterWallModel(
       name: "Liggende, utvendig 19x148mm grunnet panel med dobbelfals.",
@@ -22086,7 +21146,7 @@ final norwExteriorWallData = [
       laborCost: [159.5],
       material: [345.24],
       materials: [345.24],
-      totalPrice: [504.74],
+      totalPrice: [0.00],
       constructionType: "New Construction"),
   OuterWallModel(
       name: "Liggende, utvendig 21x120mm., dobbelfalset, Superwood malt.",
@@ -22100,7 +21160,7 @@ final norwExteriorWallData = [
       laborCost: [143],
       material: [3089.93],
       materials: [3089.93],
-      totalPrice: [3232.93],
+      totalPrice: [0.00],
       constructionType: "New Construction"),
   OuterWallModel(
       name: "Stående, utvendig 21x120mm., dobbelfalset, Superwood malt.",
@@ -22114,7 +21174,7 @@ final norwExteriorWallData = [
       laborCost: [214.5],
       material: [2962.41],
       materials: [2962.41],
-      totalPrice: [3176.91],
+      totalPrice: [0.00],
       constructionType: "New Construction"),
   OuterWallModel(
       name: "Fasadeplate  \"Aquapanel \"(900x2400mm.).",
@@ -22126,7 +21186,7 @@ final norwExteriorWallData = [
       laborCost: [143],
       material: [657.06],
       materials: [657.06],
-      totalPrice: [800.06],
+      totalPrice: [0.00],
       constructionType: "New Construction"),
   OuterWallModel(
       name: "Profilert stålplate.  Tak-veggplater stål 20-105 PL70.",
@@ -22138,7 +21198,7 @@ final norwExteriorWallData = [
       laborCost: [82.5],
       material: [242.36],
       materials: [242.36],
-      totalPrice: [324.86],
+      totalPrice: [0.00],
       constructionType: "New Construction"),
   OuterWallModel(
       name: "Villmarkspanel høvlet, utvendig liggende 25x225mm.",
@@ -22150,7 +21210,7 @@ final norwExteriorWallData = [
       laborCost: [159.5],
       material: [1232.49],
       materials: [1232.49],
-      totalPrice: [1391.99],
+      totalPrice: [0.00],
       constructionType: "New Construction"),
   OuterWallModel(
       name: "Villmarkspanel høvlet, utvendig liggende 25x225mm.",
@@ -22162,7 +21222,7 @@ final norwExteriorWallData = [
       laborCost: [159.5],
       material: [1232.49],
       materials: [1232.49],
-      totalPrice: [1391.99],
+      totalPrice: [0.00],
       constructionType: "New Construction"),
   OuterWallModel(
       name: "Fasadeplate \"Steniplater Nature\" 8mm.",
@@ -22174,7 +21234,7 @@ final norwExteriorWallData = [
       laborCost: [159.5],
       material: [795.05],
       materials: [795.05],
-      totalPrice: [954.55],
+      totalPrice: [0.00],
       constructionType: "New Construction"),
   OuterWallModel(
       name: "Stående utvendig 19x148mm., dobbelfalset, Royal panel.",
@@ -22186,7 +21246,7 @@ final norwExteriorWallData = [
       laborCost: [209],
       material: [489.47],
       materials: [489.47],
-      totalPrice: [698.47],
+      totalPrice: [0.00],
       constructionType: "New Construction"),
   OuterWallModel(
       name: "Liggende, utvendig 21x148mm., impregnert furu Kebony panel.",
@@ -22200,7 +21260,7 @@ final norwExteriorWallData = [
       laborCost: [159.5],
       material: [1050.51],
       materials: [1050.51],
-      totalPrice: [1210.01],
+      totalPrice: [0.00],
       constructionType: "New Construction"),
   OuterWallModel(
       name: "Enkelt bindingsverk heltre, uten spikerslag. Gran 48x198mm.",
@@ -22214,7 +21274,7 @@ final norwExteriorWallData = [
       laborCost: [159.5],
       material: [225.67],
       materials: [225.67],
-      totalPrice: [385.16999999999996],
+      totalPrice: [0.00],
       constructionType: "New Construction"),
   OuterWallModel(
       name:
@@ -22229,7 +21289,7 @@ final norwExteriorWallData = [
       laborCost: [55],
       material: [185.96],
       materials: [185.96],
-      totalPrice: [240.96],
+      totalPrice: [0.00],
       constructionType: "New Construction"),
   OuterWallModel(
       name: "Diffusjons tetting,  plast 0,20mm.",
@@ -22241,7 +21301,7 @@ final norwExteriorWallData = [
       laborCost: [27.5],
       material: [28.99],
       materials: [28.99],
-      totalPrice: [56.489999999999995],
+      totalPrice: [0.00],
       constructionType: "New Construction"),
   OuterWallModel(
       name: "Utlekting for innvendig. kledning c/c 600mm. Lekt, gran 48x48mm.",
@@ -22255,7 +21315,7 @@ final norwExteriorWallData = [
       laborCost: [104.5],
       material: [65],
       materials: [65],
-      totalPrice: [169.5],
+      totalPrice: [0.00],
       constructionType: "New Construction"),
   OuterWallModel(
       name:
@@ -22270,7 +21330,7 @@ final norwExteriorWallData = [
       laborCost: [49.5],
       material: [50.86],
       materials: [50.86],
-      totalPrice: [100.36],
+      totalPrice: [0.00],
       constructionType: "New Construction"),
   OuterWallModel(
       name: "Skyggepanel 14x120 skrå kant hvit, Stående.",
@@ -22282,7 +21342,7 @@ final norwExteriorWallData = [
       laborCost: [148.5],
       material: [506.21],
       materials: [506.21],
-      totalPrice: [654.71],
+      totalPrice: [0.00],
       constructionType: "New Construction"),
   OuterWallModel(
       name: "Skyggepanel 14x120 skrå kant hvit., liggende.",
@@ -22294,7 +21354,7 @@ final norwExteriorWallData = [
       laborCost: [0],
       material: [504.83],
       materials: [0],
-      totalPrice: [0],
+      totalPrice: [0.00],
       constructionType: "New Construction"),
   OuterWallModel(
       name: "Gipsplate innvendig kledning, 1 lag gips.",
@@ -22306,7 +21366,7 @@ final norwExteriorWallData = [
       laborCost: [115.5],
       material: [70.02],
       materials: [70.02],
-      totalPrice: [185.51999999999998],
+      totalPrice: [0.00],
       constructionType: "New Construction"),
   OuterWallModel(
       name: "Sponplate innvendig vegg Walls2Paint 12mm.",
@@ -22318,7 +21378,7 @@ final norwExteriorWallData = [
       laborCost: [143],
       material: [218.73],
       materials: [218.73],
-      totalPrice: [361.73],
+      totalPrice: [0.00],
       constructionType: "New Construction"),
   OuterWallModel(
       name: "MDF Tradisjonelt hvit 11x620x2390 Skyggepanel, 5 bord per plate.",
@@ -22332,7 +21392,7 @@ final norwExteriorWallData = [
       laborCost: [115.5],
       material: [211.35],
       materials: [211.35],
-      totalPrice: [326.85],
+      totalPrice: [0.00],
       constructionType: "New Construction"),
   OuterWallModel(
       name: "Gipsplate innvendig. Fermacell .",
@@ -22344,7 +21404,7 @@ final norwExteriorWallData = [
       laborCost: [198],
       material: [245.36],
       materials: [245.36],
-      totalPrice: [443.36],
+      totalPrice: [0.00],
       constructionType: "New Construction"),
   OuterWallModel(
       name: "Massivtre overlappende element (88x360x2400mm.), gran.",
@@ -22356,7 +21416,7 @@ final norwExteriorWallData = [
       laborCost: [0],
       material: [389.76],
       materials: [0],
-      totalPrice: [0],
+      totalPrice: [0.00],
       constructionType: "New Construction"),
   OuterWallModel(
       name: "Massivtre overlappende element (118x360x2400mm.), gran.",
@@ -22368,7 +21428,7 @@ final norwExteriorWallData = [
       laborCost: [0],
       material: [617.62],
       materials: [0],
-      totalPrice: [0],
+      totalPrice: [0.00],
       constructionType: "New Construction"),
   OuterWallModel(
       name: "Spilekledning av Eik (20x45x2400mm) ,lakkert, rund kant.",
@@ -22380,7 +21440,7 @@ final norwExteriorWallData = [
       laborCost: [0],
       material: [5176.43],
       materials: [0],
-      totalPrice: [0],
+      totalPrice: [0.00],
       constructionType: "New Construction"),
   OuterWallModel(
       name:
@@ -22395,7 +21455,7 @@ final norwExteriorWallData = [
       laborCost: [0],
       material: [1263.59],
       materials: [0],
-      totalPrice: [0],
+      totalPrice: [0.00],
       constructionType: "New Construction"),
   OuterWallModel(
       name: "Taklist furu 21x44 glatt hvitmalt.",
@@ -22407,7 +21467,7 @@ final norwExteriorWallData = [
       laborCost: [77.00000000000001],
       material: [54.14],
       materials: [54.14],
-      totalPrice: [131.14000000000001],
+      totalPrice: [0.00],
       constructionType: "New Construction"),
   OuterWallModel(
       name: "Gulvlist furu 12x58 glatt hvitmalt.",
@@ -22421,7 +21481,7 @@ final norwExteriorWallData = [
       laborCost: [66.00],
       material: [49.81],
       materials: [49.81],
-      totalPrice: [115.81],
+      totalPrice: [0.00],
       constructionType: "New Construction"),
   OuterWallModel(
     name: "Ny stående panel 19x123mm., bindingsverk 48x48mm., isolering 50mm.",
@@ -22440,7 +21500,7 @@ final norwExteriorWallData = [
     laborCost: [269.5, 104.5, 33, 88, 126.5, 49.5],
     material: [248.64, 59.66, 60.06, 129.53, 92.48, 49.86],
     materials: [248.64, 59.66, 60.06, 129.53, 92.48, 49.86],
-    totalPrice: [518.14, 164.16, 93.06, 217.53, 218.98, 99.36],
+    totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00],
     constructionType: "Reconstruction",
   ),
   OuterWallModel(
@@ -22460,7 +21520,7 @@ final norwExteriorWallData = [
     laborCost: [269.5, 104.5, 33, 88, 148.5, 49.5],
     material: [248.64, 59.66, 60.06, 129.53, 180.25, 67.2],
     materials: [248.64, 59.66, 60.06, 129.53, 180.25, 67.2],
-    totalPrice: [518.14, 164.16, 93.06, 217.53, 328.75, 116.7],
+    totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00],
     constructionType: "Reconstruction",
   ),
   OuterWallModel(
@@ -22480,7 +21540,7 @@ final norwExteriorWallData = [
     laborCost: [269.5, 104.5, 33, 88, 159.5, 49.5],
     material: [248.64, 59.66, 60.06, 129.53, 114.48, 95.36],
     materials: [248.64, 59.66, 60.06, 129.53, 114.48, 95.36],
-    totalPrice: [518.14, 164.16, 93.06, 217.53, 273.98, 144.86],
+    totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00],
     constructionType: "Reconstruction",
   ),
   OuterWallModel(
@@ -22500,7 +21560,7 @@ final norwExteriorWallData = [
     laborCost: [181.5, 104.5, 33, 88, 49.5, 148.5],
     material: [341.92, 59.66, 60.06, 129.53, 67.2, 180.25],
     materials: [341.92, 59.66, 60.06, 129.53, 67.2, 180.25],
-    totalPrice: [523.42, 164.16, 93.06, 217.53, 116.7, 328.75],
+    totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00],
     constructionType: "Reconstruction",
   ),
   OuterWallModel(
@@ -22520,7 +21580,7 @@ final norwExteriorWallData = [
     laborCost: [181.5, 104.5, 33, 88, 49.5, 159.5],
     material: [341.92, 59.66, 60.06, 129.53, 95.36, 114.48],
     materials: [341.92, 59.66, 60.06, 129.53, 95.36, 114.48],
-    totalPrice: [523.42, 164.16, 93.06, 217.53, 144.86, 273.98],
+    totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00],
     constructionType: "Reconstruction",
   ),
   OuterWallModel(
@@ -22554,17 +21614,7 @@ final norwExteriorWallData = [
       69.02,
       19.93
     ],
-    totalPrice: [
-      674.65,
-      145.55,
-      217.53,
-      99.36,
-      218.98,
-      149.85,
-      55.49,
-      184.52,
-      47.43
-    ],
+    totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00],
     constructionType: "Reconstruction",
   ),
   OuterWallModel(
@@ -22598,17 +21648,7 @@ final norwExteriorWallData = [
       69.02,
       19.93
     ],
-    totalPrice: [
-      674.65,
-      145.55,
-      217.53,
-      116.7,
-      328.75,
-      149.85,
-      55.49,
-      184.52,
-      47.43
-    ],
+    totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00],
     constructionType: "Reconstruction",
   ),
   OuterWallModel(
@@ -22652,17 +21692,7 @@ final norwExteriorWallData = [
       69.02,
       19.93
     ],
-    totalPrice: [
-      674.65,
-      145.55,
-      217.53,
-      144.86,
-      273.98,
-      55.49,
-      149.85,
-      184.52,
-      47.43
-    ],
+    totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00],
     constructionType: "Reconstruction",
   ),
   OuterWallModel(
@@ -22709,18 +21739,7 @@ final norwExteriorWallData = [
       20.91,
       19.93
     ],
-    totalPrice: [
-      674.65,
-      145.55,
-      217.53,
-      99.36,
-      218.98,
-      149.85,
-      55.49,
-      375.12,
-      53.91,
-      47.43
-    ],
+    totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00],
     constructionType: "Reconstruction",
   ),
   OuterWallModel(
@@ -22767,18 +21786,7 @@ final norwExteriorWallData = [
       20.91,
       19.93
     ],
-    totalPrice: [
-      674.65,
-      145.55,
-      217.53,
-      116.7,
-      328.75,
-      149.85,
-      55.49,
-      375.12,
-      53.91,
-      47.43
-    ],
+    totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00],
     constructionType: "Reconstruction",
   ),
   OuterWallModel(
@@ -22825,18 +21833,7 @@ final norwExteriorWallData = [
       20.91,
       19.93
     ],
-    totalPrice: [
-      674.65,
-      145.55,
-      217.53,
-      144.86,
-      273.98,
-      149.85,
-      55.49,
-      375.12,
-      53.91,
-      47.43
-    ],
+    totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00],
     constructionType: "Reconstruction",
   ),
   OuterWallModel(
@@ -22883,18 +21880,7 @@ final norwExteriorWallData = [
       20.91,
       19.93
     ],
-    totalPrice: [
-      674.65,
-      145.55,
-      217.53,
-      99.36,
-      218.98,
-      149.85,
-      55.49,
-      339.86,
-      53.91,
-      47.43
-    ],
+    totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00],
     constructionType: "Reconstruction",
   ),
   OuterWallModel(
@@ -22941,18 +21927,7 @@ final norwExteriorWallData = [
       20.91,
       19.93
     ],
-    totalPrice: [
-      674.65,
-      145.55,
-      217.53,
-      116.7,
-      328.75,
-      149.85,
-      55.49,
-      339.86,
-      53.91,
-      47.43
-    ],
+    totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00],
     constructionType: "Reconstruction",
   ),
   OuterWallModel(
@@ -22999,18 +21974,7 @@ final norwExteriorWallData = [
       20.91,
       19.93
     ],
-    totalPrice: [
-      674.65,
-      145.55,
-      217.53,
-      144.86,
-      273.98,
-      149.85,
-      55.49,
-      339.86,
-      53.91,
-      47.43
-    ],
+    totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00],
     constructionType: "Reconstruction",
   ),
   OuterWallModel(
@@ -23057,18 +22021,7 @@ final norwExteriorWallData = [
       20.91,
       19.93
     ],
-    totalPrice: [
-      674.65,
-      145.55,
-      217.53,
-      99.36,
-      218.98,
-      149.85,
-      55.49,
-      659.21,
-      53.91,
-      47.43
-    ],
+    totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00],
     constructionType: "Reconstruction",
   ),
   OuterWallModel(
@@ -23115,18 +22068,7 @@ final norwExteriorWallData = [
       20.91,
       19.93
     ],
-    totalPrice: [
-      674.65,
-      145.55,
-      217.53,
-      116.7,
-      328.75,
-      149.85,
-      55.49,
-      659.21,
-      53.91,
-      47.43
-    ],
+    totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00],
     constructionType: "Reconstruction",
   ),
   OuterWallModel(
@@ -23173,18 +22115,7 @@ final norwExteriorWallData = [
       20.91,
       19.93
     ],
-    totalPrice: [
-      674.65,
-      145.55,
-      217.53,
-      144.86,
-      273.98,
-      149.85,
-      55.49,
-      659.21,
-      53.91,
-      47.43
-    ],
+    totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00],
     constructionType: "Reconstruction",
   ),
   OuterWallModel(
@@ -23206,7 +22137,7 @@ final norwExteriorWallData = [
     laborCost: [104.5, 93.5, 49.5, 27.5, 181.5, 33, 27.5],
     material: [64, 52.68, 49.86, 27.99, 528.19, 20.91, 19.93],
     materials: [64, 52.68, 49.86, 27.99, 528.19, 20.91, 19.93],
-    totalPrice: [168.5, 146.18, 99.36, 55.49, 709.69, 53.91, 47.43],
+    totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00],
     constructionType: "Reconstruction",
   ),
   OuterWallModel(
@@ -23227,7 +22158,7 @@ final norwExteriorWallData = [
     laborCost: [104.5, 93.5, 49.5, 27.5, 148.5, 33, 27.5],
     material: [64, 52.68, 49.86, 27.99, 489.63, 20.91, 19.93],
     materials: [64, 52.68, 49.86, 27.99, 489.63, 20.91, 19.93],
-    totalPrice: [168.5, 146.18, 99.36, 55.49, 638.13, 53.91, 47.43],
+    totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00],
     constructionType: "Reconstruction",
   ),
   OuterWallModel(
@@ -23248,7 +22179,7 @@ final norwExteriorWallData = [
     laborCost: [104.5, 93.5, 49.5, 27.5, 148.5, 33, 27.5],
     material: [64, 52.68, 49.86, 27.99, 262.95, 20.91, 19.93],
     materials: [64, 52.68, 49.86, 27.99, 262.95, 20.91, 19.93],
-    totalPrice: [168.5, 146.18, 99.36, 55.49, 411.45, 53.91, 47.43],
+    totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00],
     constructionType: "Reconstruction",
   ),
   OuterWallModel(
@@ -23270,7 +22201,7 @@ final norwExteriorWallData = [
     laborCost: [104.5, 93.5, 49.5, 27.5, 165, 33, 27.5],
     material: [64, 52.68, 49.86, 27.99, 472.97, 20.91, 19.93],
     materials: [64, 52.68, 49.86, 27.99, 472.97, 20.91, 19.93],
-    totalPrice: [168.5, 146.18, 99.36, 55.49, 637.97, 53.91, 47.43],
+    totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00],
     constructionType: "Reconstruction",
   ),
   OuterWallModel(
@@ -23290,7 +22221,7 @@ final norwExteriorWallData = [
     laborCost: [104.5, 93.5, 49.5, 27.5, 115.5, 27.5],
     material: [64, 52.68, 49.86, 27.99, 69.02, 19.93],
     materials: [64, 52.68, 49.86, 27.99, 69.02, 19.93],
-    totalPrice: [168.5, 146.18, 99.36, 55.49, 184.52, 47.43],
+    totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00],
     constructionType: "Reconstruction",
   ),
   OuterWallModel(
@@ -23311,7 +22242,7 @@ final norwExteriorWallData = [
     laborCost: [104.5, 93.5, 49.5, 27.5, 88, 33, 27.5],
     material: [64, 52.68, 49.86, 27.99, 287.12, 20.91, 19.93],
     materials: [64, 52.68, 49.86, 27.99, 287.12, 20.91, 19.93],
-    totalPrice: [168.5, 146.18, 99.36, 55.49, 375.12, 53.91, 47.43],
+    totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00],
     constructionType: "Reconstruction",
   ),
   OuterWallModel(
@@ -23332,7 +22263,7 @@ final norwExteriorWallData = [
     laborCost: [104.5, 93.5, 49.5, 27.5, 143, 33, 27.5],
     material: [64, 52.68, 49.86, 27.99, 196.86, 20.91, 19.93],
     materials: [64, 52.68, 49.86, 27.99, 196.86, 20.91, 19.93],
-    totalPrice: [168.5, 146.18, 99.36, 55.49, 339.86, 53.91, 47.43],
+    totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00],
     constructionType: "Reconstruction",
   ),
   OuterWallModel(
@@ -23352,7 +22283,7 @@ final norwExteriorWallData = [
     laborCost: [104.5, 93.5, 49.5, 27.5, 176, 27.5],
     material: [64, 52.68, 49.86, 27.99, 138.07, 19.93],
     materials: [64, 52.68, 49.86, 27.99, 138.07, 19.93],
-    totalPrice: [168.5, 146.18, 99.36, 55.49, 314.07, 47.43],
+    totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00],
     constructionType: "Reconstruction",
   ),
   OuterWallModel(
@@ -23399,18 +22330,7 @@ final norwExteriorWallData = [
       69.02,
       19.93
     ],
-    totalPrice: [
-      846.35,
-      145.18,
-      186.28,
-      116.7,
-      350.75,
-      328.75,
-      99.36,
-      55.49,
-      184.52,
-      47.43
-    ],
+    totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00],
     constructionType: "Reconstruction",
   ),
   OuterWallModel(
@@ -23457,18 +22377,7 @@ final norwExteriorWallData = [
       69.02,
       19.93
     ],
-    totalPrice: [
-      445.76,
-      145.18,
-      186.28,
-      116.7,
-      350.75,
-      328.75,
-      99.36,
-      55.49,
-      184.52,
-      47.43
-    ],
+    totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00],
     constructionType: "Reconstruction",
   ),
   OuterWallModel(
@@ -23504,7 +22413,7 @@ final norwExteriorWallData = [
       19.93
     ],
     materials: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    totalPrice: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00],
     constructionType: "Reconstruction",
   ),
   OuterWallModel(
@@ -23523,7 +22432,7 @@ final norwExteriorWallData = [
     laborCost: [269.5, 297, 236.5, 220, 352],
     material: [0, 0, 0, 0, 0],
     materials: [0, 0, 0, 0, 0],
-    totalPrice: [269.5, 297, 236.5, 220, 352],
+    totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00],
     constructionType: "Demolition",
   ),
   OuterWallModel(
@@ -23542,7 +22451,7 @@ final norwExteriorWallData = [
     laborCost: [143, 214.5, 170.5, 159.5, 352],
     material: [0, 0, 0, 0, 0],
     materials: [0, 0, 0, 0, 0],
-    totalPrice: [143, 214.5, 170.5, 159.5, 352],
+    totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00],
     constructionType: "Demolition",
   ),
   OuterWallModel(
@@ -23562,7 +22471,7 @@ final norwExteriorWallData = [
     laborCost: [82.5, 82.5, 27.5, 27.5, 143, 335.5],
     material: [0, 0, 0, 0, 0, 0],
     materials: [0, 0, 0, 0, 0, 0],
-    totalPrice: [82.5, 82.5, 27.5, 27.5, 143, 335.5],
+    totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00],
     constructionType: "Demolition",
   ),
   OuterWallModel(
@@ -23582,7 +22491,7 @@ final norwExteriorWallData = [
     laborCost: [82.5, 82.5, 27.5, 27.5, 181.5, 335.5],
     material: [0, 0, 0, 0, 0, 0],
     materials: [0, 0, 0, 0, 0, 0],
-    totalPrice: [82.5, 82.5, 27.5, 27.5, 181.5, 335.5],
+    totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00],
     constructionType: "Demolition",
   ),
   OuterWallModel(
@@ -23603,7 +22512,7 @@ final norwExteriorWallData = [
     laborCost: [82.5, 82.5, 27.5, 27.5, 198, 335.5],
     material: [0, 0, 0, 0, 0, 0],
     materials: [0, 0, 0, 0, 0, 0],
-    totalPrice: [82.5, 82.5, 27.5, 27.5, 198, 335.5],
+    totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00],
     constructionType: "Demolition",
   ),
   OuterWallModel(
@@ -23622,7 +22531,7 @@ final norwExteriorWallData = [
     laborCost: [484, 82.5, 27.5, 143, 335.5],
     material: [0, 0, 0, 0, 0],
     materials: [0, 0, 0, 0, 0],
-    totalPrice: [484, 82.5, 27.5, 143, 335.5],
+    totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00],
     constructionType: "Demolition",
   ),
   OuterWallModel(
@@ -23641,7 +22550,7 @@ final norwExteriorWallData = [
     laborCost: [484, 82.5, 27.5, 181.5, 335.5],
     material: [0, 0, 0, 0, 0],
     materials: [0, 0, 0, 0, 0],
-    totalPrice: [484, 82.5, 27.5, 181.5, 335.5],
+    totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00],
     constructionType: "Demolition",
   ),
   OuterWallModel(
@@ -23661,7 +22570,7 @@ final norwExteriorWallData = [
     laborCost: [478.5, 77, 22, 192.5, 330],
     material: [0, 0, 0, 0, 0],
     materials: [0, 0, 0, 0, 0],
-    totalPrice: [478.5, 77, 22, 192.5, 330],
+    totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00],
     constructionType: "Demolition",
   ),
   OuterWallModel(
@@ -23677,7 +22586,7 @@ final norwExteriorWallData = [
     laborCost: [104.5, 451],
     material: [0, 0],
     materials: [0, 0],
-    totalPrice: [104.5, 451],
+    totalPrice: [0.00, 0.00],
     constructionType: "Demolition",
   ),
 ];
@@ -23773,18 +22682,18 @@ final norwOuterRoofData = [
         67.76
       ],
       totalPrice: [
-        391.9,
-        157.83,
-        105.55,
-        271.58,
-        407.96,
-        170.51,
-        89.21,
-        452.15,
-        377.3,
-        60.99,
-        176.2,
-        221.76
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00
       ],
       constructionType: "New Construction"),
   OuterRoofModel(
@@ -23831,18 +22740,7 @@ final norwOuterRoofData = [
         49.7,
         468.89
       ],
-      totalPrice: [
-        716.43,
-        157.83,
-        105.55,
-        185.82,
-        89.21,
-        452.15,
-        377.3,
-        60.99,
-        176.2,
-        617.39
-      ],
+      totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   OuterRoofModel(
       name:
@@ -23934,18 +22832,18 @@ final norwOuterRoofData = [
         67.76
       ],
       totalPrice: [
-        412.15,
-        157.83,
-        100.05,
-        271.58,
-        407.96,
-        170.51,
-        89.21,
-        452.15,
-        377.3,
-        60.99,
-        176.2,
-        221.76
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00
       ],
       constructionType: "New Construction"),
   OuterRoofModel(
@@ -23992,18 +22890,7 @@ final norwOuterRoofData = [
         49.7,
         67.76
       ],
-      totalPrice: [
-        288.83,
-        157.83,
-        105.55,
-        89.21,
-        185.82,
-        452.15,
-        377.3,
-        60.99,
-        176.2,
-        221.76
-      ],
+      totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   OuterRoofModel(
       name:
@@ -24046,17 +22933,7 @@ final norwOuterRoofData = [
         27.99,
         67.76
       ],
-      totalPrice: [
-        550.02,
-        510.99,
-        170.51,
-        252.7,
-        452.15,
-        377.3,
-        176.2,
-        60.99,
-        221.76
-      ],
+      totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   OuterRoofModel(
       name:
@@ -24099,17 +22976,7 @@ final norwOuterRoofData = [
         27.99,
         156.25
       ],
-      totalPrice: [
-        550.02,
-        510.99,
-        170.51,
-        252.7,
-        452.15,
-        377.3,
-        176.2,
-        60.99,
-        365.25
-      ],
+      totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   OuterRoofModel(
       name:
@@ -24152,17 +23019,7 @@ final norwOuterRoofData = [
         27.99,
         205.78
       ],
-      totalPrice: [
-        550.02,
-        510.99,
-        170.51,
-        252.7,
-        452.15,
-        377.3,
-        176.2,
-        60.99,
-        310.28
-      ],
+      totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   OuterRoofModel(
       name: "Montering sperretak av I-bjelker 70x300mm., shingel, gips 1 lag.",
@@ -24235,17 +23092,17 @@ final norwOuterRoofData = [
         67.76
       ],
       totalPrice: [
-        111.48,
-        101.83,
-        305.64,
-        680.98,
-        170.51,
-        252.7,
-        452.15,
-        377.3,
-        54.65,
-        176.2,
-        221.76
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00
       ],
       constructionType: "New Construction"),
   OuterRoofModel(
@@ -24320,17 +23177,17 @@ final norwOuterRoofData = [
         505.21
       ],
       totalPrice: [
-        111.48,
-        101.83,
-        305.64,
-        680.98,
-        170.51,
-        252.7,
-        446.65,
-        377.3,
-        54.65,
-        176.2,
-        653.71
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00
       ],
       constructionType: "New Construction"),
   OuterRoofModel(
@@ -24436,18 +23293,18 @@ final norwOuterRoofData = [
         505.21
       ],
       totalPrice: [
-        1185.01,
-        125.15,
-        67.08,
-        122.02,
-        569.83,
-        197.58,
-        252.7,
-        452.15,
-        377.3,
-        54.65,
-        176.2,
-        653.71
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00
       ],
       constructionType: "New Construction"),
   OuterRoofModel(
@@ -24491,17 +23348,7 @@ final norwOuterRoofData = [
         49.7,
         67.76
       ],
-      totalPrice: [
-        436.24,
-        510.99,
-        170.51,
-        252.7,
-        452.15,
-        377.3,
-        60.99,
-        176.2,
-        221.76
-      ],
+      totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   OuterRoofModel(
       name:
@@ -24544,17 +23391,7 @@ final norwOuterRoofData = [
         49.7,
         156.25
       ],
-      totalPrice: [
-        436.24,
-        510.99,
-        170.51,
-        252.7,
-        452.15,
-        377.3,
-        60.99,
-        176.2,
-        365.25
-      ],
+      totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   OuterRoofModel(
       name:
@@ -24666,19 +23503,19 @@ final norwOuterRoofData = [
         67.76
       ],
       totalPrice: [
-        391.9,
-        157.83,
-        79.97,
-        130.64,
-        232.02,
-        170.51,
-        89.21,
-        308.56,
-        245.46,
-        60.99,
-        235.48,
-        155.86,
-        221.76
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00
       ],
       constructionType: "New Construction"),
   OuterRoofModel(
@@ -24791,19 +23628,19 @@ final norwOuterRoofData = [
         67.76
       ],
       totalPrice: [
-        716.43,
-        157.83,
-        79.97,
-        130.64,
-        232.02,
-        170.51,
-        89.21,
-        308.56,
-        245.46,
-        60.99,
-        235.48,
-        155.86,
-        221.76
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00
       ],
       constructionType: "New Construction"),
   OuterRoofModel(
@@ -24916,19 +23753,19 @@ final norwOuterRoofData = [
         67.76
       ],
       totalPrice: [
-        412.15,
-        157.83,
-        79.97,
-        130.64,
-        232.02,
-        170.51,
-        89.21,
-        308.56,
-        245.46,
-        60.99,
-        235.48,
-        155.86,
-        221.76
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00
       ],
       constructionType: "New Construction"),
   OuterRoofModel(
@@ -25041,19 +23878,19 @@ final norwOuterRoofData = [
         67.76
       ],
       totalPrice: [
-        288.83,
-        157.83,
-        79.97,
-        130.64,
-        232.02,
-        170.51,
-        89.21,
-        308.56,
-        245.46,
-        60.99,
-        235.48,
-        155.86,
-        221.76
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00
       ],
       constructionType: "New Construction"),
   OuterRoofModel(
@@ -25159,18 +23996,18 @@ final norwOuterRoofData = [
         505.21
       ],
       totalPrice: [
-        1026.12,
-        125.26,
-        68.23,
-        122.02,
-        621.8,
-        198.78,
-        253.11,
-        483.51,
-        991.5,
-        55.21,
-        176.77,
-        659.21
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00
       ],
       constructionType: "New Construction"),
   OuterRoofModel(
@@ -25276,18 +24113,18 @@ final norwOuterRoofData = [
         505.21
       ],
       totalPrice: [
-        1089.58,
-        125.26,
-        68.23,
-        122.02,
-        621.8,
-        198.78,
-        253.11,
-        483.51,
-        991.5,
-        55.21,
-        176.77,
-        659.21
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00
       ],
       constructionType: "New Construction"),
   OuterRoofModel(
@@ -25331,17 +24168,7 @@ final norwOuterRoofData = [
         38.27,
         389.01
       ],
-      totalPrice: [
-        933.56,
-        19.58,
-        510.99,
-        197.58,
-        452.15,
-        339.28,
-        49.67,
-        164.77,
-        537.51
-      ],
+      totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   OuterRoofModel(
       name:
@@ -25361,7 +24188,7 @@ final norwOuterRoofData = [
       laborCost: [115.5, 77, 33, 44, 143, 11],
       material: [600.93, 60.9, 72.55, 208.7, 165.56, 5.25],
       materials: [600.93, 60.9, 72.55, 208.7, 165.56, 5.25],
-      totalPrice: [716.43, 137.9, 105.55, 252.7, 308.56, 16.25],
+      totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   OuterRoofModel(
       name:
@@ -25381,7 +24208,7 @@ final norwOuterRoofData = [
       laborCost: [143, 77, 33, 44, 143, 11],
       material: [269.15, 60.9, 72.55, 208.7, 165.56, 5.25],
       materials: [269.15, 60.9, 72.55, 208.7, 165.56, 5.25],
-      totalPrice: [412.15, 137.9, 105.55, 252.7, 308.56, 16.25],
+      totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   OuterRoofModel(
       name:
@@ -25401,7 +24228,7 @@ final norwOuterRoofData = [
       laborCost: [143, 77, 33, 44, 143, 11],
       material: [145.83, 60.9, 72.55, 208.7, 165.56, 5.25],
       materials: [145.83, 60.9, 72.55, 208.7, 165.56, 5.25],
-      totalPrice: [288.83, 137.9, 105.55, 252.7, 308.56, 16.25],
+      totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   OuterRoofModel(
       name: "Montering sperretak av heltre 48x198mm., uisolert, Skarpnes rød.",
@@ -25420,7 +24247,7 @@ final norwOuterRoofData = [
       laborCost: [143, 77, 33, 44, 143, 11],
       material: [141.15, 60.9, 72.55, 208.7, 165.56, 5.25],
       materials: [141.15, 60.9, 72.55, 208.7, 165.56, 5.25],
-      totalPrice: [284.15, 137.9, 105.55, 252.7, 308.56, 16.25],
+      totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   OuterRoofModel(
       name:
@@ -25525,18 +24352,18 @@ final norwOuterRoofData = [
         67.76
       ],
       totalPrice: [
-        550.02,
-        510.99,
-        170.51,
-        252.7,
-        27.54,
-        308.56,
-        245.46,
-        235.48,
-        155.86,
-        60.99,
-        176.2,
-        221.76
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00
       ],
       constructionType: "New Construction"),
   OuterRoofModel(
@@ -25642,18 +24469,18 @@ final norwOuterRoofData = [
         156.25
       ],
       totalPrice: [
-        550.02,
-        510.99,
-        170.51,
-        252.7,
-        27.54,
-        308.56,
-        245.46,
-        235.48,
-        155.86,
-        60.99,
-        176.2,
-        365.25
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00
       ],
       constructionType: "New Construction"),
   OuterRoofModel(
@@ -25759,18 +24586,18 @@ final norwOuterRoofData = [
         264.98
       ],
       totalPrice: [
-        550.02,
-        510.99,
-        170.51,
-        252.7,
-        27.54,
-        308.56,
-        245.46,
-        235.48,
-        155.86,
-        60.99,
-        176.2,
-        418.98
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00
       ],
       constructionType: "New Construction"),
   OuterRoofModel(
@@ -25876,18 +24703,18 @@ final norwOuterRoofData = [
         205.78
       ],
       totalPrice: [
-        550.02,
-        510.99,
-        170.51,
-        252.7,
-        27.54,
-        308.56,
-        245.46,
-        235.48,
-        155.86,
-        60.99,
-        176.2,
-        310.28
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00
       ],
       constructionType: "New Construction"),
   OuterRoofModel(
@@ -25906,7 +24733,7 @@ final norwOuterRoofData = [
       laborCost: [115.5, 88, 143, 11],
       material: [434.52, 592.98, 165.56, 5.25],
       materials: [434.52, 592.98, 165.56, 5.25],
-      totalPrice: [550.02, 680.98, 308.56, 16.25],
+      totalPrice: [0.00, 0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   OuterRoofModel(
       name:
@@ -25924,7 +24751,7 @@ final norwOuterRoofData = [
       laborCost: [115.5, 143, 11, 93.5],
       material: [434.52, 165.56, 5.25, 524.89],
       materials: [434.52, 165.56, 5.25, 524.89],
-      totalPrice: [550.02, 308.56, 16.25, 618.39],
+      totalPrice: [0.00, 0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   OuterRoofModel(
       name: "Montering sperretak av heltre 48x198, shingel, gips 1 lag.",
@@ -26015,18 +24842,18 @@ final norwOuterRoofData = [
         67.76
       ],
       totalPrice: [
-        111.48,
-        101.83,
-        305.64,
-        680.98,
-        170.51,
-        252.7,
-        308.56,
-        274.9,
-        235.48,
-        155.86,
-        54.65,
-        221.76
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00
       ],
       constructionType: "New Construction"),
   OuterRoofModel(
@@ -26119,18 +24946,18 @@ final norwOuterRoofData = [
         505.21
       ],
       totalPrice: [
-        111.48,
-        101.83,
-        305.64,
-        680.98,
-        170.51,
-        252.7,
-        308.56,
-        274.9,
-        235.48,
-        155.86,
-        54.65,
-        653.71
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00,
+        0.00
       ],
       constructionType: "New Construction"),
   OuterRoofModel(
@@ -26149,7 +24976,7 @@ final norwOuterRoofData = [
       laborCost: [33, 22, 60.5, 88, 71.5],
       material: [78.48, 79.83, 239.64, 592.98, 377.11],
       materials: [78.48, 79.83, 239.64, 592.98, 377.11],
-      totalPrice: [111.48, 101.83, 300.14, 680.98, 448.61],
+      totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   OuterRoofModel(
       name: "Takstol, W, 8m, 350kg/m², shingel, finèr 18mm.",
@@ -26167,7 +24994,7 @@ final norwOuterRoofData = [
       laborCost: [33, 16.5, 60.5, 88, 93.5],
       material: [78.48, 79.83, 239.64, 592.98, 313.82],
       materials: [78.48, 79.83, 239.64, 592.98, 313.82],
-      totalPrice: [111.48, 96.33, 300.14, 680.98, 407.32],
+      totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   OuterRoofModel(
       name: "Takstol, W, 8m, 350kg/m², shingel, rupanel.",
@@ -26185,7 +25012,7 @@ final norwOuterRoofData = [
       laborCost: [33, 22, 66, 93.5, 93.5],
       material: [78.48, 79.83, 239.64, 524.89, 313.82],
       materials: [78.48, 79.83, 239.64, 524.89, 313.82],
-      totalPrice: [111.48, 101.83, 305.64, 618.39, 407.32],
+      totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   OuterRoofModel(
       name: "Takstol, A, 10m, forenklet undertak, Zanda sort.",
@@ -26203,7 +25030,7 @@ final norwOuterRoofData = [
       laborCost: [143, 77, 33, 44, 88],
       material: [269.15, 60.9, 33.47, 208.7, 311.07],
       materials: [269.15, 60.9, 33.47, 208.7, 311.07],
-      totalPrice: [412.15, 137.9, 66.47, 252.7, 399.07],
+      totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   OuterRoofModel(
       name: "Takstol, A, 10m, forenklet undertak, Benders sort .",
@@ -26221,7 +25048,7 @@ final norwOuterRoofData = [
       laborCost: [143, 77, 33, 44, 88],
       material: [145.83, 60.9, 33.47, 208.7, 311.07],
       materials: [145.83, 60.9, 33.47, 208.7, 311.07],
-      totalPrice: [288.83, 137.9, 66.47, 252.7, 399.07],
+      totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   OuterRoofModel(
       name: "Takstol, A, 10m, forenklet undertak, Skarpnes rød.",
@@ -26239,7 +25066,7 @@ final norwOuterRoofData = [
       laborCost: [143, 77, 33, 44, 88],
       material: [141.15, 60.9, 33.47, 208.7, 311.07],
       materials: [141.15, 60.9, 33.47, 208.7, 311.07],
-      totalPrice: [284.15, 137.9, 66.47, 252.7, 399.07],
+      totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   OuterRoofModel(
       name: "Takstol, A, 10m, forenklet undertak, Decra.",
@@ -26257,7 +25084,7 @@ final norwOuterRoofData = [
       laborCost: [115.5, 77, 33, 44, 88],
       material: [600.93, 60.9, 33.47, 208.7, 311.07],
       materials: [600.93, 60.9, 33.47, 208.7, 311.07],
-      totalPrice: [716.43, 137.9, 66.47, 252.7, 399.07],
+      totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   OuterRoofModel(
       name: "Takstol, W, 8m, 350kg/m², Decra",
@@ -26275,7 +25102,7 @@ final norwOuterRoofData = [
       laborCost: [115.5, 77, 33, 33, 93.5],
       material: [600.93, 60.9, 38.27, 80.29, 313.82],
       materials: [600.93, 60.9, 38.27, 80.29, 313.82],
-      totalPrice: [716.43, 137.9, 71.27, 113.29, 407.32],
+      totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   OuterRoofModel(
       name: "Takstol, W, 8m, 350kg/m², Zanda sort.",
@@ -26293,7 +25120,7 @@ final norwOuterRoofData = [
       laborCost: [143, 77, 33, 33, 93.5],
       material: [269.15, 60.9, 38.27, 80.29, 313.82],
       materials: [269.15, 60.9, 38.27, 80.29, 313.82],
-      totalPrice: [412.15, 137.9, 71.27, 113.29, 407.32],
+      totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   OuterRoofModel(
       name: "Takstol, W, 8m, 350kg/m², Benders sort.",
@@ -26311,7 +25138,7 @@ final norwOuterRoofData = [
       laborCost: [143, 77, 33, 33, 93.5],
       material: [145.83, 60.9, 38.27, 80.29, 313.82],
       materials: [145.83, 60.9, 38.27, 80.29, 313.82],
-      totalPrice: [288.83, 137.9, 71.27, 113.29, 407.32],
+      totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   OuterRoofModel(
       name: "Takstol, W, 8m, 350kg/m², Skarpnes rød.",
@@ -26329,7 +25156,7 @@ final norwOuterRoofData = [
       laborCost: [143, 77, 33, 33, 93.5],
       material: [141.15, 60.9, 38.27, 80.29, 313.82],
       materials: [141.15, 60.9, 38.27, 80.29, 313.82],
-      totalPrice: [284.15, 137.9, 71.27, 113.29, 407.32],
+      totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   OuterRoofModel(
       name: "Mønepanner 48x98mm. glassert KDN.",
@@ -26346,7 +25173,7 @@ final norwOuterRoofData = [
       laborCost: [33, 27.5, 27.5, 88],
       material: [557.45, 66.98, 416.84, 36.82],
       materials: [557.45, 66.98, 416.84, 36.82],
-      totalPrice: [590.45, 94.48, 444.34, 124.82],
+      totalPrice: [0.00, 0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   OuterRoofModel(
       name: "Mønepanner 48x98mm. Nortegl.",
@@ -26363,7 +25190,7 @@ final norwOuterRoofData = [
       laborCost: [33, 27.5, 27.5, 88],
       material: [852.49, 66.98, 416.84, 36.82],
       materials: [852.49, 66.98, 416.84, 36.82],
-      totalPrice: [885.49, 94.48, 444.34, 124.82],
+      totalPrice: [0.00, 0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   OuterRoofModel(
       name: "Mønepanner 48x98mm. Zanda Rustikk.",
@@ -26380,7 +25207,7 @@ final norwOuterRoofData = [
       laborCost: [33, 27.5, 27.5, 88],
       material: [261.63, 66.98, 416.84, 36.82],
       materials: [261.63, 66.98, 416.84, 36.82],
-      totalPrice: [294.63, 94.48, 444.34, 124.82],
+      totalPrice: [0.00, 0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   OuterRoofModel(
       name: "Gavlstein, Zanda",
@@ -26392,7 +25219,7 @@ final norwOuterRoofData = [
       laborCost: [33],
       material: [211.72],
       materials: [211.72],
-      totalPrice: [244.72],
+      totalPrice: [0.00],
       constructionType: "New Construction"),
   OuterRoofModel(
       name: "Gavlstein, Skarpnes",
@@ -26404,7 +25231,7 @@ final norwOuterRoofData = [
       laborCost: [33],
       material: [191.32],
       materials: [191.32],
-      totalPrice: [224.32],
+      totalPrice: [0.00],
       constructionType: "New Construction"),
   OuterRoofModel(
       name: "Gavlstein, Nortegl",
@@ -26416,7 +25243,7 @@ final norwOuterRoofData = [
       laborCost: [33],
       material: [541.28],
       materials: [541.28],
-      totalPrice: [574.28],
+      totalPrice: [0.00],
       constructionType: "New Construction"),
   OuterRoofModel(
       name: "Gradrenne / kilrenne, galvaniser stål, b=200mm.",
@@ -26433,7 +25260,7 @@ final norwOuterRoofData = [
       laborCost: [137.5, 143, 148.5, 225.5],
       material: [796.96, 665.38, 144.16, 0],
       materials: [796.96, 665.38, 144.16, 0],
-      totalPrice: [934.46, 808.38, 292.66, 225.5],
+      totalPrice: [0.00, 0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   OuterRoofModel(
       name: "Vindskier, 19x148, 2 bord, inkl. beslag og kasse.",
@@ -26452,7 +25279,7 @@ final norwOuterRoofData = [
       laborCost: [159.5, 44, 60.5, 187, 82.5, 88],
       material: [55.72, 57.92, 37.37, 251.04, 30.4, 127.68],
       materials: [55.72, 57.92, 37.37, 251.04, 30.4, 127.68],
-      totalPrice: [215.22, 101.92, 97.87, 438.04, 112.9, 215.68],
+      totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   OuterRoofModel(
       name: "Vindskier, 19x123, 3 bord, inkl. beslag og kasse",
@@ -26471,7 +25298,7 @@ final norwOuterRoofData = [
       laborCost: [225.5, 44, 60.5, 187, 82.5, 88],
       material: [79.79, 57.92, 37.37, 251.04, 30.4, 127.68],
       materials: [79.79, 57.92, 37.37, 251.04, 30.4, 127.68],
-      totalPrice: [305.29, 101.92, 97.87, 438.04, 112.9, 215.68],
+      totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   OuterRoofModel(
       name: "Gesims forkant, panel 22x123mm., netting, spikerslag, fugleband.",
@@ -26489,7 +25316,7 @@ final norwOuterRoofData = [
       laborCost: [60.5, 60.5, 93.5, 55, 27.5],
       material: [118.33, 60.68, 78.97, 16.95, 66.98],
       materials: [118.33, 60.68, 78.97, 16.95, 66.98],
-      totalPrice: [178.83, 121.18, 172.47, 71.95, 94.48],
+      totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   OuterRoofModel(
       name: "Gesims forkant, panel 22x98mm., netting, spikerslag, fugleband.",
@@ -26507,7 +25334,7 @@ final norwOuterRoofData = [
       laborCost: [60.5, 60.5, 93.5, 55, 27.5],
       material: [118.33, 43.19, 78.97, 16.95, 66.98],
       materials: [118.33, 43.19, 78.97, 16.95, 66.98],
-      totalPrice: [178.83, 103.69, 172.47, 71.95, 94.48],
+      totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   OuterRoofModel(
       name: "Takvindu 94x118cm. komplett innsetting.",
@@ -26523,7 +25350,7 @@ final norwOuterRoofData = [
       laborCost: [473, 2398, 2205.5],
       material: [367.43, 10458.52, 3724.09],
       materials: [367.43, 10458.52, 3724.09],
-      totalPrice: [840.43, 12856.52, 5929.59],
+      totalPrice: [0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   OuterRoofModel(
       name: "Takvindu 78x140cm. komplett innsetting.",
@@ -26539,7 +25366,7 @@ final norwOuterRoofData = [
       laborCost: [473, 2398, 2205.5],
       material: [367.43, 9890.52, 3724.09],
       materials: [367.43, 9890.52, 3724.09],
-      totalPrice: [840.43, 12288.52, 5929.59],
+      totalPrice: [0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   OuterRoofModel(
       name: "Takvindu 114x140cm. komplett innsetting.",
@@ -26555,7 +25382,7 @@ final norwOuterRoofData = [
       laborCost: [473, 2948, 2205.5],
       material: [367.43, 14329.23, 3892.09],
       materials: [367.43, 14329.23, 3892.09],
-      totalPrice: [840.43, 17277.23, 6097.59],
+      totalPrice: [0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   OuterRoofModel(
       name: "Takvindu 55x78cm. komplett innsetting.",
@@ -26571,7 +25398,7 @@ final norwOuterRoofData = [
       laborCost: [473, 2398, 2205.5],
       material: [367.43, 7138.52, 3380.09],
       materials: [367.43, 7138.52, 3380.09],
-      totalPrice: [840.43, 9536.52, 5585.59],
+      totalPrice: [0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   OuterRoofModel(
       name: "Takrenner, stål plastisert, 125mm.",
@@ -26592,7 +25419,7 @@ final norwOuterRoofData = [
       laborCost: [71.5, 66, 5.5, 11, 11, 11, 5.5, 82.5],
       material: [145.6, 95.9, 5.15, 23.55, 37.14, 37.14, 12.77, 80.44],
       materials: [145.6, 95.9, 5.15, 23.55, 37.14, 37.14, 12.77, 80.44],
-      totalPrice: [217.1, 161.9, 10.65, 34.55, 48.14, 48.14, 18.27, 162.94],
+      totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   OuterRoofModel(
       name: "Takrenner, kobber.",
@@ -26612,7 +25439,7 @@ final norwOuterRoofData = [
       laborCost: [82.5, 66, 5.5, 16.5, 71.5, 5.5, 5.5],
       material: [1172.58, 754.18, 140.35, 199.2, 1440.3, 25.54, 80.88],
       materials: [1172.58, 754.18, 140.35, 199.2, 1440.3, 25.54, 80.88],
-      totalPrice: [1255.08, 820.18, 145.85, 215.7, 1511.8, 31.04, 86.38],
+      totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   OuterRoofModel(
       name: "Takrenner, sink.",
@@ -26631,7 +25458,7 @@ final norwOuterRoofData = [
       laborCost: [143, 71.5, 5.5, 5.5, 5.5, 82.5],
       material: [723, 411.52, 130.68, 24.1, 24.76, 94.96],
       materials: [723, 411.52, 130.68, 24.1, 24.76, 94.96],
-      totalPrice: [866, 483.02, 136.18, 29.6, 30.26, 177.46],
+      totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   OuterRoofModel(
       name: "Nedløp for takrenne, stål plastisert 85mm.",
@@ -26648,7 +25475,7 @@ final norwOuterRoofData = [
       laborCost: [22, 55, 11, 16.5],
       material: [35.38, 112.93, 39.06, 36.4],
       materials: [35.38, 112.93, 39.06, 36.4],
-      totalPrice: [57.38, 167.93, 50.06, 52.9],
+      totalPrice: [0.00, 0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   OuterRoofModel(
       name: "Nedløp for takrenne, PVC-U 87mm",
@@ -26665,7 +25492,7 @@ final norwOuterRoofData = [
       laborCost: [55, 11, 16.5, 11],
       material: [206.49, 14.98, 23.71, 27.14],
       materials: [206.49, 14.98, 23.71, 27.14],
-      totalPrice: [261.49, 25.98, 40.21, 38.14],
+      totalPrice: [0.00, 0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   OuterRoofModel(
       name: "Nedløp for takrenne, Kobber 90mm.",
@@ -26682,7 +25509,7 @@ final norwOuterRoofData = [
       laborCost: [55, 22, 16.5, 11],
       material: [657.53, 160, 86.2, 64.65],
       materials: [657.53, 160, 86.2, 64.65],
-      totalPrice: [712.53, 182, 102.7, 75.65],
+      totalPrice: [0.00, 0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   OuterRoofModel(
       name: "Nedløp for takrenner, sink 75mm.",
@@ -26699,7 +25526,7 @@ final norwOuterRoofData = [
       laborCost: [22, 55, 11, 27.5],
       material: [23.17, 268.6, 85.95, 95.7],
       materials: [23.17, 268.6, 85.95, 95.7],
-      totalPrice: [45.17, 323.6, 96.95, 123.2],
+      totalPrice: [0.00, 0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   OuterRoofModel(
       name: "Snøfanger sort rør, komp. med føtter, 220mm.",
@@ -26711,7 +25538,7 @@ final norwOuterRoofData = [
       laborCost: [198],
       material: [645.01],
       materials: [645.01],
-      totalPrice: [843.01],
+      totalPrice: [0.00],
       constructionType: "New Construction"),
   OuterRoofModel(
       name: "Nedforing av himling under sperretak, isolasjon, gips 2 lag.",
@@ -26728,7 +25555,7 @@ final norwOuterRoofData = [
       laborCost: [126.5, 49.5, 33, 209],
       material: [108.98, 95.36, 21.65, 156.25],
       materials: [108.98, 95.36, 21.65, 156.25],
-      totalPrice: [235.48, 144.86, 54.65, 365.25],
+      totalPrice: [0.00, 0.00, 0.00, 0.00],
       constructionType: "Reconstruction"),
   OuterRoofModel(
       name: "Nedforing av himling under sperretak, isolasjon, gips 1 lag.",
@@ -26745,7 +25572,7 @@ final norwOuterRoofData = [
       laborCost: [126.5, 49.5, 33, 154],
       material: [108.98, 95.36, 21.65, 67.76],
       materials: [108.98, 95.36, 21.65, 67.76],
-      totalPrice: [235.48, 144.86, 54.65, 221.76],
+      totalPrice: [0.00, 0.00, 0.00, 0.00],
       constructionType: "Reconstruction"),
   OuterRoofModel(
       name: "Nedforing av himling under sperretak, isolasjon, takess.",
@@ -26762,7 +25589,7 @@ final norwOuterRoofData = [
       laborCost: [126.5, 49.5, 33, 104.5],
       material: [108.98, 95.36, 21.65, 205.78],
       materials: [108.98, 95.36, 21.65, 205.78],
-      totalPrice: [235.48, 144.86, 54.65, 310.28],
+      totalPrice: [0.00, 0.00, 0.00, 0.00],
       constructionType: "Reconstruction"),
   OuterRoofModel(
       name:
@@ -26781,7 +25608,7 @@ final norwOuterRoofData = [
       laborCost: [71.5, 82.5, 33, 55, 143],
       material: [320.4, 96.56, 74.73, 75.64, 426.83],
       materials: [320.4, 96.56, 74.73, 75.64, 426.83],
-      totalPrice: [391.9, 179.06, 107.73, 130.64, 569.83],
+      totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00],
       constructionType: "Reconstruction"),
   OuterRoofModel(
       name:
@@ -26800,7 +25627,7 @@ final norwOuterRoofData = [
       laborCost: [71.5, 82.5, 33, 55, 93.5],
       material: [320.4, 96.56, 74.73, 75.64, 524.89],
       materials: [320.4, 96.56, 74.73, 75.64, 524.89],
-      totalPrice: [391.9, 179.06, 107.73, 130.64, 618.39],
+      totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00],
       constructionType: "Reconstruction"),
   OuterRoofModel(
       name: "Ny taktro av bord 21x145mm., takplater (Decra takplater).",
@@ -26818,7 +25645,7 @@ final norwOuterRoofData = [
       laborCost: [115.5, 82.5, 33, 55, 143],
       material: [600.93, 96.56, 74.73, 75.64, 426.83],
       materials: [600.93, 96.56, 74.73, 75.64, 426.83],
-      totalPrice: [716.43, 179.06, 107.73, 130.64, 569.83],
+      totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00],
       constructionType: "Reconstruction"),
   OuterRoofModel(
       name: "Ny taktro av bord 21x120mm., takplater (Decra takplater).",
@@ -26836,7 +25663,7 @@ final norwOuterRoofData = [
       laborCost: [115.5, 82.5, 33, 55, 93.5],
       material: [600.93, 96.56, 74.73, 75.64, 524.89],
       materials: [600.93, 96.56, 74.73, 75.64, 524.89],
-      totalPrice: [716.43, 179.06, 107.73, 130.64, 618.39],
+      totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00],
       constructionType: "Reconstruction"),
   OuterRoofModel(
       name: "Ny taktro av bord 21x145mm., mønepanne,betongtakstein.",
@@ -26855,7 +25682,7 @@ final norwOuterRoofData = [
       laborCost: [33, 143, 77, 33, 55, 143],
       material: [191.47, 145.83, 60.9, 74.73, 75.64, 426.83],
       materials: [191.47, 145.83, 60.9, 74.73, 75.64, 426.83],
-      totalPrice: [224.47, 288.83, 137.9, 107.73, 130.64, 569.83],
+      totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00],
       constructionType: "Reconstruction"),
   OuterRoofModel(
       name: "Monepanne, lekter og betongtakstein.",
@@ -26874,7 +25701,7 @@ final norwOuterRoofData = [
       laborCost: [11, 22, 11, 143, 104.5, 55],
       material: [52.33, 7.36, 13.4, 269.15, 118.91, 75.64],
       materials: [52.33, 7.36, 13.4, 269.15, 118.91, 75.64],
-      totalPrice: [63.33, 29.36, 24.4, 412.15, 223.41, 130.64],
+      totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00],
       constructionType: "Reconstruction"),
   OuterRoofModel(
       name: "Takvindu 55x78cm. inkl. utveksling og komplett utskifting.",
@@ -26891,7 +25718,7 @@ final norwOuterRoofData = [
       laborCost: [291.5, 1105.5, 2398, 2205.5],
       material: [0, 1870.04, 7138.52, 3380.09],
       materials: [0, 1870.04, 7138.52, 3380.09],
-      totalPrice: [291.5, 2975.54, 9536.52, 5585.59],
+      totalPrice: [0.00, 0.00, 0.00, 0.00],
       constructionType: "Reconstruction"),
   OuterRoofModel(
       name: "Takvindu 78x98cm., inkl. utveksling og komplett utskifting.",
@@ -26908,7 +25735,7 @@ final norwOuterRoofData = [
       laborCost: [291.5, 1105.5, 2398, 2205.5],
       material: [0, 1870.04, 11111.32, 3552.89],
       materials: [0, 1870.04, 11111.32, 3552.89],
-      totalPrice: [291.5, 2975.54, 13509.32, 5758.39],
+      totalPrice: [0.00, 0.00, 0.00, 0.00],
       constructionType: "Reconstruction"),
   OuterRoofModel(
       name: "Takvindu 78x140cm., inkl utveksling og komplett utskifting.",
@@ -26925,7 +25752,7 @@ final norwOuterRoofData = [
       laborCost: [291.5, 1105.5, 2398, 2205.5],
       material: [0, 1870.04, 9890.52, 3724.09],
       materials: [0, 1870.04, 9890.52, 3724.09],
-      totalPrice: [291.5, 2975.54, 12288.52, 5929.59],
+      totalPrice: [0.00, 0.00, 0.00, 0.00],
       constructionType: "Reconstruction"),
   OuterRoofModel(
       name: "Takvindu 114x118cm., inkl utveksling og komplett utskifting.",
@@ -26942,7 +25769,7 @@ final norwOuterRoofData = [
       laborCost: [0, 0, 0, 0],
       material: [0, 3444.16, 12948.12, 3804.09],
       materials: [0, 0, 0, 0],
-      totalPrice: [0, 0, 0, 0],
+      totalPrice: [0.00, 0.00, 0.00, 0.00],
       constructionType: "Reconstruction"),
   OuterRoofModel(
       name: "Takvindu 114x140cm., inkl utveksling og komplett utskifting",
@@ -26959,7 +25786,7 @@ final norwOuterRoofData = [
       laborCost: [291.5, 2205.5, 2948, 2205.5],
       material: [0, 3444.16, 14329.23, 3892.09],
       materials: [0, 3444.16, 14329.23, 3892.09],
-      totalPrice: [291.5, 5649.66, 17277.23, 6097.59],
+      totalPrice: [0.00, 0.00, 0.00, 0.00],
       constructionType: "Reconstruction"),
   OuterRoofModel(
       name: "Takvindu 94x118cm., inkl utveksling og komplett utskifting.",
@@ -26976,7 +25803,7 @@ final norwOuterRoofData = [
       laborCost: [291.5, 2205.5, 2398, 2205.5],
       material: [0, 3444.16, 10458.52, 3724.09],
       materials: [0, 3444.16, 10458.52, 3724.09],
-      totalPrice: [291.5, 5649.66, 12856.52, 5929.59],
+      totalPrice: [0.00, 0.00, 0.00, 0.00],
       constructionType: "Reconstruction"),
   OuterRoofModel(
       name: "Riving flatt sperretak, isolert tekking, singel/folie på tak.",
@@ -26995,7 +25822,7 @@ final norwOuterRoofData = [
       laborCost: [115.5, 22, 60.5, 71.5, 132, 198],
       material: [0, 0, 0, 0, 0, 0],
       materials: [0, 0, 0, 0, 0, 0],
-      totalPrice: [115.5, 22, 60.5, 71.5, 132, 198],
+      totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00],
       constructionType: "Demolition"),
   OuterRoofModel(
       name: "Riving flatt sperretak, isolert tekking, papp.",
@@ -27014,7 +25841,7 @@ final norwOuterRoofData = [
       laborCost: [60.5, 22, 60.5, 71.5, 132, 198],
       material: [0, 0, 0, 0, 0, 0],
       materials: [0, 0, 0, 0, 0, 0],
-      totalPrice: [60.5, 22, 60.5, 71.5, 132, 198],
+      totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00],
       constructionType: "Demolition"),
   OuterRoofModel(
       name: "Riving flatt sperretak, uisolert, papp.",
@@ -27026,7 +25853,7 @@ final norwOuterRoofData = [
       laborCost: [60.5, 60.5, 132],
       material: [0, 0, 0],
       materials: [0, 0, 0],
-      totalPrice: [60.5, 60.5, 132],
+      totalPrice: [0.00, 0.00, 0.00],
       constructionType: "Demolition"),
   OuterRoofModel(
       name: "Riving takrenner, forkant og gesimskasse.",
@@ -27044,7 +25871,7 @@ final norwOuterRoofData = [
       laborCost: [88, 60.5, 77, 16.5, 11],
       material: [0, 0, 0, 0, 0],
       materials: [0, 0, 0, 0, 0],
-      totalPrice: [88, 60.5, 77, 16.5, 11],
+      totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00],
       constructionType: "Demolition"),
   OuterRoofModel(
       name: "Riving taksperrer, taktro og tekking (takstein).",
@@ -27063,7 +25890,7 @@ final norwOuterRoofData = [
       laborCost: [60.5, 27.5, 60.5, 22, 60.5, 132],
       material: [0, 0, 0, 0, 0, 0],
       materials: [0, 0, 0, 0, 0, 0],
-      totalPrice: [60.5, 27.5, 60.5, 22, 60.5, 132],
+      totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00],
       constructionType: "Demolition"),
   OuterRoofModel(
       name: "Riving taksperrer, taktro og tekking (korrugerte stålplater).",
@@ -27082,7 +25909,7 @@ final norwOuterRoofData = [
       laborCost: [93.5, 60.5, 27.5, 22, 60.5, 132],
       material: [0, 0, 0, 0, 0, 0],
       materials: [0, 0, 0, 0, 0, 0],
-      totalPrice: [93.5, 60.5, 27.5, 22, 60.5, 132],
+      totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00],
       constructionType: "Demolition"),
   OuterRoofModel(
       name: "Riving taksperrer, taktro og tekking (papp).",
@@ -27094,7 +25921,7 @@ final norwOuterRoofData = [
       laborCost: [60.5, 60.5, 132],
       material: [0, 0, 0],
       materials: [0, 0, 0],
-      totalPrice: [60.5, 60.5, 132],
+      totalPrice: [0.00, 0.00, 0.00],
       constructionType: "Demolition"),
   OuterRoofModel(
       name: "Riving taktekking ( båndtekking).",
@@ -27111,7 +25938,7 @@ final norwOuterRoofData = [
       laborCost: [187, 27.5, 60.5, 22],
       material: [0, 0, 0, 0],
       materials: [0, 0, 0, 0],
-      totalPrice: [187, 27.5, 60.5, 22],
+      totalPrice: [0.00, 0.00, 0.00, 0.00],
       constructionType: "Demolition"),
   OuterRoofModel(
       name: "Riving taktekking (papp).",
@@ -27123,7 +25950,7 @@ final norwOuterRoofData = [
       laborCost: [60.5, 22],
       material: [0, 0],
       materials: [0, 0],
-      totalPrice: [60.5, 22],
+      totalPrice: [0.00, 0.00],
       constructionType: "Demolition"),
   OuterRoofModel(
       name: "Riving taktekking (takstein).",
@@ -27140,7 +25967,7 @@ final norwOuterRoofData = [
       laborCost: [60.5, 27.5, 60.5, 22],
       material: [0, 0, 0, 0],
       materials: [0, 0, 0, 0],
-      totalPrice: [60.5, 27.5, 60.5, 22],
+      totalPrice: [0.00, 0.00, 0.00, 0.00],
       constructionType: "Demolition"),
   OuterRoofModel(
       name: "Riving taktekking (korrugerte stålplater).",
@@ -27157,7 +25984,7 @@ final norwOuterRoofData = [
       laborCost: [93.5, 27.5, 60.5, 22],
       material: [0, 0, 0, 0],
       materials: [0, 0, 0, 0],
-      totalPrice: [93.5, 27.5, 60.5, 22],
+      totalPrice: [0.00, 0.00, 0.00, 0.00],
       constructionType: "Demolition"),
   OuterRoofModel(
       name: "Riving taktekking (takstein),forkant,vindski,takrenner.",
@@ -27180,7 +26007,7 @@ final norwOuterRoofData = [
       laborCost: [11, 22, 11, 60.5, 27.5, 16.5, 27.5, 60.5, 22, 60.5],
       material: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
       materials: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-      totalPrice: [11, 22, 11, 60.5, 27.5, 16.5, 27.5, 60.5, 22, 60.5],
+      totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00],
       constructionType: "Demolition"),
   OuterRoofModel(
       name: "Riving vindski med beslag og kasse.",
@@ -27197,7 +26024,7 @@ final norwOuterRoofData = [
       laborCost: [60.5, 60.5, 38.5, 11],
       material: [0, 0, 0, 0],
       materials: [0, 0, 0, 0],
-      totalPrice: [60.5, 60.5, 38.5, 11],
+      totalPrice: [0.00, 0.00, 0.00, 0.00],
       constructionType: "Demolition"),
   OuterRoofModel(
       name: "Riving W-takstol, taktro og tekking (papp).",
@@ -27209,7 +26036,7 @@ final norwOuterRoofData = [
       laborCost: [60.5, 60.5, 225.5],
       material: [0, 0, 0],
       materials: [0, 0, 0],
-      totalPrice: [60.5, 60.5, 225.5],
+      totalPrice: [0.00, 0.00, 0.00],
       constructionType: "Demolition"),
   OuterRoofModel(
       name: "Riving W-takstol, taktro og tekking (profilert stålplater).",
@@ -27225,7 +26052,7 @@ final norwOuterRoofData = [
       laborCost: [115.5, 60.5, 22550],
       material: [0, 0, 0],
       materials: [0, 0, 0],
-      totalPrice: [115.5, 60.5, 22550],
+      totalPrice: [0.00, 0.00, 0.00],
       constructionType: "Demolition"),
 ];
 final norwTerraceData = [
@@ -27239,7 +26066,7 @@ final norwTerraceData = [
       laborCost: [638],
       material: [3922.06],
       materials: [3922.06],
-      totalPrice: [4560.0599999999995],
+      totalPrice: [0.00],
       constructionType: "New Construction"),
   TerraceModel(
       name:
@@ -27252,7 +26079,7 @@ final norwTerraceData = [
       laborCost: [830.5],
       material: [583.02],
       materials: [583.02],
-      totalPrice: [1413.52],
+      totalPrice: [0.00],
       constructionType: "New Construction"),
   TerraceModel(
       name:
@@ -27265,7 +26092,7 @@ final norwTerraceData = [
       laborCost: [638],
       material: [555.05],
       materials: [555.05],
-      totalPrice: [1193.05],
+      totalPrice: [0.00],
       constructionType: "New Construction"),
   TerraceModel(
       name:
@@ -27278,7 +26105,7 @@ final norwTerraceData = [
       laborCost: [638],
       material: [580.37],
       materials: [580.37],
-      totalPrice: [1218.37],
+      totalPrice: [0.00],
       constructionType: "New Construction"),
   TerraceModel(
       name:
@@ -27295,7 +26122,7 @@ final norwTerraceData = [
       laborCost: [374, 88, 148.5],
       material: [1168.82, 129.53, 180.25],
       materials: [1168.82, 129.53, 180.25],
-      totalPrice: [1542.82, 217.53, 328.75],
+      totalPrice: [0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   TerraceModel(
       name:
@@ -27313,7 +26140,7 @@ final norwTerraceData = [
       laborCost: [2365, 3355, 5555, 12430],
       material: [1253.1, 10382.2, 4021, 9279.9],
       materials: [1253.1, 10382.2, 4021, 9279.9],
-      totalPrice: [3618.1, 13737.2, 9576, 21709.9],
+      totalPrice: [0.00, 0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   TerraceModel(
       name:
@@ -27331,7 +26158,7 @@ final norwTerraceData = [
       laborCost: [2365, 3135, 5555, 12430],
       material: [1253.1, 9182.2, 4021, 9279.9],
       materials: [1253.1, 9182.2, 4021, 9279.9],
-      totalPrice: [3618.1, 12317.2, 9576, 21709.9],
+      totalPrice: [0.00, 0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   TerraceModel(
       name:
@@ -27349,7 +26176,7 @@ final norwTerraceData = [
       laborCost: [2365, 3355, 5005, 12430],
       material: [1253.1, 10382.2, 4258.4, 9279.9],
       materials: [1253.1, 10382.2, 4258.4, 9279.9],
-      totalPrice: [3618.1, 13737.2, 9263.4, 21709.9],
+      totalPrice: [0.00, 0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   TerraceModel(
       name:
@@ -27367,7 +26194,7 @@ final norwTerraceData = [
       laborCost: [2365, 3135, 5005, 12430],
       material: [1253.1, 9182.2, 4258.4, 9279.9],
       materials: [1253.1, 9182.2, 4258.4, 9279.9],
-      totalPrice: [3618.1, 12317.2, 9263.4, 21709.9],
+      totalPrice: [0.00, 0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   TerraceModel(
       name:
@@ -27388,7 +26215,7 @@ final norwTerraceData = [
       laborCost: [44, 27.5, 16.5, 159.5, 280.5, 27.5, 159.5],
       material: [55.33, 21.06, 37.1, 459.11, 920.75, 24.54, 980.65],
       materials: [55.33, 21.06, 37.1, 459.11, 920.75, 24.54, 980.65],
-      totalPrice: [99.33, 48.56, 53.6, 618.61, 1201.25, 52.04, 1140.15],
+      totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   TerraceModel(
       name: "Terrasse av impregnert tre, furu impregnert, rekkverk av tre.",
@@ -27408,15 +26235,7 @@ final norwTerraceData = [
       laborCost: [44, 27.5, 16.5, 170.5, 253, 27.5, 214.5],
       material: [20.88, 21.06, 52.47, 519.11, 212.92, 24.54, 154.67],
       materials: [20.88, 21.06, 52.47, 519.11, 212.92, 24.54, 154.67],
-      totalPrice: [
-        64.88,
-        48.56,
-        68.97,
-        689.61,
-        465.91999999999996,
-        52.04,
-        369.16999999999996
-      ],
+      totalPrice: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   TerraceModel(
       name: "Plasser, terrassegulv på grus, itrykkimpregnert furu 28x98mm.",
@@ -27432,7 +26251,7 @@ final norwTerraceData = [
       laborCost: [27.5, 187, 363],
       material: [28.05, 138.5, 201.05],
       materials: [28.05, 138.5, 201.05],
-      totalPrice: [55.55, 325.5, 564.05],
+      totalPrice: [0.00, 0.00, 0.00],
       constructionType: "New Construction"),
   TerraceModel(
       name: "Plasser, terrassegulv på grus, Kebony 28x95mm.",
@@ -27448,7 +26267,7 @@ final norwTerraceData = [
       laborCost: [0, 0, 0],
       material: [28.05, 138.5, 469.85],
       materials: [0, 0, 0],
-      totalPrice: [0, 0, 0],
+      totalPrice: [0.00, 0.00, 0.00],
       constructionType: "New Construction"),
 ];
 final norwInnerStairsData = [
@@ -27465,7 +26284,7 @@ final norwInnerStairsData = [
       laborCost: [698.5, 11077],
       material: [914.63, 48000],
       materials: [914.63, 48000],
-      totalPrice: [1613.13, 59077],
+      totalPrice: [0.00, 0.00],
       constructionType: "New Construction"),
   InnerStairsModel(
       name: "Montering trapper innvendig, 180° svingtrapp.",
@@ -27480,7 +26299,7 @@ final norwInnerStairsData = [
       laborCost: [0, 0],
       material: [2263.74, 59517.5],
       materials: [0, 0],
-      totalPrice: [0, 0],
+      totalPrice: [0.00, 0.00],
       constructionType: "New Construction"),
   InnerStairsModel(
       name: "Trapper innvendig, tre toløp",
@@ -27495,7 +26314,7 @@ final norwInnerStairsData = [
       laborCost: [0, 0],
       material: [914.63, 51250],
       materials: [0, 0],
-      totalPrice: [0, 0],
+      totalPrice: [0.00, 0.00],
       constructionType: "New Construction"),
   InnerStairsModel(
       name: "Trapper innvendig, tre vinkeltrapp",
@@ -27510,7 +26329,7 @@ final norwInnerStairsData = [
       laborCost: [0, 0],
       material: [2263.74, 50207],
       materials: [0, 0],
-      totalPrice: [0, 0],
+      totalPrice: [0.00, 0.00],
       constructionType: "New Construction"),
   InnerStairsModel(
       name: "Montering trapper innvendig, tre svingtrapp.",
@@ -27525,7 +26344,7 @@ final norwInnerStairsData = [
       laborCost: [0, 0],
       material: [2469.5, 59517.5],
       materials: [0, 0],
-      totalPrice: [0, 0],
+      totalPrice: [0.00, 0.00],
       constructionType: "New Construction"),
 ];
 final norwHullRoofingData = [
@@ -27539,7 +26358,7 @@ final norwHullRoofingData = [
       laborCost: [60.5],
       material: [0],
       materials: [0],
-      totalPrice: [60.5],
+      totalPrice: [0.00],
       constructionType: "New Construction"),
   HullRoofingModel(
       name: "Boring av 86 mm hull til en takboks i et trepaneltak.",
@@ -27551,7 +26370,7 @@ final norwHullRoofingData = [
       laborCost: [99],
       material: [0],
       materials: [0],
-      totalPrice: [99],
+      totalPrice: [0.00],
       constructionType: "New Construction"),
   HullRoofingModel(
       name: "Boring av 72mm. hull i trepanel vegg.",
@@ -27563,7 +26382,7 @@ final norwHullRoofingData = [
       laborCost: [82.5],
       material: [0],
       materials: [0],
-      totalPrice: [82.5],
+      totalPrice: [0.00],
       constructionType: "New Construction"),
   HullRoofingModel(
       name: "Boring av 72mm. hull i sponplate vegg.",
@@ -27575,7 +26394,7 @@ final norwHullRoofingData = [
       laborCost: [71.5],
       material: [0],
       materials: [0],
-      totalPrice: [71.5],
+      totalPrice: [0.00],
       constructionType: "New Construction"),
   HullRoofingModel(
       name: "Boring av 72mm. hull i gipsplate vegg.",
@@ -27587,7 +26406,7 @@ final norwHullRoofingData = [
       laborCost: [55],
       material: [0],
       materials: [0],
-      totalPrice: [55],
+      totalPrice: [0.00],
       constructionType: "New Construction"),
   HullRoofingModel(
       name: "Boring av 20mm. hull i keramisk fliser vegg.",
@@ -27599,7 +26418,7 @@ final norwHullRoofingData = [
       laborCost: [49.5],
       material: [0],
       materials: [0],
-      totalPrice: [49.5],
+      totalPrice: [0.00],
       constructionType: "New Construction"),
   HullRoofingModel(
       name: "Boring av 28mm. hull i keramisk fliser vegg.",
@@ -27611,7 +26430,7 @@ final norwHullRoofingData = [
       laborCost: [66],
       material: [0],
       materials: [0],
-      totalPrice: [66],
+      totalPrice: [0.00],
       constructionType: "New Construction"),
   HullRoofingModel(
       name: "Boring av 35mm. hull i keramisk fliser vegg.",
@@ -27623,7 +26442,7 @@ final norwHullRoofingData = [
       laborCost: [88],
       material: [0],
       materials: [0],
-      totalPrice: [88],
+      totalPrice: [0.00],
       constructionType: "New Construction"),
   HullRoofingModel(
       name: "Boring av 55mm. hull i keramisk fliser vegg.",
@@ -27635,7 +26454,7 @@ final norwHullRoofingData = [
       laborCost: [137.5],
       material: [0],
       materials: [0],
-      totalPrice: [137.5],
+      totalPrice: [0.00],
       constructionType: "New Construction"),
   HullRoofingModel(
       name: "Boring av 72mm. hull i keramisk fliser vegg.",
@@ -27647,7 +26466,7 @@ final norwHullRoofingData = [
       laborCost: [176],
       material: [0],
       materials: [0],
-      totalPrice: [176],
+      totalPrice: [0.00],
       constructionType: "New Construction"),
   HullRoofingModel(
       name: "Boring av 115mm. hull i keramisk fliser vegg.",
@@ -27659,7 +26478,7 @@ final norwHullRoofingData = [
       laborCost: [280.5],
       material: [0],
       materials: [0],
-      totalPrice: [280.5],
+      totalPrice: [0.00],
       constructionType: "New Construction"),
   HullRoofingModel(
       name:
@@ -27674,7 +26493,7 @@ final norwHullRoofingData = [
       laborCost: [165],
       material: [0],
       materials: [0],
-      totalPrice: [165],
+      totalPrice: [0.00],
       constructionType: "New Construction"),
   HullRoofingModel(
       name:
@@ -27689,7 +26508,7 @@ final norwHullRoofingData = [
       laborCost: [209],
       material: [0],
       materials: [0],
-      totalPrice: [209],
+      totalPrice: [0.00],
       constructionType: "New Construction"),
   HullRoofingModel(
       name:
@@ -27704,7 +26523,7 @@ final norwHullRoofingData = [
       laborCost: [264],
       material: [0],
       materials: [0],
-      totalPrice: [264],
+      totalPrice: [0.00],
       constructionType: "New Construction"),
   HullRoofingModel(
       name:
@@ -27719,7 +26538,7 @@ final norwHullRoofingData = [
       laborCost: [330],
       material: [0],
       materials: [0],
-      totalPrice: [330],
+      totalPrice: [0.00],
       constructionType: "New Construction"),
   HullRoofingModel(
       name:
@@ -27734,7 +26553,7 @@ final norwHullRoofingData = [
       laborCost: [412.5],
       material: [0],
       materials: [0],
-      totalPrice: [412.5],
+      totalPrice: [0.00],
       constructionType: "New Construction"),
   HullRoofingModel(
       name:
@@ -27749,7 +26568,7 @@ final norwHullRoofingData = [
       laborCost: [522.5],
       material: [0],
       materials: [0],
-      totalPrice: [522.5],
+      totalPrice: [0.00],
       constructionType: "New Construction"),
   HullRoofingModel(
       name:
@@ -27764,7 +26583,7 @@ final norwHullRoofingData = [
       laborCost: [660],
       material: [0],
       materials: [0],
-      totalPrice: [660],
+      totalPrice: [0.00],
       constructionType: "New Construction"),
   HullRoofingModel(
       name:
@@ -27779,7 +26598,7 @@ final norwHullRoofingData = [
       laborCost: [825],
       material: [0],
       materials: [0],
-      totalPrice: [825],
+      totalPrice: [0.00],
       constructionType: "New Construction"),
 ];
 
@@ -27794,7 +26613,7 @@ final norwScaffoldingData = [
       laborCost: [550],
       material: [7841],
       materials: [7841],
-      totalPrice: [8391],
+      totalPrice: [0.00],
       constructionType: "New Construction"),
   ScaffoldingModel(
       name: "Montering av stillase. (Lett)",
@@ -27806,7 +26625,7 @@ final norwScaffoldingData = [
       laborCost: [0],
       material: [0],
       materials: [0],
-      totalPrice: [0],
+      totalPrice: [0.00],
       constructionType: "New Construction"),
   ScaffoldingModel(
       name: "Demontering av stillase. (Lett)",
@@ -27818,7 +26637,7 @@ final norwScaffoldingData = [
       laborCost: [0],
       material: [0],
       materials: [0],
-      totalPrice: [0],
+      totalPrice: [0.00],
       constructionType: "New Construction"),
 ];
 final norwWasteData = [
@@ -27832,7 +26651,7 @@ final norwWasteData = [
       laborCost: [0],
       material: [5135],
       materials: [5135],
-      totalPrice: [5135],
+      totalPrice: [0.00],
       constructionType: "New Construction"),
   WasteModel(
       name: "Container 10 m³: Innhenting. Rent treverk",
@@ -27844,7 +26663,7 @@ final norwWasteData = [
       laborCost: [0],
       material: [3275],
       materials: [3275],
-      totalPrice: [3275],
+      totalPrice: [0.00],
       constructionType: "New Construction"),
   WasteModel(
       name: "Container 10 m³: Utsetting",
@@ -27856,7 +26675,7 @@ final norwWasteData = [
       laborCost: [0],
       material: [491],
       materials: [982],
-      totalPrice: [982],
+      totalPrice: [0.00],
       constructionType: "New Construction"),
   WasteModel(
       name: "Container 10 m³: Leie pr. Uke",
@@ -27868,7 +26687,7 @@ final norwWasteData = [
       laborCost: [0],
       material: [1500],
       materials: [3000],
-      totalPrice: [3000],
+      totalPrice: [0.00],
       constructionType: "New Construction"),
   WasteModel(
       name: "Container 10 m³: Tømme-avgift. Rent treverk",
@@ -27880,7 +26699,7 @@ final norwWasteData = [
       laborCost: [0],
       material: [3264],
       materials: [3264],
-      totalPrice: [3264],
+      totalPrice: [0.00],
       constructionType: "New Construction"),
   WasteModel(
       name: "Container 10 m³: Tømme-avgift. Takst. og mur",
@@ -27892,6 +26711,6 @@ final norwWasteData = [
       laborCost: [0],
       material: [5124],
       materials: [5124],
-      totalPrice: [5124],
+      totalPrice: [0.00],
       constructionType: "New Construction"),
 ];

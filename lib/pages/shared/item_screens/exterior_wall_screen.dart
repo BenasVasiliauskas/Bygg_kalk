@@ -340,7 +340,7 @@ class _ExteriorWallScreenState extends State<ExteriorWallScreen> {
                         : languageEnglish
                             ? Text(
                                 widget.constructionType == "New Construction"
-                                    ? outerWallUnitsNewC[index]
+                                    ? outerWallUnitsENGNewC[index]
                                     : widget.constructionType == "Demolition"
                                         ? outerWallUnitsENGDestro[index]
                                         : outerWallUnitsRecon[index],

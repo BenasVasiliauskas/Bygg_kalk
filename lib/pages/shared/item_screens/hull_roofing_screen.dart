@@ -299,8 +299,8 @@ class _HullRoofingScreenState extends State<HullRoofingScreen> {
                       : languageNorwegian
                           ? "stk"
                           : languagePolish
-                              ? "szt."
-                              : "vnt."),
+                              ? "szt"
+                              : "vnt"),
                 ],
               );
             },

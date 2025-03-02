@@ -75,7 +75,7 @@ class _DeckSectionsState extends State<DeckSections> {
             languageEnglish
                 ? "Floor structure"
                 : languageLithuanian
-                    ? "Apdanga"
+                    ? "Perdanga"
                     : languageNorwegian
                         ? "Dekker"
                         : "Opona",
@@ -111,7 +111,7 @@ class _DeckSectionsState extends State<DeckSections> {
                             : languageLithuanian
                                 ? "Naujas pastatas"
                                 : languageNorwegian
-                                    ? "Ny Bygg"
+                                    ? "Nybygg"
                                     : "Nowy budynek",
                       ),
                     ],
