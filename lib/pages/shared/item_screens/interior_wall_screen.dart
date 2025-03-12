@@ -119,7 +119,7 @@ class _InnerWallScreenState extends State<InnerWallScreen> {
           ],
           title: Text(widget.constructionType == "New Construction"
               ? languageEnglish
-                  ? "Interior walls - New Construction"
+                  ? "Internal walls - New Construction"
                   : languageLithuanian
                       ? "Vidinės sienos - Nauja statyba"
                       : languageNorwegian
@@ -127,7 +127,7 @@ class _InnerWallScreenState extends State<InnerWallScreen> {
                           : "Ściany wewnętrzne - Nowy budynek"
               : widget.constructionType == "Demolition"
                   ? languageEnglish
-                      ? "Interior walls - Demolition"
+                      ? "Internal walls - Demolition"
                       : languageLithuanian
                           ? "Vidinės sienos - Griovimas"
                           : languageNorwegian
@@ -135,7 +135,7 @@ class _InnerWallScreenState extends State<InnerWallScreen> {
                               : "Ściany wewnętrzne - Rozbiórka"
                   : widget.constructionType == "Reconstruction"
                       ? languageEnglish
-                          ? "Interior walls - Reconstruction"
+                          ? "Internal walls - Reconstruction"
                           : languageLithuanian
                               ? "Vidinės sienos - Rekonstrukcija"
                               : languageNorwegian

@@ -109,7 +109,7 @@ Nauja statyba'''
                             : languageNorwegian
                                 ? '''Vis bæresystem. Inneholdte elementer:
 Nybygg'''
-                                : '''Zobacz system nośny. Elementy uzupełniające:
+                                : '''Zobacz konstrukcje nośne. Elementy uzupełniające:
 Nowa konstrukcja''',
                     child: TextButton(
                       onPressed: () {
@@ -132,7 +132,7 @@ Nowa konstrukcja''',
                               : languageNorwegian
                                   ? "Bæresystemer"
                                   : languagePolish
-                                      ? "System nośny"
+                                      ? "Konstrukcje nośne"
                                       : "Laikančiosios konstrukcijos"),
                         ],
                       ),
@@ -151,7 +151,7 @@ Nowa konstrukcja''',
                 children: [
                   Tooltip(
                     message: languageEnglish
-                        ? '''View exterior walls. Contained elements: 
+                        ? '''View externall walls. Contained elements: 
 New building, Reconstruction, Demolition'''
                         : languageLithuanian
                             ? '''Peržiūrėti lauko sienas. Sudaryti elementai:
@@ -178,7 +178,7 @@ Nowa konstrukcja, Przebudowa, Wyburzenie''',
                                 child: Image.asset("assets/ExteriorWalls.jpg")),
                           ),
                           Text(languageEnglish
-                              ? "Exterior walls"
+                              ? "External walls"
                               : languageNorwegian
                                   ? "Yttervegger"
                                   : languagePolish
@@ -231,11 +231,11 @@ Nowa konstrukcja, Wyburzenie''',
                                     "assets/WindowExteriorDoor.jpg")),
                           ),
                           Text(languageEnglish
-                              ? "Window, door"
+                              ? "Windows, doors"
                               : languageNorwegian
-                                  ? "Vinduer/ytterdører"
+                                  ? "Vinduer og ytterdører"
                                   : languagePolish
-                                      ? "Okno/drzwi zewnętrzne"
+                                      ? "Okna i drzwi"
                                       : "Langai ir lauko durys"),
                         ],
                       ),
@@ -283,7 +283,7 @@ Nowa konstrukcja, Przebudowa, Wyburzenie''',
                                 child: Image.asset("assets/InnerWall.jpg")),
                           ),
                           Text(languageEnglish
-                              ? "Interior walls"
+                              ? "Internal walls"
                               : languageNorwegian
                                   ? "Innervegger"
                                   : languagePolish
@@ -335,7 +335,7 @@ Nowa konstrukcja, Wyburzenie''',
                                 child: Image.asset("assets/InnerDoor.jpg")),
                           ),
                           Text(languageEnglish
-                              ? "Interior door"
+                              ? "Internal doors"
                               : languageNorwegian
                                   ? "Innedører"
                                   : languagePolish
@@ -380,12 +380,9 @@ Nowa konstrukcja, Przebudowa, Wyburzenie''',
                         children: [
                           Padding(
                             padding: const EdgeInsets.fromLTRB(0, 0, 8, 0),
-                            child: Padding(
-                              padding: const EdgeInsets.fromLTRB(0, 0, 8, 0),
-                              child: SizedBox(
-                                  width: 50,
-                                  child: Image.asset("assets/Covers.jpg")),
-                            ),
+                            child: SizedBox(
+                                width: 50,
+                                child: Image.asset("assets/Covers.jpg")),
                           ),
                           Text(
                             languageEnglish
@@ -394,19 +391,19 @@ Nowa konstrukcja, Przebudowa, Wyburzenie''',
                                     ? "Perdangos"
                                     : languageNorwegian
                                         ? "Dekker"
-                                        : "Opona",
+                                        : "Stropy",
                           ),
                         ],
                       ),
                     ),
                   ),
                   Text(languageNorwegian
-                      ? norwFlooringData.length.toString()
+                      ? norwDeckData.length.toString()
                       : languageLithuanian
-                          ? litFlooringData.length.toString()
+                          ? litDeckData.length.toString()
                           : languageEnglish
-                              ? flooringData.length.toString()
-                              : polFlooringData.length.toString()),
+                              ? deckData.length.toString()
+                              : polDeckData.length.toString()),
                 ],
               ),
               Row(
@@ -444,19 +441,19 @@ Nowa konstrukcja, Wyburzenie''',
                               : languageNorwegian
                                   ? "Gulvbelegg"
                                   : languagePolish
-                                      ? "Podłoga"
+                                      ? "Wiercenie otworów."
                                       : "Grindų danga"),
                         ],
                       ),
                     ),
                   ),
                   Text(languageNorwegian
-                      ? norwDeckData.length.toString()
+                      ? norwFlooringData.length.toString()
                       : languageLithuanian
-                          ? litDeckData.length.toString()
+                          ? litFlooringData.length.toString()
                           : languageEnglish
-                              ? deckData.length.toString()
-                              : polDeckData.length.toString()),
+                              ? flooringData.length.toString()
+                              : polFlooringData.length.toString()),
                 ],
               ),
               Row(
@@ -494,7 +491,7 @@ Nowa konstrukcja, Przebudowa, Wyburzenie''',
                               : languageNorwegian
                                   ? "Yttertak"
                                   : languagePolish
-                                      ? "Dach zewnętrzny"
+                                      ? "Dach"
                                       : "Stogas"),
                         ],
                       ),
@@ -519,7 +516,7 @@ New building'''
                             ? '''Peržiūrėti terasas, turėklus. Sudaryti elementai:
 Nauja statyba'''
                             : languageNorwegian
-                                ? '''Vis terrasse/rekkverk. Inneholdte elementer:
+                                ? '''Vis terrasser,rekkverk.. Inneholdte elementer:
 Nybygg'''
                                 : '''Zobacz taras/barierki. Elementy uzupełniające:
 Nowa konstrukcja''',
@@ -540,11 +537,11 @@ Nowa konstrukcja''',
                                 child: Image.asset("assets/Terrace.jpg")),
                           ),
                           Text(languageEnglish
-                              ? "Terrace/railings"
+                              ? "Terrace, railings"
                               : languageNorwegian
-                                  ? "Terrasser/rekkverk"
+                                  ? "Terrasser, rekkverk"
                                   : languagePolish
-                                      ? "Taras/barierki"
+                                      ? "Tarasy, balustrady."
                                       : "Terosos, turėklai"),
                         ],
                       ),
@@ -590,9 +587,9 @@ Nowa konstrukcja''',
                                 child: Image.asset("assets/Stairs.jpg")),
                           ),
                           Text(languageEnglish
-                              ? "Inner stairs"
+                              ? "Indoor stairs"
                               : languageNorwegian
-                                  ? "Trapper"
+                                  ? "Innvendige trapper"
                                   : languagePolish
                                       ? "Schody wewnętrzne"
                                       : "Vidaus laiptai"),
@@ -644,7 +641,7 @@ Nowa konstrukcja''',
                               : languageNorwegian
                                   ? "Hulltaking"
                                   : languagePolish
-                                      ? "Pokrycie kadłuba"
+                                      ? "Wiercenie otworów."
                                       : "Angų gręžimas"),
                         ],
                       ),
@@ -744,7 +741,7 @@ Nowa konstrukcja''',
                               : languageNorwegian
                                   ? "Avfall"
                                   : languagePolish
-                                      ? "Zarządzanie odpadami"
+                                      ? "Wywóz odpadów."
                                       : "Atliekų išvežimas"),
                         ],
                       ),

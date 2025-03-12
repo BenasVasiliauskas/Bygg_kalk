@@ -121,7 +121,7 @@ class _DeckScreenState extends State<DeckScreen> {
                       ? "Perdangos - Nauja statyba"
                       : languageNorwegian
                           ? "Dekker - Nybygg"
-                          : "Opona - Nowy budynek"
+                          : "Stropy - Nowy budynek"
               : widget.constructionType == "Demolition"
                   ? languageEnglish
                       ? "Floor structure - Demolition"
@@ -129,7 +129,7 @@ class _DeckScreenState extends State<DeckScreen> {
                           ? "Perdangos - Griovimas"
                           : languageNorwegian
                               ? "Dekker - Riving"
-                              : "Opona - Rozbiórka"
+                              : "Stropy - Rozbiórka"
                   : widget.constructionType == "Reconstruction"
                       ? languageEnglish
                           ? "Floor structure - Reconstruction"
@@ -137,7 +137,7 @@ class _DeckScreenState extends State<DeckScreen> {
                               ? "Perdangos - Rekonstrukcija"
                               : languageNorwegian
                                   ? "Dekker - Ombygging"
-                                  : "Opona - Rekonstrukcja"
+                                  : "Stropy - Rekonstrukcja"
                       : ""),
         ),
         body: GridView.count(

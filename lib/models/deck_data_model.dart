@@ -31,7 +31,7 @@ class DeckModel {
     this.calculationQuantity = 0.0,
   })  : constructionType =
             constructionType ?? "Nan", // Initialize constructionType
-        color = color ?? Color.fromARGB(255, 99, 105, 128); // Initialize color
+        color = color ?? Color.fromARGB(255, 189, 113, 160); // Initialize color
   Map<String, dynamic> toJson() {
     return {
       'name': name,

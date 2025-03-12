@@ -3,9 +3,9 @@ import 'package:cost_calculator/pages/item_screen/file_picker.dart';
 import 'package:cost_calculator/pages/lit_item_screen/lit_budget_screen.dart';
 import 'package:cost_calculator/pages/pol_item_screen/pol_budget_screen.dart';
 import 'package:cost_calculator/pages/shared/help_page.dart';
-import 'package:cost_calculator/pages/shared/home_page.dart';
 import 'package:cost_calculator/pages/shared/options.dart';
 import 'package:cost_calculator/pages/shared/privacy_policy.dart';
+import 'package:cost_calculator/pages/shared/secondHomePage.dart';
 import 'package:cost_calculator/pages/shared/subscriptions_page.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -161,7 +161,7 @@ class CustomDrawer extends StatelessWidget {
               Navigator.of(context).pushReplacement(
                 MaterialPageRoute(
                   builder: (context) {
-                    return homePage();
+                    return SecondHomePage();
                   },
                 ),
               );

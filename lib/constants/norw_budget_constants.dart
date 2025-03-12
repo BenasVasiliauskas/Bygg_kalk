@@ -10,7 +10,7 @@ List<String> calculatedNamesOrder = [
   "Dekker", //5
   "Gulvbelegg", //6
   "Yttertak", //7
-  "Terrasse/rekkverk", //8
+  "Terrasser,rekkverk.", //8
   "Innvendige trapper", //9
   "Hulltaking", //10
   "Stillas", //11

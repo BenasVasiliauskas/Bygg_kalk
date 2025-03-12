@@ -30,7 +30,7 @@ class ScaffoldingModel {
     String? constructionType,
     this.calculationQuantity = 0.0,
   })  : constructionType = constructionType ?? "Nan",
-        color = color ?? Color.fromARGB(255, 99, 105, 128); // Initialize color
+        color = color ?? Color.fromARGB(255, 75, 23, 23); // Initialize color
   Map<String, dynamic> toJson() {
     return {
       'name': name,

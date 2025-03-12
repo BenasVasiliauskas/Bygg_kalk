@@ -71,12 +71,12 @@ class _TerraceSectionsState extends State<TerraceSections> {
           ],
           title: Text(
             languageEnglish
-                ? "Terrace/railings"
+                ? "Terrace, railings"
                 : languageLithuanian
                     ? "Terasos, turėklai"
                     : languageNorwegian
-                        ? "Terrasse/rekkverk"
-                        : "Taras",
+                        ? "Terrasser,rekkverk."
+                        : "Tarasy, balustrady.",
           ),
         ),
         body: Column(

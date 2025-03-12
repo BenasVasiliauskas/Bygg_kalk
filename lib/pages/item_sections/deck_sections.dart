@@ -75,10 +75,10 @@ class _DeckSectionsState extends State<DeckSections> {
             languageEnglish
                 ? "Floor structure"
                 : languageLithuanian
-                    ? "Perdanga"
+                    ? "Perdangos"
                     : languageNorwegian
                         ? "Dekker"
-                        : "Opona",
+                        : "Stropy",
           ),
         ),
         body: Column(

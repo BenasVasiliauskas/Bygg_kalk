@@ -71,7 +71,7 @@ class _InnerStairsSectionsState extends State<InnerStairsSections> {
           ],
           title: Text(
             languageEnglish
-                ? "Inner stairs"
+                ? "Indoor stairs"
                 : languageLithuanian
                     ? "Vidaus laiptai"
                     : languageNorwegian

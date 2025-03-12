@@ -136,14 +136,14 @@ class _PolBudgetScreenState extends State<PolBudgetScreen> {
                     DataColumn(
                       label: SizedBox(
                         width: 70,
-                        child: Text('Rodzaj kosztu'),
+                        child: Text('Kategoria kosztów.'),
                       ),
                     ),
                     DataColumn(
                       label: SizedBox(
                         width: 80,
                         child: Text(
-                          'Całkowita liczba godzin',
+                          'Godziny.',
                           softWrap: true,
                         ),
                       ),
@@ -152,7 +152,7 @@ class _PolBudgetScreenState extends State<PolBudgetScreen> {
                       label: SizedBox(
                         width: 80,
                         child: Text(
-                          'Koszty pracy',
+                          'Koszty pracy (bez VAT)',
                           softWrap: true,
                         ),
                       ),
@@ -161,7 +161,7 @@ class _PolBudgetScreenState extends State<PolBudgetScreen> {
                       label: SizedBox(
                         width: 80,
                         child: Text(
-                          'Koszty materiałów',
+                          'Koszty materiałów (bez VAT)',
                           softWrap: true,
                         ),
                       ),
@@ -170,7 +170,7 @@ class _PolBudgetScreenState extends State<PolBudgetScreen> {
                       label: SizedBox(
                         width: 85,
                         child: Text(
-                          'Suma budżetu',
+                          'Całkowity koszt (bez VAT)',
                           softWrap: true,
                         ),
                       ),
@@ -284,7 +284,7 @@ class _PolBudgetScreenState extends State<PolBudgetScreen> {
                       cells: [
                         DataCell(
                           Text(
-                            "Olinowanie i operacje na miejscu",
+                            "Koszty budowy",
                             style: TextStyle(fontWeight: FontWeight.bold),
                           ),
                         ),
@@ -304,7 +304,7 @@ class _PolBudgetScreenState extends State<PolBudgetScreen> {
                       cells: [
                         DataCell(
                           Text(
-                            "Całkowity koszt materiałów",
+                            "Całkowity koszt materiałów (bez VAT)",
                             style: TextStyle(fontWeight: FontWeight.bold),
                           ),
                         ),
@@ -318,7 +318,7 @@ class _PolBudgetScreenState extends State<PolBudgetScreen> {
                       cells: [
                         DataCell(
                           Text(
-                            "Usuwanie odpadów",
+                            "Wywóz odpadów (bez VAT)",
                             style: TextStyle(fontWeight: FontWeight.bold),
                           ),
                         ),
@@ -336,7 +336,7 @@ class _PolBudgetScreenState extends State<PolBudgetScreen> {
                       cells: [
                         DataCell(
                           Text(
-                            "Wysyłka materiałów",
+                            "Dostawa materiałów (bez VAT)",
                             style: TextStyle(fontWeight: FontWeight.bold),
                           ),
                         ),
@@ -353,7 +353,7 @@ class _PolBudgetScreenState extends State<PolBudgetScreen> {
                       cells: [
                         DataCell(
                           Text(
-                            "Koszty całkowite (bez VAT)",
+                            "Całkowity koszt (bez VAT)",
                             style: TextStyle(fontWeight: FontWeight.bold),
                           ),
                         ),
@@ -397,7 +397,7 @@ class _PolBudgetScreenState extends State<PolBudgetScreen> {
                       cells: [
                         DataCell(
                           Text(
-                            "Koszty całkowite (z VAT)",
+                            "Całkowity koszt (z VAT)",
                             style: TextStyle(fontWeight: FontWeight.bold),
                           ),
                         ),

@@ -4,19 +4,19 @@ import 'package:cost_calculator/data/polish_data_folder/polish_data.dart';
 import 'package:cost_calculator/models/waste_data_model.dart';
 
 List<String> calculatedNamesOrder = [
-  "System wsparcia", //13
-  "Ściany zewnętrzne", //2
-  "Okna i drzwi zewnętrzne", //1
-  "Ściany wewnętrzne", //3
-  "Drzwi wewnętrzne", //4
-  "Pokrycia", //5
-  "Podłogi", //6
-  "Dach zewnętrzny", //7
-  "Taras/Railings", //8
-  "Schody wewnętrzne", //9
-  "Zadaszenie kadłuba", //10
-  "Rusztowania", //11
-  "Gospodarka odpadami", //12
+  "Konstrukcje nośne.", //13
+  "Ściany zewnętrzne.", //2
+  "Okna i drzwi.", //1
+  "Ściany wewnętrzne.", //3
+  "Drzwi wewnętrzne.", //4
+  "Stropy.", //5
+  "Dach.", //6
+  "Podłogi.", //7
+  "Tarasy, balustrady.", //8
+  "Schody wewnętrzne.", //9
+  "Wiercenie otworów.", //10
+  "Rusztowania.", //11
+  "Wywóz odpadów", //12
   "Razem" //14
 ];
 

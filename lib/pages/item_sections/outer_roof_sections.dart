@@ -76,7 +76,7 @@ class _OuterRoofSectionsState extends State<OuterRoofSections> {
                     ? "Stogas"
                     : languageNorwegian
                         ? "Yttertak"
-                        : "Dach zewnętrzny",
+                        : "Dach",
           ),
         ),
         body: Column(

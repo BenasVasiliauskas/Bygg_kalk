@@ -121,7 +121,7 @@ class _OuterRoofScreenState extends State<OuterRoofScreen> {
                       ? "Stogas - Nauja statyba"
                       : languageNorwegian
                           ? "Yttertak - Nybygg"
-                          : "Dach zewnętrzny - Nowy budynek"
+                          : "Dach - Nowy budynek"
               : widget.constructionType == "Demolition"
                   ? languageEnglish
                       ? "Roof - Demolition"
@@ -129,7 +129,7 @@ class _OuterRoofScreenState extends State<OuterRoofScreen> {
                           ? "Stogas - Griovimas"
                           : languageNorwegian
                               ? "Yttertak - Riving"
-                              : "Dach zewnętrzny - Rozbiórka"
+                              : "Dach - Rozbiórka"
                   : widget.constructionType == "Reconstruction"
                       ? languageEnglish
                           ? "Roof - Reconstruction"
@@ -137,7 +137,7 @@ class _OuterRoofScreenState extends State<OuterRoofScreen> {
                               ? "Stogas - Rekonstrukcija"
                               : languageNorwegian
                                   ? "Yttertak - Ombygging"
-                                  : "Dach zewnętrzny - Rekonstrukcja"
+                                  : "Dach - Rekonstrukcja"
                       : ""),
         ),
         body: GridView.count(
