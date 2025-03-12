@@ -1,3 +1,4 @@
+import 'package:cost_calculator/constants/language.dart';
 import 'package:cost_calculator/pages/shared/bathroom_section_page.dart';
 import 'package:cost_calculator/pages/shared/home_page.dart';
 import 'package:flutter/material.dart';
@@ -35,7 +36,9 @@ class SecondHomePage extends StatelessWidget {
                   _buildSquare(
                     context,
                     icon: FontAwesomeIcons.book,
-                    title: 'Vonios kambario darbai',
+                    title: languageNorwegian
+                        ? "Baderomsarbeid"
+                        : 'Vonios kambario darbai',
                     onTap: () {
                       // Add navigation logic for the second square
                       Navigator.pushReplacement(
