@@ -45,6 +45,8 @@ class _FilePickerScreenState extends State<FilePickerScreen> {
   final AppLifecycleObserver _observer = AppLifecycleObserver();
   TextEditingController savingController = TextEditingController(text: "");
   List<io.FileSystemEntity> files = [];
+  List<io.FileSystemEntity> pendingDeletionFiles =
+      []; // Files awaiting deletion confirmation
 
   @override
   void initState() {
@@ -90,23 +92,7 @@ class _FilePickerScreenState extends State<FilePickerScreen> {
                     ? ListView.builder(
                         itemCount: files.length,
                         itemBuilder: (context, index) {
-                          return Dismissible(
-                            key: Key(files[index].path),
-                            direction: DismissDirection.startToEnd,
-                            onDismissed: (direction) {
-                              _deleteFile(files[index].path);
-                              setState(() {
-                                files.removeAt(index);
-                              });
-                            },
-                            background: Container(
-                              color: Colors.redAccent,
-                              padding: EdgeInsets.symmetric(horizontal: 20),
-                              alignment: Alignment.centerLeft,
-                              child: Icon(Icons.delete, color: Colors.white),
-                            ),
-                            child: _buildFileCard(files[index]),
-                          );
+                          return _buildDismissibleFileCard(files[index]);
                         },
                       )
                     : Center(
@@ -293,24 +279,99 @@ class _FilePickerScreenState extends State<FilePickerScreen> {
     );
   }
 
-  String prettifyFileName(String fileName) {
-    String nameWithoutExtension = fileName.replaceAll('.json', '');
-    String nameWithSpaces = nameWithoutExtension.replaceAll('_', ' ');
-    return nameWithSpaces.split(' ').map((word) {
-      return word.isNotEmpty ? word[0].toUpperCase() + word.substring(1) : '';
-    }).join(' ');
+  Widget _buildDismissibleFileCard(io.FileSystemEntity file) {
+    return Dismissible(
+      key: Key(file.path),
+      direction: DismissDirection.startToEnd,
+      // We don't immediately remove the widget from the list
+      onDismissed: (direction) async {
+        // Show the confirmation dialog before proceeding with the deletion
+        bool? shouldDelete = await _showDeleteConfirmationDialog(file.path);
+
+        if (shouldDelete == true) {
+          // If the user confirms deletion, then remove the file from the list
+          _deleteFile(file.path);
+          setState(() {
+            files.removeWhere(
+                (f) => f.path == file.path); // Remove from the list
+          });
+        } else {
+          // If the user cancels, don't remove the file from the list
+          setState(() {
+            // The file stays in the list
+            files.insert(files.indexOf(file), file);
+            Navigator.of(context).pushReplacement(
+              MaterialPageRoute(
+                builder: (context) {
+                  return FilePickerScreen();
+                },
+              ),
+            );
+          });
+        }
+      },
+      background: Container(
+        color: Colors.redAccent,
+        padding: EdgeInsets.symmetric(horizontal: 20),
+        alignment: Alignment.centerLeft,
+        child: Icon(Icons.delete, color: Colors.white),
+      ),
+      child: _buildFileCard(file), // This will render the file card
+    );
   }
 
-  Future<void> _shareFile(String filePath) async {
-    final file = XFile(filePath);
-    Share.shareXFiles([file],
-        text: languageEnglish
-            ? 'Sharing JSON file via Gmail'
+  Future<bool?> _showDeleteConfirmationDialog(String filePath) async {
+    return showDialog<bool>(
+      context: context,
+      builder: (context) => AlertDialog(
+        title: Text(languageEnglish
+            ? 'Are you sure you want to delete this file?'
             : languageNorwegian
-                ? 'Deling av JSON-fil via Gmail'
+                ? 'Er du sikker på at du vil slette denne filen?'
                 : languagePolish
-                    ? 'Udostępnianie pliku JSON za pośrednictwem Gmaila'
-                    : 'Bendrinimas JSON failo naudojant Gmailą');
+                    ? 'Czy na pewno chcesz usunąć ten plik?'
+                    : 'Ar tikrai norite ištrinti šį failą?'),
+        content: Text(languageEnglish
+            ? 'This action cannot be undone.'
+            : languageNorwegian
+                ? 'Denne handlingen kan ikke angres.'
+                : languagePolish
+                    ? 'Tej operacji nie można cofnąć.'
+                    : 'Šio veiksmo negalima atšaukti.'),
+        actions: [
+          TextButton(
+            onPressed: () {
+              Navigator.of(context).pushReplacement(
+                MaterialPageRoute(
+                  builder: (context) {
+                    return FilePickerScreen();
+                  },
+                ),
+              ); // User does not want to delete
+            },
+            child: Text(languageEnglish
+                ? 'Cancel'
+                : languageNorwegian
+                    ? 'Avbryt'
+                    : languagePolish
+                        ? 'Anuluj'
+                        : 'Atšaukti'),
+          ),
+          TextButton(
+            onPressed: () {
+              Navigator.of(context).pop(true); // User wants to delete
+            },
+            child: Text(languageEnglish
+                ? 'Delete'
+                : languageNorwegian
+                    ? 'Slett'
+                    : languagePolish
+                        ? 'Usuń'
+                        : 'Ištrinti'),
+          ),
+        ],
+      ),
+    );
   }
 
   Future<void> _deleteFile(String filePath) async {
@@ -459,4 +520,26 @@ class _FilePickerScreenState extends State<FilePickerScreen> {
     }
     return directory.path;
   }
+}
+
+// Prettify file name
+String prettifyFileName(String fileName) {
+  String nameWithoutExtension = fileName.replaceAll('.json', '');
+  String nameWithSpaces = nameWithoutExtension.replaceAll('_', ' ');
+  return nameWithSpaces.split(' ').map((word) {
+    return word.isNotEmpty ? word[0].toUpperCase() + word.substring(1) : '';
+  }).join(' ');
+}
+
+// Share file
+Future<void> _shareFile(String filePath) async {
+  final file = XFile(filePath);
+  Share.shareXFiles([file],
+      text: languageEnglish
+          ? 'Sharing JSON file via Gmail'
+          : languageNorwegian
+              ? 'Deling av JSON-fil via Gmail'
+              : languagePolish
+                  ? 'Udostępnianie pliku JSON za pośrednictwem Gmaila'
+                  : 'Bendrinimas JSON failo naudojant Gmailą');
 }
