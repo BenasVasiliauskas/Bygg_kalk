@@ -1,3 +1,6 @@
+import 'package:cost_calculator/bathroom_data/eng_data.dart';
+import 'package:cost_calculator/bathroom_pages/item_screen/windows_doors_screen.dart';
+import 'package:cost_calculator/pages/shared/bathroom_section_page.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -21,12 +24,9 @@ class _BuildingComponentsScreenState extends State<BuildingComponentsScreen> {
             tooltip: 'Return to main menu',
             onPressed: () {
               Navigator.of(context).pushReplacement(
-                MaterialPageRoute(
-                  builder: (context) {
-                    // Add your home page navigation here
-                    return const SizedBox(); // Placeholder for home page
-                  },
-                ),
+                MaterialPageRoute(builder: (context) {
+                  return BathroomSectionPage();
+                }),
               );
             },
           ),
@@ -45,8 +45,7 @@ class _BuildingComponentsScreenState extends State<BuildingComponentsScreen> {
                       Navigator.of(context).pushReplacement(
                         MaterialPageRoute(
                           builder: (context) {
-                            // Navigate to the Windows/Exterior Doors page here
-                            return SizedBox(); // Placeholder
+                            return BathroomWindowsScreen();
                           },
                         ),
                       );
@@ -60,13 +59,12 @@ class _BuildingComponentsScreenState extends State<BuildingComponentsScreen> {
                             child: Image.asset("assets/WindowExteriorDoor.jpg"),
                           ),
                         ),
-                        Text("Windows, doors"),
+                        Text("Windows"),
                       ],
                     ),
                   ),
                 ),
-                // Add the number of windows data here
-                Text("0"), // Replace "0" with the actual data
+                Text(bathroomWindowsData.length.toString()),
               ],
             ),
           ],

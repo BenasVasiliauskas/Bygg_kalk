@@ -1,3 +1,4 @@
+import 'package:cost_calculator/pages/shared/home_page.dart';
 import 'package:cost_calculator/pages/shared/secondHomePage.dart';
 import 'package:flutter/material.dart';
 
@@ -20,7 +21,7 @@ class _splashScreenState extends State<splashScreen> {
     Navigator.pushReplacement(
       context,
       MaterialPageRoute(
-          builder: (context) => SecondHomePage()), // Navigate to SecondHomePage
+          builder: (context) => homePage()), // Navigate to SecondHomePage
     );
   }
 

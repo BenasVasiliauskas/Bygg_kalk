@@ -99,6 +99,15 @@ class _BudgetScreenState extends State<BudgetScreen> {
                                 fileName, data, emptyTerraceModel);
                             await loadProject(
                                 fileName, data, emptyWindowsExteriorDoorsModel);
+
+                            print("Project loaded");
+                            print(exteriorWallData);
+                            print(outerRoofData);
+                            print(flooringData);
+                            print(innerStairsData);
+                            print(scaffoldingData);
+                            print(terraceData);
+                            print(deckData);
                           } else {
                             // User canceled the picker
                           }

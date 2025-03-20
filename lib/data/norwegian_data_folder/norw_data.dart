@@ -3092,18 +3092,6 @@ final norwInnerWallData = [
       totalPrice: [0.00],
       constructionType: "New Construction"),
   InnerWallModel(
-      name: "Innervegger ombygging.",
-      description: [],
-      unit: [],
-      quantity: [],
-      laborHours1: [],
-      laborHours2: [],
-      laborCost: [],
-      material1: [],
-      material2: [],
-      totalPrice: [],
-      constructionType: "New Construction"),
-  InnerWallModel(
       name: "Murvegg, utlekting, 1 lag gips kledning tosidig.",
       description: [
         'Gulvlist furu 12x58 glatt hvitmalt.',
